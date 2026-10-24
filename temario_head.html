@@ -1,0 +1,154 @@
+<title>Temario Estadística SRP Ozono</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: índice lateral fijo en escritorio + columna de lectura; cada módulo es una ficha con conceptos, aplicación SRP, práctica y referencias. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #17222a;
+  --muted: #56636c;
+  --line: #d6dddb;
+  --accent: #0a6b75;
+  --accent-soft: #e2f0f0;
+  --practice: #8f5500;
+  --practice-soft: #fbf0df;
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1417; --surface: #151d21; --ink: #e2e8ea; --muted: #97a3aa; --line: #2a353a;
+    --accent: #56c3cb; --accent-soft: #15302f; --practice: #e3a54c; --practice-soft: #2c2213;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1417; --surface: #151d21; --ink: #e2e8ea; --muted: #97a3aa; --line: #2a353a;
+  --accent: #56c3cb; --accent-soft: #15302f; --practice: #e3a54c; --practice-soft: #2c2213;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+code, .f { font-family: var(--font-mono); font-size: 0.86em; }
+.f { background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 3px; white-space: nowrap; }
+.f.wrap { white-space: normal; }
+
+.wrap-page { max-width: 1180px; margin: 0 auto; }
+
+/* Cabecera */
+header.top { padding-block: 2.5rem 1.5rem; border-bottom: 1px solid var(--line); display: grid; gap: 1.25rem; }
+.eyebrow { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+header.top h1 { font-size: clamp(1.8rem, 4.2vw, 2.7rem); font-weight: 700; max-width: 22ch; }
+.lede { max-width: 68ch; color: var(--muted); margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem 2rem; margin: 0; }
+.facts div { min-width: 0; }
+.facts dt { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.facts dd { margin: 0.15rem 0 0; }
+
+/* Cadena de trazabilidad */
+.chain { margin-top: 0.5rem; }
+.chain h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.6rem; }
+.chain-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
+.chain ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 0; min-width: 760px; }
+.chain li { position: relative; padding: 0.75rem 1.4rem 0.75rem 0.85rem; background: var(--surface); border: 1px solid var(--line); border-right: none; }
+.chain li:last-child { border-right: 1px solid var(--line); }
+.chain li:not(:last-child)::after { content: "→"; position: absolute; right: 0.35rem; top: 0.7rem; color: var(--accent); font-family: var(--font-display); }
+.chain strong { display: block; font-family: var(--font-display); font-size: 0.95rem; }
+.chain span { display: block; font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+.chain .mods { margin-top: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+
+/* Cuerpo con índice */
+.layout { display: grid; grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+@media (min-width: 980px) { .layout { grid-template-columns: 230px minmax(0, 1fr); gap: 3rem; } }
+nav.toc { font-family: var(--font-display); font-size: 0.88rem; }
+@media (min-width: 980px) { nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); align-self: start; max-height: calc(100vh - 2.5rem); overflow-y: auto; } }
+nav.toc h2 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.1rem; }
+nav.toc .blk { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+nav.toc a { display: grid; grid-template-columns: 2.1rem 1fr; text-decoration: none; color: var(--ink); padding: 0.18rem 0; line-height: 1.3; }
+nav.toc a:hover { color: var(--accent); }
+nav.toc a b { font-family: var(--font-mono); font-weight: 500; color: var(--accent); font-size: 0.8rem; }
+main { min-width: 0; display: grid; gap: 3rem; }
+
+/* Tablas */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+th { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--bg); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.overview td:first-child { font-family: var(--font-mono); color: var(--accent); white-space: nowrap; }
+.overview tr.block td { background: var(--accent-soft); font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+.overview tfoot td { font-family: var(--font-display); font-weight: 600; border-top: 1px solid var(--line); }
+
+section.intro h2, section.biblio h2, .block-head h2 { font-size: 1.5rem; }
+section.intro { display: grid; gap: 1rem; }
+section.intro p { margin: 0; max-width: 68ch; }
+
+/* Bloques y módulos */
+.block-head { display: grid; gap: 0.3rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--accent); }
+.block-head .eyebrow { font-size: 0.75rem; }
+.block-head p { margin: 0; color: var(--muted); max-width: 68ch; }
+.block { display: grid; gap: 1.75rem; }
+
+article.mod { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem clamp(1rem, 3vw, 2rem); display: grid; gap: 1.1rem; scroll-margin-top: 1rem; }
+article.mod.core { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.mod-head { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; align-items: baseline; }
+.mod-num { font-family: var(--font-mono); font-size: 1.9rem; color: var(--accent); line-height: 1; grid-row: span 2; }
+.mod-head h3 { font-size: 1.3rem; font-weight: 600; }
+.meta { display: flex; flex-wrap: wrap; gap: 0.4rem; font-family: var(--font-display); font-size: 0.78rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.08rem 0.6rem; color: var(--muted); white-space: nowrap; }
+.chip.lvl { color: var(--accent); border-color: var(--accent); }
+.chip.key { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.goal { margin: 0; font-style: italic; color: var(--ink); max-width: 68ch; }
+.goal::before { content: "Objetivo. "; font-style: normal; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.02em; }
+
+.parts { display: grid; gap: 1.1rem; }
+@media (min-width: 760px) { .parts.two { grid-template-columns: 1fr 1fr; gap: 1.1rem 2rem; } }
+.part { min-width: 0; }
+.part h4 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.part ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.part li { padding-left: 0.1rem; }
+.part p { margin: 0 0 0.4rem; }
+.practice { background: var(--practice-soft); border-radius: 6px; padding: 0.85rem 1rem; }
+.practice h4 { color: var(--practice); }
+.note { border-left: 3px solid var(--accent); padding: 0.3rem 0 0.3rem 0.85rem; margin: 0; color: var(--ink); max-width: 72ch; }
+
+.refs { border-top: 1px dashed var(--line); padding-top: 0.8rem; }
+.refs h4 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; }
+.refs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; font-size: 0.9rem; }
+@media (min-width: 760px) { .refs ul { grid-template-columns: 1fr 1fr; gap: 0.25rem 2rem; } }
+.refs li { min-width: 0; color: var(--muted); }
+.refs a { font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid currentColor; }
+
+/* Bibliografía */
+section.biblio { display: grid; gap: 1.5rem; }
+.bib-group h3 { font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.bib-group dl { margin: 0; display: grid; gap: 0.6rem; }
+.bib-group dl > div { display: grid; grid-template-columns: 1fr; gap: 0.1rem; scroll-margin-top: 1rem; padding: 0.35rem 0.5rem; border-radius: 4px; }
+.bib-group dl > div:target { background: var(--accent-soft); }
+@media (min-width: 760px) { .bib-group dl > div { grid-template-columns: 11rem 1fr; gap: 1rem; } }
+.bib-group dt { font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; }
+.bib-group dd { margin: 0; min-width: 0; }
+.bib-group dd code { color: var(--muted); font-size: 0.8rem; word-break: break-all; }
+.bib-group dd .used { display: block; font-family: var(--font-display); font-size: 0.75rem; color: var(--muted); }
+
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+</style>
+

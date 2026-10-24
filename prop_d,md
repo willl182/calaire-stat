@@ -1,0 +1,298 @@
+# Propuesta de ajuste del curso de estadística aplicada a la fotometría de ozono con el SRP
+
+**Fecha:** 23 de octubre de 2026.  
+**Estado:** propuesta curricular para revisión.  
+**Base:** temario actual y revisiones comparativas de las auditorías A, B y C.  
+**Alcance:** contenidos, progresión, prácticas y evidencias de aprendizaje. La duración se calculará posteriormente, a partir de las actividades y competencias acordadas.
+
+## 1. Orientación de la propuesta
+
+Se propone conservar la identidad del curso: estadística aplicada al trabajo con el SRP, desde las lecturas hasta la calibración, la comparación, el certificado y el seguimiento de los patrones. El ajuste debe hacer más clara esa cadena y asegurar que cada cálculo responda a una pregunta metrológica concreta.
+
+El curso tendrá tres niveles acumulativos, básico, intermedio y avanzado. En cada nivel, los temas incluidos se enseñarán, se practicarán y se evaluarán. La progresión se definirá por la autonomía del participante y la complejidad del problema. Un tema que requiera conocimientos posteriores se asignará al nivel correspondiente, sin sustituir su enseñanza por una mención superficial.
+
+La propuesta combina los aportes más útiles de las revisiones:
+
+- De la revisión B, la progresión acumulativa por tareas, la práctica desde el básico y la capacidad de reconocer cuándo escalar un caso.
+- De las revisiones A y D, las condiciones de aplicación de los métodos, la distinción entre resultados y el cuidado de las conclusiones.
+- De la revisión C, la conexión entre los problemas de los datos reales y los contenidos que deben enseñarse, así como el desarrollo de actividades por módulo.
+
+Se resuelven expresamente sus desacuerdos. No se adopta una auditoría completa ni su clasificación global como autoridad curricular. Las revisiones A y D cuestionan varias interpretaciones que la revisión C respalda: el máximo puntual de incertidumbres, la explicación única del cambio de escala, la suficiencia de algunos diseños y ciertas conclusiones del R&R. La propuesta conserva los problemas didácticos y evita convertir las interpretaciones discutidas en respuestas obligatorias.
+
+**La prioridad es un curso que permita calcular, interpretar y actuar correctamente.** Los errores de las hojas de cálculo servirán para diseñar ejemplos; la reparación de archivos operativos será trabajo previo de preparación, no el objetivo de las clases.
+
+## 2. Competencias de salida y progresión
+
+### Básico: ejecutar y reconocer límites
+
+El participante podrá organizar datos emparejados, distinguir error con signo y magnitud del error, describir variación, aplicar inferencia sencilla bajo condiciones dadas, ejecutar un análisis de un factor en un ejemplo adecuado, ajustar una recta OLS, aplicar su inversa, completar un presupuesto sencillo y utilizar reglas de decisión y control previamente establecidas.
+
+Trabajará con hojas de cálculo transparentes y datos preparados. La plantilla mostrará entradas, unidades, supuestos, operaciones y resultados; el alumno deberá explicar qué calcula. También resolverá situaciones en las que corresponde detener el procedimiento y solicitar revisión: dependencia no contemplada, cambio de escala, datos fuera del intervalo, patrón de residuos inadecuado, deriva o presupuesto incompatible.
+
+### Intermedio: seleccionar, justificar y comunicar
+
+Además de las competencias básicas, el participante podrá elegir métodos habituales de análisis, planificar réplicas, evaluar precisión intermedia, seleccionar entre ajustes de distinta complejidad, construir presupuestos para resultados claramente definidos y preparar resultados de calibración y declaraciones de conformidad sustentadas.
+
+La formación desarrolla competencias para preparar y revisar certificados. La autorización institucional para firmarlos corresponde al laboratorio y no se obtiene automáticamente por aprobar el curso.
+
+### Avanzado: modelar y validar
+
+Además de las competencias anteriores, el participante podrá analizar diseños cruzados y anidados, evaluar modelos de covarianza, ejecutar y validar ajustes generalizados, estudiar incertidumbre con simulación y sustentar análisis complejos de comparación y estabilidad.
+
+La validación incluirá resultados de referencia, límites del algoritmo, sensibilidad a los supuestos y situaciones de fallo. Ejecutar un programa correctamente será una parte de esta competencia.
+
+### Entrada y continuidad
+
+El ingreso básico requiere aritmética, manejo elemental de hoja de cálculo y familiaridad con la operación del instrumento. Se ofrecerá nivelación práctica cuando sea necesaria. Para entrar directamente a intermedio o avanzado se comprobarán las competencias previas mediante un ejercicio diagnóstico.
+
+Quien progrese desde un nivel aprobado conservará el reconocimiento de lo aprendido. Los incrementos desarrollarán competencias nuevas; los ejercicios de integración comprobarán su uso conjunto. Cada modalidad completa incluirá el alcance acumulado de su nivel.
+
+## 3. Reglas de diseño de contenidos
+
+1. **Empezar por el resultado que se necesita.** Antes de elegir una fórmula, identificar mensurando, variable analizada, unidad de réplica, escala temporal y conclusión buscada.
+2. **Usar una convención común.** En calibración, `x` será la referencia, `y` la indicación, `e = y − x` el error con signo y `y = a + b·x` la orientación de la recta. La función inversa será `x̂ = (y − a)/b`. Otras convenciones deberán declararse.
+3. **Separar lectura, promedio y uso futuro.** La dispersión de lecturas y la incertidumbre de un promedio o de una medida futura responden a preguntas diferentes.
+4. **Introducir dependencia desde el básico.** Las lecturas consecutivas pueden describir variación de corto plazo; su cantidad no establece por sí sola el número de repeticiones independientes de una calibración. Tampoco el día será una réplica universal para cualquier pregunta.
+5. **Enseñar incertidumbre desde sus entradas.** Distinguir `u`, `U`, factor de cobertura, distribución, correlación y resultado al que corresponde cada contribución. Tipo A y tipo B describen formas de evaluación.
+6. **Explicar mediante aplicación.** Cada fórmula se acompañará de significado, condiciones, unidades y un ejemplo. Las deducciones algebraicas se trasladarán a anexos y no serán requisito de evaluación.
+7. **Trabajar con fuentes delimitadas.** Los ejercicios identificarán si sus datos son propios, publicados, adaptados o simulados. Un criterio externo se usará dentro del escenario docente especificado, sin atribuirle adopción automática por CALAIRE.
+8. **Cerrar cada actividad con una acción.** Además de obtener una cifra, el participante deberá interpretar el resultado y decidir qué puede concluir, qué necesita revisar o qué información falta.
+
+## 4. Contenidos propuestos por módulo
+
+Se conservan los identificadores M1–M13 para facilitar la posterior actualización del temario. Se agrega M0 como preparación. Dentro de cada módulo, intermedio añade contenido al básico y avanzado añade contenido al intermedio.
+
+La secuencia será M0 → M1 → M2 → M3 → M4 → M5 → M6 → M7 → M8 → M9 → M10 → M11 → M12; M13 precederá al taller final avanzado. En M2 se introducirá la estructura de los datos necesaria para las primeras inferencias; M5 desarrollará después el diseño experimental completo.
+
+### M0. Preparación de datos y herramientas
+
+**Básico.** Importar datos, reconocer separadores y valores faltantes, conservar unidades y fechas, distinguir número de fila de identificador de observación y mantener el emparejamiento referencia–indicación. Crear columnas de error con signo y magnitud del error. Usar funciones estadísticas, gráficos y referencias de celdas.
+
+**Intermedio.** Organizar lecturas por nivel, ciclo, día, analista y campaña. Comprobar conteos, transformaciones y correspondencia entre datos y resúmenes. Preparar un conjunto reproducible para el análisis.
+
+**Avanzado.** Comprobar equivalencia entre hoja de cálculo y código, fijar tolerancias numéricas y registrar versiones de datos y métodos.
+
+**Práctica y evidencia.** Entregar una base ordenada y un resumen reproducible; en avanzado, acompañarlos de una comprobación independiente de resultados. La programación no será prerrequisito para el básico.
+
+### M1. Medición, fotometría y trazabilidad
+
+**Básico.** Mensurando y unidades; error, corrección, sesgo y precisión; calibración, ajuste y verificación. Ecuación de medida del SRP con símbolos definidos y conversión explícita a nmol/mol. Cadena de trazabilidad y uso de información del certificado. Recalcular concentraciones con dos valores de sección eficaz suministrados y explicar el sentido del cambio.
+
+**Intermedio.** Relacionar los componentes físicos del modelo con las fuentes de incertidumbre. Distinguir presupuesto histórico, escenario didáctico actualizado y presupuesto propio del instrumento. Analizar el efecto de cambiar de escala en dos equipos que se comparan.
+
+**Avanzado.** Examinar contribuciones comunes y condiciones para su cancelación en una comparación. Evaluar coherencia entre modelo, escalas y documentación de trazabilidad.
+
+**Práctica y evidencia.** Resolver un cambio de escala con valores y unidades explícitos, y calcular el signo del error relativo según cuál equipo cambió. Se retirará la atribución universal de la diferencia entre porcentajes al truncamiento de una constante. El estudio espectroscópico fuera de la región de operación quedará fuera del núcleo.
+
+### M2. Descripción de las lecturas y elección de la respuesta
+
+**Básico.** Media, mediana, desviación estándar, rango, gráficos temporales, histogramas y diagramas de caja. Comparar indicaciones, referencias y diferencias con signo por nivel y por día. Tratar valores negativos de cero, redondeo y valores sospechosos sin eliminación automática. Evitar coeficientes relativos con denominadores nulos o cercanos a cero.
+
+**Intermedio.** Separar cambios de concentración generada de cambios del instrumento. Comparar resúmenes agrupados y estratificados. Incorporar MAD como medida descriptiva robusta y revisar su interpretación.
+
+**Avanzado.** Examinar el efecto de transformaciones, agrupamientos y patrones de variación sobre el análisis posterior.
+
+**Práctica y evidencia.** Comparar la dispersión de las indicaciones y de los errores de un nivel en varios días y justificar la respuesta elegida. Restar la referencia será una opción inicial que debe comprobarse: un sesgo proporcional puede mantener dependencia con la concentración. Las pruebas formales de atípicos se enseñarán después de sus prerrequisitos.
+
+### M3. Variabilidad, distribuciones y dependencia
+
+**Básico.** Distribuciones normal y rectangular; lectura de cobertura y cuantiles en una plantilla. Diferenciar semiamplitud y resolución total. Convertir `U` a `u` con el factor informado. Calcular dispersión y error estándar en un ejemplo de observaciones independientes y comprobar qué cambia al introducir una componente común.
+
+**Intermedio.** Distribuciones t, chi-cuadrado y F vinculadas a su uso posterior. Covarianza, correlación y varianza de combinaciones lineales. Efecto de dependencia temporal y factores compartidos sobre promedios y diferencias.
+
+**Avanzado.** Diagnosticar autocorrelación y estudiar la incertidumbre de promedios bajo un modelo temporal explícito. Comparar resultados con simulación; evitar correcciones universales de tamaño efectivo basadas en una sola correlación estimada.
+
+**Práctica y evidencia.** Resolver dos promedios con igual número de observaciones y distinta estructura de dependencia. La propagación no lineal de la ecuación fotométrica se desarrollará en M8.
+
+### M4. Inferencia para preguntas metrológicas
+
+**Básico.** Estimación e intervalo de confianza de una media; prueba t de diferencias dentro de un nivel, con datos cuya independencia esté justificada en el ejercicio. Interpretar hipótesis, valor p y tamaño del efecto. Distinguir significación estadística de importancia metrológica.
+
+**Intermedio.** Elegir entre datos pareados y muestras independientes; aplicar Welch cuando corresponda. Intervalos para varianza y desviación estándar, comparación de varianzas y cálculo de tamaño de muestra según el diseño. Aplicar una prueba de atípicos en un escenario que cumpla sus condiciones y registrar la decisión sobre el dato.
+
+**Avanzado.** Evaluar potencia con pocas unidades independientes, multiplicidad y sensibilidad a incumplimientos de supuestos. Comparar inferencia convencional y remuestreo que respete la estructura de los datos.
+
+**Práctica y evidencia.** Responder una pregunta sobre sesgo con estimación, intervalo y conclusión. No se usarán ocho lecturas consecutivas como ocho réplicas independientes sin justificación, ni se mezclarán concentraciones para una t pareada única. El cálculo de muestra distinguirá una media, diferencias pareadas y dos grupos.
+
+### M5. Diseño de la comparación y de los estudios de precisión
+
+**Básico.** Identificar lectura, ciclo, corrida, día y campaña. Reconocer factores y réplicas a partir de una secuencia de adquisición. Ejecutar un diseño suministrado y explicar qué variación puede observar.
+
+**Intermedio.** Planificar réplicas, bloques y orden de medición. Distinguir diseños cruzados y anidados. Diseñar un estudio de precisión intermedia que permita separar fuentes relevantes.
+
+**Avanzado.** Diseñar estudios con varios analistas y campañas, evaluar confusión entre factores y plantear un factorial de robustez con objetivos y respuestas definidos.
+
+**Práctica y evidencia.** Entregar un plan de adquisición indicando qué componentes se podrán estimar. Contrastar diseños de los documentos suministrados sin mezclar números de ciclos, lecturas o criterios de aceptación entre protocolos.
+
+### M6. Precisión, ANOVA y componentes de variación
+
+**Básico.** Repetibilidad y precisión intermedia. Ejecutar un ANOVA de un factor con plantilla en un conjunto equilibrado preparado para ese propósito. Interpretar variación dentro y entre grupos, estadístico F y residuos básicos. Este ejercicio no habilita para elegir modelos multifactoriales ni para reconstruir el R&R histórico.
+
+**Intermedio.** Modelo de un factor aleatorio, estimación de componentes e incertidumbre de esas estimaciones. Relacionar las componentes con una lectura, un promedio de calibración y un resultado futuro. Distinguir condiciones de repetibilidad, precisión intermedia y reproducibilidad. Analizar cada concentración o justificar un modelo de varianza.
+
+**Avanzado.** Modelos cruzados, anidados y mixtos; interacción; elección de denominadores según el modelo; pocos grados de libertad; componentes negativas y alternativas de estimación. Analizar el diseño del R&R y la multiplicidad entre niveles.
+
+**Práctica y evidencia.** Producir un informe de precisión que identifique variable, diseño, componentes estimables y límites. En el caso R&R se contrastará el efecto de usar `e` y `|e|`. Las conclusiones obtenidas con magnitudes de error no se trasladarán al error con signo. El modelo del ejercicio deberá admitir el resultado que produzcan los datos, sin imponer los niveles significativos publicados en el análisis anterior.
+
+Los estadísticos interlaboratorio y los índices industriales %R&R no formarán parte de la rutina de un estudio de calibración intralaboratorio. Su uso requerirá un problema y diseño específicos; tampoco se descartará en bloque la evaluación del sesgo de un solo laboratorio contemplada en la bibliografía ISO 5725.
+
+### M7. Función de calibración y uso de la calibración
+
+**Básico.** Ajustar `y = a + b·x` mediante OLS en un caso preparado para sus supuestos, interpretar pendiente e intercepto, examinar residuos y aplicar `x̂ = (y − a)/b`. Reconocer que un R² alto no valida el ajuste. Respetar el intervalo de calibración.
+
+**Intermedio.** Incertidumbre y covarianza de los parámetros; confianza, predicción y predicción inversa. Falta de ajuste cuando existan réplicas válidas. Elegir entre OLS, WLS y un método con incertidumbre en ambos ejes según los datos disponibles. Comparar ajuste libre y ajuste forzado al origen.
+
+**Avanzado.** Regresión con covarianzas entre observaciones y entre ejes, conexión con GGMR y diagnóstico de residuos ponderados y chi-cuadrado. Revisar valores de chi-cuadrado tanto altos como anormalmente bajos.
+
+**Práctica y evidencia.** Entregar una función de calibración, una aplicación a una indicación nueva y el diagnóstico correspondiente al nivel. Se distinguirán inversión de la recta, corrección del resultado y ajuste instrumental cero–span. Los ceros inicial y final se tratarán atendiendo al tiempo y al diseño, sin contarlos automáticamente como dos concentraciones distintas.
+
+### M8. Presupuesto de incertidumbre y relación con la CMC
+
+**Básico.** Construir un presupuesto sencillo en plantilla a partir de un modelo dado: entradas, unidades, distribuciones, incertidumbres estándar, sensibilidades suministradas o calculadas numéricamente, combinación y expansión. Aplicar Kragten en un ejemplo de entradas independientes y comportamiento aproximadamente lineal. Utilizar un factor de cobertura cuya justificación se haya incluido en el ejercicio.
+
+**Intermedio.** Construir el modelo del resultado, incorporar precisión intermedia, referencia, regresión, resolución y contribuciones de uso. Tratar covarianzas y evitar doble conteo. Evaluar grados de libertad efectivos y cobertura cuando proceda. Para Student bilateral central del 95 %, usar la notación acumulada inequívoca `t(0,975; ν_eff)`. Separar incertidumbre de calibración e incertidumbre durante el uso.
+
+**Avanzado.** Evaluar presupuestos de la cadena de trazabilidad y efectos comunes; contrastar propagación lineal y Monte Carlo. Construir y comprobar una función de incertidumbre a lo largo del intervalo, incluida su relación con la CMC pertinente.
+
+**Práctica y evidencia.** Resolver el presupuesto de un punto y trasladar el resultado al uso de un patrón de transferencia. Explicar qué términos cambian para un promedio y para una lectura futura. Comparar una estimación adecuada con el atajo de dividir una dispersión agrupada entre niveles por la raíz del total de lecturas.
+
+La selección puntual entre U calculada y CMC se estudiará separadamente de cualquier ajuste posterior de una curva. No se impondrá una forma funcional por conveniencia: deberá representar el presupuesto y comportarse adecuadamente en el intervalo. Los presupuestos históricos servirán para reproducción; una actualización didáctica no se presentará como presupuesto vigente del SRP55. En cero se trabajará con incertidumbre absoluta.
+
+### M9. Comparaciones y compatibilidad metrológica
+
+**Básico.** Calcular la diferencia entre dos resultados y su incertidumbre en un ejemplo sencillo de comparación. Calcular e interpretar `E_n` cuando el escenario suministrado satisfaga las condiciones de su fórmula, incluidas independencia y coberturas comparables. Identificar cuándo la información disponible no permite esa aplicación.
+
+**Intermedio.** Evaluar la incertidumbre de diferencias con componentes compartidas. Calcular diferencias a concentraciones de interés a partir de una recta y su covarianza ya obtenidas. Distinguir medición directa e interpolación, compatibilidad y conformidad.
+
+**Avanzado.** Construir matrices de covarianza y ejecutar GGMR dentro de su alcance validado; contrastarlo con métodos simplificados. Evaluar convergencia, residuos, sensibilidad y grados de equivalencia bajo el modelo docente. Resolver una variante con covarianza cruzada solo si existe una herramienta previamente contrastada para ella.
+
+**Práctica y evidencia.** Presentar un resultado de comparación con incertidumbre y alcance explícitos. El caso publicado SRP36/SRP7 seguirá siendo una adaptación didáctica, sin atribuirlo a CALAIRE ni a un resultado oficial BIPM. Se eliminará la discrepancia documental de coeficientes antes de usar su solución en clase.
+
+### M10. Certificado, conformidad y decisión
+
+**Básico.** Preparar una tabla de resultados y aplicar una regla de decisión suministrada, con banda de guarda cuando corresponda. Expresar resultado, unidad, incertidumbre y cobertura. Diferenciar resultado de calibración, función de uso y declaración de conformidad.
+
+**Intermedio.** Seleccionar y justificar una regla compatible con la especificación del ejercicio. Redactar un certificado docente y una declaración de conformidad cuando esta se solicite. Explicar las consecuencias de resultados próximos al límite.
+
+**Avanzado.** Comparar reglas mediante un modelo probabilístico explícito y evaluar su sensibilidad al presupuesto y a los supuestos del riesgo.
+
+**Práctica y evidencia.** Resolver resultados dentro, cerca y fuera del límite. El escenario entregará fuente, edición, instrumento, etapa, diseño, estadístico y unidades del criterio. No se seleccionará el régimen que produzca la aceptación más favorable ni se exigirá una declaración de conformidad a todo certificado.
+
+### M11. Seguimiento, cartas de control y deriva
+
+**Básico.** Aplicar una carta con límites establecidos a una secuencia de controles del mismo proceso. Identificar señales y ejecutar un plan de acción: comprobar, registrar, investigar y escalar. Distinguir límites de control y tolerancias.
+
+**Intermedio.** Construir cartas de individuales y rango móvil con una base homogénea adecuada. Evaluar estabilidad, analizar tendencias frente al tiempo y considerar deriva en el uso del patrón y su incertidumbre.
+
+**Avanzado.** Comparar cartas con memoria cuando el problema lo requiera, evaluar cambios de régimen y sustentar propuestas de intervalo de recalibración con historia suficiente y criterio de riesgo.
+
+**Práctica y evidencia.** Entregar una carta, interpretación y acción documentada. Se usarán los datos NIST para aprender el método dentro de su propia serie. Los seis días de CALAIRE se analizarán como una campaña; no se convertirán en historial de largo plazo ni se vigilarán con límites de otro instrumento. Si faltan datos longitudinales, se preparará una serie simulada y rotulada para ejercitar decisiones.
+
+### M12. Uso de los resultados en redes de monitoreo
+
+**Básico.** Calcular diferencias relativas de verificaciones y aplicar una plantilla del escenario docente para indicadores de precisión y sesgo. Resolver un conjunto con signos mezclados y explicar qué cambia al tomar valores absolutos. Identificar el efecto del cambio de escala entre monitor y referencia.
+
+**Intermedio.** Construir los indicadores y sus límites de confianza, con cuantiles y condiciones de aplicación explícitos. En el ejercicio basado en el documento EPA suministrado, definir `AB = media(|d_i|)` y `AS = s(|d_i|)` y aplicar su regla de signo. Distinguir estos indicadores de la incertidumbre del certificado.
+
+**Avanzado.** Evaluar dependencia, cambios de escala y mezcla de periodos en una serie de verificaciones; proponer un análisis que conserve la comparabilidad y el régimen del ejercicio.
+
+**Práctica y evidencia.** Entregar un informe breve que conecte calibración e indicadores de la red. Los valores de diseño ambientales, promedios regulatorios y comparaciones extensas con otros gases quedarán fuera del núcleo: requieren una finalidad formativa adicional. No se incorporan límites regulatorios nuevos en esta propuesta.
+
+### M13. Validación y métodos avanzados
+
+**Ubicación:** avanzado, con práctica y evaluación propias.
+
+Se concentrará en Monte Carlo para problemas de M8, remuestreo por unidades independientes, comprobación de herramientas GGMR y comparación con métodos robustos cuando el problema lo justifique. Se evaluarán no linealidad, covarianzas, estabilidad numérica y situaciones de fallo. Una implementación nueva deberá contrastarse antes de convertirse en herramienta docente.
+
+**Práctica y evidencia.** Resolver un mismo problema por dos vías y explicar sus diferencias. Entregar un informe de validación con entradas, resultados de referencia, tolerancias, supuestos y límites.
+
+Se retiran PCR/PLS del núcleo por su escasa conexión con el problema de un fotómetro de una longitud de onda. Desviación de Allan, detección formal, comparaciones nacionales e ISO 13528 podrán originar ampliaciones con objetivos y datos propios; no se agregarán como una lista de menciones. El tratamiento del cero y su dispersión permanece en el núcleo, sin convertir `3·s₀` en definición universal de límite de detección.
+
+## 5. Taller integrador y uso de los casos
+
+Los casos se desarrollarán progresivamente durante los módulos. El taller final pedirá integrar lo aprendido sobre una variante nueva, sin introducir métodos no enseñados.
+
+### Caso A: calibración del Level 2
+
+- **Básico:** organizar datos, describir errores con signo, ejecutar los análisis sencillos preparados, ajustar OLS en un conjunto adecuado, aplicar la inversa, completar el presupuesto y producir una tabla de resultados.
+- **Intermedio:** justificar agrupamiento, unidad de réplica, precisión, regresión, presupuesto y decisión; preparar el certificado docente.
+- **Avanzado:** examinar alternativas de modelo, covarianzas e incertidumbre de uso; comprobar la estabilidad de las conclusiones.
+
+El paquete tendrá datos depurados y trazables, diccionario y solución. Si una simplificación es necesaria para el básico, se indicará en una variante didáctica explícita. No se presentará una versión simplificada como validación del certificado original.
+
+### Caso B: comparación de fotómetros
+
+- **Básico:** comparación sencilla de resultados con diferencia, incertidumbre y compatibilidad.
+- **Intermedio:** diferencia interpolada a concentraciones de interés y efecto de componentes compartidas.
+- **Avanzado:** ajuste GGMR, matrices, diagnóstico y contraste con alternativas.
+
+Los datos publicados disponibles sostienen una adaptación docente. La comparación propia de CALAIRE solo podrá sustituirla cuando se disponga del paquete completo. La herramienta actual, que fija la covarianza cruzada en cero según las revisiones, no bastará para evaluar una variante general con ese bloque distinto de cero.
+
+### Caso C: seguimiento del patrón
+
+- **Básico:** aplicar una carta suministrada y decidir la acción ante señales.
+- **Intermedio:** construir y revisar límites sobre una serie homogénea.
+- **Avanzado:** modelar deriva y evaluar un intervalo candidato con datos suficientes.
+
+Se mantendrán separadas las series de CALAIRE y NIST. Las extensiones simuladas se identificarán como tales y no se usarán para concluir sobre el comportamiento real del Level 2.
+
+### Caso D: precisión y R&R
+
+- **Básico:** comparar el efecto de conservar o perder el signo en un ejemplo sencillo y resolver la variante de un factor enseñada en M6.
+- **Intermedio:** estimar componentes de un diseño compatible con su nivel y explicar el resultado al que se aplican.
+- **Avanzado:** analizar el diseño analista × campaña con días anidados y evaluar qué puede concluirse de los datos disponibles.
+
+Para el R&R histórico se recuperarán los errores con signo cuando sea posible. Si faltan campañas, se delimitará el análisis real y se preparará un conjunto simulado completo para enseñar el método. No se reconstruirán signos por suposición.
+
+## 6. Evaluación del aprendizaje
+
+La evaluación comprobará cuatro dimensiones: preparación de datos, ejecución del método, interpretación y decisión. Cada actividad tendrá una solución de referencia y criterios observables acordes al nivel.
+
+- **Básico:** ejecutar el procedimiento, explicar las variables y detectar una condición que impide aplicarlo.
+- **Intermedio:** justificar la selección del método, revisar supuestos y comunicar un resultado completo.
+- **Avanzado:** contrastar modelos y herramientas, estudiar sensibilidad y delimitar la validez de la conclusión.
+
+Serán errores críticos confundir U con u, invertir el signo de una corrección, mezclar escalas sin tratamiento, contar lecturas dependientes como réplicas independientes sin justificación, perder el signo de la respuesta sin declararlo, duplicar contribuciones de incertidumbre o declarar conformidad con un criterio ajeno al escenario.
+
+Un error crítico requerirá corrección y una nueva evidencia de aprendizaje. La aprobación exigirá completar las tareas esenciales del nivel y resolver esos errores; una cifra final correcta por compensación de errores no será suficiente. No se evaluarán demostraciones algebraicas.
+
+## 7. Preparación necesaria para implementar el contenido
+
+Antes de impartir la versión ajustada deberán prepararse:
+
+1. **Fichas de método:** pregunta, entradas, resultado, supuestos, operaciones, ejemplo y señales para escalar.
+2. **Paquetes A–D por nivel:** enunciado, datos identificados, diccionario, plantilla, solución y rúbrica. La información necesaria deberá estar disponible al comenzar la práctica.
+3. **Correcciones de contenido:** unificar coeficientes del caso B; retirar conclusiones de precisión con signo derivadas de valores absolutos; corregir la selección de réplicas y las interpretaciones de los casos de control.
+4. **Presupuestos docentes coherentes:** especificar lectura, promedio o uso futuro; justificar referencia, precisión, regresión, covarianzas y cobertura; revisar la función final de incertidumbre.
+5. **Escenarios documentales cerrados:** entregar los criterios necesarios con su fuente y alcance. La verificación de vigencia y adopción institucional se hará al preparar una aplicación real; esta propuesta no constituye esa verificación.
+6. **Herramientas comprobadas:** contrastar plantillas y código contra resultados independientes dentro del alcance que se enseñará, incluida la señalización de falta de convergencia cuando corresponda.
+7. **Anexos matemáticos:** deducción de distribuciones, cuadrados medios esperados, ecuaciones normales, sensibilidades y formulación matricial. Se mantendrán separados de las competencias prácticas obligatorias.
+
+Los defectos de los libros originales se conservarán en copias didácticas identificadas cuando ayuden a enseñar un concepto. El alumno trabajará primero con el problema estadístico; localizar celdas rotas no será una competencia central del curso.
+
+Una vez acordada la propuesta, se actualizarán el generador, el temario y los casos mediante el flujo del proyecto. Este documento propone esos cambios; no certifica que los materiales ni los cálculos operativos ya hayan sido corregidos.
+
+## 8. Criterios para cerrar el contenido antes de calcular horas
+
+El contenido estará listo para dimensionarse cuando:
+
+- Cada competencia tenga una actividad, una herramienta, datos suficientes y una evidencia de aprendizaje.
+- Cada nivel use únicamente métodos enseñados o competencias previas comprobadas.
+- Los casos distingan datos propios, publicados, adaptados y simulados.
+- Las soluciones respeten respuesta, diseño, independencia, covarianzas y resultado de interés.
+- Ningún caso obligue a concluir lo que los datos no permiten.
+- Los materiales no dependan de reconstrucciones improvisadas durante la clase.
+- Los contenidos del nivel anterior puedan reconocerse sin repetirlos íntegramente.
+
+Después se estimarán explicación, práctica guiada, trabajo autónomo, evaluación y retroalimentación, y se contrastará la carga con un piloto. La preparación de materiales se estimará por separado. No se reutilizan aquí las duraciones de las auditorías ni se reduce el alcance para hacer coincidir una cifra previa.
+
+## 9. Fuentes de la propuesta y trazabilidad de decisiones
+
+Esta propuesta es una síntesis curricular de documentos locales. Los hallazgos numéricos y las verificaciones de los libros se atribuyen a esas revisiones; no se presentan como una nueva auditoría independiente.
+
+- [Temario actual](temario_curso.md): identidad del curso, módulos y cadena de aplicación que se conservan.
+- [Revisión A](rev_audits_a.md), §§4, 8–11: condiciones de inferencia, discrepancias técnicas, evaluación y cierre de materiales. Se recogen sus distinciones entre resultado individual, promedio y resultado futuro.
+- [Revisión B](rev_audits_b.md), §§1, 3, 5 y 8: progresión acumulativa, práctica por tema, puentes operativos y competencia de escalamiento. Se limita la autonomía del básico sin suprimir su trabajo estadístico.
+- [Revisión C](rev_audits_c.md), §§4–6: problemas de datos convertidos en actividades y continuidad de M1–M13. Sus propuestas se depuran con las objeciones de A y D; no se adoptan sus horas ni sus calificaciones globales como evidencia de suficiencia.
+- [Revisión D](rev_audits_d.md), §§7–11: separación entre comprobación aritmética y validez del modelo, límites de los datos reales y preparación previa de herramientas.
+- [Caso B actual](casos_taller/caso_B_comparacion_clave.md) y [caso C actual](casos_taller/caso_C_historial_level2.md): materiales que se conservarán como base, ajustando resultados, consignas y alcance conforme a esta propuesta.

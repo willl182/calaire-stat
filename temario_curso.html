@@ -1,0 +1,1301 @@
+<title>Temario Estadística SRP Ozono</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: índice lateral fijo en escritorio + columna de lectura; cada módulo es una ficha con conceptos, aplicación SRP, práctica y referencias. */
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #17222a;
+  --muted: #56636c;
+  --line: #d6dddb;
+  --accent: #0a6b75;
+  --accent-soft: #e2f0f0;
+  --practice: #8f5500;
+  --practice-soft: #fbf0df;
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1417; --surface: #151d21; --ink: #e2e8ea; --muted: #97a3aa; --line: #2a353a;
+    --accent: #56c3cb; --accent-soft: #15302f; --practice: #e3a54c; --practice-soft: #2c2213;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1417; --surface: #151d21; --ink: #e2e8ea; --muted: #97a3aa; --line: #2a353a;
+  --accent: #56c3cb; --accent-soft: #15302f; --practice: #e3a54c; --practice-soft: #2c2213;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+code, .f { font-family: var(--font-mono); font-size: 0.86em; }
+.f { background: var(--accent-soft); padding: 0.05em 0.35em; border-radius: 3px; white-space: nowrap; }
+.f.wrap { white-space: normal; }
+
+.wrap-page { max-width: 1180px; margin: 0 auto; }
+
+/* Cabecera */
+header.top { padding-block: 2.5rem 1.5rem; border-bottom: 1px solid var(--line); display: grid; gap: 1.25rem; }
+.eyebrow { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+header.top h1 { font-size: clamp(1.8rem, 4.2vw, 2.7rem); font-weight: 700; max-width: 22ch; }
+.lede { max-width: 68ch; color: var(--muted); margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem 2rem; margin: 0; }
+.facts div { min-width: 0; }
+.facts dt { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.facts dd { margin: 0.15rem 0 0; }
+
+/* Cadena de trazabilidad */
+.chain { margin-top: 0.5rem; }
+.chain h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.6rem; }
+.chain-scroll { overflow-x: auto; padding-bottom: 0.25rem; }
+.chain ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 0; min-width: 760px; }
+.chain li { position: relative; padding: 0.75rem 1.4rem 0.75rem 0.85rem; background: var(--surface); border: 1px solid var(--line); border-right: none; }
+.chain li:last-child { border-right: 1px solid var(--line); }
+.chain li:not(:last-child)::after { content: "→"; position: absolute; right: 0.35rem; top: 0.7rem; color: var(--accent); font-family: var(--font-display); }
+.chain strong { display: block; font-family: var(--font-display); font-size: 0.95rem; }
+.chain span { display: block; font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+.chain .mods { margin-top: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+
+/* Cuerpo con índice */
+.layout { display: grid; grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+@media (min-width: 980px) { .layout { grid-template-columns: 230px minmax(0, 1fr); gap: 3rem; } }
+nav.toc { font-family: var(--font-display); font-size: 0.88rem; }
+@media (min-width: 980px) { nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.25rem); align-self: start; max-height: calc(100vh - 2.5rem); overflow-y: auto; } }
+nav.toc h2 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.1rem; }
+nav.toc .blk { margin-top: 0.7rem; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+nav.toc a { display: grid; grid-template-columns: 2.1rem 1fr; text-decoration: none; color: var(--ink); padding: 0.18rem 0; line-height: 1.3; }
+nav.toc a:hover { color: var(--accent); }
+nav.toc a b { font-family: var(--font-mono); font-weight: 500; color: var(--accent); font-size: 0.8rem; }
+main { min-width: 0; display: grid; gap: 3rem; }
+
+/* Tablas */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+th { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--bg); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.overview td:first-child { font-family: var(--font-mono); color: var(--accent); white-space: nowrap; }
+.overview tr.block td { background: var(--accent-soft); font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+.overview tfoot td { font-family: var(--font-display); font-weight: 600; border-top: 1px solid var(--line); }
+
+section.intro h2, section.biblio h2, .block-head h2 { font-size: 1.5rem; }
+section.intro { display: grid; gap: 1rem; }
+section.intro p { margin: 0; max-width: 68ch; }
+
+/* Bloques y módulos */
+.block-head { display: grid; gap: 0.3rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--accent); }
+.block-head .eyebrow { font-size: 0.75rem; }
+.block-head p { margin: 0; color: var(--muted); max-width: 68ch; }
+.block { display: grid; gap: 1.75rem; }
+
+article.mod { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem clamp(1rem, 3vw, 2rem); display: grid; gap: 1.1rem; scroll-margin-top: 1rem; }
+article.mod.core { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.mod-head { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; align-items: baseline; }
+.mod-num { font-family: var(--font-mono); font-size: 1.9rem; color: var(--accent); line-height: 1; grid-row: span 2; }
+.mod-head h3 { font-size: 1.3rem; font-weight: 600; }
+.meta { display: flex; flex-wrap: wrap; gap: 0.4rem; font-family: var(--font-display); font-size: 0.78rem; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.08rem 0.6rem; color: var(--muted); white-space: nowrap; }
+.chip.lvl { color: var(--accent); border-color: var(--accent); }
+.chip.key { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.goal { margin: 0; font-style: italic; color: var(--ink); max-width: 68ch; }
+.goal::before { content: "Objetivo. "; font-style: normal; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.02em; }
+
+.parts { display: grid; gap: 1.1rem; }
+@media (min-width: 760px) { .parts.two { grid-template-columns: 1fr 1fr; gap: 1.1rem 2rem; } }
+.part { min-width: 0; }
+.part h4 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.35rem; }
+.part ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.part li { padding-left: 0.1rem; }
+.part p { margin: 0 0 0.4rem; }
+.practice { background: var(--practice-soft); border-radius: 6px; padding: 0.85rem 1rem; }
+.practice h4 { color: var(--practice); }
+.note { border-left: 3px solid var(--accent); padding: 0.3rem 0 0.3rem 0.85rem; margin: 0; color: var(--ink); max-width: 72ch; }
+
+.refs { border-top: 1px dashed var(--line); padding-top: 0.8rem; }
+.refs h4 { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; }
+.refs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; font-size: 0.9rem; }
+@media (min-width: 760px) { .refs ul { grid-template-columns: 1fr 1fr; gap: 0.25rem 2rem; } }
+.refs li { min-width: 0; color: var(--muted); }
+.refs a { font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid currentColor; }
+
+/* Bibliografía */
+section.biblio { display: grid; gap: 1.5rem; }
+.bib-group h3 { font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+.bib-group dl { margin: 0; display: grid; gap: 0.6rem; }
+.bib-group dl > div { display: grid; grid-template-columns: 1fr; gap: 0.1rem; scroll-margin-top: 1rem; padding: 0.35rem 0.5rem; border-radius: 4px; }
+.bib-group dl > div:target { background: var(--accent-soft); }
+@media (min-width: 760px) { .bib-group dl > div { grid-template-columns: 11rem 1fr; gap: 1rem; } }
+.bib-group dt { font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; }
+.bib-group dd { margin: 0; min-width: 0; }
+.bib-group dd code { color: var(--muted); font-size: 0.8rem; word-break: break-all; }
+.bib-group dd .used { display: block; font-family: var(--font-display); font-size: 0.75rem; color: var(--muted); }
+
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+</style>
+
+<style>.concepts td:nth-child(3){white-space:nowrap;font-family:var(--font-mono);font-size:.82rem;color:var(--accent)}.concepts td:first-child{font-family:var(--font-display);font-weight:600;font-size:.9rem;min-width:11rem}.concepts td:last-child{font-size:.85rem;color:var(--muted);min-width:12rem}.concepts td:last-child a{font-family:var(--font-display);font-weight:600;font-size:.82rem}.concepts tr.block td{background:var(--accent-soft);font-family:var(--font-display);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--ink)}section.concepts-sec{display:grid;gap:1rem}section.concepts-sec p{margin:0;max-width:68ch}.base{margin:0;font-family:var(--font-display);font-size:.8rem;color:var(--muted);letter-spacing:.02em}</style>
+<div class="wrap-page">
+<header class="top">
+  <div class="eyebrow">Propuesta de temario · Laboratorio designado de ozono</div>
+  <h1>Estadística aplicada a la fotometría de ozono con el SRP</h1>
+  <p class="lede">Curso de estadística para los operadores del SRP de CALAIRE, laboratorio designado por el INM. Desarrolla la estadística a medida que la necesita el trabajo del laboratorio, desde las lecturas del SRP hasta la comparación con el BIPM, la calibración de los fotómetros del país y el mantenimiento del patrón Level 2.</p>
+  <dl class="facts">
+    <div><dt>Público</dt><dd>Operadores del SRP de CALAIRE, laboratorio designado por el INM</dd></div>
+    <div><dt>Duración</dt><dd>62 h de núcleo (12 módulos y taller final) + 4 h optativas</dd></div>
+    <div><dt>Caso integrador</dt><dd>Calibración del Level 2 de CALAIRE (Thermo 49C) contra el SRP 55, certificado F-PSMT-01: 12 puntos × 8 repeticiones × 6 días</dd></div>
+    <div><dt>Niveles</dt><dd>B básico · I intermedio · A avanzado</dd></div>
+  </dl>
+  <div class="chain" aria-label="Cadena de trazabilidad del ozono">
+    <h2>Cadena de trazabilidad y módulos que la cubren</h2>
+    <div class="chain-scroll">
+      <ol>
+        <li><strong>BIPM-SRP27</strong><span>Referencia común de la comparación clave BIPM.QM-K1</span><div class="mods">M9</div></li>
+        <li><strong>SRP 55 (NIST)</strong><span>Patrón Nivel 1 de CALAIRE, laboratorio designado</span><div class="mods">M1 · M3 · M8 · M11</div></li>
+        <li><strong>Level 2: Thermo 49C</strong><span>Patrón de uso diario; caso integrador del curso</span><div class="mods">M2–M8 · M11</div></li>
+        <li><strong>Fotómetros del país</strong><span>Clientes calibrados con certificado y CMC</span><div class="mods">M7 · M8 · M10</div></li>
+        <li><strong>Redes de monitoreo</strong><span>Uso del certificado en verificaciones y auditorías</span><div class="mods">M12</div></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+<nav class="toc" aria-label="Índice">
+  <h2>Índice</h2>
+  <ol>
+    <li><a href="#resumen"><b>—</b>Mapa del curso</a></li>
+    <li class="blk">I · Medición y tratamiento estadístico de las lecturas</li>
+    <li><a href="#m1"><b>M1</b>Fotometría UV y trazabilidad</a></li>
+    <li><a href="#m2"><b>M2</b>Estadística descriptiva</a></li>
+    <li><a href="#m3"><b>M3</b>Probabilidad y distribuciones</a></li>
+    <li><a href="#m4"><b>M4</b>Inferencia estadística</a></li>
+    <li class="blk">II · La calibración por comparación</li>
+    <li><a href="#m5"><b>M5</b>Diseño de experimentos</a></li>
+    <li><a href="#m6"><b>M6</b>Análisis de varianza y precisión</a></li>
+    <li><a href="#m7"><b>M7</b>Análisis de regresión</a></li>
+    <li><a href="#m8"><b>M8</b>Incertidumbre de medida y CMC</a></li>
+    <li class="blk">III · Diseminación de la trazabilidad</li>
+    <li><a href="#m9"><b>M9</b>Comparaciones clave</a></li>
+    <li><a href="#m10"><b>M10</b>Conformidad y certificado</a></li>
+    <li><a href="#m11"><b>M11</b>Control estadístico de los patrones</a></li>
+    <li><a href="#m12"><b>M12</b>Precisión y sesgo en redes</a></li>
+    <li class="blk">Cierre</li>
+    <li><a href="#taller"><b>T</b>Taller integrador</a></li>
+    <li><a href="#m13"><b>M13</b>Temas avanzados</a></li>
+    <li class="blk">Referencia</li>
+    <li><a href="#conceptos"><b>—</b>Conceptos estadísticos</a></li>
+    <li><a href="#bibliografia"><b>—</b>Bibliografía</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section class="intro" id="resumen">
+  <h2>Mapa del curso</h2>
+  <p>El curso avanza con el trabajo del laboratorio y cada concepto estadístico aparece cuando la tarea lo necesita, apoyado en los anteriores. Primero se ve qué mide el SRP y cómo; con sus lecturas se aprende a describir datos, a modelar su variación con probabilidad y distribuciones (lo que explica el ruido del SRP) y a sacar conclusiones con pocas lecturas. Esa inferencia permite planear la comparación (diseño experimental), separar sus fuentes de variación (ANOVA), ajustar la recta (regresión) y expresar el resultado con su incertidumbre. Al final, todo se aplica a lo que solo hace el laboratorio designado: la comparación con el BIPM, la decisión y el certificado, el control diario de sus patrones y la relación con las redes. Cada módulo indica en qué módulos anteriores se apoya.</p>
+  <div class="tbl">
+    <table class="overview">
+      <thead><tr><th>Módulo</th><th>Tema</th><th>Nivel</th><th class="num">Horas</th></tr></thead>
+      <tbody>
+        <tr class="block"><td colspan="4">I · Medición y tratamiento estadístico de las lecturas</td></tr>
+        <tr><td>M1</td><td>Fundamentos de la fotometría UV de ozono y trazabilidad metrológica</td><td>B</td><td class="num">4</td></tr>
+        <tr><td>M2</td><td>Estadística descriptiva y análisis exploratorio de datos</td><td>B</td><td class="num">4</td></tr>
+        <tr><td>M3</td><td>Probabilidad, variables aleatorias y distribuciones</td><td>B–I</td><td class="num">5</td></tr>
+        <tr><td>M4</td><td>Inferencia estadística: estimación y contraste de hipótesis</td><td>I</td><td class="num">5</td></tr>
+        <tr class="block"><td colspan="4">II · La calibración por comparación</td></tr>
+        <tr><td>M5</td><td>Diseño de experimentos aplicado a la calibración por comparación</td><td>I</td><td class="num">5</td></tr>
+        <tr><td>M6</td><td>Análisis de varianza y evaluación de la precisión</td><td>I–A</td><td class="num">7</td></tr>
+        <tr><td>M7</td><td>Análisis de regresión y funciones de calibración</td><td>I</td><td class="num">5</td></tr>
+        <tr><td>M8</td><td>Evaluación de la incertidumbre de medida y capacidad de medición y calibración</td><td>I</td><td class="num">6</td></tr>
+        <tr class="block"><td colspan="4">III · Diseminación de la trazabilidad</td></tr>
+        <tr><td>M9</td><td>Comparaciones clave: mínimos cuadrados generalizados y grado de equivalencia</td><td>I–A</td><td class="num">4</td></tr>
+        <tr><td>M10</td><td>Evaluación de la conformidad y certificado de calibración</td><td>I</td><td class="num">3</td></tr>
+        <tr><td>M11</td><td>Control estadístico de procesos y aseguramiento de la validez de los patrones</td><td>I</td><td class="num">3</td></tr>
+        <tr><td>M12</td><td>Indicadores de precisión y sesgo en las redes de monitoreo</td><td>I</td><td class="num">3</td></tr>
+        <tr class="block"><td colspan="4">Cierre</td></tr>
+        <tr><td>T</td><td>Taller integrador: casos reales del laboratorio</td><td>I–A</td><td class="num">8</td></tr>
+        <tr><td>M13</td><td>Temas avanzados (optativo)</td><td>A</td><td class="num">4</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">Núcleo / con optativo</td><td class="num">62 / 66</td></tr></tfoot>
+    </table>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="bI">
+  <div class="block-head">
+    <div class="eyebrow">Bloque I</div>
+    <h2 id="bI">Medición y tratamiento estadístico de las lecturas</h2>
+    <p>Qué mide el SRP y cómo, y la estadística que hace falta para entender sus lecturas: describirlas, modelar su variación como variable aleatoria y saber qué se puede concluir de unas pocas.</p>
+  </div>
+
+  <article class="mod" id="m1">
+    <div class="mod-head">
+      <div class="mod-num">M1</div>
+      <h3>Fundamentos de la fotometría UV de ozono y trazabilidad metrológica</h3>
+      <div class="meta"><span class="chip lvl">B</span><span class="chip">4 h</span></div>
+    </div>
+    <p class="goal">Comprender el principio de medida del SRP, su ecuación de medida y la posición del laboratorio en la cadena de trazabilidad del ozono.</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Medición y trazabilidad</h4>
+        <ul>
+          <li>Mensurando: la fracción molar de O₃ en nmol/mol.</li>
+          <li>Error, sesgo, corrección, exactitud, veracidad y precisión: el vocabulario que el resto del curso cuantifica.</li>
+          <li>Calibración, verificación y ajuste: tres actos distintos.</li>
+          <li>Trazabilidad metrológica: cadena documentada e ininterrumpida, con incertidumbre en cada eslabón.</li>
+          <li>CIPM MRA, laboratorio designado y CMC publicadas en la KCDB.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Cómo mide el SRP</h4>
+        <ul>
+          <li>Ley de Beer-Lambert; absorbancia natural frente a decimal.</li>
+          <li>Ecuación de medida: <span class="f">x = −R·T / (2·σ·L·N<sub>A</sub>·P) · ln D</span>.</li>
+          <li>Medida diferencial con dos celdas: <span class="f">D = (f<sub>11</sub>·f<sub>22</sub>)/(f<sub>21</sub>·f<sub>12</sub>)</span> cancela la deriva común de la lámpara.</li>
+          <li>Correcciones de temperatura y presión.</li>
+          <li>La sección eficaz σ es parte del modelo y depende de la temperatura y de la longitud de onda.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>Cadena propia: BIPM-SRP27 → SRP 55 → Level 2 → fotómetros y analizadores del país; contraste con NIST → SRP de la EPA → Level 2/3 → estaciones.</li>
+          <li>Línea de Hg de 253,7 nm, celdas de unos 89,5 cm, semiciclos de 5 s, rango 0–1000 nmol/mol.</li>
+          <li>Sección eficaz: de 1,147 a 1,1329(35)×10⁻¹⁷ cm²/molécula (304,39 atm⁻¹ cm⁻¹) desde 2025. Los resultados suben un 1,25 %; con el par 308,32/304,39 sale 1,29 %. Siempre hay que declarar el valor y sus unidades.</li>
+          <li>Cerca de 253,6 nm, σ baja alrededor de 1 % entre 218 y 295 K.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Dibujar la cadena del laboratorio con fechas, criterios e incertidumbre de cada eslabón.</li>
+        <li>Recalcular 80, 420 y 500 nmol/mol con la sección eficaz antigua y la nueva.</li>
+        <li>Comparar la dependencia térmica de σ en 210 nm, 253,6 nm y la banda de Huggins.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§4.3–4.4 (error, sesgo, exactitud, precisión)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> caps. 2–3</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §2.3.6 y cap. 7</li>
+        <li><a href="#b-gum1">JCGM GUM-1</a></li>
+        <li><a href="#b-nistir">NISTIR 6963</a> §§4–8</li>
+        <li><a href="#b-srp6008">NIST SRP 6008</a> pp. 1–2</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> §§1–1.1; Apéndice 1, ec. 8</li>
+        <li><a href="#b-cfr50d">40 CFR 50, Apéndice D</a> §§2.2 y 4.1</li>
+        <li><a href="#b-13964">ISO 13964</a> §7.1</li>
+        <li><a href="#b-daumont">Daumont et al. 1992</a> §§2–3, Tabla II</li>
+        <li><a href="#b-malicet">Malicet et al. 1995</a> §3, Tablas III–IV</li>
+        <li><a href="#b-mw">Mark y Workman</a> cap. 29 (ley de Beer)</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Elementos 4–6 y 10</li>
+        <li><a href="#b-sop">SRP SOP</a> §§1.2–1.3</li>
+        <li><a href="#b-tad">EPA TAD</a> §§2.1–2.9</li>
+        <li><a href="#b-17025">ISO/IEC 17025</a> §§6.4–6.5</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m2">
+    <div class="mod-head">
+      <div class="mod-num">M2</div>
+      <h3>Estadística descriptiva y análisis exploratorio de datos</h3>
+      <div class="meta"><span class="chip lvl">B</span><span class="chip">4 h</span></div>
+    </div>
+    <p class="goal">Resumir y representar un conjunto de lecturas con las medidas y gráficos adecuados, e identificar y tratar con criterio los valores atípicos.</p>
+    <p class="base">Se apoya en M1</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Población y muestra; parámetro y estadístico.</li>
+          <li>Tipos de variables y escalas de medida (nominal, ordinal, de intervalo y de razón).</li>
+          <li>Notación de sumatoria.</li>
+          <li>Distribución de frecuencias, histograma, percentiles, cuartiles y diagrama de caja.</li>
+          <li>Tendencia central: media, mediana y moda, y cuándo usar cada una.</li>
+          <li>Dispersión: rango, rango intercuartílico, varianza y desviación estándar muestral (por qué se divide por n − 1), coeficiente de variación, error estándar <span class="f">s/√n</span>.</li>
+          <li>Puntuación z, asimetría y curtosis.</li>
+          <li>Cifras significativas y reglas de redondeo; redondear una sola vez, al final.</li>
+          <li>Valores atípicos: un dato es atípico respecto de un modelo. Con n observaciones, <span class="f">P = 1 − (1 − P<sub>i</sub>)^n</span>. Pruebas de Grubbs (simple y doble), Dixon y Cochran; estadísticos h y k de Mandel. Ningún dato se elimina sin una causa documentada.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>BIPM: 10 lecturas por punto; el conjunto se acepta si s<sub>SRP27</sub> &lt; 1 nmol/mol.</li>
+          <li>Calibración del Level 2 (certificado F-PSMT-01): 8 réplicas por punto y por día, 48 lecturas por nivel.</li>
+          <li>Las lecturas de cero negativas son ruido, no ozono físico: por qué no se truncan a cero.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Con las 48 lecturas de un nivel del certificado: tabla de frecuencias, histograma, diagrama de caja, media, mediana, s y CV.</li>
+        <li>Con un día: media y s por punto, serie de lecturas y decisión sobre un extremo con una lista de verificación (cero, purga, estabilización, celda).</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-sc">Statistical Concepts</a> §§1.3–1.5 (definiciones, variables, escalas)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§2.1–2.3 (distribuciones, histograma, percentiles)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§3.1–3.3 (sumatoria, tendencia central, dispersión)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§4.2–4.3 (puntuación z, asimetría, curtosis)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §4.3 (análisis exploratorio)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.1 (cifras significativas, redondeo); §3.2.2</li>
+        <li><a href="#b-otto">Otto</a> §2.2, Tablas 2.10–2.11 (Dixon, Grubbs)</li>
+        <li><a href="#b-5725">ISO 5725</a> Parte 2: Cochran, Grubbs, Mandel y tablas</li>
+        <li><a href="#b-mw">Mark y Workman</a> caps. 119–121 (valores atípicos)</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> §5</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> Tabla 2</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m3">
+    <div class="mod-head">
+      <div class="mod-num">M3</div>
+      <h3>Probabilidad, variables aleatorias y distribuciones</h3>
+      <div class="meta"><span class="chip lvl">B–I</span><span class="chip">5 h</span></div>
+    </div>
+    <p class="goal">Modelar la variabilidad de una medida mediante variables aleatorias y distribuciones de probabilidad, y aplicar las propiedades de la esperanza y la varianza al ruido del SRP.</p>
+    <p class="base">Se apoya en M1 · M2</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Probabilidad: definición y reglas básicas.</li>
+          <li>Variable aleatoria discreta y continua; función de densidad y función de distribución acumulada.</li>
+          <li>Esperanza y varianza de una variable aleatoria.</li>
+          <li>Reglas para combinaciones lineales: <span class="f">E[aX + bY] = a·E[X] + b·E[Y]</span> y <span class="f">Var(aX + bY) = a²·Var X + b²·Var Y + 2ab·Cov(X,Y)</span>. Es la base de la ley de propagación de M8.</li>
+          <li>Covarianza y coeficiente de correlación.</li>
+          <li>Distribuciones y su uso: normal y normal estándar; rectangular (<span class="f">u = a/√3</span>; resolución <span class="f">δ/√12</span>); triangular (<span class="f">u = a/√6</span>); t de Student; chi-cuadrado; F.</li>
+          <li>Estimar los parámetros de una distribución y evaluar el ajuste: histograma y gráfico de probabilidad normal.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>¿Son normales las lecturas de un nivel? ¿Y las del cero?</li>
+          <li>La resolución del analizador (0,1 nmol/mol) como variable rectangular.</li>
+          <li>Ruido de conteo: la cuantización de ±0,5 cuentas es una variable rectangular, <span class="f">0,5/√3</span> cuentas.</li>
+          <li>Primera propagación con las reglas de la varianza: <span class="f">u(x)/x = u(D)/|D·ln D|</span>. Con U(D) = 0,000017, U(x) ≈ 0,31 nmol/mol en todo el rango: 17 % a 1,8 nmol/mol y 0,06 % a 553 nmol/mol. El cero está limitado por la fotometría.</li>
+          <li>Varianza de un promedio: promediar n lecturas reduce el ruido como 1/√n solo si son independientes; no reduce deriva ni sesgos.</li>
+          <li>Covarianza en acción: la razón real entre canales tiene s = 0,000012, frente a 0,000089 si se supone independencia.</li>
+          <li>Dos puntos medidos con el mismo patrón tienen covarianza: anticipo del término <span class="f">u<sub>b</sub></span> del SRP27.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>NISTIR 6963, Tabla 5: de D a x y U(x) en cinco niveles.</li>
+        <li>NISTIR 6963, Tabla 2: nueve lecturas de cero con valores negativos. ¿Hay ozono negativo?</li>
+        <li>Con las 48 lecturas de un nivel: histograma y gráfico de probabilidad normal.</li>
+        <li>Deducir la desviación estándar de una distribución rectangular y comprobarla con números aleatorios.</li>
+        <li>Verificar con datos simulados la regla de la varianza de una suma, con y sin covarianza.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-sc">Statistical Concepts</a> §4.1 (normal)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §5.1 (probabilidad)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §8.2 (chi-cuadrado)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §9.1.1 (distribución F)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§3.2.1–3.2.5 (variable aleatoria, densidad, media y s de una distribución, rectangular, triangular, normal, t)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §4.4 (distribuciones, estimación de parámetros, ajuste)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §7.2 y §7.4.1 (base matemática, covarianza y correlación)</li>
+        <li><a href="#b-brereton">Brereton</a> apéndice A (distribuciones y tablas)</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> §§8–11, Tablas 2, 3 y 5</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> Apéndice 1, ec. 11</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m4">
+    <div class="mod-head">
+      <div class="mod-num">M4</div>
+      <h3>Inferencia estadística: estimación y contraste de hipótesis</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">5 h</span></div>
+    </div>
+    <p class="goal">Estimar parámetros y contrastar hipótesis sobre un instrumento a partir de una muestra de lecturas, cuantificando el riesgo de cada decisión.</p>
+    <p class="base">Se apoya en M2 · M3</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Muestreo aleatorio; estimador y estadístico; sesgo y varianza de un estimador; grados de libertad.</li>
+          <li>Distribución muestral de la media y teorema central del límite; error estándar.</li>
+          <li>Intervalo de confianza para una media (normal y t) y su interpretación.</li>
+          <li>Prueba de hipótesis: H<sub>0</sub> y H<sub>1</sub>, estadístico de prueba, región crítica, nivel α y valor p.</li>
+          <li>Errores tipo I y II, potencia y tamaño del efecto; tamaño de muestra (<span class="f">n ≈ 15·(S/D)²</span> como regla rápida).</li>
+          <li>Prueba t para una media; para dos medias independientes (incluida la versión de Welch) y para datos pareados.</li>
+          <li>Pruebas sobre varianzas: una varianza (chi-cuadrado) y dos varianzas (F).</li>
+          <li>Prueba chi-cuadrado de bondad de ajuste.</li>
+          <li>Supuestos (independencia, normalidad) y cómo verificarlos.</li>
+          <li>Significación estadística frente a relevancia metrológica; comparaciones múltiples.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>¿El sesgo de un fotómetro en un nivel es distinto de cero?</li>
+          <li>SRP y fotómetro midiendo el mismo gas: el caso natural de la prueba t pareada.</li>
+          <li>¿Cambió la dispersión del Level 2 de un año a otro? Prueba F.</li>
+          <li>¿Cuántas réplicas hacen falta para detectar 1 nmol/mol?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Intervalo de confianza al 95 % de la media de un nivel, con t.</li>
+        <li>Prueba t pareada SRP frente a Level 2 en un día del certificado.</li>
+        <li>Prueba F entre las varianzas de dos días; cálculo de potencia para un sesgo de 1 nmol/mol.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-sc">Statistical Concepts</a> §5.2 (muestreo, estimación, distribuciones muestrales)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§6.1, 6.4 (una media: potencia, tamaño del efecto, supuestos)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§7.1–7.2 (dos medias independientes y dependientes)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§8.2–8.3 (chi-cuadrado)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§9.1–9.3 (varianzas)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§3.2.5.5–3.2.5.9 (t de Student, efecto de N)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §4.4.2</li>
+        <li><a href="#b-brereton">Brereton</a> apéndice A.3 (tablas t y F)</li>
+        <li><a href="#b-mw">Mark y Workman</a> cap. 15 (tamaño de muestra)</li>
+        <li><a href="#b-asq">ASQ Metrology Handbook</a> cap. 27</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="block" aria-labelledby="bII">
+  <div class="block-head">
+    <div class="eyebrow">Bloque II</div>
+    <h2 id="bII">La calibración por comparación</h2>
+    <p>Con esa base se planea la comparación, se separan las fuentes de variación, se ajusta la recta y se expresa el resultado con su incertidumbre.</p>
+  </div>
+
+  <article class="mod" id="m5">
+    <div class="mod-head">
+      <div class="mod-num">M5</div>
+      <h3>Diseño de experimentos aplicado a la calibración por comparación</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">5 h</span></div>
+    </div>
+    <p class="goal">Planificar experimentos que permitan estimar los efectos de interés y separar las fuentes de variación, y aplicarlos a las comparaciones del laboratorio.</p>
+    <p class="base">Se apoya en M4</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Respuesta, factores, niveles y unidad experimental.</li>
+          <li>Aleatorización y bloques; el día como bloque.</li>
+          <li>Replicación verdadera frente a pseudorreplicación: diez lecturas seguidas no son diez réplicas independientes.</li>
+          <li>Diseños anidados (lecturas dentro de corridas, corridas dentro de días) y anidados escalonados para la precisión intermedia.</li>
+          <li>Factorial completo (<span class="f">N = ∏ n<sub>i</sub></span>; 2^k con k factores a dos niveles): efectos principales e interacciones.</li>
+          <li>Un factor a la vez frente a un factorial; estudios de robustez.</li>
+          <li>Potencia aplicada al diseño (M4): cuántas corridas para detectar un efecto dado.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>Robustez del SRP y del Level 2: flujo, tiempo de acondicionamiento, temperatura del laboratorio y calentamiento. Hoy esos efectos se suponen o se toman de la literatura.</li>
+          <li>Los ensayos de sensibilidad de la EN 14625 son diseños de un factor a la vez: presión a 80 y 110 kPa, gas a 0 y 30 °C, tres mediciones por condición.</li>
+          <li>Validación del Level 2 como método del laboratorio (ISO/IEC 17025 §7.2.2).</li>
+          <li>¿Cuántas corridas hacen falta para detectar un cambio de pendiente de 0,005 en el Level 2?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part">
+      <h4>Diseños reales de comparación que conviene contrastar</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Documento</th><th>Diseño</th></tr></thead>
+          <tbody>
+            <tr><td>BIPM.QM-K1</td><td>12 niveles: 0, 220, 80, 420, 120, 320, 30, 370, 170, 500, 270, 0 nmol/mol. 10 lecturas por punto. Estabilización ≥ 8 h; acondicionar ≥ 2 h con más de 500 nmol/mol.</td></tr>
+            <tr><td>SRP QAPP</td><td>12 concentraciones con ceros, 10 lecturas, ≥ 3 ciclos.</td></tr>
+            <tr><td>SRP SOP</td><td>Igual, pero ≥ 6 ciclos. La diferencia con el QAPP se enseña tal cual.</td></tr>
+            <tr><td>EPA TAD (Level 2/3)</td><td>3 ciclos, cada uno con cero y ≥ 6 concentraciones.</td></tr>
+            <tr><td>EN 14625 (linealidad)</td><td>≥ 6 niveles, ≥ 5 lecturas, secuencia 80-40-0-60-20-95 %.</td></tr>
+            <tr><td>ISO 13964</td><td>Cero y ≥ 5 concentraciones.</td></tr>
+            <tr><td>Calibración del Level 2 de CALAIRE (certificado F-PSMT-01)</td><td>12 puntos × 8 repeticiones × 6 días.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Diseñar un factorial 2³ de robustez del Level 2 (flujo, acondicionamiento, temperatura) con el día como bloque, y decir qué efectos e interacciones se podrán estimar.</li>
+        <li>Identificar qué fuentes de variación puede separar cada diseño de la tabla y cuáles quedan confundidas.</li>
+        <li>Analizar el diseño que usa hoy la calibración del Level 2 (12 × 8 × 6): qué fuentes separa, cuáles confunde y si los 6 días bastan para estimar la componente entre días.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §9.2 (experimentos factoriales en metrología)</li>
+        <li><a href="#b-brereton">Brereton</a> cap. 2 (diseño experimental, factoriales)</li>
+        <li><a href="#b-mw">Mark y Workman</a> caps. 8–16</li>
+        <li><a href="#b-5725">ISO 5725</a> Parte 3: diseños anidados escalonados</li>
+        <li><a href="#b-14625">EN 14625</a> §§8.4.6–8.4.8</li>
+        <li><a href="#b-17025">ISO/IEC 17025</a> §7.2.2</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> protocolo A §§3–7; protocolo B §§5–8</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Elementos 6.2.1 y 7.1, Tabla 7-1</li>
+        <li><a href="#b-sop">SRP SOP</a> §§9.7.19–9.7.20</li>
+        <li><a href="#b-tad">EPA TAD</a> Tabla 4-1</li>
+        <li><a href="#b-13964">ISO 13964</a> §6.2</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> §§8–10 (independencia de los ciclos)</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m6">
+    <div class="mod-head">
+      <div class="mod-num">M6</div>
+      <h3>Análisis de varianza y evaluación de la precisión</h3>
+      <div class="meta"><span class="chip lvl">I–A</span><span class="chip">7 h</span></div>
+    </div>
+    <p class="goal">Descomponer la variabilidad mediante el análisis de varianza, estimar la repetibilidad, la precisión intermedia y sus componentes, y diseñar e interpretar estudios de repetibilidad y reproducibilidad.</p>
+    <p class="base">Se apoya en M4 · M5</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría 1 · Modelo y descomposición de la variación</h4>
+        <ul>
+          <li>Modelo de un factor <span class="f">y<sub>ij</sub> = μ + τ<sub>i</sub> + ε<sub>ij</sub></span>; supuestos: errores independientes, normales y de varianza común.</li>
+          <li>Descomposición de sumas de cuadrados: <span class="f">SS<sub>total</sub> = SS<sub>entre</sub> + SS<sub>dentro</sub></span>, con <span class="f">a − 1</span> y <span class="f">N − a</span> grados de libertad.</li>
+          <li>Cuadrados medios y prueba <span class="f">F = MS<sub>entre</sub>/MS<sub>dentro</sub></span>: por qué el cociente sigue una distribución F cuando no hay efecto.</li>
+          <li>Modelo de dos factores cruzados con interacción: <span class="f">y<sub>ijk</sub> = μ + A<sub>i</sub> + D<sub>j</sub> + (AD)<sub>ij</sub> + ε<sub>ijk</sub></span>. Qué significa la interacción y cuándo hace falta réplica para estimarla.</li>
+          <li>Diseño cruzado (todos los niveles de un factor con todos los del otro) frente a anidado (cada nivel de un factor aparece dentro de uno solo del otro, como lecturas dentro de ciclos y ciclos dentro de días).</li>
+          <li>Revisión de supuestos con residuos; heterocedasticidad entre niveles de concentración y por qué obliga a analizar cada nivel por separado o a modelar la varianza.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Teoría 2 · Efectos aleatorios y componentes de varianza</h4>
+        <ul>
+          <li>Efecto fijo (interesan esos niveles concretos) frente a efecto aleatorio (los niveles son una muestra de una población: días, analistas). Modelo mixto.</li>
+          <li>Cuadrados medios esperados del modelo cruzado de efectos aleatorios con r réplicas: <span class="f">E[MS<sub>e</sub>] = σ<sub>e</sub>²</span>; <span class="f">E[MS<sub>AD</sub>] = σ<sub>e</sub>² + r·σ<sub>AD</sub>²</span>; <span class="f">E[MS<sub>D</sub>] = σ<sub>e</sub>² + r·σ<sub>AD</sub>² + a·r·σ<sub>D</sub>²</span>; <span class="f">E[MS<sub>A</sub>] = σ<sub>e</sub>² + r·σ<sub>AD</sub>² + d·r·σ<sub>A</sub>²</span>.</li>
+          <li>Estimadores por el método de los momentos: <span class="f">σ̂<sub>A</sub>² = (MS<sub>A</sub> − MS<sub>AD</sub>)/(d·r)</span> y análogos. Estimaciones negativas: qué significan y cómo se informan.</li>
+          <li>La prueba correcta de un efecto aleatorio usa como denominador el cuadrado medio cuyo valor esperado coincide salvo por ese efecto: el analista se contrasta contra MS<sub>AD</sub>, no contra MS<sub>e</sub>.</li>
+          <li>Cuadrados medios esperados en un diseño anidado; diseño anidado escalonado para estimar varias componentes con pocos ensayos.</li>
+          <li>Grados de libertad de cada componente y de su combinación (Welch-Satterthwaite): una componente estimada con 1 o 2 grados de libertad es muy imprecisa, y solo mejora aumentando el número de niveles de ese factor.</li>
+          <li>Réplica verdadera frente a pseudorréplica: las lecturas consecutivas de un mismo ciclo subestiman la repetibilidad.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Teoría 3 · Precisión y estudios R&amp;R</h4>
+        <ul>
+          <li>Modelo de la ISO 5725 <span class="f">y = m + B + e</span>; repetibilidad s<sub>r</sub>, reproducibilidad s<sub>R</sub> y precisión intermedia con M factores (tiempo, operador, equipo, calibración): <span class="f">s<sub>I(T,O)</sub> = √(σ<sub>e</sub>² + σ<sub>T</sub>² + σ<sub>O</sub>² + …)</span>.</li>
+          <li>Límites <span class="f">r = 2,8·s<sub>r</sub></span> y <span class="f">R = 2,8·s<sub>R</sub></span>; veracidad frente a un valor de referencia.</li>
+          <li>Estudio R&amp;R como ANOVA de efectos aleatorios: repetibilidad = σ<sub>e</sub>², reproducibilidad = σ<sub>operador</sub>² + σ<sub>interacción</sub>², R&amp;R = suma de ambas.</li>
+          <li>El %R&amp;R y el número de categorías distintas comparan el R&amp;R con la variación entre piezas. Cuando las "piezas" son niveles de concentración fijados por diseño, esa variación no es del proceso y esos índices pierden sentido: en calibración se usa el marco de la ISO 5725-3.</li>
+          <li>Una prueba t entre dos operadores contrasta medias; no estima componentes de varianza. Un resultado no significativo con pocos operadores no demuestra que la reproducibilidad sea despreciable.</li>
+          <li>Las componentes estimadas por ANOVA son evaluaciones tipo A que entran al presupuesto de incertidumbre (GUM, Anexo H.5); s<sub>R</sub> solo cubre las fuentes que variaron en el estudio.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>Estudio R&amp;R de CALAIRE 2022–2023: para cada nivel, el libro apila tres campañas de calibración del Level 2 (116/118 de enero de 2022, 142/143 de agosto de 2022 y 171/173 de febrero de 2023), cada una de 6 días, con un error medio por día. Cada analista hizo su propia calibración: los días están anidados en analista × campaña, y el "día 1" de un analista no es el del otro. Identificar esta estructura es el primer paso; una prueba t sobre las 18 cifras de cada analista la ignora.</li>
+          <li>Analizado con el modelo analista × campaña con días anidados: no hay efecto medio del analista (F ≤ 1,24 frente a F<sub>0,05; 1, 2</sub> = 18,5, una prueba de muy poca potencia), pero la interacción analista × campaña es significativa en 135, 360, 405 y 455 ppb (F de 4,3 a 6,6 frente a F<sub>0,05; 2, 30</sub> = 3,32): la diferencia entre analistas cambia de una campaña a otra, y esa interacción forma parte de la reproducibilidad.</li>
+          <li>La variación entre días dentro de una campaña es de 0,11 a 0,21 ppb; la componente entre campañas crece con la concentración y domina en 405 y 455 ppb, donde destaca la campaña de agosto de 2022 del analista 2 (errores medios de 0,73 y 0,83 ppb frente a unos 0,2 en las demás).</li>
+          <li>Diseño que permite estimar repetibilidad, día y analista: varios analistas × varios días × al menos 2 ciclos independientes por analista y día, con orden sorteado. Para la componente entre analistas, los grados de libertad dependen del número de analistas, no del número de lecturas.</li>
+          <li>Para un solo laboratorio sirve la Parte 3 de la ISO 5725; las Partes 2 y 4 son para estudios interlaboratorio.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Identificar la estructura de un diseño antes de analizarlo: a partir de la descripción de un estudio (quién midió, cuándo, cuántas veces), reconocer los factores, decidir si están cruzados o anidados, identificar la unidad de réplica y escribir el modelo con sus cuadrados medios esperados. Ejemplo: el estudio R&amp;R de CALAIRE, cuyos días están anidados en analista × campaña; analizarlo como si los días fueran comunes a los dos analistas cambia la conclusión.</li>
+        <li>Construir a mano la tabla ANOVA de un nivel del certificado (SS, g.l., MS, F) y revisar los supuestos con los residuos.</li>
+        <li>Deducir los cuadrados medios esperados de un modelo cruzado de dos factores con réplicas y de un modelo con un factor anidado, y a partir de ellos los estimadores de cada componente y la prueba correcta de cada efecto.</li>
+        <li>Reanalizar el estudio R&amp;R de CALAIRE con el modelo analista × campaña con días anidados y comparar la conclusión con la prueba t del libro.</li>
+        <li>Calcular los grados de libertad de cada componente para un diseño de 2, 3 y 4 analistas y decidir cuál justifica el esfuerzo.</li>
+        <li>Analizar el factorial de robustez diseñado en M5 con un ANOVA de dos o tres factores.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §§9.3.1–9.3.6 (efectos aleatorios y mixtos, Tablas 9.9–9.10, supuestos, estudio R&amp;R)</li>
+        <li><a href="#b-otto">Otto</a> §2.3 (ANOVA de uno y varios factores)</li>
+        <li><a href="#b-mw">Mark y Workman</a> cap. 115 (ANOVA)</li>
+        <li><a href="#b-brereton">Brereton</a> cap. 2 (ANOVA y error puro)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> cap. 9 (distribución F)</li>
+        <li><a href="#b-5725">ISO 5725</a> Parte 3 §§5–6 (factores y modelo), §8 (estudio dentro del laboratorio), §§9.3–9.5 (diseños anidados)</li>
+        <li><a href="#b-5725">ISO 5725</a> Partes 2 y 6, con sus corrigenda</li>
+        <li><a href="#b-gum">GUM (JCGM 100)</a> Anexo H.5 (análisis de varianza); G.4 (Welch-Satterthwaite)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §4.4 (repetibilidad y reproducibilidad)</li>
+        <li><a href="#b-deldossi">Deldossi y Zappa 2009</a> ISO 5725 frente a GUM</li>
+        <li><a href="#b-14625">EN 14625</a> §8.2</li>
+        <li><a href="#b-ryr">Estudio R&amp;R CALAIRE 2022–2023</a> hojas 45ppb a 455ppb</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m7">
+    <div class="mod-head">
+      <div class="mod-num">M7</div>
+      <h3>Análisis de regresión y funciones de calibración</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">5 h</span></div>
+    </div>
+    <p class="goal">Estimar y validar una función de calibración, eligiendo el método de ajuste según la estructura de incertidumbre de los datos.</p>
+    <p class="base">Se apoya en M3 · M4 · M6</p>
+    <div class="parts">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Correlación de Pearson y su inferencia; por qué la correlación no valida una calibración.</li>
+          <li>Mínimos cuadrados: criterio, ecuaciones normales y solución <span class="f">b = S<sub>xy</sub>/S<sub>xx</sub></span>, <span class="f">a = ȳ − b·x̄</span>; forma matricial <span class="f">β = (XᵀX)⁻¹Xᵀy</span>.</li>
+          <li>Supuestos del modelo; residuos y s<sub>e</sub>.</li>
+          <li>Incertidumbre de los parámetros: u(a), u(b) y <span class="f">cov(a,b) = −x̄·s²/S<sub>xx</sub></span>.</li>
+          <li>Bandas de confianza y de predicción; predicción inversa con incertidumbre.</li>
+          <li>Prueba de la pendiente; R² y sus límites.</li>
+          <li>Falta de ajuste con réplicas: <span class="f">F = [SS<sub>LOF</sub>/(m−2)] / [SS<sub>PE</sub>/(N−m)]</span>; residuo relativo por nivel.</li>
+          <li>Recta con intercepto frente a recta forzada por el origen.</li>
+          <li>Mínimos cuadrados ponderados y regresión con incertidumbre en x e y (ver tabla).</li>
+          <li>Validación de un ajuste ponderado: χ²<sub>obs</sub> frente a χ²<sub>0,95; n−2</sub> (ν = 10 con 12 puntos); en la ISO 6143, |residuo ponderado| ≤ 2.</li>
+          <li>Función de análisis frente a función de calibración; prueba de compatibilidad.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part">
+      <h4>Qué regresión usar según la incertidumbre (ISO/TS 28037)</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Incertidumbre en</th><th>Método</th></tr></thead>
+          <tbody>
+            <tr><td>Solo y</td><td>WLS; con incertidumbres iguales, OLS</td></tr>
+            <tr><td>x e y, sin correlación</td><td>GDR (distancia generalizada)</td></tr>
+            <tr><td>x e y, covarianza dentro de cada par</td><td>GDR correlacionada (cercana a York)</td></tr>
+            <tr><td>Covarianzas entre valores de y</td><td>GMR (Gauss-Markov)</td></tr>
+            <tr><td>Covarianzas generales en ambos ejes</td><td>GGMR: la comparación con el BIPM (M9)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">Ejemplo real del QAPP (SRP36 contra SRP7): pendiente 1,00169 ± 0,00012, intercepto 0,152 ± 0,050 ppb, R² = 0,99999985. Un R² casi perfecto no dice si la recta cumple los criterios de aceptación.</p>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Deducir las ecuaciones normales y comprobarlas con los promedios del certificado.</li>
+        <li>Regresión del Level 2 contra el SRP, falta de ajuste con las 8 réplicas y gráfico de residuos.</li>
+        <li>Los mismos 12 pares por OLS y por WLS/GDR, reportando a, b, u(a), u(b), cov(a,b) y χ²<sub>obs</sub>.</li>
+        <li>Reproducir un ejemplo resuelto de la ISO/TS 28037 y el ejemplo B.2.1 de la ISO 6143 (NO medido por absorción UV).</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §§10.1–10.4 (mínimos cuadrados, WLS, incertidumbre de parámetros, bandas, residuos, prueba de pendiente)</li>
+        <li><a href="#b-sc">Statistical Concepts</a> §§10.1, 10.4 (correlación, linealidad)</li>
+        <li><a href="#b-otto">Otto</a> §6.1 (Tabla 6.1) y §6.2</li>
+        <li><a href="#b-brereton">Brereton</a> §2.2 y cap. 6</li>
+        <li><a href="#b-mw">Mark y Workman</a> cap. 21 (forma matricial); caps. 117–118</li>
+        <li><a href="#b-gum">GUM (JCGM 100)</a> Anexo H.3</li>
+        <li><a href="#b-28037">ISO/TS 28037</a> cláusulas 6–10 y ejemplos</li>
+        <li><a href="#b-6143">ISO 6143</a> §§4–7 y Anexo B</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Elemento 14.2</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m8">
+    <div class="mod-head">
+      <div class="mod-num">M8</div>
+      <h3>Evaluación de la incertidumbre de medida y capacidad de medición y calibración</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">6 h</span></div>
+    </div>
+    <p class="goal">Evaluar la incertidumbre de medida conforme a la GUM, construir el presupuesto del SRP nacional y el de una calibración, y relacionarlos con la CMC.</p>
+    <p class="base">Se apoya en M1 · M3 · M4 · M6 · M7</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Modelo de medición (GUM-6): medición directa e indirecta.</li>
+          <li>Incertidumbre estándar; evaluación tipo A (de M2 y M4) y tipo B (de las distribuciones de M3).</li>
+          <li>Ley de propagación: desarrollo de Taylor de primer orden y coeficientes de sensibilidad <span class="f">c<sub>i</sub> = ∂f/∂x<sub>i</sub></span>.</li>
+          <li>Entradas correlacionadas: <span class="f">u<sub>c</sub>² = Σ c<sub>i</sub>²u<sub>i</sub>² + 2·Σ c<sub>i</sub>c<sub>j</sub>·u(x<sub>i</sub>,x<sub>j</sub>)</span>.</li>
+          <li>Términos de orden superior, varias magnitudes de salida y límites del método analítico.</li>
+          <li>Grados de libertad efectivos (Welch-Satterthwaite) y <span class="f">k = t(ν<sub>eff</sub>)</span> en lugar de k = 2 fijo.</li>
+          <li>Incertidumbre expandida <span class="f">U = k·u<sub>c</sub></span>, nivel de cobertura, presentación y redondeo.</li>
+          <li>De la U de una calibración a la CMC; la plantilla aplica la regla <span class="f">max(U, CMC)</span>.</li>
+          <li>Propagación por la cadena: la incertidumbre del Level 2 (de su calibración contra el SRP) entra en el presupuesto de cada calibración de cliente.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP: presupuestos reales</h4>
+        <ul>
+          <li>NIST SRP 6008: <span class="f">u = √(0,28² + (0,011·x)²)</span> nmol/mol.</li>
+          <li>BIPM-SRP27: <span class="f">u = √(0,28² + (0,00292·x)²)</span>. El 0,00292 combina longitud óptica (2,89×10⁻³), presión (3,37×10⁻⁴) y temperatura (2,29×10⁻⁴); el 0,28 es la razón de intensidades D.</li>
+          <li>La diferencia es la sección eficaz: el NIST incluye su incertidumbre (1,06×10⁻²·x) y el BIPM no, porque se cancela entre fotómetros UV con el mismo σ. ¿Cuándo debe entrar σ en un certificado?</li>
+          <li>Componente común: <span class="f">u(x<sub>i</sub>,x<sub>j</sub>) = x<sub>i</sub>·x<sub>j</sub>·u<sub>b</sub>²</span>, con u<sub>b</sub> = 2,92×10⁻³.</li>
+          <li>Pérdidas de ozono, pureza del aire cero y lámpara no tienen cifra en la literatura: son sesgos que el operador vigila y cuantifica con datos propios.</li>
+          <li>Las EN convierten cada característica de desempeño en una contribución y comparan con el objetivo de calidad (15 % en mediciones fijas).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Derivar los coeficientes de sensibilidad de la ecuación del SRP respecto de L, P, T, σ y D.</li>
+        <li>Presupuesto completo de un punto de la calibración del Level 2: fuentes, sensibilidades, ν<sub>eff</sub>, k y U.</li>
+        <li>Llevar esa U al presupuesto de la calibración de un fotómetro de cliente hecha con el Level 2.</li>
+        <li>Presupuesto del SRP nacional a 80 y 420 nmol/mol.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§5.1–5.9 (tipo A y B, combinada, ν_eff, k, expandida, presentación)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§6.1–6.2 (ley de propagación, variables dependientes)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §§6.2–6.4 (marco de incertidumbre, modelos directo e indirecto)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §§7.2–7.7 (base matemática, correlación, orden superior, salidas múltiples, límites)</li>
+        <li><a href="#b-gum">GUM (JCGM 100)</a> §§4–7 y Anexo H</li>
+        <li><a href="#b-gum1">JCGM GUM-1</a></li>
+        <li><a href="#b-gum6">JCGM GUM-6</a> §§11–12</li>
+        <li><a href="#b-srp6008">NIST SRP 6008</a> p. 2</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> Apéndice 1</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> §§10–11, Tabla 6</li>
+        <li><a href="#b-14625">EN 14625</a> anexos E–G</li>
+        <li><a href="#b-asq">ASQ Metrology Handbook</a> cap. 29</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="block" aria-labelledby="bIII">
+  <div class="block-head">
+    <div class="eyebrow">Bloque III</div>
+    <h2 id="bIII">Diseminación de la trazabilidad</h2>
+    <p>Lo que solo hace este laboratorio: su comparación con el BIPM, la decisión sobre los fotómetros del país, el control de sus propios patrones y su relación con las redes.</p>
+  </div>
+
+  <article class="mod core" id="m9">
+    <div class="mod-head">
+      <div class="mod-num">M9</div>
+      <h3>Comparaciones clave: mínimos cuadrados generalizados y grado de equivalencia</h3>
+      <div class="meta"><span class="chip lvl">I–A</span><span class="chip">4 h</span><span class="chip key">Módulo central</span></div>
+    </div>
+    <p class="goal">Comprender, reproducir y sustentar el resultado del laboratorio en la comparación clave BIPM.QM-K1.</p>
+    <p class="base">Se apoya en M7 · M8</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Protocolo A (comparación directa) y protocolo B (con patrón de transferencia).</li>
+          <li>Ajuste GLS: estima a la vez la recta y los valores "verdaderos" de x, con la matriz de covarianza completa de x e y; se resuelve por Gauss-Newton, da cov(a,b) y se valida con χ² y residuos.</li>
+          <li>OLS, WLS, Deming y la ISO 6143 son casos particulares; ninguno admite la covarianza entre puntos que impone el SRP27.</li>
+          <li>La covarianza se construye desde causas comunes: <span class="f">u<sub>b</sub>²·x·xᵀ</span> viene de la temperatura, la presión y la longitud óptica compartidas.</li>
+          <li>Grado de equivalencia <span class="f">D = x<sub>NS</sub> − x<sub>SRP27</sub></span> a 80 y 420 nmol/mol, con u(D) y sus covarianzas.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>El BIPM ajusta con el software OzonE; Milton 2006 describe XGENLINE.</li>
+          <li>Una rutina ODR que solo acepta errores independientes por punto no reproduce el ajuste del BIPM.</li>
+          <li>Para reproducir la comparación propia: los 12 pares medidos, las incertidumbres en ambos ejes y las matrices U<sub>x</sub>, U<sub>y</sub> y U<sub>xy</sub> (justificando si U<sub>xy</sub> = 0).</li>
+          <li>Los ceros inicial y final se tratan con su posible deriva, no como datos independientes duplicados.</li>
+          <li>El resultado de la comparación respalda las CMC del laboratorio.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Armar U<sub>x</sub> para la secuencia BIPM con u<sub>b</sub> = 0,00292 y compararla con la matriz diagonal que supone el OLS.</li>
+        <li>Con los datos de una comparación real del laboratorio: contrastar OLS, ISO 6143 y GLS, y calcular los grados de equivalencia.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-milton">Milton et al. 2006</a> §§2–5, 7 y Apéndice A</li>
+        <li><a href="#b-28037">ISO/TS 28037</a> cláusula 10 (GGMR)</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> §§7–9; protocolo B §§9–11; Apéndices 1 y 3</li>
+        <li><a href="#b-6143">ISO 6143</a> §§4–7</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m10">
+    <div class="mod-head">
+      <div class="mod-num">M10</div>
+      <h3>Evaluación de la conformidad y certificado de calibración</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">3 h</span></div>
+    </div>
+    <p class="goal">Aplicar reglas de decisión que incorporen la incertidumbre y emitir certificados de calibración técnicamente sustentados.</p>
+    <p class="base">Se apoya en M4 · M8 · M9</p>
+    <div class="parts">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Conformidad con una especificación; regla de decisión, banda de guarda y riesgo de falsa aceptación o rechazo.</li>
+          <li>TUR (relación de incertidumbre de ensayo).</li>
+          <li>Compatibilidad entre un valor medido y uno de referencia.</li>
+          <li>Corrección de lecturas: <span class="f">c = (y − y<sub>0</sub>)·c<sub>c</sub>/(y<sub>c</sub> − y<sub>0</sub>)</span>.</li>
+          <li>Contenido del certificado: mensurando, intervalo, método, resultados, U con k, trazabilidad, sección eficaz usada y regla de decisión.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part">
+      <h4>Criterios reales (cada uno vale solo en su documento)</h4>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Documento</th><th>Criterio</th></tr></thead>
+          <tbody>
+            <tr><td>SRP QAPP</td><td>Pendiente 1,00 ± 0,01; intercepto 0 ± 1 ppb</td></tr>
+            <tr><td>SRP SOP</td><td>1 ± 0,04 y 0 ± 4 ppb al calificar; 1 ± 0,03 y 0 ± 3 ppb al reverificar</td></tr>
+            <tr><td>EPA TAD</td><td>Pendiente 1,00 ± 0,03; intercepto 0 ± 3 ppb; s de pendientes &lt; 0,0075</td></tr>
+            <tr><td>BIPM.QM-K1</td><td>Grado de equivalencia a 80 y 420 nmol/mol</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Decidir si un patrón de transferencia pasa, primero sin la incertidumbre y luego con ella, y redactar la declaración de conformidad.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> cap. 5 (incertidumbre y riesgo en la decisión)</li>
+        <li><a href="#b-mmu">Metrology and Measurement Uncertainty</a> caps. 8–9</li>
+        <li><a href="#b-asq">ASQ Metrology Handbook</a> cap. 30 (riesgo, TUR)</li>
+        <li><a href="#b-17025">ISO/IEC 17025</a> §§7.6 y 7.8.6</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Tabla 7-1</li>
+        <li><a href="#b-sop">SRP SOP</a> §9.1</li>
+        <li><a href="#b-tad">EPA TAD</a> §4</li>
+        <li><a href="#b-14625">EN 14625</a> §9.5.3</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m11">
+    <div class="mod-head">
+      <div class="mod-num">M11</div>
+      <h3>Control estadístico de procesos y aseguramiento de la validez de los patrones</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">3 h</span></div>
+    </div>
+    <p class="goal">Vigilar la estabilidad del SRP y del Level 2 mediante control estadístico, modelar su deriva y fundamentar el intervalo de recalibración.</p>
+    <p class="base">Se apoya en M2 · M4 · M7</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Teoría</h4>
+        <ul>
+          <li>Control estadístico de procesos: variación por causas comunes y especiales.</li>
+          <li>Cartas de control de Shewhart: línea central, límites de control y reglas de alarma.</li>
+          <li>Deriva y predicción de valores futuros con su incertidumbre.</li>
+          <li>Análisis del intervalo de calibración.</li>
+          <li>Aseguramiento de la validez de los resultados.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>En el SRP</h4>
+        <ul>
+          <li>SOP: controles tan seguido como sea posible; temperatura y presión pueden derivar en 2–3 días.</li>
+          <li>QAPP: aire cero 0 ± 0,2 ppb; presión ± 0,2 mbar.</li>
+          <li>EPA TAD: Level 2 contra Level 1 cada año; 3 ciclos; s de pendientes &lt; 0,0075; s de interceptos &lt; 1,00 ppb. Son criterios directamente aplicables a la calibración del Level 2 de CALAIRE.</li>
+          <li>NIST: con humedad por encima de 50 % se ha visto deriva del detector.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Carta de control de la pendiente con las diez comparaciones SRP-0 contra SRP-2 del NISTIR 6963 (pendiente media 1,00003, s = 0,00056; intercepto −0,131 ppb, s = 0,142), o con el historial propio del Level 2.</li>
+        <li>Ajustar la deriva de la pendiente en el tiempo y decidir si hay que recalibrar antes de lo previsto.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §11.2 (control estadístico de procesos)</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §§10.8–10.9 (deriva, valores futuros, intervalo de calibración)</li>
+        <li><a href="#b-otto">Otto</a> cap. 9, Tablas 9.1–9.2 (cartas de control)</li>
+        <li><a href="#b-sop">SRP SOP</a> §§9–11</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Tabla 7-1</li>
+        <li><a href="#b-tad">EPA TAD</a> §4 y Tabla 4-1</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> Tabla 4</li>
+        <li><a href="#b-srp6008">NIST SRP 6008</a> pp. 2–3</li>
+        <li><a href="#b-17025">ISO/IEC 17025</a> §7.7</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m12">
+    <div class="mod-head">
+      <div class="mod-num">M12</div>
+      <h3>Indicadores de precisión y sesgo en las redes de monitoreo</h3>
+      <div class="meta"><span class="chip lvl">I</span><span class="chip">3 h</span></div>
+    </div>
+    <p class="goal">Conocer los indicadores estadísticos con que las redes de monitoreo evalúan sus datos y su relación con los valores que certifica el laboratorio.</p>
+    <p class="base">Se apoya en M4 · M8 · M10</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Estadística oficial de la red (40 CFR 58, Apéndice A)</h4>
+        <ul>
+          <li>Diferencia de cada verificación: <span class="f">d<sub>i</sub> = (meas − audit)/audit · 100</span>.</li>
+          <li>CV con límite superior al 90 %: <span class="f">CV = s(d<sub>i</sub>)·√[(n−1)/χ²<sub>0,1; n−1</sub>]</span> (intervalo para una varianza, M4).</li>
+          <li>Sesgo absoluto con límite superior al 95 %: <span class="f">|sesgo| = AB + t<sub>0,95; n−1</sub>·AS/√n</span>, con el signo según los percentiles 25 y 75.</li>
+          <li>Objetivo para O₃: CV ≤ 7 % y |sesgo| ≤ 7 %.</li>
+          <li>Datos de origen: control de un punto, auditoría anual con patrones independientes y NPAP. Las concentraciones de ensayo vienen de un patrón de transferencia trazable: ahí entra el laboratorio.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Contexto de los analizadores</h4>
+        <ul>
+          <li>El CV y el sesgo resumen un año de verificaciones de un monitor; la U de un certificado describe una sola calibración. No se sustituyen.</li>
+          <li>Desempeño del analizador (40 CFR 53): ruido, límite detectable inferior, deriva de cero y span, precisión al 20 % y 80 % del rango.</li>
+          <li>EN 14625: repetibilidad ≤ 1 nmol/mol en cero y ≤ 3 en el nivel de ensayo; deriva de cero ≤ 2 nmol/mol en 12 h. Las EN 14211, 14212 y 14626 sirven de contraste con otros gases.</li>
+          <li>Datos regulatorios: promedio móvil de 8 h, cuarto máximo anual, valor de diseño comparado con 0,070 ppm, completitud.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Con d<sub>i</sub> = 1; 2; 0,5; 3; 1,5; 2,5 %: CV = 1,65 % y |sesgo| = 2,52 %, positivo.</li>
+        <li>¿Cómo aparece en los d<sub>i</sub> de una red un sesgo de +1,25 % por usar la sección eficaz antigua?</li>
+        <li>Ejemplo de la EPA 2014–2016 sobre el valor de diseño.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-cfr58a">40 CFR 58, Apéndice A</a> §§2.3, 2.6, 3.1, 4.1 y 5.1</li>
+        <li><a href="#b-qah">EPA QA Handbook Vol. II</a></li>
+        <li><a href="#b-cfr53">40 CFR 53</a></li>
+        <li><a href="#b-cfr50">40 CFR 50</a> Apéndices A-1, C y P/U</li>
+        <li><a href="#b-valid">Plantilla de validación EPA</a></li>
+        <li><a href="#b-14625">EN 14625</a> §8 y Tabla E.1</li>
+        <li><a href="#b-enothers">EN 14211, 14212 y 14626</a></li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="block" aria-labelledby="bCierre">
+  <div class="block-head">
+    <div class="eyebrow">Cierre</div>
+    <h2 id="bCierre">Integración y temas avanzados</h2>
+    <p>El taller junta todo el curso sobre un caso real; el optativo abre los temas que superan el nivel del curso.</p>
+  </div>
+
+  <article class="mod" id="taller">
+    <div class="mod-head">
+      <div class="mod-num">T</div>
+      <h3>Taller integrador: casos reales del laboratorio</h3>
+      <div class="meta"><span class="chip lvl">I–A</span><span class="chip">8 h</span></div>
+    </div>
+    <p class="goal">Integrar los métodos del curso en cuatro casos que corresponden a las funciones del laboratorio: calibrar el Level 2, compararse con el BIPM, vigilar sus patrones y evaluar su sistema de medición.</p>
+    <p class="base">Se apoya en M2–M12</p>
+    <div class="parts two">
+      <div class="part">
+        <h4>Caso A · Calibración del Level 2 contra el SRP 55</h4>
+        <ul>
+          <li>Datos reales de CALAIRE: certificado F-PSMT-01, Thermo 49C contra SRP 55, 12 puntos × 8 repeticiones × 6 días.</li>
+          <li>Descripción y atípicos (M2), normalidad (M3), ANOVA por días (M6), regresión y falta de ajuste (M7), presupuesto GUM con ν<sub>eff</sub> y k (M8), decisión (M10).</li>
+          <li>Comparar con lo que reporta la plantilla actual y discutir las diferencias.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Caso B · Comparación clave con ajuste GLS</h4>
+        <ul>
+          <li>Datos publicados: comparación SRP36 contra SRP7 (QAPP, Fig. 14.2), tratada con el método del BIPM.</li>
+          <li>OLS frente a GGMR con la covarianza común <span class="f">u<sub>b</sub></span>, en dos variantes de incertidumbre; validación del código con un ejemplo de la ISO/TS 28037; χ² y su interpretación (M7, M9).</li>
+          <li>Grados de equivalencia a 80 y 420 nmol/mol por interpolación con la recta, y por qué difiere de la ecuación del protocolo para mediciones directas (M9).</li>
+          <li>Inconsistencias internas del propio QAPP (covarianza y desviación residual) como ejercicio de lectura crítica.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Caso C · Historial y control estadístico del Level 2</h4>
+        <ul>
+          <li>Datos reales de CALAIRE (pendientes e interceptos de los 6 días) y diez comparaciones publicadas (NISTIR 6963, Tabla 4).</li>
+          <li>Evaluación de los 6 días contra la verificación 6x6 del QAPP, que es el criterio directamente aplicable, y contraste con la EPA TAD 2023 (M10).</li>
+          <li>Cartas de individuales y rango móvil a 3σ, prueba de deriva y prueba F (M4, M11).</li>
+        </ul>
+      </div>
+      <div class="part">
+        <h4>Caso D · Estudio R&amp;R de CALAIRE 2022–2023</h4>
+        <ul>
+          <li>Datos reales: errores medios diarios del Level 2 frente al SRP 55 de dos analistas en 10 niveles, en tres campañas de 6 días cada una.</li>
+          <li>Lectura crítica: reconstruir la estructura real (campañas, días anidados en analista × campaña), ver qué responde una prueba t entre analistas y qué no, y localizar los errores de fórmula del libro (varianzas con 12 de 18 datos, α distinto en un nivel).</li>
+          <li>Reanálisis con el modelo analista × campaña con días anidados (M6): efecto del analista, interacción, componente entre campañas y entre días; los datos no están pareados por día. Qué diseño haría falta para estimar bien la reproducibilidad.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="part practice">
+      <h4>Práctica</h4>
+      <ul>
+        <li>Los casos B y C tienen enunciado paso a paso, datos con su fuente y solución de referencia reproducible en la carpeta casos_taller/ (datos en CSV y el script calc_casos.py). Los casos A y D se trabajan directamente sobre los libros de Excel de CALAIRE.</li>
+      </ul>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-cert">Certificado F-PSMT-01</a> plantilla .xlsm</li>
+        <li><a href="#b-qapp">SRP QAPP</a> Elemento 14.2, Fig. 14.2; §6.2.3 y Tabla 7-1</li>
+        <li><a href="#b-bipm">BIPM.QM-K1</a> protocolo A §8; Apéndices 1 y 3</li>
+        <li><a href="#b-milton">Milton et al. 2006</a></li>
+        <li><a href="#b-28037">ISO/TS 28037</a> cláusula 10, Tablas 25–26</li>
+        <li><a href="#b-nistir">NISTIR 6963</a> Tabla 4</li>
+        <li><a href="#b-tad">EPA TAD</a> Tabla 4-1, §4.4</li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> §11.2</li>
+        <li><a href="#b-otto">Otto</a> cap. 9</li>
+        <li><a href="#b-ryr">Estudio R&amp;R CALAIRE 2022–2023</a> hojas 45ppb a 455ppb</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="mod" id="m13">
+    <div class="mod-head">
+      <div class="mod-num">M13</div>
+      <h3>Temas avanzados (optativo)</h3>
+      <div class="meta"><span class="chip lvl">A</span><span class="chip">4 h</span></div>
+    </div>
+    <p class="goal">Introducir métodos que superan la propagación lineal y la regresión de una sola respuesta.</p>
+    <p class="base">Se apoya en M3 · M7 · M8</p>
+    <div class="parts">
+      <div class="part">
+        <h4>Temas</h4>
+        <ul>
+          <li>Monte Carlo frente a propagación lineal; Monte Carlo en ajuste de curvas.</li>
+          <li>Pendiente e intercepto como salidas conjuntas.</li>
+          <li>Regresión no lineal y regresión de distancia ortogonal.</li>
+          <li>Implementación propia del ajuste GGMR/GLS y su validación.</li>
+          <li>Bootstrap remuestreando días completos; regresión robusta y métodos robustos de la ISO 5725-5.</li>
+          <li>Calibración multivariada (PCR, PLS): por qué no aporta en un fotómetro de una sola longitud de onda.</li>
+          <li>Uso responsable de herramientas de IA para análisis, siempre verificando datos, unidades y supuestos.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="refs">
+      <h4>Referencias</h4>
+      <ul>
+        <li><a href="#b-gums1">GUM Suplemento 1</a> y corrigendum</li>
+        <li><a href="#b-gums2">GUM Suplemento 2</a></li>
+        <li><a href="#b-ism">Intro. Statistics in Metrology</a> cap. 8; §§10.5–10.6</li>
+        <li><a href="#b-28037">ISO/TS 28037</a> cláusula 10</li>
+        <li><a href="#b-milton">Milton et al. 2006</a></li>
+        <li><a href="#b-5725">ISO 5725</a> Parte 5</li>
+        <li><a href="#b-brereton">Brereton</a> cap. 6</li>
+        <li><a href="#b-mw">Mark y Workman</a> caps. 21–27</li>
+        <li><a href="#b-huq">Handbook of Uncertainty Quantification</a> §§1–2</li>
+        <li><a href="#b-ai">AI-Assisted Statistics</a> caps. 1, 4, 10 y 11</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="concepts-sec" id="conceptos" aria-labelledby="concH">
+  <div class="block-head">
+    <div class="eyebrow">Referencia</div>
+    <h2 id="concH">Conceptos estadísticos del curso</h2>
+    <p>Cada concepto con lo que se enseña de su teoría, el módulo donde se trata y la fuente teórica con sección.</p>
+  </div>
+  <div class="tbl">
+    <table class="concepts">
+      <thead><tr><th>Concepto</th><th>Qué se enseña</th><th>Módulo</th><th>Fuente teórica</th></tr></thead>
+      <tbody>
+        <tr class="block"><td colspan="4">Datos y estadística descriptiva</td></tr>
+        <tr><td>Población, muestra, parámetro y estadístico</td><td>Distinguir lo que se quiere conocer de lo que se mide; notación.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §1.3</td></tr>
+        <tr><td>Tipos de variables y escalas de medida</td><td>Discretas y continuas; escalas nominal, ordinal, de intervalo y de razón.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §§1.4–1.5; <a href="#b-ism">Intro. Statistics in Metrology</a> §4.2</td></tr>
+        <tr><td>Distribución de frecuencias e histograma</td><td>Tablas de frecuencia absoluta, relativa y acumulada; formas de una distribución.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §§2.1–2.2; <a href="#b-ism">Intro. Statistics in Metrology</a> §4.3.2</td></tr>
+        <tr><td>Percentiles, cuartiles y diagrama de caja</td><td>Posición relativa de un dato; rango intercuartílico; lectura de la caja.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §2.3; <a href="#b-ism">Intro. Statistics in Metrology</a> §4.3.2</td></tr>
+        <tr><td>Tendencia central</td><td>Media, mediana y moda; propiedades y cuándo usar cada una.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §3.2; <a href="#b-ism">Intro. Statistics in Metrology</a> §4.3.1</td></tr>
+        <tr><td>Dispersión</td><td>Rango, varianza, desviación estándar muestral (n − 1), coeficiente de variación.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §3.3; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.2</td></tr>
+        <tr><td>Error estándar de la media</td><td><span class="f">s/√n</span>: dispersión de la media, no de las lecturas.</td><td>M2, M4</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §4.3.1; <a href="#b-sc">Statistical Concepts</a> §5.2</td></tr>
+        <tr><td>Puntuación z, asimetría y curtosis</td><td>Estandarización; medidas de forma de la distribución.</td><td>M2</td><td><a href="#b-sc">Statistical Concepts</a> §§4.2–4.3</td></tr>
+        <tr><td>Cifras significativas y redondeo</td><td>Reglas de redondeo y de operación; redondear al final.</td><td>M2, M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.1</td></tr>
+        <tr><td>Valor atípico</td><td>Definición respecto de un modelo; Grubbs, Dixon, Cochran, h y k de Mandel; criterios de exclusión.</td><td>M2</td><td><a href="#b-otto">Otto</a> §2.2; <a href="#b-5725">ISO 5725</a> Parte 2; <a href="#b-mw">Mark y Workman</a> caps. 119–121</td></tr>
+        <tr class="block"><td colspan="4">Probabilidad y distribuciones</td></tr>
+        <tr><td>Probabilidad</td><td>Definición y reglas básicas; intuición frente a probabilidad.</td><td>M3</td><td><a href="#b-sc">Statistical Concepts</a> §5.1</td></tr>
+        <tr><td>Variable aleatoria</td><td>Discreta y continua; experimento aleatorio y muestra.</td><td>M3</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.1</td></tr>
+        <tr><td>Función de densidad y de distribución</td><td>Densidad de probabilidad discreta y continua; distribución acumulada.</td><td>M3</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.3</td></tr>
+        <tr><td>Esperanza y varianza</td><td>Media y desviación estándar de una distribución.</td><td>M3</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.4</td></tr>
+        <tr><td>Reglas de la esperanza y la varianza</td><td>Combinaciones lineales; varianza de una suma con covarianza. Base de la propagación.</td><td>M3, M8</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §7.2</td></tr>
+        <tr><td>Covarianza y correlación</td><td>Definición, signo, rango de r y efecto sobre la varianza combinada.</td><td>M3, M8</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §7.4.1; <a href="#b-sc">Statistical Concepts</a> §10.1</td></tr>
+        <tr><td>Distribución normal</td><td>Propiedades, normal estándar y uso de tablas.</td><td>M3</td><td><a href="#b-sc">Statistical Concepts</a> §4.1; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.5.4</td></tr>
+        <tr><td>Distribuciones rectangular y triangular</td><td>Cuándo se usan y su desviación estándar (<span class="f">a/√3</span>, <span class="f">a/√6</span>).</td><td>M3, M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§3.2.5.1–3.2.5.3; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> §5.3</td></tr>
+        <tr><td>Distribución t de Student</td><td>Origen, grados de libertad y convergencia a la normal.</td><td>M3, M4</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §3.2.5.5; <a href="#b-sc">Statistical Concepts</a> §6.1</td></tr>
+        <tr><td>Distribuciones chi-cuadrado y F</td><td>Origen y uso en pruebas sobre varianzas y en el ANOVA.</td><td>M3, M4</td><td><a href="#b-sc">Statistical Concepts</a> §8.2; <a href="#b-sc">Statistical Concepts</a> §9.1.1</td></tr>
+        <tr><td>Ajuste a una distribución</td><td>Estimar parámetros; gráfico de probabilidad normal; pruebas de normalidad.</td><td>M3</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§4.4.1–4.4.3; <a href="#b-sc">Statistical Concepts</a> §6.4</td></tr>
+        <tr class="block"><td colspan="4">Inferencia</td></tr>
+        <tr><td>Muestreo aleatorio y estimación</td><td>Estimador, sesgo y varianza de un estimador; grados de libertad.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §5.2</td></tr>
+        <tr><td>Distribución muestral y teorema central del límite</td><td>Comportamiento de la media de n lecturas.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §5.2.2; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§3.2.5.6–3.2.5.9</td></tr>
+        <tr><td>Intervalo de confianza</td><td>Construcción con normal y con t; interpretación correcta.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §6.1; <a href="#b-ism">Intro. Statistics in Metrology</a> §4.4.2</td></tr>
+        <tr><td>Prueba de hipótesis</td><td>H₀, H₁, estadístico, región crítica, α y valor p.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §§6.1, 7.1.2</td></tr>
+        <tr><td>Errores tipo I y II, potencia, tamaño del efecto</td><td>Riesgos de una prueba y tamaño de muestra.</td><td>M4, M5</td><td><a href="#b-sc">Statistical Concepts</a> §§6.1.2–6.1.4; <a href="#b-mw">Mark y Workman</a> cap. 15</td></tr>
+        <tr><td>Prueba t</td><td>Una media, dos medias independientes (Welch) y datos pareados.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §6.1; <a href="#b-sc">Statistical Concepts</a> §§7.1–7.2</td></tr>
+        <tr><td>Pruebas sobre varianzas</td><td>Una varianza (chi-cuadrado) y dos varianzas (F).</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §§9.1–9.3</td></tr>
+        <tr><td>Prueba chi-cuadrado de bondad de ajuste</td><td>Comparar frecuencias observadas y esperadas.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §8.3.1</td></tr>
+        <tr><td>Supuestos de las pruebas</td><td>Independencia y normalidad; cómo verificarlos.</td><td>M4, M6</td><td><a href="#b-sc">Statistical Concepts</a> §§6.1.5, 6.4; <a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.3</td></tr>
+        <tr><td>Significación frente a relevancia</td><td>Un efecto detectable puede no importar metrológicamente, y al revés.</td><td>M4</td><td><a href="#b-sc">Statistical Concepts</a> §6.1.4; <a href="#b-mw">Mark y Workman</a> cap. 15</td></tr>
+        <tr class="block"><td colspan="4">Diseño experimental y ANOVA</td></tr>
+        <tr><td>Elementos de un experimento</td><td>Respuesta, factores, niveles y unidad experimental.</td><td>M5</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§9.2.1–9.2.3; <a href="#b-brereton">Brereton</a> cap. 2</td></tr>
+        <tr><td>Aleatorización, bloques y replicación</td><td>Replicación verdadera frente a pseudorreplicación.</td><td>M5</td><td><a href="#b-brereton">Brereton</a> cap. 2; <a href="#b-mw">Mark y Workman</a> caps. 8–12</td></tr>
+        <tr><td>Diseño factorial</td><td>Efectos principales e interacciones; 2^k.</td><td>M5</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §9.2; <a href="#b-brereton">Brereton</a> cap. 2; <a href="#b-mw">Mark y Workman</a> caps. 8–16</td></tr>
+        <tr><td>Diseño anidado</td><td>Lecturas dentro de corridas dentro de días; diseño escalonado.</td><td>M5, M6</td><td><a href="#b-5725">ISO 5725</a> Parte 3</td></tr>
+        <tr><td>ANOVA de un factor</td><td>Descomposición de sumas de cuadrados, cuadrados medios y prueba F.</td><td>M6</td><td><a href="#b-otto">Otto</a> §2.3; <a href="#b-mw">Mark y Workman</a> cap. 115</td></tr>
+        <tr><td>Efectos fijos y aleatorios; componentes de varianza</td><td>Cuadrados medios esperados y estimación de σ²<sub>día</sub>.</td><td>M6</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§9.3.1–9.3.2</td></tr>
+        <tr><td>ANOVA de dos factores, anidado y mixto</td><td>Interacción y factores anidados.</td><td>M6</td><td><a href="#b-otto">Otto</a> §2.3; <a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.2</td></tr>
+        <tr><td>Supuestos del ANOVA</td><td>Independencia, normalidad y varianza homogénea; residuos.</td><td>M6</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.3</td></tr>
+        <tr><td>Estudio R&amp;R del sistema de medición</td><td>Modelo cruzado con efectos aleatorios, componentes de varianza y R&amp;R total; diferencia con la ISO 5725 y con una prueba t entre operadores.</td><td>M6</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.4</td></tr>
+        <tr><td>Cuadrados medios esperados</td><td>Valor esperado de cada cuadrado medio en modelos cruzados y anidados; base de los estimadores y de la elección del denominador de F.</td><td>M6</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.1, Tablas 9.9–9.10</td></tr>
+        <tr><td>Diseño cruzado frente a anidado</td><td>Qué componentes permite estimar cada estructura; diseño anidado escalonado.</td><td>M5, M6</td><td><a href="#b-5725">ISO 5725</a> Parte 3 §§9.3–9.5</td></tr>
+        <tr><td>Grados de libertad de una componente de varianza</td><td>Precisión de una componente según el número de niveles de su factor; Welch-Satterthwaite para combinaciones.</td><td>M6</td><td><a href="#b-gum">GUM (JCGM 100)</a> G.4; <a href="#b-ism">Intro. Statistics in Metrology</a> §9.3.4</td></tr>
+        <tr><td>Repetibilidad, reproducibilidad y precisión intermedia</td><td>Definiciones, estimación y límites r y R.</td><td>M6</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §4.4; <a href="#b-5725">ISO 5725</a> Partes 2, 3 y 6</td></tr>
+        <tr><td>Veracidad y sesgo</td><td>Sesgo frente a un valor de referencia.</td><td>M6, M10</td><td><a href="#b-5725">ISO 5725</a> Partes 4 y 6; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> §4.3.2</td></tr>
+        <tr class="block"><td colspan="4">Regresión y calibración</td></tr>
+        <tr><td>Correlación de Pearson</td><td>Cálculo, inferencia y por qué no valida una calibración.</td><td>M7</td><td><a href="#b-sc">Statistical Concepts</a> §10.1</td></tr>
+        <tr><td>Mínimos cuadrados</td><td>Criterio, ecuaciones normales y forma matricial.</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §10.2.1; <a href="#b-mw">Mark y Workman</a> cap. 21</td></tr>
+        <tr><td>Incertidumbre de los parámetros</td><td>u(a), u(b) y su covarianza.</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§10.2.2, 10.3.1</td></tr>
+        <tr><td>Bandas de confianza y de predicción</td><td>Incertidumbre de la recta y de una nueva observación.</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§10.3.2–10.3.3</td></tr>
+        <tr><td>Análisis de residuos y prueba de pendiente</td><td>Diagnóstico gráfico y cuantitativo del modelo.</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §10.4</td></tr>
+        <tr><td>Falta de ajuste</td><td>Error puro frente a falta de ajuste con réplicas.</td><td>M7</td><td><a href="#b-otto">Otto</a> §6.1, Tabla 6.1; <a href="#b-brereton">Brereton</a> §2.2</td></tr>
+        <tr><td>Calibración inversa</td><td>Predecir x a partir de una nueva y, con incertidumbre.</td><td>M7</td><td><a href="#b-otto">Otto</a> §6.2; <a href="#b-28037">ISO/TS 28037</a></td></tr>
+        <tr><td>Mínimos cuadrados ponderados</td><td>Pesos según u(y).</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §10.2.3; <a href="#b-28037">ISO/TS 28037</a> cláusula 6</td></tr>
+        <tr><td>Incertidumbre en x e y</td><td>GDR, Deming y York como casos particulares.</td><td>M7</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §10.2.4; <a href="#b-28037">ISO/TS 28037</a> cláusulas 7–8</td></tr>
+        <tr><td>Mínimos cuadrados generalizados</td><td>Matriz de covarianza completa; GMR y GGMR.</td><td>M7, M9</td><td><a href="#b-milton">Milton et al. 2006</a>; <a href="#b-28037">ISO/TS 28037</a> cláusulas 9–10</td></tr>
+        <tr><td>Validación con chi-cuadrado</td><td>χ²<sub>obs</sub> frente a sus grados de libertad; residuos ponderados.</td><td>M7, M9</td><td><a href="#b-28037">ISO/TS 28037</a>; <a href="#b-6143">ISO 6143</a></td></tr>
+        <tr class="block"><td colspan="4">Incertidumbre de medición</td></tr>
+        <tr><td>Modelo de medición</td><td>Mensurando, magnitudes de entrada y ecuación del modelo.</td><td>M8</td><td><a href="#b-gum6">JCGM GUM-6</a>; <a href="#b-ism">Intro. Statistics in Metrology</a> §§6.3–6.4</td></tr>
+        <tr><td>Evaluación tipo A y tipo B</td><td>De los datos y de otra información.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§5.2–5.3; <a href="#b-ism">Intro. Statistics in Metrology</a> §§6.2.2–6.2.3</td></tr>
+        <tr><td>Ley de propagación</td><td>Desarrollo de Taylor de primer orden y coeficientes de sensibilidad.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §6.1; <a href="#b-ism">Intro. Statistics in Metrology</a> §§7.2–7.3</td></tr>
+        <tr><td>Entradas correlacionadas</td><td>Término de covarianza en la propagación.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §6.2; <a href="#b-ism">Intro. Statistics in Metrology</a> §7.4</td></tr>
+        <tr><td>Incertidumbre combinada y expandida</td><td>u<sub>c</sub>, k, U y nivel de cobertura.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §§5.5, 5.7–5.8; <a href="#b-ism">Intro. Statistics in Metrology</a> §§6.2.4–6.2.5</td></tr>
+        <tr><td>Grados de libertad efectivos</td><td>Welch-Satterthwaite y k con t.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §5.6</td></tr>
+        <tr><td>Presentación del resultado</td><td>Resultado ± U con k y unidades; redondeo.</td><td>M8</td><td><a href="#b-mmu">Metrology and Measurement Uncertainty</a> §5.9; <a href="#b-gum">GUM (JCGM 100)</a> §7</td></tr>
+        <tr><td>Método de Monte Carlo</td><td>Propagación de distribuciones.</td><td>M13</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> cap. 8; <a href="#b-gums1">GUM Suplemento 1</a></td></tr>
+        <tr><td>Varias magnitudes de salida</td><td>Pendiente e intercepto como salida conjunta.</td><td>M13</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §7.6; <a href="#b-gums2">GUM Suplemento 2</a></td></tr>
+        <tr class="block"><td colspan="4">Decisión y control</td></tr>
+        <tr><td>Regla de decisión y riesgo</td><td>Banda de guarda, falsa aceptación y falso rechazo.</td><td>M10</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> cap. 5; <a href="#b-mmu">Metrology and Measurement Uncertainty</a> cap. 8; <a href="#b-asq">ASQ Metrology Handbook</a> cap. 30</td></tr>
+        <tr><td>TUR</td><td>Relación de incertidumbre de ensayo.</td><td>M10</td><td><a href="#b-asq">ASQ Metrology Handbook</a> cap. 30</td></tr>
+        <tr><td>Grado de equivalencia</td><td>Diferencia con la referencia y su incertidumbre con covarianzas.</td><td>M9</td><td><a href="#b-bipm">BIPM.QM-K1</a> §8 y Apéndice 1</td></tr>
+        <tr><td>Cartas de control</td><td>Shewhart: línea central, límites y reglas.</td><td>M11</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §11.2; <a href="#b-otto">Otto</a> cap. 9</td></tr>
+        <tr><td>Deriva e intervalo de calibración</td><td>Predicción de valores futuros y elección del intervalo.</td><td>M11</td><td><a href="#b-ism">Intro. Statistics in Metrology</a> §§10.8–10.9</td></tr>
+        <tr><td>Estadística de precisión y sesgo de la red</td><td>CV y sesgo con límites de confianza (chi-cuadrado y t).</td><td>M12</td><td><a href="#b-cfr58a">40 CFR 58, Apéndice A</a> §4.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="biblio" id="bibliografia" aria-labelledby="bibh">
+  <div class="block-head">
+    <div class="eyebrow">Fuentes</div>
+    <h2 id="bibh">Bibliografía</h2>
+    <p>Todas las fuentes están en la carpeta <code>docs/</code> del proyecto. Debajo de cada una se indica en qué módulos se usa.</p>
+  </div>
+
+  <div class="bib-group">
+    <h3>SRP y medición de ozono</h3>
+    <dl>
+      <div id="b-bipm"><dt>BIPM.QM-K1</dt><dd>BIPM. <i>Protocol for BIPM.QM-K1, On-demand Key Comparison of Ozone at Ambient Level</i>, v2.1, 9-10-2025. <code>BIPM.QM-K1_2.protocol.pdf</code><span class="used">M1 · M2 · M3 · M5 · M8 · M9 · T</span></dd></div>
+      <div id="b-nistir"><dt>NISTIR 6963</dt><dd>Paur, R. J.; Bass, A. M.; Norris, J. E.; Buckley, T. J. <i>Standard Reference Photometer for the Assay of Ozone in Calibration Atmospheres</i>. NIST, 2003. <code>nistir6963.pdf</code><span class="used">M1 · M2 · M3 · M5 · M8 · M11 · T</span></dd></div>
+      <div id="b-srp6008"><dt>NIST SRP 6008</dt><dd>NIST. <i>Standard Reference Instrument Series 6008: Ozone Standard Reference Photometer</i>, especificación y certificado, 2017. <code>SRP6008_spec_cert.pdf</code><span class="used">M1 · M8 · M11</span></dd></div>
+      <div id="b-sop"><dt>SRP SOP</dt><dd>US EPA. <i>SOP for the Verification and Re-Verification of EPA's Ozone Standard Reference Photometers</i>, SRP/SOP-1, rev. 1, 2015. <code>srp_sop.pdf</code><span class="used">M1 · M5 · M10 · M11</span></dd></div>
+      <div id="b-qapp"><dt>SRP QAPP</dt><dd>US EPA. <i>Quality Assurance Project Plan for the Standard Reference Photometer Program</i>, 2017. <code>srp_qapp.pdf</code><span class="used">M1 · M5 · M7 · M10 · M11 · T</span></dd></div>
+      <div id="b-tad"><dt>EPA TAD</dt><dd>US EPA. <i>Transfer Standards for Calibration of Air Monitoring Analyzers for Ozone</i>, EPA-454/B-22-003, 2023. <code>o3_tad_508_20230906_final.pdf</code><span class="used">M1 · M5 · M10 · M11 · T</span></dd></div>
+      <div id="b-daumont"><dt>Daumont et al. 1992</dt><dd>Daumont, D.; Brion, J.; Charbonnier, J.; Malicet, J. <i>Ozone UV spectroscopy I: Absorption cross-sections at room temperature</i>. J. Atmos. Chem. 15, 145–155. <code>Ozone UV spectroscopy I_ Absorption cross-sections at room.pdf</code><span class="used">M1</span></dd></div>
+      <div id="b-malicet"><dt>Malicet et al. 1995</dt><dd>Malicet, J. et al. <i>Ozone UV spectroscopy II: Absorption cross-sections and temperature dependence</i>. J. Atmos. Chem. 21, 263–273. <code>Ozone UV spectroscopy_ II_ Absorption cross-sections .pdf</code><span class="used">M1</span></dd></div>
+      <div id="b-13964"><dt>ISO 13964</dt><dd>BS ISO 13964:1998. <i>Air quality — Determination of ozone in ambient air — Ultraviolet photometric method</i>. <code>Air quality_ Determination of ozone in ambient air_ ISO 13964.pdf</code><span class="used">M1 · M5</span></dd></div>
+      <div id="b-14625"><dt>EN 14625</dt><dd>BS EN 14625:2012. <i>Ambient air — Standard method for the measurement of the concentration of ozone by ultraviolet photometry</i>. <code>BS EN 14625_2012.pdf</code><span class="used">M5 · M6 · M8 · M10 · M12</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="bib-group">
+    <h3>Regulación y aseguramiento de la calidad (EE. UU.)</h3>
+    <dl>
+      <div id="b-cfr50d"><dt>40 CFR 50, Apéndice D</dt><dd>eCFR vigente al 16-10-2026; incluye la nueva sección eficaz (304,39 atm⁻¹ cm⁻¹). <code>Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).pdf</code><span class="used">M1</span></dd></div>
+      <div id="b-cfr50"><dt>40 CFR 50</dt><dd>Texto completo y Apéndices A-1 y C (eCFR, 19-10-2026). <code>USEPA - 40 CFR Part 50.pdf</code>; <code>Appendix A-1 to Part 50_ ….pdf</code>; <code>Appendix C to Part 50_ ….pdf</code><span class="used">M12</span></dd></div>
+      <div id="b-cfr53"><dt>40 CFR 53</dt><dd>Métodos de referencia y equivalentes: pruebas de desempeño de analizadores. <code>USEPA - 40 CFR Part 53.pdf</code><span class="used">M12</span></dd></div>
+      <div id="b-cfr58a"><dt>40 CFR 58, Apéndice A</dt><dd>Requisitos de aseguramiento de calidad de las redes, eCFR vigente al 20-10-2026. <code>Appendix A to Part 58_ Title 40 (up to date as of 10-20-2026).pdf</code><span class="used">M12</span></dd></div>
+      <div id="b-qah"><dt>EPA QA Handbook Vol. II</dt><dd>US EPA. <i>Quality Assurance Handbook for Air Pollution Measurement Systems, Volume II</i>. <code>USEPA - Quality Handbook.pdf</code><span class="used">M12</span></dd></div>
+      <div id="b-valid"><dt>Plantilla de validación EPA</dt><dd>US EPA. Apéndice D, plantilla de validación (v. 03/2017); idéntica a <code>USEPA - Appendix D Air Quality Handbook.pdf</code>. <code>app_d_validation_template_version_03_2017_for_amtic_rev_1.pdf</code><span class="used">M12</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="bib-group">
+    <h3>Incertidumbre, calibración y precisión (GUM e ISO)</h3>
+    <dl>
+      <div id="b-gum"><dt>GUM (JCGM 100)</dt><dd>ISO/IEC Guide 98-3:2008. <i>Guide to the expression of uncertainty in measurement</i>. <code>ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ ….pdf</code><span class="used">M6 · M7 · M8</span></dd></div>
+      <div id="b-gums1"><dt>GUM Suplemento 1</dt><dd>ISO/IEC Guide 98-3/Suppl. 1:2008, método de Monte Carlo, con su corrigendum 1:2009. <code>ISO_IEC Guide 98-3_2008 Suppl.1_2008 ….pdf</code>; <code>… Suppl.1_2008_Cor 1_2009 ….pdf</code><span class="used">M13</span></dd></div>
+      <div id="b-gums2"><dt>GUM Suplemento 2</dt><dd>ISO/IEC Guide 98-3/Suppl. 2:2011, cualquier número de magnitudes de salida. <code>ISO_IEC Guide 98-3_2008 Suppl.2_2011 ….pdf</code><span class="used">M13</span></dd></div>
+      <div id="b-gum1"><dt>JCGM GUM-1</dt><dd>Introducción a la expresión de la incertidumbre de medida. <code>JCGM_GUM-1.pdf</code><span class="used">M1 · M8</span></dd></div>
+      <div id="b-gum6"><dt>JCGM GUM-6</dt><dd>JCGM GUM-6:2020. Desarrollo y uso de modelos de medición. <code>JCGM_GUM_6_2020.pdf</code><span class="used">M8</span></dd></div>
+      <div id="b-17025"><dt>ISO/IEC 17025</dt><dd>BS EN ISO/IEC 17025:2017. Requisitos generales para la competencia de los laboratorios de ensayo y calibración. <code>BS EN ISO_IEC 17025_2017.pdf</code><span class="used">M1 · M5 · M10 · M11</span></dd></div>
+      <div id="b-6143"><dt>ISO 6143</dt><dd>ISO 6143:2001. <i>Gas analysis — Comparison methods for determining and checking the composition of calibration gas mixtures</i>. <code>ISO 6143 2001.pdf</code><span class="used">M7 · M9</span></dd></div>
+      <div id="b-28037"><dt>ISO/TS 28037</dt><dd>ISO/TS 28037:2010. <i>Determination and use of straight-line calibration functions</i>. <code>ISO 28037.pdf</code><span class="used">M7 · M9 · T · M13</span></dd></div>
+      <div id="b-5725"><dt>ISO 5725</dt><dd>ISO 5725-2, -3, -4 y -6:1994 y 5725-5:1998. Exactitud (veracidad y precisión) de métodos y resultados de medición, con los corrigenda de las Partes 1, 2, 3, 5 y 6. <code>ISO 5725-*.pdf</code><span class="used">M2 · M5 · M6 · M13</span></dd></div>
+      <div id="b-deldossi"><dt>Deldossi y Zappa 2009</dt><dd>Deldossi, L.; Zappa, D. Comparación entre ISO 5725 y GUM, 2009. <code>2009 - Deldossi - ISO 5725 vs GUM comparison.pdf</code><span class="used">M6</span></dd></div>
+      <div id="b-milton"><dt>Milton et al. 2006</dt><dd>Milton, M. J. T. et al. <i>Implementation of a generalized least-squares method for determining calibration curves from data with general uncertainty structures</i>. Metrologia, 2006. <code>milton2006.pdf</code><span class="used">M9 · T · M13</span></dd></div>
+      <div id="b-enothers"><dt>EN 14211, 14212 y 14626</dt><dd>BS EN 14211:2012 (NO/NO₂), BS EN 14212:2012 (SO₂) y BS EN 14626:2012 (CO). <code>BS EN 14211_2012.pdf</code>; <code>BS EN 14212_2012 .pdf</code>; <code>BS EN 14626_2012 .pdf</code><span class="used">M12</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="bib-group">
+    <h3>Libros de estadística, metrología y quimiometría</h3>
+    <dl>
+      <div id="b-sc"><dt>Statistical Concepts</dt><dd><i>Statistical Concepts – A First Course</i>, por capítulos. <code>statistical_concepts_c01–c10.pdf</code><span class="used">M2 · M3 · M4 · M6 · M7</span></dd></div>
+      <div id="b-ism"><dt>Intro. Statistics in Metrology</dt><dd><i>Introduction to Statistics in Metrology</i>, por capítulos. <code>intro_stats_metro_c01–c11.pdf</code>; <code>a01–a05.pdf</code><span class="used">M1 · M2 · M3 · M4 · M5 · M6 · M7 · M8 · M10 · M11 · T · M13</span></dd></div>
+      <div id="b-mmu"><dt>Metrology and Measurement Uncertainty</dt><dd><i>Metrology and Measurement Uncertainty</i>, por capítulos. <code>metrology_measure_uncer_c01–c10.pdf</code><span class="used">M1 · M2 · M3 · M4 · M6 · M8 · M10</span></dd></div>
+      <div id="b-asq"><dt>ASQ Metrology Handbook</dt><dd><i>The ASQ Metrology Handbook</i>, caps. 27, 29 y 30. <code>asq_metrological_handbook_c*.pdf</code><span class="used">M4 · M8 · M10</span></dd></div>
+      <div id="b-otto"><dt>Otto</dt><dd>Otto, M. <i>Chemometrics: Statistics and Computer Application in Analytical Chemistry</i>, 3.ª ed. Wiley-VCH, 2017. <code>Chemometrics Statistics and Computer Application.pdf</code><span class="used">M2 · M6 · M7 · M11 · T</span></dd></div>
+      <div id="b-brereton"><dt>Brereton</dt><dd>Brereton, R. G. <i>Chemometrics: Data Driven Extraction for Science</i>, 2.ª ed. Wiley, 2018. <code>chemometrics_c01–c07.pdf</code>; <code>chemometrics_a01.pdf</code><span class="used">M3 · M4 · M5 · M6 · M7 · M13</span></dd></div>
+      <div id="b-mw"><dt>Mark y Workman</dt><dd>Mark, H.; Workman, J. <i>Chemometrics in Spectroscopy</i>, 2.ª ed. Elsevier, 2018, secciones. <code>chemometrics_spectroscopy_s03, s05, s06, s020, s021.pdf</code><span class="used">M1 · M2 · M4 · M5 · M6 · M7 · M13</span></dd></div>
+      <div id="b-huq"><dt>Handbook of Uncertainty Quantification</dt><dd>Consulta de apoyo. <code>Handbook of Uncertainty Quantification.pdf</code><span class="used">M13</span></dd></div>
+      <div id="b-ai"><dt>AI-Assisted Statistics</dt><dd><i>AI-Assisted Statistics for Data Scientists</i>, material de apoyo. <code>AI-Assisted Statistics for Data Scientists_.epub</code><span class="used">M13</span></dd></div>
+    </dl>
+  </div>
+
+  <div class="bib-group">
+    <h3>Caso del proyecto</h3>
+    <dl>
+      <div id="b-ryr"><dt>Estudio R&amp;R CALAIRE 2022–2023</dt><dd>Resultados del estudio de repetibilidad y reproducibilidad del Level 2 contra el SRP 55: dos analistas, 10 niveles, tres campañas de 6 días (hoja BASE DE DATOS). <code>Resultados R&amp;r_2022 2023 (1).xlsx</code><span class="used">M6 · T</span></dd></div>
+      <div id="b-cert"><dt>Certificado F-PSMT-01</dt><dd>Plantilla del certificado de calibración del patrón Level 2 de CALAIRE (Thermo 49C, S/N 59756-324) contra el SRP 55. <code>F-PSMT-01 Certificado de Calibracion_G1-sn59756-324_TBH.xlsm</code><span class="used">T</span></dd></div>
+    </dl>
+  </div>
+
+</section>
+
+<footer>Propuesta de temario · 22 de octubre de 2026</footer>
+
+</main>
+</div>
+</div>
