@@ -1,0 +1,15 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+Creado **[eval_calidad_prop_e.md](eval_calidad_prop_e.md)**, sin modificar archivos existentes.
+
+**Veredicto:** buena propuesta de estadística aplicada a A, aprobable con correcciones, pero todavía no lista para impartirse con los paquetes disponibles. **Nota global: 3,8/5.**
+
+El informe incluye:
+- Notas para los seis criterios.
+- **12 hallazgos numerados:** 7 mayores y 5 menores, con ubicación, evidencia y corrección propuesta.
+- Viabilidad de los casos según los datos disponibles.
+- Dictamen sobre los ocho pendientes técnicos del informe de redacción.
+- Fortalezas y prioridades de cierre.
+
+Se confirma que **la referencia a GGMR/ISO/TS 28037 y la mención del SRP 27 son correctas**. Las correcciones prioritarias afectan a la componente entre días, la definición de `E_n`, el alcance validado de las herramientas y la cobertura práctica y evaluativa de cada tema. No se evaluaron las horas.

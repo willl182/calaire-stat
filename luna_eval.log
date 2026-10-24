@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé `prop_e.md` y creé `ajustes_eval_prop_e.md`. El registro contiene decisiones para H01–H12 y las recomendaciones de las secciones 4, 5 y 8, además de las tareas externas pendientes.
+
+Entre los cambios principales: precisé los modelos y criterios de M6 y M9; acoté el uso de GGMR al alcance validado; añadí evidencias evaluables para métodos que estaban poco especificados; aclaré los prerrequisitos y conservé el orden M9 → M10 → M11 → M12. También dejé Allan fuera del programa con los datos disponibles y establecí condiciones verificables para los casos B, C y D.
+
+Los materiales externos no se modificaron. La propuesta mantiene explícito que aún faltan paquetes y soluciones revisadas antes de impartir ciertas prácticas; no los presenta como ya preparados. No ejecuté pruebas, dado que los cambios son documentales.

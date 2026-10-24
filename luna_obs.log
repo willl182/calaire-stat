@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé `prop_e.md` y creé `ajustes_obs_prop_e.md` con la tabla de trazabilidad y los cambios adicionales.
+
+Entre los ajustes, precisé que B reconoce cuándo la independencia no está justificada y que I trata la covarianza; también reformulé la conclusión del caso Level 2–SRP 55 como compatibilidad estadística entre resultados, no como verificación independiente del instrumento. Quedaron reflejados los demás puntos sobre ANOVA, t y F, falta de ajuste, GGMR, Allan, grados de equivalencia, secuencia M9→M12 y exclusiones.
+
+No modifiqué ningún otro archivo. Revisé las secciones modificadas con una búsqueda de los temas acordados.
