@@ -1,0 +1,4 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Hay una discrepancia pendiente en `curso/S2_modelos_calibracion/M08_libreto.md:127`: el libreto indica `u_c` lineal aproximada de **0,2632 nmol/mol**, pero el script y la bitácora dan **0,2636774 nmol/mol**, que redondeado a cuatro decimales es **0,2637 nmol/mol**. Conviene corregir ese valor para que coincida con el cálculo reproducible.

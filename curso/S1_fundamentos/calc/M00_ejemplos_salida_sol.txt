@@ -1,0 +1,17 @@
+B: parejas (id, nivel, x, y, e)
+('P01', 'L0', 0.0, -0.2, -0.2)
+('P02', 'L1', 50.0, 50.4, 0.3999999999999986)
+('P03', 'L1', 50.0, None, None)
+('P04', 'L2', 100.0, 100.8, 0.7999999999999972)
+('P05', 'L3', 150.0, 150.7, 0.6999999999999886)
+B: referencias=5, indicaciones=4, parejas válidas=4, faltantes=1
+B: media de errores válidos=0.425 nmol/mol
+B: falso error al emparejar por posición para P03=50.8 nmol/mol
+I: total=16; por campaña={'C1': 8, 'C2': 8}; por analista={'A1': 8, 'A2': 8}
+I: conteos campaña×analista={('C1', 'A1'): 4, ('C1', 'A2'): 4, ('C2', 'A1'): 4, ('C2', 'A2'): 4}
+I: conteos analista×día={('A1', 1): 4, ('A1', 2): 4, ('A2', 1): 4, ('A2', 2): 4}
+I2: filas anchas=2; celdas de lectura no faltantes=3; registros largos=3
+I2: registros largos=[('C1', 'A1', 1, 1, 10.0), ('C1', 'A1', 1, 2, 11.0), ('C1', 'A2', 1, 1, 12.0)]
+A: errores Python (redondeados a 3 decimales)=[0.4, 0.8, 0.7]
+A: errores LibreOffice Calc (redondeados a 3 decimales)=[0.4, 0.8, 0.7]
+A: igualdad binaria exacta=False; diferencia máxima=4.441e-16 nmol/mol; acuerdo con tolerancia 1e-12 nmol/mol=True

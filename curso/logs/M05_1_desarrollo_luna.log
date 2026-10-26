@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Creé `M05_bitacora_luna.md` con el plan previo y la ejecución documentada.
+Completé `M05_libreto.md` para B, I y A; 7 954 palabras y tres marcadores de práctica sin desarrollar.
+Guardé `calc/M05_diseno.py` y lo ejecuté con `curso/.venv/bin/python`; los cálculos reproducen los ejemplos.
+Verifiqué con `pdftotext` los numerales citados y anoté páginas en la bitácora.
+Dejé sin numeral y como pendientes las referencias de EPA TAD e ISO 13964 que no pude verificar.

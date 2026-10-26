@@ -1,0 +1,103 @@
+# M11 — Revisión de redacción y errores (Haiku)
+
+Revisión de `M11_libreto.md`. No se ha editado el libreto.
+
+## Plan de revisión
+
+1. **Lectura completa** de `curso/guia_libreto.md` (§§1–8), de `prop_e.md` (§§1–4, módulos M2, M3, M7, M8, M11, M12, M13, y §§6–8) y de `M11_libreto.md` (191 líneas). Se consultó la bitácora solo para contrastar el alcance declarado.
+2. **Recálculo de cifras.** Ejecuté `curso/S3_comparacion_decision/calc/M11_ejemplos.py` con `curso/.venv/bin/python` y comparé cada cifra del libreto con la salida. Las comprobaciones auxiliares (demora sin trayectorias censuradas, límites alternativos de B2, cambios acumulados de I2 y detección no condicionada de A2) se hicieron con scripts en `/tmp`, fuera del repositorio.
+3. **Referencias.** `pdftotext` sobre `docs/`: Crowder (caps. 10 y 11 y bibliografía), ISO/IEC 17025 §7.7, NISTIR 6963 Tabla 4 y Otto cap. 9 (§9.1 y Tabla 9.2).
+4. **Alcance.** Contraste de la ficha y de cada nivel con prop_e §5 (M11), §4 (prerrequisitos), §6 (exclusiones) y §8 (errores críticos). Comprobación de marcadores de práctica.
+5. **Forma.** Viñetas en contenido narrado, etiquetas de acotación, coma decimal, notación (§4 de la guía), estructura (§2), rótulos de datos (§6).
+6. **Redacción.** Lectura de cada escena en voz alta, buscando frases ambiguas, concordancia y terminología.
+
+## Hallazgos
+
+| id | Ubicación (escena y texto citado) | Tipo | Severidad | Problema | Corrección propuesta |
+|---|---|---|---|---|---|
+| R01 | Escena A2, párrafo «Apliquemos ambos métodos…»: «la demora media desde la ocasión del cambio es 8,537 observaciones para EWMA y 9,587 para CUSUM» | numérico | crítica | La demora incluye las trayectorias sin señal después del cambio (censuradas). En `calc/M11_ejemplos.py`, `ewma_post = first_ewma >= 25` y `cusum_post = first_cusum >= 25` incluyen el valor `horizon` (50), que cuenta como 26. Solo con trayectorias detectadas la demora es 8,324 (EWMA) y 9,306 (CUSUM). El texto dice además que los resultados «se reproducen» con el script. | En el script, usar `ewma_post = (first_ewma >= 25) & (first_ewma < horizon)` y lo mismo para CUSUM. En el libreto, sustituir por 8,324 y 9,306, y definir la demora en una frase (p. ej., «contamos la ocasión 26 como 1»). |
+| R02 | Escena A2, mismo párrafo: «EWMA detecta dentro del horizonte en 98,795 % de las trayectorias y CUSUM en 98,316 %» | interpretación | mayor | Son probabilidades condicionadas a no haber alarmado antes de la ocasión 26 (lo dice el propio texto unas líneas después), no porcentajes de todas las trayectorias. Sin esa condición: 88,27 % (EWMA) y 94,44 % (CUSUM). | «EWMA detecta el cambio en 98,795 % de las trayectorias que seguían en control en la ocasión 26 (88,27 % del total); CUSUM, en 98,316 % (94,44 % del total).» |
+| R03 | Escena I2, párrafo «También hay que distinguir tiempo de calendario…»: «Un cambio constante por día no produce el mismo efecto acumulado cuando una revisión ocurre a intervalos irregulares.» | conceptual | mayor | Es falso. Una deriva constante por día acumula el mismo cambio en días transcurridos, sea cual sea el calendario de revisiones. Lo que cambia es la unidad: si el modelo usa el número de observación en lugar de los días, la pendiente deja de ser nmol/mol por día. | «Una deriva constante por día acumula el mismo cambio en días, sea cual sea el calendario de revisiones. Pero si el modelo usa el número de observación en lugar de los días, la pendiente deja de tener unidades de nmol/mol por día y no se puede comparar entre series.» |
+| R04 | Escena I2, párrafo «Veamos una serie docente simulada…»: «A intervalos de treinta días, una respuesta de deriva en nmol/mol toma los valores 0,10; 0,18; …; 0,63» | reproducibilidad | mayor | No se dice qué día corresponde a cada valor. El script usa `t = 0, 30, …, 180`, con el primer valor en el origen. Sin esa indicación no se reproducen el intercepto 0,0893 ni la predicción «desde el origen definido». | Añadir: «La primera verificación es el día 0 (origen); las siguientes caen en los días 30, 60, …, 180.» |
+| R05 | Escena B2: «en el nivel B ustedes reciben límites establecidos: no deben volver a estimarlos con un grupo que incluya el cambio que se intenta detectar», y a continuación «Con los factores de tres sigmas… los límites de individuales son −0,0015245 y 0,0021995» | coherencia metodológica | mayor | Los límites del ejemplo se calculan con las ocho observaciones, incluido el 0,0018 que es el cambio que la carta debe detectar. Es justo lo que B2 prohíbe, y B1 lo presenta como «carta validada». Con una línea base de las cinco primeras observaciones (centro 0,00016; MR̄ 0,000425; LIC −0,0009705; LSC 0,0012905; LSC del MR 0,0013885), el punto 6 (0,0018) rebasa el LSC y el rango de la observación 7 (0,0016) rebasa el LSC del MR. | Recomiendo calcular los límites con una línea base separada (las cinco primeras observaciones) y rehacer B1 y B2 para que la señal sea la lección, actualizando el script con la variante. Alternativa menos costosa: declarar en B2 que los límites salen de la misma serie solo para mostrar la aritmética, y que una carta real no se construye así. |
+| R06 | Escena B2: «Con los factores de tres sigmas propios de esta ilustración…» y «[Intro. Statistics in Metrology §11.2.2; Otto… cap. 9, numeral y edición de tabla pendientes de verificación]» | referencia y numérico | mayor | La constante 1,128 (σ̂ = MR̄/1,128) está en Crowder §11.2.1, no en §11.2.2. El factor 2,66 es 3/1,128. El factor D4 = 3,267 (n = 2) no aparece en `docs/`. Otto cap. 9 no trata la carta de rango móvil: su Tabla 9.2 (p. 350) da 3,518 como límite superior para n = 2 al 99 %, no 3,267. Citar Otto aquí respalda un número distinto. | «σ̂ = MR̄/1,128 [Crowder 2020 §11.2.1]; límites X̄ ∓ 3σ̂ = X̄ ∓ 2,66·MR̄; límite superior del rango móvil D4·MR̄ con D4 = 3,267 para n = 2 [Montgomery, no disponible en docs/].» Quitar Otto de esta frase y citarlo solo para la estructura general de cartas (§9.1, pp. 346–349: advertencia al 5 %, control al 1 %). |
+| R07 | Ficha del capítulo, fila «Prerrequisitos»: «M2 (descripción y series temporales), M4 (inferencia), M7 (regresión y predicción)» | alcance | mayor | prop_e §4 dice que M11 «se apoya en la dependencia temporal de M3 y en regresión y propagación de M7–M8». La ficha omite M3 y M8, y el libreto usa dependencia (I2) y propagación (I3). | «M2 (descripción y series temporales), M3 (dependencia temporal), M4 (inferencia), M7 (regresión y predicción), M8 (propagación de incertidumbre).» |
+| R08 | Escena A1: «simulamos cien mil series independientes…»; Escena A2: «Bajo el mismo escenario simulado de cien mil trayectorias…» | alcance y prerrequisito | mayor | La simulación es Monte Carlo, contenido de M13 (solo A, posterior a M11). El libreto no lo nombra ni lo declara como prerrequisito, y prop_e no asigna Monte Carlo a M11. Es ampliar el temario en la práctica. | Nombrarla: «una simulación de Monte Carlo, cuyo método se desarrolla en M13». Añadir M13-A como prerrequisito en la ficha o una nota al instructor. Alternativa: presentar la longitud media de corrida solo como resultado de AX.12, sin simulación. |
+| R09 | Escena I1 «Una línea base homogénea» (sin cifras); cierre de A2, párrafo «El intervalo de recalibración se justifica conectando…» (sin cifras) | cobertura (guía §3) | mayor | La guía §3 exige al menos un ejemplo numérico cuando el tema es cuantitativo. I1 fija centro y límites sin números, y A2 presenta el intervalo solo en prosa. | I1: añadir ejemplo con la serie de I2: la media de las siete respuestas es 0,3614 nmol/mol; si la fase inicial (días 0 y 30) se excluye por cambio de fase, la media de las cinco restantes es 0,4500 nmol/mol, una diferencia de 0,0886 nmol/mol que muestra por qué la fase debe fijarse antes de calcular. A2: tabla con tres intervalos candidatos y el cambio acumulado esperado con la pendiente de I2 (30 días: 0,0907; 60 días: 0,1814; 90 días: 0,2721 nmol/mol). |
+| R10 | Escenas B1, B3, I1 y I3: «[Intro. Statistics in Metrology §11.2]», «[ISO/IEC 17025:2017 §7.7]», «[NISTIR 6963, Tabla 4, p. 20, PDF p. 20]» | referencia (formato §5) | menor | §5 pide la clave de la tabla: `[Crowder 2020 §11.2]`, `[ISO 17025 §7.7]`, `[NISTIR 6963 Tabla 4, p. 20]`. «PDF p. 20» repite la página. Para cartas de control, ISO 17025 §7.7.1 d) («check or working standards with control charts») es más preciso que §7.7. | Usar las claves de §5. En B3 o B2, citar «[ISO 17025 §7.7.1 d)]» para las cartas. Quitar «PDF p. 20». |
+| R11 | Sección «Referencias del capítulo»: entradas «Intro. Statistics in Metrology» y «Montgomery, D. C.» | referencia | mayor | §5 exige autor, título, edición/año y editorial. Crowder: faltan los autores (Stephen Crowder, Collin Delker, Eric Forrest, Nevin Martin), la editorial (Springer) y el año (2020). Montgomery: faltan año y editorial. La bibliografía del propio Crowder cita «Montgomery, D.: Introduction to Statistical Quality Control. Wiley, New York (2013)». | Crowder: «Crowder, S.; Delker, C.; Forrest, E.; Martin, N. Introduction to Statistics in Metrology. Springer, 2020 (`docs/Introduction to Statistics in Metrology.pdf`).» Montgomery: «Montgomery, D. C. Introduction to Statistical Quality Control. Wiley, 2013 (año según Crowder 2020; edición por verificar; no disponible en docs/).» |
+| R12 | Notas de verificación en narración: «[Montgomery… numeral pendiente]» (varias veces), «[Intro… §§10.8–10.9, ubicación exacta pendiente]» (I3), «numeral y edición de tabla pendientes» (B2), y en Referencias «Los numerales del capítulo 10 quedan pendientes de verificación» | formato | menor | Son notas del desarrollador dentro del texto que se narra. §5 manda anotarlas en la bitácora y, para fuentes externas, usar «(no disponible en docs/)». Además, §§10.8–10.9 ya están verificados en `docs/` (ver Verificaciones). | Quitar «numeral pendiente» de la narración y pasarlo a la bitácora. En I3, citar «[Crowder 2020 §10.8.1]». En Referencias, reemplazar la nota por los títulos verificados (§10.8 «Drift and Predicting Future Values», §10.8.1 «Uncertainty During Use», §10.9 «Calibration Interval Analysis»). |
+| R13 | Escena A1, pizarra «$Z_t=\lambda X_t+(1-\lambda)Z_{t-1}$»; Escena A2, pizarra «$C_t^+=\max(0,C_{t-1}^+ + X_t-k)$» y texto «descontando un valor de referencia $k$» | definición | mayor | Nunca se dice que `X_t` son observaciones estandarizadas, (x_t − μ₀)/σ, ni que `k` y `h` están en unidades de σ. El script lo hace así (σ = 1). Sin esta definición, «k = 0,5 y h = 5» no tiene sentido en nmol/mol, y el lector puede aplicar los parámetros a una serie sin escalar. | En A1, antes de la pizarra: «Trabajamos con $X_t=(x_t-\mu_0)/\sigma$, la desviación en unidades de σ; por eso λ es adimensional y los parámetros k y h se expresan en σ.» |
+| R14 | Escalamiento de B, «Señales de escalamiento»: «…incertidumbre relevante en ambos ejes, pocos grados de libertad…» | alcance y claridad | menor | El ítem «incertidumbre relevante en ambos ejes» es de la lista general de prop_e §2 y corresponde a comparaciones con dos ejes (M9). No aplica a una carta de un solo valor. | Quitar «incertidumbre relevante en ambos ejes». |
+| R15 | Escena B3: «Para que el plan se pueda ejecutar, separa al menos cuatro preguntas.» | gramática | menor | Concordancia: el texto se dirige a «ustedes». | «…separen al menos cuatro preguntas.» |
+| R16 | Escena B3: «No se sustituye por “todo bien” porque una lectura posterior haya regresado al centro.» | redacción | menor | Frase confusa para ser dicha en voz alta. | «Una lectura posterior que regresa al centro no permite decir “todo bien”.» |
+| R17 | Escena A2: «Estos valores acompañan a las tasas bajo estabilidad: Bajo estabilidad durante todo el horizonte, EWMA tuvo…» | redacción | menor | Dos puntos y mayúscula dentro de la frase; el enlace no se entiende al oírlo. | «Para compararlos con las tasas bajo estabilidad: en el mismo horizonte, EWMA tuvo 19,909 % de trayectorias con al menos una falsa alarma y CUSUM, 9,177 %.» |
+| R18 | Escena A1: «cerca de 19,909 % de las trayectorias produjo al menos una alarma… corresponde exactamente al modelo simulado» | redacción y precisión | menor | «Cerca de» contradice «exactamente» en la misma escena; la cifra es exacta para la semilla. | Quitar «cerca de». |
+| R19 | Escena I1, párrafo «Del mismo modo…»: «por ejemplo, un resumen calculado con distinta orientación de ejes o una pendiente forzada en vez de libre» | claridad | menor | «Distinta orientación de ejes» no es un cambio de definición de la respuesta; lo que se quiere decir es la regresión forzada por el origen. | «…por ejemplo, una pendiente calculada con regresión forzada por el origen en lugar de libre.» |
+| R20 | Escena A2: «Los datos C1 de seis días corresponden a una sola calibración»; Escena I1: «los seis días de una calibración F-PSMT-01» | rótulo | menor | «C1» es una etiqueta interna de `casos_taller/caso_C`. El alumno no la conoce, y el rótulo de origen se pierde. | «Los seis días del certificado F-PSMT-01 (datos propios)». |
+| R21 | Escena B1, pizarra: «Señal de punto: $x_t < LIC$ o $x_t > LSC$» | claridad | menor | LIC y LSC no se definen en la narración. | En la narración: «límite inferior de control (LIC) y límite superior de control (LSC)». |
+| R22 | Escena I2, pizarra: «$y_t=\beta_0+\beta_1 t+\varepsilon_t$» | notación | menor | prop_e §3 fija «y = a + b·x» para rectas y el resto del curso (M7) la usa. Aquí cambia a β sin justificar. | Usar «$y_t=a+b\,t+\varepsilon_t$», o decir en la narración por qué se usa β. |
+
+## Verificaciones hechas
+
+**Cifras del libreto recalculadas con `calc/M11_ejemplos.py` (curso/.venv/bin/python):**
+
+| Cifra del libreto | Resultado del script | Estado |
+|---|---|---|
+| B: centro 0,0003375; MR̄ 0,0007; LIC −0,0015245; LSC 0,0021995; LSC del MR 0,0022869; sin señales | 0,000337500; 0,000700000; −0,001524500; 0,002199500; 0,002286900; `[]` | Coincide |
+| B1: 0,0018 dentro de límites 0,0022 y −0,0015 | Dentro de LSC y LIC redondeados | Coincide |
+| I: intercepto 0,0893; pendiente 0,003024; error estándar 0,0000922 | 0,08929; 0,003024; 0,0000922 | Coincide |
+| I: IC 95 % de la pendiente 0,002787 a 0,003261 | 0,0027868 a 0,0032609 | Coincide |
+| I: p ≈ 4,96×10⁻⁷ | 4,9567×10⁻⁷ | Coincide |
+| I2: s residual 0,01464; predicción día 120 0,4521 | 0,014639; 0,452143 | Coincide |
+| I2: IC de la media 0,4362 a 0,4680; intervalo predictivo 0,4113 a 0,4930 | 0,43624 a 0,46804; 0,41129 a 0,49299 | Coincide |
+| I2/I3: cambio acumulado día 180, 0,5443 | 0,544286 | Coincide |
+| A1: EWMA, P(alarma) = 19,909 % | 0,199090 | Coincide |
+| A2: CUSUM, P(alarma) = 9,177 % | 0,091770 | Coincide |
+| A2: detección EWMA 98,795 %; CUSUM 98,316 % | 0,987946; 0,983156 | Coincide, pero es condicionada (R02) |
+| A2: demoras 8,537 y 9,587 | 8,537 y 9,587 con censuradas; solo detectadas: 8,324 y 9,306 | **No coincide (R01)** |
+| I2: media de las siete respuestas 0,3614; media de las cinco últimas 0,4500 (R09) | Cálculo aritmético: 2,53/7 y 2,25/5 | Coincide (no incluido en el script) |
+| I2: cambio acumulado a 30, 60 y 90 días (R09) | 0,0907; 0,1814; 0,2721 | Coincide con pendiente de script |
+| B2 alternativa con cinco primeras observaciones (R05) | centro 0,00016; MR̄ 0,000425; LSC 0,0012905; LSC del MR 0,0013885; señal en obs. 6 | Cálculo auxiliar en `/tmp` |
+| A2: detección no condicionada (R02) | EWMA 0,8827; CUSUM 0,9444 | Cálculo auxiliar en `/tmp` |
+
+**Referencias comprobadas con `pdftotext` sobre `docs/`:**
+
+| Referencia | Comprobación | Resultado |
+|---|---|---|
+| Crowder 2020 §11.2 (SPC) | «11.2 Statistical Process Control (SPC)», pp. 267–269 | Existe y trata causas asignables y patrones de carta (B1 coherente) |
+| Crowder 2020 §11.2.1 | Constante 1,128: σ̂ = (suma de MR)/49 / 1,128 | Existe; la constante no está en §11.2.2 (R06) |
+| Crowder 2020 §11.2.2 | «Discussion»: carta X-MR; CUSUM (Lucas 1982) y EWMA (Crowder 1987b, 1989) como alternativas más sensibles | Existe; sirve para justificar la sensibilidad de A (sugerencia, no hallazgo) |
+| Crowder 2020 §10.8 y §10.8.1 | «10.8 Drift and Predicting Future Values»; «10.8.1 Uncertainty During Use» | Existen; respaldan I3 y la advertencia contra extrapolar. Resuelve la nota «pendiente» de R12 |
+| Crowder 2020 §10.9 | «10.9 Calibration Interval Analysis» | Existe (título comprobado; contenido no leído) |
+| Crowder 2020 (autores y editorial) | Portada: Stephen Crowder, Collin Delker, Eric Forrest, Nevin Martin; Springer Nature, 2020 | Confirma R11 |
+| Montgomery 2013 (bibliografía de Crowder) | «Montgomery, D.: Introduction to Statistical Quality Control. Wiley, New York (2013)» | Año y editorial que faltan en Referencias (R11) |
+| ISO/IEC 17025:2017 §7.7 | «7.7 Ensuring the validity of results» | Coincide |
+| ISO/IEC 17025:2017 §7.7.1 d) | «use of check or working standards with control charts» | Existe; más preciso que §7.7 (R10) |
+| NISTIR 6963, Tabla 4, p. 20 (PDF p. 20) | «Table 4. Multiple comparisons of calibration runs for SRP-0 vs SRP-2», diez corridas (OZN8127 a OZN8141) | Coincide: diez comparaciones, página 20 |
+| NISTIR 6963 autores y fecha | Paur, Bass, Norris, Buckley; «February 2003» | Coincide con Referencias |
+| Otto 2017, cap. 9 | Cap. 9 «Quality Assurance and Good Laboratory Practice»; §9.1 «Validation and Quality Control», pp. 346–349; Tabla 9.2 (p. 350) | Cap. 9 correcto; no trata la carta de rango móvil; D para n = 2 al 99 % es 3,518, no 3,267 (R06) |
+| Otto 3.ª ed., Wiley-VCH 2017 | Portada: «Third Edition», «© 2017 Wiley-VCH» | Coincide |
+
+Total de numerales comprobados: 13 (supera el mínimo de 5).
+
+**Alcance y forma (prop_e y guía):**
+
+- **Contenido por nivel.** B: causas comunes y especiales (B1), I-MR con límites establecidos (B2), control frente a tolerancias y plan de acción (B3), escalamiento. I: línea base homogénea (I1), dependencia y regresión de deriva (I2), predicción e incertidumbre de uso (I3). A: EWMA y CUSUM (A1–A2), sensibilidad a falsas alarmas (A2), intervalo de recalibración (A2). Todo lo que prop_e §5 asigna está presente. No hay contenido de más salvo la simulación de R08.
+- **Exclusiones (prop_e §6).** Búsqueda de ensayos de aptitud, ISO 13528, Mandel, PCR/PLS, varianza de Allan, GGMR, KCRV, BIPM y regulatorios: ninguna coincidencia.
+- **Errores críticos (prop_e §8).** Cubiertos en los bloques `[ERROR CRÍTICO]` de B3, I1, I3 y A2: tolerancia frente a control, eliminar datos, extrapolar, tratar dependencia como independencia, usar límites de otro escenario, reportar resultados publicados o simulados como de CALAIRE.
+- **Marcadores de práctica.** Tres marcadores `> **[PRÁCTICA — fase de ejercicios]** <título>` (B tras B3, I tras I3, A tras A2), con los títulos de prop_e. No hay enunciados ni soluciones.
+- **Viñetas.** Ninguna en contenido narrado. Solo en «Referencias del capítulo».
+- **Etiquetas de acotación.** Todas están en la lista permitida de §1 (`DIAPOSITIVA`, `PIZARRA`, `PREGUNTA AL GRUPO`, `EJEMPLO`, `ERROR CRÍTICO`, `ESCALAMIENTO`, `TRANSICIÓN`, `PRÁCTICA — fase de ejercicios`).
+- **Estructura (§2).** Ficha, niveles B, I y A con escenas, «Señales de escalamiento» en B, «Cierre del capítulo» y «Referencias del capítulo». Presentes.
+- **Rótulos de datos (§6).** B2 e I2 declarados como simulados. F-PSMT-01 como propio. NISTIR 6963 como publicado. Correcto.
+- **Coma decimal y unidades.** Coma decimal en todo el texto narrado. Unidades nmol/mol y día en I. Sin hallazgos.
+
+## Resumen
+
+- **22 hallazgos:** 1 crítico, 10 mayores, 11 menores.
+- **Crítico:** R01. Las demoras de A2 (8,537 y 9,587) incluyen trayectorias censuradas; los valores correctos son 8,324 y 9,306. El fallo está en el script, por lo que hay que corregir ambos.
+- **Mayores de cifras y conceptos:** R02 (probabilidad condicionada presentada como total), R03 (afirmación falsa sobre el calendario), R04 (origen temporal sin indicar), R05 (límites calculados con el cambio que deben detectar), R06 (constantes atribuidas a Otto, que no las respalda), R13 (estandarización de X_t sin definir).
+- **Mayores de alcance y referencias:** R07 (prerrequisitos incompletos), R08 (Monte Carlo antes de M13), R09 (temas cuantitativos sin ejemplo), R11 (referencias incompletas).
+- **Lo verificado sin hallazgos:** todas las cifras de B, I e I2 coinciden con el script; las referencias de Crowder, ISO 17025 §7.7, NISTIR 6963 Tabla 4 y Otto existen en `docs/` con la ubicación indicada (salvo las observaciones de R06 y R10–R12); el alcance por nivel y las exclusiones de prop_e §6 se cumplen; el formato de libreto (§§1–2) está en orden.
+- **Orden sugerido de corrección:** R01 primero (script y cifras), después R05 y R13, que cambian la lectura de B y A. Los menores se pueden hacer en una sola pasada.

@@ -1,0 +1,15 @@
+M00	S1_fundamentos	S1	Estructura de los datos y cálculo reproducible	prop_e §5, módulo M0
+M01	S1_fundamentos	S1	Modelo de medición y variables de análisis	prop_e §5, módulo M1
+M02	S1_fundamentos	S1	Estadística descriptiva y elección de la respuesta	prop_e §5, módulo M2
+M03	S1_fundamentos	S1	Probabilidad, distribuciones y dependencia	prop_e §5, módulo M3
+M04	S1_fundamentos	S1	Inferencia: estimación y contraste	prop_e §5, módulo M4
+M05	S2_modelos_calibracion	S2	Diseño de experimentos	prop_e §5, módulo M5
+M06	S2_modelos_calibracion	S2	ANOVA y componentes de varianza	prop_e §5, módulo M6
+M07	S2_modelos_calibracion	S2	Regresión y calibración inversa	prop_e §5, módulo M7
+M08	S2_modelos_calibracion	S2	Propagación de incertidumbre	prop_e §5, módulo M8
+M09	S3_comparacion_decision	S3	Comparación de resultados: diferencias, covarianza y consistencia	prop_e §5, módulo M9
+M10	S3_comparacion_decision	S3	Reglas de decisión y riesgo	prop_e §5, módulo M10
+M11	S3_comparacion_decision	S3	Control estadístico y series temporales	prop_e §5, módulo M11
+M12	S3_comparacion_decision	S3	Indicadores de precisión y sesgo a partir de diferencias relativas	prop_e §5, módulo M12
+M13	S4_numericos_integracion	S4	Métodos numéricos (solo nivel A)	prop_e §5, módulo M13
+AX	S4_numericos_integracion	S4	Anexos de deducciones	prop_e §9 (anexos) y guia_libreto.md §7 (identificadores AX.1–AX.13)

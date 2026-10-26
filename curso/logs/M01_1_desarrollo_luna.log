@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Creé la bitácora con Plan y Ejecución, y el libreto narrado completo de M01 (6 004 palabras).
+Incluí los niveles B, I y A según prop_e; las prácticas quedaron solo como marcadores.
+Guardé y ejecuté `calc/M01_modelo_variables.py` con `curso/.venv/bin/python`; los cálculos se reproducen.
+Verifiqué referencias en `docs/` con `pdftotext`; dejé pendientes VIM y el origen documental de 1,1329.
+Los archivos creados están bajo `curso/S1_fundamentos/`; no desarrollé ejercicios ni soluciones.

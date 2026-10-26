@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué los hallazgos R01–R19 en el libreto y registré decisiones y correcciones adicionales en la bitácora.  
+Actualicé `calc/M03_ejemplos.py`; ejecuté el script y los cálculos nuevos coinciden con el texto.  
+Queda pendiente confirmar la resolución de 0,1 nmol/mol con el manual del 49C o el certificado.

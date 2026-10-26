@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+M04_libreto.md completo, en formato narrado y dentro del alcance B, I y A de prop_e; incluye los tres marcadores de práctica sin desarrollarlas.
+M04_bitacora_luna.md registra el plan y la ejecución, incluidos decisiones y pendientes.
+Los ejemplos numéricos se reproducen con `calc/M04_ejemplos.py`, ejecutado con el entorno del curso.
+Se verificaron con `pdftotext` los numerales citados en los documentos disponibles y se anotaron sus páginas.
+Quedan pendientes de verificación en `docs/` las referencias externas sobre equivalencia y multiplicidad.

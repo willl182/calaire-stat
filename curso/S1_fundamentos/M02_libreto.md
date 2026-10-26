@@ -1,0 +1,189 @@
+# M02. Estadística descriptiva y elección de la respuesta
+
+## Ficha del capítulo
+
+| Elemento | Contenido |
+|---|---|
+| Competencia estadística | Elegir la variable que responde a la pregunta y describir su centro, dispersión y estructura sin perder información. |
+| Prerrequisitos | M1: reconocer referencia, indicación y error con signo, $e=y-x$. |
+| Nivel B | Media, mediana, varianza, desviación estándar, rango, cuantiles; histograma, caja y serie temporal; dispersión de lecturas frente a error estándar; CV y su límite cerca de cero; detección gráfica de valores inusuales sin eliminación automática; redondeo al final. |
+| Nivel I añade | Resúmenes dentro y entre grupos; mediana y MAD; modelo $e_i=a+(b-1)x_i+\varepsilon_i$; predicción del error y tendencia con $x$ cuando hay sesgo proporcional. |
+| Nivel A añade | Sensibilidad de las conclusiones a transformaciones, agregaciones y observaciones influyentes. |
+| Datos de los ejemplos | Todos los conjuntos son **simulados** y construidos determinísticamente en el script para ilustrar los patrones narrados (dispersión, grupos, tendencia y sesgos opuestos); no proceden de un generador aleatorio ni de datos de CALAIRE. Los valores se reproducen con `calc/M02_examples.py`. |
+| Anexos | AX.1: fundamento del divisor $n-1$ en la varianza muestral. Se remite al anexo; no se desarrolla la deducción en clase. |
+| Referencias clave | Numerales localizados en los PDF: Hahs-Vaughn §§2.1–2.3, 3.2.2–3.3 y §5.2; Crowder 2020 §4.3; MMU §3.1.1; GUM 4.2.3. CV sin numeral (ASQ) y MAD sin numeral (NIST/SEMATECH; fuente no disponible en docs/). |
+
+## Nivel B — describir la variable que responde a la pregunta
+
+En el nivel B ya damos por visto qué son la referencia $x$, la indicación $y$ y el error con signo $e=y-x$. Hoy añadimos una pregunta que parece sencilla y que, si se responde mal, puede ocultar lo que necesitamos saber: ¿qué variable vamos a resumir? No hay una única respuesta correcta para cualquier propósito. La elección depende de la pregunta estadística. Si queremos describir las indicaciones que produjo el fotómetro, miramos $y$. Si queremos describir cuánto se apartó cada indicación de su referencia, miramos $e$. Si queremos describir el promedio de un grupo de lecturas, ese promedio es el resultado de interés; la dispersión de las lecturas individuales no es automáticamente la incertidumbre de ese promedio. [prop_e §5, M2]
+
+> **[DIAPOSITIVA]** Proyectar tres columnas enlazadas: referencia $x$, indicación $y$ y error $e=y-x$. Bajo ellas, escribir tres preguntas: «¿qué indicó el equipo?», «¿cuánto se apartó de la referencia?» y «¿qué tan variable fue el promedio?». Las cifras que siguen son simuladas.
+
+### Escena B1. Elegir la variable antes del resumen
+
+Cuando ustedes reciben una tabla de lecturas, antes de calcular una media nombren qué variable representa cada columna y qué pregunta van a contestar. Si quieren describir lo que indicó el fotómetro, resumen $y$. Si quieren describir el desvío respecto a la referencia, resumen el error emparejado $e=y-x$. Si quieren expresar un promedio de lecturas, identifiquen primero cuáles lecturas forman ese promedio. La respuesta estadística cambia con la variable elegida: no existe un único resumen correcto para todas las preguntas. [prop_e §5, M2]
+
+Un valor de referencia, una indicación, un error, un día y un número de orden pueden aparecer todos como números en una hoja de cálculo, pero no son intercambiables. El día identifica el grupo temporal; no es una concentración. El índice de lectura conserva el orden; no es una medición adicional de la respuesta. Y el error se obtiene restando las magnitudes emparejadas: para cada observación, $e_i=y_i-x_i$. Si perdemos la correspondencia entre $x_i$ e $y_i$, podemos producir una lista de errores incorrecta aun cuando todas las cifras individuales sigan presentes. Por eso, mantengan juntas la referencia, la indicación y la diferencia que se deriva de ambas.
+
+> **[PREGUNTA AL GRUPO]** Si la pregunta es cuánto se apartó cada indicación de su referencia, ¿qué variable resumimos: $y$ o $e$? — *Respuesta esperada:* $e=y-x$, porque la diferencia responde directamente al desvío respecto a la referencia. Si la pregunta es qué indicaciones produjo el instrumento, resumimos $y$.
+
+### Escena B2. Frecuencias, histograma, cuantiles y caja
+
+Ahora veamos cómo una tabla compacta puede conservar la forma general de las lecturas. Una distribución de frecuencias cuenta cuántos valores caen en cada categoría o intervalo; una frecuencia relativa divide cada conteo por el total. El histograma representa frecuencias de una variable cuantitativa mediante intervalos contiguos. La elección de intervalos afecta lo que se ve, por eso no leemos un histograma como si revelara una forma única e indiscutible de los datos. [Hahs-Vaughn §§2.1–2.2]
+
+La altura de una barra depende de la convención gráfica y del ancho de sus intervalos; por eso, cuando comparamos dos histogramas, comprobamos que usan límites comparables. Un intervalo demasiado ancho puede ocultar acumulaciones o grupos; uno demasiado estrecho puede hacer que una muestra pequeña parezca llena de irregularidades. En una exposición hablada, no hace falta discutir algoritmos para elegir intervalos: basta con decir qué intervalos se usaron, mostrar los conteos y evitar una interpretación más fuerte que la que permiten las observaciones. La distribución de frecuencias también permite comprobar que los conteos cubren el conjunto seleccionado; si falta una lectura, primero se aclara si es un dato perdido o si la tabla dejó fuera un valor.
+
+Miren este pequeño ejemplo. Son ocho indicaciones simuladas, todas en nmol/mol, de un nivel durante un día: 100,1; 100,4; 99,9; 100,2; 100,5; 100,0; 100,3 y 99,8. El script `calc/M02_examples.py` agrupa estos valores en los intervalos desde 99,7 hasta 100,0, desde 100,0 hasta 100,3 y desde 100,3 hasta 100,6, con una convención de bordes contiguos. Los conteos son 2, 3 y 3. Divididos por ocho, corresponden a frecuencias relativas de 0,25; 0,375 y 0,375. La narración del histograma diría: en este ejemplo simulado, la mayor parte de las observaciones cae entre 100,0 y 100,6; no aparece una separación clara en dos grupos. Eso describe estas ocho observaciones, no certifica por sí solo una distribución teórica.
+
+> **[EJEMPLO]** En la pizarra, dibujar tres barras contiguas con alturas 2, 3 y 3 para los intervalos anteriores. Rotular «simulado; nmol/mol; un día; ocho lecturas». No convertir la gráfica en una regla para descartar observaciones.
+
+Los cuantiles responden a preguntas de posición. La mediana, o cuantil 0,5, deja aproximadamente la mitad de las observaciones a cada lado; los cuartiles describen posiciones asociadas al 0,25 y al 0,75. Las definiciones de muestra pueden usar convenciones distintas de interpolación cuando la posición cae entre observaciones. En este curso, siempre que demos una cifra de cuantil junto con un conjunto pequeño, declararemos el método de cálculo o nos limitaremos a usarlo como resumen gráfico sin sugerir que todas las convenciones dan el mismo decimal. [Hahs-Vaughn §2.3]
+
+Ordenemos las ocho indicaciones: 99,8; 99,9; 100,0; 100,1; 100,2; 100,3; 100,4; 100,5. Su mediana es 100,15 nmol/mol. Con la interpolación lineal usada por el script, el cuartil inferior es 99,975 y el superior 100,325 nmol/mol; el rango intercuartílico es, por tanto, 0,350 nmol/mol. Estos cuantiles son resúmenes posicionales, no límites de tolerancia ni intervalos de incertidumbre.
+
+El diagrama de caja muestra la mediana y los cuartiles, y suele prolongarse con bigotes definidos por la convención gráfica elegida. Algunas convenciones dibujan puntos más allá de los bigotes y los llaman potencialmente inusuales. Ese dibujo es una señal para inspeccionar, no un veredicto sobre la calidad de una lectura. Hay que informar qué convención se usó si la interpretación depende de los bigotes. Un histograma muestra mejor la forma global de la distribución; la caja facilita comparar centro y dispersión entre grupos, pero comprime detalles que sí aparecen en los datos originales. [Hahs-Vaughn §2.3; Crowder 2020 §4.3]
+
+> **[PIZARRA]** Escribir ordenados los ocho valores, marcar la mediana 100,15, $Q_1=99,975$, $Q_3=100,325$ e IQR $=Q_3-Q_1=0,350$ nmol/mol. Indicar que los cuartiles usan el método lineal del script.
+
+### Escena B3. Centro y dispersión: lecturas no son promedios
+
+La media aritmética usa todas las observaciones: se suman los valores y se divide por el número de lecturas. La mediana es el valor central ordenado, o el promedio de los dos centrales cuando el tamaño de la muestra es par. La media es sensible a valores extremos; la mediana resiste más ese desplazamiento, pero tampoco responde a todas las preguntas. La elección se hace por la variable, el diseño y el propósito, no por una preferencia universal. [Hahs-Vaughn §§3.2.2–3.2.3]
+
+Para las ocho lecturas simuladas, la media y la mediana coinciden en 100,15 nmol/mol. La coincidencia no significa que el conjunto carezca de dispersión. El rango, máximo menos mínimo, es 100,5 menos 99,8, o 0,7 nmol/mol. El rango depende solo de los extremos y no describe cuánto varían los valores intermedios. Por ejemplo, dos conjuntos podrían compartir el mismo mínimo y máximo, pero en uno los valores se concentran cerca del centro y en el otro se distribuyen ampliamente entre los extremos. El rango sería igual, aunque la experiencia de variabilidad sería diferente. Por eso lo presentamos junto con una medida que use todas las observaciones y, cuando convenga, con una medida basada en cuantiles. La varianza muestral de las indicaciones se calcula como $s_y^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar{y})^2$. En palabras, sumamos los cuadrados de las diferencias entre cada indicación y su media, y dividimos por $n-1$. La desviación estándar es la raíz cuadrada de esa varianza. En este conjunto, la varianza muestral es 0,0600 (nmol/mol)$^2$ y la desviación estándar muestral es 0,245 nmol/mol, con el redondeo mostrado solo para comunicar el resultado. [Hahs-Vaughn §3.3]
+
+La varianza de muestra usa el divisor $n-1$, no $n$. La razón de ese ajuste se demuestra en el Anexo AX.1; aquí lo usamos sin desarrollar la deducción. [AX.1] La desviación estándar describe dispersión de observaciones en las unidades de la variable. La varianza queda en unidades cuadradas. No las nombren como si fueran la misma cantidad.
+
+Hay otra cifra que suele confundirse con la desviación estándar: la desviación estándar experimental de la media, llamada también error estándar. Si las lecturas son independientes y proceden del mismo proceso de repetición, se calcula como $s/\sqrt{n}$, es decir, $s$ dividida por la raíz cuadrada de $n$. Describe la variabilidad del promedio muestral bajo ese modelo; no describe el ancho de la nube de lecturas individuales. Para los ocho datos, el script obtiene $s=0,24495$ nmol/mol y $s/\sqrt{8}=0,08660$ nmol/mol. Las lecturas individuales siguen teniendo una desviación estándar aproximada de 0,245; el número menor caracteriza al promedio, bajo las condiciones indicadas. La GUM presenta la varianza de la media en 4.2.3, ecuación (5); Hahs-Vaughn trata el muestreo y la estimación de la media en §5.2. [GUM 4.2.3, ec. (5); Hahs-Vaughn §5.2]
+
+> **[ERROR CRÍTICO]** No reporten $s/\sqrt{n}$ como dispersión de las lecturas ni como incertidumbre total del resultado sin identificar qué resultado se estima y qué supuestos justifican la reducción. Un promedio de lecturas dependientes, de días con deriva o de observaciones que comparten una contribución no se vuelve más preciso automáticamente por aplicar una raíz de $n$.
+
+### Escena B4. Elegir entre indicación, error y CV
+
+Veamos ahora por qué una dispersión grande de indicaciones no siempre significa que el fotómetro tenga una dispersión de error igualmente grande. Para mostrarlo, el siguiente conjunto simulado contiene seis pares tomados en tres días. Se mantiene un único nivel nominal de 200 nmol/mol, con dos parejas por día. Las referencias son 199,8; 199,8; 200,0; 200,0; 200,2 y 200,2 nmol/mol; las indicaciones correspondientes son 200,0; 199,9; 199,9; 200,1; 200,5 y 200,3 nmol/mol. Estos números solo ilustran el cálculo.
+
+Si describimos las indicaciones brutas, su desviación estándar muestral es 0,240 nmol/mol. La referencia cambia ligeramente entre días aun dentro del mismo nivel nominal, y ese movimiento también aparece en las indicaciones. Al restar cada referencia de su indicación, los errores son 0,2; 0,1; −0,1; 0,1; 0,3 y 0,1 nmol/mol. La desviación estándar de esos errores es 0,133 nmol/mol. Para preguntar cuánto se aparta la indicación de la referencia, la variable adecuada es el error; para resumir la señal de salida, la variable es la indicación. [Hahs-Vaughn §3.3]
+
+La diferencia entre las dispersiones de $y$ y de $e$ muestra por qué debemos conservar la referencia de cada pareja incluso en un solo nivel nominal. No atribuimos toda la dispersión de $y$ al fotómetro ni toda su diferencia respecto de $s(e)$ a una causa física: el error y la referencia también pueden covariar, concepto de M03-I. Tampoco hay que interpretar 0,133 nmol/mol como una estimación completa de precisión intermedia: son seis errores simulados, repartidos en tres días, y el resumen por sí solo no modela las fuentes de variación.
+
+> **[DIAPOSITIVA]** Mostrar una tabla con columnas día, $x$, $y$ y $e=y-x$. A la derecha, dos resultados claramente etiquetados: $s(y)=0,240$ nmol/mol y $s(e)=0,133$ nmol/mol. Pie: «simulado; diferencia de pregunta y variable, no estimación oficial».
+
+El coeficiente de variación se calcula como $CV=100\,s/\bar{y}$ por ciento: en palabras, cien por la desviación estándar dividida por la media de las indicaciones. En las ocho indicaciones alrededor de 100 nmol/mol, el CV es $100\times0,24495/100,15=0,2446\%$. Puede ayudar a comparar dispersión relativa cuando la escala de razón y el denominador tienen sentido. Antes de calcularlo, pregúntense si la media es interpretable como denominador. Si se acerca a cero, una pequeña diferencia puede producir un porcentaje enorme sin que cambie la dispersión absoluta; si cambia de signo, el cociente también cambia de signo. En esos casos, el CV puede ser engañoso y no vuelve comparables cualesquiera dos conjuntos. Informen una medida absoluta en nmol/mol y describan la señal de cero directamente. [ASQ, apéndice C, entrada «coefficient of variation», p. 572]
+
+En la medición del cero, una indicación negativa puede aparecer por ruido alrededor de cero. En este conjunto ilustrativo, cinco indicaciones simuladas son −0,2; −0,1; 0; 0,1 y 0,2 nmol/mol. Su media es aproximadamente cero. Si sustituimos los dos valores negativos por cero, la media pasa a 0,06 nmol/mol. No hagan ese reemplazo para que la tabla «se vea física»: cambia el resumen de los datos observados. El script `calc/M02_examples.py` reproduce ambas medias.
+
+> **[ERROR CRÍTICO]** No trunquen a cero las indicaciones negativas del cero y no las eliminen por parecer imposibles como concentraciones físicas. La variable estadística es la indicación del sistema; conservar el signo permite describir el ruido alrededor del cero.
+
+### Escena B5. Orden temporal, valores inusuales y comunicación
+
+Una lista puede ocultar el orden en que ocurrieron las mediciones. La serie temporal coloca cada valor en secuencia de lectura o en tiempo y permite ver patrones que un histograma no conserva: deriva, saltos, ciclos o agrupamientos. En el eje horizontal conservamos el orden real de adquisición, no el orden numérico de los valores. En el vertical ponemos la variable que contesta la pregunta: indicación, error u otro resumen definido. Si la referencia cambia entre puntos, representar además el error ayuda a distinguir el movimiento de la referencia del movimiento del desvío. Un histograma resume la distribución, pero no conserva el orden de las mediciones. La serie temporal sí lo conserva. Así podemos preguntar si la estructura parece compatible con variación aleatoria o si merece investigarse. No sustituimos el análisis de control de M11, sino que preparamos una descripción que no borra la secuencia. [Crowder 2020 §4.3]
+
+Con los seis errores simulados, por día se obtienen medias de 0,15; 0,00 y 0,20 nmol/mol. Esas medias describen cada grupo pequeño; no convierten tres días en una estimación precisa del comportamiento a largo plazo. Si la secuencia tiene estructura, no la destruyan ordenando las filas por valor antes de graficar. [Crowder 2020 §4.3]
+
+Los gráficos ayudan a detectar valores inusuales. «Inusual» siempre significa inusual con respecto a alguna estructura o modelo esperado. Una lectura separada del resto puede corresponder a un error de transcripción, una purga incompleta, una estabilización insuficiente, una causa asignable o una fluctuación legítima. Primero se conserva la observación y se revisan el registro, el orden y las condiciones documentadas. Sin una causa documentada, no se borra ni se excluye para que el resumen parezca más regular. La inspección visual señala qué requiere explicación; no prueba por sí sola que el dato sea erróneo. [Crowder 2020 §4.3]
+
+> **[PREGUNTA AL GRUPO]** Si una caja marca una observación fuera de un bigote, ¿ya sabemos que debemos quitarla? — *Respuesta esperada:* no. Es una señal para revisar contexto y modelo; se conserva hasta que una causa documentada y un procedimiento aplicable justifiquen otra decisión.
+
+Por último, cuidemos cómo escribimos los números. Mantengan suficiente precisión durante las operaciones y redondeen una sola vez al final, de acuerdo con la resolución del resultado y la incertidumbre que se informará. Si redondeamos cada lectura o cada diferencia antes de calcular la media y la desviación, podemos acumular cambios que no estaban en los datos originales. La guía de redondeo trata las cifras significativas; en los ejemplos de hoy los resultados intermedios se muestran con cifras adicionales para que el cálculo se pueda seguir y luego se comunican con precisión razonable. [MMU §3.1.1]
+
+Tomemos los seis errores simulados de antes: 0,2; 0,1; −0,1; 0,1; 0,3 y 0,1 nmol/mol. Sin redondeo intermedio, la media es 0,11667 nmol/mol, o 0,117 al presentarla. Si redondeamos cada error a un número entero antes de promediar, todos quedan en cero y la media resulta cero. El redondeo prematuro borró aquí el promedio de los datos. El script `calc/M02_examples.py` calcula ambas medias.
+
+> **[PIZARRA]** «Conservar precisión de cálculo → calcular → redondear al final». Debajo, mostrar el error de redondeo como riesgo de procedimiento, sin reemplazar los datos originales.
+
+> **[PRÁCTICA — fase de ejercicios]** Comparar indicaciones brutas y errores con referencia variable
+
+### Señales de escalamiento
+
+Como operadores de nivel B, ustedes siguen un método definido, pero también deben reconocer cuándo la descripción no basta para continuar con una conclusión rutinaria. Si las observaciones parecen dependientes de una manera que el método no contempla, si hay cambio de escala, si aparece un valor inusual sin causa identificable o si el gráfico temporal o los residuos muestran estructura, detengan la interpretación automática y consulten. Hagan lo mismo si la incertidumbre es relevante en ambos ejes, si quedan pocos grados de libertad para la conclusión que se quiere reportar o si el resultado está cerca de un límite de aceptación o decisión. Estas son señales para escalar al responsable técnico; no se resuelven eliminando el dato, cambiando de escala sin declararlo o escogiendo otro resumen después de ver el resultado. [prop_e §2]
+
+> **[ESCALAMIENTO]** El operador básico informa qué variable resumió, qué estructura observó y qué condición activa la consulta. No decide por sí solo que una observación se excluya ni que un supuesto incumplido pueda ignorarse.
+
+## Nivel I — comparar grupos y describir tendencia en el error
+
+En I damos por vistos todos los recursos del nivel B: la variable apropiada, los resúmenes de centro y dispersión, los histogramas, diagramas de caja y series temporales, así como la conservación de las observaciones. Ahora añadimos estructura entre grupos. No preguntamos solo «¿cuánto varía todo junto?», sino «¿cuánto varía dentro de cada grupo y cuánto cambia el centro entre grupos?». Para el caso de calibración, un grupo puede ser un día o un nivel de referencia, siempre que el diseño y la pregunta indiquen qué agrupación tiene sentido. [Crowder 2020 §4.3]
+
+### Escena I1. Resumir dentro y entre grupos
+
+Cuando ustedes comparan días, no empiecen mezclando todas las lecturas. Primero dibujen o presenten cada grupo y calculen un resumen dentro de él; después describan cómo cambian esos resúmenes entre grupos. Así se distingue la variación de lecturas dentro de un día de un desplazamiento del error medio de un día a otro. La separación descriptiva no es todavía un análisis de componentes de varianza: para afirmar cuánto aporta cada fuente se necesita el modelo de M6. Aquí el objetivo es mantener visible la estructura que el promedio global ocultaría. [Crowder 2020 §4.3]
+
+Retomemos los seis errores simulados de B, dos por día. Las medias por día son 0,15; 0,00 y 0,20 nmol/mol. Las desviaciones estándar muestrales dentro del día son, respectivamente, 0,071; 0,141 y 0,141 nmol/mol. En una diapositiva, tres cajas o tres pares de puntos permitirían comparar la dispersión interna; una gráfica de las medias por día contra el orden temporal permitiría ver que el segundo centro es menor que el primero y el tercero. Con solo dos observaciones por día, cada desviación es muy incierta y no debe presentarse como una caracterización estable de repetibilidad.
+
+Al comparar grupos, describan siempre qué se mantuvo igual y qué cambió. Si cada día contiene mediciones a una referencia distinta, la separación por día también puede mezclar efecto temporal y cambio de concentración; la gráfica de errores frente a referencia ayuda a detectarlo. Si una campaña tiene una distribución más amplia que otra, no concluyan automáticamente que el procedimiento cambió: primero verifiquen que los grupos usan la misma variable, unidad, escala y regla de inclusión. La descripción sirve para plantear la pregunta del modelo posterior, no para adjudicar una causa a una diferencia observada.
+
+> **[DIAPOSITIVA]** Separar visualmente tres grupos por día. Mostrar los puntos individuales, sus medias y, en panel aparte, sus errores contra la referencia. Mantener las unidades y el rótulo «simulado» en ambos paneles.
+
+Al informar la posición de cada grupo, la mediana puede ser útil cuando el grupo es pequeño o tiene una observación que aleja la media. Para describir su dispersión alrededor de la mediana, usamos la **desviación absoluta mediana**, MAD: primero calculamos la mediana del grupo; después hallamos las distancias absolutas de cada valor respecto a esa mediana; por último tomamos la mediana de esas distancias. [NIST/SEMATECH, sin numeral; no disponible en docs/]
+
+En un ejemplo simulado de cinco errores en un día, 0,1; 0,2; 0,2; 0,3 y 0,9 nmol/mol, la mediana es 0,2. Las desviaciones absolutas respecto a 0,2 son 0,1; 0; 0; 0,1 y 0,7; al ordenarlas, 0; 0; 0,1; 0,1; 0,7, la mediana de esas distancias es 0,1 nmol/mol. Esta MAD expresa una dispersión robusta alrededor del centro mediano. No la confundan con la desviación estándar ni conviertan una en otra sin especificar la convención y el modelo.
+
+> **[PIZARRA]** Escribir la secuencia simulada, marcar mediana $0,2$ y desviaciones absolutas $0,1;0;0;0,1;0,7$. Enmarcar MAD $=0,1$ nmol/mol.
+
+Las gráficas también deben respetar la pregunta. Si quieren saber si el error cambia con el nivel, coloquen $e$ frente a $x$. Si quieren saber si aparece deriva dentro de una campaña, coloquen el error frente al orden temporal o al día. Una caja por día ayuda a comparar distribuciones; no reemplaza la gráfica frente a referencia cuando hay posible sesgo dependiente de concentración. Una sola media general puede ocultar ambos patrones.
+
+### Escena I2. Error que cambia con la referencia
+
+En una calibración, el error puede tener un componente aproximadamente constante y otro que crece o decrece con la referencia. Para describir esa posibilidad escribimos el modelo $e_i=a+(b-1)x_i+\varepsilon_i$. Aquí $a$ representa el intercepto del error; $(b-1)$ es la pendiente del error respecto a la referencia; y $\varepsilon_i$ reúne las desviaciones alrededor de esa tendencia dentro de la descripción adoptada. La recta de error predicho se escribe $\hat e(x)=\hat a+(\hat b-1)x$. Se lee: «el error predicho es a estimada más b estimada menos uno, multiplicado por x». Esta es una forma de expresar el modelo lineal de calibración $y=a+bx$ al restarle $x$; no es un ajuste nuevo independiente de la recta de calibración. La función de calibración lineal se presenta en ISO/TS 28037 §5. [ISO 28037 §5; prop_e §5, M2]
+
+> **[PIZARRA]** Partir de $y=a+bx+\varepsilon$ y, al restar $x$, mostrar $e=y-x=a+(b-1)x+\varepsilon$. Debajo, escribir $\hat e(x)=\hat a+(\hat b-1)x$.
+
+Miremos cinco pares simulados. Las referencias son 80, 160, 240, 320 y 400 nmol/mol; los errores son 0,23; 0,42; 0,58; 0,78 y 0,88 nmol/mol. Al ajustar descriptivamente una recta con mínimos cuadrados ordinarios a esos cinco puntos, tal como se especifica en ISO/TS 28037 §5.8 [ISO 28037 §5.8], el script `calc/M02_examples.py` obtiene intercepto $\hat a=0,080$ nmol/mol y pendiente del error de 0,002075. La pendiente de la recta de indicación es, por tanto, $\hat b=1,002075$. Los errores predichos en los cinco niveles son 0,246; 0,412; 0,578; 0,744 y 0,910 nmol/mol, al redondear para presentar.
+
+La predicción representa la tendencia central descrita por la recta; no afirma que cada lectura individual deba caer exactamente sobre ella. Las diferencias entre los errores observados y los predichos son residuos de esa descripción. Si al graficarlos queda una forma ordenada o un patrón con el nivel o el tiempo, la recta puede estar dejando estructura sin explicar y el caso debe escalarse para evaluación del modelo. Para este módulo basta con reconocer que la gráfica permite distinguir una tendencia de los desvíos individuales; no calculamos aquí bandas ni aplicamos pruebas de falta de ajuste.
+
+La señal que nos interesa en esta escena es la tendencia del error con $x$: en estos datos simulados, el error predicho aumenta al aumentar la referencia, lo que ilustra un sesgo proporcional. El intercepto describe el error predicho en $x=0$ y la pendiente describe cuánto cambia el error por unidad de referencia. No concluyan con este ejemplo que un fotómetro real tiene esa pendiente ni que la recta es adecuada para un intervalo de uso: los valores son didácticos, y la evaluación formal del ajuste, sus incertidumbres y su validez se estudian en M7.
+
+> **[EJEMPLO]** Dibujar los cinco errores contra sus referencias, superponer la recta con intercepto 0,080 y pendiente 0,002075. Rotular claramente «datos simulados; ajuste descriptivo».
+
+Una respuesta de precisión y una respuesta de calibración no son la misma pregunta. Para precisión, puede interesar la dispersión dentro de nivel y día, conservando el diseño. Para calibración, interesa cómo se relaciona el error con la referencia y con el tiempo. Si miramos solo una caja de errores mezclados, no vemos la tendencia con concentración. Si miramos solo una recta frente a referencia, podríamos dejar de ver cambios de centro entre días. Por eso elegimos conjuntamente variable, agrupación y gráfico, antes de reducir los datos a un número. [Crowder 2020 §4.3]
+
+> **[PRÁCTICA — fase de ejercicios]** Elegir la respuesta para precisión y calibración con gráficos frente a referencia y tiempo
+
+## Nivel A — sensibilidad de las conclusiones
+
+En A damos por vistos B e I: los resúmenes básicos, las comparaciones dentro y entre grupos, la MAD, el error frente a referencia y la tendencia del error con concentración. Ahora añadimos una pregunta de robustez de la conclusión: ¿qué cambia si transformamos la variable, agregamos grupos de otra manera o aparece una observación influyente? No existe un resumen que preserve toda la información. Hay que explicar qué queda visible y qué se pierde con cada transformación. [prop_e §5, M2]
+
+### Escena A1. Signo, magnitud, agregación e influencia
+
+El error con signo conserva la dirección del desvío: un error positivo indica que la indicación supera la referencia; uno negativo, que queda por debajo. [VIM 2.16] La magnitud absoluta $|e|$ conserva cuánto se aparta cada lectura, pero elimina la dirección. Si mezclamos grupos con sesgos opuestos, resumir $e$ y resumir $|e|$ contestan preguntas diferentes. El primero puede mostrar cancelación entre desviaciones positivas y negativas; el segundo da una idea de magnitud de desviación sin distinguir dirección. Ninguno debe sustituir al otro sin nombrar la pregunta. [NIST/SEMATECH, sin numeral; no disponible en docs/]
+
+Para verlo, tomemos dos grupos simulados con sesgos opuestos. El grupo 1 tiene errores $0,4; 0,5; 0,3; 0,4$ nmol/mol; su media firmada es $+0,4$ y la media de las magnitudes es también $0,4$. El grupo 2 tiene $-0,4; -0,5; -0,3; -0,4$ nmol/mol; su media firmada es $-0,4$ y la media de magnitudes sigue siendo $0,4$. Al juntar los ocho valores, la media firmada es cero, porque se cancelan los centros opuestos, mientras que $\operatorname{media}(|e|)=0,4$ nmol/mol. La magnitud del error medio combinado, $|\operatorname{media}(e)|$, también es cero. El promedio con signo describe el balance neto en este ejemplo; el promedio de magnitudes describe la desviación absoluta media. El balance neto no demuestra que todos los errores sean pequeños.
+
+> **[PIZARRA]** Comparar $\operatorname{media}(|e|)=0,4$ nmol/mol con $|\operatorname{media}(e)|=0$. Debajo: «la primera conserva magnitud por observación; la segunda permite cancelación de signos».
+
+La agregación puede cambiar la historia. Si presentamos solo los dos grupos por separado, vemos un sesgo positivo en uno y negativo en el otro. Si presentamos solo el promedio combinado, los dos efectos desaparecen en el signo neto. Si presentamos solo $|e|$, desaparece cuál grupo está por encima o por debajo. Por tanto, la conclusión depende de si el grupo es parte del objetivo —por ejemplo, una campaña o una condición— o si realmente se quiere describir el conjunto combinado. El diseño y el propósito deben gobernar la agregación, no la conveniencia de obtener un único número.
+
+La transformación también cambia la geometría de los datos. Al tomar el valor absoluto, todos los errores quedan en cero o por encima, y distancias que estaban en lados opuestos del cero pasan a compartir una misma magnitud. La transformación es útil si la pregunta pide distancia absoluta, pero ya no permite reconstruir el signo original. Del mismo modo, promediar dentro de grupos reduce la cantidad de puntos visibles y puede disimular dispersión interna; juntar promedios de grupo sin ponderación puede dar una descripción distinta a juntar todas las observaciones cuando los tamaños de los grupos no son iguales. Por eso el informe debe declarar si resume lecturas individuales o resúmenes de grupo, y si aplica una transformación, debe conservar disponible la variable original.
+
+Ahora añadamos un valor influyente simulado de $+1,8$ nmol/mol al conjunto combinado. La media firmada pasa de 0 a 0,2 nmol/mol; la media absoluta pasa de 0,400 a 0,556 nmol/mol; la desviación estándar muestral pasa de 0,434 a 0,725 nmol/mol. La mediana firmada cambia de 0 a 0,3 nmol/mol y la MAD de 0,4 a 0,6 nmol/mol. Son consecuencias de añadir una observación; no son una prueba de que ese valor deba excluirse.
+
+> **[DIAPOSITIVA]** Mostrar, en tres columnas, conjunto sin el punto influyente y conjunto con $+1,8$: media firmada, media absoluta y desviación estándar. Rótulo «simulado». Mantener visibles los ocho y los nueve valores, sin tachar ninguno.
+
+En control de calidad estadístico, una observación influyente es aquella cuya presencia puede cambiar materialmente un ajuste o resumen; la influencia depende de la pregunta y del modelo. [NIST/SEMATECH, sin numeral; no disponible en docs/] La sensibilidad se estudia comparando conclusiones bajo transformaciones o agregaciones justificadas. Mostramos qué cambia y qué información se pierde. Primero describan la conclusión con los datos completos. Después comparen qué cambia al transformar o reagrupar esos mismos datos. Así mantenemos separadas la observación, el resumen y la interpretación. No prueba robustez calcular una colección de resúmenes sin explicar por qué cada uno responde a una pregunta válida. Tampoco se trata de elegir el método cuyo resultado parezca más conveniente: se documenta la variable, el grupo y la transformación, y se explica si la conclusión conserva su dirección, magnitud o relevancia bajo esas decisiones.
+
+No se prueba una conclusión por buscar la transformación que la haga más favorable. Si un punto cambia la pendiente de error frente a referencia, informen ambos resultados, inspeccionen la causa y escalen la evaluación del modelo. Si al pasar de $e$ a $|e|$ se pierde el signo, declárenlo. Si al agrupar se cancela el sesgo, presenten también los grupos cuando sean relevantes para la pregunta.
+
+En el caso de repetibilidad y reproducibilidad, los grupos pueden tener sesgos de direcciones opuestas. Aquí usamos valores simulados solo para ilustrar por qué la respuesta cambia cuando analizamos los errores firmados o sus magnitudes. El ejemplo no calcula ni sustituye el análisis de componentes de varianza del estudio R&R: ese contenido corresponde a M6. Tampoco calculamos aquí como práctica el indicador de M12-B; únicamente relacionamos dos resúmenes que pueden llevar a lecturas distintas de la misma colección de errores. [prop_e §5, M2 y M12-B]
+
+> **[ERROR CRÍTICO]** No interpreten una media firmada cercana a cero como prueba de que los errores individuales son pequeños cuando puede haber cancelación de sesgos opuestos. Y no presenten $|e|$ como si conservara la dirección del error.
+
+> **[PRÁCTICA — fase de ejercicios]** Evaluar sensibilidad ante transformaciones, agregación y observación influyente
+
+## Cierre del capítulo
+
+En el nivel B, la decisión principal es elegir si describimos indicaciones, errores o promedios; después resumimos centro, dispersión y forma con gráficos y cifras que conserven unidades y orden temporal. También recordamos que el error estándar se refiere a un promedio bajo condiciones apropiadas, que el CV deja de ser útil cerca de cero, que los valores inusuales no se eliminan por una señal gráfica y que las lecturas negativas del cero se conservan.
+
+En el nivel I, separamos visual y descriptivamente lo que ocurre dentro de grupos de lo que cambia entre ellos, añadimos mediana y MAD, y usamos el modelo del error para reconocer una tendencia proporcional con la referencia. En el nivel A, preguntamos cuánto depende la conclusión de conservar o transformar el signo, de combinar grupos o de una observación influyente; explicitamos qué información se pierde.
+
+En M3 pasaremos de describir variación observada a representar incertidumbre mediante distribuciones y a estudiar cuándo promediar reduce la incertidumbre. Llevamos de este capítulo una regla de trabajo: antes de calcular, nombren la pregunta, la variable y el grupo al que pertenecen los datos.
+
+## Referencias del capítulo
+
+- **Hahs-Vaughn.** Hahs-Vaughn, Debbie L. y Richard G. Lomax, *Statistical Concepts: A First Course*, 4.ª ed., Routledge, 2020. §§2.1–2.3, 3.2.2–3.3 y 5.2. Archivos: `docs/statistical_concepts_c02.pdf`, `docs/statistical_concepts_c03.pdf`, `docs/statistical_concepts_c05.pdf`.
+- **Crowder 2020.** Crowder, S. et al., *Introduction to Statistics in Metrology*, Springer Nature Switzerland AG, 2020. §4.3, *Exploratory Data Analysis*. Archivo: `docs/intro_stats_metro_c04.pdf`.
+- **MMU.** Novellino do Rosario, P. P. y A. Mendes, *Metrology and Measurement Uncertainty*, Springer Nature Switzerland AG, 2025. §3.1.1, *Number Rounding*. Archivo: `docs/metrology_measure_uncer_c03.pdf`.
+- **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. §4.2.3, ecuación (5). Archivo: `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`.
+- **ISO 28037.** ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*. §§5 y 5.8. Archivo: `docs/ISO 28037.pdf`.
+- **ASQ.** Wade, Heather A. (ed.), *The ASQ Metrology Handbook*, 3.ª ed., ASQExcellence, Milwaukee, WI, 2022. CV, sin numeral (ubicación específica pendiente de verificar). Archivo: `docs/The ASQ Metrology Handbook.pdf`.
+- **VIM.** JCGM 200:2012, *International vocabulary of metrology — Basic and general concepts and associated terms (VIM)*, 3.ª ed., §2.16 (no disponible en docs/).
+- **NIST/SEMATECH.** *e-Handbook of Statistical Methods*, National Institute of Standards and Technology, https://www.itl.nist.gov/div898/handbook/ (sin numeral; no disponible en docs/).
+- **Propuesta curricular E.** `prop_e.md`, §2 (señales de escalamiento) y §5, M2 (alcance y prácticas; fuente curricular, no referencia estadística externa).
+- **Anexo AX.1.** Divisor $n-1$ y grados de libertad de $s$; deducción remitida, no desarrollada aquí.
