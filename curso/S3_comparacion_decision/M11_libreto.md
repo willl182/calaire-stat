@@ -1,0 +1,204 @@
+# M11. Control estadístico y series temporales
+
+## Ficha del capítulo
+
+| Elemento | Contenido |
+|---|---|
+| Competencia estadística | Detectar cambios en una serie, estimar deriva y decidir una acción con criterio de riesgo. |
+| Prerrequisitos | M2 (descripción y series temporales), M3 (dependencia temporal), M4 (inferencia), M7 (regresión y predicción), M8 (propagación de incertidumbre). |
+| Nivel B | Causas comunes y especiales; cartas de individuales y rango móvil con límites establecidos; límites de control frente a tolerancias; reglas de alarma y plan de acción. |
+| Nivel I añade | Construcción de una línea base homogénea; dependencia; regresión de deriva; predicción e inclusión de la deriva en la incertidumbre de uso. |
+| Nivel A añade | EWMA y CUSUM; sensibilidad frente a falsas alarmas; intervalos de recalibración justificados. |
+| Datos de ejemplo | Serie I-MR, regresión de deriva y series para EWMA/CUSUM: simulados, deterministas y pedagógicos; no describen CALAIRE. NISTIR 6963 Tabla 4: serie publicada de SRP-0/SRP-2, usada solo en su propio contexto, nunca como línea base del Level 2. F-PSMT-01: datos propios de seis días; no constituyen historial de largo plazo ni base de límites operativos. |
+| Anexos | AX.12: varianza de EWMA y longitud media de corrida de EWMA/CUSUM. La deducción no se desarrolla en clase. |
+| Referencias clave | Crowder 2020, caps. 10–11; ISO/IEC 17025:2017 §7.7.1 d); Montgomery 2013 (*Introduction to Statistical Quality Control*, no disponible en `docs/`). |
+
+## Nivel B — Leer una carta ya definida y responder con criterio
+
+En este nivel damos por vistos los resúmenes descriptivos, los conceptos de variación y la regresión básica. Hoy no vamos a estimar desde cero todos los parámetros del proceso. Ustedes recibirán una carta y límites establecidos para una serie comparable. El objetivo estadístico es reconocer una señal y activar una respuesta prevista, no rediseñar el método de vigilancia. [Crowder 2020 §11.2]
+
+«Cuando reciban una carta, comprueben primero el título, la variable, las unidades, la fecha y la versión de los límites. La señal solo se interpreta correctamente si cada punto corresponde a la misma respuesta y al proceso que la carta pretende vigilar. Una gráfica de pendientes no debe compararse con límites de interceptos; una desviación en nmol/mol no se contrasta con límites expresados en fracción de pendiente. Esta comprobación de identidad precede a toda lectura estadística. Después se consulta la regla escrita y se registra la decisión tal como se observó, incluso si todavía no se conoce su explicación.»
+
+### Escena B1. Variación común y señal especial
+
+> **[DIAPOSITIVA]** Dos series esquemáticas: una nube estable alrededor de un centro; otra con un salto y luego un nuevo nivel.
+
+«Pensemos en las verificaciones periódicas del Level 2 contra el SRP 55. En cada fecha podemos obtener una pendiente, un intercepto u otra respuesta definida por el procedimiento. La serie en el tiempo contiene variación. Una parte es la variación común: pequeñas fluctuaciones que pertenecen al proceso tal como está operando. Otra parte aparece por una causa especial: un cambio de condición, una intervención, un error de procedimiento o una alteración que no corresponde a la variación habitual. El control estadístico busca distinguir esas situaciones mediante una serie y una regla previamente definida; no basta con mirar el último número aislado. [Crowder 2020 §11.2]
+
+»Si la carta muestra solo variación compatible con el patrón histórico, no significa que el proceso sea perfecto ni que cada resultado esté dentro de especificación. Significa que, bajo el modelo adoptado y la línea base usada, todavía no observamos una señal estadística de cambio. Si aparece una señal, tampoco demuestra por sí sola cuál fue la causa. La carta avisa; la investigación identifica y documenta la causa.
+
+»La línea central representa el promedio del proceso bajo la línea base. El límite inferior de control (LIC) y el límite superior de control (LSC) describen la variación esperada bajo el modelo de la carta. En una carta de Shewhart para individuales, un punto suficientemente alejado puede activar una señal. También hay reglas de secuencias, como varios puntos consecutivos en un mismo lado del centro o una tendencia prolongada. Esas reglas elevan la sensibilidad a ciertos cambios, pero, al usar más oportunidades para alarmar, también pueden aumentar las falsas alarmas. Por eso la regla que se aplica debe estar escrita antes de interpretar la serie. [Crowder 2020 §11.2; Montgomery 2013, no disponible en `docs/`]
+
+»Miremos una ilustración. Supongamos una carta de una respuesta de pendiente, expresada como desviación respecto de la unidad, con centro de línea base 0,00016. El registro más reciente es 0,0018 unidades de pendiente. Si el límite superior de control (LSC) es 0,0012905 y el límite inferior de control (LIC) es −0,0009705, ese punto rebasa el LSC y activa una señal de punto individual. No concluimos por ello que el instrumento incumple una tolerancia: aquí estamos leyendo control estadístico, no conformidad. Estos números son simulados y no representan una verificación del Level 2.»
+
+> **[PIZARRA]** Centro = promedio de la línea base. Señal de punto: $x_t < LIC$ o $x_t > LSC$, donde LIC es el límite inferior de control y LSC el límite superior de control. Los límites son propios de la carta y del proceso modelado.
+
+> **[PREGUNTA AL GRUPO]** Si un punto queda dentro de control pero fuera de una tolerancia de calibración, ¿qué conclusión se impone? — *Respuesta esperada:* la condición de tolerancia requiere la acción de decisión correspondiente; estar bajo control no equivale a conformidad.
+
+### Escena B2. Carta de individuales y rango móvil
+
+> **[DIAPOSITIVA]** Carta I arriba y carta MR abajo; cada punto MR representa el salto absoluto entre dos observaciones consecutivas.
+
+«Cuando tenemos una observación por ocasión, una carta útil es la de individuales y rango móvil, abreviada I-MR o X-MR. En la parte superior graficamos cada valor individual. En la inferior graficamos el rango móvil de dos observaciones consecutivas. Para la serie $x_1,x_2,\ldots$, el rango móvil es el valor absoluto de la diferencia entre el punto actual y el inmediatamente anterior. Mide el cambio local entre ocasiones consecutivas; no es el rango de toda la serie. [Crowder 2020 §11.2.2]
+
+»En el uso convencional, la media de los rangos móviles aporta una estimación de la variación de corto plazo. Para dos observaciones consecutivas, la estimación es $\hat{\sigma}=\overline{MR}/1,128$; por tanto, los límites de individuales de tres sigmas se expresan como centro $\mp 2,66\,\overline{MR}$ [Crowder 2020 §11.2.1]. El límite superior convencional del rango móvil es $D_4\,\overline{MR}$, con $D_4=3,267$ para un rango de dos observaciones [Montgomery 2013, no disponible en `docs/`]. Estos factores dependen del diseño y no se trasladan sin verificar los supuestos. En el nivel B ustedes reciben límites establecidos: no deben volver a estimarlos con un grupo que incluya el cambio que se intenta detectar.
+
+»En el ejemplo simulado del capítulo, la serie tiene ocho desviaciones de pendiente: 0,0000; 0,0004; −0,0002; 0,0001; 0,0005; 0,0018; 0,0002 y −0,0001. Las primeras cinco observaciones forman la línea base ilustrativa: su centro es 0,0001600 y sus cuatro rangos móviles promedian 0,0004250. Con los factores de tres sigmas recién descritos, los límites de individuales son LIC −0,0009705 y LSC 0,0012905; el límite superior de MR es 0,0013885. La observación 6 (0,0018) rebasa el LSC y el rango móvil que termina en la observación 7 (0,0016) rebasa su límite. Así se ve por qué se fijan límites antes de vigilar los puntos nuevos. Los cálculos se reproducen en `calc/M11_ejemplos.py`; toda la serie es simulada y esta división en línea base y seguimiento es didáctica.
+
+»La carta inferior importa aunque la carta superior no señale. Un rango móvil inusualmente grande puede revelar un salto local entre verificaciones. Y el comportamiento de los rangos ayuda a juzgar si la variación usada para los límites se mantiene. Los puntos sucesivos de una serie temporal no se vuelven independientes por dibujarlos en cartas: la dependencia y el orden siguen importando. En B se reconoce el patrón; si se detecta dependencia no contemplada, se detiene la aplicación automática y se escala. [Crowder 2020 §11.2]
+
+> **[EJEMPLO]** La serie anterior fue generada como ejemplo didáctico y no se obtuvo de lecturas instrumentales. La cifra 0,0018 rebasa el límite superior de la carta simulada; no es un resultado real ni un criterio de tolerancia.
+
+### Escena B3. Control estadístico no es tolerancia
+
+> **[PIZARRA]** Tolerancia: requisito sobre el producto/resultado. Límite de control: referencia estadística para una serie de proceso. No son intercambiables.
+
+«Quiero detenerme en una confusión que puede llevar a una acción equivocada. La tolerancia o el criterio de aceptación responde a si el resultado satisface una especificación definida. El límite de control responde a si la serie presenta un comportamiento inusual frente a su patrón estadístico. Un proceso puede ser estable y producir resultados no conformes; también puede ser inestable y producir, por casualidad, un resultado individual dentro de tolerancia. Se necesitan ambos juicios cuando la tarea los requiere, con sus reglas y documentos separados. [Montgomery 2013, no disponible en `docs/`]
+
+»Las reglas de alarma incluyen, como mínimo, un punto fuera de límite y pueden incluir patrones de secuencia, siempre que hayan sido seleccionados y documentados para la carta [ISO 17025 §7.7.1 d); Otto 2017 §9.1]. No se inventa una regla mirando los datos ya vistos. Si la regla genera una alarma, se registra fecha, respuesta medida, carta y versión de límites; se preserva el registro original; se verifica primero transcripción, unidad y configuración; se consulta la condición del patrón y de la medición; se evalúa si corresponde repetir una lectura o medición según procedimiento; y se retienen los resultados potencialmente afectados hasta determinar el alcance. Si se confirma una causa, se documentan investigación, acción correctiva o preventiva pertinente y decisión sobre recalibración. Una repetición no borra la primera alarma ni la reemplaza en el registro.
+
+»La palabra “recalibrar” no es una respuesta automática a cualquier punto fuera de control. Puede ser la acción técnica apropiada si la investigación y el criterio del laboratorio la justifican. De igual modo, “repetir” no debe convertirse en medir una y otra vez hasta obtener un dato favorable. El plan de acción define quién decide, qué se retiene, qué se repite, cómo se registra y qué condiciones permiten reanudar el uso.
+
+»Para que el plan se pueda ejecutar, ustedes separen al menos cuatro preguntas. Primero, ¿hay una señal válida o un posible error de registro que debe comprobarse sin alterar el dato original? Segundo, ¿qué resultados desde la última condición aceptada podrían estar afectados y deben retenerse para revisión? Tercero, ¿qué verificación adicional está autorizada por el procedimiento y con qué regla se interpretará? Cuarto, ¿qué evidencia documentada permite cerrar la investigación y liberar o recalibrar el patrón? Si aún no se conoce la causa, la conclusión también se deja abierta. Una lectura posterior que regresa al centro no permite decir “todo bien”. La respuesta puede ser distinta para un salto aislado, una secuencia prolongada o un cambio que coincide con una intervención; la carta no decide por sí sola qué causa es plausible.»
+
+> **[ERROR CRÍTICO]** No tratar límites de control como tolerancias, límites de aceptación ni objetivos de desempeño. No eliminar una alarma mediante una repetición selectiva ni recalcular límites para hacerla desaparecer.
+
+> **[ESCALAMIENTO]** «Detengan la aplicación de la carta y consulten si la serie no es homogénea, si se sospecha dependencia temporal o un cambio de escala, si aparece un atípico sin causa asignable, si los residuos muestran estructura, o si los límites no corresponden al patrón, magnitud o procedimiento que se está siguiendo. No extrapolen una carta publicada o simulada al Level 2.»
+
+> **[PRÁCTICA — fase de ejercicios]** Carta del historial preparado del Level 2 y decisión de acción
+
+### Señales de escalamiento
+
+«En B, ustedes aplican límites y reglas definidos; no los reinterpretan a conveniencia. Escalen cuando exista dependencia no contemplada, cambio de escala, atípico sin causa, estructura en residuos, pocos grados de libertad, o un resultado próximo a una tolerancia o límite de decisión. También escalen cuando una alarma se repita, cuando no sea posible identificar un proceso estable o cuando haya que decidir si el problema afecta resultados ya emitidos. La carta informa, pero el responsable autorizado del laboratorio determina la disposición final.»
+
+> **[TRANSICIÓN]** «En el nivel intermedio dejamos de recibir una línea base como una caja negra. Vamos a aprender qué datos pueden formar esa base, qué significa la dependencia temporal y cómo estimar una deriva.»
+
+## Nivel I — Construir una base y modelar la deriva
+
+En este nivel se conserva todo lo de B: causas comunes y especiales, lectura de cartas I-MR, límites frente a tolerancias y actuación ante una alarma. Ahora añadimos la construcción de la línea base, el tratamiento de la dependencia, la regresión de deriva, la predicción y su incorporación a la incertidumbre de uso. No convertimos unas pocas calibraciones en un historial por el hecho de que estén fechadas. [Crowder 2020 §§10.8–10.9]
+
+### Escena I1. Una línea base homogénea
+
+> **[DIAPOSITIVA]** Tres secuencias rotuladas: proceso estable; antes y después de mantenimiento; series de instrumentos distintos.
+
+«Una línea base es un conjunto de observaciones que describe el proceso en una fase suficientemente homogénea para estimar su centro y variación de referencia. Antes de calcular la media y los límites, definimos qué respuesta seguimos, qué patrón de referencia la produce, cuál es la unidad temporal o de repetición, qué método y condiciones se mantienen, y qué intervenciones pueden separar fases. Si se mezclan calibraciones anteriores y posteriores a un mantenimiento, dos instrumentos, dos escalas de medición o procedimientos diferentes, la dispersión resultante no representa una sola variación común. Los límites podrían ser demasiado amplios o demasiado estrechos y las señales perderían significado. Como ilustración numérica, la media de las siete respuestas simuladas de la escena siguiente es 0,3614 nmol/mol. A modo de supuesto didáctico, no inferido de estos datos, si las dos primeras pertenecieran a una fase previa a un cambio documentado y no formasen parte de la nueva línea base, la media de las cinco restantes sería 0,4500 nmol/mol: una diferencia de 0,0886 nmol/mol. La decisión de separar fases debe basarse en evidencia del proceso, no en que la media resulte más conveniente. [Montgomery 2013, no disponible en `docs/`]
+
+»La construcción comienza con una pregunta documentada: ¿qué proceso se está vigilando y para qué decisión? Se grafica la serie en orden temporal y se anota cada evento conocido. Una fase que presenta un cambio identificable se investiga; si existe una causa asignable y la política lo permite, se puede excluir del cálculo de la línea base, pero la observación no se borra del historial. Se registra qué se excluyó, por qué, quién lo autorizó y cuánto cambia la línea base al incluirlo. No se descarta un valor solo porque quede fuera de límites: ese razonamiento sería circular. Un valor inesperado sin causa conocida es una señal que exige investigación, no una licencia para limpiarlo.
+
+»Una vez justificada la fase homogénea, se fijan el centro y los límites con un método adecuado al diseño, y se revisa si el patrón de variación es compatible con los supuestos de esa carta. Los límites se congelan para el seguimiento de la fase siguiente. Si se decide recalcularlos, se abre una nueva versión y se documenta por qué cambió el proceso o la evidencia. El tamaño de la línea base afecta la incertidumbre de esos límites; una muestra pequeña no los vuelve exactos.
+
+»En la práctica del laboratorio esto requiere que el registro temporal sea interpretable. La fecha debe corresponder a la ocasión real de vigilancia; junto a la respuesta conviene conservar la identidad del patrón, el método, las condiciones registradas, el resultado de la verificación y las intervenciones conocidas. Si entre fechas hay intervalos desiguales, el orden de puntos no equivale a tiempo transcurrido uniforme. Una carta construida para ocasiones igualmente espaciadas podría ocultar una deriva por unidad de tiempo o exagerarla. Del mismo modo, si la respuesta cambia de definición —por ejemplo, una pendiente calculada con regresión forzada por el origen en lugar de libre— no se mantiene la misma serie por conveniencia. Primero se aclara qué se mide, luego se decide si la fase es comparable.
+
+»La inspección de una línea base no consiste en buscar una secuencia que “se vea plana” hasta que resulte cómoda. Se establecen de antemano la respuesta de control y las reglas, se marcan fechas y eventos, y se considera si la variación observada tiene una explicación compatible con un proceso estable. Si la serie muestra un patrón no aleatorio, se investiga si se trata de una tendencia, un cambio de nivel, ciclos u otra estructura. En tal caso puede que la carta de Shewhart con límites constantes no responda a la pregunta; se requiere otro modelo o una nueva fase, aprobada y documentada.»
+
+»El caso publicado de NISTIR 6963 presenta diez comparaciones de SRP-0 contra SRP-2. Sirve para mostrar cómo se comporta una serie de un sistema descrito por su fuente. Es una serie publicada y externa. No es el SRP 55 ni el Thermo Level 2 de CALAIRE, de modo que no puede transformarse en línea base operativa de CALAIRE. Por otra parte, los seis días de una calibración F-PSMT-01 son datos propios de una campaña concreta, no un historial de largo plazo. Ninguna de estas dos series acredita por sí sola límites ni un intervalo real de recalibración para el Level 2.» [NISTIR 6963 Tabla 4, p. 20]
+
+> **[ERROR CRÍTICO]** No combinar series incompatibles ni excluir observaciones por conveniencia estadística. No atribuir al Level 2 resultados de la serie publicada del NIST. Conservar siempre el historial, incluso cuando se documenta una fase nueva.
+
+### Escena I2. Dependencia y regresión de deriva
+
+> **[PIZARRA]** $y_t=a+b\,t+\varepsilon_t$. La pendiente $b$ tiene unidades de respuesta por unidad de tiempo.
+
+«Una gráfica temporal puede revelar una deriva, es decir, una tendencia sistemática de la respuesta conforme transcurre el tiempo. Para cuantificar una tendencia aproximadamente lineal, ajustamos la respuesta $y_t$ en función del tiempo $t$. La pendiente es el cambio esperado de la respuesta por unidad temporal. El intercepto depende del origen de tiempo elegido; para interpretar la evolución, suele ser más claro centrar el tiempo en una fecha de referencia. La regresión no sustituye el gráfico: hay que revisar residuos, cambios de nivel, curvatura, puntos influyentes y dependencia temporal. [Crowder 2020 §10.8; Montgomery 2013, no disponible en `docs/`]
+
+»La independencia de residuos es un supuesto importante para las fórmulas ordinarias de incertidumbre y para los contrastes usuales. En una serie temporal, observaciones cercanas pueden estar correlacionadas: una desviación positiva hoy puede hacer más probable otra desviación positiva en la siguiente ocasión. En ese caso, tratar cada fecha como réplica independiente suele exagerar la cantidad de información efectiva y puede subestimar la incertidumbre de la pendiente. Se inspeccionan los residuos en el tiempo y se consulta un modelo que represente la dependencia si aparece estructura. No basta con aumentar artificialmente los grados de libertad. [Montgomery 2013, no disponible en `docs/`]
+
+»Veamos una serie docente simulada, no de CALAIRE. La primera verificación es el día 0, que fija el origen temporal; las siguientes ocurren en los días 30, 60, 90, 120, 150 y 180. La respuesta de deriva en nmol/mol toma los valores 0,10; 0,18; 0,25; 0,37; 0,44; 0,56 y 0,63. La regresión lineal estima un intercepto de 0,0893 nmol/mol y una pendiente de 0,003024 nmol/mol por día. El error estándar de la pendiente es 0,0000922 nmol/mol por día; el intervalo bilateral del 95 % calculado con Student va de 0,002787 a 0,003261 nmol/mol por día. El ajuste arroja un valor p aproximado de $4,96\times10^{-7}$ bajo el modelo lineal y sus supuestos. En esta serie preparada hay evidencia estadística de una pendiente positiva; todavía debemos valorar si el modelo es razonable y qué importancia práctica tiene el cambio. Todos esos valores salen del script `calc/M11_ejemplos.py`.
+
+»La estimación lineal predice 0,4521 nmol/mol a los 120 días desde el origen definido. El intervalo del 95 % para la media de respuesta en ese instante es aproximadamente 0,4362 a 0,4680 nmol/mol; para una observación futura individual, el intervalo predictivo es más ancho, aproximadamente 0,4113 a 0,4930 nmol/mol, porque incluye la variación residual de una observación además de la incertidumbre de la media estimada. A los 180 días la componente de cambio acumulado de la recta es aproximadamente 0,5443 nmol/mol respecto del origen, bajo la prolongación del mismo modelo. No extrapolamos esa cifra indefinidamente: la predicción solo tiene sentido dentro de un horizonte y condiciones que el modelo respalde.
+
+»La dependencia temporal puede adoptar formas distintas. Un cambio de nivel puede parecer una deriva si las fechas anteriores y posteriores se ajustan con una sola recta; una curva puede parecer lineal en un tramo corto; una oscilación asociada a condiciones repetidas puede producir residuos con patrón. Por eso el diagnóstico no se reduce a calcular una pendiente. Se grafica la respuesta y los residuos contra el tiempo, se contrasta el ajuste con el contexto registrado y se busca estructura que el modelo no haya explicado. Si la incertidumbre de la pendiente calculada con independencia deja de ser fiable, se debe estimar la dependencia o utilizar un procedimiento que la represente. El operador de nivel I no “corrige” ese problema con un factor arbitrario: lo escala y mantiene la predicción limitada al modelo autorizado.
+
+»También hay que distinguir tiempo de calendario y número de observación. Una deriva constante por día acumula el mismo cambio en días transcurridos, sea cual sea el calendario de revisiones. Pero si el modelo usa el número de observación en lugar de los días, la pendiente deja de tener unidades de nmol/mol por día y no se puede comparar entre series. La escala temporal se define antes del ajuste y la pendiente se informa con esa unidad. Si la serie tiene huecos, el modelo puede usar los tiempos reales, pero la interpretación y la predicción deben reconocer que hubo periodos sin observación. La serie no demuestra que el proceso se mantuvo dentro de límites entre las revisiones.»
+
+> **[EJEMPLO]** Todos los datos de esta escena son simulados; la semilla no aplica porque la serie didáctica se declara explícitamente en el script. La unidad de respuesta es nmol/mol y la unidad de tiempo es día.
+
+> **[PREGUNTA AL GRUPO]** ¿Qué cambia si el objetivo es la respuesta media futura y no la próxima observación individual? — *Respuesta esperada:* el intervalo predictivo individual incorpora además la variación de una observación y por eso es más ancho.
+
+### Escena I3. De la deriva a la incertidumbre de uso
+
+«Cuando un resultado se usará más adelante que la fecha de calibración, no basta con reportar una incertidumbre que describe el momento de la calibración. Hay que considerar qué puede ocurrir entre la calibración y el uso. Si el modelo de deriva es lineal, la respuesta prevista a un tiempo futuro depende del intercepto y la pendiente estimados. Su incertidumbre depende de la incertidumbre de esos parámetros y de su covarianza; para una observación futura se añade la variación residual y, cuando corresponde, otras contribuciones del presupuesto. La covarianza entre intercepto y pendiente importa porque ambos parámetros se estiman juntos. [Crowder 2020 §10.8.1]
+
+»En el ejemplo, la desviación residual estimada es 0,01464 nmol/mol. El intervalo predictivo al día 120 se extiende aproximadamente entre 0,4113 y 0,4930 nmol/mol. Ese intervalo muestra la incertidumbre estadística del modelo de deriva para una nueva observación en el ejemplo; no es automáticamente la incertidumbre completa de una medición fotométrica. Si el presupuesto de uso ya contiene una contribución que representa esa misma variación, sumarla de nuevo sería doble conteo. Si las contribuciones están correlacionadas, tampoco se suman como si fueran independientes. La unidad, el resultado de interés y la escala temporal deben coincidir antes de combinar contribuciones. La deducción general de propagación y covarianza corresponde al Anexo AX.2; aquí aplicamos el modelo sin desarrollar la deducción [GUM 5.1.2].
+
+»La decisión de recalibrar depende del cambio esperado, su incertidumbre, el desempeño requerido y el riesgo aceptable; no se deduce de un valor p aislado. Un cambio pequeño puede ser detectable pero irrelevante para el uso. Un cambio potencialmente importante puede exigir acción aunque la serie sea demasiado corta para detectarlo con precisión. En ambos casos documentamos modelo, horizonte, intervalo de predicción y criterio operacional.»
+
+> **[ERROR CRÍTICO]** No interpretar «no significativo» como prueba de ausencia de deriva. No extrapolar una recta fuera del intervalo de datos sin justificarlo. No sumar dos veces la misma componente de variación ni omitir dependencia entre contribuciones.
+
+> **[PRÁCTICA — fase de ejercicios]** Línea base homogénea, deriva y predicción de uso
+
+> **[TRANSICIÓN]** «En I hemos modelado una tendencia gradual con regresión. En A veremos estadísticas que acumulan información en el tiempo y pueden detectar cambios pequeños antes que una regla de punto aislado, a costa de controlar cuidadosamente las falsas alarmas.»
+
+## Nivel A — Detectar cambios pequeños y justificar la revisión
+
+En A se mantiene todo lo de B e I. Añadimos dos métodos de monitoreo secuencial, EWMA y CUSUM, su sensibilidad a cambios y la elección de un intervalo de recalibración sustentada por un modelo explícito de riesgo. No presentaremos una periodicidad universal ni un intervalo válido para CALAIRE sin una serie homogénea propia y criterios aprobados. [Montgomery 2013, no disponible en `docs/`]
+
+### Escena A1. EWMA: memoria gradual de la serie
+
+«Antes de aplicar estos métodos, expresamos cada observación como $X_t=(x_t-\mu_0)/\sigma$: es la desviación respecto del centro de referencia dividida por la desviación estándar de la línea base. Así, $X_t$ queda en unidades de sigma, y los parámetros de EWMA y CUSUM se interpretan en esa escala.» [Montgomery 2013, no disponible en `docs/`]
+
+> **[PIZARRA]** $Z_t=\lambda X_t+(1-\lambda)Z_{t-1}$, con $0<\lambda\leq1$.
+
+«La EWMA es una media móvil exponencialmente ponderada. En cada ocasión combina la observación actual con el estadístico anterior. El parámetro lambda determina cuánto pesa lo nuevo. Si lambda se acerca a uno, el método se parece más a mirar la observación reciente; con lambda pequeño, mantiene más memoria de observaciones previas. Por eso puede ser sensible a cambios modestos que permanecen durante varias ocasiones, aunque ningún punto aislado sea extremo. [Montgomery 2013, no disponible en `docs/`] La varianza del estadístico se remite al Anexo AX.12; no la deducimos aquí.
+
+»La línea central es el valor de referencia bajo estabilidad. Los límites pueden depender de la dispersión de la línea base, de lambda y del tiempo transcurrido desde que se inició el estadístico. Después de suficiente tiempo se aproxima un límite estacionario, pero al comienzo la varianza de $Z_t$ se desarrolla gradualmente. No se deben usar límites estacionarios desde el primer punto sin que el diseño lo justifique. La fórmula de varianza y los detalles de longitud media de corrida se encuentran en AX.12; no los deducimos aquí.
+
+> **[NOTA AL INSTRUCTOR]** La simulación de Monte Carlo se estudia en M13. Aquí se presenta solo el resultado numérico reproducible para ilustrar la evaluación de falsas alarmas; no se enseña el método de simulación ni se añade como competencia de M11.
+
+»En la ilustración de riesgo, simulamos cien mil series independientes de observaciones normales estándar bajo estabilidad, cada una de cincuenta ocasiones. Para EWMA usamos lambda igual a 0,2 y límites variables de 2,7 desviaciones estándar, con la variación propia de cada instante. Con semilla 11026, 19,909 % de las trayectorias simuladas produjo al menos una alarma en el horizonte. Esa proporción es una estimación Monte Carlo para este modelo, horizonte y regla; no es una tasa anual ni una probabilidad teórica exacta. En operación, estimaciones inciertas de parámetros, dependencia y patrones no normales pueden cambiar el riesgo.»
+
+### Escena A2. CUSUM, falsas alarmas e intervalo de revisión
+
+> **[PIZARRA]** CUSUM superior: $C_t^+=\max(0,C_{t-1}^+ + X_t-k)$. CUSUM inferior: $C_t^-=\max(0,C_{t-1}^- - X_t-k)$. Alarma si alguno excede $h$.
+
+«CUSUM acumula desviaciones de $X_t$, que ya está expresada en unidades de sigma, descontando un valor de referencia $k$ también expresado en unidades de sigma. La suma superior detecta una secuencia persistente hacia arriba y la inferior una secuencia hacia abajo. El umbral $h$ controla cuánto debe acumularse antes de alarmar y también se expresa en unidades de sigma. Elegir valores pequeños de $k$ o $h$ puede detectar con rapidez un cambio pequeño, pero también puede elevar la frecuencia de falsas alarmas. La carta se diseña para un cambio de interés y una escala definidos, no por preferencia visual. La derivación de la longitud media de corrida se remite a AX.12. [Montgomery 2013, no disponible en `docs/`]
+
+»Bajo el mismo escenario simulado de cien mil trayectorias normales independientes de longitud cincuenta, un CUSUM bilateral con $k=0,5$ y $h=5$ generó alarma en 9,177 % de las trayectorias. El EWMA del ejemplo anterior tuvo 19,909 % de alarmas. En esta configuración particular el CUSUM produjo menos alarmas bajo el estado estable, pero no concluimos que sea siempre mejor: los parámetros, los límites, la magnitud y forma del cambio, el horizonte y la dependencia pueden invertir la comparación. La semilla, el tamaño de simulación y las reglas están en `calc/M11_ejemplos.py`. Estos resultados simulados no son tasas observadas de CALAIRE.
+
+»Para comparar detección de un cambio definido, se simula también el proceso bajo una alternativa explícita, por ejemplo un desplazamiento de media desde una ocasión determinada. Se mide la demora de detección y se compara con la probabilidad de alarma falsa bajo estabilidad. En un análisis completo se examinan varios tamaños de cambio, horizontes y condiciones de variación; no se elige un parámetro porque funcione bien para un único cambio preparado. La longitud media de corrida, o ARL, expresa el número esperado de observaciones hasta una señal bajo el modelo especificado. Una ARL bajo control y una ARL fuera de control describen escenarios diferentes; ninguna cifra sustituye la descripción del modelo ni la evaluación del riesgo. [Montgomery 2013, no disponible en `docs/`]
+
+»Apliquemos ambos métodos a una alternativa concreta, sin convertirla en recomendación operativa. Mantendremos las cien mil trayectorias simuladas y el horizonte de cincuenta ocasiones, pero desde la ocasión 26 desplazamos la media en una desviación estándar. Entre las trayectorias que no habían alarmado antes de la ocasión 26, EWMA detecta el cambio dentro del horizonte en 98,795 % y CUSUM en 98,316 %; sobre el total de trayectorias, las proporciones detectadas son 88,270 % y 94,441 %, respectivamente. La demora se calcula solo para las trayectorias que sí señalan después del cambio, y contamos la ocasión 26 como demora de una observación: resulta 8,324 para EWMA y 9,306 para CUSUM. En el mismo horizonte, bajo estabilidad durante todo el periodo, EWMA tuvo 19,909 % de trayectorias con al menos una falsa alarma y CUSUM, 9,177 %. Para el cambio relativamente grande de una desviación estándar, ambos métodos detectan con alta frecuencia, pero esto no indica cómo se comportarían ante un cambio más pequeño. La combinación de falsas alarmas bajo estabilidad y demora/detección bajo alternativas permite juzgar un diseño según el uso. Los resultados se reproducen con la misma semilla en `calc/M11_ejemplos.py`.
+
+»Hay una cautela al comparar demoras. Una alarma previa a la ocasión 26 es falsa alarma bajo esta alternativa y no debe contarse como detección del cambio. Por eso la simulación separa trayectorias que ya habían alarmado de aquellas que siguen en control al llegar el cambio. En la operación, además, una falsa alarma puede conducir a una intervención que modifique el proceso; entonces la secuencia deja de seguir el modelo original y no se puede interpretar como si nada hubiese ocurrido. La regla de simulación tiene que corresponder a la regla real de respuesta.»
+
+»Tomemos solo para ilustrar la escala del efecto la pendiente simulada de 0,003024 nmol/mol por día estimada en I2. Si prolongáramos linealmente esa pendiente, el cambio central estimado sería el siguiente:
+
+| Intervalo hipotético | Cambio central estimado por la recta |
+|---:|---:|
+| 30 días | 0,0907 nmol/mol |
+| 60 días | 0,1814 nmol/mol |
+| 90 días | 0,2721 nmol/mol |
+
+Estos valores no incluyen la incertidumbre de la pendiente ni el riesgo de exceder un requisito; tampoco son recomendaciones de calendario. El intervalo de recalibración se justifica conectando el comportamiento esperado de la deriva con el riesgo aceptable de que el instrumento exceda una condición de uso, y con el costo y la capacidad de efectuar revisiones. Se especifican la magnitud medida, la frecuencia de seguimiento, el modelo de deriva y su incertidumbre, las consecuencias de una alarma tardía, la probabilidad de falsa alarma y la regla de acción. El intervalo puede revisarse cuando aparece evidencia nueva, cambia el proceso o cambia el uso. La decisión debe mantenerse bajo control documental del laboratorio; una fórmula o un artículo no autoriza por sí solo un calendario real.
+
+»Una forma de pensar esta decisión es comparar varios intervalos candidatos bajo el mismo modelo. Para cada uno se pregunta qué probabilidad hay de que la deriva alcance un nivel inaceptable antes de la siguiente verificación, con qué frecuencia se espera una alarma cuando el proceso está estable, cuántas ocasiones podrían quedar sin revisar y qué consecuencias tiene cada tipo de error. Si una decisión de uso se toma con un umbral de riesgo, ese umbral debe ser fijado por el responsable técnico y relacionarse con el requisito de desempeño; no se elige después de ver qué intervalo resulta conveniente. Cuando la incertidumbre del modelo es grande, se comunica como tal y no se oculta tras una fecha con apariencia precisa.
+
+»No todos los instrumentos requieren el mismo calendario. Un patrón puede ser revisado con mayor frecuencia tras una intervención, después de una señal repetida o cuando el uso cambia. También puede justificarse un intervalo más amplio cuando una serie larga y estable respalda que el riesgo permanece aceptable, siempre sujeto a las reglas del laboratorio y a la evidencia independiente requerida. Pero extender el intervalo es una decisión con consecuencias sobre resultados que dependen del patrón; se documentan los supuestos, el riesgo de fallo, la forma de detectarlo y la manera de revisar la decisión. El intervalo no se obtiene simplemente dividiendo una tolerancia por la pendiente estimada.»
+
+»No podemos proponer hoy un intervalo real para el Level 2 a partir de los materiales de este ejemplo. Los seis días del certificado F-PSMT-01 (datos propios) corresponden a una sola calibración y no forman una serie histórica de largo plazo. Los diez puntos NIST son publicados, de SRP-0 frente a SRP-2, y no miden el Level 2 de CALAIRE. Para una estimación propia se requiere una serie homogénea de verificaciones sucesivas del mismo patrón y método, con fechas y periodicidad conocidas, condiciones, intervenciones, mantenimiento, cambios de operador y resultados primarios conservados. También se necesitan criterios de desempeño y de riesgo aprobados, junto con una revisión de los supuestos temporales.»
+
+> **[ERROR CRÍTICO]** No fijar un intervalo real a partir de series externas o de seis días. No presentar la falsa alarma simulada como riesgo observado. No comparar EWMA y CUSUM con reglas, horizontes o distribuciones diferentes sin declararlo.
+
+> **[ESCALAMIENTO]** «Eleven al responsable técnico toda recomendación de recalibración que dependa de una extrapolación, una serie corta o no homogénea, una nueva regla de alarma, una tasa de falsa alarma no validada o un cambio en los requisitos del uso. Si la dependencia temporal invalida el modelo independiente, no reporten su ARL como si fuera válida.»
+
+> **[PRÁCTICA — fase de ejercicios]** EWMA, CUSUM y revisión del intervalo bajo riesgo declarado
+
+### Señales de escalamiento
+
+«A diferencia de aplicar una carta ya validada, aquí se eligen parámetros y se cuantifica el riesgo bajo un modelo. Por eso se escala si la serie de línea base es corta o heterogénea, si el proceso muestra autocorrelación no modelada, si la distribución se aparta del supuesto, si la probabilidad de falsa alarma no se ha evaluado para el horizonte de uso, o si el intervalo propuesto depende de una hipótesis de deriva no sustentada. También se escala cuando la frecuencia de observación cambia o cuando el mantenimiento modifica la fase del proceso. La autonomía avanzada consiste en formular y comprobar el modelo dentro de un alcance validado, no en convertir un análisis exploratorio en política del laboratorio.»
+
+## Cierre del capítulo
+
+«En B aprendimos a leer cartas de individuales y rango móvil, separar límites de control de tolerancias y responder a señales con un plan trazable. En I construimos una línea base homogénea, tratamos la dependencia temporal, estimamos una deriva mediante regresión y propagamos la incertidumbre hacia un uso futuro. En A añadimos EWMA y CUSUM, comparamos sensibilidad con falsas alarmas y formulamos las condiciones necesarias para justificar un intervalo de revisión.
+
+»El control estadístico no certifica por sí mismo que un fotómetro cumple su especificación, y una ausencia de alarma no prueba que no exista deriva. Cada afirmación depende de la serie, el modelo, la regla y el horizonte. Los ejemplos simulados de este libreto enseñan el razonamiento y no describen desempeño real de CALAIRE. En el módulo siguiente pasaremos de vigilar la serie de un patrón a resumir precisión y sesgo en verificaciones de redes de monitoreo.»
+
+## Referencias del capítulo
+
+- **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*, §5.1.2. `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`.
+- **Crowder 2020.** Crowder, S.; Delker, C.; Forrest, E.; Martin, N. *Introduction to Statistics in Metrology*. Springer Nature, 2020. Cap. 11, §§11.2–11.2.2 (control estadístico y cartas X-MR); cap. 10, §§10.8, 10.8.1 y 10.9 (deriva, incertidumbre durante el uso y análisis de intervalos de calibración). `docs/Introduction to Statistics in Metrology.pdf` y capítulos en `docs/intro_stats_metro_c*.pdf`.
+- **ISO 17025.** BS EN ISO/IEC 17025:2017, *General requirements for the competence of testing and calibration laboratories*, §7.7.1 d), uso de patrones de control o trabajo con cartas de control. `docs/BS EN ISO_IEC 17025_2017.pdf`.
+- **NISTIR 6963.** Paur, R. J.; Bass, A. M.; Norris, J. E.; Buckley, T. J. *Standard Reference Photometer for the Assay of Ozone in Calibration Atmospheres*. NISTIR 6963, NIST, 2003, Tabla 4, p. 20. `docs/nistir6963.pdf`.
+- **Otto 2017.** Otto, M. *Chemometrics: Statistics and Computer Application in Analytical Chemistry*. 3.ª ed., Wiley-VCH, 2017, cap. 9, §9.1, pp. 346–349 (validación y control de calidad; referencia general, no fuente de los factores I-MR). `docs/Chemometrics Statistics and Computer Application.pdf`.
+- **Montgomery 2013.** Montgomery, D. C. *Introduction to Statistical Quality Control*. Wiley, 2013 (año y editorial según la bibliografía de Crowder 2020; edición no verificada; no disponible en `docs/`).
+

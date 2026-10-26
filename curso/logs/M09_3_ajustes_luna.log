@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Aplicados los hallazgos R01–R16 en el libreto; añadida la tabla de decisiones y las correcciones propias a la bitácora.
+Actualizado `calc/M09_ejemplos.py` para el caso de covarianza máxima y recalculados los ejemplos: validación y resultados coinciden.
+Verificado el formato LaTeX y que los cambios se limitan a `curso/S3_comparacion_decision/`.

@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+- Creé `M09_libreto.md` con los niveles B, I y A, ejemplos narrados, advertencias, escalamiento y solo los marcadores de prácticas.
+- Creé `M09_bitacora_luna.md` con el plan previo y la ejecución, incluidas decisiones y límites.
+- `calc/M09_ejemplos.py` reproduce los cálculos; la validación GGMR con ISO/TS 28037 pasó.
+- Verifiqué con `pdftotext` los numerales citados; no quedan referencias pendientes.
+- El libreto tiene 6.227 palabras; no desarrollé ejercicios, soluciones ni rúbricas.

@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Se integró en `M07_libreto.md` la validación WLS simulada y el criterio por punto de ISO 6143 §5.2.2.  
+Se distinguió el diagnóstico global χ² de la comprobación individual; con `x` fijo, el máximo residuo estandarizado es 0,616.  
+Se actualizó `M07_bitacora_luna.md` con resultados reproducidos y referencias verificadas, incluidas las páginas PDF.  
+El script completo se ejecutó con `curso/.venv/bin/python`; `git diff --check` pasó sin errores.  
+Los cambios se limitaron a `curso/`; no se modificaron archivos fuera de esa carpeta.

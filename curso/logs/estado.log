@@ -1,0 +1,161 @@
+2026-10-24 15:42:34  === FASE 1: capítulos M00–M13 ===
+2026-10-24 15:42:34  INICIO luna -> M00_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M01_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M02_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M03_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M04_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M05_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:42:34  INICIO luna -> M06_1_desarrollo_luna.log (intento 1)
+2026-10-24 15:53:39  FIN    luna -> M00_1_desarrollo_luna.log OK
+2026-10-24 15:53:39  INICIO haiku -> M00_2_revision_haiku.log (intento 1)
+2026-10-24 15:56:11  FIN    haiku -> M00_2_revision_haiku.log OK
+2026-10-24 15:56:11  INICIO luna -> M00_3_ajustes_luna.log (intento 1)
+2026-10-24 15:59:39  FIN    luna -> M04_1_desarrollo_luna.log OK
+2026-10-24 15:59:39  INICIO haiku -> M04_2_revision_haiku.log (intento 1)
+2026-10-24 16:00:38  FIN    luna -> M06_1_desarrollo_luna.log OK
+2026-10-24 16:00:38  INICIO haiku -> M06_2_revision_haiku.log (intento 1)
+2026-10-24 16:02:36  FIN    luna -> M01_1_desarrollo_luna.log OK
+2026-10-24 16:02:36  INICIO haiku -> M01_2_revision_haiku.log (intento 1)
+2026-10-24 16:02:51  FIN    luna -> M00_3_ajustes_luna.log OK
+2026-10-24 16:02:51  CAPITULO M00 COMPLETO
+2026-10-24 16:02:51  INICIO luna -> M07_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:04:05  FIN    luna -> M03_1_desarrollo_luna.log OK
+2026-10-24 16:04:05  INICIO haiku -> M03_2_revision_haiku.log (intento 1)
+2026-10-24 16:04:45  FIN    haiku -> M04_2_revision_haiku.log OK
+2026-10-24 16:04:45  INICIO luna -> M04_3_ajustes_luna.log (intento 1)
+2026-10-24 16:05:56  FIN    luna -> M05_1_desarrollo_luna.log OK
+2026-10-24 16:05:56  INICIO haiku -> M05_2_revision_haiku.log (intento 1)
+2026-10-24 16:05:58  FIN    haiku -> M06_2_revision_haiku.log OK
+2026-10-24 16:05:58  INICIO luna -> M06_3_ajustes_luna.log (intento 1)
+2026-10-24 16:06:18  FIN    luna -> M02_1_desarrollo_luna.log OK
+2026-10-24 16:06:18  INICIO haiku -> M02_2_revision_haiku.log (intento 1)
+2026-10-24 16:07:35  FIN    haiku -> M01_2_revision_haiku.log OK
+2026-10-24 16:07:35  INICIO luna -> M01_3_ajustes_luna.log (intento 1)
+2026-10-24 16:08:43  FIN    haiku -> M03_2_revision_haiku.log OK
+2026-10-24 16:08:43  INICIO luna -> M03_3_ajustes_luna.log (intento 1)
+2026-10-24 16:11:47  FIN    haiku -> M02_2_revision_haiku.log OK
+2026-10-24 16:11:47  INICIO luna -> M02_3_ajustes_luna.log (intento 1)
+2026-10-24 16:11:59  FIN    haiku -> M05_2_revision_haiku.log OK
+2026-10-24 16:11:59  INICIO luna -> M05_3_ajustes_luna.log (intento 1)
+2026-10-24 16:12:41  FIN    luna -> M04_3_ajustes_luna.log OK
+2026-10-24 16:12:41  CAPITULO M04 COMPLETO
+2026-10-24 16:12:41  INICIO luna -> M08_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:16:44  FIN    luna -> M03_3_ajustes_luna.log OK
+2026-10-24 16:16:44  CAPITULO M03 COMPLETO
+2026-10-24 16:16:44  INICIO luna -> M09_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:18:49  FIN    luna -> M01_3_ajustes_luna.log OK
+2026-10-24 16:18:49  CAPITULO M01 COMPLETO
+2026-10-24 16:18:49  INICIO luna -> M10_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:20:22  FIN    luna -> M02_3_ajustes_luna.log OK
+2026-10-24 16:20:22  CAPITULO M02 COMPLETO
+2026-10-24 16:20:22  INICIO luna -> M11_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:21:30  FIN    luna -> M06_3_ajustes_luna.log OK
+2026-10-24 16:21:30  CAPITULO M06 COMPLETO
+2026-10-24 16:21:30  INICIO luna -> M12_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:22:45  FIN    luna -> M05_3_ajustes_luna.log OK
+2026-10-24 16:22:45  CAPITULO M05 COMPLETO
+2026-10-24 16:22:45  INICIO luna -> M13_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:26:56  FIN    luna -> M07_1_desarrollo_luna.log OK
+2026-10-24 16:26:56  INICIO haiku -> M07_2_revision_haiku.log (intento 1)
+2026-10-24 16:30:57  FIN    luna -> M11_1_desarrollo_luna.log OK
+2026-10-24 16:30:57  INICIO haiku -> M11_2_revision_haiku.log (intento 1)
+2026-10-24 16:31:33  FIN    haiku -> M07_2_revision_haiku.log OK
+2026-10-24 16:31:33  INICIO luna -> M07_3_ajustes_luna.log (intento 1)
+2026-10-24 16:32:49  FIN    luna -> M08_1_desarrollo_luna.log OK
+2026-10-24 16:32:49  INICIO haiku -> M08_2_revision_haiku.log (intento 1)
+2026-10-24 16:35:24  FIN    luna -> M09_1_desarrollo_luna.log OK
+2026-10-24 16:35:24  INICIO haiku -> M09_2_revision_haiku.log (intento 1)
+2026-10-24 16:36:52  FIN    haiku -> M11_2_revision_haiku.log OK
+2026-10-24 16:36:52  INICIO luna -> M11_3_ajustes_luna.log (intento 1)
+2026-10-24 16:44:17  FALLO  haiku -> M09_2_revision_haiku.log rc=1 (intento 1)
+2026-10-24 16:44:17  INICIO haiku -> M09_2_revision_haiku.log (intento 2)
+2026-10-24 16:44:20  FALLO  haiku -> M08_2_revision_haiku.log rc=1 (intento 1)
+2026-10-24 16:44:20  INICIO haiku -> M08_2_revision_haiku.log (intento 2)
+2026-10-24 16:45:18  FALLO  luna -> M10_1_desarrollo_luna.log rc=1 (intento 1)
+2026-10-24 16:45:18  INICIO luna -> M10_1_desarrollo_luna.log (intento 2)
+2026-10-24 16:45:58  FALLO  luna -> M07_3_ajustes_luna.log rc=1 (intento 1)
+2026-10-24 16:45:58  INICIO luna -> M07_3_ajustes_luna.log (intento 2)
+2026-10-24 16:46:10  FALLO  luna -> M13_1_desarrollo_luna.log rc=1 (intento 1)
+2026-10-24 16:46:11  INICIO luna -> M13_1_desarrollo_luna.log (intento 2)
+2026-10-24 16:47:31  FALLO  luna -> M11_3_ajustes_luna.log rc=1 (intento 1)
+2026-10-24 16:47:31  INICIO luna -> M11_3_ajustes_luna.log (intento 2)
+2026-10-24 16:48:23  FALLO  luna -> M12_1_desarrollo_luna.log rc=1 (intento 1)
+2026-10-24 16:48:23  INICIO luna -> M12_1_desarrollo_luna.log (intento 2)
+2026-10-24 16:48:44  FALLO  haiku -> M09_2_revision_haiku.log rc=1 (intento 2)
+2026-10-24 16:48:44  ABORTA M09 en revisión Haiku
+2026-10-24 16:48:47  FALLO  haiku -> M08_2_revision_haiku.log rc=1 (intento 2)
+2026-10-24 16:48:47  ABORTA M08 en revisión Haiku
+2026-10-24 16:49:31  FALLO  luna -> M10_1_desarrollo_luna.log rc=1 (intento 2)
+2026-10-24 16:49:31  ABORTA M10 en desarrollo
+2026-10-24 16:50:10  FALLO  luna -> M13_1_desarrollo_luna.log rc=1 (intento 2)
+2026-10-24 16:50:10  ABORTA M13 en desarrollo
+2026-10-24 16:50:11  FALLO  luna -> M07_3_ajustes_luna.log rc=1 (intento 2)
+2026-10-24 16:50:11  ABORTA M07 en ajustes
+2026-10-24 16:51:41  FALLO  luna -> M11_3_ajustes_luna.log rc=1 (intento 2)
+2026-10-24 16:51:41  ABORTA M11 en ajustes
+2026-10-24 16:52:32  FALLO  luna -> M12_1_desarrollo_luna.log rc=1 (intento 2)
+2026-10-24 16:52:32  ABORTA M12 en desarrollo
+2026-10-24 16:52:32  === FASE 2: secciones S1–S3 y anexos AX ===
+2026-10-24 16:52:32  INICIO luna -> AX_1_desarrollo_luna.log (intento 1)
+2026-10-24 16:52:32  INICIO sol -> S3_4_revision_sol.log (intento 1)
+2026-10-24 16:52:32  INICIO sol -> S2_4_revision_sol.log (intento 1)
+2026-10-24 16:52:32  INICIO sol -> S1_4_revision_sol.log (intento 1)
+2026-10-24 16:56:50  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 1)
+2026-10-24 16:56:50  FALLO  sol -> S2_4_revision_sol.log rc=1 (intento 1)
+2026-10-24 16:56:50  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 1)
+2026-10-24 16:56:50  FALLO  luna -> AX_1_desarrollo_luna.log rc=1 (intento 1)
+2026-10-24 16:56:50  INICIO sol -> S2_4_revision_sol.log (intento 2)
+2026-10-24 16:56:50  INICIO luna -> AX_1_desarrollo_luna.log (intento 2)
+2026-10-24 16:56:50  INICIO sol -> S3_4_revision_sol.log (intento 2)
+2026-10-24 16:56:50  INICIO sol -> S1_4_revision_sol.log (intento 2)
+2026-10-24 17:01:12  FALLO  luna -> AX_1_desarrollo_luna.log rc=1 (intento 2)
+2026-10-24 17:01:12  ABORTA AX en desarrollo
+2026-10-24 17:01:12  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 2)
+2026-10-24 17:01:12  ABORTA S3 en revisión sol
+2026-10-24 17:01:12  FALLO  sol -> S2_4_revision_sol.log rc=1 (intento 2)
+2026-10-24 17:01:12  ABORTA S2 en revisión sol
+2026-10-24 17:01:12  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 2)
+2026-10-24 17:01:12  ABORTA S1 en revisión sol
+2026-10-24 17:01:12  === FASE 3: sección S4 ===
+2026-10-24 17:01:12  INICIO sol -> S4_4_revision_sol.log (intento 1)
+2026-10-24 17:05:40  FALLO  sol -> S4_4_revision_sol.log rc=1 (intento 1)
+2026-10-24 17:05:40  INICIO sol -> S4_4_revision_sol.log (intento 2)
+2026-10-24 17:09:58  FALLO  sol -> S4_4_revision_sol.log rc=1 (intento 2)
+2026-10-24 17:09:58  ABORTA S4 en revisión sol
+2026-10-24 17:09:58  === FASES 1–3 TERMINADAS ===
+2026-10-25 19:20:57  === REANUDACIÓN: fase 1 pendiente ===
+2026-10-25 19:20:57  INICIO luna -> M07_3_ajustes_luna.log (intento 1)
+2026-10-25 19:20:57  INICIO luna -> M11_3_ajustes_luna.log (intento 1)
+2026-10-25 19:20:57  INICIO haiku -> M09_2_revision_haiku.log (intento 1)
+2026-10-25 19:20:57  INICIO haiku -> M08_2_revision_haiku.log (intento 1)
+2026-10-25 19:20:57  INICIO haiku -> M10_2_revision_haiku.log (intento 1)
+2026-10-25 19:20:57  INICIO haiku -> M12_2_revision_haiku.log (intento 1)
+2026-10-25 19:20:57  INICIO haiku -> M13_2_revision_haiku.log (intento 1)
+2026-10-25 19:23:55  FIN    luna -> M07_3_ajustes_luna.log OK
+2026-10-25 19:23:55  CAPITULO M07 COMPLETO
+2026-10-25 19:24:57  FIN    haiku -> M12_2_revision_haiku.log OK
+2026-10-25 19:24:57  INICIO luna -> M12_3_ajustes_luna.log (intento 1)
+2026-10-25 19:25:47  FIN    haiku -> M08_2_revision_haiku.log OK
+2026-10-25 19:25:47  INICIO luna -> M08_3_ajustes_luna.log (intento 1)
+2026-10-25 19:25:56  FIN    haiku -> M13_2_revision_haiku.log OK
+2026-10-25 19:25:56  INICIO luna -> M13_3_ajustes_luna.log (intento 1)
+2026-10-25 19:26:28  FIN    haiku -> M09_2_revision_haiku.log OK
+2026-10-25 19:26:28  INICIO luna -> M09_3_ajustes_luna.log (intento 1)
+2026-10-25 19:27:09  FIN    haiku -> M10_2_revision_haiku.log OK
+2026-10-25 19:27:09  INICIO luna -> M10_3_ajustes_luna.log (intento 1)
+2026-10-25 19:29:54  FIN    luna -> M12_3_ajustes_luna.log OK
+2026-10-25 19:29:54  CAPITULO M12 COMPLETO
+2026-10-25 19:30:03  === ORQUESTACIÓN POR SECCIÓN ===
+2026-10-25 19:30:03  === S1: capítulos listos, inicia revisión de sección ===
+2026-10-25 19:30:03  INICIO luna -> AX_1_desarrollo_luna.log (intento 1)
+2026-10-25 19:30:03  INICIO sol -> S1_4_revision_sol.log (intento 1)
+2026-10-25 19:34:03  FIN    luna -> M13_3_ajustes_luna.log OK
+2026-10-25 19:34:03  CAPITULO M13 COMPLETO
+2026-10-25 19:34:28  FIN    luna -> M11_3_ajustes_luna.log OK
+2026-10-25 19:34:28  CAPITULO M11 COMPLETO
+2026-10-25 19:35:48  FIN    luna -> M10_3_ajustes_luna.log OK
+2026-10-25 19:35:48  CAPITULO M10 COMPLETO
+2026-10-25 19:36:44  FIN    luna -> M09_3_ajustes_luna.log OK
+2026-10-25 19:36:44  CAPITULO M09 COMPLETO
+2026-10-25 19:37:03  === S3: capítulos listos, inicia revisión de sección ===
+2026-10-25 19:37:03  INICIO sol -> S3_4_revision_sol.log (intento 1)

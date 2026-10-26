@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué los 15 hallazgos en `M02_libreto.md`, corregí las referencias y añadí el registro de decisiones en `M02_bitacora_luna.md`.
+Actualicé y ejecuté `calc/M02_examples.py`: la media tras truncar las lecturas negativas es 0,06 nmol/mol; el redondeo prematuro cambia la media de 0,11667 a 0.
+No rechacé hallazgos; no modifiqué archivos fuera de `curso/S1_fundamentos/`.

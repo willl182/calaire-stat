@@ -1,0 +1,210 @@
+# M04. Inferencia: estimación y contraste
+
+## Ficha del capítulo
+
+| Elemento | Alcance |
+|---|---|
+| Competencia estadística | Estimar un efecto con su intervalo y contrastar hipótesis, distinguiendo significación estadística de relevancia metrológica. |
+| Prerrequisitos | M2: descripción, dispersión y elección de la respuesta. M3-B: distribución t, cuantiles y grados de libertad. M3-I: covarianza, chi-cuadrado y F. |
+| Nivel B | Grados de libertad; intervalo de confianza con t; hipótesis, valor p y errores de decisión; prueba t de un error medio en un nivel, con la unidad de repetición justificada en el enunciado. |
+| Nivel I añade | t pareada y Welch; intervalos y pruebas sobre varianzas (chi-cuadrado, F); potencia y tamaño de muestra según el diseño (media, pareadas, dos grupos); incertidumbre de una desviación estimada; pruebas de Grubbs y Dixon solo bajo sus condiciones de aplicación. |
+| Nivel A añade | Multiplicidad; pruebas de equivalencia con márgenes definidos; consistencia por chi-cuadrado. |
+| Datos de ejemplos | **Simulados** y generados por `calc/M04_ejemplos.py`; ilustran cálculos y no describen resultados de CALAIRE. El certificado F-PSMT-01, Level 2 Thermo 49C frente al SRP 55, aporta el contexto del caso, no datos atribuibles a los ejemplos. |
+| Anexos | AX.1, divisor de la varianza muestral y grados de libertad; AX.7, Welch–Satterthwaite y sus condiciones. Las deducciones no se desarrollan en el libreto. |
+| Referencias clave | Statistical Concepts §§5.2, 6.1, 6.4, 7.1–7.3, 7.5.3 y 9.1–9.3; Otto §2.2; Milton et al. 2006. Para equivalencia y multiplicidad, referencias externas sin numeral verificable en `docs/`, pendientes de incorporación. |
+
+## Nivel B — estimar y contrastar una media
+
+> **[NOTA AL INSTRUCTOR]** Cifras reproducibles con `calc/M04_ejemplos.py`.
+
+Al comenzar, les digo que en este nivel ya damos por vistas la forma de describir una muestra y la diferencia entre dispersión de las lecturas y error estándar. También damos por vistas las distribuciones y los cuantiles de M3. Hoy usaremos esas herramientas para contestar una pregunta concreta del laboratorio: ¿qué tan grande puede ser el error medio de un fotómetro en un nivel, y qué evidencia tenemos para decir que difiere de cero o de un valor que sí importe? No vamos a convertir una falta de evidencia en una afirmación de igualdad. [Hahs-Vaughn §5.2; §6.1]
+
+### Escena B1. De la muestra al estimador
+
+> **[DIAPOSITIVA]** Una población de errores posibles, una muestra seleccionada y la media muestral que se calcula.
+
+Para empezar, fijamos qué media queremos estimar. En el caso del laboratorio, usamos el error con signo $e=y-x$: la indicación menos el valor de referencia. La respuesta de interés es el error medio en un nivel de concentración y bajo las condiciones declaradas. Con una muestra calculamos una media, pero el resultado de otra muestra no sería necesariamente idéntico. Por eso el valor puntual debe acompañarse de un intervalo que refleje la variación del procedimiento de estimación. [Hahs-Vaughn §5.2; §6.1]
+
+La media muestral y su error estándar resumen, respectivamente, el centro estimado y su variación debida al muestreo bajo el modelo. El error estándar no describe la amplitud de las lecturas individuales. En este capítulo nos concentramos en esa media y su inferencia; no estamos estimando aquí la dispersión de futuras lecturas ni introduciendo otros modelos de población. [Hahs-Vaughn §5.2; §6.1]
+
+> **[PIZARRA]** Para observaciones independientes $e_1,\ldots,e_n$, escribimos $\bar e=\frac{1}{n}\sum_{i=1}^n e_i$ y $SE(\bar e)=s/\sqrt n$. La desviación estándar muestral $s$ se recupera de M2; hoy usamos su relación con la media. La última expresión se lee: «el error estándar de la media es la desviación estándar muestral dividida por la raíz cuadrada del número de observaciones».
+
+La desviación estándar $s$ describe la variación entre observaciones; el error estándar describe la variación del estimador de la media. Si $s$ mide cuánto fluctúan las lecturas, $SE(\bar e)$ mide cuánto esperamos que fluctúe el promedio bajo las hipótesis de independencia y muestreo común. Si la unidad de repetición no es independiente, sustituir el número de filas por $n$ no arregla el problema. Las lecturas consecutivas pueden compartir condiciones y deriva. En tal caso, el denominador debe reflejar las unidades independientes del diseño o necesitamos otro modelo. [Hahs-Vaughn §5.2; §6.1]
+
+Los grados de libertad expresan cuánta información independiente queda para estimar una variabilidad después de ajustar los parámetros correspondientes. Para una muestra simple, al calcular $s$ usamos la media de esa misma muestra, y queda un grado de libertad menos que el número de observaciones. No haremos aquí la deducción del divisor: la encuentran en el Anexo AX.1. En la prueba de una media de esta escena, esos grados de libertad determinan qué distribución t usar. [Hahs-Vaughn §5.2; Otto §2.2]
+
+> **[EJEMPLO]** La unidad independiente es una jornada: se toma una pareja referencia–indicación por jornada en ocho jornadas de un único nivel nominal. Para este ejemplo se suponen errores independientes de una misma población normal, sin deriva ni componente común no modelado. No son ocho lecturas consecutivas. El vector de errores del ejemplo ilustrativo B es $[-0,8;\ 0,1;\ 0,4;\ -0,2;\ 0,7;\ 0,0;\ -0,5;\ 0,6]$ nmol/mol. La media es $0,0375$ nmol/mol y la desviación estándar, $0,5263$ nmol/mol. Esa dispersión no debe confundirse con el error estándar, que el mismo cálculo da como $0,1861$ nmol/mol bajo la hipótesis de observaciones independientes. En el libreto estos datos son **simulados**; no son las lecturas de CALAIRE ni una estimación del desempeño real del Level 2. [Hahs-Vaughn §5.2; §6.1]
+
+Al leer el ejemplo, subrayo que los valores negativos no son «lecturas imposibles» que debamos borrar: son errores con signo en un conjunto de ejemplo. El signo conserva la dirección de la diferencia. La media pequeña no significa que cada error sea pequeño, como muestra la desviación muestral. Y el error estándar no es el rango de futuras lecturas; cuantifica la precisión de la media estimada bajo el muestreo declarado. [Hahs-Vaughn §5.2; §6.1]
+
+### Escena B2. La media tiene una distribución muestral
+
+Para construir el intervalo de la media con t, usamos el error estándar estimado y los grados de libertad de la muestra. En el modelo de observaciones independientes de una población normal, la diferencia entre la media observada y la planteada, dividida por el error estándar, sigue una distribución t [Hahs-Vaughn §6.1]. La validez del intervalo depende de que el diseño y los supuestos correspondan a los datos. No confundimos la distribución de referencia t con la forma del histograma de lecturas.
+
+> **[PIZARRA]** $\displaystyle \bar e\ \pm\ t_{0,975;\,\nu}\,\frac{s}{\sqrt n}$; decimos: «para el noventa y cinco por ciento, la media observada más o menos el cuantil t de 0,975 con $\nu$ grados de libertad, multiplicado por su error estándar».
+
+El intervalo de confianza se construye con un procedimiento que, si se repitiera muchas veces bajo las mismas condiciones, cubriría el parámetro en la proporción establecida por su nivel. Una vez calculado un intervalo particular, no decimos que haya una probabilidad frecuentista de que el parámetro fijo esté dentro de este intervalo concreto. Decimos que el intervalo es compatible con los valores del parámetro que no quedan descartados por esos datos y ese modelo, al nivel elegido. Tampoco afirmamos que el intervalo cubra observaciones futuras: ese sería otro tipo de intervalo. [Hahs-Vaughn §6.1]
+
+Volvamos al ejemplo ilustrativo. Los datos son simulados. Para un intervalo bilateral del noventa y cinco por ciento, con siete grados de libertad, el cuantil t es $2,3646$. El error estándar es $0,1861$ nmol/mol. El intervalo para el error medio queda entre $-0,4025$ y $0,4775$ nmol/mol. Explico cada parte: centro en la media de $0,0375$, semiancho cercano a $0,4400$, y extremos expresados en la misma unidad del error. El intervalo incluye cero, pero por sí solo no prueba que el efecto sea exactamente cero. Más adelante usaremos el contraste para expresar esa conclusión con claridad. [Hahs-Vaughn §6.1]
+
+> **[PREGUNTA AL GRUPO]** Si duplicáramos el número de filas copiando cada lectura, ¿se estrecharía legítimamente el intervalo? — *Respuesta esperada:* no; filas duplicadas no agregan unidades independientes de información. Si se tratan como nuevas réplicas, el error estándar se reduce artificialmente.
+
+Al escoger el intervalo, definimos primero qué respuesta queremos estimar. Para el ejemplo, es el error medio de un solo nivel de concentración bajo una unidad de repetición independiente declarada. Si la pregunta fuera cuánto varía una lectura individual, o cuál será el error en el uso futuro, este intervalo no respondería la pregunta. Tampoco debemos agrupar varios niveles de concentración para ganar tamaño muestral: el error puede cambiar con el nivel, así que mezclar niveles cambia el parámetro que estamos estimando. [Hahs-Vaughn §6.1]
+
+### Escena B3. Contrastar una media sin confundir evidencia con importancia
+
+Un contraste empieza con una pregunta expresada antes de mirar el resultado. La hipótesis nula, $H_0$, representa el valor de referencia contra el que comparamos. Para preguntar si el error medio del nivel de concentración difiere de cero, escribimos $H_0:\mu_e=0$. La alternativa bilateral es $H_1:\mu_e\ne0$ [Hahs-Vaughn §6.1]. Si la decisión técnica solo tuviera sentido en una dirección, la alternativa unilateral tendría que justificarse por el problema antes de analizar los datos; no se escoge después de ver hacia dónde apuntó la media.
+
+> **[PIZARRA]** $t_{obs}=\dfrac{\bar e-\mu_0}{s/\sqrt n}$. Se lee: «la media observada menos la media planteada por la hipótesis nula, dividido por el error estándar». Para una prueba bilateral, comparamos la magnitud del estadístico con los cuantiles de t, o calculamos el valor p bilateral.
+
+El nivel de significación $\alpha$ es la probabilidad máxima, bajo el modelo y si $H_0$ es cierta, de rechazarla mediante la regla que se fijó [Hahs-Vaughn §6.1]. El valor p [Hahs-Vaughn §6.1] es la probabilidad, bajo $H_0$ y los supuestos del contraste, de obtener un estadístico tan extremo o más extremo que el observado. No es la probabilidad de que $H_0$ sea cierta; tampoco mide el tamaño del efecto ni la probabilidad de que el resultado se repita. Un valor p pequeño indica incompatibilidad de los datos con $H_0$ en el marco del modelo, no importancia metrológica automática.
+
+En el ejemplo, el estadístico t vale $0,2015$ y el valor p bilateral es $0,8460$. Con el nivel de significación del cinco por ciento que fijamos de antemano, no rechazamos la hipótesis de media cero. La forma correcta de decirlo es: «los datos no proporcionan evidencia estadística suficiente para concluir que el error medio difiera de cero bajo este modelo». No decimos «se probó que el error es cero». El intervalo incluye cero, de manera coherente con esa conclusión. [Hahs-Vaughn §6.1]
+
+Ahora distingo los errores de decisión. Un error de tipo I consiste en rechazar $H_0$ cuando es cierta; el procedimiento limita su probabilidad nominal mediante $\alpha$, si se cumplen las condiciones. Un error de tipo II consiste en no rechazar $H_0$ cuando una alternativa concreta es cierta. Su probabilidad depende de cuál sea esa alternativa, la dispersión, el diseño y el tamaño muestral. Sin especificar el efecto que importa no queda definida la probabilidad de detectar esa alternativa. La potencia, es decir, la probabilidad de detectar un efecto concreto, la veremos en el nivel I. [Hahs-Vaughn §6.1]
+
+La relevancia metrológica es una pregunta distinta de la significación. Antes de calcular, el responsable puede fijar una magnitud de error que sería importante para el uso, con unidades, signo si procede y justificación técnica. Si el intervalo es ancho y cubre efectos relevantes tanto positivos como negativos, un valor p grande solo nos dice que no distinguimos el efecto de cero con precisión suficiente; no demuestra que el equipo sea adecuado. Si el intervalo es estrecho, puede excluir cero y aun así quedar enteramente dentro de una banda de efecto pequeño que no cambia la decisión de uso. El contraste estadístico no decide por sí mismo la aptitud del instrumento. [Hahs-Vaughn §6.1]
+
+> **[ERROR CRÍTICO]** No conviertan «no rechazar cero» en «aceptar que el sesgo es cero» o «demostrar que el error es despreciable». Y no confundan significación estadística con relevancia metrológica: son afirmaciones distintas y requieren criterios distintos.
+
+En el caso del Level 2 frente al SRP 55, lo que estimamos es el intervalo del error medio en un nivel de concentración, y lo contrastamos con cero y con una magnitud relevante. Para cada análisis se debe decir qué resultado se estima, cuál es la unidad de repetición y qué comparación se hará. El ejemplo ilustrativo de esta escena no sustituye ese análisis con el certificado. La práctica correspondiente se desarrollará en la fase de ejercicios. [Hahs-Vaughn §6.1]
+
+> **[PRÁCTICA — fase de ejercicios]** Intervalo del error medio del Level 2 en un nivel y contraste con cero y con una magnitud relevante
+
+### Señales de escalamiento
+
+Antes de cerrar el nivel básico, les indico cuándo detener el cálculo automático y consultar. Si las observaciones que se van a promediar comparten día, ciclo, deriva o patrón de una forma no recogida en el modelo, no declaren independencia sin justificación. Si al agrupar cambia la escala de concentración o se mezclan niveles con comportamientos distintos, detengan la prueba de una única media. Si hay un dato inusual sin causa identificada, no lo eliminen para hacer que el resultado «pase». Revisen los datos, el gráfico y el registro, y escalen el caso. [Hahs-Vaughn §6.1; §6.4]
+
+También se escala cuando hay pocos grados de libertad para una cobertura confiable, cuando el intervalo queda cerca de un límite que gobierna una decisión, o cuando la relevancia depende de un margen que nadie definió. En esos casos no improvisen otro umbral ni cambien de prueba tras ver el resultado. Soliciten apoyo para definir la unidad experimental, el modelo, la cobertura o la regla de decisión antes de emitir una conclusión. [Hahs-Vaughn §6.1]
+
+## Nivel I — lo que se añade: elegir y justificar métodos
+
+> **[NOTA AL INSTRUCTOR]** Cifras reproducibles con `calc/M04_ejemplos.py`.
+
+En el nivel intermedio conservamos todo lo anterior: estimadores, intervalos, pruebas, supuestos y lectura metrológica. Ahora ustedes eligen entre métodos que corresponden a diseños distintos y justifican por qué las observaciones se consideran independientes o emparejadas. También aprenderán a inferir sobre varianzas, planear potencia, expresar la incertidumbre de una desviación estimada y evaluar ciertos valores extremos solo cuando las condiciones de esas pruebas se cumplen. [Hahs-Vaughn §§6.1, 7.1–7.2, 9.1–9.3; Otto §2.2]
+
+### Escena I1. Pareadas o independientes: la estructura manda
+
+Para comparar dos resultados, primero observen cómo se obtuvieron. Si cada resultado de un equipo tiene una pareja natural del otro equipo tomada bajo la misma condición, y la pareja es la unidad independiente, analizamos las diferencias dentro de cada pareja. La prueba t pareada es una prueba de una media aplicada a esas diferencias. La variación común a los dos miembros de cada pareja queda reflejada en la diferencia, no se trata como si fueran dos grupos sin relación. En el laboratorio, dos instrumentos que miden el mismo gas en secuencia coordinada pueden producir datos pareados si el protocolo, los tiempos y la asignación de las mediciones sostienen ese emparejamiento. No junten concentraciones distintas en una sola prueba t pareada: cada nivel plantea su propio efecto, salvo que un modelo explícito justifique otra pregunta. [Hahs-Vaughn §7.2]
+
+> **[PIZARRA]** Definimos $\Delta_i=A_i-B_i$; reservamos $d$ para el número de días. Después calculamos $t=\bar\Delta/(s_\Delta/\sqrt n)$, con $n-1$ grados de libertad para la prueba de una media de diferencias. La fórmula se lee: «media de las diferencias dividida por su error estándar».
+
+En el ejemplo ilustrativo, cada par representa dos indicaciones simuladas que corresponden a la misma condición; la respuesta de interés es la diferencia $A-B$. Obtenemos ocho diferencias, con media $0,1625$ nmol/mol y desviación estándar $0,1188$ nmol/mol. El error estándar es $0,0420$ nmol/mol, y el intervalo bilateral del noventa y cinco por ciento va de $0,0632$ a $0,2618$ nmol/mol. El estadístico es $3,8697$ y el valor p bilateral es $0,0061$. Bajo las hipótesis declaradas, la media de las diferencias es incompatible con cero al nivel del cinco por ciento. No afirmo por ello que cada pareja difiera en la misma cantidad: inferimos la media de las diferencias independientes. **Datos simulados**, no mediciones CALAIRE. [Hahs-Vaughn §7.2]
+
+Ahora supongan que tenemos dos grupos que no forman parejas. Por ejemplo, dos conjuntos de campañas con unidades independientes, sin una correspondencia uno a uno defendible. Si no hay base para asumir varianzas poblacionales iguales, la prueba de Welch compara las medias usando el error estándar que combina la variabilidad estimada en cada grupo y calcula grados de libertad aproximados. No debemos fabricar parejas por el orden de las filas, ni asumir varianzas iguales solo porque las desviaciones muestrales se ven parecidas. [Hahs-Vaughn §§7.1, 7.3.1, 7.5.3]
+
+> **[PIZARRA]** $SE(\bar X_1-\bar X_2)=\sqrt{s_1^2/n_1+s_2^2/n_2}$; $\displaystyle\nu_W=\frac{(s_1^2/n_1+s_2^2/n_2)^2}{(s_1^2/n_1)^2/(n_1-1)+(s_2^2/n_2)^2/(n_2-1)}$.
+
+El error estándar es la raíz de la suma de las varianzas estimadas de las medias. Los grados de libertad son el cuadrado de esa suma, dividido por la suma de cada varianza de media al cuadrado sobre sus grados de libertad. Usamos $t=(\bar X_1-\bar X_2-\Delta_0)/SE$, que se lee diferencia observada menos diferencia nula, dividida por su error estándar; el intervalo es la diferencia observada más o menos $t_{0,975;\nu_W}SE$. Conservamos los grados de libertad fraccionarios al calcular cuantiles. La deducción se remite a AX.7, no la regla operativa. [Hahs-Vaughn §7.1.3.2]
+
+En el ejemplo ilustrativo de dos grupos independientes, el primero tiene seis observaciones y el segundo siete. Sus medias son $10,0167$ y $10,9571$ nmol/mol. La diferencia estimada, grupo primero menos grupo segundo, es $-0,9405$ nmol/mol. Welch produce un error estándar de $0,1531$, aproximadamente $10,9272$ grados de libertad, estadístico $-6,1418$ y valor p bilateral $0,000075$. El intervalo del noventa y cinco por ciento para la diferencia es de $-1,2778$ a $-0,6032$ nmol/mol. El signo negativo expresa que la media del primer grupo es menor en este orden de resta. Cambiar el orden invierte el signo, pero no la conclusión bilateral. **Datos simulados**. [Hahs-Vaughn §§7.1, 7.3.1, 7.5.3]
+
+Para escoger, pregunto: ¿hay una relación de pareja establecida por el diseño, o hay dos muestras independientes? Si hay una correspondencia real, se analiza la diferencia; si no, no se fuerza el emparejamiento. Para Welch se justifica independencia entre grupos y dentro de cada grupo, se revisa la forma de las distribuciones y se informa que la inferencia es sobre la diferencia de medias. Si el conjunto contiene mediciones repetidas de un mismo día, lote o nivel, la independencia puede no cumplirse y el problema se escala a un modelo que represente esa agrupación. [Hahs-Vaughn §§7.1–7.2]
+
+> **[ERROR CRÍTICO]** No traten mediciones correlacionadas como dos muestras independientes por comodidad. Tampoco conviertan ocho lecturas consecutivas en ocho parejas o réplicas independientes si el diseño no sostiene esa unidad de repetición.
+
+### Escena I2. Inferir sobre la variabilidad
+
+Una pregunta sobre la media no responde si la dispersión cambió. Si asumimos observaciones independientes de una población normal, la distribución chi-cuadrado permite construir un intervalo de confianza para la varianza de una población y contrastar una varianza propuesta. El estadístico es el producto de los grados de libertad por la varianza muestral, dividido por la varianza que plantea la hipótesis; se llama chi-cuadrado. Como la distribución chi-cuadrado no es simétrica, los límites inferior y superior usan cuantiles distintos. [Hahs-Vaughn §§9.1–9.2]
+
+> **[PIZARRA]** Para una muestra normal, el pivote es $\chi^2=(n-1)s^2/\sigma_0^2$. Para el intervalo de $\sigma^2$, se invierten los cuantiles de chi-cuadrado. La frase que acompaña la fórmula es: «la suma de cuadrados escalada se compara con la distribución chi-cuadrado bajo normalidad».
+
+Usamos la varianza de la muestra del ejemplo ilustrativo de B, con datos simulados, no como evidencia de una calibración. La varianza muestral es $0,2770$ $(\mathrm{nmol/mol})^2$, con siete grados de libertad. El intervalo bilateral del noventa y cinco por ciento para la varianza poblacional va de $0,1211$ a $1,1473$ $(\mathrm{nmol/mol})^2$. Si la hipótesis nula propone una varianza de $0,25$ $(\mathrm{nmol/mol})^2$, el estadístico es $7,7550$ y el valor p bilateral es $0,7094$. No rechazamos esa varianza propuesta. El intervalo ancho recuerda que la muestra pequeña proporciona poca precisión sobre la dispersión. [Hahs-Vaughn §§9.1–9.2]
+
+Para comparar dos varianzas de poblaciones normales independientes, el cociente de varianzas muestrales se compara con una distribución F, con grados de libertad de ambos grupos. El orden del cociente importa para los límites del intervalo, aunque la prueba bilateral contra igualdad se puede expresar de forma coherente usando las dos colas. Esta prueba es sensible a desviaciones de la normalidad; no la presentamos como un detector universal de cambios de dispersión. [Hahs-Vaughn §§9.1–9.2]
+
+En los dos grupos del ejemplo ilustrativo de la escena anterior, con datos simulados, el cociente de varianzas muestrales, grupo primero sobre grupo segundo, es $0,8408$. El intervalo bilateral del noventa y cinco por ciento para el cociente va de $0,1404$ a $5,8669$. El valor p de la prueba bilateral de igualdad es $0,8678$. La conclusión no es «las varianzas son idénticas», sino que estos datos no distinguen la razón de uno con precisión suficiente. El intervalo permite ver cuán amplia es la incertidumbre. **Datos simulados**. [Hahs-Vaughn §§9.1–9.2]
+
+> **[ERROR CRÍTICO]** No apliquen chi-cuadrado o F a datos con dependencia, grupos mezclados o una distribución claramente incompatible con la normalidad, como si el cálculo corrigiera el diseño. Revisen primero la unidad de repetición y los supuestos.
+
+### Escena I3. Potencia y tamaño de muestra dependen del diseño
+
+La potencia conecta una pregunta técnica con la planificación. Antes de calcularla, definimos qué efecto queremos detectar, cuánto varían las observaciones, cuál será el nivel de significación, si la prueba es unilateral o bilateral y cómo se van a obtener las réplicas. Una diferencia más pequeña que queremos detectar suele requerir más información; más dispersión también suele exigir más réplicas. Pero el número depende de la estructura: una muestra para una media, diferencias emparejadas y dos grupos independientes no comparten automáticamente el mismo cálculo. [Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3; §9.3]
+
+La potencia es condicional a una alternativa concreta. En un diseño de una media, se expresa el efecto como diferencia respecto del valor nulo en unidades de desviación estándar. En un diseño pareado, la desviación relevante es la de las diferencias dentro de pareja, no la de todas las lecturas individuales. En dos grupos, además, declaramos cómo se reparten las observaciones y qué tamaño de efecto se quiere detectar. No calculen la potencia usando la desviación de un conjunto distinto solo porque está disponible. [Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3]
+
+> **[EJEMPLO]** En tres cálculos ilustrativos fijamos prueba bilateral, $\alpha=0,05$ y potencia objetivo de $0,80$. Para una media o para diferencias pareadas con tamaño de efecto estandarizado $0,5$, el cálculo necesita aproximadamente $33,37$ unidades independientes; redondeamos hacia arriba a $34$. Con $16$ unidades la potencia calculada es aproximadamente $0,4649$. Para dos grupos independientes de igual tamaño, con efecto estandarizado $0,8$, hacen falta aproximadamente $25,52$ observaciones por grupo, es decir, $26$ por grupo; con $12$ por grupo la potencia queda en aproximadamente $0,4658$. Son escenarios **simulados** con tamaños de efecto y variabilidad definidos para ilustrar el método; no son una recomendación de diseño para CALAIRE. [Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3]
+
+Cuando el diseño tiene días, ciclos o analistas, «unidades independientes» significa unidades independientes de ese diseño, no el total de registros en una hoja de cálculo. Si el efecto de interés es una diferencia entre instrumentos y cada unidad aporta una pareja, planificamos con la variación de las diferencias. Si el objetivo es comparar dos grupos, planificamos por grupo y con la asignación prevista. Si necesitamos una detección por debajo de una tolerancia o un margen, esa tolerancia debe estar justificada y vinculada al uso. El resultado del cálculo es un tamaño bajo supuestos, no un permiso para omitir réplicas de otros niveles. [Hahs-Vaughn §§6.1.2–6.1.5, 7.1.4–7.1.7, 7.2.2–7.2.3]
+
+### Escena I4. Incertidumbre de una desviación estimada
+
+La desviación estándar muestral también se estima con error. No debemos reportar una $s$ de una muestra pequeña como si fuera una constante exacta. Bajo normalidad, una aproximación para la incertidumbre estándar de $s$ es $u(s)\approx s/\sqrt{2\nu}$, donde $\nu$ son los grados de libertad. Esta aproximación ayuda a reconocer la precisión limitada de una desviación estimada; no sustituye el intervalo exacto de la varianza basado en chi-cuadrado, ni debe usarse sin la condición de normalidad. [Hahs-Vaughn, cap. 9]
+
+> **[PIZARRA]** $u(s)\approx\dfrac{s}{\sqrt{2\nu}}$. Se lee: «la incertidumbre estándar aproximada de la desviación es la desviación estimada dividida por la raíz de dos veces sus grados de libertad».
+
+Para la muestra del ejemplo ilustrativo B, con datos simulados, la desviación es $0,5263$ nmol/mol y los grados de libertad son siete. La aproximación da $u(s)=0,1407$ nmol/mol. Comparen esa incertidumbre con el propio valor de $s$: es suficientemente grande como para que no reportemos la dispersión con muchos decimales. En un presupuesto o estudio de precisión, se conservará la incertidumbre pertinente y se redondeará al final según el procedimiento de reporte. **Datos simulados**. [Hahs-Vaughn, cap. 9]
+
+### Escena I5. Grubbs y Dixon: pruebas acotadas, nunca una licencia para borrar
+
+Una observación extrema es inusual en relación con un modelo, pero la apariencia extrema no basta para descartarla. Antes de cualquier prueba buscamos causas documentadas: transcripción, estabilización, purga, condición instrumental o cambio de procedimiento. Grubbs y Dixon están diseñadas para situaciones específicas de una muestra aproximadamente normal y para investigar un extremo bajo sus condiciones. No reemplazan el análisis de residuos ni justifican probar repetidamente varios datos hasta obtener una exclusión. [Otto §2.2]
+
+La prueba de Grubbs compara la distancia del valor sospechoso a la media con la desviación estándar de la muestra. La prueba de Dixon ordena los datos y compara un hueco en un extremo con un rango definido. No son intercambiables en cualquier tamaño de muestra, ni responden a la pregunta de si una observación es «incorrecta». El investigador declara qué extremo se prueba, el nivel de significación, el tamaño muestral y la tabla o procedimiento crítico aplicable. Si más de un valor parece extremo, el modelo de prueba simple puede dejar de ser válido. [Otto §2.2]
+
+> **[EJEMPLO]** Para ilustrar la mecánica, consideren ocho observaciones con un extremo alto. Los datos son simulados. El estadístico de Grubbs es $2,4374$, que supera el valor tabulado $2,22$ para ocho observaciones al nivel $0,99$. El estadístico de Dixon en el extremo alto es $0,8214$, que supera el valor crítico tabulado $0,59$ para ese tamaño y nivel. Bajo las condiciones de normalidad y prueba de un extremo declarado, ambos resultados señalan el extremo como inusual. El ejemplo no autoriza su eliminación: se investiga y documenta la causa y se reporta la decisión con el dato conservado o la exclusión justificada. **Datos simulados**. [Otto §2.2]
+
+El ejemplo usa los valores críticos de la tabla de Otto para el tamaño muestral y nivel declarados; los valores observados se reproducen con el cálculo documentado para el capítulo. Si la muestra está agrupada, tiene dependencia temporal, contiene más de un extremo sospechoso o la normalidad no es defendible, no apliquen esa conclusión mecánicamente. La prueba no convierte una estructura compleja en una muestra simple. [Otto §2.2]
+
+> **[ERROR CRÍTICO]** Nunca eliminen un resultado solo porque una prueba lo marcó o porque al quitarlo mejora el ajuste. Debe existir una causa técnica documentada y una regla de tratamiento definida; conserven el dato original y expliquen el análisis realizado.
+
+> **[PRÁCTICA — fase de ejercicios]** Selección e interpretación de t pareada y Welch, varianzas, potencia, incertidumbre de s, Grubbs y Dixon
+
+## Nivel A — lo que se añade: conclusiones simultáneas, equivalencia y consistencia
+
+> **[NOTA AL INSTRUCTOR]** Cifras reproducibles con `calc/M04_ejemplos.py`.
+
+En el nivel avanzado se mantienen los métodos B e I y se agregan tres preguntas que suelen aparecer cuando el responsable técnico interpreta varios resultados a la vez: qué hacer con múltiples contrastes, cómo demostrar equivalencia respecto de márgenes definidos de antemano y cómo evaluar la consistencia conjunta con un estadístico chi-cuadrado. En estas escenas no basta con informar un resultado calculado: se debe explicar qué modelo conjunto y qué decisión se adoptaron. [NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/; Lakens 2017, no disponible en docs/]
+
+### Escena A1. Multiplicidad: varias preguntas no son una sola
+
+Si hacemos varios contrastes y miramos cada uno con el mismo umbral sin considerar cuántas preguntas se hicieron, aumenta la oportunidad de obtener al menos un resultado aparentemente significativo por azar cuando todas las hipótesis nulas son ciertas. La colección de hipótesis forma una familia de decisiones. Antes de analizar, delimitamos esa familia y escogemos cómo controlar el error que nos importa. Una estrategia sencilla es Bonferroni: repartir el nivel familiar entre los contrastes, o ajustar cada valor p por el número de contrastes. Es una regla transparente, aunque puede ser conservadora, especialmente si las pruebas están correlacionadas. [NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/]
+
+> **[PIZARRA]** Para $m$ contrastes, Bonferroni compara cada valor p con $\alpha_F/m$, o calcula $p_{ajustado}=\min(mp,1)$. Se lee: «el nivel por contraste es el nivel familiar dividido por el número de pruebas; de forma equivalente, multiplicamos cada valor p por el número de pruebas, sin permitir que exceda uno».
+
+En el ejemplo ilustrativo hay tres valores p simulados: $0,012$, $0,031$ y $0,20$. El nivel familiar fijado es $0,05$. El nivel por contraste queda en $0,0167$, y los valores p ajustados son $0,036$, $0,093$ y $0,600$. Con la regla declarada solo el primer contraste se rechaza al nivel familiar indicado. Sin el ajuste, los dos primeros podrían parecer significativos al comparar cada uno con el umbral sin corregir. Esta ilustración no afirma que hubiera tres pruebas en la calibración de CALAIRE; muestra por qué debemos declarar la familia. **Valores p simulados**. [NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/]
+
+No agrupamos pruebas retrospectivamente para conseguir un resultado deseado ni omitimos la multiplicidad porque algunos contrastes «parecen secundarios». La corrección puede reducir potencia, así que la planificación considera el número de conclusiones y su dependencia. Si la prioridad es otra —por ejemplo, controlar la proporción de descubrimientos falsos— se debe elegir un método distinto y justificarlo; aquí el ejemplo se limita a Bonferroni. [NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/]
+
+### Escena A2. Equivalencia exige un margen definido
+
+Una prueba tradicional de diferencia suele plantear la hipótesis nula de efecto cero. Si no la rechazamos, no hemos probado que el efecto sea suficientemente pequeño. Para demostrar equivalencia, definimos antes del análisis un margen inferior y uno superior que representan la mayor diferencia aceptable para el uso. La hipótesis nula de equivalencia reúne los efectos que quedan fuera de esos márgenes; la alternativa exige que el efecto esté dentro de ambos límites. Los márgenes no se eligen a partir de los resultados observados: se justifican por requisitos metrológicos o de uso. [Lakens 2017, no disponible en docs/]
+
+Una manera de implementar esta pregunta es la prueba de dos hipótesis unilaterales, TOST. Se contrasta que el efecto es mayor que el margen inferior y, por separado, que es menor que el superior. Solo si ambas pruebas rechazan sus respectivas hipótesis nulas concluimos equivalencia bajo los márgenes especificados. Para una media con las condiciones usuales, esto corresponde a que el intervalo bilateral del noventa por ciento quede completamente dentro de los márgenes en la prueba con nivel del cinco por ciento. Aquí el intervalo no se usa para «aceptar cero»: se compara con límites de equivalencia previamente definidos. [Lakens 2017, no disponible en docs/]
+
+> **[PIZARRA]** Si los márgenes son $(-\Delta,+\Delta)$, equivalencia requiere que el intervalo de confianza pertinente quede contenido en $(-\Delta,+\Delta)$; de forma equivalente, ambas pruebas unilaterales deben rechazar. La frase oral es: «demostrar equivalencia requiere descartar efectos demasiado negativos y demasiado positivos».
+
+En el ejemplo ilustrativo, el efecto medio estimado es $0,08$ nmol/mol, la desviación muestral es $0,40$ nmol/mol y el tamaño de muestra es $20$. El margen se fijó de antemano en $-0,50$ a $+0,50$ nmol/mol. El intervalo del noventa por ciento va de $-0,0747$ a $0,2347$ nmol/mol y queda dentro de los márgenes; las dos pruebas unilaterales arrojan valores p de $0,00000163$ y $0,0000787$. Con los supuestos del ejemplo y ese margen declarado, los datos respaldan equivalencia. **Datos simulados**. [Lakens 2017, no disponible en docs/]
+
+Compárenlo con el ejemplo B: allí no rechazamos que la media fuera cero, pero el intervalo del noventa y cinco por ciento era ancho y admitía efectos que podrían importar. Eso no demostraba equivalencia. En este ejemplo avanzado sí hemos fijado márgenes y comprobado que la incertidumbre queda contenida en ellos. Si los márgenes cambian, la conclusión puede cambiar aunque los datos sean iguales. Por eso el margen y su fundamento forman parte del resultado, junto con el intervalo, los supuestos y el procedimiento. [Lakens 2017, no disponible en docs/]
+
+> **[ERROR CRÍTICO]** No interpreten un valor p grande de una prueba de diferencia como prueba de equivalencia. No inventen márgenes después de ver el intervalo, ni llamen equivalente a un resultado cuyo intervalo rebasa alguno de los márgenes.
+
+### Escena A3. Consistencia conjunta mediante chi-cuadrado
+
+Un contraste individual analiza una cantidad a la vez. A veces tenemos un vector de diferencias entre varias cantidades y queremos saber si, en conjunto, son compatibles con un modelo de referencia teniendo en cuenta sus incertidumbres. Bajo un modelo de residuos normales independientes y con incertidumbres estándar conocidas, sumamos los cuadrados estandarizados. Ese estadístico sigue una chi-cuadrado cuyos grados de libertad dependen del número de residuos independientes y de los parámetros estimados. Si hay covarianzas, la suma simple no vale: usamos la matriz de covarianza completa y una forma cuadrática. Los grados de libertad deben ser coherentes con el ajuste. [Milton et al. 2006]
+
+> **[PIZARRA]** Para residuos independientes $r_i$ con incertidumbre estándar $u_i$, $Q=\sum_i(r_i/u_i)^2$. Si hay covarianza, $Q=\mathbf r^{\mathsf T}\mathbf V^{-1}\mathbf r$. Se lee: «la suma de cuadrados estandarizados», o, con dependencia: «el vector de residuos, transpuesto, multiplicado por la inversa de su matriz de covarianza y por el vector de residuos».
+
+En el ejemplo ilustrativo hay tres residuos simulados: $0,12$, $-0,05$ y $0,08$ nmol/mol; cada uno tiene incertidumbre estándar de $0,10$ nmol/mol y se supone independencia. La suma de cuadrados estandarizados es $2,33$. Con tres grados de libertad, el cuantil superior del noventa y cinco por ciento es $7,8147$, y el valor p de cola superior es $0,5068$. El conjunto no muestra una inconsistencia estadística con el modelo nulo bajo esos supuestos. No es una confirmación de que el modelo sea verdadero, ni un certificado de conformidad de los fotómetros. **Datos simulados**. [Milton et al. 2006]
+
+Si los tres residuos comparten una referencia, una calibración o una componente común, la hipótesis de independencia deja de ser defendible. La matriz de covarianza modifica tanto el estadístico como la interpretación. También hay que descontar los parámetros que se estimaron con los mismos datos: si se ajusta el modelo antes de calcular el residuo conjunto, el número de grados de libertad no es simplemente el número de puntos. Si se desconoce la covarianza o no se sabe cuántos parámetros se ajustaron, no se improvisa el contraste; se escala a la persona responsable del modelo. [Milton et al. 2006]
+
+> **[ERROR CRÍTICO]** No sumen cuadrados estandarizados como si fueran independientes cuando los resultados comparten un patrón o una referencia. No interpreten un chi-cuadrado pequeño como prueba de que todo está bien: revisen el modelo, la matriz de covarianza y los grados de libertad.
+
+> **[PRÁCTICA — fase de ejercicios]** Distinguir no rechazo de cero y demostración de equivalencia con márgenes definidos
+
+## Cierre del capítulo
+
+Cierro recordando la secuencia de decisiones. En B definimos el parámetro y la unidad independiente, calculamos una media con su intervalo t y contrastamos la hipótesis sin confundir falta de rechazo con igualdad ni significación con importancia metrológica. En I elegimos la prueba que corresponde al diseño: pareada si hay parejas reales, Welch si comparamos grupos independientes sin imponer varianzas iguales; inferimos sobre varianzas solo con las condiciones que sostienen chi-cuadrado y F, planificamos potencia según el efecto y el diseño, y tratamos las pruebas de valores extremos como herramientas limitadas, nunca como permiso para borrar datos. En A definimos familias de contrastes, márgenes de equivalencia antes de observar resultados y modelos conjuntos para juzgar consistencia con chi-cuadrado. [Hahs-Vaughn §§5.2, 6.1, 7.1–7.2, 7.3.1, 7.5.3, 9.1–9.3; Otto §2.2; Milton et al. 2006]
+
+La conclusión de cualquier análisis debe decir qué parámetro se estimó, con qué intervalo o contraste, bajo qué supuestos, qué unidad de repetición se usó y qué significa el resultado para la pregunta estadística. Si falta una de esas piezas, detengan el cierre y pidan revisión. El siguiente módulo, M05, parte de esta inferencia para planear diseños: decidir qué se va a variar, dónde se necesitan réplicas independientes y qué efectos podrán estimarse. [Hahs-Vaughn §6.1; §7.1]
+
+## Referencias del capítulo
+
+- **Statistical Concepts.** Hahs-Vaughn, D. L. y Lomax, R. G. *Statistical Concepts—A First Course*. Routledge. (Extracto de *An Introduction to Statistical Concepts*, 4.ª ed.; capítulos disponibles por separado en `docs/statistical_concepts_c05.pdf` a `docs/statistical_concepts_c09.pdf`.) Secciones utilizadas: §5.2; §6.1; §6.4; §§7.1–7.3.1; §7.5.2; §§9.1–9.3.
+- **Otto, M.** *Chemometrics: Statistics and Computer Application in Analytical Chemistry*, 3.ª ed., Wiley-VCH, 2017. §2.2, pruebas estadísticas y pruebas de valores atípicos. Archivo: `docs/Chemometrics Statistics and Computer Application.pdf`.
+- **Lakens, D.** “Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses.” *Social Psychological and Personality Science*, 8(4), 355–362, 2017. (No disponible en `docs/`; referencia del método de equivalencia.)
+- **NIST/SEMATECH.** *e-Handbook of Statistical Methods*, sección de pruebas múltiples y ajuste de comparaciones. (No disponible en `docs/`; numeral no citado y pendiente de verificación/incorporación.)
+- **Milton, M. J. T. et al.** “Implementation of a generalized least-squares method for determining calibration curves from data with general uncertainty structures.” *Metrologia*, 43 (2006), S291–S298. Archivo: `docs/milton2006.pdf`.
+- **AX.1.** Divisor $n-1$ y grados de libertad de $s$, anexo del curso.
+- **AX.7.** Fórmula de Welch–Satterthwaite y sus condiciones, anexo del curso.

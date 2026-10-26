@@ -1,0 +1,27 @@
+B one-day readings (nmol/mol) {'n': 8, 'mean': 100.15, 'median': 100.15, 'variance_sample': 0.06000000000000028, 'sd_sample': 0.24494897427831838, 'range': 0.7000000000000028, 'q1_linear': 99.975, 'q3_linear': 100.325, 'se_mean': 0.08660254037844406}
+B histogram bins [99.7, 100.0, 100.3, 100.6] counts [2, 3, 3]
+B histogram relative frequencies [0.25, 0.375, 0.375]
+B CV percent 0.24458210112662843
+B multi-day reference {'n': 6, 'mean': 233.33333333333334, 'median': 200.0, 'variance_sample': 23786.666666666664, 'sd_sample': 154.2292665698267, 'range': 340.0, 'q1_linear': 110.0, 'q3_linear': 365.0, 'se_mean': 62.96383441662718}
+B multi-day indication {'n': 6, 'mean': 233.45000000000005, 'median': 200.0, 'variance_sample': 23798.151000000005, 'sd_sample': 154.26649344559564, 'range': 340.20000000000005, 'q1_linear': 110.125, 'q3_linear': 365.1, 'se_mean': 62.979032225019154}
+B multi-day errors [0.20000000000000284, 0.09999999999999432, -0.09999999999999432, 0.09999999999999432, 0.30000000000001137, 0.10000000000002274] {'n': 6, 'mean': 0.11666666666667187, 'median': 0.10000000000000853, 'variance_sample': 0.017666666666667028, 'sd_sample': 0.13291601358251393, 'range': 0.4000000000000057, 'q1_linear': 0.09999999999999432, 'q3_linear': 0.17500000000000782, 'se_mean': 0.05426273532033291}
+B day 1 error mean and sample SD 0.14999999999999858 0.07071067811866079
+B day 2 error mean and sample SD 0.0 0.14142135623730148
+B day 3 error mean and sample SD 0.20000000000001705 0.14142135623730148
+B zero reading (simulated, nmol/mol) -0.2
+B zero values signed and after truncation [-0.2, -0.1, 0.0, 0.1, 0.2] [0.0, 0.0, 0.0, 0.1, 0.2]
+B zero means signed and after truncation -5.551115123125783e-18 0.06000000000000001
+B six-error mean without intermediate rounding 0.11666666666667187
+B six-error mean after rounding each error to integer 0.0
+I MAD example values [0.1, 0.2, 0.2, 0.3, 0.9]
+I MAD example median and absolute deviations 0.2 [0.1, 0.0, 0.0, 0.09999999999999998, 0.7]
+I MAD example 0.09999999999999998
+I x (nmol/mol) [80.0, 160.0, 240.0, 320.0, 400.0]
+I errors (nmol/mol) [0.23, 0.42, 0.58, 0.78, 0.88]
+I fitted intercept and error slope 0.0800000000000001 0.002075
+I fitted predicted errors [0.2460000000000001, 0.41200000000000014, 0.5780000000000001, 0.7440000000000001, 0.91]
+I fitted absolute indication slope (1 + error slope) 1.002075
+A group 1 n 4 mean signed 0.4 mean absolute 0.4 absolute signed mean 0.4 median 0.4 MAD 0.04999999999999999 sample SD 0.08164965809277261
+A group 2 n 4 mean signed -0.4 mean absolute 0.4 absolute signed mean 0.4 median -0.4 MAD 0.04999999999999999 sample SD 0.08164965809277261
+A combined n 8 mean signed 0.0 mean absolute 0.4 absolute signed mean 0.0 median 0.0 MAD 0.4 sample SD 0.43424811867344754
+A combined plus influential n 9 mean signed 0.2 mean absolute 0.5555555555555556 absolute signed mean 0.2 median 0.3 MAD 0.6 sample SD 0.724568837309472
