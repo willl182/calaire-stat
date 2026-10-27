@@ -1,0 +1,683 @@
+Chapter 5
+Evaluation of Uncertainty in Direct
+Measurements
+
+
+
+
+5.1 Concept of Measurement Uncertainty
+
+Direct measurements are obtained by directly reading a measurement instrument that
+measures the same quantity.
+   In a direct measurement, the result is obtained by comparing the value read by the
+measuring instrument with the desired quantity. The measurement is done directly,
+without the use of mathematical equations.
+Examples of direct measurements:
+   •   Temperature measurement with a glass liquid thermometer (Fig. 5.1);
+   •   Length measurement with a metric tape;
+   •   Mass measurement with a scale;
+   •   Pressure measurement with a gauge;
+   •   Measurement of a thickness gear with a Vernier caliper (Fig. 5.2).
+    A measurement’s result will always have a doubt associated with it, which we
+consider measurement uncertainty. What is sought in a measurement with metro-
+logical reliability is to estimate the measurement’s results and associated uncertainty
+in the most reliable way possible.
+    Measurement uncertainty will always exist and never be eliminated since, as we
+have previously presented, the true quantity value is also estimated.
+    It is possible, however, to deﬁne the limits within which the value of a measure-
+ment with a certain associated probability is found.
+    The measurement uncertainty is deﬁned by VIM—2.26 as:
+• Non-negative parameter characterizing the dispersion of the quantity values
+  being attributed to a measurand, based on the information used.
+• NOTE 1 Measurement uncertainty includes components arising from systematic
+  effects, such as components associated with corrections and the assigned quan-
+  tity values of measurement standards, as well as the deﬁnitional uncertainty.
+
+
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025    141
+P. P. Novellino do Rosario, A. Mendes, Metrology and Measurement Uncertainty,
+https://doi.org/10.1007/978-3-031-82303-9_5
+144                                   5 Evaluation of Uncertainty in Direct Measurements
+
+
+   In metrology, we usually adopt a conﬁdence level of 95.45 % probability
+(remember that, in a normal distribution, 95.45 % probability represents two stan-
+dard deviations). Therefore, when we say that the laboratory temperature is
+(21.0 ± 0.5) °C, we are saying that the true value of ambient temperature in the
+laboratory has a 95.45 % probability of being understood in this interval.
+   The uncertainty of a measurement’s result is usually inﬂuenced by various
+components, which can be grouped into two categories according to the method
+characteristics used to estimate their numerical values: (1) uncertainties Type A and
+(2) uncertainties Type B, which will be detailed below.
+
+
+
+5.2 Types of Measurement Uncertainties
+
+Various sources of uncertainty exist in a measurement. Therefore, we should
+estimate these uncertainties and minimize their inﬂuences so that the measurement
+outcome is known in a smaller interval.
+
+
+
+5.2.1 Type A Evaluation of Measurement Uncertainty
+
+According to VIM—2.28, it consists of evaluating “a component of measurement
+uncertainty by a statistical analysis of measured quantity values obtained under
+deﬁned measurement conditions.”
+    Type A uncertainties can, therefore, be characterized by experimental standard
+deviations. In metrology, the best estimate of a quantity that varies randomly is the
+arithmetic mean x of n measurements made. The estimated variance (s2) or the
+estimated standard deviation (s) characterizes the variability of the measured values,
+that is, the dispersal around the mean value.
+    The best estimate of the variance of the mean is the experimental mean-variance
+ s2 ðxÞ, whose expression is:
+
+                                                s2
+                                     s2 ðxÞ =                                     ð5:1Þ
+                                                n
+
+   The experimental standard deviation of the medium x serves to qualify how much
+the mean value x represents the quantity to be measured. The better this estimate, the
+greater the number of repetitions made in the measurement.
+
+
+   Important
+   The equation sðxÞ = psn determines Type A uncertainty measurement or the
+   repeatability measurement uncertainty.
+5.2 Types of Measurement Uncertainties                                               145
+
+
+  For several reasons, especially economic ones, the number of repetitions of a
+measurement is reduced, usually ranging from three to ten.
+
+
+
+5.2.2 Type B Evaluation of Measurement Uncertainty
+
+According to VIM—2.29:
+Evaluation of a component of measurement uncertainty determined by means other
+  than a Type A evaluation of measurement uncertainty.
+EXAMPLES Evaluation based on information
+   – associated with authoritative published quantity values,
+   – associated with the quantity value of a certiﬁed reference material,
+   – obtained from a calibration certiﬁcate,
+   – about drift,
+   – obtained from the accuracy class of a veriﬁed measuring instrument,
+   – obtained from limits deduced through personal experience.
+   Type B uncertainties can be characterized by standard deviations estimated by
+distributions of probabilities assumed or based on experience or other observations.
+Accessory and external information to the measurement process—obtained from
+previous measurements of similar measurements, experience or knowledge of mea-
+suring instrument behavior, manufacturer data, data provided by calibration certif-
+icates, and instruction manual references—allows you to determine the uncertainties
+of this type.
+Examples of Type B uncertainty:
+   • Temperature gradient during measurement;
+   • Difference of ambient temperature concerning the stipulated reference
+     temperature;
+   • Indicator reading resolution;
+   • Stability of the power supply;
+   • Parallax error;
+   • Uncertainty of the measurement standard;
+   • Drift from the standard;
+   • Geometric errors;
+   • Mechanical deformations;
+   • Hysteresis error.
+  In the evaluation of Type B uncertainty, it is necessary to consider and include,
+when pertinent, at least those originating from the following sources:
+(a) The uncertainty associated with the reference standard and any instability in its
+    value or indication (standard subject to instrumental drift or temporal instability).
+148                                     5 Evaluation of Uncertainty in Direct Measurements
+
+
+5.3 Evaluations of More Frequent Type B Uncertainties
+
+As we have seen, the estimate of Type A uncertainty is obtained by calculating the
+standard deviation of the mean measurement. The estimate of Type B uncertainties
+already has several origins. Next, we present the primary sources of Type B
+uncertainty and how to calculate them.
+
+
+
+5.3.1 Estimation of the Uncertainty of Reading Resolution
+
+It is essential to evaluate the contribution of reading resolution in estimating mea-
+surement uncertainty, as it is widespread to ﬁnd a low dispersion of the values
+obtained in a measurement process, which characterizes Type A uncertainty as being
+“zero.” In this case, depending on the value of the resolution and the type of
+probability distribution adopted, this uncertainty may be one of the largest or the
+most signiﬁcant contribution to ﬁnal uncertainty.
+    In a measurement process, we can come across two situations.
+Situation 1: Measurement where we “seek” the value of the desired quantity;
+   that is, we do not know a priori what the value is.
+Example 5.1 Reading Obtained ON A Digital Scale
+Suppose the value of the mass of an object is 25.9 g and that the digital scale used for
+this measurement has a resolution of 0.1 g. This means that the lowest value read by
+the scale is 0.1 g.
+   Considering the algorithm in the digital scale responsible for digitizing the values
+indicated, the “true value” of the mass will be comprised between the interval [25.85
+and 25.949 …] g. Values such as 25.95 g or larger should be rounded by the
+instrument to 26.0 g, just as values such as 25.84 g or smaller to 25.8 g.
+   Therefore, every time the scale indicates 25.9 g, we will doubt the “true value” of
+the mass caused by its resolution limitation. Considering that the probability that the
+“true value” is understood between [25.85 and 25.949 …] g is the same within this
+interval, it is reasonable to adopt a statistical distribution that reﬂects this behavior,
+that is, rectangular or uniform distribution. Graph 5.1 shows:
+   Note that the uncertainty of reading resolution will be the standard deviation of
+the rectangular distribution, that is:
+
+                                              R
+                                      ures = p                                      ð5:2Þ
+                                               12
+
+   Where R is the resolution adopted.
+5.3 Evaluations of More Frequent Type B Uncertainties                             151
+
+
+Graph 5.2 Uncertainty of
+pressure gauge resolution
+(triangular distribution)
+
+
+
+
+   Considering that the probability of “true value” is higher at point 30 bar than at
+any other point, because we ﬁx this value, it is reasonable to adopt a statistical
+distribution that reﬂects this behavior, that is, the triangular distribution.
+    In Graph 5.2, we have:
+    The uncertainty of reading resolution will be the standard deviation of the
+triangular distribution with R = 1 bar.
+
+                                    R   1
+                            ures = p = p bar = 0:20 bar                         ð5:3Þ
+                                    24  24
+
+   Given the limitations of the digitization algorithm, the digital instrument will
+adopt a uniform probability in rounding readings regardless of whether or not we ﬁx
+the desired value.
+   For the analog instrument, the probability of the measurement may be triangular
+or uniform, depending on whether or not we ﬁx the reading value.
+
+
+
+5.3.2 Reading Resolution Adopted by the Calibration
+      Laboratory
+
+Let us look at the following situation: using a calibrated instrument to perform a
+measurement.
+Some questions
+1. Given that the laboratory that calibrated our instrument has incorporated the
+   uncertainty of reading resolution in the estimate of ﬁnal uncertainty, we must,
+   in our measurements, consider the reading resolution of this calibrated standard as
+152                                   5 Evaluation of Uncertainty in Direct Measurements
+
+
+   one of the components, as “it is considered” in the uncertainty declared on the
+   certiﬁcate?
+2. When considering the resolution, are we not repeating the same source of
+   uncertainty twice?
+3. In the case of a digital standard, the value of the resolution adopted by the
+   calibration laboratory is known as it will be equal to the digital increase.
+4. In the case of an analog standard, a question arises: Was the value of reading
+   resolution adopted by the laboratory the same as what we will adopt?
+5. Is it possible to place a magnifying glass on the analog instrument reading scale,
+   thus reducing its measurement uncertainty, since we are reducing its reading
+   resolution as long as it does not make it lower than the instrument sensitivity?
+   This is a usual procedure in laboratories, but the end user of the instrument should
+   be informed.
+Answering the questions.
+If the user can repeat, in reading with the instrument that came from calibration, the
+resolution adopted by the laboratory during calibration, the contribution of the
+standard resolution should not be considered in the ﬁnal uncertainty of the measure-
+ment. Otherwise, this portion should be considered in the ﬁnal estimate.
+    For this reason, the calibration laboratories must provide the instrument’s cali-
+bration certiﬁcate with the resolution adopted in calibration. Thus, we will know the
+value of the resolution adopted and can repeat it at the time of measurement with this
+instrument.
+    Using a magnifying glass to read analog instruments is allowed and healthy.
+However, we should not determine the resolution of a measuring instrument with a
+magnifying glass. It will lower the resolution than what can be discerned with the
+“naked eye,” and the user usually reads with the “naked eye.”
+
+
+
+5.3.3 Hysteresis Uncertainty Estimate
+
+In Chap. 4, we saw that hysteresis is the biggest difference between a measurement
+instrument’s charge and discharge values. Scales, comparator clocks, gauges, among
+others, most commonly present hysteresis errors.
+   To estimate the uncertainty of hysteresis, we calculate the instrument’s hysteresis
+(H) at the point and adopt a uniform or rectangular probability distribution.
+
+                                                  H
+                                   uhysteresis = p                                ð5:4Þ
+                                                   12
+
+Solved Exercise 5.1.
+A Bourdon-type gauge, whose measurement range is 0 to 20 kgf/cm2, was calibrated
+by comparison with a standard gauge. The values found are in Table 5.1.
+154                                  5 Evaluation of Uncertainty in Direct Measurements
+
+
+
+   Knowing a Little More…
+   In calibrating the gauge, we ﬁx the object’s pointer directly to the desired
+   pressure and verify the variation of its pressure using the standard pressure
+   gauge. Thus, when we ﬁx the pressure at 5 kgf/cm2, for example, we realize
+   the variation of the object gauge in the standard. This is why, at point 5 kgf/
+   cm2, we have the standard marking (5.0, 5.2, 5.0, and 5.2) kgf/cm2. This
+   variation is not caused by the standard but by the calibration object gauge.
+
+
+5.3.4 Evaluation of the Uncertainty of the Standard
+      Instrument
+
+A source of Type B uncertainty always exists in the calibration of measurement
+instruments: the uncertainty from the standard instrument. In Chap. 2, when we
+deﬁne calibration, we highlight that calibrating confronts the values measured by the
+standard instrument with the calibration instrument (object). Therefore, the object
+instrument’s uncertainty inherits the standard instrument’s uncertainty.
+   To determine the uncertainty of the standard instrument, check this value in the
+standard instrument calibration certiﬁcate.
+
+
+
+5.4 Standard Measurement Uncertainty
+
+According to VIM—2.30, we have: “measurement uncertainty expressed as a
+standard deviation.”
+   We must express all components of uncertainty (ui) of Types A and B
+corresponding to a standard deviation. For this, we need to evaluate the probability
+distribution applied to the uncertainty: normal distribution, rectangular or uniform
+distribution, triangular distribution, etc.
+
+
+
+5.5 Combined Standard Measurement Uncertainty
+
+According to VIM—2.31, we have: “standard measurement uncertainty that is
+obtained using the individual standard measurement uncertainties associated with
+the input quantities in a measurement model.”
+   The equation can brieﬂy determine combined standard uncertainty (uc):
+5.6 Effective Degrees of Freedom                                                      155
+
+
+                                    uc =    u2A þ u2B                               ð5:5Þ
+
+   Where uA are all Type A uncertainties, and uB are all Type B uncertainties.
+
+
+
+5.6 Effective Degrees of Freedom
+
+The deﬁnition of ISO GUM says the following for the degree of freedom: “In
+general, the number of terms in a sum minus the number of constraints on the
+terms of the sum.”
+   When more than 30 measurements of the same measurement are performed, we
+know, through statistics, that these results are very close to a normal distribution; if a
+smaller number of measurements is used, we must bring this distribution closer to a
+normal distribution by applying the t-distribution correction factor. However, to
+establish this correction factor, it is necessary to determine the number of effective
+degrees of freedom of the distribution.
+   When various sources of uncertainty are considered to estimate combined stan-
+dard uncertainty (uC), the number of effective degrees of freedom resulting from
+combined uncertainty has to be calculated from information from each source of
+uncertainty. Therefore, it is recommended to use the Welch-Satterthwaite equation
+to estimate the number of effective degrees of freedom:
+
+                               u4c   u4 u4   u4
+                                    = 1þ 2þ…þ i                                     ð5:6Þ
+                               υeff  υ1 υ2   υi
+
+   Where uC is the combined standard measurement uncertainty; u1, u2, …, ui are the
+standard measurement uncertainties of each source of uncertainty (Type A and Type
+B uncertainty); ν1, ν2, ν3 …, υi are the degrees of freedom of each i source of
+uncertainty, and υeff is the number of effective degrees of freedom associated with
+combined standard uncertainty.
+   Eq. (5.6) can be reordered and presented by:
+
+                                               u4c
+                                      υeff =     u4i
+                                                                                    ð5:7Þ
+                                                 υi
+
+
+
+
+   Important
+   The degree of freedom associated with the uncertainty of repeatability (Type
+   A) equals n - 1, where n is the number of measurements.
+
+                                                                             (continued)
+156                                    5 Evaluation of Uncertainty in Direct Measurements
+
+
+
+      In evaluating the degree of freedom of Type B standard uncertainty from a
+   probability distribution a priori, for example, a uniform or triangular distribu-
+   tion, it is implicitly supposed that the value of uncertainty resulting from such
+   evaluation is known precisely. This implies that the degree of freedom asso-
+   ciated with this uncertainty will be inﬁnite.
+
+
+5.7 Coverage Factor
+
+VIM—2.38 deﬁnes it as the “number larger than one by which a combined standard
+measurement uncertainty is multiplied to obtain an expanded measurement
+uncertainty. NOTE: A coverage factor is usually symbolized k”.
+    The coverage factor k should always be declared so that the standard uncertainty
+of quantity measurement can be recovered to calculate the combined standard
+uncertainty of other measurement results that eventually depend on this quantity.
+    This factor k will be obtained from the determination of the number of effective
+degrees of freedom (νeff) and using the t-distribution, in which the value of t will be
+the coverage factor k.
+    The value of νeff obtained by Eqs. (5.6) or (5.7) is usually not an integer. From the
+effective degree of freedom, the coverage factor k can be obtained from Excel, using
+the INV.T.BC function, or in the Student’s t-table.
+    When we use the calculated value of the νeff in the t-table, we should always
+approach it to the immediately lower integer. For example, if the computed value is
+νeff = 10.46, we must enter the table with νeff = 10 and obtain k = 2.28. This will be
+the value used for the coverage factor k.
+
+
+   Important
+   By using the calculated value of the effective degree of freedom (νeff) in the
+   Student’s t-table, approach it to the immediately lower integer. This will
+   ensure a more prominent coverage factor and, thus, more signiﬁcant expanded
+   uncertainty.
+
+
+5.8 Expanded Measurement Uncertainty
+
+According to VIM—2.35, expanded measurement uncertainty is deﬁned as:
+Product of a combined standard measurement uncertainty and a factor larger than
+  the number one.
+NOTE 1 The factor depends upon the type of probability distribution of the output
+  quantity in a measurement model and on the selected coverage probability.
+NOTE 2 The term “factor” in this deﬁnition refers to a coverage factor.
+5.10   Sources of Measurement Uncertainty                                        157
+
+
+NOTE 3 Expanded measurement uncertainty is termed “overall uncertainty” in
+  paragraph 5 of Recommendation INC-1 (1980) (see the GUM) and simply
+  “uncertainty” in IEC documents.
+   The expanded uncertainty U is the product of the combined standard uncertainty
+uC and the coverage factor k:
+
+                                        U = k:uc                               ð5:8Þ
+
+   Multiplication of combined standard uncertainty by a constant does not provide
+additional information. It is just a way of representing the ﬁnal uncertainty associ-
+ated with a coverage probability. In calibration and industrial measurements, it is
+expected to adopt the probability of 95.45 %, which would correspond, in a normal
+distribution, to a coverage factor equal to two.
+
+
+   Important
+   We must always combine standard uncertainties with one standard deviation.
+   Therefore, when we use the uncertainty of measuring from a calibration
+   certiﬁcate, we must divide it by the scope factor k since the uncertainties
+   declared in a calibration certiﬁcate are expanded to 95.45 %.
+
+
+5.9 Presentation of the Measurement Result
+
+According to the document ILAC-P14:09/2020—ILAC Policy for Measurement
+Uncertainty in Calibration, section 5.3: “The numerical value of the expanded
+uncertainty shall be given to, at most, two signiﬁcant digits. Where the measurement
+result has been rounded, that rounding shall be applied when all calculations have
+been completed; resultant values may then be rounded for presentation. For the
+process of rounding, the usual rules for rounding of numbers shall be used, subject
+to the guidance on rounding provided, i.e., in Sect. 7 of the GUM.”
+
+
+
+5.10 Sources of Measurement Uncertainty
+
+Next, we will present some sources of frequent measurement uncertainties in various
+areas of metrology.
+158                                    5 Evaluation of Uncertainty in Direct Measurements
+
+
+5.10.1 Dimensional Metrology
+
+• Measurement uncertainty of the standard: this information is in the standard
+  calibration certiﬁcate.
+• Temperature effect: the temperature difference between measuring, the standard,
+  and the temperature of the calibration laboratory should be considered. As a rule,
+  the ambient temperature of the calibration laboratory should be 20.0 °C. This
+  effect is more signiﬁcant for considerable lengths and in cases where the
+  measurand is of a material different from the standard. Although it is possible
+  to correct these errors, residual uncertainties of the uncertainty of the coefﬁcients
+  of dilation and uncertainty in the calibration of the thermometer will always
+  remain.
+• Elastic deformation at the point of contact: is critical in the most exact measure-
+  ments and in the cases involving different materials. Its magnitude is a function of
+  the measurement force and the nature of the contact between driving and
+  measurand. Although it is possible to correct the results of these errors, the
+  uncertainty of this correction should be considered due to the uncertainty of the
+  applied force and the physical properties of the components in contact.
+• Cosine error: misalignment between the measurand or standard and the measure-
+  ment axis. Residual errors will often persist by the assumption that reference
+  surfaces are exempt from geometric errors.
+• Geometric error: planning or spherical errors, parallelism or perpendicularity of
+  the support surface, measurand, or standard cylindrical error.
+• Doubt in reading: uncertainty in the resolution of the instrument.
+• Stability of the standard, or measurand, as a function of time.
+In this area, in general, the following instrument calibration intervals are used
+(Table 5.4):
+
+
+
+5.10.2 Thermal Metrology
+
+• Measurement uncertainty of the standard: this information is in the standard
+  calibration certiﬁcate.
+• Electrical equipment/instruments used as support: standard resistors uncertainty,
+  multimeters, power supplies, thermal baths, etc.
+
+
+Table 5.4 Calibration        Instrument                      Calibration interval—months
+interval
+                             Measuring tape                  6
+                             Vernier caliper                 12
+                             Micrometer                      12
+                             Planger dial gauge              12
+                             Slip gauges (standard block)    12
+5.10   Sources of Measurement Uncertainty                                           159
+
+
+Table 5.5 Calibration interval
+Instrument                                                 Calibration intervals—months
+Glass thermometer                                          6 a 12
+Resistance thermometer (Pt-100)                            12
+Thermocouple                                               12
+Bimetallic thermometer                                     12
+
+
+• Doubt in reading: uncertainty in the resolution of the instrument.
+• Partial immersion in glass thermometers: the part of the column of the immersion
+  thermometer outside the medium provides a difference in the temperature
+  indication.
+• Effect of resistance thermometers self-heating: the sensor is heated by the current
+  circulating.
+• Parasitic electrical uncertainties: uncertainties of electrical origin resulting from
+  static electricity at contact terminals. We can estimate this 2μV p value primarily
+                                                                     3
+  when we calibrate thermocouples.
+• Drifts of standards and electrical instruments.
+In this area, in general, the following instrument calibration intervals are used
+(Table 5.5):
+
+
+
+5.10.3 Mass Metrology
+
+• Measurement uncertainty of the mass standard: this information is in the standard
+  calibration certiﬁcate.
+• Drift of the masses as a function of time: change of standard mass measurement
+  error as a function of time, depending on the surface ﬁnish and the quality of
+  manufacture, material type, handling, atmospheric corrosion, etc. Without this
+  information, we replace it with the maximum permissible error.
+• Environmental conditions: temperature gradients, humidity, static electricity.
+• Doubt in reading: uncertainty in the resolution of the instrument.
+• Air buoyancy: the density of the air can be determined from the measurement of
+  atmospheric pressure, temperature, and relative humidity. Even when the density
+  is corrected, uncertainties of pressure, temperature, and humidity measurements
+  will be present.
+• Measurement process: the quality of the scale inﬂuences the result of the mea-
+  surement and, therefore, we must know its characteristics:
+   • Repeatability of measurements;
+   • Linearity;
+   • Eccentricity of the load, especially when more than one mass is placed on the
+     plate;
+   • Inﬂuence of magnetic ﬁelds;
+160                                    5 Evaluation of Uncertainty in Direct Measurements
+
+
+Table 5.6 Calibration        Instrument                      Calibration interval—months
+interval
+                             Standard mass                   24 to 48
+                             Precision scales                12 to 36
+                             Analytical scales               12
+
+
+Table 5.7 Calibration        Instrument                      Calibration interval—months
+interval
+                             Digital multimeter              12
+                             Oscilloscope                    12 to 36
+                             Resistive decade                24 to 48
+
+
+
+   • Effects of temperature;
+   • Lever arm’s length.
+In this area, in general, a calibration interval of the instruments is used as follows
+(Table 5.6):
+
+
+
+5.10.4 Electric Metrology
+
+• Uncertainty of electrical reference standards: this information is in the standard
+  calibration certiﬁcate.
+• Different environmental conditions from the recommended.
+• Measurement system stability: as a function of time and conditions of use.
+• Doubt in reading: uncertainty in the resolution of the instrument.
+• Impedance of cables, terminals, and instruments: parasitic electrical uncertainties
+  resulting from static electricity at contact terminals. Its value is estimated in 2μV
+                                                                                    p .
+                                                                                      3
+• Layout of instruments and standards during calibration: current leaks, electro-
+  magnetic ﬁelds, grounding.
+In this area, in general, a calibration interval of the instruments is used as follows
+(Table 5.7):
+
+
+
+5.10.5 Pressure Metrology
+
+• Measurement uncertainty of the standard: This information is in the standard
+  calibration certiﬁcate.
+• Drift of the masses as a function of time: change of standard mass measurement
+  error as a function of time, depending on the surface ﬁnish and the quality of
+  manufacture, material type, handling, atmospheric corrosion, etc. Without this
+  information, we replace it with the maximum permissible error.
+• Doubt in reading: uncertainty in the resolution of the instrument.
+5.10   Sources of Measurement Uncertainty                                            161
+
+
+•   Hysteresis.
+•   Different environmental conditions from the recommended.
+•   Drifts of standards and electrical instruments.
+•   Impedance of cables, terminals, and instruments: parasitic electrical uncertainties
+    resulting from static electricity at contact terminals. Its value is estimated in 2μV
+                                                                                      p .
+                                                                                        3
+
+
+
+
+5.10.6 Analytical Metrology
+
+• Sampling: where in-house or ﬁeld sampling forms part of the speciﬁed proce-
+  dure, and effects such as random variations between different samples and any
+  potential for bias in the sampling procedure form components of uncertainty
+  affecting the ﬁnal result.
+• Storage Conditions: where test items are stored for any period prior to analysis,
+  the storage conditions may affect the results. The duration of storage, as well as
+  conditions during storage, should, therefore, be considered uncertainty sources.
+• Instrument effects: may include, for example, the limits of accuracy on the
+  calibration of an analytical balance; a temperature controller that may maintain
+  a mean temperature that differs (within speciﬁcation) from its indicated set point;
+  an auto-analyzer that could be subject to carryover effects.
+• Reagent purity: the concentration of a volumetric solution will not be known
+  precisely even if the parent material has been assayed, since some uncertainty
+  related to the assaying procedure remains. Many organic dyestuffs, for instance,
+  are not 100 % pure and can contain isomers and inorganic salts. The purity of
+  such substances is usually stated by manufacturers as being not less than a
+  speciﬁed level. Any assumptions about the degree of purity will introduce an
+  element of uncertainty.
+• Assumed stoichiometry: where an analytical process is assumed to follow a
+  particular reaction stoichiometry, it may be necessary to allow for departures
+  from the expected stoichiometry, or incomplete reaction or side reactions.
+• Measurement conditions: for example, volumetric glassware may be used at an
+  ambient temperature different from that at which it was calibrated. Gross
+  temperature effects should be corrected, but any uncertainty in the temperature
+  of liquid and glass should be considered. Similarly, humidity may be important
+  where materials are sensitive to possible changes in humidity.
+• Sample effects: the recovery of an analyte from a complex matrix, or an instru-
+  ment response, may be affected by composition of the matrix. Analyte speciation
+  may further compound this effect. The stability of a sample/analyte may change
+  during analysis because of a changing thermal regime or photolytic effect. When
+  a ‘spike’ is used to estimate recovery, the recovery of the analyte from the sample
+  may differ from the recovery of the spike, introducing an uncertainty that needs to
+  be evaluated.
+164                                   5 Evaluation of Uncertainty in Direct Measurements
+
+
+measurement is stable with very low or no variation in instrument resolution, we can
+proceed according to the following exercise.
+Exercise: A glass liquid thermometer measures fuel oil temperature with a measure-
+   ment uncertainty of 0.1 °C (for k = 2 and 95.45 %) and instrumental bias of -
+   0.2 °C. The value found was 28.4 °C. Determine the measurement result.
+Solution: Corrected measurement = (28.4 + 0.2) °C = 28.6 °C
+
+
+                               MR = ð28:6 ± 0:1Þ ° C
+
+   Note that it was impossible to calculate the uncertainty of the repeatability of the
+measurement. Thus, the declared measurement instrument in its calibration certiﬁ-
+cate only inherited the ﬁnal uncertainty.
+
+
+
+5.11 Proposed Exercises
+
+5.11.1 A car speedometer ranges from (0 to 200) km/h. The uncertainty at any point
+   is 2 km/h
+(a) What is the uncertainty at 100 km/h?
+(b) What is the percentage uncertainty compared to 100 km/h?
+(c) What is the percentage uncertainty to 50 km/h?
+(d) What is the percentage uncertainty compared to 5 km/h?
+(e) At what point is the lowest percentage uncertainty?
+5.11.2 Mike measures his brother’s height and ﬁnds 176.35 cm, with an uncertainty
+   of 0.21 cm.
+(a) Round out and write the height of Mike’s brother with one signiﬁcant digit
+    concerning his uncertainty.
+(b) Give the same answer in meters.
+5.11.3 Martha uses a timer to measure the period of a pendulum. The results are
+   (Table 5.9):
+
+(a) What is the mean value of the period?
+(b) What is the standard deviation of the mean?
+
+Table 5.9 Period             Measurements                                     Period (s)
+measurements
+                             1                                                0.63
+                             2                                                0.64
+                             3                                                0.65
+                             4                                                0.63
+                             5                                                0.65
+

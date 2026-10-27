@@ -1,0 +1,1062 @@
+       Standard Reference Photometer for the Assay
+              of Ozone in Calibration Atmospheres
+
+
+                       R   .J.   Paur, A.M. Bass, J.E. Norris, and T .J. Buckley
+
+
+
+
+QC
+                                                              N 1ST
+                            National Institute of Standards and Technology
+                        Technology Administration, U.S. Department of Commerce
+too
+CLSb
+
+£003
+                                                      NISTIR 6963
+
+
+
+    Standard Reference Photometer for the
+Assay of Ozone in Calibration Atmospheres
+
+                                                         Richard J. Paur
+                                           United States Army Research Office
+                                                        Army Research Office
+                                           Research Triangle Park NC 27709
+                                                                      ,
+
+
+
+
+                                                       * Arnold M. Bass
+
+                                                     James E. Norris
+                                                 **Thomas J. Buckley
+                               Chemical Science and Technology Laboratoiy
+                              National Institute of Standards and Technology
+                                                     Gaithersburg MD 20899
+                                                                  ,
+
+
+
+
+                                                                      * Deceased
+                                                         ** To rm e rly of   NIS T
+
+
+
+                                                               February 2003
+
+
+
+
+                                     U.S. DEPARTMENT OF        COMMERCE
+                                                  Donald L. Evans, Secretary
+                                      TECHNOLOGY ADMINISTRATION
+               Phillip J. Bond,   Under Secretary of Commerce for Technology
+         NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY
+                                                Arden L. Bement, Jr., Director
+4
+ABSTRACT                                     6
+
+
+1.   INTRODUCTION                             7
+
+
+2.   PERFORMANCE SPECIFICATIONS               7
+
+
+3.   MEASUREMENT PRINCIPLE                    7
+
+
+4.   DESIGN                                   8
+
+
+5.   ELECTRONICS OPERATION                    8
+
+
+6.   GAS FLOW and OZONE GENERATION            9
+
+
+7.   MATERIALS and DIMENSIONS                 9
+
+
+8.   PHOTOMETRIC MEASUREMENTS WITH THE SRP    9
+
+
+9.   PERFORMANCE                             11
+
+
+
+10.   ANALYSIS OF PERFORMANCE                12
+
+
+11.   MEASUREMENT UNCERTAINTIES              14
+
+
+12.   CONCLUSIONS                            15
+
+
+13.   ACKNOWLEDGEMENTS                       15
+
+
+14.   REFERENCES                             16
+
+
+
+
+                                     5
+ABSTRACT
+
+A photometric instrument for the assay of ozone from 0 ppbv to 000 ppbv in calibration atmospheres has
+                                                                    1
+
+
+been designed, constructed, and evaluated. The absorption cross-section of ozone at 254 nm (Hg line) is
+the major component of uncertainty of the instrument. A number of workers have determined this cross-
+                                  17                                           1       1
+
+section to be about 1 147 x 10'
+                     .                 cnr/molecule (or equivalently 308.32 atm' cm'       ,   base e), with a standard
+uncertainty of 1 .0 %.   To a lesser extent, the uncertainty of the instrument also depends on the uncertainty
+of the temperature, pressure, and transmittance measurements on the ozone sample. Based upon ozone
+calibration needs of the U.S. EPA, the design specifications called for an instrument with a standard
+uncertainty of 2 ppbv in the range of 1 ppbv to 100 ppbv and 2     % in the range of 100 ppbv to 1000 ppbv.
+Thirty-one of these instruments, called Standard Reference Photometers (SRP), have been built since
+1983; each SRP has met or exceeded the design specifications. Two of these instruments are maintained
+at the National Institute   of Standards and Technology (NIST), one serving as NIST's principal ozone
+standard, and the other serving as a backup and quality system check instrument.                       Ten additional
+instruments of the same design are maintained at various EPA or state operated laboratories across the
+United States to facilitate local access to authoritative ozone standards. The current network of SRPs also
+includes instruments maintained in Australia, Austria, Canada, the Czech Republic, France, Germany,
+Portugal, Spain, Switzerland, Sweden, Taiwan R.O.C. and the United Kingdom.                        Each of the SRPs
+provides ozone assays with a certified uncertainty similar to that of a Standard Reference Material (SRM)
+obtained from NIST.
+
+
+
+
+                                                             6
+1.
+
+
+
+     INTRODUCTION
+During the period 1974-1978 the EPA carried out a program to evaluate methods for the generation and
+assay of ozone atmospheres to calibrate air monitoring instruments used to measure the ozone content of
+ambient air. As a result of this program, the previously used method (a 1% buffered potassium iodide
+titration method) specified in the    US EPA Federal Reference Method (FRM)               ( 1 )   for ozone was replaced
+with an ultraviolet photometry technique for improved accuracy, robustness, and ease of operation. The
+FRM provided performance specifications for a UV photometric instrument and offered detailed technical
+guidance to enable commercial development of photometers that would meet the new assay procedure
+requirements.     A number of manufacturers began marketing instruments that would meet the required
+specifications.
+
+
+Members of the user community responsible for the traceability of calibration standards are frequently
+faced with the task of verifying that a given ozone photometer does in fact meet all performance
+specifications.   To provide an easily implemented program for verification of ozone standards, the EPA
+and the National Bureau of Standards, now the National Institute of Standards and Technology (NIST),
+undertook to design, construct, certify, and deploy a network of Standard Reference Photometers (SRP)
+for the assay of ozone. Table     1   shows the current network of SRPs, their locations, and Organization.
+
+The design and performance of the SRP is the subject of this paper.
+
+2.   PERFORMANCE SPECIFICATIONS
+To meet the EPA's regulatory needs for an authoritative ozone standard, the SRP was designed to measure
+                                                 1(l                                                                        4
+ozone with a standard uncertainty of 5.0 x 10          molecules/cnf (2 ppbv'-parts per billion, by volume, 10                  )
+
+
+                                             (STP = 273.15 K and 101.3 kPa) in the range of 0 - 2.5 x 10
+                                                                                                                            12
+at Standard Temperature and Pressure
+                                                                      12
+molecules/cnT (0-100 ppbv) and 2% in the range of 2.5 x 10
+                                                                                                        1
+
+                                                                           molecules/cnf - 2.5 x 10         ’
+                                                                                                                molecules/cnf
+(100-1000 ppbv).
+
+
+3.   MEASUREMENT PRINCIPLE
+The basic measurement principle of the SRP is the determination of the amount of ultraviolet radiation at
+a specific wavelength (253.7 nm mercury line) absorbed by a sample of ozonized air. From the
+transmittance of the radiation through the sample, the ozone content of the sample is determined by the
+application of the Beer-Lambert Law. The accurate determination of the transmittance requires that care
+be taken to avoid errors caused by stray radiation and sample and light source variations during the course
+of the measurement.       The sample temperature and pressure are also measured to allow for correction of
+the ozone concentration to standard conditions using the ideal gas law. Typically, ozone is generated by
+the photolysis of purified air using radiation at 185           nm.    The purified zero air, now referred to as
+“reference air”,    is   assumed to contain no         significant impurities,    have   less     than 1000 ppbv         total
+
+hydrocarbons, and contain 20-21% oxygen. Reference air adequate for this application is obtainable in
+cylinders through commercial suppliers or compressed air filtered through appropriate purification
+
+
+          Because the unit of ppbv is most commonly used in ozone calibration work, it will hereafter exclusively be
+          used in this paper.
+
+
+
+                                                                 7
+materials such as silica gel, activated charcoal, and molecular sieves. Tests conducted between
+commercial and in-house reference air showed no differences between them in this application.
+
+
+4.   DESIGN
+
+The concept for the optical design, the gas flow system, and the data processing was developed in 1976 as
+a result of an effort to develop an instrument suitable for the measurement of ozone in aircraft cabins. A
+study of the proposed design indicated that a highly precise instrument could be made that minimized the
+requirements for linearity of the detector, preamplifier, and digitizer. The design is based on a pair of
+identical absorption cells; one serves as the sample cell and the other serves as the reference cell.   Using a
+control system (described later in detail), each optical cell alternates between sample and reference during
+an instrument cycle. An instrument based on this principle was independently designed and constructed
+by Proffitt (2), and was used successfully in balloon-borne and aircraft measurements of stratospheric
+ozone.
+
+
+The basic layout of the SRP is shown in Figure 1      The SRP is a modular instrument consisting of an
+                                                      .
+
+
+
+
+optical bench assembly, an electronics control and signal conditioning unit, a pneumatics and ozone
+generator unit, and a data acquisition, processing, display, and storage system (computer).
+
+
+5.   ELECTRONICS OPERATION
+
+The electronics control and signal conditioning unit or "Electronics Module" consists of power supplies
+and signal processing/interface circuitry. The Electronics Module is connected to a control computer
+through a cable connection on the rear panel. The computer has direct control of the solenoid valves, the
+lamp shutter, and the electronic counters (scalers) through a digital Input/Output (I/O) interface card.
+This provides flexibility in the various SRP operating modes. The operating modes differ only in the
+sequence of execution of programmable commands.
+
+
+Data generated by the SRP consists of four frequencies that are digitized by individual counter circuits.
+These frequencies, shown in Figure 2, are generated by independent voltage to frequency converters for
+the temperature, pressure, detector 1, and detector 2 signals.      The count values are read from the scaler
+circuits by the control computer in a BCD digit serial fashion. The temperature signal is produced by a
+
+commercial electronic thermometer using a platinum temperature sensor (RTD) with an inaccuracy stated
+by the manufacturer (traceable to NIST) within 0.2% of the temperature reading plus ±0. °C of that value
+                                                                                            1
+
+
+(i.e., at 25 °C the uncertainty is 0.15 °C) with a repeatability of ±0.05 °C. The pressure signal is produced
+
+from a commercial variable-capacitance type pressure transducer with an inaccuracy stated by the
+manufacturer (traceable to NIST) within 0.05% full scale and a repeatability within 0.01% full scale.
+Two commercial solar-blind ultraviolet sensitive vacuum phototubes, and amplifiers provide the detector
+signals.
+
+
+Logic and time base circuitry provides the interaction between the electronics module and three 8-bit ports
+on a digital I/O card inside the control computer. A crystal oscillator and associated circuits produce the
+necessary 5-s timing sequence for the scalers used to obtain the correct temperature and pressure
+measurements. Ratios of the two optical channel frequencies are taken so that uncertainties in the time
+measurement do not significantly affect the accuracy of the transmittance measurement.
+6.
+
+
+
+     GAS FLOW and OZONE GENERATION
+
+The gas flow and ozone generation system used in the SRP is outlined in Figure 3. The SRP requires a
+supply of reference air for operation. The supply of reference air entering the pneumatics module is split
+into two directions. A portion goes through a capillary tube and then to a manifold providing a supply of
+approximately 7 L/min of reference air. Another portion goes through a mass flow controller, the ozone
+generation unit, and then to a manifold providing the ozonized sample air. The ozone generation unit
+consists of a low pressure mercury lamp enclosed within a temperature controlled aluminum block. In the
+generation unit, ozone is produced by the photolysis of oxygen in a stream of reference air by ultraviolet
+radiation. The concentration of ozone in the air stream is dependent on the power level at which the lamp
+is operated and on the duration of exposure of reference air to the lamp (i.e., the residence time in the
+
+chamber as determined by the flow rate of air through the system). Lamp power is controlled by using an
+adjustable, high-frequency   AC high-voltage current source which provides a highly stable lamp current in
+the range of 1.6 to 16 mA.    Lamp temperature is stabilized by heating the aluminum block to a fixed
+temperature maintained within ±0. 1 °C using a commercial temperature controller. The flow rate of zero
+air through the generator is maintained by using a mass flow controller capable of providing a range of
+
+flows from 2 to 10 L/min. The flow rate of air and the lamp intensity are controlled by potentiometers on
+the front panel of the pneumatics module.   A dual diaphragm pump pulls the sample and reference gases
+through the absorption cells at approximately 2 L/min while a pair of solenoid valves directs the sample to
+either cell.
+
+
+7.   MATERIALS and DIMENSIONS
+
+The materials used throughout the gas sampling process of the SRP were chosen to minimize degradation
+of ozone in the sample air.         The sample air passes through borosilicate glass manifolds,
+polytetrafluoroethylene transfer tubing, and borosilicate glass optical absorption cells. The solenoid
+valves, also made using polytetrafluoroethylene, were selected for low power operation to minimize
+sample heating. The temperature and pressure transducers are placed at an absorption cell exit to
+minimize decomposition of ozone in the sample during the measurement.
+
+
+The path length through the absorption cells is approximately 89.50 cm and varies from instrument to
+instrument. This length was governed by the desire to transport the instrument, in a suitably padded
+shipping container, as checked baggage on commercial airlines. The cells have a 12 mm bore with a
+volume of approximately 100 mL. With a flow rate through the cells of approximately 2 L/min, the
+residence time for ozone in the cell is 3 seconds.
+
+
+8.   PHOTOMETRIC MEASUREMENTS WITH THE SRP
+The ozone concentration, c, is calculated from the expression:
+
+
+
+                                               C
+                                                     -in t                                             m1   J
+
+
+
+                                                     aL
+
+
+
+                                                          9
+                                             i
+
+
+
+
+T is the transmittance of the sample while the terms a (absorption coefficient) and L (pathlength) are fixed
+                                                                                        17   2
+quantities with known uncertainties. The commonly accepted value of a, 1 147 x 1 O' cm /molecule (or             .
+
+
+
+
+equivalently 308.32 atm cm
+                                 1   1
+                                 base e) (3), is expressed at STP. The sample temperature and pressure are
+                                         ,
+
+
+
+measured, and the sample concentration is corrected using the ideal gas law.
+
+
+The optical layout of the SRP outlined in Figure 2 shows the four frequencies (detector 1, detector 2,
+temperature, and pressure) produced during each cycle of the measurement process. These frequencies
+are integrated over five second periods by counting the total number of digital pulses with counter
+circuitry. To determine the transmittance of the sample with high precision, the SRP is programmed to
+
+alternately flow the sample through one cell and reference air through the second cell, and then flow the
+sample through the second cell and reference air through the first cell.
+
+
+The transmittance of the sample is calculated as the ratio I/Iq where I and Io are the intensities of the UV
+radiation through the cells with and without ozone, respectively. The frequencies, or scaler count values,
+obtained during the first half-cycle of the instrument operation which correspond to I and I 0 are:
+
+
+                                                 I —       /'ll   — I llK if \nomT l(celll)
+                                                                                                                                             |^2J
+
+
+
+
+                                             A)
+                                                  = f 2t = 121 K: f 2nom
+                                                                                                                                             [3]
+
+
+
+In and I 2 are apparent source strengths for the two optical channels. Ki and K 2 are instrument constants
+          i
+
+
+
+that include such parameters as detector sensitivity, amplifier gain, and cell window transmittance which
+are assumed to stay constant from one instrument cycle to the next.                                           fi nom   and f2nom are the nominal
+frequencies of the two channels when the cells contain reference air. Finally, Tj is the transmittance of the
+ozonized air in cell 1   .   The measured quantities for I and I 2] are the electronic pulses from the detectors;
+                                                                              } i
+
+
+
+their absolute values are not determined because they cancel out in the final ratio calculation. Similarly,
+during the second half-cycle, the frequencies which correspond to I and I 0 are:
+
+
+                                                   Io       — f 12 — I \lK \f loom                                                           [   4]
+
+
+                                                 I ~       f 22 = I -2 K? f 2nom T             2(cell2)                                      [5]
+
+
+
+where I i2 = Q x In and I 22 = Q x I 2J (the term Q accounts for the fact that the lamp intensity may change
+during an instrument cycle); and T 2 is the transmittance of the ozonized air in cell 2. After defining the
+minor ratios iq = fi j/f2 and r 2 = fi 2 /f22 the major ratio for the two half cycles is then defined a T = ij/r 2
+                             i                     ,                                                                                              .
+
+
+
+
+The full equation is then written as:
+
+
+                    ^
+                    1 —
+                        V]
+                           — f u f 22 — In Ki f nom
+                                                    T      Q I 21 K 2 J 2nom T
+                                                                          1         l(celll)                             2(cell2)
+
+                                                                                                                                             [   6]
+                        n f 21 f 12           hi K 2 f 2nom Q 111 K J Inom                                1
+
+
+
+
+Upon canceling like terms: T = T (ce in T 2(ce n 2)    >             ,
+                                                                         where T is the transmittance of a sample of length equal
+to the length of cell    1 plus the length of cell 2.
+
+
+
+
+                                                                                    10
+The SRP system calculates T from the frequencies fn, f i2 f2 i, and f22 and the concentration is computed
+                                                                        ,
+
+
+
+from equation 1.     A temperature/pressure correction factor is then applied:
+
+                                 sample temperature                     standard pressure
+                          F
+                               standard temperature                         sample pressure
+
+which reduces the concentration to STP conditions, and finally the SRP's computer converts the
+concentration to ppbv.
+
+
+To maximize the number of measurement points obtained per unit time, the instrument cycle can be
+extended by switching the system back to the flow configuration of the first "half-cycle" and obtaining a
+third minor ratio:
+
+
+                                                   r3
+                                                           fu                                                  8]
+                                                                                                           [
+
+                                                           f*
+This is then used in conjunction with the second minor ratio r 2 to obtain a second major ratio:
+
+
+
+                                                        T 2<celI2 T j(celll)
+                                                                    )
+                                                                                                           [9]
+                                              r2
+
+
+and a second, though not independent, measurement can be obtained in only 50 % more time than that
+required for a single measurement.     A fourth minor ratio would then be defined as:
+
+                                                          f 14
+                                                    1U~                                                [   10 ]
+                                                          f 24
+
+Again this is used in conjunction with the previous minor ratio r 3 to obtain the third major ratio:
+
+
+
+                                         T3             T 3(celll) T 4(celI2                           [   11 ]
+                                               r4
+
+
+The instrument cycle can be extended for an arbitrary number of half-cycles. In practice, the system is
+typically programmed to obtain 7 to 10 measurements/concentration; one major ratio yields one
+measurement. The standard deviation of the set is calculated, and if it is within preset tolerances, the
+average value is taken for the concentration.
+
+
+9.   PERFORMANCE
+A typical set of readings from the main NIST SRP measuring zero air in both cells is shown in Table 2.
+Column one lists the half cycle number, columns two and three contain the 5-s integrated count values
+that correspond to light intensities from the two optical cells, column four is the temperature, and column
+
+
+
+                                                                1
+five is the pressure for each period. Starting with half cycle one, column six lists the volume concentration
+of ozone in ppbv computed from the latest and previous half cycle data. In this run, the instrument zero
+level is determined from the ten half cycle measurements to give nine ozone concentration determinations.
+
+
+A typical SRP calibration run is composed of ten ozone concentrations covering the range of 30 ppbv to
+1000 ppbv measured in random order with an additional zero air level measured at the beginning and end
+of the run. A summary of the measurements for three of the twelve ozone concentrations for a typical
+calibration run is shown in Table 3. The values are tabulated in the relative order they were recorded to
+show time dependence of the parameters. The average value and standard deviation of the temperature
+and pressure are for ten half-cycle readings while the ozone concentration is for nine determinations
+during each measurement set. Table 3 also shows the change in measured counts between the two half
+cycles for optical cell 1 The cell 1 values are of the five even numbered half cycles when zero air is
+                         .
+
+
+
+
+flowing through the cell. The Acell 1 averages and standard deviations are for five changes in the optical
+signal when ozone is in the cell (odd numbered half cycles). Similar values for cell 2 are not shown. The
+twelve ozone concentrations from a typical calibration run are fitted to a line by linear least-squares
+regression to determine the slope and intercept of the calibration function.   A plot of the twelve recorded
+points for SRP-0 vs SRP-2 calibration run is shown in Figure 4a with the residuals (observed value minus
+fitted value) in Figure 4b.
+
+
+
+Table 4 shows a series of typical comparisons between the two SRPs. Each comparison is similar to the
+run data shown in Figure 4 and consists of twelve concentration values; ten with ozone present and two
+with zero air present in the sample stream. The ten different calibration runs were conducted over the
+course of a month with SRP-0 turned off between some runs and transported by car to a user site for
+comparison with another instrument. SRP-2 was not turned off between calibration runs but left in a
+power ON standby state. Calibration runs on the same day were done consecutively. The first two
+columns contain the number and date of run. The next two pairs of columns contain the values and
+standard deviations for the slopes and intercepts of the fitted straight lines. The Rsq column contains the
+correlation coefficient for the linear regression. The last column, RSD, is the standard deviation of the
+residuals. The last two rows show the average and standard deviation of the values in the corresponding
+columns.
+
+
+10. ANALYSIS       OF PERFORMANCE
+The SRP was designed with a single analyzer light source, twin sample cells, simultaneous counting,
+minor and major ratios, and other features to reduce many of the sources of noise inherent in absorption
+detectors. Close examination of the    SRP performance data shows the effectiveness of the design at
+reducing uncertainties in the measured ozone concentration. The following inspection of the data, as a
+function of ozone concentration, time, and half cycles, gives a revealing look into the operation of the
+instrument.
+
+
+Table 2 shows the light signals in the two optical cells have comparable but not identical values. The
+average and standard deviation (in parentheses) of optical cells 1 and 2 are 73304.6 (4.4) and 73568.0
+(4.9), respectively, for reference air. The average value and standard deviation of the minor ratio for the
+ten half cycles are 1.003593 and 0.000012, respectively. If one assumes the observed variation in the
+optical signals from the two channels are random and uncorrelated, then the estimated value for the
+
+
+
+                                                          12
+standard uncertainty of the minor ratio is 0.000089. This value is over seven times larger than observed
+and illustrates that ratios of the two channels reduces the effects of correlated noise due to lamp
+variations.
+
+
+Counting noise limits the precision of the calculated minor ratios. Counters operating                     in a    non-
+synchronous mode can be biased by at most Vi count. Assuming that any value in the range of ± Vi count
+is equally likely, the standard uncertainty (4) is given by":
+
+
+
+
+                                                      0.5
+                                                              0.29                                                  [   12 ]
+                                                     Ts
+Using 0.29 as the standard uncertainty along with the data in Table 2 gives a computed standard
+uncertainty in the minor ratio of 0.000006. Compared with the experimental value of 0.000012 computed
+from the data in Table 2, the SRP approaches the counting noise limit and in some measurement sets
+actually reaches this limit. The effect of counting is that the finite resolution in the counts produces
+discrete levels, which is apparent in the ozone concentration levels shown in Table 2.
+
+
+Analysis of the minor ratios only shows the reduction in optical signal variation during a particular half
+cycle.   On alternating half cycles each cell measures reference air, then air with ozone. The cell        1   and Acell
+1   rows in Table 3 show the effect of this changing stream on the detected optical signal. The standard
+deviation of the Acell 1 measurements is less than that of cell 1 values. The contrast is even greater when
+one considers that the difference calculations require two count measurements resulting in a delta that
+should have a standard uncertainty V2 times higher than the cell standard uncertainty. The optical
+detection system shows a small drift in lamp intensity evident by the increasing cell counts of Table 2 and
+the cell counts for the three different ozone concentrations of Table 3. The repeating of alternate half
+cycles removes much of the variation due to source lamp intensity drifts.
+
+
+The Acell 1 values in Table 3 indicate that changes in the transmitted light are small; at most about 2.5%
+at high concentrations (998 ppbv) and 0.4% at low concentrations 165 ppbv). The standard uncertainties
+                                                                            (
+
+
+of the high and low cell count values include ozone generator fluctuations while the reference air values
+are mainly due to lamp variations. The ozone generator variations are evident in the standard uncertainty
+of the average ozone concentrations calculated for each measurement set. All standard uncertainties are
+low, but show a slight increase with concentration (0.27 vs 0.50 ppbv at concentrations of 0.2 and 997.6
+ppbv, respectively).
+
+
+The temperature and pressure readings in Table 3 show constant values for a calibration run with very
+small standard deviations. Close examination of the temperature and pressure measurements in the odd
+and even numbered half cycles of Table 2 reveals a slight asymmetry in the temperature (0.02 °C) and
+pressure (0.47 mbar). These small differences are constants for each instrument. The major contributors to
+the standard deviation of the temperature are differences between the odd and even half cycles and a
+slight increase in the room temperature as a function of time. Similarly for the measured pressure, the
+
+
+
+          '
+              The square root of three is used following the rules of uncertainty analysis for an interval with uniform
+probability.
+
+
+
+
+                                                                 13
+standard deviation for a measurement set is small but dominated by the pressure difference in the half
+cycles with (in this run) a very small pressure drop over time. The time dependences of pressure and
+temperature are highly correlated between different instruments in a calibration run and are due to
+changes in the surrounding laboratory environment.
+
+
+The reproducibility of the calibration curves is evident by the values listed in Table 4. The slope of the
+calibration line is 1.00003 with a relative standard uncertainty of about 0.06%. The intercept varies
+slightly, but on average is not statistically different from zero. The correlation coefficients (Rsq) give
+
+some indication of how well the calibration curve is represented by a linear relationship between the two
+SRPs and is typically in the six "nines” (0.999999) range. The linearity of the calibration curves is
+obvious in figure 4 where the deviations from a straight line are only visible in the residual plot and have
+a maximum/minimum of ± 0.5 ppbv. The RSDs in Table 4 show the difference between the observed
+SRP-0 values and the fitted line and are, on average, only a few tenths of a ppbv. Overall, Table 4 shows
+a very consistent operation over time and an absence of outliers.
+
+
+11.   MEASUREMENT UNCERTAINTIES
+The performance analysis of the SRP just presented can only quantify the precision of the instrument and
+cannot directly yield a measure of accuracy. Provided there are no unknown biases or sources of error in
+the SRP, the uncertainty in the accuracy can be determined by evaluating the effects of uncertainty in
+temperature, pressure, cell length, cell counts, and absorption coefficient on the ozone concentration
+calculated from equation numbers 1, 6, and 8.
+
+
+Application of the law of propagation of uncertainties to equations that involve only multiplication or
+division shows that the total uncertainty is a combination of the relative fractional uncertainties in each
+quantity. The relative uncertainties are combined vectorially, that is, taking the positive square root of the
+sum of the squared component uncertainties. The uncertainty of the transmittance (major ratio) is derived
+from the uncertainties in the four optical frequencies from two half cycles. Taking twice" the counting
+noise (2 x 0.29 = 0.58 counts) as the uncertainty in a single optical measurement leads to an uncertainty in
+the transmittance of 0.000017 and is nearly constant for the entire measurement range of the SRP.           The
+relative uncertainty in the concentration of ozone (Sc/c) as a function of transmittance can be derived from
+equation 1 to give:
+
+                                                    Sc _       ST
+                                                         ~                                                  [13]
+                                                     c       T ln(T)
+
+where 5T      is   the uncertainty in transmittance. Table 5           shows   the range of transmittance values
+corresponding roughly to the operating range of the SRP along with the absolute and relative uncertainties
+in ozone concentrations. As noted earlier, the uncertainty in transmittance is nearly constant, and is
+assumed constant for calculations in the table. The uncertainty in transmittance leads to a nearly constant
+absolute uncertainty in the concentration of ozone, resulting in a large relative uncertainty at low
+concentrations and a very low uncertainty at the upper limit of the instrument.
+
+
+
+        3
+            Coverage factor of 2 standard deviations is used for all expanded uncertainty values.
+
+
+
+                                                                 14
+The absorption coefficient (a) has a stated range of 2 %, or ±1 % (3). Assuming each value in this range is
+equally likely, then the relative standard uncertainty is found (as in the counting noise described earlier)
+by dividing by v3 to give 0.58 %. The relative standard uncertainty in the path length is derived from the
+shortest SRP cell length of 89.25 ± 0.05 cm to give 0.033 %. The standard uncertainty of the temperature
+at   25 °C (298.15 K) is 0.15 °C to produce a relative standard uncertainty of 0.029 %. The pressure
+transducer has a stated standard uncertainty of 0.05 %.        This corresponds to 0.029 kPa assuming a
+uniform probability of being in this range, as in the cases of temperature and counting noise, and is
+comparable with the observ ed standard deviation in the pressure of 0.032 kPa (0.24 torr) mainly due to
+pressure differences in the half cycles. Taking a value of 0.030 kPa for the standard uncertainty in
+pressure yields a relative standard uncertainty of 0.03 %.
+
+
+Table 6 shows a summary of the contribution of the various measurements to the uncertainty in
+concentration of ozone. Uncertainties in temperature, pressure, and path length all have minimal impact
+on the combined uncertainty in the concentration of ozone. The determination of transmittance has a
+variable contribution to the combined uncertainty of the ozone measurement but is only significant below
+about 100 ppbv. Table 6 clearly shows that the accuracy of the ozone concentration measurements is
+dependent largely upon the uncertainty in the absorption cross section value used in the SRP calculations.
+
+
+12.   CONCLUSIONS
+
+The dual absorption cell design of the SRP inherently reduces systematic biases and drift effects. The
+major source of uncertainty in the measured ozone concentrations is the uncertainty in the absorption
+cross-section at 254 nm. Comparisons between two SRPs demonstrates a precision better than the
+calculated absolute uncertainty. The evaluation of absolute uncertainty is based on the assumption that no
+systematic biases are present. The SRP is currently undergoing an exhaustive evaluation of systematic
+errors, which will be the subject of a future report.
+
+
+In concluding remarks, data from the entire SRP network (not presented here) have indicated that the SRP
+is a reliable and repeatable ozone standard calibration instrument.   Intercomparisons conducted annually
+over the last decade have shown the SRPs to be in agreement to better than 0.5    % over the concentration
+range 100 ppbv to 1000 ppbv and ± 1 ppbv over the concentration range 0 ppbv to 100 ppbv. This
+network has met the needs of the user community responsible for ozone calibration by providing local
+access to authoritative ozone standards.
+
+
+13.   ACKNOWLEDGEMENTS
+We are indebted to Mr. Larry Purdue, Senior Scientist (retired), Human Exposure and Field Research
+Division, Atmospheric Research and Exposure Assessment Laboratory, EPA/RTP, for support of the
+development of the Standard Reference Photometer described in this paper.
+
+
+The surviv ing authors would like to pay tribute to the memory of Dr. Arnold M. Bass. After a long
+illustrious career. Dr. Bass died of cancer at age 66 on March 21, 1989. Dr. Bass graduated from the
+College of the City of New York in his native New York City. He then received a masters degree and a
+doctorate in physics from Duke University. After two years of post doctoral study at the Massachusetts
+Institute of Technology, Dr.   Bass joined the then National Bureau of Standards in 1950. During his
+
+
+                                                          15
+                                                                                                              ,
+
+
+
+
+career at NBS, he served as staff physicist, deputy chief of the Free Radical Research Section, deputy
+chief of the Physical Chemistry Division, and ended his career as senior scientist in the Center for
+Analytical Chemistry. In his scientific career. Dr. Bass was internationally known for his work in the
+ultraviolet spectroscopy of small gaseous molecules.       He was best known for his collaborative efforts with
+Dr. Richard J. Paur of the Army Research Office in the areas of temperature dependent spectral cross
+sections of the ozone molecule at stratospheric temperatures and the development of the national primary
+standard for atmospheric ozone concentrations based on ultraviolet photometry. Survivors include his
+wife of 41 years, Rosalyn Bass, three sons, Dr. Jonathan Bass, Dr. David Bass, and Daniel Bass, and a
+sister, Helen Gurin.
+
+
+
+14.   REFERENCES
+1.   Title 40 of the Code of Federal Regulations Part 50, Appendix
+                                                ,
+                                                                          D (40 CFR Part 50).
+
+2.          M.H., McLaughin, R.J., Fast-Response Dual-Beam UV-Absorption Ozone Photometer
+     Proffitt,
+
+Suitable for use on Stratospheric Balloons, Review of Scientific Instrumentation (USA), Volume 54,
+                                                       ’
+
+
+
+
+Number 12, December 1983.
+
+3.   Demore, W.B., Sander, S.P., Golden, D.M., Molina, M.J., Hampson, R.F., Kurylo, M.J., Howard, C.J.,
+Ravishankara, A.R., Chemical Kinetics and Photochemical Data for Use in Stratospheric Modeling
+Evaluation Number 11, JPL Publication 94-26, Jet Propulsion Laboratory, Pasadena, California, USA.
+
+
+4. Taylor, Barry N. and Kuyatt, Chris E., “Guidelines for Evaluating and Expressing the Uncertainty of
+
+NIST Measurement Results,” National Institute of Standards and Technology Technical Note 1297, 1994
+Edition (U.S. Government Printing Office, Washington, D.C., September 1994).
+
+
+
+
+                                                             16
+Table 1. Specific Locations of Standard Reference Photometers
+
+
+SRP# Completion Date                   Location                     Orsanization
+
+
+0      August 1985            Gaithersburg,   MD            NIST (2)
+1      February 1983          Research Triangle Park, NC    U.S. EPA   ORD
+2      February 1983         Gaithersburg,    MD            NIST (1)
+o
+j      August 1983            Edison, NJ                    U.S. EPA Region II
+4      September 1983         Sacramento, CA                U.S. EPA Region IX
+5      March 1985            Houston, TX                    U.S. EPA Region VI
+6      March 1985            Chicago, IL                    U.S. EPA Region V
+7      January 1986          Las Vegas, NV                  U.S. EPA R&IE (Main)
+8      February 1986         Denver, CO                     U.S. EPA Region VIII
+9      May 1987              Lexington,    MA               U.S. EPA Region I
+10     November 1987         Athens,   GA                   U.S. EPA Region IV
+11     September 1987         Stockholm, Sweden             Institute of Applied Environmental
+
+                                                            Research
+12     July 1988             Toronto, Canada                Ontario Ministry of Environment
+13     January 1989          Kansas City, KS                U.S. EPA Region VII
+14     June 1993             Bern. Switzerland              Swiss Federal Office of Metrology      ( 1
+
+
+15     October 1993          Dtibendorf, Switzerland        Swiss Federal Laboratories for Materials
+                                                            Testing and Research ( 1
+16     October 1994          Ottawa, Canada                 Environment Canada
+17     December 1994         Prague, Czech Republic         Czech Hydrometeorological Institute
+18     January 1996          Bern, Switzerland              Swiss Federal Office of Metrology (2)
+19     November 1996         Braunschweig, Germany          Physikalisch-Technische Bundesanstalt
+20     March 1997            London, United Kingdom         National Physical Laboratory
+21     June 1997             Sydney, Australia              NSW-Environment Protection Authority
+22     December 1997         Madrid, Spain                  Instituto de Salud Carlos III
+23     March 1999            Dtibendorf, Switzerland        Swiss Federal Laboratories for Materials
+                                                            Testing and Research (2)
+24     February 2000         Paris, France                  Laboratoire National D' Essais
+25     June 2001             Lisbon, Portugal               Direccao Geral Do Ambiente
+26     December 2001         Vienna, Austria                Umweltbundesamt
+27     April 2002             Sevres. France                Bureau International des Poids et Mesures   (   1
+
+
+28     April 2002             Sevres, France                Bureau International des Poids et Mesures 2 (
+
+
+
+29     June 2002             Langen, Germany                Umweltbundesamt
+30     November 2002          Kaohsiung, Taiwan R.O.C.      Taiwan Environment Protection
+                                                            Administration
+
+
+
+
+                                                    17
+Table 2. Tabulated data for a typical zero air measurement of a calibration run. Ten half cycles are
+completed to produce nine replicate ozone concentration measurements. The significant figures in the
+temperature and pressure columns do not imply measurement accuracy but only show the precision of the
+instrument.
+
+
+   Half Cycle Cell 1    Cell 2   Temp.    Press.   [o 3 ]
+   Number       (count) (count) (°C)      (mbar)   (ppbv)
+
+
+         0      73300   73563    24.017   992.71
+
+
+         1      73300   73562    24.037   992.23   -0.3
+
+
+
+         2      73301   73563    24.019   992.63   0.0
+
+
+         3      73299   73563    24.042   992.19   0.5
+
+
+         4      73303   73566    24.022   992.64   0.3
+
+
+         5      73306   73571    24.044   992.20   0.5
+
+
+         6      73308   73571    24.024   992.68   0.5
+
+
+         7      73307   73571    24.042   992.15   0.3
+
+
+         8      73311   73575    24.025   992.68   0.0
+
+
+         9      73311   73575    24.044   992.21   0.0
+
+
+
+
+                                                          18
+Table 3. Average value and standard deviation of measured parameters for three different ozone
+concentrations: zero, low, and high. The values given for the zero ozone level one are for the data
+in Table 2. The three levels are shown in the relative order that they were collected.
+
+
+
+
+                                                       Ozone Level
+
+                                  Zero                        High                     Low
+
+   Parameter            Average     Std. Dev.     Average       Std. Dev.    Average     Std. Dev.
+
+
+   Cell 1 (counts)      73304.6           4.2     73279.0             7.1    73267.0          3.9
+
+
+   ACell 1 (counts)        0.0            2.0     -1795.0             4.0    -297.8           3.0
+
+
+   Temperature (°C)      24.032          0.011    24.070             0.010   24.096          0.009
+
+
+   Pressure (mbar)       992.43          0.24     992.21             0.24    992.07          0.26
+
+
+   [0 3 ] (ppbv)          0.20           0.27     997.64             0.50    165.30          0.28
+
+
+
+
+                                                         19
+Table 4. Multiple comparisons of calibration runs for SRP-0 vs SRP-2.
+
+
+
+       Run      Date    Slope     Std. Dev.   Intercept Std. Dev.      Rsq      RSD
+
+   OZN8127 01 -Aug     0.99897 0.00032         -0.197    0.091      0.9999990   0.378
+
+
+   OZN8128 03- Aug      1.00007 0.00021        -0.364    0.148      0.9999996   0.249
+
+
+   OZN8129 03- Aug 0.99997 0.00023             -0.275    0.115      0.9999995   0.275
+
+
+   OZN8133 20- Aug     1.00041    0.00036      -0.239    0.111      0.9999987   0.421
+
+
+   OZN8134 20- Aug     0.99996 0.00024         -0.002    0.035      0.9999994   0.279
+
+
+   OZN8135 21 -Aug      1.00026 0.00023        0.077     0.046      0.9999995   0.264
+
+
+   OZN8138 26-Aug       1.00071   0.00023      -0.009    0.034      0.9999995   0.265
+
+
+   OZN8139 27- Aug     1.00073 0.00020         -0.248    0.107      0.9999996   0.235
+
+
+   OZN8140 27- Aug     1.00013 0.00022         -0.048    0.038      0.9999995   0.260
+
+
+   OZN8141 29-Aug 0.99910 0.00018              -0.003    0.027      0.9999997   0.214
+
+
+
+
+   Average             1.00003    0.00024      -0.131    0.075      0.9999994   0.284
+
+
+   Std. Dev.           0.00056    0.00005      0.142     0.042      0.0000003   0.061
+
+
+
+
+                                                        20
+Table 5. Relationship of expanded uncertainty (U) in transmittance to the absolute and relative U in the
+calculated ozone concentration.      U is assumed to be 0.000017.
+
+
+
+                          [o 3 ]         [0 3 ]          relative
+       Trans.            (ppbv)     U (ppbv)             U(%)
+
+       0.9999                1.82    0.31                     17
+
+
+       0.9990              18.18     0.31                    1.7
+
+
+
+       0.9950              91.08     0.31                   0.34
+
+
+       0.9700             553.45     0.32                 0.057
+
+
+       0.9450            1027.90     0.33                 0.032
+
+
+
+
+Table 6. Comparison of the sources of uncertainty and their relative contribution to the uncertainty in the
+measured ozone concentration of the SRP.
+
+
+
+                                                  Expanded               Relative          Relative Uncertainty
+      Measurement                                 Uncertainty            Uncertainty (%)   in [0 3 ] (%)
+
+
+
+      Absorption Coefficient                      1.0%                   0.58              0.58
+                0‘ 19
+      1.147x1           (cnr/molecule)
+
+
+      Transmittance                               0.000017               0.0017            0.057
+
+
+      Pressure                                    0.03 kPa               0.03              0.03
+
+
+      Temperature                                 0.15 °C                0.029             0.029
+
+
+      Path Length                                 0.05 cm                0.033             0.033
+
+
+a) Values for transmittance are taken at an [0 3 ] of 553 ppbv.
+
+
+
+
+                                                                    21
+                                                                     <
+                                                                     tr
+
+
+
+
+Figure 1   .   Layout of the Standard Reference Photometer with original computer.
+
+
+
+
+                                                         99
+                                       DETECTOR
+                     MIRROR            CIRCUITRY
+
+
+
+
+Figure 2. Optical Layout of the SRP.
+                                    FRONT PANEL
+
+
+
+
+Figure 3. SRP Flow Schematic
+
+
+
+
+                               24
+        (ppbv)
+
+
+
+
+        Concentration
+
+
+
+
+        Ozone
+
+
+
+
+        SRP-0
+
+
+
+
+Figure 4. Plots of the calibration line (a) and the residuals (b) for the two NIST SRPs.
+
+
+
+
+                                                       25
+

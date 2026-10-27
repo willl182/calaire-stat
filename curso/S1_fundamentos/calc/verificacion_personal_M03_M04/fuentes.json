@@ -1,0 +1,142 @@
+[
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c04.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/00.txt"
+    ],
+    "sha256": "a867d39ab306906399daa73f3a5b38a94011a48cbd65b957040ad4de85589451",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c05.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/01.txt"
+    ],
+    "sha256": "d7d23b52dd3b9c93e245ea46aff53b7224dbcf95678cb57a73d1d3b06b6ef750",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c06.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/02.txt"
+    ],
+    "sha256": "5a5ac9ebe27c411396e92ec5a770dd8a92b230b462f258d187641785c13f1686",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c07.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/03.txt"
+    ],
+    "sha256": "58353d79a03078b4bb3fb8a7be040a24add17b6228e7ac67ff71cb4d663ea318",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c08.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/04.txt"
+    ],
+    "sha256": "9905e252bf9549d2fe42c22c4604ca412da4533af5934a6cecf4735054ef1426",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/statistical_concepts_c09.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/05.txt"
+    ],
+    "sha256": "d9e0b981dfc44d7228ae54957e92589b87b0148a2c775038fab01ac6a55e8171",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/metrology_measure_uncer_c03.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/06.txt"
+    ],
+    "sha256": "19d3511d9ed1226141a314c66e86c32b8ee6d70fbf6993ec777c7721fc81c1e0",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/intro_stats_metro_c04.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/07.txt"
+    ],
+    "sha256": "e1898c68d3aae68b5817e31a151efc16d40fd4a6dbe935fff67eac4f157ce351",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/intro_stats_metro_c07.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/08.txt"
+    ],
+    "sha256": "6b4495ce44299f7350ffa60c9192aa23dff16c76e56d20bea5b413891c8933dc",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/milton2006.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/09.txt"
+    ],
+    "sha256": "69318f19623b4d2e79c13bd5b259ea1f9b58182176bec3b15eca77bf116fc607",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/Chemometrics Statistics and Computer Application.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/10.txt"
+    ],
+    "sha256": "ad280f2e500caa3c17192ee20be1002411a227070acc0c4aefc1d6986b64c11c",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/Statistical Concepts – A First Course.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/11.txt"
+    ],
+    "sha256": "c6d3627b74e082f265af98329a47874c9c71b122dcccbab3fb82a6a1881d4ba1",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/12.txt"
+    ],
+    "sha256": "8e0546d0e77412a3b39fcbfb2f85d052369aad1a8ba9e1cc6d4a38f9f6db7b2e",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "pdftotext",
+      "-layout",
+      "/home/w182/w421/calaire-stat/docs/ISO_IEC Guide 98-3_2008 Suppl.2_2011 - libgen.li.pdf",
+      "/home/w182/w421/calaire-stat/curso/S1_fundamentos/calc/verificacion_personal_M03_M04/13.txt"
+    ],
+    "sha256": "e4c2fe331dad3362d2f49530ec5bd923295ebd5d451f9f5a9163b26f77559976",
+    "returncode": 0
+  }
+]

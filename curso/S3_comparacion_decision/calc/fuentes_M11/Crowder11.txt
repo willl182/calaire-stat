@@ -1,0 +1,749 @@
+Chapter 11
+Special Topics in Metrology
+
+
+
+
+Metrology guides such as the JCGM 100 and JCGM 101 present in detail the most
+commonly used methods for evaluating measurement uncertainty. Additional guides
+for less commonly used methods are in development. In this chapter we present an
+overview of methods that we ﬁnd valuable and deserving of more coverage. These
+methods include statistical process control (SPC), binary measurement systems
+(BMS), destructive measurements, sample size determination, and Bayesian analysis
+in metrology.
+
+
+
+11.1 Introduction
+
+This chapter discusses several special topics in metrology that have not received a
+great deal of emphasis in the metrology literature, but are considered important
+enough to cover here. The ﬁrst special topic is statistical process control (SPC), in
+which the process of making a measurement is monitored using the tools of SPC.
+The second special topic is the evaluation of Binary Measurement Systems (BMS),
+in which the outcome of a measurement, such as with a go/no-go gauge, is binary.
+The third special topic is quantifying uncertainty when the measurement is destruc-
+tive. The fourth special topic is sample size determination and allocation in metrol-
+ogy studies, and the ﬁnal topic is Bayesian analysis in metrology.
+
+
+
+11.2 Statistical Process Control (SPC)
+
+Statistical process control (SPC) has traditionally been used in manufacturing to
+monitor and improve production processes. The goal of SPC is to quickly detect
+when a process upset has occurred and to eliminate the “assignable” cause. The same
+goal applies to the process of making measurements. Any signiﬁcant departure of a
+
+© Springer Nature Switzerland AG 2020                                            267
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_11
+11.2   Statistical Process Control (SPC)                                           269
+
+
+the process standard deviation. Additional details for both of these charts are
+presented in Crowder (1987a) and Montgomery (2013).
+   Common control chart patterns (departures from nominal) can be detected with
+these two charts. The most common patterns include gradual changes in mean level,
+single unusual values, instability, sudden shifts in mean level, sustained trends up or
+down, and cyclical behavior. Each of these patterns may point to speciﬁc causes
+associated with the measurement process. It is in identifying causes of unusual
+behavior that subject matter expertise and statistical expertise come together.
+   In the case study in Sect. 11.2.1, an X        MR chart was used to monitor the
+performance of a battery tester used for product acceptance.
+
+
+
+11.2.1 Case Study: Battery Tester Uncertainty
+       and Monitoring Via SPC
+
+In manufacturing applications, a check standard (Sect. 3.6.2) is often used to monitor
+tester performance over time. The check standard should be constructed as close as
+possible to the manufactured part being measured, and it should be a stable device
+that can replicate measurements over time. Measurements of the check standard are
+made on a frequent basis and can be plotted on an SPC control chart to verify
+ongoing tester performance. Any assignable causes of variation in the measurement
+process can then be detected via the control chart and eliminated to the extent
+possible.
+   The tester under investigation in this case study was a battery product acceptance
+tester that measured voltage output from four different channels of a battery. Because
+the testing of manufactured batteries is destructive, a check standard was used to
+simulate nominal voltages from the four channels. These voltages were measured by
+the tester at the rate of 10 readings per second for 15 s. The data retrieval was
+performed 50 times to establish a baseline for each of the four channels, resulting in
+7500 (10 15 50) total measurements for each channel.
+   An X R chart was ﬁrst considered for monitoring tester performance. Prior to
+implementing this control chart for ongoing control, an uncertainty analysis of the
+tester was performed to establish baseline control limits. The initial control limits
+were based on the combined standard uncertainty of the battery tester determined
+from measurements of the check standard. Data from just the 10-volt channel were
+used in this case study.
+   The combined standard uncertainty of the battery tester was based on the Type A
+uncertainty of the tester combined with the Type B uncertainties of both the tester
+and the check standard. The standard deviation of the initial 7500 measurements of
+the 10-volt channel was uA(V ) ¼ 0.0141 V. Prior independent analysis of the check
+standard yielded uB(V ) ¼ 0.000171 V, while the Type B uncertainty of the tester was
+considered negligible. The combined standard uncertainty of the battery tester was
+thus
+11.2   Statistical Process Control (SPC)                                          273
+
+
+
+
+Fig. 11.3 Individuals control chart of ongoing voltage data
+
+                                           49
+                                           P
+                                                 jxiþ1   xi j=49
+                                           i¼1
+                                   σb ¼                            :
+                                                   1:128
+
+    The estimate σb is based on the average of 49 moving ranges (from 50 observa-
+tions) divided by the constant 1.128. This constant is the value that makes σb an
+unbiased estimate of σ when the data are normally distributed (see Montgomery
+2013). These baseline control limits were then used for an ongoing X MR control
+chart of the subsequent 50 observations (Fig. 11.3). The control chart in Fig. 11.3
+shows that initially the ongoing performance of the battery tester was consistent with
+baseline performance. However, around observation 20, the mean voltage quickly
+dropped to a new level, triggering “out-of-control” alarms denoted by the red
+observations. This shift was statistically signiﬁcant, but was not considered practi-
+cally signiﬁcant, given the voltage speciﬁcation limits (10 0.1 V ). Because the
+shift was not considered important, the battery tester continued to be monitored
+using the check standard and the technique described here without adjustment to the
+check standard or tester. If this shift in mean level was considered important, an
+investigation would be needed to identify the cause of the shift and necessary
+adjustments to the measurement process. The moving range chart, constructed for
+the baseline data, did not indicate any signiﬁcant increase in tester variability.
+Construction of the moving range chart for the ongoing data is left as an exercise
+at the end of the chapter.
+
+
+
+11.2.2 Discussion
+
+The case study in Sect. 11.2.1 illustrates the use of control charts to monitor tester
+performance over time. Data from a well-designed, stable check standard were used
+274                                                      11 Special Topics in Metrology
+
+
+to establish baseline control limits for a battery tester. Ongoing data collected over
+time from the same tester measuring the same check standard were then monitored
+using a control chart with limits determined from the baseline data. The control chart
+used for ongoing control was an individuals chart with control limits based on the
+moving range (X MR chart). Other control charts could be used for this problem,
+including a cumulative sum chart (Lucas 1982) or an exponentially weighted
+moving average chart (Crowder 1987b, 1989). These alternative SPC control charts
+are more sensitive to subtle process changes than the X R or X MR chart.
+   The control chart in this example was used to monitor the measurement process,
+not the manufacturing process. It should be noted that the measurement process can
+be stable and in-control even if the manufacturing process is out of control. These
+two processes can behave independently of each other, although the measurement
+uncertainty affects whether the manufacturing process is viewed as meeting speci-
+ﬁcation limits (Chap. 5). If the measurement process remains in a state of statistical
+control over an extended period, the results could be used to assess tester drift and to
+establish calibration intervals for the tester (Chap. 10).
+   Many applications of SPC in metrology, such as the one above, involve the use of
+a check standard. When possible, it is preferable to measure manufactured parts over
+time, if the parts are stable and can be measured multiple times without degrading
+their output. The data collected over time can also be used to improve baseline
+estimates of repeatability and reproducibility (Sect. 9.3.4). In this case, the destruc-
+tive nature of the test prevented repeated measures of actual batteries over time.
+
+
+
+11.3 Binary Measurement Systems (BMS)
+
+Binary Measurement Systems (BMS) are systems where the measurements can be
+classiﬁed into one of two categories. In engineering applications, these classiﬁca-
+tions are commonly 0/1, Pass/Fail, or go/no-go and are usually determined via a
+simple gauge or visual inspection. While BMS studies do not provide as much
+information as studies where the response is a continuous variable, they can be more
+efﬁcient and are often used in practice Zhao et al. (2008). This section gives an
+overview of BMS studies and how to analyze the results, as well as guidance for
+choosing a sample size when designing a new study.
+
+
+
+11.3.1 BMS Overview
+
+For clarity, several aspects of a BMS study are deﬁned below. A part is deﬁned as the
+object being measured, an operator is the person taking the measurement, and a
+repetition is a repeated measurement of a single part. In a BMS study, several
+operators typically measure several parts, and each operator might measure each
+part multiple times. The total number of measurements, N, can be calculated as
+11.3   Binary Measurement Systems (BMS)                                          275
+
+
+                                  N¼o      u    m,                            ð11:3Þ
+
+where o is the number of operators, u is the number of parts, and m is the number of
+repetitions of the measurement. For each inspection, the operator classiﬁes the part
+using a binary outcome, such as “go” or “no-go.”
+   There are two goals that are common in BMS studies: (1) assessing the agreement
+of operators by estimating the within-operator and between-operator agreement and
+(2) assessing the accuracy (correctness) of operators by estimating misclassiﬁcation
+rates. Methods for addressing both goals will be discussed in the following sections.
+Guidance on choosing a sample size for a BMS study is provided in Sect. 11.3.4.
+
+
+
+11.3.2 BMS Case Study Introduced
+
+A case study is used to illustrate the concepts associated with evaluating a BMS. In
+the study, 3 operators measured 6 components at 20 different locations. For the
+purpose of illustration, each location on each component was considered an inde-
+pendent measurement, resulting in (effectively) 120 different parts. Each operator
+measured each part three times and provided a classiﬁcation of Pass or Fail. Thus,
+the total number of inspections, N, was 360 for each operator. Table 11.2 provides a
+subset of the data for the component with serial number 2170.
+
+
+
+
+11.3.3 Evaluation of a BMS
+
+Assessing agreement and correctness is an important part of a BMS analysis as it
+provides a measure of the consistency of operators and the overall performance of
+the BMS. We will focus on the following three characteristics of a BMS:
+• Within-operator agreement: the agreement within a single operator when repeated
+  measurements are taken on the same part. Also known as intra-rater agreement.
+• Between-operator agreement: the agreement between multiple operators when
+  measurements are taken on the same part. Also known as inter-rater agreement.
+• Correctness: the error rates (correctness rates) of an operator’s classiﬁcation of
+  a part.
+   These metrics provide an indication of how the BMS is performing. If within-
+operator agreement or correctness is low for a given operator, that may be an
+indication that the operator requires additional training. Similarly, if the between-
+operator agreement or overall correctness is low, multiple operators may require
+additional training, or there may be issues with the gauge or the measurement
+process that need to be addressed.
+11.3   Binary Measurement Systems (BMS)                                                  277
+
+
+Table 11.2 (continued)
+Serial Number       Location       Rep          Operator 1        Operator 2     Operator 3
+2170                15             1            Fail              Fail           Pass
+2170                15             2            Pass              Pass           Pass
+2170                15             3            Pass              Pass           Pass
+2170                16             1            Pass              Pass           Pass
+2170                16             2            Pass              Pass           Pass
+2170                16             3            Pass              Pass           Pass
+2170                17             1            Pass              Pass           Pass
+2170                17             2            Pass              Pass           Pass
+2170                17             3            Pass              Pass           Pass
+2170                18             1            Pass              Pass           Pass
+2170                18             2            Pass              Pass           Pass
+2170                18             3            Pass              Pass           Pass
+2170                19             1            Pass              Pass           Pass
+2170                19             2            Pass              Pass           Pass
+2170                19             3            Pass              Pass           Pass
+2170                20             1            Fail              Fail           Fail
+2170                20             2            Fail              Fail           Fail
+2170                20             3            Fail              Fail           Fail
+
+
+Table 11.3 Within-operator agreement for the BMS case study
+                                                                               Proportion of
+Operator number      Number of parts inspected          Number in agreement    agreement
+Operator 1           120                                113                    94.2
+Operator 2           120                                116                    96.7
+Operator 3           120                                114                    95.0
+
+
+
+11.3.3.1   Within-Operator Agreement
+
+A straightforward method for assessing within-operator agreement is to tabulate the
+number of parts that agree (i.e., have the same classiﬁcation for all repetitions) for
+each operator. This is referred to as the proportion of agreement within operators,
+and can be formally deﬁned as
+
+                                                uia
+                                         pi ¼       ,                                ð11:4Þ
+                                                 u
+
+where uia is the number of parts that agree for the ith operator and u is the number of
+inspected parts. Table 11.3 provides the proportion of agreement for each operator in
+the BMS case study.
+   In this example, measurements agree if all three repetitions for a part were given
+the same classiﬁcation (i.e., all Pass or all Fail) by an operator. Here, the operators
+have a high level of agreement across repetitions, implying that there is relatively
+278                                                         11 Special Topics in Metrology
+
+
+high precision for each operator. The acceptable level of within-operator agreement
+is problem speciﬁc, however, and may vary depending on the objectives of the
+analysis.
+   If more than three repetitions were taken, the requirement for agreement could be
+relaxed so that only a certain percentage (e.g., three out of four) of the classiﬁcations
+would need to be the same for the part to be in agreement, resulting in a less
+conservative estimate of the within-operator agreement.
+
+
+
+11.3.3.2   Between-Operator Agreement
+
+A basic method for assessing between-operator agreement is to determine how often
+the classiﬁcation of different operators agrees across inspections. This proportion is
+deﬁned as
+
+                                             na
+                                        p¼      ,                                  ð11:5Þ
+                                             N
+
+where na is the number of inspections that received the same classiﬁcation from all
+operators and N is the total number of inspections. Table 11.4 shows the overall
+number of times all operators agreed on the classiﬁcation of the part. Here, it appears
+that the operators are generally in agreement, with 345 of the inspections having the
+same classiﬁcation across operators. While this method provides a high-level mea-
+sure of between-operator agreement, it does not tell us if certain operators are more
+in agreement than others.
+Cross-Tabulation The cross-tabulation method as described in Down et al. (2010)
+provides a more in-depth method for quantifying between-operator agreement. The
+ﬁrst step is to assess the between-operator agreement for each pairwise combination
+of the operators. Table 11.5 shows the format of the cross-tabulation matrix that can
+be calculated for two operators. The ﬁrst value in each cell, denoted nxy, represents
+the number of times Operator A classiﬁed an inspection as x and Operator B
+classiﬁed an inspection as y. For example, n00 provides the number of times
+Operators A and B both classiﬁed an inspection as 0, a “Fail.”
+
+Table 11.4 Proportion of agreement for the BMS case study
+Number of inspections             Number in agreement              Proportion of agreement
+360                               345                              95.8
+
+
+Table 11.5 Format of cross-                                   Operator B
+tabulation matrix
+                                                              Fail       Pass        Total
+                               Operator A        Fail         n00        n01         n0
+                                                              E00        E01
+                                                 Pass         n10        n11         n1
+                                                              E10        E11
+                                                 Total        n.0        n.1         N
+11.3   Binary Measurement Systems (BMS)                                                    281
+
+
+11.3.3.3    Assessing BMS Correctness
+
+Often in a BMS study it is of interest to know the accuracy (correctness) of
+classiﬁcations. Correctness refers to whether an operator’s classiﬁcation of a part
+is equal to the “true state” of that part. At times, the “true state” of a part can be
+determined using a gold standard system (GSS). This section describes methods for
+assessing correctness when a GSS is available.
+   To formally deﬁne the methods for assessing correctness, let
+                                                (
+                                                    1 if pass
+                                      X ijh ¼
+                                                     0 if fail
+
+for i ¼ 1, . . ., o operators, j ¼ 1, . . ., u parts and h ¼ 1, . . ., m repetitions. The “true
+state” can similarly be deﬁned for the ith part as
+                                      (
+                                                1 if conforming
+                               Yi ¼                               :
+                                          0 if nonconforming
+
+   If a GSS is available, the “true state” is simply the classiﬁcation provided by the
+GSS. It is assumed that the GSS value always classiﬁes correctly. To assess BMS
+correctness, it is often of interest to estimate how often the system is incorrectly
+classifying parts, as well as what type of misclassiﬁcations are occurring. This can be
+accomplished by estimating the following two error rates:
+
+                                 α ¼ Pr X ijh ¼ 1jY i ¼ 0
+
+and
+
+                                 β ¼ Pr X ijh ¼ 0 Y i ¼ 1Þ:
+
+   Here, α is the probability the BMS passes a nonconforming part, while β is the
+probability the BMS rejects a conforming part. The misclassiﬁcation rates α (also
+known as miss rate or false positive rate) and β (also known as false alarm or false
+negative rate) are often used to assess performance of a BMS. In many applications,
+having a low false positive rate is more important than a low false negative rate as it
+could be worse to pass a nonconforming part than to fail a conforming part.
+However, it is important to assess which rate will have a larger impact for a given
+application.
+   To estimate these rates, two roughly equal-sized samples (each of size N) of
+conforming and nonconforming parts (determined by the GSS) are taken and
+evaluated by having multiple operators classify the parts multiple times using the
+BMS under investigation. Each classiﬁcation is then assigned one of these four
+labels:
+282                                                            11 Special Topics in Metrology
+
+
+Table 11.10 False positive and false negative rates for all operators in BMS case study
+                             α (False positive rate)                     β (False negative rate)
+Op. 1                        0.022                                       0.003
+Op. 2                        0.006                                       0.008
+Op. 3                        0.019                                       0.003
+Total                        0.016                                       0.005
+
+
+
+1. True positive—Xijh ¼ 1 and Yi ¼ 1.
+2. True negative—Xijh ¼ 0 and Yi ¼ 0
+3. False positive—Xijh ¼ 1 and Yi ¼ 0
+4. False negative—Xijh ¼ 0 and Yi ¼ 1
+   The sample misclassiﬁcation rates can then be calculated by summing the number
+of false positives (of N negatives) and false negatives (of N positives) over the total
+number of inspections in Eq. (11.10):
+                                        P
+                                       False Positives
+                                 α¼
+                                            N
+                                    P
+                                      False Negatives
+                                 β¼                    :                                  ð11:10Þ
+                                           N
+
+   Table 11.10 provides the false positive and false negative rates for the three
+operators, as well as an overall value across the operators. Operator 2 has a higher
+false negative rate, while Operators 1 and 3 have higher false positive rates. Overall,
+the operators have a higher false positive than false negative rate.
+
+
+
+
+11.3.4 Sample Sizes for a BMS Study
+
+This section addresses choice of sample sizes when designing a BMS study. With
+any estimate of agreement or correctness there is uncertainty due to the limited
+sample size used to generate the estimate. Consequently, a large enough sample size
+is needed to adequately assess a BMS given the constraints (time, money, etc.) that
+may limit the number of samples.
+    To assess how many classiﬁcations are needed, an analyst can quantify the
+uncertainty in the estimate of agreement and correctness for varying sample sizes.
+This section will describe how to calculate a conﬁdence interval for the proportion of
+agreement p0 between two operators. A similar analysis can also be done for a kappa
+value conﬁdence interval (Blackman and Koval 2000) or a false positive rate
+conﬁdence interval using the Binomial distribution.
+    A 100 (1 α)% conﬁdence interval for the proportion of agreement describes
+the uncertainty due to a ﬁnite sample size and can be calculated as
+284                                                     11 Special Topics in Metrology
+
+
+agreement moves closer to 50%, many more samples are needed to reduce the
+estimate’s uncertainty. Based on the results in Fig. 11.4 and Table 11.11, the total
+number of inspections, N, should be at least 400 to ensure that the conﬁdence
+interval width is less than 0.10 for all proportions of agreement. This sample size
+will be large enough to bound the conﬁdence interval width of the correctness
+measure (described in Sect. 11.3.3.3) by 0.10, as well. To achieve this level of
+uncertainty, the number of operators, o, parts, u, and repetitions, m, should thus be
+chosen so that the product o u m is at least 400. This number could be achieved,
+for example, using 50–60 parts with 2–3 operators and 4–5 repetitions of each part.
+
+
+
+11.4 Measurement System Analysis with Destructive
+     Testing
+
+Many manufactured parts have properties that can be measured only once due to the
+destructive nature of the test. Examples include parts for which break strength,
+impact strength, or burst pressure may be measured. Examples within the NSE
+include neutron sources, detonators, and thermal batteries, in which both inputs
+that activate the device and outputs from the device can only be measured once. In
+cases like these, assessing the repeatability and reproducibility of the measurement
+becomes more difﬁcult because the part is not available for repeated measurements.
+We have used two different approaches to this measurement problem, each with
+important assumptions.
+   The ﬁrst approach uses an alternative source to produce the same type of output
+produced by an actual part. This approach was used in both the battery tester case
+study (Sect. 11.2.1) and the lead probe case study (Sect. 6.4.1). In the lead probe
+uncertainty study, an alternative neutron source was used to assess measurement
+uncertainty. In Fig. 11.5, the alternative source (with the yellow sticker) produces a
+neutron stream that is measured by a lead probe standard, located to the right of the
+source. Repeated shots of the source produced the data that were used in the lead
+
+Fig. 11.5 Alternative
+neutron source under test
+11.5   Sample Size and Allocation of Samples in Metrology Experiments               285
+
+
+probe uncertainty analysis. The key assumptions with this approach are that the
+alternative source is repeatable and that its output adequately mimics that of an actual
+test unit.
+    The second approach to the destructive test problem relies on samples of
+manufactured parts being relatively homogeneous. Although not an ideal approach,
+it may be the best option available. Each part is measured, and resulting values are
+analyzed with the understanding that variation in the data includes part-to-part
+manufacturing variation. The resulting uncertainty analysis will be conservative in
+that part-to-part variation will inﬂate the estimate of measurement uncertainty. The
+same Gauge R&R methodology described earlier (Sect. 9.3.4) can be used, with
+repeated measurements of the same parts replaced by single measurements of
+different (homogeneous) parts. The key assumption with this approach is that the
+test units are homogenous, or that any signiﬁcant non-homogeneity can be modelled
+and removed from the analysis. An example of this approach is given in Benham
+(2002). De Mast and Trip (2005) discuss a variety of approaches and important
+assumptions associated with Gauge R&R studies in which measurements are
+destructive. Both of these papers include a handful of additional references taken
+from a relatively small literature on this topic.
+
+
+
+11.5 Sample Size and Allocation of Samples in Metrology
+     Experiments
+
+The expression for expanded uncertainty (Eq. 6.7)
+
+                                    U ¼ tp ðυeff Þuc ðyÞ                       ð11:12Þ
+
+consists of two terms that are both greatly affected by the choice of sample size and
+sample allocation in a measurement uncertainty study. The ﬁrst term is the multiplier
+tp(υeff), the p    100th percentile of the t-distribution with effective degrees of
+freedom υeff, often computed using the W-S approximation. The second term is
+the estimated combined standard uncertainty that is typically a combination of
+several Type A and Type B variance terms.
+   The GUM provides little guidance regarding how to choose an appropriate
+sample size and how to allocate those samples in a measurement experiment. This
+section presents simple approaches to determining the effect of sample size and
+sample allocation on the value of tp(υeff) and the precision in uc( y). The results
+provide objective criteria for assessing the relative value of a given sample size and
+allocation. These criteria can be used to determine a desirable sample size for most of
+the measurement experiments described in this book.
+   The impact of the degrees of freedom υeff on the multiplier tp(υeff), and hence on
+the expanded uncertainty, is easy to demonstrate graphically. For a 95% conﬁdence
+interval, the value of t95(υeff) is shown as a function of υeff in Fig. 11.6.
+11.6   Summary of Sample Size Recommendations                                       291
+
+
+judgement, we believe the relative uncertainty will rarely be greater than 20% (0.20),
+resulting in υB no less than 12.5. Using this conservative lower bound for the Type B
+degrees of freedom will not by itself decrease the overall υeff to an unacceptable level
+if the experiment has been properly designed.
+    The second approach discussed in the GUM (G.4.3) is to set the Type B degrees
+of freedom equal to +1. The GUM justiﬁes this assumption by claiming it is
+equivalent to choosing a conservatively wide interval for the Type B uncertainty.
+If +1 is used, however, the effective degrees of freedom υeff will be artiﬁcially
+inﬂated whenever the Type B uncertainty term dominates the combined standard
+uncertainty. As an example, suppose uA( y) ¼ 1 with degrees of freedom υA and
+uB( y) ¼ 2 with degrees of freedom υB ¼ + 1. Applying the W-S approximation,
+
+                                                       2
+                                            12 þ 22
+                                  υeff ¼
+                                            14    24
+                                            υA þ þ1
+
+                                            ð5Þ2
+                                        ¼
+                                             1
+                                             υA
+
+                                       ¼ 25υA :                                ð11:22Þ
+
+   Setting the Type B degrees of freedom to +1 in this simple example signiﬁcantly
+increases the effective degrees of freedom, exaggerating the actual amount of
+information obtained from the measurement experiment.
+   Hall and Willink (2001) have written in greater detail regarding the performance
+of the W-S approximation in cases like this. They show that the W-S approximation
+does not perform well whenever uB( y) 2uA( y) and the Type B term is assigned
+inﬁnite degrees of freedom. When a Type B term dominates the combined standard
+uncertainty, the relative uncertainty approach (Eq. 11.21) should be used to assign
+Type B degrees of freedom. Assigning degrees of freedom +1 should only be done
+with caution, taking into account the impact on the total effective degrees of
+freedom.
+
+
+
+
+11.6 Summary of Sample Size Recommendations
+
+Based on the demonstrated effect of sample size on the value of tp(υeff) and on the
+precision of the estimate uc( y), a reasonable goal for a measurement uncertainty
+study is to achieve Type A effective degrees of freedom (υA, eff) in the 20 to 30 range,
+with υA, eff ¼ 15 as minimally acceptable. Allocating the number of tests to each
+variable in the measurement equation based on the value of the individual uncer-
+tainties (the ui( y)0s) can be used to optimize υA, eff. Properly assigning degrees of
+freedom to each Type B term via Eq. (11.21) will result in acceptable yet realistic
+values for both vB, eff and the overall υeff. This is assured by the relationship
+292                                                      11 Special Topics in Metrology
+
+
+                     min vA,eff , vB,eff   υeff    vA,eff þ vB,eff ,
+
+where vA, eff and vB, eff are the effective degrees of freedom obtained from Type A and
+Type B uncertainty evaluations, respectively. These guidelines can be applied to
+sample size selection for basic uncertainty analyses (Chap. 6), test plans for factorial
+designs and ANOVAs (Chap. 9), and test plans for curve ﬁtting (Chap. 10). Fig-
+ures 11.6, 11.7, and 11.8 can also be used to investigate the increase in uncertainty
+associated with much smaller sample sizes than recommended here.
+
+
+
+
+11.7 Bayesian Analysis in Metrology
+
+The purpose of this section is to introduce the Bayesian approach to uncertainty
+analysis and to provide references for further study.
+    Since the publication of the GUM in 1995, Bayesian analysis has appeared
+regularly in the literature as an alternative to the classical frequentist uncertainty
+analysis emphasized in the GUM. The goal of a Bayesian uncertainty analysis is to
+incorporate prior belief regarding the unknown quantities of interest into the analy-
+sis. Experimental data is used to update the prior belief distribution to form a post-
+experiment, or posterior belief distribution about the unknown quantities. While the
+frequentist approach views the measurand as an unknown constant that is estimated
+from experimental data, the Bayesian approach views the measurand as a random
+variable whose distribution is derived from both prior knowledge and
+experimental data.
+    Prior knowledge is ideally available in the form of what is called an informative
+prior distribution. An informative prior can be developed from expert opinion,
+previous experimentation, or even from a previously derived posterior distribution.
+It is a distribution that reﬂects available knowledge prior to the collection of new
+data. When little or no prior information is available, Bayesian analysis may still be
+performed using what is called a noninformative prior. Noninformative priors are
+often taken to be simple constant values on the entire real line, although there is no
+universally agreed upon way to choose such a prior (Berger 1985, 2006). These
+priors are improper priors in that they cannot be normalized to integrate to one, a
+characteristic of proper probability density functions. This type of prior provides no
+information regarding the measurand or inputs to a measurement equation. A
+noninformative prior is used in the case of no prior information to preserve the
+mathematical framework of the Bayesian approach. Although the prior is improper,
+the resulting posterior distribution is proper.
+    A simple example of Bayesian inference for a normal distribution with known
+variance illustrates how the prior, sampling distribution (likelihood), and posterior
+distributions are related. Assume that a single measurement (x) is normally distrib-
+uted with sampling distribution f(x| μ, σ 2), and that the prior distribution for the
+measurand μ is also normal with PDF p μjμ0 , σ 20 . Because the sampling distribution
+296                                                             11 Special Topics in Metrology
+
+
+
+
+Fig. 11.9 Comparison of prior, likelihood, and posterior distributions
+
+distribution will be a “weighted average” of the prior distribution, based on prior
+belief, and the sampling distribution, based on the measurement data. The weights
+given to the two distributions will depend on both the precision of the prior belief
+regarding the measurand, and the precision of the measurement data.
+   Lira and Grientschig (2010) present an assessment of Bayesian analysis in
+metrology and include several tutorial examples. The prior distribution is explained
+as a “state-of-knowledge” distribution carrying prior information about any supple-
+mentary and any input variables, before any data have been collected. The informa-
+tion provided by the measurement data is expressed in the form of a sampling
+distribution, and the resultant posterior distribution is expressed as proportional to
+the product of these two distributions. For measurement equations with even a few
+input quantities, the posterior distribution must be determined by a combination of
+mathematical analysis and numerical integration, but the availability of numerical
+analysis software makes this approach feasible. Several realistic metrology examples
+are presented, and uncertainty analyses are performed using this approach. This
+paper also provides numerous references from the literature that demonstrate Bayes-
+ian analysis in metrology.
+
+
+
+11.8 Related Reading
+
+Statistical process control (SPC) is not formally covered in the JCGM’s guiding
+documents although the JCGM 100 (GUM, p. 7) states that “the use of check
+standards and control charts that can indicate if a measurement is under statistical
+control should be part of the effort to obtain reliable evaluations of uncertainty.”
+   Guidelines for applying SPC to measurement problems appear in a variety of
+discipline-speciﬁc standards and regulations. These documents include ASTM
+D6299 (analytical measurements), ASTM E882 (chemical analysis), and ASTM
+11.9   Exercises                                                                   299
+
+
+   Case studies applying Bayesian analysis to metrology problems appear in the
+National Institute of Standards (NIST) research library (https://www.nist.gov/nist-
+research-library) and in the metrology journals Metrologia, Measurement Science
+and Technology, and Measurement. The JCGM Working Group 1 News Note of
+May 4, 2019, states that JCGM 108, to be developed at a later time, will cover
+“Bayesian Methods.” No time frame was given for its development and release.
+While Bayesian analysis has not been presented in this book in detail, the authors
+recognize it as a promising methodology to use in measurement studies when
+important prior knowledge is available. We believe that as the methodologies are
+formalized for applications in metrology, and presented in JCGM guidelines, Bayes-
+ian analysis will move into the mainstream as a tool for practitioners of metrology.
+
+
+
+
+11.9 Exercises
+
+ 1. Give examples of both natural (“common cause”) and unnatural (“assignable
+    cause”) variations present in a measurement process.
+ 2. Construct a moving range (MR) chart for the “Ongoing Data” in Table 11.1.
+    What do these MR charts say about the measurement process stability?
+ 3. What is the difference between “statistical” signiﬁcance and “practical” signif-
+    icance when interpreting an out-of-control condition on a control chart?
+ 4. What is a binary measurement system? When might one be used?
+ 5. What is the difference between within-operator agreement and between-operator
+    agreement?
+ 6. Use the cross-tabulation matrix provided in Table 11.15 to calculate the
+    expected counts in each cell. Then calculate the between-operator proportion
+    of agreement and Cohen’s kappa value. Why might the Cohen’s kappa value be
+    advantageous over the between-operator proportion of agreement?
+ 7. What is the difference between the false positive rate and the false negative rate?
+    Which rate is worse?
+ 8. Table 11.16 gives the results from a study that was performed to assess
+    agreement and correctness in a BMS. In this study, three operators measured
+    20 parts each three times and provided a classiﬁcation of 1 (Pass) or 0 (Fail). A
+    GSS was available and used for all 20 parts.
+    Calculate the proportion of agreement within operators. What does this propor-
+    tion suggest? Next, calculate the proportion of agreement between operators.
+    How does this compare to the within-operator proportion of agreement?
+
+
+Table 11.15 Cross-                             Op. 2: Fail      Op. 2: Pass      Total
+tabulation matrix for two
+                             Op. 1: Fail       40               4                44
+operators
+                             Op. 1: Pass       12               120              132
+                             Total             52               124              176
+References                                                                                  301
+
+
+12. Assume that measurements of a counting process, X1, X2, . . ., Xn, are indepen-
+     dent and identically distributed (i.i.d.) Poisson (λ) (Eq. 4.10). What is the
+     likelihood function L(λ| x1, x2, . . ., xn) for λ, given these data? If a Gamma(α, β)
+     distribution is chosen as the prior for λ, what is the resulting posterior distribu-
+     tion for π(λ| x1, x2, . . ., xn)?
+                                                                               α
+    (Note: The Gamma prior distribution for λ has the form: pðλÞ ¼ ΓβðαÞ λα 1 e βλ .)
+    How would the posterior distribution for λ be used to construct a 95% uncer-
+    tainty interval?
+
+
+
+References
+
+ASME Y14.43: Dimensioning and Tolerancing Principles for Gages and Fixtures. (2011)
+ASTM D6299: Standard Practice for Applying Statistical Quality Assurance and Control Charting
+   Techniques to Evaluate Analytical Measurement System Performance. (2013)
+ASTM E882: Standard Guide for Accountability and Quality Control in the Chemical Analysis
+   Laboratory. (2016)
+ASTM MNL7: Manual on Presentation of Data and Control Chart Analysis. (2018)
+Benham, D.: Non-Replicable Gauge R&R Study. Automotive Industry Action Group (2002)
+Berger, J.: Statistical Decision Theory and Bayesian Analysis. Springer Series in Statistics.
+   Springer, New York (1985)
+Berger, J.: The case for objective Bayesian analysis. Bayesian Anal. 1, 385–402 (2006)
+Blackman, N.J.-M., Koval, J.J.: Interval estimation for Cohen's kappa as a measure of agreement.
+   Stat. Med. 19, 723–741 (2000)
+Boyles, R.A.: Gauge capability for pass-fail inspection. Technometrics. 43(2), 223–229 (2001)
+Cohen, J.: A coefﬁcient of agreement for nominal scales. Educ. Psychol. Meas. 20, 37–46 (1960)
+Crowder, S.V.: Computation of ARL for combined individual measurement and moving range
+   charts. J. Qual. Technol. 19(2), 98–102 (1987a)
+Crowder, S.V.: A simple method for studying run length distributions of exponentially weighted
+   moving average charts. Technometrics. 29(4), 401–407 (1987b)
+Crowder, S.V.: Design of exponentially weighted moving average schemes. J. Qual. Technol. 21
+   (2), 155–162 (1989)
+Crowder, S.: An introduction to the Bernoulli CUSUM. In: Proceedings of the IEEE Annual
+   Reliability and Maintainability Symposium, Orlando (2017)
+Danila, O., Steiner, S.H., McKay, R.J.: Assessing a binary measurement system. J. Qual. Technol.
+   40, 310–318 (2008)
+Danila, O., Steiner, S.H., McKay, R.J.: Assessment of a binary measurement system in current
+   use. J. Qual. Technol. 42, 152–164 (2010)
+Danila, O., Steiner, S.H., McKay, R.J.: Assessing a binary measurement system with varying
+   misclassiﬁcation rates using a latent class random effects model. J. Qual. Technol. 44,
+   179–191 (2012)
+Danila, O., Steiner, S.H., McKay, R.J.: Assessing a binary measurement system with varying
+   misclassiﬁcation rates when a gold standard is available. Technometrics. 55, 335–345 (2013)
+De Groot, M.: Optimal Statistical Decisions. McGraw-Hill, New York (1970)
+De Mast, J., Trip, A.: Gauge R&R studies for destructive measurement. J. Qual. Technol. 37(1),
+   40–49 (2005)
+De Vor, R., Chang, T., Sutherland, J.: Statistical Quality Design and Control: Contemporary
+   Concepts and Methods, 2nd edn. Pearson/Prentice Hall, Upper Saddle River (2007)
+Down, M., Czubak, F., Gruska, G., Stahley, S., Benham, D.: Measurement Systems Analysis
+   Reference Manual. Automotive Industry Action Group, Detroit (2010)
+

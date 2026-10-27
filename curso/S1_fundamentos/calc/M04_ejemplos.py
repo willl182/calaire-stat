@@ -20,7 +20,8 @@ def show(name, **values):
         print(f"{key}={value}")
 
 
-# B: inferencia de una media (unidad independiente asumida: jornada/ciclo).
+# B: una pareja por jornada, ocho jornadas de un único nivel nominal.
+# Errores iid normales; sin deriva ni componente común no modelado.
 n = len(error_level)
 mean = error_level.mean()
 s = error_level.std(ddof=1)
@@ -78,8 +79,18 @@ p_f = 2*min(stats.f.cdf(ratio, n1-1, n2-1), stats.f.sf(ratio, n1-1, n2-1))
 show("I_F", razon=ratio, gl=(n1-1, n2-1), IC95_razon=(ratio/f_hi, ratio/f_lo),
      H0_razon=1, F=ratio, p=p_f, cuantiles=(f_lo, f_hi))
 
-# I: cálculo de potencia bilateral y n para efectos definidos (Cohen d).
+# I: aproximación normal y cálculo bilateral con t no central (Cohen d).
+# Media: d=delta/sigma; parejas: d=delta/sigma_delta (n cuenta parejas).
+# Grupos iguales: d=delta/sigma_comun; n cuenta observaciones POR GRUPO.
 alpha = 0.05
+power_target = 0.80
+z_alpha = stats.norm.ppf(1-alpha/2)
+z_power = stats.norm.ppf(power_target)
+n_normal_mean = ((z_alpha+z_power)/0.5)**2
+n_normal_groups = 2*((z_alpha+z_power)/0.8)**2
+show("I_aproximacion_normal", alpha=alpha, potencia_objetivo=power_target,
+     z_bilateral=z_alpha, z_potencia=z_power,
+     n_media_o_pares=n_normal_mean, n_por_grupo=n_normal_groups)
 power_solver = TTestPower()
 ind_solver = TTestIndPower()
 for label, effect, nobs in [("media", 0.5, 16), ("pareadas", 0.5, 16)]:
@@ -108,13 +119,21 @@ show("I_incertidumbre_s", s=s, gl=df, u_s_aprox=u_s,
 no = len(outlier)
 mean_o = outlier.mean()
 s_o = outlier.std(ddof=1)
-g = max(abs(outlier-mean_o))/s_o
-gcrit = 2.22  # tabla de Grubbs para n=8 y nivel 0,99.
+# Extremo alto declarado: convención unilateral de la tabla 2.11 de Otto.
+g = (outlier.max()-mean_o)/s_o
+gcrit = 2.22  # n=8, 1-alpha=0,99, alpha=0,01; no es bilateral al 1 %.
+alpha_outlier = 0.01
+t_g_one = stats.t.ppf(1-alpha_outlier/no, no-2)
+t_g_two = stats.t.ppf(1-alpha_outlier/(2*no), no-2)
+gcrit_one = (no-1)/sqrt(no)*sqrt(t_g_one**2/(no-2+t_g_one**2))
+gcrit_two = (no-1)/sqrt(no)*sqrt(t_g_two**2/(no-2+t_g_two**2))
 sorted_outlier = np.sort(outlier)
 q_dixon = (sorted_outlier[-1]-sorted_outlier[-2])/(sorted_outlier[-1]-sorted_outlier[0])
 qcrit = 0.59  # tabla de Dixon para n=8 y nivel 0,99.
 show("I_atipicos", datos=outlier.tolist(), n=no, media=mean_o, s=s_o,
-     G=g, Gcrit= gcrit, Q_Dixon=q_dixon, Qcrit_Dixon=qcrit)
+     G=g, Gcrit_tabla_unilateral=gcrit, Gcrit_unilateral_calculado=gcrit_one,
+     Gcrit_bilateral_calculado=gcrit_two, alpha=alpha_outlier,
+     Q_Dixon=q_dixon, Qcrit_Dixon=qcrit)
 
 # A: Bonferroni para tres contrastes bilaterales y comparación con valores p.
 family_p = np.array([0.012, 0.031, 0.20])
@@ -127,7 +146,7 @@ show("A_multiplicidad", p=family_p.tolist(), m=m, alpha_familiar=alpha_family,
      rechazos=(bonf_adjusted <= alpha_family).tolist())
 
 # A: equivalencia TOST en un ejemplo de una media; margen fijado antes de ver datos.
-margin = 0.5
+margin = 0.3  # mismo margen didáctico, prefijado para comparar B y A
 mean_eq = 0.08
 s_eq = 0.4
 n_eq = 20
@@ -154,3 +173,39 @@ p_consistency=stats.chi2.sf(q_consistency,df_consistency)
 show("A_consistencia", residuos=residual.tolist(), u=standard_uncertainty.tolist(),
      chi2=q_consistency, gl=df_consistency, critico_95=crit_consistency,
      p=p_consistency, compatible=(q_consistency<=crit_consistency))
+
+# Misma regla TOST al 5 % y mismo margen para B y A: no cambiar cobertura.
+b_ci90 = (mean-stats.t.ppf(.95, df)*se, mean+stats.t.ppf(.95, df)*se)
+b_p_lower = stats.t.sf((mean+margin)/se, df)
+b_p_upper = stats.t.cdf((mean-margin)/se, df)
+show("A_comparacion_con_B", margen=(-margin, margin), IC90_B=b_ci90,
+     p_inferior_B=b_p_lower, p_superior_B=b_p_upper,
+     equivalente_B=(b_p_lower<.05 and b_p_upper<.05))
+
+# Comprobaciones mediante API alternativas de SciPy y statsmodels.
+assert np.isclose(tstat, stats.ttest_1samp(error_level, 0).statistic)
+assert np.isclose(p_pair, stats.ttest_rel(paired_a, paired_b).pvalue)
+assert np.isclose(p_w, stats.ttest_ind(welch_a, welch_b, equal_var=False).pvalue)
+assert np.isclose(gcrit, round(gcrit_one, 2))
+assert p_lower < .05 and p_upper < .05
+assert b_p_lower >= .05 or b_p_upper >= .05
+assert np.isclose(n_normal_mean, 31.3955189374)
+assert np.isclose(n_normal_groups, 24.5277491698)
+# Recálculo independiente: ambas colas de t no central con SciPy.
+for effect, size, degrees, expected in [
+        (0.5, 16, 15, power),
+        (0.5, needed, needed-1, power_target),
+        (0.8, 12/2, 22, power_groups),
+        (0.8, n_groups/2, 2*n_groups-2, power_target)]:
+    critical = stats.t.ppf(1-alpha/2, degrees)
+    noncentrality = effect*sqrt(size)
+    independent_power = (stats.nct.cdf(-critical, degrees, noncentrality)
+                         + stats.nct.sf(critical, degrees, noncentrality))
+    assert np.isclose(independent_power, expected, atol=1e-7)
+assert power_solver.power(.5, 34, alpha) >= .80
+assert power_solver.power(.5, 33, alpha) < .80
+assert ind_solver.power(.8, 26, alpha, ratio=1) >= .80
+assert ind_solver.power(.8, 25, alpha, ratio=1) < .80
+assert np.isclose(q_consistency, residual @ np.linalg.solve(
+    np.diag(standard_uncertainty**2), residual))
+print("comprobaciones_M04=OK")

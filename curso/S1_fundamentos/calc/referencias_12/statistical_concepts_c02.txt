@@ -1,0 +1,401 @@
+2
+Data Representation
+
+
+
+
+Chapter Outline
+2.1 Tabular Display of Distributions
+    2.1.1 Frequency Distributions
+    2.1.2 Cumulative Frequency Distributions
+    2.1.3 Relative Frequency Distributions
+    2.1.4 Cumulative Relative Frequency Distributions
+2.2 Graphical Display of Distributions
+    2.2.1 Bar Graph
+    2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+    2.2.5 Shapes of Frequency Distributions
+    2.2.6 Stem-and-Leaf Display
+2.3 Percentiles
+    2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+2.4 Recommendations Based on Measurement Scale
+2.5 Computing Tables, Graphs, and More Using SPSS
+    2.5.1 Introduction to SPSS
+    2.5.2 Frequencies
+    2.5.3 Graphs
+2.6 Computing Tables, Graphs, and More Using R
+    2.6.1 Introduction to R
+    2.6.2 Frequencies
+    2.6.3 Graphs
+2.7 Research Question Template and Example Write-Up
+2.8 Additional Resources
+
+
+
+
+                                                        25
+26                                                         Statistical Concepts: A First Course
+
+
+
+
+Key Concepts
+     1. Frequencies, cumulative frequencies, relative frequencies, and cumulative relative
+        frequencies
+     2. Ungrouped and grouped frequency distributions
+     3. Sample size
+     4. Real limits and intervals
+     5. Frequency polygons
+     6. Normal, symmetric, and skewed frequency distributions
+     7. Percentiles, quartiles, and percentile ranks
+
+In the rst chapter we introduced the wonderful world of statistics. We discussed the value
+of statistics, met a few of the more well-known statisticians, and de ned several basic sta-
+tistical concepts, including population, parameter, sample, statistic, descriptive and infer-
+ential statistics, types of variables, and scales of measurement. In this chapter we begin
+our examination of descriptive statistics, which we previously de ned as techniques that
+allow us to tabulate, summarize, and depict a collection of data in an abbreviated fashion.
+We used the example of collecting data from 100,000 graduate students on various char-
+acteristics (e.g., height, weight, sex, grade point average, aptitude test scores). Rather than
+having to carry around the entire collection of data in order to respond to questions, we
+mentioned that you could summarize the data in an abbreviated fashion through the use
+of tables and graphs. This way we could communicate features of the data through a few
+tables or gures without having to carry around the entire dataset.
+   This chapter deals with the details of the construction of tables and gures for purposes
+of describing data. Speci cally, we rst consider the following types of tables: frequency
+distributions (ungrouped and grouped), cumulative frequency distributions, relative fre-
+quency distributions, and cumulative relative frequency distributions. Next we look at the
+following types of gures: bar graphs, histograms, frequency polygons (or line graphs),
+cumulative frequency polygons, and stem-and-leaf displays. We also discuss common
+shapes of frequency distributions. Then we examine the use of percentiles, quartiles, per-
+centile ranks, and box-and-whisker plots. Finally, we look at the use of SPSS and R and
+develop an APA-style paragraph of results. Concepts to be discussed include frequen-
+cies, cumulative frequencies, relative frequencies, and cumulative relative frequencies;
+ungrouped and grouped frequency distributions; sample size; real limits and intervals;
+frequency polygons; normal, symmetric, and skewed frequency distributions; and per-
+centiles, quartiles and percentile ranks. Our objectives are that by the end of this chapter,
+you will be able to (a) construct and interpret statistical tables, (b) construct and interpret
+statistical graphs, and (c) determine and interpret percentile-related information.
+
+
+
+
+2.1 Tabular Display of Distributions
+Throughout this text, we will be following a group of superbly talented, creative, and
+energetic graduate research assistants (Challie Lenge, Ott Lier, Addie Venture, and Oso
+Wyse) working in their institution’s statistics and research lab, fondly known as CASTLE
+32                                                           Statistical Concepts: A First Course
+
+
+
+in an interval relative to the total sample. Thus, rather than stating that ve individuals
+had scores in the 17 interval, we could say that 20% of the scores were in that interval. In
+the popular press, relative frequencies are quite often reported in tables without the fre-
+quencies (e.g., “56% of voters agreed with . . . ”). Note that the sum of the relative frequen-
+cies should be 1.00 (or 100%) within rounding error. Also note that the relative frequency
+distribution can be used with variables of all measurement scales, from nominal (e.g., the percent
+of children with blue eye color) to ratio (e.g., the percent of adults who are 5′7″).
+
+
+2.1.4 Cumulative Relative Frequency Distributions
+A fourth and nal type of frequency distribution is known as the cumulative relative fre-
+quency distribution. For the example data this is depicted in the fth column of Table 2.2
+and labeled as “crf .” The number of cumulative relative frequencies (crf ) for a particular
+interval is the percentage of scores in that interval and smaller. Thus, the 9 interval has a rel-
+ative frequency of .04, and there are no relative frequencies smaller than that interval, so
+the cumulative relative frequency is simply .04. The 10 interval has a relative frequency of
+.04 and the relative frequencies less than that interval are .04, so the cumulative relative
+frequency is .08. The 11 interval has a relative frequency of .08 and the relative frequencies
+less than that interval total .08, so the cumulative relative frequency is .16. Thus, 16% of
+the people had scores in the 11 interval and smaller. In other words, 16% of people scored 11
+or less. One way to think about determining the cumulative relative frequency column is
+to take the relative frequency column and accumulate downward (i.e., from the top down,
+yielding .04; .04 + .04 = .08; .04 + .04 + .08 = .16; etc.). Just as a check, the crf in the larg-
+est interval should be equal to 1.0, within rounding error, just as the sum of the relative
+frequencies is equal to 1.0. Also note that the cumulative relative frequency distribution
+can be used with variables of measurement scales from ordinal (e.g., the percent of stu-
+dents receiving a B or less) to interval and ratio (e.g., the percent of adults who are 5′7″ or
+shorter). As with relative frequency distributions, cumulative relative frequency distribu-
+tions cannot be used with nominal data.
+
+
+
+
+2.2 Graphical Display of Distributions
+In this section we consider several types of graphs for viewing a distribution of scores.
+Again, we are still interested in how the data for a single variable can be represented,
+but now in a graphical display rather than a tabular display. The methods described here
+include the bar graph; histogram; frequency, relative frequency, cumulative frequency and
+cumulative relative frequency polygons (or line graphs); and stem-and-leaf display. Com-
+mon shapes of distributions will also be discussed.
+
+
+2.2.1 Bar Graph
+A popular method used for displaying nominal scale data in graphical form is the bar
+graph. As an example, say that we have data on the eye color of a sample of 20 children.
+Ten children are blue-eyed, six are brown-eyed, three are green-eyed, and one is black-
+eyed. Note that this is a discrete variable rather than a continuous variable. A bar graph for
+Data Representation                                                                             39
+
+
+
+
+2.3 Percentiles
+In this section we consider several concepts and the necessary computations for the area
+of percentiles, including percentiles, quartiles, percentile ranks, and the box-and-whisker
+plot. For instance, you might be interested in determining what percentage of the distribu-
+tion of the GRE-Quantitative subtest fell below a score of 165 or in what score divides the
+distribution of the GRE-Quantitative subtest into two equal halves.
+
+
+2.3.1 Percentiles
+Let us de ne a percentile as that score below which a certain percentage of the distri-
+bution lies. For instance, you may be interested in that score below which 50% of the
+distribution of the GRE-Quantitative subscale lies. Say that this score is computed as 150;
+this would mean that 50% of the scores fell below a score of 150. Because percentiles are
+scores, they are continuous values, and can take on any value of those possible. The 30th
+percentile could be, for example, the score of 145. For notational purposes, a percentile
+will be known as Pi, where the i subscript denotes the particular percentile of interest,
+between 0 and 100. Thus the 30th percentile for the previous example would be denoted
+as P30 = 145.
+  Let us now consider how percentiles are computed. The formula for computing the Pi
+percentile is
+
+                                               (i% )(n) − cf 
+                                                              (w)
+                                  Pi = LRL +                  
+                                                    f
+                                                                
+
+
+where LRL is the lower real limit of the interval containing Pi, i% is the percentile desired
+(expressed as a proportion from 0 to 1), n is the sample size, cf is the cumulative frequency
+less than but not including the interval containing Pi (known as “cf below”), f is the fre-
+quency of the interval containing Pi, and w is the interval width.
+  As an example, consider computing the 25th percentile of our statistics quiz data. This
+would correspond to that score below which 25% of the distribution falls. For the example
+data in the form presented in Table 2.2, we can compute P25 as follows:
+
+                                               (i%)(n) − cf 
+                                                             (w)
+                                  Pi = LRL +                 
+                                                   f
+                                                               
+                                   (25%)(25) − 5 
+                                                  (1) = 12.5 + 0.625 = 13.125
+                    P25 = 12.5 +                  
+                                       2
+                                                    
+
+Conceptually, let us discuss how the equation works. First we have to determine what
+interval contains the percentile of interest. This is easily done by looking in the crf column
+of the frequency distribution for the interval that contains a crf of .25 somewhere within the
+interval. We see that for the 13 interval the crf = .28, which means that the interval spans a
+crf of .20 (the URL of the 12 interval) up to .28 (the URL of the 13 interval), and thus contains
+.25. The next largest interval of 14 takes us from a crf of .28 up to a crf of .32, and thus is too
+44                                                                  Statistical Concepts: A First Course
+
+
+
+
+2.4 Recommendations Based on Measurement Scale
+We cannot stress enough how important it is that you understand the measurement scale
+of the variable(s) with which you are working, as that will dictate what statistics can (and
+cannot) be computed using them. You will use the knowledge of measurement scale in
+every statistic that you compute. To help in this endeavor, we include Box 2.1 as a sum-
+mary of which data representation techniques are most appropriate for each type of mea-
+surement scale.
+
+
+
+
+     BOX 2.1 Appropriate Data Representation Techniques Given the Measurement Scale of the
+             Variable
+       Measurement Scale                       Tables                              Figures
+
+     Nominal                    Frequency distribution              Bar graph
+                                Relative frequency distribution
+     Ordinal, interval, or ratio Frequency distribution             Histogram
+                                Cumulative frequency distribution   Frequency polygon
+                                Relative frequency distribution     Relative frequency polygon
+                                Cumulative relative frequency       Cumulative frequency polygon
+                                distribution                        Cumulative relative frequency polygon
+                                                                    Stem-and-leaf display
+                                                                    Box-and-whisker plot
+
+
+
+
+2.5 Computing Tables, Graphs, and More Using SPSS
+The purpose of this section is to brie y consider applications of SPSS for the topics cov-
+ered in this chapter (including important screenshots). We will begin with a brief intro-
+duction to SPSS and then demonstrate SPSS procedures for generating frequencies and
+graphs.
+
+
+
+2.5.1 Introduction to SPSS
+Before we get into using SPSS, let’s go over a few basics. SPSS is one of the most common
+standard statistical software programs available. Among other nice features of SPSS is that
+it is user-friendly, particularly compared to many other standard statistical software. Most
+SPSS users take advantage of the point-and-click interface of SPSS, although you can also
+use syntax to run statistics in SPSS. While the graphical user interface makes generating
+statistics in SPSS pretty easy, you need to be aware of a few nuances when working with
+the program.
+Data Representation                                                                              57
+
+
+
+  Graphs can also be generated in SPSS using Chart Builder (click on “Graphs” in the top
+pulldown menu and then go to “Chart Builder”). This is an interactive tool that allows
+researchers to drag and drop variables and types of graphs (e.g., bar, line, boxplots, and
+more) to build the gure. On the right side, “Element Properties” and “Chart Appear-
+ance” provide researchers with aesthetic options. Should you not choose to use Chart
+Builder to create your graph, you still have the ability to adapt the look of your graph by
+double-clicking on the graph in your output. This will allow you to access Chart Editor
+and make aesthetic alterations to your gure.
+
+
+
+
+                                                                             Aesthetics can be
+                                                                              changed using
+                                                                                 ‘element
+                                                                              properties’ and
+                                                                                   ‘chart
+                                                                               appearance’
+
+
+
+
+                          Many different types of
+                          graphs can be created
+
+
+
+
+FIGURE 2.23
+Chart Builder.
+
+
+
+
+2.6 Computing Tables, Graphs, and More Using R
+2.6.1 Introduction to R
+The purpose of this section is to brie y consider applications of R for the topics covered in
+this chapter. We will begin with a brief introduction to R and then describe R procedures
+for frequencies and graphs.
+  R is a freely accessible open source software environment that operates on both Windows
+and Mac platforms. Open source means that anyone can contribute to the environment, and
+thus a plethora of exciting tools have been, and will continue to be, developed in R. We will
+interject here that we have a love–hate relationship with R. By being free and open source,
+R is broad and deep in terms of the tools available, with more being added almost daily.
+Additionally, the R community is unparalleled for the help and support offered to users.
+On the other hand, R does not operate in a point-and-click environment. Rather, R operates
+using command language and users have to write “scripts” (i.e., code or syntax) to tell R
+what to do, and R is very nicky in its prose. At this point, you may be asking: “Why in
+Data Representation                                                                          69
+
+
+
+
+2.7 Research Question Template and Example Write-Up
+Depending on the purpose of your research study, you may or may not write a research
+question that corresponds to your descriptive statistics. If the end result of your research
+paper is to present results from inferential statistics, it may be that your research ques-
+tions correspond only to those inferential questions, and thus no question is presented
+to represent the descriptive statistics. That is quite common. On the other hand, if the
+ultimate purpose of your research study is purely descriptive in nature, then writing
+one or more research questions that correspond to the descriptive statistics is not only
+entirely appropriate, but (in most cases) absolutely necessary. At this time, let us revisit our
+graduate research assistant, Addie Venture, who was introduced at the beginning of the
+chapter. As you may recall, her task was to summarize data from 25 students enrolled in
+Dr. Debhard’s statistics course. The questions that Addie developed based on consultation
+with Dr. Debhard included the following:
+
+   1. What interpretations can be made from the frequency table of quiz scores from
+      students enrolled in an introductory statistics class?
+   2. What interpretations can be made from graphical representations of quiz scores
+      from students enrolled in an introductory statistics class?
+   3. What is the distributional shape of the statistics quiz scores?
+   4. What is the 50th percentile of the quiz scores?
+
+A template for writing descriptive research questions for summarizing data follows. Note
+that these are just a few examples. Given the multitude of descriptive statistics that can be
+generated, these are not meant to be exhaustive:
+
+
+ What interpretations can be made from the table of [variable]? What interpretations
+ can be made from the graphical representation of [variable]? What is the distributional
+ shape of the [variable]? What is the 50th percentile of [variable]?
+
+
+  Next, we present an APA-like paragraph summarizing the results of the statistics quiz
+data example:
+
+
+ As shown in Table 2.2 and Figure 2.2, scores ranged from 9 to 20, with more stu-
+ dents achieving a score of 17 than any other score (20%). From Figure 2.2 we also
+ know that the distribution of scores was negatively skewed, with the bulk of the
+ scores being at the high end of the distribution. Skewness was also evident as the
+ quartiles were not equally spaced, as shown in Figure 2.7. Thus, overall the sample
+ of students tended to do rather well on this particular quiz, although a few low
+ scores should be troubling (as 20% did not pass the quiz and suggest the need for
+ some remediation).
+70                                                          Statistical Concepts: A First Course
+
+
+
+
+2.8 Additional Resources
+Throughout the chapter, we’ve shared a number of resources related to graphing. As you
+step into learning statistical software, a number of excellent tools are available to help you:
+
+     • An increasing number of books are available for learning R (e.g., Crawley, 2013;
+       Rahlf, 2017; Wickham & Grolemund, 2017). Wickham and Grolemund (2017) is also
+       available online at https://r4ds.had.co.nz.
+     • As mentioned in the text, the R user community is both large and immensely helpful.
+       The following websites are a few places you can start when you need R support:
+        R cookbook: www.cookbook-r.com
+        Datacamp: www.datacamp.com
+
+        Stackover ow: https://stackover ow.com/questions/tagged/r
+        Comprehensive R Archive Network (CRAN): https://cran.r-project.org
+
+        Learning R in R: https://swirlstats.com
+
+     • Discussion lists are one of the quickest ways to nd support; users of SPSS can join
+       the SPSS listserv to post questions or search the archives (https://listserv.uga.edu/
+       cgi-bin/wa?A0=SPSSX-L).
+
+
+
+
+Problems
+Conceptual Problems
+ 1.    For a distribution where the 50th percentile is 100, what is the percentile rank of 100?
+        a. 0
+       b. .50
+       c. 50
+       d. 100
+ 2.    Which of the following frequency distributions will generate the same relative fre-
+       quency distribution?
+
+                                  X     f     Y      f      Z      f
+
+                                 100    2    100      6    100     8
+                                  99    5     99     15     99    18
+                                  98    8     98     24     98    28
+                                  97    5     97     15     97    18
+                                  96    2     96      6     96     8
+
+        a. X and Y only
+       b. X and Z only
+       c. Y and Z only
+       d. X, Y, and Z
+        e. None of the above
+

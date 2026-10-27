@@ -1,0 +1,200 @@
+5
+Introduction to Probability and Sample Statistics
+
+
+
+
+Chapter Outline
+5.1 Brief Introduction to Probability
+    5.1.1 Importance of Probability
+    5.1.2 De nition of Probability
+    5.1.3 Intuition vs. Probability
+5.2 Sampling and Estimation
+    5.2.1 Simple Random Sampling
+    5.2.2 Estimation of Population Parameters and Sampling Distributions
+5.3 Additional Resources
+
+
+
+
+Key Concepts
+   1. Probability
+   2. Inferential statistics
+   3. Simple random sampling (with and without replacement)
+   4. Sampling distribution of the mean
+   5. Variance and standard error of the mean (sampling error)
+   6. Con dence intervals (point vs. interval estimation)
+   7. Central limit theorem
+
+In Chapter 4 we extended our discussion of descriptive statistics. We considered the fol-
+lowing three general topics: the normal distribution, standard scores, and skewness and
+kurtosis. In this chapter we begin to move from descriptive statistics into inferential statis-
+tics (in which normally distributed data plays a major role). The two basic topics described
+in this chapter are (a) probability and (b) sampling and estimation. First, as a brief intro-
+duction to probability, we discuss the importance of probability in statistics, de ne proba-
+bility in a conceptual and computational sense, and discuss the notion of intuition versus
+probability. Second, under sampling and estimation, we formally move into inferential
+statistics by considering the following topics: simple random sampling (and brie y other
+types of sampling), and estimation of population parameters and sampling distributions.
+Concepts to be discussed include probability, inferential statistics, simple random sam-
+pling (with and without replacement), sampling distribution of the mean, variance and
+
+                                                                                           153
+154                                                        Statistical Concepts: A First Course
+
+
+
+standard error of the mean (sampling error), con dence intervals (point vs. interval esti-
+mation), and central limit theorem. Our objectives are that by the end of this chapter, you
+will be able to (a) understand the most basic concepts of probability; (b) understand and
+conduct simple random sampling; and (c) understand, determine, and interpret the results
+from the estimation of population parameters via a sample.
+
+
+
+
+5.1 Brief Introduction to Probability
+The area of probability became important and began to be developed during the Middle
+Ages (17th and 18th centuries) when royalty and other well-to-do gamblers consulted with
+mathematicians for advice on games of chance. For example, in poker if you hold two
+jacks, what are your chances of drawing a third jack? Or in craps, what is the chance of
+rolling a 7 with two dice? During that time, probability was also used for more practical
+purposes, such as to help determine life expectancy to underwrite life insurance policies.
+Considerable development in probability has obviously taken place since that time. In
+this section, we discuss the importance of probability, provide a de nition of probability,
+and consider the notion of intuition versus probability. Although there is much more to
+the topic of probability, here we simply discuss those aspects of probability necessary for
+the remainder of the text. For additional information on probability, take a look at texts by
+Rudas (2004) or Tijms (2004).
+
+
+5.1.1 Importance of Probability
+Let us rst consider why probability is important in statistics. A researcher is out collect-
+ing some sample data from a group of individuals (e.g., students, parents, teachers, vot-
+ers, corporations, animals, etc.). Some descriptive statistics are generated from the sample
+data. Say the sample mean, X, is computed for several variables (e.g., number of hours of
+study time per week, grade point average, con dence in a political candidate, widget sales,
+animal food consumption). To what extent can we generalize from these sample statistics
+to their corresponding population parameters? For example, if the mean amount of study
+time per week for a given sample of graduate students is X = 10 hours, to what extent are
+we able to generalize to the population of graduate students on the value of the population
+mean, μ?
+  As we see, beginning in this chapter, inferential statistics involve making an inference
+about population parameters from sample statistics. We would like to know (a) how much
+uncertainty exists in our sample statistics, as well as (b) how much con dence to place in
+our sample statistics. These questions can be addressed by assigning a probability value
+to an inference. As we show beginning in Chapter 6, probability can also be used to make
+statements about areas under a distribution of scores (e.g., the normal distribution). First,
+however, we need to provide a de nition of probability.
+
+
+5.1.2 Definition of Probability
+In order to more easily de ne probability, consider a simple example of rolling a six-sided
+die (as there are dice with different numbers of sides). Each of the six sides, of course, has
+Probability and Sample Statistics                                                              157
+
+
+
+probability of tossing 10 consecutive heads, which is rather small (approximately .0010). So
+when you are gambling at the casino and have lost the last nine games, do not believe that
+you are guaranteed to win the next game. You can just as easily lose game 10 as you did
+game 1. The same goes if you have won a number of games. You can just as easily win the
+next game as you did game 1. To some extent, the casinos count on their customers playing
+the gambler’s fallacy to make a pro t.
+
+
+
+
+5.2 Sampling and Estimation
+In Chapter 3 we spent some time discussing sample statistics, including the measures of
+central tendency and dispersion. In this section we expand upon that discussion by de n-
+ing inferential statistics, describing different types of sampling, and then moving into the
+implications of such sampling in terms of estimation and sampling distributions.
+   Consider the situation where we have a population of graduate students. Population
+parameters (which are characteristics of a population) could be determined, such as the
+population size (N), the population mean (μ), the population variance (σ2), and the popu-
+lation standard deviation (σ). Through some method of sampling, we then take a sample of
+students from this population. Sample statistics, which are just characteristics of a sample,
+could be determined, such as the sample size (n), the sample mean ( X ), the sample vari-
+ance (s2), and the sample standard deviation (s).
+   How often do we actually ever deal with population data? Except when dealing with
+very small, well-de ned populations, we almost never deal with population data. (There
+are always exceptions; however, our experience dictates that it is almost always the case
+that we are working with sample data.) The main reason for this is cost, in terms of time,
+personnel, and economics. This means then that we are almost always dealing with sample data.
+With descriptive statistics, dealing with sample data is very straightforward, and we only
+need to make sure we are using the appropriate sample statistic equation. However, what
+if we want to take a sample statistic and make some generalization about its relevant popu-
+lation parameter? For example, you have computed a sample mean on grade point average
+(GPA) of X = 3.25 for a sample of 25 graduate students at State University. You would like
+to make some generalizations from this sample mean to the population mean (μ) at State
+University. How do we do this? To what extent can we make such a generalization? How
+con dent are we that this sample mean actually represents the population mean?
+   This brings us to the eld of inferential statistics. We de ne inferential statistics as statis-
+tics that allow us to make an inference or generalization from a sample to the population. In terms
+of reasoning, inductive reasoning is used to infer from the speci c (the sample) to the gen-
+eral (the population). Thus, inferential statistics is the answer to all of our preceding ques-
+tions about generalizing from sample statistics to population parameters. How the sample
+is derived, however, is important in determining to what extent the statistical results we
+derive can be inferred from the sample back to the population. Thus, it is important to
+spend a little time talking about simple random sampling, the only sampling procedure that
+directly allows generalizations to be made from the sample to the population. Although
+there are statistical means to correct for non-simple random samples, they are beyond the
+scope of this textbook. Researchers may wish to refer to references, such as Skinner, Holt,
+and Smith (1989). In the remainder of this section, and in much of the remainder of this text,
+we take up the details of inferential statistics for many different procedures.
+Probability and Sample Statistics                                                                                    165
+
+
+
+distribution is nonnormal, then this will have minimal effect on the sampling distribution of the
+mean except for rather small samples. This can come into play with inferential statistics when
+the assumption of normality is not satis ed, as we see in later chapters.
+
+
+
+
+5.3 Additional Resources
+This chapter is meant to serve as a concise and general introduction to probability, sam-
+pling, and related concepts. For readers who want more in-depth and comprehensive cov-
+erage, numerous superb references are available to assist in learning more about concepts
+introduced in this chapter. A number of these have already been cited. Additional resources
+you may wish to consider include the following:
+
+  • Probabilities in the context of everyday examples (Olofsson, 2007).
+  • A general introduction to probability and statistics (Kinney, 2015).
+  • An edited work that is a compilation of papers related to teaching and learning prob-
+    ability, valuable both to those teaching probability as well as those learning probabil-
+    ity (Batanero & Chernoff, 2018).
+
+
+
+
+Appendix 5.a: Probability That at Least Two Individuals
+Have the Same Birthday
+This probability can be shown by either of the following equations. Note that there are
+n = 23 individuals in the room. One method is as follows:
+             (365)( 364)( 363)…(365 − n + 1)          (365)( 364)( 363)…(343)
+                                                                               = .507
+         1 −                                  = 1 −                           
+                          365 n                               365  23
+                                                                                 
+
+An equivalent method is as follows:
+
+              365  364  363   365 − n + 1                                                      
+        1 −              …        = 1 −  365  364  363 … 343  = .507
+                                                    365  365  365   365 
+              365  365  365     365                                                      
+
+
+
+
+Problems
+Conceptual Problems
+ 1.   The standard error of the mean is which of the following?
+      a. Standard deviation of a sample distribution
+      b. Standard deviation of the population distribution
+      c. Standard deviation of the sampling distribution of the mean
+      d. Mean of the sampling distribution of the standard deviation
+

@@ -1,0 +1,184 @@
+
+== M09_ejemplos.py; rc=0
+VALIDACION ISO/TS 28037 cl. 10, Tablas 25-26: coincide dentro de atol=0.0002
+a=0.3424; b=1.0012; u(a)=2.0569; u(b)=0.0090; cov(a,b)=-0.0129; chi2=1.772
+
+B — diferencia independiente simulada
+y1=100.000000; y2=100.350000; Delta=y2-y1=0.350000 nmol/mol
+u1=0.200000; u2=0.150000; k=2.000000; U1=0.400000; U2=0.300000
+u(Delta)=0.250000000; denominator_En=0.500000000; E_n=0.700000000; abs(E_n)<=1: True
+
+I — diferencia con patrón compartido simulada
+u1=0.200000; u2=0.150000; u1^2=0.040000000; u2^2=0.022500000; cov12=0.018000 (nmol/mol)^2
+u(Delta)^2=0.026500000 (nmol/mol)^2; u(Delta)_independencia=0.250000000; u(Delta)_cov=0.162788206
+U(Delta)=k_delta*u(Delta), k_delta=2.000000: 0.325576412 nmol/mol
+termino expandido -2*k_delta^2*cov12=-0.144000000 (nmol/mol)^2
+covarianza positiva maxima admisible=0.030000 (nmol/mol)^2; u(Delta)=0.050000 nmol/mol
+I: R compartido u_R=0.15; c1=1.0; c2=0.8; var_ind1=0.017500; var_ind2=0.008100; cov=0.018000
+I: Delta=0.35; Delta/U(Delta)=1.075016454
+
+I — interpolacion con parametros simulados
+a=0.120000 nmol/mol; b=1.001000000; x0=200.000000 nmol/mol; interpolated_y=200.320000000; D=a+(b-1)*x0=0.320000000 nmol/mol
+u(a)=0.100000; u(b)=0.000500000; cov(a,b)=-0.000035000 nmol/mol
+variance_terms: a=0.010000000; b=0.010000000; covariance=-0.014000000 (nmol/mol)^2
+u(D)=0.077459667 nmol/mol; variance_D=0.006000000000 (nmol/mol)^2
+
+A — SRP 36/SRP 7, datos publicados y modelo adaptado
+n=12; orientation: x=SRP 7; y=SRP 36; u_common=0.002920000; V_xy=0
+a=-0.184237121 nmol/mol; b=0.998350748; u(a)=0.031189175; u(b)=0.004125035
+cov(a,b)=-3.83046347101e-06; chi2_obs=6.318259554; dof=10; chi2_95=18.307038053; CDF=0.212146646
+x0=80.0; D=-0.316177321 nmol/mol; u(D)=0.330547626 nmol/mol
+x0=420.0; D=-0.876923167 nmol/mol; u(D)=1.731866683 nmol/mol
+
+A — sensibilidad intraje, manteniendo V_xy=0
+sin componente comun: D420=-0.868043385; uD420=0.048853276; chi2=6.318456085
+
+A — grado de equivalencia SIMULADO frente a referencia comun BIPM-SRP27
+nominal=80.0; D=0.300000000; uD=0.250000000; U_D_k2=0.500000000
+nominal=420.0; D=0.800000000; uD=0.781024968; U_D_k2=1.562049935
+
+== M10_ejemplos.py; rc=0
+B: U, k, u = 1.2 2.0 0.6
+B: aceptar en [99.2,101.8]; rechazar y<96.8 o y>104.2
+B: y=100.0; intervalo=(98.8, 101.2); decisión=aceptar
+B: y=102.2; intervalo=(101.0, 103.4); decisión=zona de incertidumbre: retener/escalar
+B: y=106.0; intervalo=(104.8, 107.2); decisión=rechazar
+B: valor corregido x_hat=199.00 nmol/mol
+B: corrección aditiva x_hat-y=-6.00 nmol/mol
+I: lectura individual; sigma=1.5; U_prec=k*sigma=3.0 nmol/mol (contribución parcial)
+I: TUR=6.250; g=0.0; acceptance=[-10.0,10.0]
+I: theta=0.0; P_accept=1.00000000; P_reject=0.00000000
+I: theta=9.0; P_accept=0.89435023; P_reject=0.10564977
+I: theta=10.5; P_accept=0.26598553; P_reject=0.73401447
+I: TUR=6.250; g=1.0; acceptance=[-9.0,9.0]
+I: theta=0.0; P_accept=1.00000000; P_reject=0.00000000
+I: theta=9.0; P_accept=0.50000000; P_reject=0.50000000
+I: theta=10.5; P_accept=0.03039636; P_reject=0.96960364
+A: observado=9.5; P(theta conforme|y)=0.73466761; P(theta no conforme|y)=0.26533239
+A: prior=Uniform[-12,12], g=0.0; global_FA=0.02646254; global_FR=0.02659615
+A: prior=Uniform[-12,12], g=1.0; global_FA=0.00337106; global_FR=0.08670579
+A: bilateral; u=6.0; y=0.0; prior=Uniform[-12,12]; spec=[-10,10]
+A: P(theta<-10|y)=0.02623387; P(theta>10|y)=0.02623387; P(theta no conforme|y)=0.05246774
+A: two-sided spec=[-10.0,10.0], guard=1.0, theta=10.5
+A: mean_u_ind=0.56568542; mean_u_dep=0.74833148; cov=0.48000000
+A: independencia; P_FA_at_theta=0.00400497; P_reject_nonconforming_at_theta=0.99599503
+A: dependencia; P_FA_at_theta=0.02251044; P_reject_nonconforming_at_theta=0.97748956
+
+== M12_indicadores.py; rc=0
+Origen: ejemplos simulados; no son datos ni desempeño de CALAIRE.
+parejas B: audit=[100.0, 100.0, 100.0, 100.0]; meas=[98.0, 101.0, 99.0, 102.0]; errores=[-2.0, 1.0, -1.0, 2.0] nmol/mol
+cerca de cero: e=0.300000 nmol/mol; d=150.000000%; denominador cero: indefinido
+modelo común: u(media), n=2: 0.905539; n=8: 0.827647 puntos porcentuales
+d (%)=[-2.0, 1.0, -1.0, 2.0]; media(d)=0.000000%; media(|d|)=1.500000%; |media(d)|=0.000000%
+s(d)=1.825742%; SE media=0.912871%; IC bilateral 95% media=[-2.905163%, 2.905163%]; t_0.975,3=3.182446
+chi2_0.10,3=0.584374; CV/limite superior unilateral 90%=4.136704%
+AB=media(|d|)=1.500000%; AS=s(|d|)=0.577350%; t_0.95,3=2.353363; limite superior 95% sesgo absoluto=2.179358%
+escala monitor 1.010: d antes=1.000000%; d despues=2.010000%
+cero=[-0.2, -0.1, 0.0, 0.1, 0.2] nmol/mol; media=-0.000000; s0=0.158114 nmol/mol; 3*s0=0.474342 nmol/mol
+verificaciones agrupadas=[0.5, 1.5, 2.5, 3.5]%; medias de periodo=[1.0, 3.0]%; SE iid=0.645497%; SE de dos periodos=1.000000%
+componente común=0.800000%; promedio de dos=0.800000%; promedio de ocho=0.800000%
+
+== M09_M10_verificacion.py; rc=0
+VALIDACION ISO/TS 28037 cl. 10, Tablas 25-26: coincide dentro de atol=0.0002
+a=0.3424; b=1.0012; u(a)=2.0569; u(b)=0.0090; cov(a,b)=-0.0129; chi2=1.772
+GGMR common=0.0: perfil GLS independiente coincide; beta=[-0.18424376  0.99837191]; chi2=6.318456085
+GGMR common=0.00292: perfil GLS independiente coincide; beta=[-0.18423712  0.99835075]; chi2=6.318259554
+GGMR: rechaza asimetría, dimensiones erróneas, NaN, varianzas negativas y x constante
+M09: covarianza construida, normalización y grados de equivalencia simulados comprobados
+M10: g=0, globales por orden inverso FA=0.0264625429, FR=0.0265961520
+M10: g=1, globales por orden inverso FA=0.0033710558, FR=0.0867057912
+M09: tres marcadores de práctica y etiquetas de acotación permitidas
+M10: tres marcadores de práctica y etiquetas de acotación permitidas
+FUENTE BIPM.QM-K1_2.protocol.pdf; SHA256=ed867739347ddadaefd3614948f9e6d6446ca15e9850ff9f807f26f4f336a577; páginas extraídas=25
+FUENTE BS EN ISO_IEC 17025_2017.pdf; SHA256=72a1cabc3557d1c2b48b5113a8e7a817cd34f433565fc237392d9ee51f86501c; páginas extraídas=38
+FUENTE ISO 28037.pdf; SHA256=07569e54db23c7163584be69d962e8923cb5cf5c4c09982ba4bea1a0ea315cb5; páginas extraídas=72
+FUENTE ISO 6143 2001.pdf; SHA256=2f29c008b592d12781f64bc548f7efc44734862f8841bc4b53cd9b7c703eae92; páginas extraídas=40
+FUENTE ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf; SHA256=8e0546d0e77412a3b39fcbfb2f85d052369aad1a8ba9e1cc6d4a38f9f6db7b2e; páginas extraídas=130
+FUENTE asq_metrological_handbook_c30.pdf; SHA256=f606b9f7da56271370ed4bc66c3786ea1cb4bf1a0a9bb2813fd3414f7ec7ae20; páginas extraídas=4
+FUENTE intro_stats_metro_c05.pdf; SHA256=06dae0b845ff40621637f674498e891708d6e6544fcb3038ba88dec09ec2249f; páginas extraídas=11
+FUENTE metrology_measure_uncer_c08.pdf; SHA256=f8ba8f62513df4c0607919263a17b13c1817efbb9227d2317615127e48036b3f; páginas extraídas=17
+FUENTE o3_tad_508_20230906_final.pdf; SHA256=eeba74ebb65d021e91c1e758ebf30408b56d2b7cbf7c374749fb779a4b8ca3f4; páginas extraídas=79
+FUENTE srp_qapp.pdf; SHA256=2961ba763ab352fdb8232417c36832e002349c5210edd8d887b7071d1f814dc1; páginas extraídas=55
+FUENTE srp_sop.pdf; SHA256=8e7a270ebcaa4d5fecd5cc0773669e852d49557600aec7ecc06df11eece653b5; páginas extraídas=65
+FUENTE JCGM106 oficial; SHA256=ba029f2b71cb3123ad8d6043814f6c70096e5ac35e28715b74b1bbc0d2eee87f
+OK: todos los contrastes y comprobaciones pasaron
+
+== S3_verificar_ficha.py; rc=0
+I-MR centro: 0.00016
+I LIC: -0.0009705
+I LSC: 0.0012905
+MR LSC: 0.001388475
+M12 precisión 90 %: 4.136703735091946
+M12 sesgo absoluto 95 %: 2.1793575062919275
+M12 semianchura IC bilateral 95 %: 2.905162715754765
+M12 cero 3s0: 0.4743416490252569
+M11 riesgo deriva día 60: 0.0003945566872609004
+
+== S3_verificar_entrega.py; rc=0
+M09_libreto.md: 6 escenas; 3 marcadores; niveles y etiquetas conformes
+M10_libreto.md: 6 escenas; 3 marcadores; niveles y etiquetas conformes
+M11_libreto.md: 8 escenas; 3 marcadores; niveles y etiquetas conformes
+M12_libreto.md: 9 escenas; 3 marcadores; niveles y etiquetas conformes
+Total: 12 prácticas pendientes, sin desarrollar en este control estructural.
+Este control no sustituye la revisión semántica de contenido y referencias.
+
+== S3_revision_opus_recalculo.py; rc=0
+== M09
+OK  B u(Δ): calculado=0.25; libreto=0.25
+OK  B E_n: calculado=0.7; libreto=0.7
+OK  B cobertura k=2 (%): calculado=95.4499736; libreto=95.45
+OK  I u(Δ) con cov=c1c2u²(R): calculado=0.162788206; libreto=0.1628
+OK  I Δ/U(Δ): calculado=1.07501645; libreto=1.075
+OK  I cov límite u1u2 -> u(Δ): calculado=0.05; libreto=0.05
+OK  I u(D) interpolación: calculado=0.0774596669; libreto=0.07746
+OK  A cuantil chi2 0,95;10: calculado=18.3070381; libreto=18.307
+OK  A GGMR a: calculado=-0.184237121; libreto=-0.184237
+OK  A GGMR b: calculado=0.998350748; libreto=0.998350748
+OK  A GGMR u(a): calculado=0.0311891749; libreto=0.031189
+OK  A GGMR u(b): calculado=0.0041250349; libreto=0.004125035
+OK  A GGMR cov(a,b): calculado=-3.83046159e-06; libreto=-3.83046e-06
+OK  A GGMR chi2: calculado=6.31825955; libreto=6.3183
+OK  A D(80): calculado=-0.316177272; libreto=-0.316177
+OK  A u(D(80)): calculado=0.330547626; libreto=0.330548
+OK  A D(420): calculado=-0.87692291; libreto=-0.876923
+OK  A u(D(420)): calculado=1.73186668; libreto=1.731867
+OK  A sensibilidad u(D420) sin común: calculado=0.0488532763; libreto=0.048853
+OK  A sensibilidad chi2 sin común: calculado=6.31845609; libreto=6.318456
+OK  A GoE u(D) 420: calculado=0.781024968; libreto=0.781025
+== M10
+OK  I P(rechazo|θ=9, g=0): calculado=0.105649774; libreto=0.10564977
+OK  I P(acept|θ=10,5, g=0): calculado=0.265985529; libreto=0.26598553
+OK  I P(acept|θ=10,5, g=1): calculado=0.0303963618; libreto=0.03039636
+OK  A P(conforme|y=9,5): calculado=0.734667609; libreto=0.73466761
+OK  A global FA g=0: calculado=0.0264625429; libreto=0.02646254
+OK  A global FR g=0: calculado=0.026596152; libreto=0.02659615
+OK  A global FA g=1: calculado=0.00337105583; libreto=0.00337106
+OK  A global FR g=1: calculado=0.0867057912; libreto=0.08670579
+OK  A u(media) dep: calculado=0.748331477; libreto=0.74833148
+OK  A P_FA indep: calculado=0.00400497116; libreto=0.00400497
+OK  A P_FA dep: calculado=0.0225104405; libreto=0.02251044
+OK  B x̂ cero/span: calculado=199; libreto=199.0
+== M11
+OK  B LSC I: calculado=0.00129031915; libreto=0.0012905
+OK  B LSC I (2,66): calculado=0.0012905; libreto=0.0012905
+OK  B LSC MR: calculado=0.001388475; libreto=0.0013885
+OK  I pendiente: calculado=0.00302380952; libreto=0.003024
+OK  I se pendiente: calculado=9.22138892e-05; libreto=9.22e-05
+OK  I p: calculado=4.95673469e-07; libreto=4.96e-07
+OK  I IP futuro 120 sup: calculado=0.492994168; libreto=0.493
+OK  I u_uso: calculado=0.0228571429; libreto=0.02286
+   (info) autocorrelación lag-1 de residuos de deriva: r1=-0.5472; Durbin-Watson=2.9095
+OK  A límite EWMA t=2: calculado=0.691537418; libreto=0.6915
+OK  A primera alarma EWMA serie de unos: calculado=11; libreto=11
+OK  A MC EWMA falsa alarma (otra semilla): calculado=0.19867; libreto=0.19909
+OK  A MC CUSUM falsa alarma (otra semilla): calculado=0.09288; libreto=0.09177
+OK  A riesgo 60 d: calculado=0.000394361902; libreto=0.00039456
+== M12
+OK  I L90: calculado=4.13670374; libreto=4.1367
+OK  I L95 AB: calculado=2.17935751; libreto=2.1794
+OK  I IC media: calculado=2.90516272; libreto=2.9052
+OK  I 3s0: calculado=0.474341649; libreto=0.4743
+OK  A SE iid: calculado=0.645497224; libreto=0.6455
+OK  A SE periodos: calculado=1; libreto=1.0
+OK  A u(media) n=8: calculado=0.827647268; libreto=0.8276
+TODOS OK

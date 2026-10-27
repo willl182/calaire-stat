@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproduce the illustrative arithmetic used in M01."""
 
-from math import log
+from math import isclose, log
 
 # Illustrative indicated and reference values, in nmol/mol.
 x_ref = 420.0
@@ -77,3 +77,25 @@ print(f"sensitivity_alpha={sensitivity_alpha:.9f} nmol/mol per (atm^-1 cm^-1)")
 for level, result, err, relative in zip(scale_levels, scaled_results, scale_errors, relative_errors):
     print(f"scale x={level:.6f}: y={result:.6f}; e={err:.6f} nmol/mol; e/x={100 * relative:.6f} %")
 print(f"shared example: Y1={result_1:.6f}; Y2={result_2:.6f}; delta={difference:.6f} nmol/mol")
+
+# Re-scale only the indication, or both members of the original pair.
+error_y_only = scale_factor * y_ind - x_ref
+error_both = scale_factor * (y_ind - x_ref)
+relative_both = error_both / (scale_factor * x_ref)
+print(f"scale y only: e={error_y_only:.8f} nmol/mol")
+print(f"scale x and y: e={error_both:.8f} nmol/mol; e/x={100 * relative_both:.9f} %")
+assert isclose(relative_both, error / x_ref, rel_tol=1e-12)
+assert isclose(concentration_new / concentration_old, alpha_ratio, rel_tol=1e-12)
+assert isclose(difference, specific_1 - specific_2, abs_tol=1e-12)
+assert isclose(error + additive_correction, 0.0, abs_tol=1e-12)
+
+# The shared input cancels only for equal sensitivities.
+for shared_input in (2.0, 3.0):
+    first = shared_input + specific_1
+    equal_second = shared_input + specific_2
+    unequal_second = 0.8 * shared_input + specific_2
+    print(f"shared S={shared_input:.1f}: Y1={first:.6f}; "
+          f"Y2 equal={equal_second:.6f}; delta equal={first - equal_second:.6f}; "
+          f"Y2 unequal={unequal_second:.6f}; delta unequal={first - unequal_second:.6f} nmol/mol")
+    assert isclose(first - equal_second, 0.4, abs_tol=1e-12)
+    assert isclose(first - unequal_second, 0.2 * shared_input + 0.4, abs_tol=1e-12)

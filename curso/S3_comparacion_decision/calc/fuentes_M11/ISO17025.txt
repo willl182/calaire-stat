@@ -1,0 +1,119 @@
+                                                                                BS EN ISO/IEC 17025:2017
+                                                                                      ISO 17025:2017(E)
+                                                                                                        ﻿
+
+
+before proceeding and shall record the results of this consultation. When the customer requires the
+item to be tested or calibrated acknowledging a deviation from specified conditions, the laboratory shall
+include a disclaimer in the report indicating which results may be affected by the deviation.
+
+7.4.4 When items need to be stored or conditioned under specified environmental conditions, these
+conditions shall be maintained, monitored and recorded.
+
+7.5 Technical records
+
+7.5.1 The laboratory shall ensure that technical records for each laboratory activity contain the
+results, report and sufficient information to facilitate, if possible, identification of factors affecting
+the measurement result and its associated measurement uncertainty and enable the repetition of the
+laboratory activity under conditions as close as possible to the original. The technical records shall
+include the date and the identity of personnel responsible for each laboratory activity and for checking
+data and results. Original observations, data and calculations shall be recorded at the time they are made
+and shall be identifiable with the specific task.
+
+7.5.2 The laboratory shall ensure that amendments to technical records can be tracked to previous
+versions or to original observations. Both the original and amended data and files shall be retained,
+including the date of alteration, an indication of the altered aspects and the personnel responsible for the
+alterations.
+
+7.6 Evaluation of measurement uncertainty
+
+7.6.1 Laboratories shall identify the contributions to measurement uncertainty. When evaluating
+measurement uncertainty, all contributions that are of significance, including those arising from
+sampling, shall be taken into account using appropriate methods of analysis.
+
+7.6.2 A laboratory performing calibrations, including of its own equipment, shall evaluate the
+measurement uncertainty for all calibrations.
+
+7.6.3 A laboratory performing testing shall evaluate measurement uncertainty. Where the test method
+precludes rigorous evaluation of measurement uncertainty, an estimation shall be made based on an
+understanding of the theoretical principles or practical experience of the performance of the method.
+NOTE 1    In those cases where a well-recognized test method specifies limits to the values of the major sources
+of measurement uncertainty and specifies the form of presentation of the calculated results, the laboratory is
+considered to have satisfied 7.6.3 by following the test method and reporting instructions.
+
+NOTE 2      For a particular method where the measurement uncertainty of the results has been established and
+verified, there is no need to evaluate measurement uncertainty for each result if the laboratory can demonstrate
+that the identified critical influencing factors are under control.
+
+NOTE 3      For further information, see ISO/IEC Guide 98‑3, ISO 21748 and the ISO 5725 series.
+
+7.7 Ensuring the validity of results
+
+7.7.1 The laboratory shall have a procedure for monitoring the validity of results. The resulting data
+shall be recorded in such a way that trends are detectable and, where practicable, statistical techniques
+shall be applied to review the results. This monitoring shall be planned and reviewed and shall include,
+where appropriate, but not be limited to:
+
+a)   use of reference materials or quality control materials;
+b) use of alternative instrumentation that has been calibrated to provide traceable results;
+c)   functional check(s) of measuring and testing equipment;
+
+© ISO/IEC 2017 – All rights reserved                   ﻿                                                    13
+BS EN ISO/IEC 17025:2017
+ISO 17025:2017(E)
+﻿
+
+
+d) use of check or working standards with control charts, where applicable;
+e)    intermediate checks on measuring equipment;
+f)    replicate tests or calibrations using the same or different methods;
+g) retesting or recalibration of retained items;
+h) correlation of results for different characteristics of an item;
+i)    review of reported results;
+j)    intralaboratory comparisons;
+k) testing of blind sample(s).
+
+7.7.2 The laboratory shall monitor its performance by comparison with results of other laboratories,
+where available and appropriate. This monitoring shall be planned and reviewed and shall include, but
+not be limited to, either or both of the following:
+
+a)    participation in proficiency testing;
+      NOTE        ISO/IEC 17043 contains additional information on proficiency tests and proficiency testing
+      providers. Proficiency testing providers that meet the requirements of ISO/IEC 17043 are considered to
+      be competent.
+
+b) participation in interlaboratory comparisons other than proficiency testing.
+
+7.7.3 Data from monitoring activities shall be analysed, used to control and, if applicable, improve
+the laboratory's activities. If the results of the analysis of data from monitoring activities are found
+to be outside pre-defined criteria, appropriate action shall be taken to prevent incorrect results from
+being reported.
+
+7.8 Reporting of results
+
+7.8.1     General
+
+7.8.1.1    The results shall be reviewed and authorized prior to release.
+
+7.8.1.2 The results shall be provided accurately, clearly, unambiguously and objectively, usually in
+a report (e.g. a test report or a calibration certificate or report of sampling), and shall include all the
+information agreed with the customer and necessary for the interpretation of the results and all
+information required by the method used. All issued reports shall be retained as technical records.
+NOTE 1      For the purposes of this document, test reports and calibration certificates are sometimes referred to
+as test certificates and calibration reports, respectively.
+
+NOTE 2    Reports can be issued as hard copies or by electronic means, provided that the requirements of this
+document are met.
+
+7.8.1.3 When agreed with the customer, the results may be reported in a simplified way. Any
+information listed in 7.8.2 to 7.8.7 that is not reported to the customer shall be readily available.
+
+7.8.2     Common requirements for reports (test, calibration or sampling)
+
+7.8.2.1 Each report shall include at least the following information, unless the laboratory has valid
+reasons for not doing so, thereby minimizing any possibility of misunderstanding or misuse:
+
+a)    a title (e.g. “Test Report”, “Calibration Certificate” or “Report of Sampling”);
+
+14                                                     ﻿                       © ISO/IEC 2017 – All rights reserved
+

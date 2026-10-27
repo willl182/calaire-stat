@@ -6,7 +6,12 @@ from scipy.stats import chi2, t
 
 def main():
     # Diferencias porcentuales firmadas de cuatro verificaciones simuladas.
-    d = np.array([-2.0, 1.0, -1.0, 2.0])
+    audit_b = np.full(4, 100.0)
+    meas_b = np.array([98.0, 101.0, 99.0, 102.0])
+    errors_b = meas_b - audit_b
+    d = errors_b / audit_b * 100
+    near_zero_error = 0.50 - 0.20
+    near_zero_percent = near_zero_error / 0.20 * 100
     n = d.size
     dbar = float(np.mean(d))
     abs_mean = float(np.mean(np.abs(d)))
@@ -48,7 +53,33 @@ def main():
     common_mean_n2 = float(np.mean([common, common]))
     common_mean_n8 = float(np.mean([common] * 8))
 
+    # Modelo de covarianza declarado; unidades: puntos porcentuales al cuadrado.
+    uc, ur = 0.8, 0.6
+    aggregate_u = {}
+    for count in (2, 8):
+        covariance = uc**2 * np.ones((count, count)) + ur**2 * np.eye(count)
+        weights = np.full(count, 1.0 / count)
+        variance_matrix = float(weights @ covariance @ weights)
+        variance_components = uc**2 + ur**2 / count
+        assert np.all(np.linalg.eigvalsh(covariance) > 0)
+        assert np.isclose(variance_matrix, variance_components)
+        aggregate_u[count] = np.sqrt(variance_matrix)
+
+    assert np.allclose(d, [-2, 1, -1, 2])
+    assert np.isclose(near_zero_percent, 150)
+    assert np.isclose(s_d**2, 10 / 3)
+    assert np.isclose(abs_mean, 1.5)
+    assert np.isclose(mean_abs, 0)
+    assert np.isclose(cv_upper90, 4.136704, atol=5e-7)
+    assert np.isclose(bias_upper95, 2.179358, atol=5e-7)
+    assert np.isclose(d_after, 2.01)
+    assert np.isclose(period_se, 1)
+    assert np.allclose([common_mean_n2, common_mean_n8], common)
+
     print("Origen: ejemplos simulados; no son datos ni desempeño de CALAIRE.")
+    print(f"parejas B: audit={audit_b.tolist()}; meas={meas_b.tolist()}; errores={errors_b.tolist()} nmol/mol")
+    print(f"cerca de cero: e={near_zero_error:.6f} nmol/mol; d={near_zero_percent:.6f}%; denominador cero: indefinido")
+    print(f"modelo común: u(media), n=2: {aggregate_u[2]:.6f}; n=8: {aggregate_u[8]:.6f} puntos porcentuales")
     print(f"d (%)={d.tolist()}; media(d)={dbar:.6f}%; media(|d|)={abs_mean:.6f}%; |media(d)|={mean_abs:.6f}%")
     print(f"s(d)={s_d:.6f}%; SE media={se_mean:.6f}%; IC bilateral 95% media=[{mean_ci[0]:.6f}%, {mean_ci[1]:.6f}%]; t_0.975,3={t975:.6f}")
     print(f"chi2_0.10,3={q10:.6f}; CV/limite superior unilateral 90%={cv_upper90:.6f}%")

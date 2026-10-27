@@ -1,0 +1,511 @@
+Journul      of Atmospheric           Chemistry      15: 145-155,           1992.                                                      145
+0 1992       Kluwer    Academic          Publishers.       Printed        in the Netherlands.
+
+
+
+
+Ozone UV Spectroscopy I: Absorption
+Cross-Sections at Room Temperature
+D. DAUMONT,            J. BRION,     J. CHARBONNIER,                                        and J. MALICET
+Laboratoire   de Chimie Physique,    Groupe   de Spectrome’trie                           Moltkulaire   et AtmosphPriqae,       URA
+01434, Faculk    des Sciences,   BP 347, 51062 Reims Cedex,                              France
+
+
+(Received:       23 July      1991;      in final   form:     13 February       1992)
+
+
+Abstract.     Because  of the importance     of the absorption       cross-sections    of ozone in the atmosphere.       we
+give a new set of data at ambient        temperature    for the whole spectral         region within the 195-345        nm
+range. Two new methods         have been investigated      for the experiments       to measure     the ozone pressures.
+Our results are compared       with all of the previous     data. The agreement        between  the more recent works
+is relatively   good and can be improved        by making      some corrections     in the WMO        set. The new refer-
+ence value at 254 nm proposed          by Mauersberger       et al. is confirmed    and we suggest taking it as a new
+standard.
+
+Key words:        Ozone,       Huggins        and   Hartley      bands,     absorption        cross-sections,   concentration    measure-
+ments.
+
+
+
+
+1. Introduction
+Ozone is indisputably a minor atmospheric constituent which plays a major role in
+the physico-chemistry of the atmosphere.
+   It is involved in the direct attenuation of solar irradiance, especially in the UV
+wavelength range where the Huggins and Hartley bands are Iocated. In this region
+(d < 350 nm), the absorption cross-section values are so great that the major part
+of the abiotic solar radiation is absorbed.
+    Ozone is also involved in different photodissociation     processes related to the
+production of atomic oxygen, such as
+
+          o,+izv-o,+o.                                                                                                                  (1)
+     This photolysis reaction performed with short wavelength radiations (3, < 310
+nm) is particularly important because of the production of 0( ‘D) radicals. These
+radicals interact themselves with such molecules as H,O, CH,, hydrocarbons, and
+produce OH radicals which influence all the atmospheric chemistry.
+     In order to study these processes, the knowledge of the absorption cross-section
+values is of major importance. Indeed, these parameters are directly used to deter-
+mine the rate of the photodissociation      and to estimate the solar fluxes at various
+altitudes by atmospheric transmittance calculations (Nicolet et al., 1985). They are
+also used by the ground-based and satellite remote sensing networks to measure
+the total amount of atmospheric ozone as well as its concentration profiles.
+146                                                               D. DAUMONT    ET   AL.
+
+
+    In each case, an accurate knowledge of the absorption cross-sections in all
+tropospheric and stratospheric temperature ranges is essential. For these reasons, a
+large number of experimental determinations of the ozone absorption cross-sec-
+tions have been performed by different groups. The first were those realised by Inn
+and Tanaka (19.53), Vigroux (1953, 1967), Hearn (1961), Griggs (1968). A com-
+parison of the results shows that discrepancies exist between these sets of measure-
+ments; the major reason for the differences is due to the difficulty in measuring the
+ozone concentration with accuracy.
+   Two other sets of measurements with better accuracy have been published more
+recently: Bass and Paur (1984) determined the relative absorption cross-sections in
+the 245-340 nm range and estimated the absolute values by means of the refer-
+ence proposed by Hearn (1961): (o= 114.7 x lOpi9 cm2 at 254 nm and 295 K).
+These values are now recommended by &MO/NASA.             Molina and Molina (1986)
+proposed absolute absorption cross-sections in the 190-350 nm range. In the over-
+lap wavelength region, these measurements show a relatively good agreement
+(within 2 or 3%). Nevertheless, recent mass spectroscopy measurements by
+Mauersberger et aZ. (1987) showed that the reference value chosen by Bass and
+Paur (1984) is about 1% too high.
+   Moreover, some small shifts in the wavelengths are observed between the two
+sets of data in the range of the Huggins bands where the vibrational structure is
+observed.
+   In addition, Yoshino et al. (1988) gave measurements at several discrete wave-
+lengths corresponding to the mercury lines in the 238-335 nm region. Therefore,
+we have decided to begin new work on this study in order to extend the comparison
+with Molina’s data down to 195 nm and to give some answers to the two problems
+mentioned above.
+
+
+2. Experimental      Techniques
+In this paper, a critical analysis of the experimental techniques used in the previous
+studies is made and we describe two new experimental techniques to measure
+ozone absorption cross-sections.
+
+
+2.1. Determination   of the Ozone Concentration
+As stated in the first section, the analysis of the discrepancies between the available
+sets of data shows that the major reason for these differences results from the diffi-
+culty in measuring the ozone concentration in the absorption cell. This difficulty is
+mostly imputable to the unstable nature of ozone which decomposes into molecu-
+lar oxygen by thermal or photochemical processes. It must be pointed out that the
+differences between the temperatures used by different authors (Vigroux: 18 “C,
+Molina and Molina, Bass and Paur: 25 C, Inn and Tanaka: 27 “C and Griggs:
+30 “C) are of minor impact.
+OZONE     UV SPECTROSCOPY   I                                                   147
+
+   To measure ozone concentrations,    some five different methods have been pro-
+posed:
+
+   (a) The chemical proportioning used by Vigroux (1953,1967)      which consists in
+the sampling of iodine (12) produced by the reaction:
+
+     0, + 21- + H,O -+ I, + 0, + 20H-.                                           (2)
+
+This kind of determination is imprecise and no longer used today (De More and
+Patapoff, 1976).
+    (b) The technique described by Griggs (1968) which is based on the pure
+preparation of 0,. Owing to the low variation of pressure in the cell, the ozone
+decomposition is assumed to be negligible. Measurement of ozone concentration is
+then a simple measurement of the total pressure.
+    This technique has also been used by Inn and Tanaka (1953). Nevertheless, they
+improved this method by introducing a purity coefficient of 92 & 3%. The mean
+value of this coefficient is determined by chemical sampling. The questionable
+point is that it is impossible to confirm the mean purity coefficient by any other
+technique than the chemical one.
+    Another version of this method is also proposed by Molina and Molina (1986)
+and Yoshino et al. (1988) who also worked with pure ozone. After ozonization,
+ozone is trapped at the temperature of liquid nitrogen and the remaining molecular
+oxygen is pumped out.
+    For all these methods, the critical point concerns the decomposition of ozone
+which is not taken into account during the measurements and has to remain low
+enough to be neglected.
+    (c) The method used by Hearn (1961) who determined the absorption cross-
+section by measuring the optical density variation (dD) as a function of the evolu-
+tion of total pressure (dP,) according to the relation
+
+        *=-x- dD   RT
+            dP,    2LN
+where I is the optical path, JV the Avogadro number, R the perfect gas constant,
+and T the absolute temperature (K).
+    This technique takes into accunt the spontaneous decomposition of ozone into
+molecular oxygen for which the absorption cross-sections (oo2) are negligible in the
+studied wavelength range. As mentioned by Hearn himself, the following assump-
+tions have to be verified:
+
+  - the absorption coefficients do not vary with pressure,
+  - reactions do not occur at the walls of the cell (adsorption or desorption),
+  - absence of impurities like grease or nitrogen oxides which are immediately
+    oxidized by ozone, and then cause significant errors.
+148                                                             D. DAUMONT    ET AL.
+
+
+    Owing to additional precautions (Quartz cell, pressure range in a ratio 5 to l),
+the above-mentioned conditions seem to be verified and the ozone cross-section
+values determined by this method are probably within the limit of accuracy (0.5 to
+2%) given by the author.
+   However, this method is only applicable for measurements at fixed wavelengths,
+but not for a large wavelength range. Moreover, it must be used with care because a
+small deviation from the above conditions induces a large error on the absorption
+cross-section values.
+    (d) Bass and Paur (1984) used a technique providing relative values of the
+cross-sections; it has the advantage of being independent of the determination of
+the ozone concentration and of its decomposition during the scanning.
+   In their experiment, the absorbances at each wavelength and at the 254 nm
+reference wavelength are simultaneously measured and compared. The reference
+value is a value proposed by Hearn (1961) (0 = 114.7 f 2.4 x lo-l9 cm”) at the
+wavelength of the mercury line (A = 254 nm). Since then, Mauersberger et at.
+(1987) have shown that this value must be reduced (0 = 113.6 rt 0.5 X lo-l9 cm’).
+The major problem of this technique is that it must use an external value in order to
+calibrate the spectrum.
+    (e) Mauersberger et al. (1987) determined the partial pressure of ozone by
+simultaneously measuring the composition of the mixture (0,/O,)           with mass
+spectroscopy techniques and the total pressure of the gaseous system with a cali-
+brated pressure sensor. The method is precise but involves relatively heavy technol-
+ogy and is limited to measurements at some specified wavelengths.
+
+
+2.2. New Methods
+(a) Continuous pressure measurements (method 1)
+In this method, developed in our laboratory, the amount of spontaneously decom-
+posed ozone is continuously controlled and the partial pressure pox is known at
+each time of recording.
+   According to the decomposition reaction
+
+      20, --*30,,                                                                 (4)
+
+the partial pressure of ozone at constant temperature   and volume is given by the
+simple expression
+
+      PO,   = 21(POJi   -   PTI,
+
+where (po,), is the initial pressure of oxygen used to prepare ozone and PT is the
+total pressure of the gaseous system (0, + 0,).
+    The absorption cross-sections are directly calculated
+OZONE   UV SPECTROSCOPY     I                                                     149
+
+
+                                                                                   (6)
+
+
+    The comparison of (6) with expression (3) proposed by Hearn (1961), shows
+that the two relations are equivalent, Hearn’s formulation being deduced from (6)
+by a derivation.
+    This analogy implies that the conditions mentioned by Hearn should be also
+verified in our technique. For that reason, we have used an absorption cell in
+quartz, well known for its chemical stability. In addition, we have performed our
+measurements with monochromatic        light in order to limit the photodissociation
+and then the production of the extremely reactive O’D radicals. To controle the
+absence of secondary reactions, the total pressure was measured after the entire
+decomposition of ozone; after several days, it was verified that this pressure was
+exactly the same as the initial pressure of the oxygen introduced before ozoniza-
+tion. Moreover, Fourier transform infrared measurements have shown that impuri-
+ties such as H,O, CO, CO,, and NzO, in our case, are negligible.
+    The main advantage of this method is to know continuously the partial pressure
+of ozone, separately from its decomposition ratio during the time of a wavelength
+scanning. This simple method was used to allow recordings over the whole wave-
+length range. We also point out that a slightly variant version of our method has
+been used since then by Cacciani et al. (1989). These authors used a similar expres-
+sion for the determination of the partial ozone pressure, but in their calculations,
+the initial pressure is deduced by extrapolation at the time t = 0 from the kinetics
+equation.
+
+(b) Limit vuporpressure or Dew point method (method 2)
+To confirm the results obtained by the above method, we have used a second
+method involving a completely independent procedure (Malicet et al., 1989). It is
+based on the determination by Mauersberger et al. (1985) of the ozone vapor
+pressure near the normal boiling temperature of liquid argon (-185.9 “C). For this
+experiment, a reservoir of liquid ozone is kept at the temperature of liquid argon
+during the measurements. The liquid argon bath is continuously shaken and the
+device is carefully insulated to avoid any temperature gradient. Thus, the vapor
+pressure depends only on the temperature of the bath.
+    Because of the very high variation of the vapor pressure with respect to tempera-
+ture, a very precise determination of the temperature is requested. Therefore, for
+the temperature measurements, a Pt 100 sensor, sensitive up to l/100 “C, has been
+calibrated with a primary standard. Moreover, we have controlled, with precision,
+the temperature of the bath so that it was exactly the same as that of boiling argon
+at atmospheric pressure in the laboratory. Under these conditions, the precision of
+the temperature measurement is estimated to be within 0.02 “C, leading to an
+uncertainty on the ozone pressure A In po3 = 0.6%. Since the difference of the
+temperatures in the ozonisor (87 K) and in the cell (295 K) is large, we also verified
+150                                                              D. DAUMONT     ET AL.
+
+
+that the thermodynamic     conditions for the pressure equilibrium (Poulter et al.,
+1983) was satisfied. For this, calculations over the whole range of temperature and
+pressure showed that the mean free path of the ozone molecules is smaller than the
+diameter of the tube connecting the reservoir and the cell.
+   Under these conditions, the pressure of the ozone is constant during the experi-
+ment and independent of the temperature of the cell. The disadvantage of the
+method is that the vapor pressure of ozone is low (= 4.05 X lop2 Torr) so that this
+method can be only used for measurements of high-value absorption cross-sections
+((T = 10-17 cm* for an optical path of 1 m). Thus, the comparison between the
+results of the two new methods was restricted to a range near the maximum of the
+Hartley band at 254 nm.
+
+
+2.3. Experimental   Device
+As mentioned above, monochromatic         light has been used in the two types of
+experiments, in order to limit the photodissociation process producing very active
+O(iD) radicals which can affect the chemical budget.
+    The spectrometer is a 1.5 m Czerny Turner type monochromater          (THR 1500
+Jobin-Yvon) equipped with a 2400 lines/mm grating. According to the spectral
+range, it is coupled with either a premonochromator      (Amici Prism - REOSC) or
+an interferential narrow band filter. Under these conditions, diffusion light is negli-
+gible.
+    Measurements are performed by a Hamamatsu R929 photomultiplier                tube
+connected to a microcomputer for the acquisition of the data.
+    For the wavelengths below 300 nm, a stabilized deuterium lamp is used as the
+continuous source; for the higher wavelengths, the continuum is provided by a
+controlled tungsten lamp.
+    The wavelength calibration in air is obtained by the reference lines of an iron
+hollow cathode and mercury and cadmium lamps. The precision is better than
+0.005 nm.
+    The temperature of the cell is controlled by a regulation system involving the
+circulation of methanol around the cell at a fixed value (295 K). The stability is of
+the order of 0.05 degree and the temperature control unit gives a precision of 0.02
+degree on the measurements.
+    The pressures which need to be measured with a high degree of accuracy, since
+they allow the determination of the ozone concentrations, are obtained by a capaci-
+tance manometer (MKS Baratron) precalibrated and regularly compared with a
+high precision mercury barometer.
+    Cross-sections have been measured in a serie of 15 nm adjacent regions with a 5
+nm overlap. For each region, 10 scans have been made under the experimental con-
+ditions summarized in Table I.
+OZONE      UV SPECTROSCOPY              I                                                             151
+
+        Table I.    Summary of the experimental conditions
+
+        T(K)           Spectra1 range         Tube length       Ozone pressure
+                       (‘4                    (4                (Torr)
+
+        295            195-335                3.285 + 0.001     (l-600)
+        295            320-350                81.50 + 0.05      (20-200)
+
+
+
+
+3. Results         and Discussion
+3.1. Shape of the Spectrum
+
+The absorption spectrum of ozone in the UV region (Figure 1) shows a large con-
+tinuum from 200 to 350 with a maximum near 250 nm (Hartley band) on which
+some small diffuse ondulations spaced by approximately 200 cm-’ can be seen. At
+the higher wavelengths (310-350 nm), the spectrum is dominated by more intense
+but also diffuse vibrational bands corresponding to the Huggins bands.
+    New measurements based on the method of the continuous pressure measure-
+ments (method I) have been obtained at room temperature for the entire 195-345
+nm range, by steps of 0.01 nm. They extend and slightly change the values of a pre-
+liminary work (Malicet et al., 1984). A complete set of data containing all the
+values is available on floppy disk in MS-DOS format and can be obtained on
+request from the authors.
+    According to Table II, given the detailed error budget, the accuracy of the mea-
+surements is about l-l.%     in the Hartley band and l-3% in the Huggins bands.
+
+
+
+
+    I
+          2110                              250                      300                         350 X(nm!
+                                                                                                        t
+
+
+                 Fig. 1. Absorption     cross-sections of 0; in the Hartley and Huggins bands.
+152                                                                    D. DAUMONT   ET AL.
+
+
+      Table II.     Analysis of the errors
+
+      Optical path                           0.05%
+      Ozone pressure                         0.1%
+      Temperature                            0.02%
+      Absorbance (d < 335 nm)                1%
+      Impurities                             <O.l%
+      Wavelength                             o-0.05%    Hartley Band
+      (An = 0.005 nm)                        O-0.8%     Huggins Band
+         Total error                         1.3%       Hartley Band
+                                             1.3-2.5%   Huggins Band
+      Random errors (RMS)                    0.9-2.2%
+
+
+
+
+3.2. Comparison of the Results
+Before comparing our results with those of other authors, we critically controlled
+the internal consistency of our results. For this, experimental conditions were
+varied, such as the partial pressures of ozone (within the ratio 1 to 20) and the opti-
+cal path (3.3 and 80 cm). Under these different conditions, the results were shown
+to be in good agreement, the difference remaining below the uncertainty values (1
+to 2%).
+   But the major test to verify the quality of our values was to compare the results
+obtained near the maximum of absorption by methods 1 and 2.
+   At the mercury line wavelength (2 = 254 nm), the value ~(0,) measured by
+method 1 was found to be
+
+      o(0,)       = (113.0, * 1.1) X lo-r9 cm2.
+
+This is in very good agreement (0.4%) with the value determined           by means of the
+dew point technique (method 2):
+
+      ~$0,) = (112.6 k 2.0) X lo-l9 cm2.
+
+   These values are also in close agreement (<OS%) with the value recently pro-
+posed by Mauersberger et al. (1987) at the same reference wavelength, by means
+of the mass-spectrometry technique:
+
+      o(0,)       = (113.6 + 0.5) X lo-l9 cm*.
+
+Table III gives a comparison of the values obtained by different authors at the
+mercury wavelengths.
+   Finally, we compared our results over the wavelength range 195-345 nm with
+the recently published data of Molina and Molina (190-350 nm) (1986) and of
+Bass and Paur (245-340 nm) (1984). This led to the following conclusions:
+OZONE     UV SPECTROSCOPY          I                                                           153
+
+     Table III.   Absorption    cross-sections at the mercury wavelengths
+
+     10% 1)           Present           Molina          Bass                Yoshino   Mean values
+     (nm)             work              and             and                           f RMS
+                                        Molina          Pam”
+
+     253.65            113.05           115.7                               114.5
+     289.36            15.13            15.40            14.87              14.88     15.07 + 0.25
+                                                                                      (1.7%)
+        296.73        6.146             6.229            6.0 1              5.97      6.09 2 0.12
+                                                                                      (2.0%)
+     302.15           2.985             3.027            2.91               2.91      2.958 310.057
+                                                                                      (1.9%)
+        334.15        4.658             4.460            4.66               4.37      4.54 f 0.14
+                      x 10-z            x 10-2           x 10-Z             x 10-J    (3%) x lo-’
+
+     ’ Renormalized    on the Mauersberger Reference at 253.65 (a = 113.6 x lo-‘” cm’).
+
+
+
+
+1. Comparison with the data of Molina and Molina
+   - For wavelengths lower than 225 nm, our results and those of Molina and
+     Molina (1986) are within 1%. This agreement shows that the values of Inn
+     and Tanaka (1953) still used in the modelling calculations, and lower by
+     between 3 and 7% than ours, are inaccurate (Figure 2). This is important,
+     since very few measurements are available in this region corresponding to the
+     ‘atmospheric optical window’ centered at 210 nm.
+   - For longer wavelengths (A > 225 nm), small differences are observed, the
+     values proposed by Molina and Molina (1986) being, on average, 1 to 3%
+     greater than ours. Some greater discrepancies (4 to 6%) are locally observed
+     for wavelengths above 325 nm where the absorption cross-section values are
+     very low (CJ< 0.1 X lo-l9 cm”) and where the accuracy of the measurements
+     become smaller; however the mean differences remain in the order of 2%.
+
+2. Comparison with the values ofBass and Paur
+A first investigation clearly shows a discrepancy in the wavelength calibration
+between our work and that of Bass and Paur (1984). In the region of the Huggins
+bands, shifts of up to 0.05 nm are observed in the structure of the bands (Figure 3).
+This is also confirmed by the data of Molina and Molina which are red shifted
+(from 0.04 to 0.06 nm) compared to the data of Bass and Paur.
+    As for the values of the cross-sections, they are compared at the minima and the
+maxima of absorption. The values of Bass and Paur are slightly higher than ours (0
+to 2%). However, these values are relative values, referred to the standard value at
+254 nm (o. = 114.7 X lo-l9 cmz). Taking account of the new value obtained by
+Mauersberger et al. (1987) at this wavelength ( CJ= 113.6 X lo-l9 cm2) to normalize
+the results of Bass and Paur, the two sets of measurements now agree within 1%;
+this is in the limit of the experimental uncertainties.
+154                                                                                                                            D. DAUMONT           ET AL
+
+
+
+isigma         (lo-19   Cm*2)                  absorption          cross-sections              between         1950      and    2083    angstroms
+
+
+
+
+                                                   -               Present   work
+                                                   ---             Molina
+                                                         e         Inn etlanako
+
+
+
+
+l-l!
+I
+i-
+     Fig. 2.      Comparison           of the 0,   cross-section         values        available
+                                                                                                              -__
+
+                                                                                                         in the 210 nm atmospheric
+                                                                                                                                           Angstroms
+
+                                                                                                                                                window.
+
+
+
+ sigma         (lo-19   Cm-21                  absorption          cross-sections              between         3200      and     3249   angstroms
+
+
+
+
+                                                                                                   -           Present     work
+                                                                                                   ---         Molino
+
+
+
+
+I                                                                                                                                           Angstroms
+                                                                                                                                                            1
+                                Fig.     3.   Observed       wavelength             shifts   in the Huggins           bands.
+OZONE          UV SPECTROSCOPY                      I                                                                                                   155
+
+4. Conclusion
+Owing to the measurements performed on the basis of our two new methods, a
+complete and coherent set of data is proposed for the absorption cross-sections of
+ozone at ambient temperature between 195 and 350 nm.
+   The agreement between the three sets of data, ours, those of Bass and Paur
+(1984) and those of Molina and Molina (1986) is relatively good and can be
+improved by taking into account the new reference value, proposed by Mauers-
+berger et al. (1987) at 254 nm and in matching the wavelength calibration of Bass
+and Paur to that of the two other sets which are in agreement.
+
+
+References
+Bass, A. M. and Pam, R. J., 1984, The ultraviolet           cross-sections    of Ozone:    1. Measurements,       in C.
+    Zeferos     and A. Ghazi    (eds.), Pvoc. Quadrennial Ozone Symp., Halkidiki,                Greece,    D. Reidel,
+    Dordrecht,     pp. 606-616.
+Cacciani,    M., Di Sarra, A., Fiocco,    G., and Amoruso,      A., 1989, Absolute    determination       of the cross-
+    sections    of ozone in the wavelength     region 339-355       nm at temperature     220-293       K, J. Geophys.
+       Res. 94,8485-8490.
+DeMore,      W. B., and Patapoff,    M., 1976, Comparison         of ozone determination                                   by ultraviolet        photom-
+     etry and gas-phase   titration,  Environ. Sci. Echnol. 10,897.
+Griggs.   M., 1968, Absorption        coefficients      of ozone in the ultraviolet    and                             visible     regions,      J. Chem.
+     Phys. 49,857-859.
+Hearn,    A. G., 1961, The absorption           of ozone in the ultraviolet    and visible                              regions      of the spectrum,
+       Proc. Phys. Sot. London 78,932-940.
+Inn,    E. C. Y., and Tanaka,              Y., 1953, Absorption                coefficients         of ozone in the ultraviolet               and visible
+     regions, J. Opt. Sot. Amer: 43,870-873.
+Malicet,     J., Brion, J., and Daumont,                D., 1984, New values of ozone absolute                         cross-sections        in the ultra-
+     violet     spectral        range at 298 and 228 K, by a method                               based upon pressure                measurements            at
+     constant       volume,         in C. Zerefos       and A. Ghazi (eds.), Puoc. Quadrennial Ozone Symp., Halkidiki,
+      Greece, D. Reidel, Dordrecht,                  pp. 617-621.
+Malicet,      J., Brion,         J., and Daumont,             D., 1989, Temperature                  dependence          of the absorption            cross-
+      section of ozone at 254 nm, Chern. Phys. Lett. 158,293.
+Mauersberger,            K., Hanson,         D., and Morton,             J., 1985, A new ozone standard:                      the vapor pressure             of
+     ozone at liquid argon temperatures,                       Geophys. Rex Lett. 12, 89-92.
+Mauersberger,          K., Hanson,         D., Barnes,        J., and Morton,          J., 1987, Ozone vapor pressure                   and absorption
+     cross-section          measurements:         Introduction          of an ozone standard,              J. Geophys. Res. 92, 8480.
+Molina,      L. T. and Molina,             M. J., 1986, Absolute              absorption          cross-sections        of ozone in the 185-350
+     nm wavelength             range, J. Geophys. Res. 91,14501.
+Nicolet,      M., Bucchia,            M., and Megie,            G., 1985, Atmospheric                 transmittance          and photodissociation
+      rates in the 185-240               nm spectral      range: sensitivity          of 0, absorption           cross-sections        in the Herzberg
+      continuum        and Schumann-Runge                  bands, Awz. Geophys. 3,429.
+Poulter, K. F., Rodgers,               M. J., Nash, P. J., Thomson,               T. J., and Perkin,           M. P., 1983, Thermal             transpira-
+     tion correction          in capacitance        manometers,            I/acuum 33,311.
+Vigroux,      E., 1953, Contribution                a l’etude experimentale               de l’absorption          de l’ozone, Ann. Physique 8,
+     709.
+Vigroux,      E., 1967, Determination                des coefficients         moyens         d’absorption        de I’ozone en vue des observa-
+     tions concernant             l’ozone atmospherique              a l’aide du spectrometre               Dobson,       Anm. Phys. 2,209.
+Yoshino,      K., Freeman,            D. E., Esmond,           J. R., and Parkinson,             W. H., 1988, Absolute              absorption        cross-
+     section       measurements            of ozone         in the wavelength               region      238-335         nm and the temperature
+     dependence,           Planet. Space Sci. 36,395-398.
+

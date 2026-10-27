@@ -1,0 +1,1090 @@
+Chapter 10
+Determining Uncertainties in Fitted Curves
+
+
+
+
+This chapter discusses methods of ﬁtting curves to measured data while accounting
+for uncertainty in the data. We start with equations for the best linear ﬁt and
+uncertainties in the slope and intercept. A short discussion of linear ﬁts when there
+is uncertainty in the x-values is presented next. Conﬁdence and prediction bands
+are presented for expressing uncertainty in the ﬁtted line and uncertainty in
+predictions made using the ﬁtted line. Goodness-of-ﬁt metrics are used to assess
+model adequacy. A summary of techniques for ﬁtting nonlinear equations to data is
+given, including formulas for nonlinear conﬁdence and prediction bands. In this
+chapter “nonlinear equation” means an equation that is nonlinear in the independent
+variable. Finally, a case study applying curve ﬁtting to a calibration drift problem
+is provided with a short discussion of how to choose optimal calibration intervals
+based on predicted drift.
+
+
+
+10.1 The Purpose of Fitting Curves to Experimental Data
+
+Previous chapters presented the GUM’s propagation of uncertainty approach, in
+which uncertainties of multiple independent variables are propagated through an
+indirect measurement model y ¼ f(x1, x2, . . ., xN). In practice it is often useful to take
+measurements of a dependent variable y over a range of values of an independent
+variable x. Fitting a line or a curve to the data then provides a model that can be used
+to predict y, and its uncertainty, for any value of x. In this chapter, the measurement
+model
+
+                                        yi ¼ f ðxi ; pÞ þ εi
+
+is used to address this prediction problem. In this expression, yi is the measured
+dependent variable and xi is the independent variable that could be either
+known (such as time) or measured with uncertainty (such as temperature).
+
+© Springer Nature Switzerland AG 2020                                                  227
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_10
+228                                        10   Determining Uncertainties in Fitted Curves
+
+
+The term εi represents the difference (the residual) between the ﬁtted model and the
+observed dependent measurement. The goal of curve ﬁtting as discussed in this
+chapter is to identify the form of the function f and estimate the parameters p that
+produce the least error (smallest εi0s) in predicting y given x.
+   Measurements are often made over a range of physical settings. For example,
+density may be measured at various temperatures, radiation dose may be measured
+at various distances from the source, and resistance may be measured at various
+time intervals to observe drift or decay. All these cases involve characterizing
+the relationship between two variables. By ﬁtting a curve to experimental data, the
+relationship between two variables can be described concisely with a single
+equation. The equation also allows prediction of points on the curve for which
+experimental data was not measured, that is, interpolating the expected value and
+uncertainty between measurement points, or in some cases, extrapolating beyond
+the region of measured values. Expressing the uncertainty in y as a function of
+x usually results in a more precise (and smaller) estimate of uncertainty. Rather
+than using a bound on uncertainty in the analysis, the uncertainty is based on the
+value of x.
+   Fitting a curve to experimental data generally involves minimizing the distance
+between a proposed curve and the data. While ﬁnding the best-ﬁtting curve can be
+relatively straightforward, propagating uncertainties through the ﬁtting process
+can be more complicated.
+
+
+
+
+10.1.1 Resistance vs. Temperature Data
+
+A resistance standard is nominally 100 ohms at a temperature of 20 C. However,
+the resistor cannot always be used in a controlled environment and may be subject
+to a wide temperature range. As such, the resistance was measured at temperatures
+from 0 C to 40 C as shown in Table 10.1 and Fig. 10.1. When the resistor is in
+use, the temperature is monitored and used to determine the actual resistance value
+at the time of use. A curve ﬁt may be appropriate in this case, allowing the user
+to predict the resistance when used at 23 C, a value not explicitly measured in
+the table.
+
+Table 10.1 Measured resis-   Temperature ( C)                             Resistance (Ω)
+tance versus temperature
+                              0                                            92.648
+                              5                                            95.675
+                             10                                            96.923
+                             15                                            97.732
+                             20                                           100.473
+                             25                                           101.258
+                             30                                           104.426
+                             35                                           105.484
+                             40                                           109.237
+10.1   The Purpose of Fitting Curves to Experimental Data                            229
+
+
+Fig. 10.1 Resistance versus
+temperature
+
+
+
+
+    The sections that follow below use the resistance versus temperature data to
+illustrate various cases of ﬁtting curves and to describe the uncertainty in those ﬁts.
+
+
+
+
+10.1.2 Considerations When Fitting Models to Data
+
+The ﬁrst consideration when ﬁtting a model to measured data is determining whether
+there is even a relationship between the two variables of interest. It is not uncommon
+to see attempts to ﬁt a line to data that has no real trend. It can sometimes be difﬁcult
+to distinguish between a relationship between two variables and random noise in
+the measurement data.
+    Once a clear relationship is established, the next consideration is choice
+of a model. In many cases, the simplest possible model is a line. The
+resistance vs. temperature example has data that appears to ﬁt a line over the range
+of interest; however, a linear model cannot be extended up or down inﬁnitely—it
+will eventually break down. For example, when the temperature gets too high, the
+resistor will melt. From an engineering perspective, a linear model works
+under reasonable assumptions, but care must be taken when extrapolating the
+model outside of its valid range. For example, a line ﬁt to the data in Fig. 10.1
+may make reasonable predictions in the range from 0 to 40 C, and a few degrees
+outside this range, but the same line should not be used to predict resistance
+at 100 C. Nonlinear models are often required. For example, an exponential
+model works well for problems involving decay. Sometimes quadratic or higher-
+order polynomials work well if the exact physical nature of the model is unknown.
+    Finally, it should be ensured that there are a sufﬁcient number of data points
+to deﬁne the ﬁtted curve. Two points determine a line exactly, but with no degrees
+of freedom for error, the uncertainty will be large. Three points determine a quadratic
+curve that passes exactly through all three points, yet is likely “overﬁt” resulting in
+230                                          10   Determining Uncertainties in Fitted Curves
+
+
+the curve describing random ﬂuctuations rather than the true physical relationship
+between the variables.
+    Several goodness-of-ﬁt metrics are discussed in this chapter that can help quan-
+titatively validate the relationship between variables and proper selection of a model.
+    In what follows, techniques for ﬁnding the best ﬁt parameters (such as slope and
+intercept) and the uncertainties in these parameters are discussed. Then, formulas for
+ﬁnding the uncertainty in a prediction based on the ﬁtted curve are given, along with
+some goodness-of-ﬁt metrics. Finally, the cases of nonlinear curve ﬁtting and curve
+ﬁtting with uncertainties in both x and y values are discussed.
+
+
+
+
+10.2 Methods for Fitting Curves to Experimental Data
+
+The common method for ﬁtting a curve to data is a technique called “least squares
+ﬁt” or “regression.” This method ﬁnds the curve that minimizes the vertical distance
+(technically the sum of the squares of the vertical distances), illustrated in Fig. 10.2,
+from each measured point to the curve. This can be done analytically for straight line
+models, but an iterative numerical solution is often required for more complex
+curves. Most modern computing packages (such as R, Matlab, Python/Scipy) have
+line and curve ﬁtting functions. However, some of the functions do not consider
+known uncertainty in the measured values or assume an uncertainty based on scatter
+in the data.
+
+Fig. 10.2 Resistance versus
+temperature ﬁt line
+10.2   Methods for Fitting Curves to Experimental Data                              231
+
+
+10.2.1 Linear Least Squares
+
+The linear case of least-squares ﬁtting can be solved analytically. The problem
+is to ﬁnd the best ﬁtting line of the form y ¼ A + Bx through the data points.
+The N measured data points are xi and yi.
+   The least-squares method compares differences between the ﬁt line and each
+data point to minimize the sum of the squared residuals (the εi0s), that is, the squared
+distances from a measured data point to the ﬁtted line. The sum of squared
+residuals is
+
+                                      N
+                                      X
+                                Q¼           ðyi   A     Bxi Þ2 :                ð10:1Þ
+                                       i¼1
+
+
+   This assumes that all the error in the measurement is in the y values. The x values
+here have no uncertainty. The residuals are minimized by taking the derivative
+of Q with respect to A and B, setting them equal to zero, and solving the system of
+equations for A and B. Direct expressions can be obtained:
+
+                                       Σx2i Σyi
+                                              Σxi Σxi yi
+                                  A¼
+                                             Δ
+                                      NΣxi yi Σxi Σyi
+                                   B¼
+                                             Δ
+                                   Δ ¼ NΣx2i       ðΣxi Þ2 :                     ð10:2Þ
+
+    See Kutner et al. (2005) for a full derivation of these equations. Any uncertainty
+in the y values is not needed to ﬁnd the nominal slope and intercept but is used to ﬁnd
+the uncertainties of these estimated parameters.
+Resistor Example In the resistor vs. temperature data, the best ﬁtting line can be
+computed using the linear least-squares formulas to obtain a slope of 0.381 Ω/ C and
+intercept of 92.8 Ω. The line, with the measured data points and residual distances
+(vertical lines), is shown in Fig. 10.2.
+
+
+
+10.2.2 Uncertainty in Fitting Parameters
+
+Uncertainty in the slope B and intercept A can be calculated with Taylor (1997):
+                                      rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                       P 2                 rﬃﬃﬃ
+                                             xi             N                    ð10:3Þ
+                              σA ¼ σy            , σB ¼ σy      ,
+                                          Δ                 Δ
+10.2   Methods for Fitting Curves to Experimental Data                                  233
+
+
+10.2.3 Weighted Least Squares: Non-constant u( y)
+
+In some practical cases, the uncertainty may change for different measurement
+points on the line. For example, an ohmmeter could change ranges as resistance
+increases, where each range has a different known uncertainty value. In this case,
+every measurement point has its own uncertainty σ i. The above equations can be
+modiﬁed to weight the least squares appropriately using this value. Assigning
+weights as wi ¼ 1=σ 2i , the weighted solution becomes (Taylor 1997)
+                              P            P            P             P
+                                  wi x2i       w i yi         wi xi       w i xi yi
+                         A¼
+                                                        Δ
+                               P        P                   P           P
+                                   wi       wi xi yi            wi xi       w i yi
+                          B¼
+                                                        Δ
+                                Δ ¼ Σwi Σwi x2i             ðΣwi xi Þ2                ð10:6Þ
+
+and uncertainties:
+                                             rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                               P
+                                                    wi x2i
+                                        σA ¼
+                                                   Δ
+                                              rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                               P
+                                                     wi                               ð10:7Þ
+                                         σB ¼             :
+                                                   Δ
+
+
+
+
+10.2.4 Weighted Least Squares: Uncertainty in Both x and y
+
+When the measurements have uncertainty in both x and y, the problem becomes much
+more complicated. An analytical solution is no longer possible or straightforward,
+and an iterative numerical technique must be used to minimize the residuals. One
+good example is the algorithm described by York et al. (2004) and its pseudocode
+implementation by Wehr and Saleska (2017) which accounts for not only σ x and σ y but
+also the correlation between errors in x and y.
+   In some cases, it may be simpler to apply a Monte Carlo approach (Robert and
+Casella 2004) rather than implement a complex algorithm such as this.
+Resistor Example Suppose the uncertainty in the recorded temperature is 0.75 C
+and the uncertainty in resistance measurements follows 0.5 + 2.5% Ω.
+These uncertainties are shown as the error bars in Fig. 10.3. Accounting for these
+uncertainties using the York algorithm, the new slope and intercept values are
+
+                            B ¼ 0:373 Ω=cm                  0:025 Ω=cm
+234                                              10   Determining Uncertainties in Fitted Curves
+
+
+
+
+Fig. 10.3 Resistance vs. temperature with uncertainties in both axes
+
+
+
+                                   A ¼ 92:96 Ω        0:43 Ω                            ð10:8Þ
+
+
+# Uncertainty in x and y
+sdx <- 0.75
+sdy <- temperature/40+0.5
+
+# Best-ﬁt straight line
+ﬁt <- bfsl(temperature, resistance, sd_x = sdx, sd_y = sdy)
+ﬁt
+## Best-ﬁt straight line
+##
+## Estimate Std. Error
+## Intercept 92.96163 0.42860
+## Slope 0.37299 0.02541
+##
+## Goodness of ﬁt:
+## 0.6418
+
+   Notice that with σ x and σ y accounted for, σ A is a bit smaller, but σ B is a bit larger
+because σ y is no longer assumed from residuals only.
+
+
+
+
+10.3 Uncertainty of a Regression Line
+
+Two types of uncertainties can be calculated based on ﬁtted lines: the uncertainty
+in the slope and intercept parameters, and the uncertainty in the line itself.
+10.3   Uncertainty of a Regression Line                                                    235
+
+
+10.3.1 Uncertainty of Fitting Parameters
+
+The above least-squares methods provide the slope, intercept, and the uncertainty in
+each, but not the uncertainty in the overall line, i.e., the uncertainty in the predicted
+value of y for a particular value of x. In the resistor problem, for example, the
+resistance ( y) and uncertainty at a given temperature (x) cannot be obtained directly
+from the slope and intercept and their uncertainties.
+
+
+
+10.3.2 Conﬁdence Bands
+
+Just as the mean of a measurement sample is an estimate of a variable’s true mean,
+the ﬁtted line y ¼ A + Bx is an estimate of the true line relating the two variables.
+Analogous to the standard error of the mean, the conﬁdence band is a measure of
+error in the ﬁt line. Because it encompasses all the possible lines that might ﬁt the
+data, and the line is best deﬁned near the center of the data points, the conﬁdence
+band is a function of x and is typically smallest near the center of the line and largest
+on the ends. The conﬁdence band as a function of x is
+                                          sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                2
+                                            1                          σ
+                          uconf ðxÞ ¼ σ y       þ ðx xÞ2 B ,                            ð10:9Þ
+                                           N                            σy
+
+and the true line, with k-factor applied, is expected to fall in the range f(x)      k uconf(x)
+with high conﬁdence.
+
+
+
+
+10.3.3 Prediction Bands
+
+A prediction band is used to determine the uncertainty in a prediction associated
+with an individual measurement (x) on the ﬁtted curve. This band includes both
+uncertainty in the ﬁtted line (i.e., the conﬁdence band) and uncertainty in the
+individual measurement. The prediction band can be calculated from the RSS of
+the conﬁdence band with the σ y uncertainty estimated from the residuals:
+                                             qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                  upred ðxÞ ¼ σ 2y þ u2conf ðxÞ                        ð10:10Þ
+
+   Doing a little algebra:
+238                                           10   Determining Uncertainties in Fitted Curves
+
+
+10.4 How Good Is the Model?
+
+A simple line may ﬁt the data reasonably well and still not be the best model for
+the data. Other models may ﬁt the data better or make more physical sense. Some
+qualitative and quantitative tests can be used to determine if the most appropriate
+model was chosen. Those tests are discussed in this section.
+
+
+
+
+10.4.1 Residual Analysis
+
+The residual plot (plotting the εi0s vs the xi0s) is one of the key diagnostic tools
+for assessing a ﬁtted model. For any reasonable ﬁt of the data, the individual
+measurements should fall randomly above and below the curve. The residuals
+(distances from each point to the ﬁtted curve) should also be roughly normally
+distributed with mean zero. This assumption can be tested via a simple histogram or
+normal probability plot. A good linear ﬁt and residual plot is shown in Fig. 10.5a.
+   Now consider Fig. 10.5b. The data show a slight curvature when compared to the
+linear ﬁt. The curvature is not always as obvious as in this example, so a better
+qualitative test is checking the residual plot. Note the order of the residuals, with
+positive values occurring near the ends and negative values in the center. This
+indicates a straight line model may not be the best ﬁt for this data. Perhaps a
+polynomial or exponential curve should be considered.
+   The data in Fig. 10.5c show an example with a single large outlier. The large
+outlier greatly inﬂuences the slope of the ﬁtted line, and the majority of the data are
+not well ﬁt by the line. Again, using a residual plot shows clearly that the data are not
+well ﬁt, and the residuals are not randomly distributed about zero.
+
+
+
+
+10.4.2 Slope Test
+
+In ﬁtting simple lines, another good check of the ﬁt is the slope test. This test can be
+used to conﬁrm a linear relationship between the x and y variables. If there is indeed a
+linear relationship, the slope of the line will have a statistically signiﬁcant positive or
+negative slope. To apply the slope test, check the 95% coverage interval of the slope
+and its uncertainty (Eq. 10.5). If this interval contains zero, the test fails, and one
+cannot conclude there is a linear relationship between the x and y variables (Fuller
+1987). The slope test is equivalent to testing that the (x, y) correlation coefﬁcient is
+statistically different from zero (Glantz and Slinker 2001). The validity of these tests
+relies on the assumptions regarding the residuals as stated in Sect. 10.4.1.
+10.4   How Good Is the Model?                                                    239
+
+
+Fig. 10.5 Residual analysis
+examples
+
+
+
+
+   Similar tests can be used to check the validity of certain nonlinear models. For
+example, a test of the parameter A in the model y ¼ exp (Ax) can be used to conﬁrm
+an exponential relationship between the x and y variables. On the log scale, the
+parameter A becomes a slope parameter, and the slope test applies.
+
+
+
+
+10.4.3 Quantitative Residual Analysis
+
+In some cases, a more quantitative approach is desired to assess the goodness-of-ﬁt.
+Many statistical tests for goodness-of-ﬁt are described by Glantz and Slinker (2001),
+but one of the most common is the coefﬁcient of determination, or r2 value.
+We deﬁne r2 by
+10.5   Uncertainty in Nonlinear Regression                                           241
+
+
+   Under the assumption that the residuals are normally distributed with constant
+variance, approximately 95% of the measured values (the yi0s) should fall within
+  2S of the ﬁtted line (the corresponding ybi 0 s). The value of S can be used to compare
+competing candidate models, with models having lower values of S generally being
+preferred.
+   In the resistance vs. temperature example from Table 10.1, the r2 value is 0.97,
+indicating a very good linear ﬁt. The value of S is 0.82 Ω, meaning that 95% of the
+measurements are expected to fall within 1.64 Ω of the ﬁtted line.
+
+
+
+
+10.5 Uncertainty in Nonlinear Regression
+
+The previous sections examined ﬁtting lines (slope and intercept) to measurement
+data. This section generalizes the method above to ﬁtting nonlinear curves. In this
+chapter “nonlinear” means nonlinear in the independent variable x.
+
+
+
+
+10.5.1 Nonlinear Least Squares
+
+The same least-squares methods can be adapted to nonlinear curve ﬁtting. Recall that
+the sum of squared residuals (Eq. 10.1) in the linear case has the form:
+
+                                      N
+                                      X
+                                 Q¼          ðyi    A     Bxi 2Þ:               ð10:20Þ
+                                       i¼1
+
+
+    In the nonlinear case, the distance between the measurements and ﬁtted curve is
+still used, but the minimization problem takes the more general form:
+
+                                       N
+                                       X
+                                 Q¼          ½ yi   f ðxi ; p Þ2 ,              ð10:21Þ
+                                       i¼1
+
+
+where f is the nonlinear function relating x to y, and p represents a vector of
+parameters that are estimated to minimize Q. Typically, an iterative numerical
+solution is required to minimize Q using an algorithm such as gradient descent,
+Gauss–Newton Method, or the Levenberg–Marquardt Method (Gavin 2017).
+Resistor Example It was decided to calibrate the resistance standard over a wider
+temperature range. After taking new measurements up to 100 C, a new line was ﬁt,
+shown in Fig. 10.6; however, the residual analysis indicated problems with the linear
+model.
+10.5   Uncertainty in Nonlinear Regression                                       243
+
+
+Fig. 10.8 Orthogonal
+distance regression
+
+
+
+
+# Generate data
+T2 <- seq(0, 95, by=5)
+R2 <- 100 + (T2)**2 / 10000 - .04
+R2 <- rnorm(length(T2), R2, 0.04)
+# Fit quadratic model
+ﬁt <- lm(R2 ~ poly(T2,2, raw = T))
+summary(ﬁt)$coefﬁcients
+## Estimate Std. Error t value Pr(>|t|)
+## (Intercept) 1.000112e+02 2.298894e-02 4350.404352 7.658464e-53
+## poly(T2, 2, raw = T)
+1 -2.538013e-03 1.121652e-03 -2.262745 3.703469e-02
+## poly(T2, 2, raw = T)
+2 1.250023e-04 1.139747e-05 10.967549 3.933882e-09
+
+
+
+
+10.5.2 Orthogonal Distance Regression
+
+An alternative to least-squares regression, useful when ﬁtting a nonlinear curve with
+uncertainty in both x and y, is Orthogonal Distance Regression (ODR). It takes
+the same approach as least-squares regression but instead of minimizing the sum
+of vertical distances between each point and the curve, it minimizes the sum of
+shortest orthogonal distances (Fig. 10.8).
+
+# Generate data
+xo <- seq(0, 50, length.out = 20)
+yo <- .0005 * xo^3 -.01 * xo^2 - .05 * xo + 3
+uxo <- seq(.1,1, length.out = length(xo))
+uyo <- seq(1,10, length.out = length(yo))
+yo <- yo + rnorm(length(yo), 0, uyo)
+244                                            10   Determining Uncertainties in Fitted Curves
+
+
+xo <- xo + rnorm(length(xo), 0, uxo)
+dat <- data.frame(xo, yo)
+# Fit orthogonal nonlinear least-squares regression model
+ﬁt <- onls(yo ~ b1 + b2*xo + b3*xo^2 + b4*xo^3, data = dat, start = list
+(b1=.05, b2=-.05, b3=.2, b4=3))
+summary(ﬁt)$coefﬁcients
+## Estimate Std. Error t value Pr(>|t|)
+## b1 2.7102953151 4.3367491296 0.6249601 0.5408084
+## b2 -0.1242620821 0.7614549688 -0.1631903 0.8724120
+## b3 -0.0105391979 0.0355942465 -0.2960927 0.7709678
+## b4 0.0005111474 0.0004619429 1.1065162 0.2848629
+
+   Unlike ordinary least-squares regression, ODR produces the same curve regard-
+less of which axis is considered the independent variable. In other words, using ODR
+to ﬁt a line to data (xi, yi), regressing x on y, will generate an equivalent result as
+ﬁtting a line to (yi, xi), regressing y on x. Ordinary least squares in the ﬁrst case would
+minimize residuals in the y direction and in the second case minimize residuals in
+the x direction, leading to different results. This is illustrated in Fig. 10.9.
+   For details of the algorithm, see Boggs and Rogers (1990). Implementations
+of ODR exist in computing packages such as R, Matlab, and Python/Scipy.
+
+
+
+
+10.5.3 Conﬁdence and Prediction Bands in Nonlinear
+       Regression
+
+The conﬁdence and prediction bands given above were derived for the special case
+of linear regression. In the nonlinear case, the conﬁdence interval may be found
+by approximating the function using a Taylor series expansion and using the delta
+method as described in Cox and Ma (1995):
+
+
+
+
+Fig. 10.9 Independent variable in ODR compared to ordinary least-squares regression
+10.6   Using Monte Carlo for Evaluating Uncertainties in Curve Fitting            245
+
+                                          qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                               uconf ðxÞ ¼ ∇ f T C ∇f ,                       ð10:23Þ
+
+where ∇f is the gradient matrix of the function at a particular x and C the covariance
+matrix of the input variables.
+   Prediction can then be found as before by combining the conﬁdence band with
+the uncertainty in an individual measurement:
+                                                qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                  upred ðxÞ ¼    u2conf þ σ 2y :              ð10:24Þ
+
+   Note that σ y may also be a function of x and may not be explicitly known for all
+possible x values.
+
+
+
+10.6 Using Monte Carlo for Evaluating Uncertainties
+     in Curve Fitting
+
+Sometimes it is easier to apply a simple least-squares approach to ﬁnd the best
+ﬁt parameters, and then use a Monte Carlo method to propagate the uncertainties
+through the ﬁtted curve. This becomes especially true when a programming
+language or computing package has a least-squares method that does not allow
+the input of uncertainties into the independent variables, or only allows a ﬁxed
+uncertainty to apply to all measurement values. Monte Carlo can also be used
+to relax the assumption that each measurement value is normally distributed.
+
+
+
+10.6.1 Monte Carlo Approach
+
+In the Monte Carlo approach to estimating uncertainty in a ﬁtted curve, each data
+point (xi) is considered an input to the model. For each Monte Carlo sample, each
+data point is independently sampled from its distribution. The distributions for
+each data point do not have to be the same and can be drawn from any probability
+distribution. Perhaps there is greater uncertainty when measuring low values of
+resistance than measuring high values of resistance, for example. Then, with this
+set of sampled data points, one possible ﬁtted curve is found using the least-squares
+ﬁt (with no uncertainty input). The sampling process is repeated N times to generate
+N possible ﬁtted curves and the parameters are estimated for each curve. This results
+in a Monte Carlo distribution and summary statistics for each parameter (e.g., the
+mean and standard deviation of possible slopes and intercepts) (Fig. 10.10).
+   Using Monte Carlo methods for curve ﬁtting reduces the complexity of the
+calculation. The curve-ﬁtting algorithm does not need to include uncertainty as
+an input and does not need to produce uncertainties as outputs. If developing code
+246                                          10   Determining Uncertainties in Fitted Curves
+
+
+
+
+Fig. 10.10 Monte Carlo for curve ﬁtting
+
+from scratch, a basic least-squares ﬁt with no uncertainty consideration can be much
+easier to implement. The Monte Carlo method does not require the uncertainties in
+data points to be normally distributed or even identically distributed. Little additional
+effort is required to account for uncertainty in both the x and y values of each point, a
+factor that makes analytical methods very complex.
+   An obvious disadvantage is computation time. A least-squares method on a
+nonlinear model often requires an iterative (slow) solution, and with Monte Carlo,
+the slow solution must be computed many times to converge on a representative
+set of ﬁt parameters. However, depending on the number of data points, “slow” may
+mean computing the solution in tens of seconds rather than milliseconds, still
+perfectly acceptable for ofﬂine data analysis.
+
+
+
+
+10.6.2 Markov-Chain Monte Carlo Approach
+
+In certain curve ﬁtting problems where the model is highly nonlinear or the variance
+is unknown, a Bayesian approach called “Markov-Chain Monte Carlo” (MCMC)
+may be more suitable. With this approach the data points (xi0s) remain ﬁxed but the
+actual ﬁtting parameters (such as slope and intercept for a ﬁtted line) are varied
+during each Monte Carlo sample (Brooks et al. 2011). A slope and intercept value
+are randomly generated from an expected distribution and the probability that those
+parameters produce the best-ﬁtting curve is calculated. New samples of slope and
+intercept are generated based on probabilities, generating a “random-walk” through
+the expected parameter space. After N trials, a distribution of slope and intercept
+parameters can be constructed and summary statistics for each parameter can be
+evaluated.
+10.7   Case Study: Contact Resistance                                               247
+
+
+10.7 Case Study: Contact Resistance
+
+A common way of measuring the resistance between a metal contact and semicon-
+ductor starts by making a series of identical contacts spaced at different lengths along
+the semiconductor. By measuring the total resistance between each pair of contacts
+and extrapolating back to zero length, the resistance due to only a single pair of
+contacts can be estimated (Fig. 10.11).
+   Table 10.2 lists resistance measurements made between various Titanium-Gold
+contacts at different lengths along a silicon nanowire. The goal is to ﬁnd the intercept
+of the best-ﬁt line.
+   As displayed in Fig. 10.12, extrapolating back to zero length should provide the
+combined resistance of two contacts. It is straightforward to calculate A and B for the
+least-squares line by hand using Eq. (10.2).
+
+Fig. 10.11 Schematic for
+measuring contact resistance
+
+
+
+
+Fig. 10.12 Nanowire
+resistance vs. length for
+contact resistance
+determination
+
+
+
+
+Table 10.2 Contact              Length (μm)                             Resistance (kΩ)
+resistance data
+                                0.25                                     54.6
+                                0.50                                     65.1
+                                1.00                                     88.1
+                                1.25                                    106.2
+                                2.00                                    104.9
+                                2.75                                    162.3
+                                5.25                                    230.3
+10.8   Drift and Predicting Future Values                                          249
+
+
+measurement, the voltage accuracy is 0.018% + 150 μV and the current accuracy is
+0.05% + 100 pA. Using the GUM method described in Chap. 6 for the measurement
+model R ¼ V/I with these uncertainty values, the total resistance uncertainty
+is 470 Ω.
+    This value can be used in place of the σ y calculated above from the residuals.
+Now, solving for σ A gives 270 Ω. This value is much smaller than the 6.7 kΩ
+calculated before. In this case, the residuals predict a much higher uncertainty than
+simply accounting for the published uncertainty of the measurement instrument. It is
+likely there are other uncertainties to consider here in addition to the 470 Ω of the
+measurement instrument.
+    Suppose a nanowire device is to be constructed with 4 μm separation between
+contacts. What is the expected total resistance? The solution involves predicting
+a value for a new measurement from the ﬁt line; thus, the prediction band must be
+used. Calculating upred with σ B ¼ 2.76 kΩ, Sxy ¼ σ y ¼ 11.66 kΩ, and N ¼ 7:
+
+                                     upred ¼ 13:79 kΩ,                         ð10:29Þ
+
+and the total resistance of a 4 μm length of semiconductor with two contacts, to
+95.4% conﬁdence (k ¼ 2), is estimated to be
+
+                                  Rc ¼ 190 kΩ     28 kΩ:                       ð10:30Þ
+
+
+
+
+10.8 Drift and Predicting Future Values
+
+There are additional issues to consider when calibrating devices that drift or decay
+predictably over time. The same line or curve ﬁtting techniques discussed in this
+section apply, with the x-axis being time. In typical applications, the ﬁtted curve is
+extrapolated into the future to predict a value and uncertainty during the time of use.
+   Consider a resistor on which 15 measurements have been made over the course of
+15 years and in which the resistance value appears to be drifting linearly. As always,
+caution must be used when choosing a model. The resistor cannot have downward
+linear drift forever or the resistance would eventually become negative! However, in
+a reasonable lifespan of the device, the linear model likely is sufﬁcient.
+   Using the methods previously described, a ﬁtted line and its prediction band can
+be computed for the drifting resistance (Fig. 10.13).
+
+
+
+10.8.1 Uncertainty During Use
+
+The resistance value and uncertainty for the latest measurement (Year 14) are
+presently known, but the resistor will be used over the course of one more year
+252                                                     10     Determining Uncertainties in Fitted Curves
+
+                                                       Z t2
+                                              1
+                               σ 2c ¼                         u2conf ðt Þdt                     ð10:36Þ
+                                      t   2       t1    t1
+
+
+and mean uncertainty in y(t) over the interval:
+                                                       Z t2
+                                          1
+                                σ 2yb ¼                       σ 2y ðt Þdt,                      ð10:37Þ
+                                        t2 t 1           t1
+
+
+leading to a total reported uncertainty, valid for the full calibration interval, of
+                                              qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                 uR ¼          σ 2b þ σ 2c þ σ 2 :                              ð10:38Þ
+                                                                      by
+
+   Using this method, the resistance value is reported at the average time during the
+interval:
+
+                                          R ¼ R t avg :                                         ð10:39Þ
+
+    Often the rate has units of drift per year, and the interval is 1 year (t1 ¼ 0, t2 ¼ 1),
+which simpliﬁes this expression further. (For example, σ 2 ¼ σ 2y and σ 2b ¼ r2 =12).
+                                                              by
+    This method produces a result not as accurate as reporting the values as functions
+of time (Method 1), but not as conservative as using worst-case estimates (Method
+2). It will produce an average OOT rate of 5% when uR is expanded to 95% coverage
+under normal rate and uncertainty conditions (Delker et al. 2020).
+    When using any of the above methods to account for drift, the method
+and assumptions must be explicitly stated.
+
+
+
+10.8.2 Validating Drift Uncertainty
+
+Every time a new calibration is made, the ﬁtted line and uncertainty bands must be
+recomputed to include the new data point. The model itself should be evaluated after
+each new measurement to ensure a linear ﬁt is still adequate. After many calibration
+cycles, the prediction band can become quite large due to the ðt t Þ term increasing.
+    Exercise caution when applying linear drift to devices that may not be predictably
+drifting. Data that may look like drift could also be random ﬂuctuations due to
+other uncertainties. Use the slope test to validate whether the drift rate (slope)
+is signiﬁcantly different than zero. Attempting to ﬁt a drift line is especially
+problematic when a device has only been calibrated a few times. Generally, there
+is much larger uncertainty in the slope of a line going through 3 data points than
+a line going through 50, due to less spread in the t values and smaller degrees of
+freedom for estimating the expanded uncertainty. As a general rule, a minimum
+of 5 measurements are necessary for the slope test to reliably indicate whether the
+device is drifting.
+254                                           10   Determining Uncertainties in Fitted Curves
+
+
+10.8.2.1   Type B Uncertainty
+
+The Type B uncertainty comes from the resistance bridge used for the measurement,
+a 1-ohm reference standard calibrated by NIST, and ﬂuctuation in environmental
+conditions. Other uncertainties, such as uncertainty due to leakage current, were
+deemed insigniﬁcant compared to the other components and were omitted from this
+analysis. The Type B uncertainty components are listed in Table 10.3.
+   All components in this table have been normalized and converted to k ¼ 1
+standard uncertainties. For example, the bridge uncertainties as reported by the
+instrument speciﬁcations were interpreted as uniform distributions and were stan-
+dardized by dividing by the square root of 3.
+
+
+
+10.8.2.2   Type A Measurement Uncertainty
+
+After waiting 30 days for a resistor under test to stabilize in the oil bath under the
+laboratory environmental conditions, multiple repeated measurements were made
+over the course of 5 days spread over a 2-week period. Each day’s measurement
+consisted of 40 individual measurements averaged together.
+   The combined standard deviation is found by pooling the standard deviations of
+the 5 times 40 individual measurements, grouped by day:
+
+Table 10.3 Type B uncertainty components
+                      Value
+                      (k ¼ 1) μΩ/
+Uncertainty           Ω             Description
+Reference standard    0.01          Time-of-test uncertainty as calibrated by NIST
+resistor
+Reference standard    0.006         Determined using same drift allowance method as
+drift allowance                     described below, but on the reference standard
+Resistance bridge     0.013         1 Ω speciﬁcations for MI-6010C bridge
+uncertainty
+Resistance bridge     0.0029        1 Ω speciﬁcations for MI-6010C bridge
+linearity
+Resistance bridge     0.00029       1 Ω speciﬁcations for MI-6010C bridge
+resolution
+Temperature           0.0021        Includes oil bath stability and temperature coefﬁcient of
+ﬂuctuation                          standards
+Pressure ﬂuctuation   0.0017        From pressure coefﬁcients of standards and typical atmo-
+                                    spheric changes during test
+Combined type B       0.0179        RSS of above components (k ¼ 1)
+uncertainty
+10.8   Drift and Predicting Future Values                                                                 255
+
+                                            vﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                            uP
+                                            u m ðn 1Þs2
+                                            u          i            i
+                                            ui¼1
+                                       uA ¼ u P                                                      ð10:40Þ
+                                            t m
+                                                     ðni 1Þ
+                                                      i¼1
+
+
+where ni is the number of measurements made on day i, and si the standard deviation
+of the m measurements on that day. Degrees of freedom for the Type A uncertainty is
+Pm
+    ðni 1Þ:
+i¼1
+   For the data shown in Table 10.4, the Type A uncertainty (k ¼ 1) is 0.00862 μΩ/Ω
+with 195 degrees of freedom.
+
+
+
+10.8.2.3    Drift Uncertainty
+
+When determining an uncertainty component to account for drift over the next
+calibration interval, the methodology described in Sect. 10.7 can be used. Historical
+data on the resistor since 1990 is plotted and a linear regression is performed
+(Fig. 10.15). For ease of calculation in this case study, the time-of-test uncertainty
+was assumed to be a constant σ y ¼ 0.020, (RSS of the Type A and Type B
+components found above) for all years. Complete analysis would include a varying
+uncertainty for each year to account for equipment changes, etc. and would require a
+weighted linear regression.
+    The regression results in a drift rate of 0.031 μΩ/Ω/year, with uncertainty
+σ B ¼ 0.0011 μΩ/Ω/year. With N ¼ 19 historical data points and t ¼ 732168 (the
+average of all historical calibration dates), substituting the values into the prediction
+band formula (see Sect. 10.3.3), and simplifying gives the k ¼ 1 uncertainty at any
+point:
+                                         sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                      2
+                                                   1                         σ
+                         upred ðt Þ ¼ σ y 1 þ þ ðt t Þ2 B
+                                                  N                           σy
+
+
+
+
+Table 10.4 Type A uncertainty measurements
+                                                            Standard
+Day    Average deviation from nominal (μΩ/Ω)                deviation                  Number of measurements
+1      0.197                                                0.0075                     40
+2      0.217                                                0.0062                     40
+3      0.198                                                0.0095                     40
+4      0.199                                                0.0101                     40
+5      0.196                                                0.0092                     40
+10.8   Drift and Predicting Future Values                                                                  257
+
+                          Z t2
+                 1                                      t21 t 1 t2         t2
+  σ 2c ¼                         u2conf ðt Þdt ¼ σ 2B      þ         t1 t þ 2   t2 t þ t2     ¼ 0:000195:
+         t   2       t1    t1                           3     3             3
+                                                                                                      ð10:44Þ
+
+  The drift uncertainty, uR, is then given as the RSS combination of the two
+components:
+                                               qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                        uR ¼    σ 2b þ σ 2c ¼ 0:0141 μΩ=Ω:                            ð10:45Þ
+
+   The time-of-test uncertainty σ yb, as listed in Sect. 10.8.1, is omitted from the drift
+uncertainty uR and included in the next section. The degrees of freedom for a ﬁtted
+line are N – 2 where N is the number of measurement values (yi0s), and 2 is subtracted
+to account for the 2 parameters that were ﬁt (slope and intercept). In this case,
+degrees of freedom are 17.
+
+
+
+10.8.2.4         Expanded Uncertainty
+
+The total combined uncertainty is the RSS combination of Type A and Type B time-
+of-test uncertainties and the drift uncertainty. The effective degrees of freedom are
+calculated via the W-S formula and come out large enough in this case to use k ¼ 2.0
+for a 95.45% conﬁdence interval (Table 10.5).
+   Therefore, the reported resistance deviation from nominal is the mean of the
+5 days of measurements, and the total expanded uncertainty is
+
+                                0:201 μΩ=Ω          0:048 μΩ=Ωð95:45%, k ¼ 2:0Þ:                      ð10:46Þ
+
+   However, at the time of the next calibration, the resistor will be evaluated for
+OOT conditions based on the prediction band formula calculated on the expiration
+date, not the single interval uncertainty value of 0.048.
+
+Table 10.5 Combined uncertainty components
+Component                                     k ¼ 1 Uncertainty (μΩ/Ω)                      Degrees of freedom
+Type B                                        0.0179                                        1
+Type A                                        0.00862                                       195
+Drift allowance                               0.0141                                        17
+Combined (RSS)                                0.024                                         2506
+258                                           10   Determining Uncertainties in Fitted Curves
+
+
+10.9 Calibration Interval Analysis
+
+Interval analysis, determining the optimal length of a calibration interval, is another
+application of curve ﬁtting in metrology. Many calibrations expire after 1 year.
+While convenient from a calendar perspective, this may not be the optimal interval
+from a risk perspective. If the calibration interval is set too long, a device is more
+likely to drift out of tolerance before the next calibration. If too short, there will be
+increased costs due to extra calibrations and equipment downtime.
+    Typically, interval adjustment is performed on devices that are tolerance tested to
+a speciﬁcation limit such as a manufacturer’s speciﬁcation. The goal of interval
+analysis is to ﬁnd the longest interval that results in the device remaining within its
+limits to some given probability during the interval. A good interval analysis requires
+a sufﬁcient amount of historical data. Frequently, data from an individual device will
+not be sufﬁcient, but when the data from all devices of the same model are combined,
+better results can be obtained.
+    Depending on what type of historical records are available for class of devices,
+there are three common methods for determining an interval. Sometimes, only the
+pass/fail status is recorded in a calibration database without keeping any information
+on exactly where a device measured within or outside the limits. In this case, if all the
+calibration intervals in the historical record were approximately the same length,
+the Interval Test method can be used. It is commonly referred to as “Method A3” due
+to its designation in NCSLI Recommended Practice 1 (RP-1) (NCSLI 2010). When
+the historical data recorded only pass/fail status but the intervals were of varying
+length, the Binomial Method (often referred to as “Method S2” from RP-1) can be
+used for better results. The Variables Method can be used if historical data contains
+the actual value measured in addition to pass/fail status, providing the most accurate
+results (Castrup 2005). The Variables Method and Method S2 both involve ﬁtting
+a curve to the historical data. Methods A3 and S2 are fully described in RP-1, so the
+remainder of this section will focus on the Variables Method.
+    The ﬁrst step in performing an interval analysis using the Variables Method is to
+convert the historical data from time of calibration (t) and measured value ( y) into
+deltas Δt and Δy, the differences between subsequent calibrations. Note that if
+any adjustments are made during the calibration, Δy values should be calculated
+as the difference between as-found value of one calibration and as-left value of the
+previous calibration.
+    Once the historical data is in (Δt, Δy) pairs, ﬁt a curve to the points. In theory, the
+curve could be any model, such as polynomial or exponential, but it is typically a
+straight line with intercept forced to zero. This assumes the device is adjusted back
+to the center of the speciﬁcation limits after each calibration. Determining an optimal
+interval then becomes a matter of calculating the prediction band at the desired
+conﬁdence level and solving for the time at which the prediction band exceeds the
+speciﬁcation limits.
+260                                                 10   Determining Uncertainties in Fitted Curves
+
+
+
+
+Fig. 10.16 Interval analysis for a voltage source
+
+
+
+
+10.10      Summary
+
+Fitting a curve to data is a common exercise in metrology, yet a proper
+evaluation of uncertainty in the ﬁtted curve is often neglected. This chapter has
+provided general guidance on how uncertainties can be determined in both the ﬁtted
+parameters and in the curve as a whole. The beneﬁts of a careful assessment of
+ﬁtted curve uncertainties can be great. For example, uncertainties involving
+equipment with temperature dependencies can be signiﬁcantly reduced when the
+temperature dependency is ﬁt to a curve. The temperature can then be measured
+during each use of the equipment, and the uncertainty at that temperature can be used
+rather than a worst-case uncertainty. Using curve ﬁtting techniques, in combination
+with the risk analysis of Chap. 5, also provides a means of predicting the probability
+of future OOT conditions.
+   It should always be veriﬁed that the model being ﬁt to the data (linear,
+polynomial, exponential, etc.) makes physical sense and represents the data without
+overﬁtting. Sample sizes should also be chosen to ensure an adequate number of
+degrees of freedom are available to estimate overall uncertainty. Additional points
+along the ﬁtted curve not only increase total degrees of freedom, but they reduce
+the uncertainties in ﬁtted parameters. For more recommendations on degrees of
+freedom and sample size, see Sect. 11.5.
+10.12 Exercises                                                                   261
+
+
+10.11     Related Reading
+
+While the GUM says very little about curve ﬁtting, the BIPM has announced a
+document in preparation titled “Applications of the least-squares method” which,
+once released, promises to be a deﬁnitive resource on curve ﬁtting as applied to
+metrology. ISO/TS 28037:2010 provides guidance on use of straight-line ﬁts for
+calibration curves, and ISO/TS 28038:2018 extends that guidance to polynomial
+calibration curves. NCSLI’s Recommended Practice 1 (RP-1) applies regression
+analysis to the determination of suitable calibration intervals for managing risk.
+   Most nonlinear curve ﬁtting problems apply a numerical minimization technique
+to ﬁnd the best ﬁt parameters. The Gauss–Newton method is described in Hartley
+(1961), and the Levenberg–Marquardt algorithm described by Moré (1978).
+Both are implemented in modern computer code by Press et al. (2002).
+   Concerns over selecting the correct model (polynomial vs. exponential ﬁt,
+appropriate order of polynomial, etc.) to prevent under- or overﬁtting, and validating
+the adequacy of the model itself are discussed by Harrell (2015). Izenman (2013)
+provides an in-depth discussion of how to extend the concepts introduced in this
+chapter to the multivariate case—when there are more dimensions than just
+x and y in the regression problem. Details of the Orthogonal Distance Regression
+algorithm are given in Boggs and Rogers (1990). Carroll and Ruppert (1996)
+cautions the user on use of ODR when the measurement equation introduces its
+own error. An analysis of least-squares ﬁtting applied to coordinate measuring
+machines (CMMs) is given by Srinivasan (2012), which considers ﬁtting measured
+CMM points to lines, planes, and other curved surfaces to evaluate the dimensions
+of the object under test. A treatment of the often-ignored effects of autocorrelation
+(correlation in time between uncertainties in all x values, for example) is provided
+in King and Giles (2018).
+   Regression problems can also be approached from a Bayesian perspective,
+accounting for a priori information. Klauenberg (2015) gives a tutorial on a Bayesian
+approach to regression, and Elster and Wübbeler (2016) provides an example and
+comparison to traditional least-squares regression. Markov-Chain Monte Carlo also
+applies a Bayesian analysis. For the statistics behind the algorithm as applied to
+regression problems, see Elster and Toman (2011). For an engineering application
+of MCMC to ﬁtting X-ray diffraction spectra, see Iamsasri et al. (2017).
+
+
+
+10.12     Exercises
+
+1. A pressure gauge has been calibrated ﬁve times using a known 180 psi reference
+   with results shown in Table 10.7.
+   (a) Assuming the gauge is drifting in a straight line, ﬁnd the best ﬁt slope and
+       intercept using Eq. (10.2).
+   (b) Use Eq. (10.3) to determine the uncertainty in this slope and intercept
+       assuming each measurement had a total (k ¼ 1) uncertainty of 0.2 psi.
+References                                                                                        265
+
+
+References
+
+Boggs, P.T., Rogers, J.E.: Orthogonal Distance Regression. National Institute of Standards
+    and Technology, Applied Computational Mathematics Division, Gaithersburg, MD:
+    U.S. Department of Commerce (1990)
+Brooks, S., Gelman, A., Jones, G.L., Meng, X.: Handbook of Markov Chain Monte Carlo.
+    Chapman & Hall/CRC, Boca Raton (2011)
+Carroll, R.J., Ruppert, D.: The use and misuse of orthogonal regression in linear errors-in-variables
+    models. Am. Stat. 50(1), 1–6 (1996)
+Castrup, H.: Calibration Intervals from variables data. NCSLI Workshop and Symposium, Wash-
+    ington DC (2005)
+Cox, C., Ma, G.: Asymptotic conﬁdence bands for generalized nonlinear regression models. Biometrics.
+    51(1), 142–150 (1995)
+Delker, C.J., Auden, E., Solomon, O.: Calculating interval uncertainties for calibration standards
+    that drift with time. NCSLI Measure [accepted] (2020)
+Elster, C., Wübbeler, G.: Bayesian regression versus application of least squares – an example.
+    Metrologia. 53, S10–S16 (2016)
+Elster, C., Toman, B.: Bayesian uncertainty analysis for a regression model versus application of
+    GUM supplement 1 to the least-squares estimate. Metrologia. 48, 233–240 (2011)
+Fuller, W.A.: Measurement Error Models. Wiley, New York (1987)
+Gavin, H.P.: The Levenberg-Marquardt Method for Nonlinear Least Squares Curve-Fitting
+    Problems. Duke University, Department of Civil and Environmental Engineering (2017)
+Glantz, S., Slinker, B.: Primer of Applied Regression and Analysis of Variance, 2nd edn. McGraw-Hill,
+    New York (2001)
+Harrell, F.E.: Regression Modeling Strategies, 2nd edn. Springer, New York (2015)
+Hartley, H.O.: The modiﬁed Gauss-Newton method for the ﬁtting of non-linear regression functions
+    by least squares. Technometrics. 3, 269–280 (1961)
+Iamsasri, T., et al.: A Bayesian approach to modeling diffraction proﬁles and application to
+    ferroelectric materials. J. Appl. Crystallogr. 50, 211–220 (2017)
+Izenman, A.J.: Modern Multivariate Statistical Techniques – Regression, Classiﬁcation, and
+    Manifold Learning. Springer, New York (2013)
+King, M.L., Giles, D.E.: Speciﬁcation Analysis in the Linear Model. Routledge, New York (2018)
+Klauenberg, K., Wübbeler, G., Mickan, B., Harris, P., Elster, C.: A tutorial on Bayesian normal
+    linear regression. Metrologia. 52, 878–892 (2015)
+Kutner, M.H., Nachtsheim, C.J., Neter, J., Li, W.: Applied Linear Statistical Models, 5th edn.
+    McGraw-Hill, New York (2005)
+Moré, J.: The Levenberg-Marquardt Algorithm. Numerical Analysis: Lecture Notes in
+    Mathematics, vol 630. Springer, Berlin (1978)
+National Conference of Calibration and Standards Laboratories International: Recommended
+    Practice 1 - Establishment and Adjustment of Calibration Intervals. (2010)
+Press, W.H., Teukolsky, S.A., Vetterling, W.T., Flannery, B.P.: Numerical Recipes in C - The Art
+    of Scientiﬁc Computing, 2nd edn. Cambridge University Press, New York (2002)
+Robert, C.P., Casella, G.: Monte Carlo Statistical Methods, 2nd edn. Springer, New York (2004)
+Schroder, D.K.: Semiconductor Material and Device Characterization, 3rd edn. Wiley, Hoboken
+    (2006)
+Srinivasan, V., Sharkarji, C.M., Morse, E.P.: On the enduring appeal of least-squares ﬁtting in
+    computational coordinate metrology. J. Comput. Inform. Sci. Eng. 12(1), 1–15 (2012)
+Taylor, J.R.: An Introduction to Error Analysis: the Study of Uncertainties in Physical Measure-
+    ments, 2nd edn. University Science Books, Sausalito, CA (1997)
+Wehr, R., Saleska, S.R.: The long-solved problem of the best-ﬁt straight line: application to isotopic
+    mixing lines. Biogeosciences. 14, 17–29 (2017)
+York, D., et al.: Uniﬁed equations for the slope, intercept, and standard errors of the best straight
+    line. Am. J. Phys. 72(3), 367–375 (2004)
+

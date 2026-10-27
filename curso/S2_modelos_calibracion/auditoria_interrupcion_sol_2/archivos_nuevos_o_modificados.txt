@@ -1,0 +1,32 @@
+ M curso/S2_modelos_calibracion/M07_libreto.md
+ M curso/S2_modelos_calibracion/calc/M06_ejemplos.py
+ M curso/S2_modelos_calibracion/calc/M07_ejemplos.py
+?? curso/S2_modelos_calibracion/S2_revision_sol.md
+?? curso/S2_modelos_calibracion/calc/M05_diseno_sol.out
+?? curso/S2_modelos_calibracion/calc/M06_RR_CALAIRE_sol.out
+?? curso/S2_modelos_calibracion/calc/M06_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/M07_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/M08_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/ajustes_sol.py
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/00.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/01.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/02.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/03.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/04.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/05.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/06.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/07.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/08.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/09.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/10.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/11.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/12.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/13.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/14.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/15.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/16.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/17.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/18.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/19.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/20.txt
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/21.txt

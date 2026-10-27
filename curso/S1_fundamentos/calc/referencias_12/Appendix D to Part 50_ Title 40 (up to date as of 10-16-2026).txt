@@ -1,0 +1,536 @@
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                           Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+This content is from the eCFR and is authoritative but unofficial.
+
+
+
+Title 40 —Protection of Environment
+Chapter I —Environmental Protection Agency
+Subchapter C —Air Programs
+Part 50 —National Primary and Secondary Ambient Air Quality Standards
+      Authority: 42 U.S.C. 7401, et seq.
+      Source: 36 FR 22384, Nov. 25, 1971, unless otherwise noted.
+
+
+Appendix D to Part 50—Reference Measurement Principle and Calibration Procedure for the
+Measurement of Ozone in the Atmosphere (Chemiluminescence Method)
+     1.0 Applicability.
+
+            1.1 This chemiluminescence method provides reference measurements of the concentration of ozone
+                (O3) in ambient air for determining compliance with the national primary and secondary ambient air
+                quality standards for O3 as specified in 40 CFR part 50. This automated method is applicable to the
+                measurement of ambient O3 concentrations using continuous (real-time) sampling and analysis.
+                Additional quality assurance procedures and guidance are provided in 40 CFR part 58, appendix A,
+                and in Reference 14.
+
+     2.0 Measurement Principle.
+
+            2.1 This reference method is based on continuous automated measurement of the intensity of the
+                characteristic chemiluminescence released by the gas phase reaction of O3 in sampled air with
+                either ethylene (C2H4) or nitric oxide (NO) gas. An ambient air sample stream and a specific flowing
+                concentration of either C2H4 (ET-CL method) or NO (NO-CL method) are mixed in a measurement
+                cell, where the resulting chemiluminescence is quantitatively measured by a sensitive photo-
+                detector. References 8-11 describe the chemiluminescence measurement principle.
+
+            2.2 The measurement system is calibrated by referencing the instrumental chemiluminescence
+                measurements to certified O3 standard concentrations generated in a dynamic flow system and
+                assayed by ultraviolet (UV) photometry to be traceable to a National Institute of Standards and
+                Technology (NIST) standard reference photometer for O3 (see Section 4, Calibration Procedure,
+                below) with a specified ozone absorption cross-section value. The absorption cross-section value
+                stated in section 4.1 and section 4.5.3.10 of this appendix (304.39 atm−1 cm−1 ± 0.94 atm−1 cm−1)
+                will begin use in all U.S. Standard Reference Photometers (SRPs) on January 1, 2025. It is expected
+                that implementation across all other ozone transfer standards and ozone monitors in the field will be
+                completed by December 31, 2026.
+
+            2.3 An analyzer implementing this measurement principle is shown schematically in Figure 1. Designs
+                implementing this measurement principle must include: an appropriately designed mixing and
+                measurement cell; a suitable quantitative photometric measurement system with adequate
+                sensitivity and wavelength specificity for O3; a pump, flow control, and sample conditioning system
+                for sampling the ambient air and moving it into and through the measurement cell; a sample air dryer
+                as necessary to meet the water vapor interference limit requirement specified in subpart B of part 53
+                of this chapter; a means to supply, meter, and mix a constant, flowing stream of either C2H4 or NO
+                gas of fixed concentration with the sample air flow in the measurement cell; suitable electronic
+                control and measurement processing capability; and other associated apparatus as may be
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                            page 1 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                             Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                necessary. The analyzer must be designed and constructed to provide accurate, repeatable, and
+                continuous measurements of O3 concentrations in ambient air, with measurement performance that
+                meets the requirements specified in subpart B of part 53 of this chapter.
+
+           2.4 An analyzer implementing this measurement principle and calibration procedure will be considered a
+               federal reference method (FRM) only if it has been designated as a reference method in accordance
+               with part 53 of this chapter.
+
+           2.5 Sampling considerations. The use of a particle filter on the sample inlet line of a chemiluminescence
+               O3 FRM analyzer is required to prevent buildup of particulate matter in the measurement cell and
+               inlet components. This filter must be changed weekly (or at least often as specified in the
+               manufacturer's operation/instruction manual), and the sample inlet system used with the analyzer
+               must be kept clean, to avoid loss of O3 in the O3 sample air prior to the concentration measurement.
+
+     3.0 Interferences.
+
+           3.1 Except as described in 3.2 below, the chemiluminescence measurement system is inherently free of
+               significant interferences from other pollutant substances that may be present in ambient air.
+
+           3.2 A small sensitivity to variations in the humidity of the sample air is minimized by a sample air dryer.
+               Potential loss of O3 in the inlet air filter and in the air sample handling components of the analyzer
+               and associated exterior air sampling components due to buildup of airborne particulate matter is
+               minimized by filter replacement and cleaning of the other inlet components.
+
+     4.0 Calibration Procedure.
+
+           4.1 Principle. The calibration procedure is based on the photometric assay of O3 concentrations in a
+               dynamic flow system. The concentration of O3 in an absorption cell is determined from a
+               measurement of the amount of 254 nm light absorbed by the sample. This determination requires
+               knowledge of
+
+                (1) the absorption coefficient (α) of O3 at 254 nm,
+
+                (2) the optical path length (l) through the sample,
+
+                (3) the transmittance of the sample at a nominal wavelength of 254 nm, and
+
+                (4) the temperature (T) and pressure (P) of the sample. The transmittance is defined as the ratio
+                    I/I0, where I is the intensity of light which passes through the cell and is sensed by the detector
+                    when the cell contains an O3 sample, and I0 is the intensity of light which passes through the
+                    cell and is sensed by the detector when the cell contains zero air. It is assumed that all
+                    conditions of the system, except for the contents of the absorption cell, are identical during
+                    measurement of I and I0. The quantities defined above are related by the Beer-Lambert
+                    absorption law,
+
+
+
+
+                      Where:
+
+                      α = absorption coefficient of O3 at 254 nm = 304.39 atm−1 cm−1, with an uncertainty of 0.94
+                      atm−1 cm−1 at 0 °C and 1 atm.1, 2, 3, 4, 5, 6, 7, 15
+
+                      c = O3 concentration in atmospheres, and
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                             page 2 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                              Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                      l = optical path length in cm.
+
+                      A stable O3 generator is used to produce O3 concentrations over the required calibration
+                      concentration range. Each O3 concentration is determined from the measurement of the
+                      transmittance (I/I0) of the sample at 254 nm with a photometer of path length l and calculated
+                      from the equation,
+
+
+
+
+                      The calculated O3 concentrations must be corrected for O3 losses, which may occur in the
+                      photometer, and for the temperature and pressure of the sample.
+
+           4.2 Applicability. This procedure is applicable to the calibration of ambient air O3 analyzers, either directly
+               or by means of a transfer standard certified by this procedure. Transfer standards must meet the
+               requirements and specifications set forth in Reference 12.
+
+           4.3 Apparatus. A complete UV calibration system consists of an O3 generator, an output port or manifold,
+               a photometer, an appropriate source of zero air, and other components as necessary. The
+               configuration must provide a stable O3 concentration at the system output and allow the photometer
+               to accurately assay the output concentration to the precision specified for the photometer (4.3.1).
+               Figure 2 shows a commonly used configuration and serves to illustrate the calibration procedure,
+               which follows. Other configurations may require appropriate variations in the procedural steps. All
+               connections between components in the calibration system downstream of the O3 generator must
+               be of glass, Teflon, or other relatively inert materials. Additional information regarding the assembly
+               of a UV photometric calibration apparatus is given in Reference 13. For certification of transfer
+               standards which provide their own source of O3, the transfer standard may replace the O3 generator
+               and possibly other components shown in Figure 2; see Reference 12 for guidance.
+
+               4.3.1 UV photometer. The photometer consists of a low-pressure mercury discharge lamp, (optional)
+                     collimation optics, an absorption cell, a detector, and signal-processing electronics, as
+                     illustrated in Figure 2. It must be capable of measuring the transmittance, I/I0, at a wavelength
+                     of 254 nm with sufficient precision such that the standard deviation of the concentration
+                     measurements does not exceed the greater of 0.005 ppm or 3% of the concentration. Because
+                     the low-pressure mercury lamp radiates at several wavelengths, the photometer must
+                     incorporate suitable means to assure that no O3 is generated in the cell by the lamp, and that at
+                     least 99.5% of the radiation sensed by the detector is 254 nm radiation. (This can be readily
+                     achieved by prudent selection of optical filter and detector response characteristics.) The
+                     length of the light path through the absorption cell must be known with an accuracy of at least
+                     99.5%. In addition, the cell and associated plumbing must be designed to minimize loss of O3
+                     from contact with cell walls and gas handling components. See Reference 13 for additional
+                     information.
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                              page 3 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                             Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+               4.3.2 Air flow controllers. Air flow controllers are devices capable of regulating air flows as necessary
+                     to meet the output stability and photometer precision requirements.
+
+               4.3.3 Ozone generator. The ozone generator used must be capable of generating stable levels of O3
+                     over the required concentration range.
+
+               4.3.4 Output manifold. The output manifold must be constructed of glass, Teflon, or other relatively
+                     inert material, and should be of sufficient diameter to insure a negligible pressure drop at the
+                     photometer connection and other output ports. The system must have a vent designed to
+                     insure atmospheric pressure in the manifold and to prevent ambient air from entering the
+                     manifold.
+
+               4.3.5 Two-way valve. A manual or automatic two-way valve, or other means is used to switch the
+                     photometer flow between zero air and the O3 concentration.
+
+               4.3.6 Temperature indicator. A device to indicate temperature must be used that is accurate to ±1 °C.
+
+               4.3.7 Barometer or pressure indicator. A device to indicate barometric pressure must be used that is
+                     accurate to ±2 torr.
+
+           4.4 Reagents.
+
+               4.4.1 Zero air. The zero air must be free of contaminants which would cause a detectable response
+                     from the O3 analyzer, and it must be free of NO, C2H4, and other species which react with O3. A
+                     procedure for generating suitable zero air is given in Reference 13. As shown in Figure 2, the
+                     zero air supplied to the photometer cell for the I0 reference measurement must be derived from
+                     the same source as the zero air used for generation of the O3 concentration to be assayed (I
+                     measurement). When using the photometer to certify a transfer standard having its own source
+                     of O3, see Reference 12 for guidance on meeting this requirement.
+
+           4.5 Procedure.
+
+               4.5.1 General operation. The calibration photometer must be dedicated exclusively to use as a
+                     calibration standard. It must always be used with clean, filtered calibration gases, and never
+                     used for ambient air sampling. A number of advantages are realized by locating the calibration
+                     photometer in a clean laboratory where it can be stationary, protected from the physical shock
+                     of transportation, operated by a responsible analyst, and used as a common standard for all
+                     field calibrations via transfer standards.
+
+               4.5.2 Preparation. Proper operation of the photometer is of critical importance to the accuracy of this
+                     procedure. Upon initial operation of the photometer, the following steps must be carried out
+                     with all quantitative results or indications recorded in a chronological record, either in tabular
+                     form or plotted on a graphical chart. As the performance and stability record of the photometer
+                     is established, the frequency of these steps may be reduced to be consistent with the
+                     documented stability of the photometer and the guidance provided in Reference 12.
+
+                     4.5.2.1 Instruction manual. Carry out all set up and adjustment procedures or checks as
+                            described in the operation or instruction manual associated with the photometer.
+
+                     4.5.2.2 System check. Check the photometer system for integrity, leaks, cleanliness, proper flow
+                            rates, etc. Service or replace filters and zero air scrubbers or other consumable materials,
+                            as necessary.
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                             page 4 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                                Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                     4.5.2.3 Linearity. Verify that the photometer manufacturer has adequately established that the
+                            linearity error of the photometer is less than 3%, or test the linearity by dilution as follows:
+                            Generate and assay an O3 concentration near the upper range limit of the system or
+                            appropriate calibration scale for the instrument, then accurately dilute that concentration
+                            with zero air and re-assay it. Repeat at several different dilution ratios. Compare the assay
+                            of the original concentration with the assay of the diluted concentration divided by the
+                            dilution ratio, as follows
+
+
+
+
+                            Where:
+
+                            E = linearity error, percent
+
+                            A1 = assay of the original concentration
+
+                            A2 = assay of the diluted concentration
+
+                            R = dilution ratio = flow of original concentration divided by the total flow
+
+                            The linearity error must be less than 5%. Since the accuracy of the measured flow-rates
+                            will affect the linearity error as measured this way, the test is not necessarily conclusive.
+                            Additional information on verifying linearity is contained in Reference 13.
+
+                     4.5.2.4 Inter-comparison. The photometer must be inter-compared annually, either directly or via
+                            transfer standards, with a NIST standard reference photometer (SRP) or calibration
+                            photometers used by other agencies or laboratories.
+
+                     4.5.2.5 Ozone losses. Some portion of the O3 may be lost upon contact with the photometer cell
+                            walls and gas handling components. The magnitude of this loss must be determined and
+                            used to correct the calculated O3 concentration. This loss must not exceed 5%. Some
+                            guidelines for quantitatively determining this loss are discussed in Reference 13.
+
+               4.5.3 Assay of O3 concentrations. The operator must carry out the following steps to properly assay
+                     O3 concentrations.
+
+                     4.5.3.1 Allow the photometer system to warm up and stabilize.
+
+                     4.5.3.2 Verify that the flow rate through the photometer absorption cell, F, allows the cell to be
+                            flushed in a reasonably short period of time (2 liter/min is a typical flow). The precision of
+                            the measurements is inversely related to the time required for flushing, since the
+                            photometer drift error increases with time.
+
+                     4.5.3.3 Ensure that the flow rate into the output manifold is at least 1 liter/min greater than the
+                            total flow rate required by the photometer and any other flow demand connected to the
+                            manifold.
+
+                     4.5.3.4 Ensure that the flow rate of zero air, Fz, is at least 1 liter/min greater than the flow rate
+                            required by the photometer.
+
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                                 page 5 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                              Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                     4.5.3.5 With zero air flowing in the output manifold, actuate the two-way valve to allow the
+                            photometer to sample first the manifold zero air, then Fz. The two photometer readings
+                            must be equal (I = I0).
+
+
+                            Note: In some commercially available photometers, the operation of the two-way
+                            valve and various other operations in section 4.5.3 may be carried out automatically
+                            by the photometer.
+
+                     4.5.3.6 Adjust the O3 generator to produce an O3 concentration as needed.
+
+                     4.5.3.7 Actuate the two-way valve to allow the photometer to sample zero air until the
+                            absorption cell is thoroughly flushed and record the stable measured value of Io.
+
+                     4.5.3.8 Actuate the two-way valve to allow the photometer to sample the O3 concentration until
+                            the absorption cell is thoroughly flushed and record the stable measured value of I.
+
+                     4.5.3.9 Record the temperature and pressure of the sample in the photometer absorption cell.
+                            (See Reference 13 for guidance.)
+
+                     4.5.3.10. Calculate the O3 concentration from equation 4. An average of several determinations
+                            will provide better precision.
+
+
+
+
+                            Where:
+
+                            [O3]OUT = O3 concentration, ppm
+
+                            α = absorption coefficient of O3 at 254 nm = 304.39 atm−1 cm−1 at 0 °C and 1 atm
+
+                            l = optical path length, cm
+
+                            T = sample temperature, K
+
+                            P = sample pressure, torr
+
+                            L = correction factor for O3 losses from 4.5.2.5 = (1−fraction of O3 lost).
+
+                            Note: Some commercial photometers may automatically evaluate all or part of
+                            equation 4. It is the operator's responsibility to verify that all of the information
+                            required for equation 4 is obtained, either automatically by the photometer or
+                            manually. For “automatic” photometers which evaluate the first term of equation 4
+                            based on a linear approximation, a manual correction may be required, particularly
+                            at higher O3 levels. See the photometer instruction manual and Reference 13 for
+                            guidance.
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                              page 6 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                             Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                     4.5.3.11 Obtain additional O3 concentration standards as necessary by repeating steps 4.5.3.6
+                            to 4.5.3.10 or by Option 1.
+
+               4.5.4 Certification of transfer standards. A transfer standard is certified by relating the output of the
+                     transfer standard to one or more O3 calibration standards as determined according to section
+                     4.5.3. The exact procedure varies depending on the nature and design of the transfer standard.
+                     Consult Reference 12 for guidance.
+
+               4.5.5 Calibration of ozone analyzers. Ozone analyzers must be calibrated as follows, using O3
+                     standards obtained directly according to section 4.5.3 or by means of a certified transfer
+                     standard.
+
+                     4.5.5.1 Allow sufficient time for the O3 analyzer and the photometer or transfer standard to
+                            warm-up and stabilize.
+
+                     4.5.5.2 Allow the O3 analyzer to sample zero air until a stable response is obtained and then
+                            adjust the O3 analyzer's zero control. Offsetting the analyzer's zero adjustment to +5% of
+                            scale is recommended to facilitate observing negative zero drift (if any). Record the stable
+                            zero air response as “Z”.
+
+                     4.5.5.3 Generate an O3 concentration standard of approximately 80% of the desired upper range
+                            limit (URL) of the O3 analyzer. Allow the O3 analyzer to sample this O3 concentration
+                            standard until a stable response is obtained.
+
+                     4.5.5.4 Adjust the O3 analyzer's span control to obtain the desired response equivalent to the
+                            calculated standard concentration. Record the O3 concentration and the corresponding
+                            analyzer response. If substantial adjustment of the span control is necessary, recheck the
+                            zero and span adjustments by repeating steps 4.5.5.2 to 4.5.5.4.
+
+                     4.5.5.5 Generate additional O3 concentration standards (a minimum of 5 are recommended)
+                            over the calibration scale of the O3 analyzer by adjusting the O3 source or by Option 1. For
+                            each O3 concentration standard, record the O3 concentration and the corresponding
+                            analyzer response.
+
+                     4.5.5.6 Plot the O3 analyzer responses (vertical or Y-axis) versus the corresponding O3 standard
+                            concentrations (horizontal or X-axis). Compute the linear regression slope and intercept
+                            and plot the regression line to verify that no point deviates from this line by more than 2
+                            percent of the maximum concentration tested.
+
+                     4.5.5.7 Option 1: The various O3 concentrations required in steps 4.5.3.11 and 4.5.5.5 may be
+                            obtained by dilution of the O3 concentration generated in steps 4.5.3.6 and 4.5.5.3. With
+                            this option, accurate flow measurements are required. The dynamic calibration system
+                            may be modified as shown in Figure 3 to allow for dilution air to be metered in
+                            downstream of the O3 generator. A mixing chamber between the O3 generator and the
+                            output manifold is also required. The flow rate through the O3 generator (Fo) and the
+                            dilution air flow rate (FD) are measured with a flow or volume standard that is traceable to
+                            a NIST flow or volume calibration standard. Each O3 concentration generated by dilution is
+                            calculated from:
+
+
+
+
+                            Where:
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                              page 7 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                               Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+                            [O3]′OUT = diluted O3 concentration, ppm
+
+                            FO = flow rate through the O3 generator, liter/min
+
+                            FD = diluent air flow rate, liter/min
+
+                            Note: Additional information on calibration and pollutant standards is provided in
+                            Section 12 of Reference 14.
+
+     5.0 Frequency of Calibration.
+
+           5.1 The frequency of calibration, as well as the number of points necessary to establish the calibration
+               curve, and the frequency of other performance checking will vary by analyzer; however, the minimum
+               frequency, acceptance criteria, and subsequent actions are specified in Appendix D of Reference 14:
+               Measurement Quality Objectives and Validation Templates. The user's quality control program shall
+               provide guidelines for initial establishment of these variables and for subsequent alteration as
+               operational experience is accumulated. Manufacturers of analyzers should include in their
+               instruction/operation manuals information and guidance as to these variables and on other matters
+               of operation, calibration, routine maintenance, and quality control.
+
+     6.0 References.
+
+      1.   E.C.Y. Inn and Y. Tanaka, “Absorption coefficient of Ozone in the Ultraviolet and Visible Regions”, J. Opt.
+           Soc. Am., 43, 870 (1953).
+
+      2.   A. G. Hearn, “Absorption of Ozone in the Ultraviolet and Visible Regions of the Spectrum”, Proc. Phys. Soc.
+           (London), 78, 932 (1961).
+
+      3.   W. B. DeMore and O. Raper, “Hartley Band Extinction Coefficients of Ozone in the Gas Phase and in Liquid
+           Nitrogen, Carbon Monoxide, and Argon”, J. Phys. Chem., 68, 412 (1964).
+
+      4.   M. Griggs, “Absorption Coefficients of Ozone in the Ultraviolet and Visible Regions”, J. Chem. Phys., 49,
+           857 (1968).
+
+      5.   K. H. Becker, U. Schurath, and H. Seitz, “Ozone Olefin Reactions in the Gas Phase. 1. Rate Constants and
+           Activation Energies”, Int'l Jour. of Chem. Kinetics, VI, 725 (1974).
+
+      6.   M. A. A. Clyne and J. A. Coxom, “Kinetic Studies of Oxy-halogen Radical Systems”, Proc. Roy. Soc., A303,
+           207 (1968).
+
+      7.   J. W. Simons, R. J. Paur, H. A. Webster, and E. J. Bair, “Ozone Ultraviolet Photolysis. VI. The Ultraviolet
+           Spectrum”, J. Chem. Phys., 59, 1203 (1973).
+
+      8.   Ollison, W.M.; Crow, W.; Spicer, C.W. “Field testing of new-technology ambient air ozone monitors.” J. Air
+           Waste Manage. Assoc., 63 (7), 855-863 (2013).
+
+      9.   Parrish, D.D.; Fehsenfeld, F.C. “Methods for gas-phase measurements of ozone, ozone precursors and
+           aerosol precursors.” Atmos. Environ., 34 (12-14), 1921-1957(2000).
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                               page 8 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                            Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+     10. Ridley, B.A.; Grahek, F.E.; Walega, J.G. “A small, high-sensitivity, medium-response ozone detector suitable
+         for measurements from light aircraft.” J. Atmos. Oceanic Technol., 9 (2), 142-148(1992).
+
+     11. Boylan, P., Helmig, D., and Park, J.H. “Characterization and mitigation of water vapor effects in the
+         measurement of ozone by chemiluminescence with nitric oxide.” Atmos. Meas. Tech. 7, 1231-1244
+         (2014).
+
+     12. Transfer Standards for Calibration of Ambient Air Monitoring Analyzers for Ozone, EPA publication
+         number EPA-454/B-13-004, October 2013. EPA, Office of Air Quality Planning and Standards, Research
+         Triangle Park, NC 27711. [Available at www.epa.gov/ttnamti1/files/ambient/qaqc/
+         OzoneTransferStandardGuidance.pdf.]
+
+     13. Technical Assistance Document for the Calibration of Ambient Ozone Monitors, EPA publication number
+         EPA-454/B-22-003, January 2023.
+
+     14. QA Handbook for Air Pollution Measurement Systems—Volume II. Ambient Air Quality Monitoring
+         Program. EPA-454/B-17-001, January 2017.
+
+     15. Hodges, J.T., Viallon, J., Brewer, P.J., Drouin, B.J., Gorshelev, V., Janssen, C., Lee, S., Possolo, A., Smith,
+         M.A.H., Walden, and Wielgosz, R.I., Recommendation of a consensus value of the ozone absorption cross-
+         section at 253.65 nm based on a literature review, Metrologia, 56 (2019) 034001. [Available at
+         https://doi.org/10.1088/1681-7575/ab0bdd.]
+
+
+7.0 Figures.
+
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                            page 9 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                       Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+
+
+Figure 1. Gas-phase chemiluminescence analyzer schematic diagram, where PMT means photomultiplier tube.
+
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                      page 10 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                         Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+
+
+Figure 2. Schematic diagram of a typical UV photometric calibration system.
+
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                         page 11 of 12
+Appendix D to Part 50, Title 40 (up to date as of 10/16/2026)
+                                                                                  Appendix D to Part 50, Title 40 (Oct. 16, 2026)
+Reference Measurement Principle and Calibration Procedure for the...
+
+
+
+
+Figure 3. Schematic diagram of a typical UV photometric calibration system (Option 1).
+
+[80 FR 65453, Oct. 26, 2015, as amended at 88 FR 70598, Oct. 12, 2023; 90 FR 4651, Jan. 16, 2025]
+
+
+
+
+Appendix D to Part 50, Title 40 (Oct. 16, 2026) (enhanced display)                                                 page 12 of 12
+

@@ -1,0 +1,20 @@
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+S4 queda **aprobada con correcciones**. M13 y AX quedan también aprobados con correcciones. Escribí la revisión en `curso/S4_numericos_integracion/S4_revision_opus.md`; no edité libretos ni scripts.
+
+**Hallazgos:** 0 críticos, 6 mayores, 11 menores.
+- **M13:** 4 mayores, 4 menores.
+- **AX:** 2 mayores, 7 menores.
+
+**Los 6 mayores:**
+- **M13-A1, criterio para elegir método:** falta el procedimiento de GUM-S1 §8 para validar la linealización contra Monte Carlo. Con los datos del ejemplo la comparación sale favorable; la diferencia más grande entre extremos de los intervalos es 0,0117, y la tolerancia es 0,05.
+- **M13-A1, diferencias que son ruido:** el libreto atribuye a la no linealidad diferencias que son ruido de la simulación. Con 400 000 ensayos, el error numérico de la media es 0,0016 y el de la desviación 0,0012, del mismo orden que las diferencias observadas.
+- **M13-A2, covarianza sin explicar:** el script usa una covarianza agrupada por día que el libreto no define ni referencia. Propongo sustituirla por «una recta por día»: da prácticamente las mismas cifras y se apoya en lo visto en M6.
+- **M13-A4, Huber incompleto:** el umbral de 0,35 nmol/mol no tiene justificación, no se muestra cuánto cambia la pendiente con ese umbral y los coeficientes robustos no llevan incertidumbre.
+- **AX.11:** M12 remite aquí dos fórmulas que AX.11 no deduce: el límite unilateral del 90 % de la desviación (chi-cuadrado) y el del sesgo absoluto (t).
+- **AX.13:** M13 le delega el control del número de ensayos, pero solo explica el error de la media. Faltan la regla de GUM-S1 7.2.2, la tolerancia numérica y el procedimiento adaptativo.
+
+Revisé más de 25 numerales con `pdftotext`. No hay referencias inventadas, pero sí varias mal atribuidas (GUM-S1 7.5, GUM-S2 7.6, ISO 28037 cl. 10 en M13). La más delicada es la cláusula 10 de ISO 28037: cubre el caso general con covarianza cruzada entre ejes, que el curso excluye.
+
+Los números de los libretos coinciden con los scripts. Hay dos fallos en los anexos. El ejemplo de AX.11 no da resultados numéricos aunque su script ya los calcula. El ARL de CUSUM de AX.12 (921,016) no ha convergido: con más estados se acerca a ≈ 931.

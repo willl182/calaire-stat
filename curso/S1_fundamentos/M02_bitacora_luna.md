@@ -81,6 +81,12 @@ Se corrigió el plan de escenas para que B1 se limite a elegir variables, sin en
 
 Pendiente para la siguiente revisión: verificar en una referencia disponible la ubicación precisa de CV y MAD; revisar el libreto contra los requisitos de redacción y cobertura curricular. No se desarrollaron prácticas por instrucción de fase actual.
 
+## Correcciones posteriores — revisión Opus (2026-10-26)
+
+O-02: B4 incorpora la identidad descriptiva de varianzas para las seis parejas actuales de un único nivel nominal: 0,03200 + 0,01767 + 0,00800 = 0,05767 (nmol/mol)². Sustituye el ejemplo histórico de niveles distintos, sin borrar su registro de desarrollo. El script comprueba la identidad y sus porcentajes; no se interpretan como contribuciones causales independientes.
+
+O-08: ASQ, apéndice C, p. 572 respalda exclusivamente la definición del CV. La limitación cerca de cero se explica mediante el denominador y su falta de definición en cero, sin atribuirla a ASQ. Pendiente bibliográfico: localizar una fuente externa específica para esa limitación; el razonamiento aritmético explícito basta para el contenido actual. O-12: señales aún no enseñadas se traducen al contexto de la plantilla y se remiten a capítulos posteriores.
+
 ## Correcciones (revisión Haiku)
 
 | Id del hallazgo | Decisión | Cambio hecho | Ubicación | Justificación |

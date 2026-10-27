@@ -6,7 +6,8 @@ Ejecutar con curso/.venv/bin/python desde la raíz del repositorio.
 from math import sqrt
 
 import numpy as np
-from scipy.stats import chi2, f
+from scipy.stats import beta, chi2, f
+from scipy.optimize import minimize_scalar
 
 
 def one_way(values):
@@ -100,12 +101,26 @@ def main():
     tau_se_delta = tau2_se / (2 * result["s_between"])
     print(f"tau2_approx_se={tau2_se:.9f}; s_entre_delta_approx_se={tau_se_delta:.9f}")
 
-    print("\nI. Componente entre días negativa (datos simulados)")
+    print("\nA. Componente entre días negativa (datos simulados)")
     low_day_shift = [[0.0, 0.2, -0.1, 0.1], [0.05, 0.25, -0.05, 0.15], [-0.03, 0.17, -0.13, 0.07]]
     neg = one_way(low_day_shift)
     print(f"MS_between={neg['ms_between']:.9f}; MS_within={neg['ms_within']:.9f}; raw_tau2={(neg['ms_between']-neg['ms_within'])/4:.9f}")
 
-    print("\nI. ANOVA cruzado con interacción (datos simulados; A=2, D=3, r=2)")
+    # REML normal equilibrado: optimización del cociente lambda=tau2/sigma2.
+    # Se perfila sigma2; la constante omitida no depende de los componentes.
+    def reml_profile(lam):
+        q = neg["ss_within"] + neg["ss_between"]/(1 + 4*lam)
+        sigma2 = q/(neg["df_within"] + neg["df_between"])
+        return 11*np.log(sigma2) + 2*np.log1p(4*lam)
+    fit = minimize_scalar(reml_profile, bounds=(0, 10), method="bounded")
+    lam = min((0.0, fit.x), key=reml_profile)
+    sigma2_reml = (neg["ss_within"] + neg["ss_between"]/(1+4*lam))/11
+    tau2_reml = lam*sigma2_reml
+    print(f"REML_restringido_sigma2={sigma2_reml:.9f}; tau2={tau2_reml:.9f}")
+    print(f"u_media_truncamiento={sqrt(neg['sigma2']/12):.9f}; "
+          f"u_media_REML={sqrt(tau2_reml/3+sigma2_reml/12):.9f}")
+
+    print("\nI. ANOVA cruzado con interacción (datos simulados; A=2, P=3, r=2)")
     crossed = np.array([
         [[0.0, 0.2], [0.1, 0.3], [0.4, 0.6]],
         [[0.3, 0.5], [0.0, 0.2], [0.7, 0.9]],
@@ -114,9 +129,25 @@ def main():
     for key in ("grand", "ss_a", "ss_b", "ss_ab", "ss_e", "df_a", "df_b", "df_ab", "df_e", "ms_a", "ms_b", "ms_ab", "ms_e", "f_a", "f_b", "f_ab"):
         print(f"{key}={t[key]}")
 
-    print("\nI. Cochran C ilustrativo: cuatro varianzas de igual tamaño")
+    signed_daily = crossed - 0.4
+    signed = two_way_with_replication(signed_daily)
+    print("\nA. Analista x campaña, dos medias diarias firmadas por celda (simulado)")
+    print("datos_firmados=", signed_daily.tolist())
+    print("componentes_A_B_AB_dia=", (signed["ms_a"]-signed["ms_ab"])/6,
+          (signed["ms_b"]-signed["ms_ab"])/4,
+          (signed["ms_ab"]-signed["ms_e"])/2, signed["ms_e"])
+    print("F_A_B_AB=", signed["f_a"], signed["f_b"], signed["f_ab"])
+    print("\nA. Sesgo simulado de un laboratorio, ocho resultados de una jornada")
+    print(f"sesgo={100.30-100.00:.9f}; u_media={0.2/sqrt(8):.9f}; "
+          f"u_sesgo={sqrt(0.2**2/8+0.05**2):.9f}")
+
+    print("\nI. Cochran C ilustrativo: cuatro grupos normales, n=5 cada uno")
     variances = [0.010, 0.012, 0.011, 0.027]
-    print(f"variances={variances}; C={cochran_c(variances):.9f}")
+    c_critical = beta.ppf(1-0.05/4, 4/2, 3*4/2)
+    assert c_critical > 0.5  # Las cuatro colas son disjuntas: umbral exacto.
+    print(f"variances={variances}; C={cochran_c(variances):.9f}; "
+          f"Ccrit_05_n5_p4={c_critical:.9f}; "
+          f"senal={cochran_c(variances)>c_critical}")
 
 
 if __name__ == "__main__":

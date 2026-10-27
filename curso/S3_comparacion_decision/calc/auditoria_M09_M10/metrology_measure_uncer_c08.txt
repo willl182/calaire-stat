@@ -1,0 +1,737 @@
+Chapter 8
+Measurement Uncertainty in Conformity
+Assessment
+
+
+
+
+8.1 Statement of Conformity and Decision Rules
+
+Statements of conformity and decision rules are important issues to discuss, espe-
+cially after the last edition of ISO/IEC 17025: 2017, which made the requirements
+more rigorous for these issues.
+   Based on document ILAC-G8:09/2019—Guidelines on Decision Rules and
+Statements of Conformity, we can establish the following deﬁnitions:
+Statement of conformity: is an expression that describes the state of conformity or
+   non-conformity with a speciﬁcation, standard, or requirement.
+Decision rule: a rule that describes how measurement uncertainty will be accounted
+   for when stating conformity with a speciﬁed requirement. (ISO/IEC 17025:2017
+   clause 3.7)
+As we can see, we need to adopt a decision rule to declare a product, process, or
+measurement standard “conforming.”
+   The ISO/IEC 17025 standard was ﬁrst published in 1999. Since then, statements
+of conformity based on speciﬁcations or standards have become increasingly
+required, following the evolution of documentation on the concept of rule decisions
+used for such statements.
+   The current standard cites various requirements for the statement of conformity;
+however, no “unique” rule can address all conformity statements throughout the
+scope of testing or calibration.
+   Additionally, professionals (auditors and audited) have doubts about understand-
+ing and writing. How do we obey, that is, what laboratories need to apply to meet the
+customer’s requirements and the ISO/IEC 17025 standard?
+
+
+
+
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025   229
+P. P. Novellino do Rosario, A. Mendes, Metrology and Measurement Uncertainty,
+https://doi.org/10.1007/978-3-031-82303-9_8
+230                                     8 Measurement Uncertainty in Conformity Assessment
+
+
+8.2 Conformity Assessment
+
+Conformity assessment1 is performed in tests, inspections, and calibrations to ensure
+the compliance of products, materials, services, and systems regarding requirements
+deﬁned by standards, regulations, and legal frameworks, being adopted to establish
+conﬁdence for consumers and safety and quality of life.
+   Evaluating conformity is essential in the global economy, because it implies
+accepting or rejecting items that impact risk analysis, business decisions, ﬁnancial
+costs, and sometimes reputation costs.
+   The result of a measurement can be used to decide whether a variable of interest
+complies with a speciﬁc requirement, and this variable may be, for example:
+(a) The value of a standard 200 g mass of class E2.
+   According to the OIML R 111-1 Edition 2004 recommendation, a standard mass
+of 200 g of class E2 should have a maximum permissible error of 0.3 mg. This is to
+say that the mass in question must have a value between [199.9997 to 200.0003] g.
+(b) The indication error of a digital voltmeter.
+The value indicated in the standard 999 V.
+The value indicated in the voltmeter 1000 V.
+Error = 1 V.
+(c) The pH value of a solution.
+Example: pH = 7.474.
+   These variables of interest have values usually within tolerance limits, called
+tolerance intervals. If the variable’s actual value is within the tolerance range, it is
+considered “conforming”; otherwise, it is considered “non-conforming.”
+   In practical situations, to perform conformity assessment (e.g., conformity with
+geometric tolerances), are necessary objective criteria called “decision rules” (which
+consider a probability of occurrence), which deﬁne a “conformity zone” and an
+“acceptance zone” (which are the results plus measurement uncertainty).
+   A traditional approach to a decision rule involves comparing a single limit
+(or limit interval) with the result of a single measurement.
+   Currently, the probabilistic approach to measurement, which introduces uncer-
+tainty as a parameter that expresses measurement variability, signiﬁcantly affects the
+decision-making process. See Fig. 8.1 for example.
+   Figure 8.1 presents four possible measurement results and their uncertainties
+within a tolerance interval to which we must apply a decision rule. We can undoubt-
+edly say that case (a) is “conforming” and case (d) is “non-conforming”; however, in
+
+
+1
+ According to ISO/IEC 17000: 2004, conformity assessment is any activity performed to deter-
+mine, directly or indirectly, whether a product, process, system, person, or body meets relevant
+standards and complies with the speciﬁed requirements.
+232                                  8 Measurement Uncertainty in Conformity Assessment
+
+
+
+
+Fig. 8.2 Measurement decision risk. (Source: ILAC-G8:09/2019)
+
+
+8.3 Uncertainty of Measurement and Risk of Decision
+
+When performing a measurement, there are two situations when stating conformity:
+inside or outside tolerance regarding the manufacturer’s speciﬁcations, approved or
+disapproved in a speciﬁc requirement.
+   In real life, as much as the instrument is used, however accurate and precise, we
+know that all measured value has an associated measurement uncertainty (U).
+   Figure 8.2 shows two measurements of the same measurand, but with different
+measurement uncertainties (the central point is the measurement value, and the
+horizontal bar shows the measurement uncertainty).
+   Note that the measurement result (measurement value + measurement uncer-
+tainty) in case A is entirely within the tolerance limit. In case B, which has
+signiﬁcantly greater measurement uncertainty, the risk of accepting a false result
+exists. What is the risk level of a false result?
+   Further, we will discuss the types of errors, risks, and possible decision rules in
+detail, but now we will anticipate some considerations.
+   A binary decision rule exists when the result is limited to two options (approved/
+disapproved, right/wrong, passes/does not pass), and a non-binary decision rule
+exists when, of course, we have several alternatives to express the result (approved,
+disapproved, conditional approval, conditional failure).
+   Analyzing Fig. 8.1, where measurements (a) and (b) are considered approved, and
+the values (c) and (d) failed in a binary statement with a simple acceptance rule,
+statements of conformity may be reported as:
+• Pass (a) and (b): The measured value (central point) is within the speciﬁcation
+  limits.
+• Fail (c) and (d): The measured value is outside the speciﬁcation limits.
+   In this case, the expanded uncertainty of measurement U was ignored, and the
+decision was made only based on the measurement value.
+   Note that even cases (a) and (b), considered approved, have a percentage risk of
+providing values outside tolerance limits. This percentage is much lower in case
+8.4 False Positive and False Negative                                                      233
+
+
+(a) than in case (b), but it exists. Remember that measurement uncertainty is
+calculated for a probability of 95.45 % and that we have a 4.55 % probability that
+the declared value is outside the measurement interval.
+   Thus, it is necessary to study the decision errors assumed when accepting or
+rejecting a measurement result against speciﬁcation limits (tolerance intervals).
+Next, we will analyze these mistakes.
+
+
+
+8.4 False Positive and False Negative
+
+When performing a conformity assessment, there are probabilities related to two
+types of incorrect decisions:
+(a) Accept an incorrect result—false positive.
+(b) Reject a correct result—false negative.
+   Figure 8.3 has four measurement results with their respective uncertainties.
+   Accepting or rejecting an item when the measured value of your property is close
+to the tolerance limit may result in an incorrect decision and undesirable
+consequences.
+   Analyzing situation (b) in Fig. 8.3, we see that the measured value is below the
+tolerance limit, but the true value is above, conﬁguring a false positive situation.
+That is, a situation where we believe the product is within the speciﬁcation, but it is
+not. The situation (c) is opposite. We have the value measured above the tolerance
+limit but below the true value. In this case, we have a false negative situation. That is,
+we believe that the measurement does not meet the speciﬁcations but meets.
+
+
+
+
+Fig. 8.3 TU is the upper tolerance limit, and AU is the upper acceptance limit. There were four
+measurement results, with their respective uncertainties at 95%. (Source: JCGM 106:2012)
+234                                 8 Measurement Uncertainty in Conformity Assessment
+
+
+   We have consumer risk in the case of a false positive (type II error or β error). In
+the case of a false negative, we already have producer/supplier risk (type I error or α
+error).
+   For measurements, the probability of not accepting an item as shown in Fig. 8.3,
+(b) or rejecting an item as shown in Fig. 8.3, (c) can reach 50 %. This would happen,
+for example, if the value measurement of a property were very close to the tolerance
+limit. In this case, about 50 % of the probability of the measurement result would be
+on both sides of the tolerance limit, so whether the item was accepted or rejected,
+there would be a 50 % chance of an incorrect decision.
+   Any of these odds can be reduced, but at the cost of increasing the other, choosing
+acceptance limits, which removes the result from tolerance limits.
+   This is a compliance decision strategy called Guard Band.
+
+
+
+8.5 Decision Rules and Guard Band
+
+When measurement is very close to tolerance limits or when uncertainty is signif-
+icant, an acceptance criterion only considering the upper and lower tolerance limits
+(simple acceptance) can lead to a high risk of an incorrect decision. Often, more
+conﬁdence is necessary in accepting or rejecting an analyzed item. For these
+situations, we can use a guard band.
+    The guard band is a protection created to remove (reject) values near tolerance
+limits. Acceptance and rejection zones can be determined, as shown in Fig. 8.4.
+(a) High conﬁdence in correct rejection.
+   Only measurements that exceed the guard band placed after the tolerance limit
+will be rejected in this case.
+(b) High conﬁdence in correct acceptance.
+   Only measurements inferior to the guard band placed before the tolerance limit
+will be accepted in this case.
+   The region between the upper tolerance limit and the higher acceptance limit is
+called the guard band, reducing the risk of an incorrect decision.
+   The use of guard bands provides a straightforward way to deﬁne decision rules;
+choosing the size of the guard band deﬁnes an acceptance zone that can be used for
+decision-making. The guard band is generally deﬁned as the expanded uncertainty of
+measurement (U). It can also be described as zero. This is called simple acceptance
+or “shared risk.”
+   Figure 8.5 shows the acceptance and rejection zones. The guard band has been
+chosen so that, for a sample that is in accordance, there is a high probability that the
+measurement is within the speciﬁcation limits; this is high conﬁdence in correct
+acceptance.
+   Figure 8.5 shows the relative positions of speciﬁcation limits and acceptance and
+rejection zones for high acceptance conﬁdence.
+236                                 8 Measurement Uncertainty in Conformity Assessment
+
+
+   The decision to accept an item as in accordance or reject it as not as, according to
+the speciﬁcation, is based on a measured value of a property of the item about a
+declared decision rule that speciﬁes the role of measurement uncertainty in the
+formulation of acceptance criteria. An interval of measured property values that
+results in acceptance of the item is called the acceptance zone (see Fig. 8.5), deﬁned
+by one or two acceptance limits (see Fig. 8.4).
+   The limits of acceptance and the corresponding decision rules are chosen to
+manage the undesirable consequences of incorrect decisions. Several widely used
+decision rules are simple to implement. They can be applied when knowledge of a
+property of interest is summarized in terms of a better estimate and corresponding
+coverage interval. Two of these decision rules are described below.
+
+
+
+8.5.1 Decision Ruler Based on Simple Acceptance
+
+An important and widely used decision rule is simple acceptance or shared risk. In
+this rule, the producer and user (consumer) agree, implicitly or explicitly, to accept
+as (and reject otherwise) an item whose property has a value measured within the
+tolerance range. With the alternative name of “shared risk,” the producer and the user
+share the consequences of incorrect decisions.
+   In practice, to maintain the chances of incorrect decisions at acceptable levels for
+both the producer and the user, there is usually a requirement that measurement
+uncertainty is considered sufﬁcient for the intended purpose.
+   One approach to such consideration is to require, given an estimated measured
+quantity, which expanded uncertainty U for a probability of scope, for example, of
+95.45 %, must satisfy:
+
+                                      U ≤ U max
+
+   Where Umax is a mutually agreed expanded uncertainty, this approach is
+explained by the following situation.
+   Legal Metrology’s decision rule based on simple acceptance has been used to
+verify instrument measurement.
+   Consider an instrument that must have an indication error in the interval [-
+Emax; + Emax]. The instrument is accepted under the speciﬁed requirement, if it meets
+the following criteria:
+(a) Analyzing the measuring instrument calibration certiﬁcate, its measurement
+    error E will be accepted if it satisﬁes the condition: E ≤ Emax.
+(b) Expanded uncertainty will be accepted if it is less than 1/3 of the maximum error.
+
+
+                                 U ≤ U max = Emax =3
+8.6 Unilateral Tolerance Interval with the Normal Curve                                     237
+
+
+8.5.2 Decision Rules Based on Guard Bands
+
+The difference between a tolerance limit (TU) and a corresponding acceptance limit
+(AU) deﬁnes the width of a guard band (w).
+
+                                        w = T U AU :                                      ð8:1Þ
+
+   When we consider that a decision rule is protected, that is, it has a small
+probability of generating false positives or false negatives, we adopt w > 0.
+(Fig. 8.6).
+
+
+
+8.6 Unilateral Tolerance Interval with the Normal Curve
+
+The probability of a measurement (product, component, etc.) being in compliance
+depends on the knowledge of the measuring X and its respective probability density
+function (PDF) P(X). In most cases, it is reasonable to characterize the knowledge X
+by a normal distribution, and thus, we can calculate its probability.
+   If the production distribution is normal and a normal distribution also character-
+izes the measurement system, then the distribution function P(X) will also be normal.
+   More generally, if the probability function is characterized by a normal distribu-
+tion and the previous information is insufﬁcient, then the posterior PDF (post-
+measured) will be approximately normal. In this case, P(X) may be adequately
+approached by a normal distribution with the mean x and the standard deviation
+by standard uncertainty u(x), calculated according to ISO Gum criteria.
+   Assuming, then, that the PDF P(X) for the measurement X is (i.e., well approx-
+imated by) a normal distribution speciﬁed by a mean x and a standard uncertainty
+u(x), we will have:
+
+
+
+
+Fig. 8.6 Guard band-based decision rule. An upper AU acceptance limit within an upper TU
+tolerance limit deﬁnes an acceptance range that reduces the probability of false acceptance of a
+non-conforming item (consumer risk). By convention, the length parameter w associated with a
+guard band is considered positive: w = TU – AU > 0. (Source: JGCM 106:2012)
+238                                   8 Measurement Uncertainty in Conformity Assessment
+
+
+Fig. 8.7 Standard normal
+accumulated probability
+
+
+
+
+                                    1   1 x -x 2
+                            pðxÞ = p e -2ð u Þ = φ x; x; u2                       ð8:2Þ
+                                  u 2π
+
+   The probability of X being in the interval [a, b], with a normal PDF P(X), will be:
+
+                                              b-x    a-x
+                           Pða ≤ X ≤ bÞ = φ       -φ                              ð8:3Þ
+                                               u      u
+
+    The probability P(X) can be found in a standard normal accumulated table or
+through MS EXCEL© software, function DIST.NORM.N (x, mean, standard devi-
+ation, cumulative).
+    Figure 8.7 and Table 8.1 show the standard normal accumulated probability of
+z from 0.00 to 3.99.
+    Next, we will apply Eq. (8.3) to estimate the probability of obtaining a value
+accepted as valid for a given speciﬁcation from a measurement result.
+
+
+
+8.6.1 Examples of Probability Estimation in Simple
+      Acceptance
+
+(a) Single upper tolerance limit—TU.
+As we saw at the beginning of this chapter, a measurement process’s tolerance is the
+maximum variation admitted by the process variables. This tolerance range is the
+limit within which the parameters of interest must be located.
+   In some situations, we do not work with a tolerance range but with a single
+tolerance value. Given a single upper tolerance limit (TU) and an estimated y
+measurement with standard measurement uncertainty u( y), a decision rule must
+deﬁne a probability of compliance (Pc) assuming a false negative (products in
+compliance are incorrectly rejected).
+   The expression to be tested is:
+
+                                                     TU - y
+                              Pc = Pðy ≤ T U Þ = φ                                ð8:4Þ
+                                                       u
+8.6 Unilateral Tolerance Interval with the Normal Curve                              247
+
+
+   The question is: Is it possible to determine minimum and maximum values within
+the tolerance range, where all values found will comply with the criterion adopted?
+   To answer this question, the concept of a guard band was created.
+
+
+
+8.6.2 Examples of Probability Estimate Using Guard Bands
+
+Example 8.7
+Suppose that in a line of rubber sandals production, we must control the mass of the
+essential raw material: rubber. Consider that the speciﬁcation of the rubber mass
+required for a sandal is (8.0 ± 0.5) g. The scale used to control rubber weighing has
+an acceptance criterion (error + expanded uncertainty of the scale calibration certif-
+icate) less than or equal to 0.1 g and a resolution of 0.01 g. Based on this information,
+determine the lower and higher values where we have a probability of 95 %
+acceptance (risk to the 5 % producer).
+Consider:
+• TU = 8.5 g.
+• TL = 7.5 g.
+• u = 0.05 g (U/2 = 0.1/2).2
+(a) Determining the upper acceptance limit to 95 %
+
+                                                  TU - y
+                                          ZU =                                     ð8:9Þ
+                                                    u
+
+      For 95 %, consulting Table 8.1, we have z = 1.65, replacing Eq. 8.9.
+
+                                   8:5 - y
+                                           = 1:65 → y = 8:42 g
+                                    0:05
+
+(b) Determining the lower acceptance limit to 95 %
+
+                                                  y - TL
+                                          ZL =                                    ð8:10Þ
+                                                     u
+                                                   y - 7:5
+                                        1:65 =
+                                                    0:05
+                                             y = 7:58 g
+
+
+
+
+2
+    Consider the coverage factor k = 2; 95.45 % of probability.
+8.7 Risks Inherent in Decision-Making                                                249
+
+
+8.7 Risks Inherent in Decision-Making
+
+In many cases, decision-making may have severe and harmful consequences and
+may lead to legal, criminal, accusatory, and even health damage.
+   Next, we will examine how to manage the risks inherent in making decisions
+based on safe and reliable measurements.
+
+
+
+8.7.1 Protected Rejection—Categorical Decision
+
+Protected rejection occurs when the measurement’s result will result in a categorical
+decision, often with legal consequences, causing legal or high risk in decision-
+making. Let us look at the following example.
+Example 8.8 (Source: JGCM 106:2012)
+In the application of road law, the road police use devices such as radars to measure
+car velocity. A decision to issue a speed ﬁne must be made with a high degree of
+conﬁdence that the speed limit has been exceeded.
+   Using a radar, speed measurements in the ﬁeld can be performed with a relative
+standard uncertainty of 2% within the interval of (50 to 150) km/h. In this interval,
+the measured velocity v is characterized by a normal distribution with a standard
+deviation of 0.02 v.
+   Under these conditions, one may ask: For a limit speed of 100 km/h (the
+maximum speed at which the driver does not take a ﬁne), what should be the
+measured velocity by the radar to ensure, with a 99.9 % probability, that the driver
+exceeded the limit speed of 100 km/h?
+   This mathematical problem is equivalent to calculating a probability of confor-
+mity for a higher unilateral tolerance interval.
+   Note that z is given by Eq. (8.9) and that the probability of desired trust is 99.9 %,
+z = 3.09 (Table 8.1). Then we have:
+
+                                             ðT U - yÞ
+                                        z=
+                                                 u
+                                             ðT U - 100Þ
+                                  3:08 =
+                                                  2
+                                  TU = 106:16 km=h
+
+   The interval [100 km/h ≤ v ≤ 107 km/h] is a guard band that ensures a probability
+of at least 99.9 %. If the measured speed is over 107 km/h, the police will have
+99.98 % conﬁdence that the driver was above 100 km/h, and he will ﬁne the violator.
+250                                 8 Measurement Uncertainty in Conformity Assessment
+
+
+Table 8.5 TUR = 5, without
+                             m(g)    Φ1 T Uu- y   Φ2 T L u- y   Pc1     Pc2     Pc
+guard band
+                             7.50    20.00          0.00        1.00    0.50    50%
+                             7.58    18.40         -1.60        1.00    0.05    95%
+                             7.60    18.00         -2.00        1.00    0.02    98%
+                             7.70    16.00         -4.00        1.00    0.00    100%
+                             7.80    14.00         -6.00        1.00    0.00    100%
+                             7.90    12.00         -8.00        1.00    0.00    100%
+                             8.00    10.00        -10.00        1.00    0.00    100%
+                             8.10     8.00        -12.00        1.00    0.00    100%
+                             8.20     6.00        -14.00        1.00    0.00    100%
+                             8.30     4.00        -16.00        1.00    0.00    100%
+                             8.40     2.00        -18.00        0.98    0.00    98%
+                             8.42     1.60        -18.40        0.95    0.00    95%
+                             8.50     0.00        -20.00        0.50    0.00    50%
+
+
+
+8.7.2 Binary Decision Rule Applied to the Conformity
+      Assessment Without Guard Band
+
+Remembering, a binary decision rule exists when the result is limited to two options
+(approved or disapproved) and a non-binary decision rule when various terms can
+express the result (approved, conditional approval, conditional disapproval,
+disapproved).
+   We will start this theme by analyzing the situation in which we have a binary
+decision without using the guard band. In a binary statement where the simple
+acceptance rule is adopted (w = 0), we have the situations:
+• Approved—the measured value is between the tolerance limits.
+• Disapproved—the measured value is outside the tolerance limits.
+   Let us look at the following example.
+Example 8.9
+Analyzing the rubber mass speciﬁcation of Example 8.7, we present the following
+questions:
+1. What should be the uncertainty of the scale that will measure the value of the
+   rubber used in the production of sandals?
+2. Should this uncertainty be related to the tolerance of the process?
+   To answer these two questions, we must adopt a decision rule. Initially, we will
+adopt a decision rule without a guard band; that is, we are sharing the risk with the
+consumer of sandals. Knowing that the speciﬁcation of the mass of rubber used in
+the production is (8.0 ± 0.5) g, we have TL = 7.5 g and TU = 8.5 g. If we adopt an
+expanded uncertainty of the scale according to Example 8.7, that is, U = 0.1 g (for
+95.45 %), we will have (Table 8.5):
+8.8 Binary Decision Rule Applied to the Conformity Assessment with a Guard Band    253
+
+
+Table 8.7 TUR = 10. Values
+                               m(g)    Φ1 T Uu- y   Φ2 T L u- y   Pc1     Pc2     Pc
+for acceptance limit at 95 %
+equal to 7.54 g and 8.46 g     7.50    40.00          0.00        1.00    0.50    50%
+                               7.54    38.40         -1.60        1.00    0.05    95%
+                               7.60    36.00         -4.00        1.00    0.00    100%
+                               7.70    32.00         -8.00        1.00    0.00    100%
+                               7.80    28.00        -12.00        1.00    0.00    100%
+                               7.90    24.00        -16.00        1.00    0.00    100%
+                               8.00    20.00        -20.00        1.00    0.00    100%
+                               8.10    16.00        -24.00        1.00    0.00    100%
+                               8.20    12.00        -28.00        1.00    0.00    100%
+                               8.30     8.00        -32.00        1.00    0.00    100%
+                               8.40     4.00        -36.00        1.00    0.00    100%
+                               8.46     1.60        -38.40        0.95    0.00    95%
+                               8.50     0.00        -40.00        0.50    0.00    50%
+
+
+   Note how the guard band reduces and consequently increases the acceptance
+interval when the TUR increases to 10. This increases the chances of product
+acceptance but dramatically reduces the acceptance criterion and, consequently,
+the uncertainty of the measuring instrument.
+
+
+
+8.8 Binary Decision Rule Applied to the Conformity
+    Assessment with a Guard Band
+
+When we adopt a binary decision rule in the conformity assessment, the measure-
+ment result is accepted if the measured value is within the acceptance interval. A
+value measured outside the acceptance interval leads to the item’s rejection.
+   Using guard bands provides a way to limit the probability of making a decision
+incorrectly based on measurement information summarized by a probability interval.
+   The probabilities evaluated depend on two factors: (i) the measurement system
+and (ii) the production process.
+   If the measurement system were perfectly accurate, all decision-making would be
+correct, and the risks would be null. An increase in measurement uncertainty means
+an increase in the probability of an incorrect decision, and the probability is higher
+when the measured values are close to the tolerance limits.
+   Risks also depend on the nature of the production process. If the process rarely
+produces an item whose properties of interest are close to tolerance limits,5 there is
+less opportunity to make incorrect decisions. On the other hand, if a process
+
+
+
+
+5
+    Process under control.
+254                                     8 Measurement Uncertainty in Conformity Assessment
+
+
+
+
+Fig. 8.13 Graphical representation of a binary statement with a guard band. (Source: ILAC G8:09/
+2019)
+
+produces items with properties that are probably close to tolerance6 limits, the
+uncertainties associated with measurements are placed in the game.
+   An out-of-control process, with a signiﬁcant dispersion of measured values,
+produces values near tolerance limits, signiﬁcantly increasing the probability of
+wrong decision-making.
+   The guard band’s boundaries for a conﬁdence level of (1 - α) can be obtained,
+considering a symmetrical error of α/2 on each PDF tail.
+   Statements of conformity are reported as:
+• Pass—acceptance is based on the acceptance range; the measurement result is
+  between the acceptance limits.
+• Fail—rejection based on the guard band if the measurement result exceeds
+  acceptance limits (Fig. 8.13).
+   The adoption of a guard band gives protection to risk, according to the size of the
+band. We adopted the relationship w = r·U, where r is the multiplicative factor to the
+guard band. Let us look at some typical guard bands and their respective r.
+
+
+
+8.8.1 Guard Band with r = 1 (w = U)—ILAC G8:2009 Rule
+      Decision
+
+In this case, the guard band has the same value as expanded uncertainty. Applying
+the guard band in the example of sandal production, for a TUR equal to ﬁve, we have
+(Table 8.8):
+
+
+
+
+6
+    Process out of control.
+8.8 Binary Decision Rule Applied to the Conformity Assessment with a Guard Band       255
+
+
+Table 8.8 TUR = 5, guard
+                               m(g)   Φ1 T Uu- y   Φ2 T L u- y   Pc1    Pc2       Pc
+band w = U
+                               7.50   20.00          0.00        1.00   0.50       50.00%
+                               7.54   19.20         -0.80        1.00   0.21       78.81%
+                               7.60   18.00         -2.00        1.00   0.02       97.72%
+                               7.70   16.00         -4.00        1.00   0.00      100.00%
+                               7.80   14.00         -6.00        1.00   0.00      100.00%
+                               7.90   12.00         -8.00        1.00   0.00      100.00%
+                               8.00   10.00        -10.00        1.00   0.00      100.00%
+                               8.10    8.00        -12.00        1.00   0.00      100.00%
+                               8.20    6.00        -14.00        1.00   0.00      100.00%
+                               8.30    4.00        -16.00        1.00   0.00      100.00%
+                               8.40    2.00        -18.00        0.98   0.00       97.72%
+                               8.46    0.80        -19.20        0.79   0.00       78.81%
+                               8.50    0.00        -20.00        0.50   0.00       50.00%
+
+
+
+   Adopting r = 1, we will always have the acceptance limits with a probability of
+97.72 % acceptance at risk of false positives less than 2.5 %.
+   Thus, for example, at 8.7, we will have a lower acceptance limit equal to 7.60 g
+and an upper acceptance limit of 8.40 g with a probability of false positive (consumer
+risk) below 2.5 %.
+
+
+
+8.8.2 Guard Band with r = 0.83 (w = 0.83 U)—ISO
+      14253-1:2017 Rule Decision
+
+In this case, the protection band has a value of 0.83 of expanded uncertainty. We will
+apply the guard band to the sandal production example for a TUR equal to ﬁve. With
+the guard band w = 0.83 U, the risk of false positives is less than 5 % for any value of
+TUR > 1 adopted.
+    Note that the r × U relationship is independent of the adopted TUR since when we
+change the TUR, we must change the uncertainty of measurement U and, with that,
+the size of the guard band w.
+    Thus, for example, at 8.7, we will have a lower acceptance limit equal to 7.58 g
+and an upper acceptance limit of 8.42 g, with a probability of false positive
+(consumer risk) below 5 %. The guard band will be equal to
+w = 0.83 × 0.1 = 0.083 g (Table 8.9).
+
+                           AU = 8:50–0:083 = 8:471 = 8:42 g
+                         AL = 7:50 þ 0:083 = 7:583 = 7:58 g
+256                                8     Measurement Uncertainty in Conformity Assessment
+
+
+Table 8.9 TUR = 5, guard
+                            m(g)       Φ1 T Uu- y   Φ2 T L u- y   Pc1    Pc2    Pc
+band w = 0.83 U
+                            7.50       20.00          0.00        1.00   0.50    50.00%
+                            7.58       18.34         -1.66        1.00   0.05    95.15%
+                            7.60       18.00         -2.00        1.00   0.02    97.72%
+                            7.70       16.00         -4.00        1.00   0.00   100.00%
+                            7.80       14.00         -6.00        1.00   0.00   100.00%
+                            7.90       12.00         -8.00        1.00   0.00   100.00%
+                            8.00       10.00        -10.00        1.00   0.00   100.00%
+                            8.10        8.00        -12.00        1.00   0.00   100.00%
+                            8.20        6.00        -14.00        1.00   0.00   100.00%
+                            8.30        4.00        -16.00        1.00   0.00   100.00%
+                            8.40        2.00        -18.00        0.98   0.00    97.72%
+                            8.42        1.66        -18.34        0.95   0.00    95.15%
+                            8.50        0.00        -20.00        0.50   0.00    50.00%
+
+
+  But if we consider, for example, a TUR equal to two, we will have U = 0.25 and
+w = 0.25 × 0.83 = 0.23.
+
+                           AU = 8:50           0:23 = 8:27 g
+                           AL = 7:50 þ 0:23 = 7:73 g
+
+   With the reduction of TUR, measurement uncertainty increases. This generates a
+lower acceptance interval, which may imply more rejected measurements.
+
+
+
+8.8.3 Guard Band with r = 1.5 (w = 1.5 U)—Three Sigma
+      Rule Decision
+
+In this case, the protection band is 1.5 times expanded uncertainty. Applying the
+guard band in the example of sandal production, for a TUR equal to ﬁve, we have
+(Table 8.10):
+   With the guard band w = 1.5 U, we have, for any value of TUR > 1 adopted, a
+risk of false positive less than 0.16 % (100 % - 99.87 % = 0.13 %).
+   Thus, for example, at 8.7, we will have a lower acceptance limit equal to 7.65 g
+and an upper acceptance limit of 8.35 g, with a probability of false positives
+(consumer risk) below 0.16 %. The guard band will be equal to
+w = 1.5 × 0.1 = 0.15 g.
+8.8 Binary Decision Rule Applied to the Conformity Assessment with a Guard Band              257
+
+
+Table 8.10 TUR = 5, guard
+                                m(g)      Φ1 T Uu- y    Φ2 T L u- y   Pc1      Pc2     Pc
+band w = 1.5 U
+                                7.50      20.00           0.00        1.00     0.50     50.00%
+                                7.60      18.00          -2.00        1.00     0.02     97.72%
+                                7.65      17.00          -3.00        1.00     0.00     99.87%
+                                7.70      16.00          -4.00        1.00     0.00    100.00%
+                                7.80      14.00          -6.00        1.00     0.00    100.00%
+                                7.90      12.00          -8.00        1.00     0.00    100.00%
+                                8.00      10.00         -10.00        1.00     0.00    100.00%
+                                8.10       8.00         -12.00        1.00     0.00    100.00%
+                                8.20       6.00         -14.00        1.00     0.00    100.00%
+                                8.30       4.00         -16.00        1.00     0.00    100.00%
+                                8.35       3.00         -17.00        1.00     0.00     99.87%
+                                8.40       2.00         -18.00        0.98     0.00     97.72%
+                                8.50       0.00         -20.00        0.50     0.00     50.00%
+
+
+Table 8.11 Probability of false positive (FP) for any TUR > 1
+                       Guard band
+Decision rule          w               Risk
+Six Sigma              3U              <1 ppm FP
+Three Sigma            1.5 U           <0.16 % FP
+ILAC G8:2009           U               <2.5 % FP
+ISO 14253-1:2017       0.83 U          <5 % FP
+Simple acceptance      0               <50 % FP
+Deﬁned by the          r×U             Customers can deﬁne r multiple arbitraries to apply as a
+customer                               guard band
+
+
+
+8.8.4 Guard Band with r = 3 (w = 3 U)—Six Sigma Rule
+      Decision
+
+In this case, the protection band is three times expanded uncertainty. With the guard
+band w = 3 U, we have, for any value of TUR > 1 adopted, a risk of false positive
+less than 1 ppm (0.0001 %).
+   Thus, at 8.7, we will have a lower acceptance limit equal to 7.80 g (7.50 + 0.3)
+and an upper acceptance limit of 8.20 g (8.50 - 0.3).
+   Table 8.11, copied from ILAC G8:09/2019 Guidelines on Decision Rules and
+Statements of Conformity, summarizes some of the guard band values presented in
+this chapter.
+   As we can observe in Graphs 8.1, 8.2, 8.3, 8.4 and 8.5, mass values between the
+tolerance limits increase with the highest probability when the TUR increases. This
+entails greater security in the results obtained.
+   Note that when TUR equals 1, a few values are approved for a given probability,
+for example, 95 %. For this reason, we should not adopt TUR equal to 1. When TUR
+equals 2, the values with the highest probability of occurrence within tolerance limits
+260                                  8 Measurement Uncertainty in Conformity Assessment
+
+
+
+
+Graph 8.5 Probability × measured mass, for example 8.7 with TUR equal to 10
+
+
+
+8.9 Proposed Exercises
+
+8.9.1 A “speciﬁc risk” is a probability that an accepted item is not in compliance or a
+   rejected item is in accordance. Considering this deﬁnition, tick the correct
+   alternative.
+   (a) The “speciﬁc consumer risk” is the probability of accepting an item according
+       to, and the “speciﬁc risk of the producer” is the probability of rejecting an
+       item not according to.
+   (b) The “speciﬁc consumer risk” is the probability of accepting an item not
+       according to, and the “speciﬁc risk of the producer” is the probability of
+       rejecting an item according to.
+   (c) The “speciﬁc risk of the producer” is the probability of accepting an item not
+       according to, and the “speciﬁc consumer risk” is the probability of rejecting
+       an item according to.
+   (d) The “speciﬁc consumer risk” and the “speciﬁc risk of the producer” will
+       always be the same.
+
+8.9.2. Check the alternative that best deﬁnes a binary decision rule.
+   (a) The result is limited to two options: approved/disapproved.
+   (b) We have two options; however, a guard band will always exist.
+   (c) When there is no possibility of using a non-binary decision rule.
+

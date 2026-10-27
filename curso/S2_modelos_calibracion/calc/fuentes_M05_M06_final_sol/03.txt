@@ -1,0 +1,308 @@
+9
+Inferences About Variances
+
+
+
+
+Chapter Outline
+9.1 Inferences About Variances and How They Work
+    9.1.1 Characteristics of the F Distribution
+9.2 Assumptions
+    9.2.1 Assumptions for Inferences About a Single Variance
+    9.2.2 Assumptions for Inferences About Two Dependent Variances
+9.3 Sample Size, Power, and Effect Size
+9.4 Computing Inferences About Variances Using SPSS
+9.5 Computing Inferences About Variances Using R
+    9.5.1 Reading Data Into R for the Test of Inference About a Single Variance
+    9.5.2 Generating the Test of Inference About a Single Variance
+    9.5.3 Reading Data Into R for the Test of Inference About Two Dependent Variances
+    9.5.4 Generating the Test of Inference About Two Dependent Variances
+9.6 Research Question Template and Example Write-Up
+9.7 Additional Resources
+
+
+
+
+Key Concepts
+   1. Sampling distributions of the variance
+   2. The F distribution
+   3. Homogeneity of variance tests
+
+In the previous three chapters we looked at testing inferences about means (Chapters 6
+and 7) and about proportions (Chapter 8). In this chapter we examine inferential tests
+involving variances. Tests of variances are useful in two applications: (a) as an inferential
+test by itself and (b) as a test of the homogeneity of variance assumption for another pro-
+cedure (e.g., t test, analysis of variance).
+  First, a researcher may want to perform inferential tests on variances for their own sake,
+in the same fashion that we described for the one- and two-sample t tests on means. For
+example, we may want to assess whether the variance of undergraduates at Ivy-Covered
+University on an intelligence measure is the same as the theoretically derived variance of
+225 (from when the test was developed and normed). In other words, is the variance at a
+particular university greater than or less than 225? As another example, we may want to
+
+                                                                                         345
+346                                                             Statistical Concepts: A First Course
+
+
+
+determine whether the variances on an intelligence measure are consistent across two or
+more groups; for example, is the variance of the intelligence measure at Ivy-Covered Uni-
+versity different from that at The Greatest University?
+   Second, for some procedures, such as the independent t test (Chapter 7) and the analy-
+sis of variance, it is assumed that the variances for two or more independent samples are
+equal (known as the homogeneity of variance assumption). Thus, we may want to use an
+inferential test of variances to assess whether this assumption has been violated or not. The
+following inferential tests of variance are covered in this chapter: (a) testing whether a single
+variance is different from a hypothesized value; (b) testing whether two dependent variances
+are different; and (c) testing whether two or more independent variances are different. We
+utilize many of the foundational concepts covered in Chapters 6, 7, and 8. New concepts to
+be discussed include the following: the sampling distributions of the variance, the F distri-
+bution, and homogeneity of variance tests. Our objectives are that by the end of this chapter,
+you will be able to (a) understand the basic concepts underlying tests of variances, (b) select
+the appropriate test, and (c) determine and interpret the results from the appropriate test.
+
+
+
+
+9.1 Inferences About Variances and How They Work
+As you remember, Oso Wyse is one of four extraordinarily talented graduate students who
+is working in the stats lab. Oso and colleagues have had the opportunity to work on quite
+a number of exciting statistical projects. We revisit the group again, with Oso getting ready
+to embark on another stats journey.
+
+
+  Another call has been elded by the stats lab for assistance with statistical analysis.
+  This time, it is Dr. Abraham, an elementary assistant principal within the community.
+  Dr. Abraham shares with Oso that she is conducting a teacher research project related
+  to achievement of rst grade students at her school. Dr. Abraham wants to determine if
+  the variances of the achievement scores differ when children begin school in the fall as
+  compared to when they end school in the spring. Oso suggests the following research
+  question: Are the variances of achievement scores for rst grade children the same in the fall as
+  compared to the spring? Oso suggests a test of variance as the test of inference. His task
+  is then to assist Dr. Abraham in generating the test of inference to answer her research
+  question.
+
+
+This section deals with concepts for testing inferences about variances, in particular,
+the sampling distributions underlying such tests. Subsequent sections deal with several
+inferential tests of variances. Although the sampling distribution of the mean is a normal
+distribution (Chapters 6 and 7), and the sampling distribution of a proportion is either a
+normal or chi-square distribution (Chapter 8), the sampling distribution of a variance is
+a chi-square distribution for a single variance, a t distribution for two dependent variances, or an F
+distribution for two or more independent variances. Although we have already discussed the t
+distribution in Chapter 6 and the chi-square distribution in Chapter 8, we need to discuss
+the F distribution (named in honor of the famous statistician Sir Ronald A. Fisher) in some
+detail here.
+Inferences About Variances                                                                      357
+
+
+
+  The O’Brien procedure is an analysis of variance on a different transformed variable:
+
+                                 (n j − 1.5)(n j )(Yij − Y j )2 − (.5)( s2j )(n j − 1)
+                         rij =
+                                                      (n j − 1)(n j − 2)
+
+                                 (n j − 1.5)nj (Yij − Y j )2 − .5s2j (n j − 1)
+                         rij =
+                                                 (n j − 1)(n j − 2)
+
+which is computed for each individual, where nj is the size of group j, Y . j is the mean on the
+outcome for group j, and s j2 is the sample variance for group j.
+  The test statistic is an F statistic and is computed by the following equation:
+
+                                                  J                    2
+                                           ∑ n (r − r )
+                                                  j =1
+                                                         j   .j   ..
+
+                                                                           ( J − 1)
+                                 F=                                        2
+                                            nj           J
+                                       ∑ i=1∑ j=1(rij − r. j )
+                                                                               (N − J)
+
+where nj designates the number of observations in group j, J is the number of groups
+(where j ranges from 1 to J), r. j is the mean for group j (computed by taking the sum of the
+observations in group j and dividing by the number of observations in group j, which is nj),
+and r.. is the overall mean regardless of group membership (computed by taking the sum of
+all of the observations across all groups and dividing by the total number of observations
+N). The test statistic F is compared against a critical value from the F table (Table A.4 in the
+Appendix) with J − 1 degrees of freedom in the numerator and N − J degrees of freedom
+in the denominator, denoted by αFj−1,N−J If the test statistic is greater than the critical value,
+then we reject H0; otherwise, we fail to reject H0.
+  Let us return to the example in Table 9.1 and consider the results of the O’Brien proce-
+dure. From the computations shown in the table, the test statistic F = 1.4799 is compared
+against the critical value for α = .05 of .05F2,9 = 4.26. Because the test statistic is smaller than
+the critical value (i.e., 1.4799 < 4.26), we fail to reject the null hypothesis and conclude that
+the three student groups do not have different variances.
+
+
+
+
+9.2 Assumptions
+9.2.1 Assumptions for Inferences About a Single Variance
+It is assumed that the sample is randomly drawn from the population (i.e., the assumption
+of independence) and that the population of scores is normally distributed. It has been
+noted by statisticians such as Wilcox (1996) that the chi-square distribution does not per-
+form adequately when sampling from a nonnormal distribution, because the actual Type
+I error rate can differ greatly from the nominal alpha level (the level set by the researcher).
+   While not an assumption, because we are testing a variance, a condition of the test is that
+the variable must be interval or ratio in scale.
+358                                                        Statistical Concepts: A First Course
+
+
+
+9.2.2 Assumptions for Inferences About Two Dependent Variances
+It is assumed that the two samples are dependently and randomly drawn from their
+respective populations, that both populations are normal in shape, and that the t distribu-
+tion is the appropriate sampling distribution. It is thought that this test is not particularly
+robust to nonnormality (Wilcox, 1987). As a result, other procedures have been developed
+that are thought to be more robust. However, little in the way of empirical results is known
+at this time.
+   While not an assumption, because we are testing a variance, a condition of the test is that
+the variable must be interval or ratio in scale. Recall that variances can only be computed
+with data that are interval or ratio in scale.
+
+
+
+
+9.3 Sample Size, Power, and Effect Size
+There is really not much we can report on that is available in published in the literature on
+sample size, power, and effect sizes for tests of variances.
+
+
+
+
+9.4 Computing Inferences About Variances Using SPSS
+Unfortunately, there is not much to report on tests of variances for SPSS. There are no
+unique (i.e., standalone) tests available for inferences about a single variance or for
+inferences about two dependent variances. For inferences about independent vari-
+ances, SPSS does provide Levene’s test as part of the “Independent t Test” proce-
+dure (discussed in Chapter 7) and as part of the “One Way ANOVA” and “Univariate
+ANOVA” procedures. While it is commonly reported as evidence for meeting the
+assumption of equal variances, given our previous concerns with Levene’s test, use it
+with caution.
+
+
+
+
+9.5 Computing Inferences About Variances Using R
+Next we consider R for computing inferences about variances. We will examine both infer-
+ences about a single variance and inferences about two dependent variances.
+  Note that the scripts are provided within the blocks with additional annotation to assist
+in understanding how the command works. Should you want to write reminder notes and
+annotation to yourself as you write the commands in R (and we highly encourage doing
+so), remember that any text that follows a hashtag (i.e., #) is annotation only and not part of
+the R script. Thus, you can write annotations directly into R with hashtags. We encourage
+this practice so that when you call up the commands in the future, you’ll understand what
+the various lines of code are doing. You may think you’ll remember what you did. How-
+ever, trust us. There is a good chance that you won’t. Thus, consider it best practice when
+using R to annotate heavily!
+362                                                                Statistical Concepts: A First Course
+
+
+
+9.5.4 Generating the Test of Inference About Two Dependent Variances
+
+ var(Ch9_swimming$pretest)
+ var(Ch9_swimming$posttest)
+
+Before we compute the test for the inference about two dependent variances, let’s generate
+the values of the variances for both the pretest and posttest. Using the var function for the two
+variables of interest, the variances are, respectively:
+[1] 17.77778 #pretest
+[1] 13.11111 #posttest
+
+ var.test(Ch9_swimming$pretest, Ch9_swimming$posttest,
+         paired=TRUE,
+         alternative = “two.sided”,
+         conf.level = 0.95)
+
+We will use the var.test function to test the inference about two dependent variances. Let’s review
+what is inside the parentheses. We ﬁrst deﬁne the dataframe (“Ch9_swimming”) and variables
+to compute the test (“Ch9_swimming$pretest” and “Ch9_swimming$posttest). This test is
+comparable to the dependent t test, comparing one population variance to another, and thus
+we deﬁne this as paired=TRUE. The alternative command speciﬁes the alternative hypothesis the
+variance for the pretest is different than the variance for the posttest. Had we wanted to test a
+one-directional hypothesis, we would have had the command alternative = “greater” or alternative =
+“less,” respectively. We test at an alpha of .05, so the conﬁdence level is .95 (conf.level = 0.95). Using
+this command, we are provided with the following results. We see the ratio of the variances is
+about 1.36. The results of the F test are not statistically signiﬁcant (F = 1.36, p = .68).
+
+Results of Hypothesis Test
+—-------------------------
+Null Hypothesis:                          ratio of variances = 1
+Alternative Hypothesis:                   True ratio of variances is not equal to 1
+Test Name:                                F test to compare two variances
+Estimated Parameter(s):                   ratio of variances = 1.355932
+Data:                                     Ch9_swimming$pretest and Ch9_swimming$posttest
+Test Statistic:                           F = 1.355932
+Test Statistic Parameters:                num df = 9
+                                          denom df = 9
+P-value:                                  0.6574637
+95% Con�dence Interval:                   LCL = 0.3367944
+                                          UCL = 5.4589751
+
+FIGURE 9.5
+Generating a test of inference about two dependent variances.
+
+
+
+
+9.6 Research Question Template and Example Write-Up
+Consider an example paragraph for one of the tests described in this chapter, more speci -
+cally, testing inferences about two dependent variances. As you may remember, our gradu-
+ate research assistant, Oso, was working with Dr. Abraham, an assistant principal, to assist
+in analyzing the variances of rst grade students. Oso’s task was to assist Dr. Abraham
+Inferences About Variances                                                                 363
+
+
+
+with writing her research question (Are the variances of achievement scores for rst grade chil-
+dren the same in the fall as compared to the spring?) and generating the test of inference to
+answer her question. Oso suggested a dependent variances test as the test of inference. A
+template for writing a research question for the dependent variances follows:
+
+
+ Are the variances of [variable] the same in [time 1] as compared to [time 2]?
+
+
+The following is an example write-up:
+
+
+ A test of dependent variances was conducted to determine if variances of achievement
+ scores for rst grade children were the same in the fall as compared to the spring. The
+ test was conducted using an alpha of .05. The null hypothesis was that the variances
+ would be the same.
+    There was a statistically signi cant difference in variances of achievement scores of
+   rst grade children in the fall as compared to the spring (t = −3.4261, df = 60, p < .05).
+ Thus the null hypothesis that the variances would be equal at the beginning and end
+ of the rst grade was rejected. The variances of achievement test scores signi cantly
+ increased from September to April.
+
+
+
+
+9.7 Additional Resources
+We have offered a number of resources within the chapter and refer readers who are inter-
+ested in learning more to those resources. Because homogeneity of variance is an integral
+assumption to tests of means, readers may also nd coverage of tests of inference in texts
+that deal with ANOVA and related designs (e.g., Maxwell, Delaney, & Kelley, 2018).
+
+
+
+
+Problems
+Conceptual Problems
+
+ 1.   Which of the following tests of homogeneity of variance is most robust to assump-
+      tion violations?
+      a. F ratio test
+      b. Bartlett’s chi-square test
+      c. O’Brien procedure
+      d. Hartley’s Fmax test
+ 2.   True or false? Cochran’s C test requires equal sample sizes.
+ 3.   I assert that if two dependent sample variances are identical, I would not be able to
+      reject the null hypothesis. Am I correct?
+

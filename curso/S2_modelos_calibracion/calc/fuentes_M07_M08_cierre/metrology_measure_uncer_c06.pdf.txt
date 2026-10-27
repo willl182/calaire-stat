@@ -1,0 +1,344 @@
+Chapter 6
+Evaluation of the Uncertainty in Indirect
+Measurements
+
+
+
+
+6.1 Uncertainty Propagation Law
+
+Consider a greatness W described by the function W = f (a, b, c ...), where a, b, c, ...
+are statistically independent1 variables. If the most likely values for these quantities
+are a, b, c, …, the most likely value for W will be W = f a, b, c, … . Expanding the
+W function in the Taylor series, we will have:
+
+                         ∂W             ∂W           ∂W
+     W i ≈ W a, b, c… þ      ðai - aÞ þ     bi - b þ     ðci - cÞ þ …
+                         ∂a             ∂b            ∂c
+                 2                   2                2                                           ð6:1Þ
+              1∂ W         2      1∂ W          2  1∂ W
+            þ      ð a - aÞ þ þ          b -b þ          ðc - cÞ2 þ …
+              2 ∂a2 i             2 ∂b2 i          2 ∂c2 i
+
+    We will make an approximation disregarding the quadratic terms when
+ðai - aÞ, bi - b , ðci - cÞ… are of the order of greatness of the standard deviation
+                                               2
+σ a, σ b, σ c, … Then, σ a = ðai - aÞ and 12 ∂∂aW2 ðai - aÞ2 ≈ 0:
+    This condition applies to all other variables.
+    Therefore, we have:
+
+                                              ∂W        ∂W        ∂W
+        W i - W a, b, c… = ΔW i =                ⋅σ a þ    ⋅σ b þ    ⋅σ c þ …                     ð6:2Þ
+                                              ∂a        ∂b        ∂c
+
+   The term ∂W∂a
+                 represents the partial derivative of W concerning the variable a,
+a = a, calculated in which all other variables were kept constant.
+
+
+
+1
+ The variables are considered statistically independent when the variation of one does not inﬂuence
+the variation of the other, that is, all behave in a detached manner. Statistically, these variables have
+a correlation coefﬁcient equal to zero.
+
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025                     169
+P. P. Novellino do Rosario, A. Mendes, Metrology and Measurement Uncertainty,
+https://doi.org/10.1007/978-3-031-82303-9_6
+172                                   6    Evaluation of the Uncertainty in Indirect Measurements
+
+
+
+   Knowing a Little More ... (Fig. 6.1) (continued)
+   son. After this loss, Brook returned to live with his father. In 1725, he married
+   again, with his father’s approval. The chosen one was Sabetta Sawbridge of
+   Olantigh. In 1729, after his father’s death, Brook inherited the property.
+   However, personal tragedies continued to torment him when his second wife
+   died in childbirth. The child, named Elizabeth, managed to survive. Taylor
+   lived a few more years (died at age 46), but his mathematical deeds are
+   surprising and probably not deepened due to personal factors (disappoint-
+   ments, fragile health). It gave rise to a new branch in mathematics called
+   “Calculus of ﬁnite differences,” parts integration, and the series known as
+   Taylor’s expansion.
+
+
+6.2 When Variables Are Statistically Dependent
+
+Statistically, dependent variables behave in a linked manner; that is, the variation of
+one inﬂuences the variation of another. These variables have a different correlation
+coefﬁcient from zero.
+   In the presence of statistically dependent variables, measurement uncertainty
+should consider the correlation coefﬁcient (r) between variables. The correlation
+coefﬁcient may vary between [-1, +1], being zero when the variables are indepen-
+dent, and their expression is given by:
+
+                                                    sab
+                                            r=                                             ð6:4Þ
+                                                   sa sb
+                                             n
+                                             i = 1 ðai - aÞ bi - b
+                       r ða, bÞ =                                                          ð6:5Þ
+                                                                             2
+                                            ðai - aÞ2 :             bi - b
+
+   Where sa and sb are the standard deviation of a and b variables, and sab is the
+standard deviation of the correlation between the variables given by Eq. (6.5).
+   If the variables are dependent on each other, the uncertainty propagation equation
+will be:
+
+                          2                  2                  2
+                   ∂W                 ∂W                   ∂W                     ∂W
+           u2W =              u2a þ              u2b þ              u2c þ … þ 2
+                   ∂a                 ∂b                   ∂c                     ∂a
+                   ∂W                   ∂W                  ∂W
+                      r ða, bÞua ub þ 2                        rða, cÞua uc þ …            ð6:6Þ
+                   ∂b                   ∂a                  ∂c
+
+where r(a, b), r(a, c), r(b, c), ... are the correlation coefﬁcients between the variables
+(a, b, c...).
+6.3 Method of Relative Uncertainties                                                                           173
+
+
+Table 6.1 Relative uncer-       Case 1          F=x⋅y                                  ux 2         uy 2
+tainties of some functions                                               uF = F⋅            þ
+                                                                                       x            y
+
+                                Case 2          F = xy                                 ux 2         uy 2
+                                                                         uF = F⋅       x    þ       y
+
+                                Case 3          F = xm                   uF = F m uxx
+                                Case 4          F = xP + yq                                     2          u    2
+                                                                         uF =      F    p uxx       þ q yy
+                                Case 5          F = log x                uF = 0, 43429⋅ uxx
+                                Case 6          F = ln x                 uF = uxx
+                                Case 7          F = ex                   uF = F ⋅ ux
+                                Case 8          F = 10x                  uF = F ⋅ (2.3026 ⋅ ux)
+                               Note: uF is the combined uncertainty of the function F
+
+
+6.3 Method of Relative Uncertainties2
+
+If we do not want to calculate the partial derivative of a function or this knowledge
+has not yet been addressed by the reader, follow, in Table 6.1, a propagation
+relationship of uncertainty in which the relative uncertainties are used in some
+mathematical functions.
+   The relationship between the measurement uncertainty of a variable x and the
+value of this variable determines relative measurement uncertainty.
+   The variables must be statistically independent.
+
+                                                       ux
+                                         urelative =                                                       ð6:7Þ
+                                                       x
+
+Solved Exercise 6.1
+Deduces the formula of relative uncertainty to case 1: F = x ⋅ y.
+Solution
+• The partial derivative of function F concerning x: ∂F
+                                                     ∂x
+                                                        = y.
+• The partial derivative of function F concerning y: ∂F
+                                                     ∂y = x.
+
+
+                                            2                 2
+                                       ∂F            ∂F
+                             u2F =              2
+                                                u xþ              u2 y
+                                       ∂x            ∂y
+
+                                  u2F = ðyÞ2 u2 x þ ðxÞ2 u2 y
+
+
+
+
+2
+ This method can be employed when derivation techniques are not known. It can be applied
+to studies on the calculation of measurement uncertainties at the high school/technical level.
+6.4 Evaluation of the Effective Degree of Freedom for Relative Uncertainties        177
+
+
+Fig. 6.2 Measurement
+circuit                                                                        V
+
+
+                                                              i                R
+
+
+
+                       U R = k:uR = 2:00 × 0:3256 = 0:6513 Ω
+                                        U R = 0:7 Ω
+
+   The result will be: R = (52.4 ± 0.7) Ω
+
+
+6.4 Evaluation of the Effective Degree of Freedom
+    for Relative Uncertainties
+
+In Chap. 5, we saw that we must use the Welch-Satterthwaite Eq. (5.6) or Eq. (5.7) to
+determine the effective degree of freedom.
+   In the case of indirect measurements, we must apply the uncertainties relative to
+Eq. (5.6), since the quantities involved have different units. In this way, the Welch-
+Satterthwaite equation is like this:
+
+                               u4Rc  u4   u4       u4
+                                    = R1 þ R2 þ … þ Ri                             ð6:8Þ
+                               υeff   υ1   υ2       υi
+
+• uRc is the combined relative uncertainty of the quantity that we need to determine
+  the degree of freedom.
+• uR1, uR2, uR3, ..., uRi are the standard relative uncertainties of each i source (Type
+  A and B uncertainties).
+• υ1, υ2, υ3, υi … are the degrees of freedom of each i source of uncertainties;
+• υeff is the effective degree of freedom associated with standard combined relative
+  uncertainty.
+Solved Exercise 6.4
+A cylindrical metal bar (Fig. 6.3) has a diameter d = (2.50 ± 0.01) cm, k = 2.37, and
+95.45%; length L = (30.48 ± 0.01) cm, k = 2.28, and 95.45%; mass
+M = (1158.0 ± 0.1) g, k = 2.23, and 95.45%. Whereas the equation calculates the
+volume of a cylinder:
+
+Fig. 6.3 Cylindrical bar
+180                                  6     Evaluation of the Uncertainty in Indirect Measurements
+
+
+6.5 Sensitivity Coefﬁcient
+
+Considering a function W (a, b, c, …), in which a, b, c, … are its variables, as
+described in Sect. 6.1, we have Eq. (6.3) below.
+
+                              2                    2                 2
+                        ∂W                   ∂W                 ∂W
+                u2W =             ⋅u2a þ               ⋅u2b þ            ⋅u2c þ …
+                        ∂a                   ∂b                 ∂c
+
+  This equation describes the propagation of uncertainties of a function W.
+  Partial derivatives ∂W
+                       ∂a
+                              ∂W
+                               ∂b
+                                      ∂W
+                                      ∂c
+                                           … describe the variation of function
+W concerning each variable a, b, c, …
+
+
+   Important
+   In metrology, these partial derivatives are called sensitivity coefﬁcient (SCi)
+   and describe how each input a, b, c,... inﬂuences the output value W.
+
+
+   Experimentally, if all variables remain constant and only one, for example, the
+variable a, changes, we can verify the variation of W. In Solved Exercise 6.4, we saw
+that the partial derivative method allows us to determine the function’s sensitivity
+coefﬁcient concerning each variable.
+   The sensitivity coefﬁcient
+
+                                         ∂ρ   4
+                                            = 2
+                                         ∂M πd L
+
+indicates the variation of cylinder density as a function of the variation of its
+mass (M).
+   The same happens with the expression
+
+                                         ∂ρ   - 8M
+                                            =
+                                         ∂d   πd3 L
+
+which indicates the change of cylinder density by variation of its diameter (d ), and
+the expression
+
+                                         ∂ρ  - 4M
+                                            = 2 2
+                                         ∂L πd L
+
+indicates the variation of cylinder density as a function of the variation of its length
+(L).
+    Knowledge of the sensitivity coefﬁcient is essential to know how much a variable
+inﬂuences the result of an indirect measurement, minimizing its inﬂuence and, thus,
+its measurement uncertainty.
+6.5 Sensitivity Coefﬁcient                                                          181
+
+
+   In Solved Exercise 6.4, we saw that the largest sensitivity coefﬁcient (in absolute
+value) of the three-cylinder variables in question—diameter (d ), mass (M ), and
+length (L)—is the sensitivity coefﬁcient of cylinder density concerning its diameter:
+
+                              ∂ρ   4
+                                 = 2 = 0:006684=cm3
+                              ∂M πd L
+                             ∂ρ   - 8M
+                                =        = -6:19174 g=cm4
+                             ∂d   πd 3 L
+                             ∂ρ  - 4M
+                                = 2 2 = -0:25393 g=cm4
+                             ∂L πd L
+
+   This fact indicates that we should be more concerned with diameter measurement
+uncertainty (higher absolute value of SCi), if we want to minimize its inﬂuence on
+the result of cylinder density.
+
+
+
+6.5.1 Sensitivity Coefﬁcient Transforming Uncertainties
+
+The sensitivity coefﬁcient is also applicable, when we want to transform a measure-
+ment uncertainty that presents itself into a quantity to another quantity. This case is
+widespread when we want to measure a quantity, and the instrument used provides a
+sign in another quantity. We can cite sensors (thermoresistors and thermocouples)
+and pressure and temperature transducers.
+   Take as an example the PT-100 platinum resistance thermometer (RTD), which is
+widely used in industry and thermometry laboratories, because it has low uncertainty
+and good accuracy. It measures temperature through the variation of its platinum
+resistance, which, at zero °C, has a value close to 100 ohms.
+   The Callendar–Van Dusen equation describes the relationship between resistance
+(R) and temperature (T) of platinum resistance thermometers.
+
+                  RðT Þ = R0 1 þ AT þ BT 2 - 100CT 3 þ CT 4                       ð6:9Þ
+
+where R(T ) is the resistance value at the desired temperature T, and R0 is the value of
+platinum resistance at 0 °C. A, B, and C are the RTD coefﬁcients, with typical values
+for an industrial platinum resistance thermometer such as:
+
+        A = 3:9083 × 10 -3 = ° C;    B = -5:775 × 10 -7 = ° C2 ;
+                              ∘                           ∘              ∘
+           C = 0 ðT ≤ 650 C Þ;      C = -4:183 × 10 -12 = C 4 ðT > 650 C Þ
+6.6 Proposed Exercises                                                            183
+
+
+
+
+Fig. 6.4 Four-wire platinum resistance thermometer. (Photo by the authors)
+
+
+
+
+   degree of purity and encapsulated in ceramic or glass bulbs (Fig. 6.4). Several
+   types of resistance thermometers, from the standard thermometer to the more
+   robust industrial thermometer, may have uncertainties in the tenth of the
+   degree. The most common platinum types are those with a resistance of
+   25 ohms, 100 ohms, 500 ohms, or 1000 ohms at the ice point (0 °C) (Fig. 6.4).
+       A two-, three-, or four-wire resistance bulb connection is used according to
+   the type of instrument and the desired accuracy in the measurement. The four-
+   wire thermometers are the most exact and are called half standard. The PT-25
+   is considered standard, being the most accurate and uncertain of 0.001 Ω. Its
+   main constructive characteristics are:
+    (i) The sensor element is made of platinum with a purity better than
+        99.999 %;
+   (ii) Great thermometer stability and measurement accuracy, with uncertainty
+        values of (0.0006 to 0.01) °C.
+
+
+
+
+6.6 Proposed Exercises
+
+6.6.1 The expression gives the density of a sphere:
+
+                                            M   6M
+                                       ρ=     =
+                                            V   πD3
+
+Consider M = (1000 ± 1) g, D = (8.000 ± 0.002) cm, and k = 2.00 and 95.45 %.
+Determine the density and the measure uncertainty using:
+

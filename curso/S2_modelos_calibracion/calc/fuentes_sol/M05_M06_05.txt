@@ -1,0 +1,2297 @@
+                                                                                                                                                                                              Y
+                                                                                 INTERNATIONAL STANDARD I S 0 5725-3~1994
+                                                                                 TECHNICAL CORRIGENDUM 1
+
+                                                                                 Published 2001-10-15
+
+           INTERNATIONALORGANIZATIONFOR STANDARDIZATION                 .    MDK~YHAPO~~HAROPrAHmAum no C T A H W T M ~ M M                      ORGANISATIONINTERNATIONALEDE NORMALISATION
+
+
+
+
+          Accuracy (trueness and precision) of measurement methods and
+          results -
+           Part 3:
+           Intermediate measures of the precision of a standard measurement
+           method
+           TECHNICAL CORRIGENDUM 1
+
+
+           Exactitude oustesse et fidélité) des résultats et méthodes de mesure -
+           Partie 3: Mesures intermédiaires de la fidélité d’une méthode de mesure normalisée
+
+           RECTIFICATIF TECHNIQUE 1
+
+
+
+
+           Technical Corrigendum 1 to International Standard IS0 5725-3:1994 was prepared by Technical Committee
+           ISOTTC 69, Applications of statistical methods, Subcommittee SC 6 , Measurement methods and results.
+
+
+
+
+           Page 14, 4th and 5th lines below Table B.2
+
+
+                             4
+                              1
+           Replace “ s $ ) = -(MS2-MSI)”                         with   “.RI      1
+                                                                                = -(MSI-MSZ)”.
+                                                                                  4
+                          1                                                        1
+           Replace “s& = -(MSI-MSe)”                             with ‘.$)      = -(MS2 -MSe)”.
+                         2                                                         2
+
+
+           Page 17, Table C.2, column “Sum of squares” for ”Source O”
+
+
+
+
+           ICs 03.120.30                                                                                                Ref. No. I S 0 5725-3:1994/Cor.l:200I(E)
+           O     Is0 2001 -All rights reserved                                                                              --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+           Printed in Switzerland
+COPYRIGHT 2003; International Organization for Standardization                                     Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                   User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                   call the Document Policy Management Group at 1-800-451-1584.
+                                                                    I NTERNAT IO NA L                                                                                                      IS0
+                                                                    STANDARD                                                                                                            5725-3
+                                                                                                                                                                                                     First edition
+                                                                                                                                                                                                     1994-12-15
+
+
+
+
+                                                                   Accuracy (trueness and precision) of
+                                                                   measurement methods and results                                                                                               -
+                                                                    Part 3:
+                                                                    Intermediate measures of the precision of a
+                                                                    standard measurement method
+
+                                                                    Exactitude (justesse et fidélité) des résultats et méthodes de mesure -
+                                                                    Partie 3: Mesures intermédiaires de la fidélité d'une méthode de mesure
+                                                                    normalisée
+
+
+
+
+                                                                                                                                                                                         Reference number
+                                                                                                                                                                                       I S 0 5725-3:1994(E)
+
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                     Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                   User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                   call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                                  4853903 0594558 082
+
+          IS0 5725-3:1994(E)
+
+
+
+
+         Contents
+                                                                                                                                                                    Page
+
+              1   Scope ..............................................................................................                                                   1
+
+           2      Normative references .....................................................................                                                             2
+
+           3      Definitions                                                .................................................................................           2
+
+           4      General requirement                                                         .................................................................          2
+
+           5      Important factors                                                     .......................................................................          2
+
+           6      Statistical model                                                   ........................................................................           3
+
+           6.1       Basic model                                                  ............................................................................           3
+
+           6.2       General mean. m                                                       ....................................................................          3
+
+          6.3        Term B                                               ....................................................................................           4
+
+          6.4        Terms Bo. i+.).                                                   etc ...........................................................                   4
+
+          6.5        Error term, e                                                 ...........................................................................           5
+
+          7       Choice of measurement conditions                                                                    ..........................................         5
+
+          8       Within-laboratory study and analysis of intermediate precision
+                  measures       ...................................................................................                                                     6
+
+          8.1        Simplest approach                                                       ..................................................................          6
+
+          8.2        An alternative method                                                         ............................................................          6
+
+          8.3        Effect of the measurement conditions on the final quoted
+                     result     .......................................................................................                                                  7
+
+          9       Interlaboratory study and analysis of intermediate precision
+                  measures       ...................................................................................                                                     7
+
+          9.1        Underlying assumptions                                                           .........................................................          7
+
+          9.2        Simplest approach                                                      ..................................................................          7
+
+          9.3        Nested experiments                                                         ...............................................................         7
+
+
+
+
+                        --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+          9.4        Fully-nested experiment                                                          .........................................................         8
+
+          9.5        Staggered-nested experiment                                                               ................................................         9
+
+          9.6       Allocation of factors in a nested experimental design                                                                                ........... 9
+
+
+        8 I S 0 1994
+        All rights reserved . Unless otherwise specified. no part of this publication may be reproduced
+        or utilized in any form or by any means. electronic or mechanical. including photocopying and
+        microfilm. without permission in writing from the publisher.
+             international Organization for Standardization
+             Case Postale 56 CH-121 1 Genève 20 Switzerland
+        Printed in Switzerland
+
+
+
+         Il
+COPYRIGHT 2003; International Organization for Standardization                                                                                 Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                               User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                               call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                   = 4853903 0594559 T L 9
+                                                                                                                                                                                      ~~
+
+
+
+
+                                                                     0 IS0                                                                                                     IS0 5725-3:1994(E)
+
+
+
+                                                                       9.7           Comparison of the nested design with the procedure given in
+                                                                                     I S 0 5725-2   ..............................................................................                               9
+
+                                                                       9.8           Comparison of fully-nested and staggered-nested experimental
+                                                                                     designs    ...................................................................................                              9
+
+                                                                     Annexes
+
+                                                                       A           Symbols and abbreviations used in I S 0 5725                                                      .......................   10
+
+                                                                        B          Analysis of variance for fully-nested experiments                                                         ................. 12
+
+                                                                        B.l           Three-factor fully-nested experiment                                             ...................................     12
+
+                                                                        B.2            Four-factor fully-nested experiment                                           .....................................      13
+
+                                                                       C           Analysis of variance for staggered-nested experiments                                                                 ....... 15
+                                                                       C.1            Three-factor staggered-nested experiment                                                     .........................    15
+
+                                                                        C.2            Four-factor staggered-nested experiment                                                   ...........................    16
+
+                                                                        C.3            Five-factor staggered-nested experiment                                                  ............................    17
+
+                                                                        C.4            Six-factor staggered-nested experiment                                                ..............................     18
+
+                                                                        D          Examples of the statistical analysis of intermediate precision
+                                                                                   experiments     ...........................................................................                                  19
+
+                                                                        D.l            Example 1 .    Obtaining the [time      operator]-different          +
+                                                                                       intermediate precision standard deviation. sicro). within a specific
+                                                                                       laboratory at a particular level of the test     ........................... 19
+
+                                                                        D.2            Example 2 .   Obtaining the time-different intermediate precision
+                                                                                       standard deviation by interlaboratory experiment     ............... 20
+
+                                                                        E          Bibliography                          ............................................................................           25
+
+
+
+
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                                                                                                                                                                 ...
+COPYRIGHT 2003; International Organization for Standardization                                                     Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                                 111
+                                                                                                                   User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                   call the Document Policy Management Group at 1-800-451-1584.
+                                                                          4851703 0574560 730
+
+          IS0 5725-3:1994(E)                                                              0 IS0
+
+
+
+
+          Foreword
+         I S 0 (the International Organization for Standardization) is a worldwide
+         federation of national standards bodies (IS0 member bodies). The work
+         of preparing International Standards is normally carried out through I S 0
+         technical committees. Each member body interested in a subject for
+         which a technical committee has been established has the right to be
+         represented on that committee. International organizations, governmental
+         and non-governmental, in liaison with ISO, also take part in the work. I S 0
+         collaborates closely with the International Electrotechnical Commission
+         (IEC) on all matters of electrotechnical standardization.
+         Draft International Standards adopted by the technical committees are
+         circulated to the member bodies for voting. Publication as an International
+         Standard requires approval by a t least 75 YO of the member bodies casting
+         a vote.
+         International Standard I S 0 5725-3 was prepared by Technical Committee
+         iSO/TC 69, Applications of statistical methods, Subcommittee SC 6,
+         Measurement methods and results.
+          IS0 5725 consists of the following parts, under the general title Accuracy
+          (trueness and precision) of measurement methods and results:
+
+             - Part I: General principles and definitions
+             - Part 2: Basic method for the determination of repeatability and
+                    reproducibility of a standard measurement method
+
+             - Part3: Intermediate measures of the precision of a standard
+                    measurement method
+
+             - Part4: Basic methods for the determination of the trueness of a
+                    standard measurement method
+
+             - Part 5: Alternative methods for the determination of the precision
+
+
+
+
+                     --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                    of a standard measurement method
+
+             - Part 6: Use in practice of accuracy values
+         Parts 1 to 6 of I S 0 5725 together cancel and replace I S 0 5725:1986,
+         which has been extended to cover trueness (in addition to precision) and
+         intermediate precision conditions (in addition to repeatability conditions
+         and reproducibility conditions).
+        Annexes A, B and C form an integral part of this part of I S 0 5725. Annexes
+        D and E are for information only.
+
+
+
+
+        iv
+COPYRIGHT 2003; International Organization for Standardization         Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                       User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                       call the Document Policy Management Group at 1-800-451-1584.
+                                                                                    D 4851903 0 5 9 4 5 b 3 b77
+
+                                                                        8 IS0                                                                           IS0 5725-3:1994(E)
+
+
+
+
+                                                                        Introduction
+
+                                                                        0.1 I S 0 5725 uses two terms "trueness" and "precision" to describe
+                                                                        the accuracy of a measurement method. "Trueness" refers to the close-
+                                                                        ness of agreement between the average value of a large number of test
+                                                                        results and the true or accepted reference value. "Precision" refers to the
+                                                                        closeness of agreement between test results.
+
+
+                                                                        0.2   General consideration of these quantities is given in I S 0 5725-1 and
+                                                                        so is not repeated here. It is stressed that I S 0 5725-1 should be read in
+                                                                        conjunction with all other parts of IS0 5725 because the underlying defi-
+                                                                        nitions and general principles are given there.
+
+
+
+
+                      --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                        0.3 Many different factors (apart from variations between supposedly
+                                                                        identical specimens) may contribute to the variability of results from a
+                                                                        measurement method, including:
+
+                                                                        a) the operator;
+
+                                                                        b) the equipment used;
+
+                                                                        c) the calibration of the equipment;
+
+                                                                        d) the environment (temperature, humidity, air pollution, etc.);
+
+                                                                        e) the batch of a reagent;
+
+                                                                        f)    the time elapsed between measurements.
+
+                                                                        The variability between measurements performed by different operators
+                                                                        and/or with different equipment will usually be greater than the variability
+                                                                        between measurements carried out within a short interval of time by a
+                                                                        single operator using the same equipment.
+
+
+                                                                        0.4 Two conditions of precision, termed repeatability and reproducibility
+                                                                        conditions, have been found necessary and, for many practical cases,
+                                                                        useful for describing the variability of a measurement method. Under re-
+                                                                        peatability conditions, factors a) to f) in 0.3 are considered constants and
+                                                                        do not contribute to the variability, while under reproducibility conditions
+                                                                        they vary and do contribute to the variability of the test results. Thus re-
+                                                                        peatability and reproducibility conditions are the two extremes of pre-
+                                                                        cision, the first describing the minimum and the second the maximum
+                                                                        variability in results. Intermediate conditions between these two extreme
+                                                                        conditions of precision are also conceivable, when one or more of factors
+
+
+                                                                                                                                                                             V
+COPYRIGHT 2003; International Organization for Standardization                             Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                           User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                           call the Document Policy Management Group at 1-800-451-1584.
+                                                                      4853903 0594562 503
+
+         I S 0 5725-3:1994(E)                                                        8 IS0
+
+
+
+
+         a) to f) are allowed to vary, and are used in certain specified circum-
+         stances.
+
+         Precision is normally expressed in terms of standard deviations.
+
+        0.5 This part of I S 0 5725 focuses on intermediate precision measures
+        of a measurement method. Such measures are called intermediate as
+        their magnitude lies between the two extreme measures of the precision
+        of a measurement method: repeatability and reproducibility standard de-
+        viations.
+
+        To illustrate the need for such intermediate precision measures, consider
+        the operation of a present-day laboratory connected with a production
+        plant involving, for example, a three-shift working system where
+        measurements are made by different operators on different equipment.
+        Operators and equipment are then some of the factors that contribute to
+        the variability in the test results. These factors need to be taken into ac-
+        count when assessing the precision of the measurement method.
+
+        0.6 The intermediate precision measures defined in this part of
+        I S 0 5725 are primarily useful when their estimation is part of a procedure
+        that aims at developing, standardizing, or controlling a measurement
+        method within a laboratory. These measures can also be estimated in a
+
+
+
+
+                                                                                                                                                      --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+        specially designed interlaboratory study, but their interpretation and appli-
+        cation then requires caution for reasons explained in 1.3 and 9.1.
+
+        0.7 The four factors most likely to influence the precision of a
+        measurement method are the following.
+
+        a) Time: whether the time interval between successive measurements
+           is short or long.
+
+        b) Calibration: whether the same equipment is or is not recalibrated
+           between successive groups of measurements.
+
+        c) Operator: whether the same or different operators carry out the suc-
+           cessive measurements.
+
+        d) Equipment: whether the same or different equipment (or the same
+           or different batches of reagents) is used in the measurements.
+
+        0.8 It is, therefore, advantageous to introduce the following M-factor-
+        different intermediate precision conditions (M= 1, 2, 3 or 4) to take ac-
+        count of changes in measurement conditions (time, calibration, operator
+        and equipment) within a laboratory.
+
+        a) M = 1: only one of the four factors is different;
+
+        b) M = 2: two of the four factors are different;
+
+        c) M = 3: three of the four factors are different;
+
+        d) M = 4: all four factors are different.
+
+        Different intermediate precision conditions lead to different intermediate
+        precision standard deviations denoted by si( ), where the specific con-
+        ditions are listed within the parentheses. For example, siIro) is the inter-
+
+
+       vi
+COPYRIGHT 2003; International Organization for Standardization      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                    call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                   i)B51903 0594563 44T                                   =
+                                                                 8 IS0                                                                                                    I S 0 5725-3:1994(E)
+
+
+
+                                                                 mediate precision standard deviation with different times                                                                   (T) and
+                                                                 operators (O).
+
+                                                                 0.9 For measurements under intermediate precision conditions, one or
+                                                                 more of the factors listed in 0.7 is or are different. Under repeatability
+                                                                 conditions, those factors are assumed to be constant.
+
+                                                                 The standard deviation of test results obtained under repeatability con-
+                                                                 ditions is generally less than that obtained under the conditions for inter-
+                                                                 mediate precision conditions. Generally in chemical analysis, the standard
+                                                                 deviation under intermediate precision conditions may be two or three
+                                                                 times as large as that under repeatability conditions. It should not, of
+                                                                 course, exceed the reproducibility standard deviation.
+
+                                                                 As an example, in the determination of copper in copper ore, a
+                                                                 collaborative experiment among 35 laboratories revealed that the standard
+                                                                 deviation under one-factor-different intermediate precision conditions (op-
+                                                                 erator and equipment the same but time different) was 1,5 times larger
+                                                                 than that under repeatability conditions, both for the electrolytic gravimetry
+                                                                 and Na,S,O,   titration methods.
+
+
+
+
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+                                                                                                                                                                                                  vi i
+COPYRIGHT 2003; International Organization for Standardization                                             Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                           User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                           call the Document Policy Management Group at 1-800-451-1584.
+                                                                             4 8 5 3 9 0 3 05945b4 3 8 6
+
+         INTERNATIONAL STANDARD 8 I S 0                                                                                               I S 0 5725-3:1994(E)
+
+
+
+
+         Accuracy (trueness and precision) of measurement
+         methods and results -
+
+          Part 3:
+          Intermediate measures of the precision of a standard
+          measurement method
+
+
+
+
+          1 Scope                                                          the outcome of a calculation from a set of obser-
+                                                                           vations.
+
+
+
+
+                      --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+         1.1 This part of I S 0 5725 specifies four intermedi-             1.3 The essence of the determination of these in-
+         ate precision measures due to changes in observation              termediate precision measures is that they measure
+         conditions (time, calibration, operator and equipment)            the ability of the measurement method to repeat test
+         within a laboratory. These intermediate measures can              results under the defined conditions.
+         be established by an experiment within a specific
+         laboratory or by an interlaboratory experiment.                   1.4 The statistical methods developed in this part
+                                                                           of I S 0 5725 rely on the premise that one can pool
+          Furthermore, this part of I S 0 5725                             information from "similar" measurement conditions
+                                                                           to obtain more accurate information on the inter-
+          a) discusses the implications of the definitions of in-          mediate precision measures. This premise is a
+             termediate precision measures;
+                                                                           powerful one as long as what is claimed as "similar"
+                                                                           is indeed "similar". But it is very difficult for this
+          b) presents guidance on the interpretation and appli-
+                                                                           premise to hold when intermediate precision meas-
+             cation of the estimates of intermediate precision
+                                                                           ures are estimated from an interlaboratory study. For
+             measures in practical situations;
+                                                                           example, controlling the effect of "time" or of "oper-
+          C)     does not provide any measure of the errors in             ator" across laboratories in such a way that they are
+                 estimating intermediate precision measures;               "similar", so that pooling information from different
+                                                                           laboratories makes sense, is very difficult. Thus, using
+          d) does not concern itself with determining the                  results from interlaboratory studies on intermediate
+             trueness of the measurement method itself, but                precision measures requires caution. Within-
+             does discuss the connections between trueness                 laboratory studies also rely on this premise, but in
+             and measurement conditions.                                   such studies it is more likely to be realistic, because
+                                                                           the control and knowledge of the actual effect of a
+                                                                           factor is then more within reach of the analyst.
+          1.2 This part of I S 0 5725 is concerned exclusively
+          with measurement methods which yield measure-                     1.5 There exist other techniques besides the ones
+          ments on a continuous scale and give a single value               described in this part of I S 0 5725 to estimate and to
+          as the test result, although the single value may be              verify intermediate precision measures within a lab-
+
+
+
+COPYRIGHT 2003; International Organization for Standardization          Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                          1
+                                                                        User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                        call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                      4853703 05945b5 212
+        I S 0 5725-3:1994(E)                                                                                                                                                                          Q   IS0
+
+
+
+
+        oratory, for example, control charts (see I S 0 5725-6).                                                      3 Definitions
+        This part of I S 0 5725 does not claim to describe the
+        only approach to the estimation of intermediate pre-                                                          For the purposes of this part of I S 0 5725, the defi-
+        cision measures within a specific laboratory.                                                                 nitions given in I S 0 3534-1 and I S 0 5725-1 apply.
+
+        NOTE 1      This part of I S 0 5725 refers to designs of ex-                                                  The symbols used in I S 0 5725 are given in annex A.
+        periments such as nested designs. Some basic information
+        is given in annexes B and C. Other references in this area
+        are given in annex E.
+
+        2       Normative references                                                                                  4 General requirement
+
+        The following standards contain provisions which,                                                             In order that the measurements are made in the same
+        through reference in this text, constitute provisions                                                         way, the measurement method shall have been
+
+
+
+
+                       --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+        of this part of I S 0 5725. At the time of publication, the                                                   standardized. All measurements forming part of an
+        editions indicated were valid. All standards are subject                                                      experiment within a specific laboratory or of an inter-
+        to revision, and parties to agreements based on this                                                          laboratory experiment shall be carried out according
+        part of I S 0 5725 are encouraged to investigate the                                                          to that standard.
+        possibility of applying the most recent editions of the
+        standards indicated below. Members of IEC and I S 0
+        maintain registers of currently valid International
+        Standards.
+                                                                                                                      5       Important factors
+        I S 0 3534-1: 1993, Statistics - Vocabulary and sym-
+        bols - Part 7: Probability and general statistical
+        terms.
+                                                                                                                      5.1 Four factors (time, calibration, operator and
+        I S 0 5725-1:I 994, Accuracy (trueness and precision)                                                         equipment) in the measurement conditions within a
+        of measurement methods and results - Part 1:                                                                  laboratory are considered to make the main contri-
+        General principles and definitions.                                                                           butions to the variability of measurements (see
+                                                                                                                      table 1).
+        I S 0 5725-2:1994, Accuracy (trueness and precision)
+        of measurement methods and results - Part 2: Basic
+        method for the determination of repeatability and
+        reproducibility of a standard measurement method.                                                             5.2 "Measurements made at the same time" in-
+                                                                                                                     clude those conducted in as short a time as feasible
+        IS0 Guide 33:1989, Uses of certified reference ma-                                                           in order to minimize changes in conditions, such as
+        terials.                                                                                                     environmental conditions, which cannot always be
+                                                                                                                     guaranteed constant. "Measurements made a t differ-
+        I S 0 Guide 35:1989, Certification of reference ma-                                                          ent times", that is those carried out at long intervals
+        terials - General and statistical principles.                                                                of time, may include effects due to changes in en-
+                                                                                                                     vironmental conditions.
+
+
+                                                                                       Table 1   - Four important factors and their states
+                                                                                                     Measurement conditions within a laboratory
+                                                                             Factor
+                                                                                                  State 1 (same)                               State 2 (different)
+
+                                                                         Time           Measurements made a t the same           Measurements made at different
+                                                                                        time                                     times
+                                                                         Calibration    No calibration between measure-          Calibration carried out between
+                                                                                        ments                                    measurements
+                                                                         Operator       Same operator                            Different operators
+                                                                         Equipment      Same equipment without recali-           Different equipment
+                                                                                        bration
+
+
+
+
+       2
+COPYRIGHT 2003; International Organization for Standardization                                                      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                    call the Document Policy Management Group at 1-800-451-1584.
+                                                                                4851903 0594566 159
+         0 IS0                                                                                                                      I S 0 5725-3:1994(E)
+
+
+
+          5.3 "Calibration" does not refer here to any cali-                    operator-different intermediate precision standard
+          bration required as an integral part of obtaining a test              deviation, si(o);
+          result by the measurement method. It refers to the
+          calibration process that takes place at regular intervals             [time       +
+                                                                                        operator]-different intermediate precision
+          between groups of measurements within a labora-                       standard deviation, siF0);
+          tory.
+                                                                                [time + operator + equipment]-different inter-
+                                                                                mediate precision standard deviation, silrOE);
+
+
+
+
+                                                                                                                                                               --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+          5.4 In some operations, the "operator" may be, in
+          fact, a team of operators, each of whom performs                      and many others in a similar fashion.
+          some specific part of the procedure. In such a case,
+          the team should be regarded as the operator, and any
+          change in membership or in the allotment of duties
+          within the team should be regarded as providing a
+                                                                                 Statistical model
+          different "operator".
+
+                                                                          6.1         Basic model
+          5.5 "Equipment" is often, in fact, sets of equip-
+          ment, and any change in any significant component               For estimating the accuracy (trueness and precision)
+          should be regarded as providing different equipment.            of a measurement method, it is useful to assume that
+          As to what constitutes a significant component,                 every test result, y , is the sum of three components:
+          common sense must prevail. A change of                                  y=m+B+e                                                               . . . (1)
+          thermometer would be considered a significant com-
+          ponent, but using a slightly different vessel to contain        where, for the particular material tested,
+          a water bath would be considered trivial. A change of
+          a batch of a reagent should be considered a significant                 m is the general mean (expectation);
+          component. It can lead to different "equipment" or to
+                                                                                  B is the laboratory component of bias under re-
+          a recalibration if such a change is followed by cali-
+                                                                                        peatability conditions;
+          bration.
+                                                                                  e     is the random error occurring in every
+                                                                                        measurement under repeatability conditions.
+          5.6 Under repeatability conditions, all four factors
+                                                                          A discussion of each of these components, and of
+          are a t state 1 of table 1. For intermediate precision
+                                                                          extensions of this basic model, follows.
+          conditions, one or more factors are at state 2 of
+          table 1, and are specified as "precision conditions
+          with M factor(s) different", where M is the number
+          of factors a t state 2. Under reproducibility conditions,       6.2         General mean, m
+          results are obtained by different laboratories, so that
+          not only are all four factors at state 2 but also there
+                                                                          6.2.1 The general mean, m, is the overall mean of
+          are additional effects due to the differences between
+          laboratories in management and maintenance of the               the test results. The value of m obtained in a
+          laboratories, general training levels of operators, and         collaborative study (see I S 0 5725-2) depends solely
+          in stability and checking of test results, etc.                 on the "true value" and the measurement method,
+                                                                          and does not depend on the laboratory, equipment,
+                                                                          operator or time by or at which any test result has
+                                                                          been obtained. The general mean of the particular
+          5.7 Under intermediate precision conditions with M              material measured is called the "level of the test"; for
+          factor(s) different, it is necessary to specify which           example, specimens of different purities of a chemical
+          factors are a t state 2 of table 1 by means of suffixes,        or different materials (e.g. different types of steel) will
+          for example:                                                    correspond to different levels.
+
+          - time-different intermediate precision standard de-            In many situations, the concept of a true value p holds
+                viation, siCr);                                           good, such as the true concentration of a solution
+                                                                          which is being titrated. The level m is not usually equal
+          - calibration-different intermediate precision stan-            to the true value p; the difference (m - p ) is called the
+                 dard deviation, si(c);                                   "bias of the measurement method".
+
+
+
+COPYRIGHT 2003; International Organization for Standardization        Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                               3
+                                                                      User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                      call the Document Policy Management Group at 1-800-451-1584.
+                                                                         m 4851903 0594567 095
+         IS0 5725-3:1994(E)                                                                                                                                    0 IS0
+
+
+
+
+        In some situations, the level of the test is exclusively               In practice, the objectives of a study and consider-
+        defined by the measurement method, and the con-                        ations of the sensitivity of the measurement method
+        cept of an independent true value does not apply; for                  will govern the extent to which this model is used. In
+        example, the Vicker's hardness of steel and the                        many cases, abbreviated forms will suffice.
+        Micum indices of coke belong to this category. How-
+        ever, in general, the bias is denoted by d (6 = O where
+        no true value exists), then the general mean m is
+                m=p+d                                            . . . (2)     6.4 Terms Bo, B(l),B p ) , etc.
+        NOTE 2 Discussion of the bias term 6 and a description
+        of trueness experiments are given in IS0 5725-4.
+                                                                               6.4.1 Under repeatability conditions, these terms all
+                                                                               remain constant and add to the bias of the test re-
+                                                                               sults. Under intermediate precision conditions, Bo is
+        6.2.2 When examining the difference between test                       the fixed effect of the factor(s) that remained the
+        results obtained by the same measurement method,                       same (state 1 of table 11, while B(l),B ( z ) ,etc. are the
+        the bias of the measurement method may have no                         random effects of the factor(s) which vary (state 2 of
+        influence and can be ignored, unless it is a function                  tablel). These no longer contribute to the bias, but
+        of the level of the test. When comparing test results                  increase the intermediate precision standard deviation
+        with a value specified in a contract, or a standard                    so that it becomes larger than the repeatability stan-
+        value where the contract or specification refers to the                dard deviation.
+        true value p and not to the level of the test m, or when
+        comparing test results obtained using different
+        measurement methods, the bias of the measurement                       6.4.2 The effects due to differences between oper-
+        method must be taken into account.                                     ators include personal habits in operating measure-
+                                                                               ment methods (e.g. in reading graduations on scales,
+                                                                               etc.). Some of these differences should be removable
+                                                                               by standardization of the measurement method, par-
+        6.3 Term B
+                                                                               ticularly in having a clear and accurate description of
+                                                                               the techniques involved. Even though there is a bias
+        6.3.1 B is a term representing the deviation of a                      in the test results obtained by an individual operator,
+        laboratory, for one or more reasons, from m, irre-                     that bias is not always constant (e.g. the magnitude
+        spective of the random error e occurring in every test                 of the bias will change according to his/her mental
+        result. Under repeatability conditions in one labora-                  and/or physical conditions on that day) and the bias
+        tory, B is considered constant and is called the "lab-                 cannot be corrected or calibrated exactly. The magni-
+        oratory component of bias".                                            tude of such a bias should be reduced by use of a
+                                                                               clear operation manual and training. Under such cir-
+                                                                               cumstances, the effect of changing operators can be
+       6.3.2 However, when using a measurement method                          considered to be of a random nature.
+       routinely, it is apparent that embodied within an
+       overall value for B are a large number of effects which
+       are due, for example, to changes in the operator, the
+                                                                              6.4.3 The effects due to differences between
+       equipment used, the calibration of the equipment, and
+                                                                              equipment include the effects due to different places
+       the environment (temperature, humidity, air pollution,
+                                                                              of installation, particularly in fluctuations of the indi-
+       etc.). The statistical model [equation (111can then be
+                                                                              cator, etc. Some of the effects due to differences
+       rewritten in the form:
+                                                                              between equipment can be corrected by exact cali-
+                                                                              bration. Differences due to systematic causes be-
+               y = m +Bo            + B ( , )+ B p ) + ... + e   . . . (3)
+                                                                              tween equipment should be corrected by calibration,
+                                                                              and such a procedure should be included in the stan-
+       or                                                                     dard method. For example, a change in the batch of
+
+
+
+
+                                                                                                                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+               y =p       + 6 + Bo + B(l) + B p ) + ... + e      . . . (4)    a reagent could be treated that way. An accepted
+                                                                              reference value is needed for this, for which
+                                                                              I S 0 Guide 33 and I S 0 Guide 35 shall be consulted.
+       where B is composed of contributions from variates                     The remaining effect due to equipment which has
+       Bo, B(l), B p ) ... and can account for a number of inter-             been calibrated using a reference material is con-
+       mediate precision factors.                                             sidered a random effect.
+
+
+        4
+COPYRIGHT 2003; International Organization for Standardization               Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                             User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                             call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                        = 4853903 0594568 T23
+         0 IS0                                                                                                                                                                         IS0 5725-3:1994(E)
+
+
+
+          6.4.4 The effects due to time may be caused by                                                                     6.5 Error term, e
+          environmental differences, such as changes in room
+          temperature, humidity, etc. Standardization of en-                                                                 6.5.1 This term represents a random error occurring
+          vironmental conditions should be attempted to mini-                                                                in every test result and the procedures given
+          mize these effects.                                                                                                throughout this part of I S 0 5725 were developed as-
+                                                                                                                             suming that the distribution of this error variable is
+                                                                                                                             approximately normal, but in practice they work for
+                                                                                                                             most distributions provided that they are unimodal.
+
+          6.4.5 The effect of skill or fatigue of an operator may
+          be considered to be the interaction of operator and                                                                6.5.2 Within a single laboratory, its variance is called
+          time. The performance of a set of equipment may be                                                                 the within-laboratory variance and is expressed as
+          different at the time of the start of its use and after                                                                              2
+          using it for many hours: this is an example of inter-                                                                      Var(e) = aW                                                           . . . (8)
+          action of equipment and time. When the population
+          of operators is small in number and the population of
+          sets of equipment even smaller, effects caused by                                                                  6.5.3 It may be expected that         will have different  ah
+          these factors may be evaluated as fixed (not random)                                                               values in different laboratories due to differences such
+          effects.                                                                                                           as in the skills of the operators, but in this part of
+                                                                                                                             I S 0 5725 it is assumed that, for a properly standard-
+                                                                                                                             ized measurement method, such differences be-
+                                                                                                                             tween laboratories should be small and that it is
+                                                                                                                             justifiable to establish a common value of within-
+          6.4.6 The procedures given in I S 0 5725-2 are de-                                                                 laboratory variance for all the laboratories using the
+          veloped assuming that the distribution of laboratory                                                               measurement method. This common value, which is
+          components of bias is approximately normal, but in                                                                 estimated by the mean of the within-laboratory vari-
+          practice they work for most distributions provided that                                                            ances, is called the "repeatability variance" and is
+          these distributions are unimodal. The variance of B is                                                             designated by
+          called the "between-laboratory variance", expressed                                                                          2     -
+          as
+                                                                                                                                     er = Var(e)                                                           . . . (9)
+
+                  Var(B) = oL
+                                      2
+                                                                                                            . . . (5)        This mean value is taken over all the laboratories tak-
+                                                                                                                             ing part in the accuracy experiment which remain af-
+                                                                                                                             ter outliers have been excluded.
+          However, it will also include effects of changes of
+          operator, equipment, time and environment. From a
+          precision experiment using different operators,
+          measurement times, environments, etc., in a nested                                                                 7 Choice of measurement conditions
+          design, intermediate precision variances can be cal-
+          culated. Var@) is considered to be composed of in-                                                                 7.1   In applying a measurement method, many
+          dependent contributions of laboratory, operator, day
+                                                                                                                             measurement conditions are conceivable within a
+          of experiment, environment, etc.
+                                                                                                                             laboratory, as follows:
+                  Var(B) = Var(B,)                 + Var(B(,)) + Var(B(,)) + ...                                                    repeatability conditions (four factors constant);
+                                                                                                            . . . (6)               several intermediate precision conditions with one
+                                                                                                                                    factor different;
+          The variances are denoted by
+                                                                                                                                    several intermediate precision conditions with two
+                                                                                                                                    factors different;
+
+                                                                                                                                    several intermediate precision conditions with
+                  Var(B(,)) = 2
+                             o(2), etc.                                                                                             three factors different;
+                                                                                                            . . . (7)
+                                                                                                                                    intermediate precision conditions with four factors
+          Var(B) is estimated in practical terms as sf and similar                                                                  different.
+          intermediate precision estimates may be obtained
+          from suitably designed experiments.                                                                                In the standard for a measurement method, it is not
+                                                                                                                             necessary (or even feasible) to state all possible pre-
+
+                                                          --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                           Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                                  5
+                                                                                                                         User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                         call the Document Policy Management Group at 1-800-451-1584.
+                                                                  = 4851903 0594569 968 =
+        I S 0 5725-3:1994(E)                                                                                                                          8 IS0
+
+
+
+
+        cision measures, although the repeatability standard         of factor(s1 between each measurement. It is rec-
+        deviation should always be specified. As regards in-         ommended that n should be at least 15. This may not
+        termediate precision measures, common commercial             be satisfactory for the laboratory, and this method of
+        practice should indicate the conditions normally en-         estimating intermediate precision measures within a
+        countered, and it should be sufficient to specify only       laboratory cannot be regarded as efficient when
+        the one suitable intermediate precision measure, to-         compared with other procedures. The analysis is
+        gether with the detailed stipulation of the specific         simple, however, and it can be useful for studying
+        measurement conditions associated with it. The               time-different intermediate precision by making suc-
+        measurement condition factor(s1 to be changed                cessive measurements on the same sample on suc-
+        should be carefully defined; in particular, for time-        cessive days, or for studying the effects of calibration
+        different intermediate precision, a practical mean time      between measurements.
+        interval between successive measurements should
+        be specified.                                                A graph of (yk - 7)versus the measurement number
+                                                                     k, where yk is the kth test result of n replicate test re-
+                                                                     sults and j j is the mean of the n replicate test results,
+                                                                     is recommended to identify potential outliers. A more
+       7.2 It is assumed that a standardized measurement
+                                                                     formal test of outliers consists of the application of
+       method will be biased as little as possible, and that
+                                                                     Grubbs' test as given in subclause 7.3.4 of
+       the bias inherent in the method itself should have
+                                                                     I S 0 5725-211994.
+       been dealt with by technical means. This part of
+       I S 0 5725, therefore, deals only with the bias coming        The estimate of the intermediate precision standard
+       from the measurement conditions.                              deviation with M factor(s) different is given by
+
+
+       7.3 A change in the factors of the measurement
+       conditions (time, calibration, operator and equipment)
+       from repeatability conditions (¡.e. from state 1 to 2 of      where symbols denoting the intermediate precision
+       table 1) will increase the variability of test results.       conditions should appear inside the parentheses.
+       However, the expectation of the mean of a number
+       of test results will be less biased than under repeat-
+       ability conditions. The increase in the standard devi-
+       ation for the intermediate precision conditions may be        8.2        An alternative method
+       overcome by not relying on a single test result but by
+       using the mean of several test results as the final
+                                                                     8.2.1 An alternative method considers t groups of
+       quoted result.
+                                                                     measurements, each comprising n replicate test re-
+                                                                     sults. For example, within one laboratory, a set of t
+                                                                     materials could each be measured, then the inter-
+       7.4 Practical considerations in most laboratories,            mediate precision factor(s) could be altered and the t
+       such as the desired precision (standard deviation) of         materials remeasured, the procedure being repeated
+       the final quoted result and the cost of performing the        until there are n test results on each of the t materials.
+       measurements, will govern the number of factors and           Each group of n test results shall be obtained on one
+       the choice of the factor(s) whose changes can be              identical sample (or set of presumed identical samples
+       studied in the standardization of the measurement             in the case of destructive testing), but it is not es-
+       method.                                                       sential that the materials be identical. It is only re-
+                                                                     quired that the t materials all belong to the interval of
+                                                                     test levels within which one value of the intermediate
+                                                                     precision standard deviation with M factor(s) different
+       8 Within-laboratory study and analysis                        can be considered to apply. It is recommended that
+       of intermediate precision measures                            the value of t ( n - 1) should be a t least 15.
+
+       8.1 Simplest approach                                         EXAMPLE
+
+      The simplest method of estimating an intermediate              One operator performs a single measurement on
+      precision standard deviation within one laboratory             each of the t materials, then this is repeated by a
+      consists of taking one sample (or, for destructive             second operator, and possibly by a third operator, and
+      testing, one set of presumably identical samples) and          so on, allowing an estimate of si(o) to be calculated.
+      performing a series of n measurements with a change
+
+                                                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+     6
+COPYRIGHT 2003; International Organization for Standardization      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                    call the Document Policy Management Group at 1-800-451-1584.
+                                                                                             W 4853703 0574570 b8T
+
+          Q   IS0                                                                                                                                         IS0 5725-3:1994(E)
+
+
+
+          8.2.2 A graph of ( y k - $1 versus the material number                                  can be guaranteed only under conditions of a specific
+          j , where yJkis the k td test result on the jth
+                                                        material and                              operator, equipment or time may not be good enough
+          $ is the average of the n results on thejth material, is                                for commercial considerations.
+           recommended to identify potential outliers. A more
+          formal test of outliers consists of the application of
+           Grubbs' test as given in subclause 7.3.4 of
+           IS0 5725-2:1994 either for each group separately or                                    9 Interlaboratory study and analysis of
+           for all tn test results combined.                                                      intermediate precision measures
+           The estimate of the intermediate precision standard
+           deviation with M factor(s) different, si( ), is then given                             9.1 Underlying assumptions
+           bY
+                                                                                                  Estimation of intermediate measures of precision
+                                                                                                  from interlaboratory studies relies on the assumption
+                                                                                                  that the effect of a particular factor is the same across
+                                                                                                  all laboratories, so that, for example, changing oper-
+                                                                                                  ators in one laboratory has the same effect as chang-
+                                                                                                  ing operators in another laboratory, or that variation
+           For n = 2 (¡.e. two test results on each material), the                                due to time is the same across all laboratories. If this
+           formula simplifies to                                                                  assumption is violated, then the concept of inter-
+                                                                                                  mediate measures of precision does not make sense,
+                                  I          l                                                    nor do the techniques proposed in the subsequent
+                                                                                                  sections to estimate these intermediate measures of
+                                                                                                  precision. Careful attention to outliers (not necessarily
+                                                                                                  deletion of outliers) must be paid as this will help in
+                                                                                                  detecting departure from the assumptions necessary
+                                                                                                  to pool information from all laboratories. One powerful
+          8.3 Effect of the measurement conditions on                                             technique to detect potential outliers is to depict the
+          the final quoted result                                                                 measurements graphically as a function of the various
+                                                                                                  levels of the factors or the various laboratories in-
+          8.3.1 The expectation of 7 is different between one                                     cluded in the study.
+          combination and another of time, calibration, operator
+          and equipment, even when only one of the four fac-
+          tors changes. This is a limitation on the usefulness of
+                                                                                                  9.2 Simplest approach
+          mean values. In chemical analysis or physical testing,
+          7 is reported as the final quoted result. In trading raw                                If material a t q levels is sent to p laboratories who
+          materials, this final quoted result is often used for                                   each perform measurements on each of the q levels
+          quality evaluation of the raw materials and affects the                                 with a change of intermediate precision factor(s) be-
+          price of the product to a considerable extent.                                          tween each of the n measurements, then the analysis
+                                                                                                  is by the same method of calculation as explained in
+           EXAMPLE                                                                                IS0 5725-2, except that an intermediate precision
+                                                                                                  standard deviation is estimated instead of the repeat-
+           In the international trading of coal, the size of the
+                                                                                                  ability standard deviation.
+           consignment can often exceed 70 O00 t, and the ash
+           content is determined finally on a test portion of only
+           1 g. In a contract stipulating that each difference of
+           1 % in ash content corresponds to USD 1,5 per tonne                                    9.3              Nested experiments
+           of coal, a difference of 1 mg in the weighing of ash
+           by a chemical balance corresponds to 0,l % in ash                                      A further way of estimating intermediate precision
+           content, or USD 0,15 per tonne, which for such a                                       measures is to conduct more sophisticated exper-
+           consignment amounts to a difference in proceeds of                                     iments. These can be fully-nested or staggered-
+           USD 10 500 (from 0,l x 1,5 x 70 000).                                                  nested experiments (for definitions of these terms,
+                                                                                                  see I S 0 3534-3). The advantage of employing a
+                                                                                                  nested experimental design is that it is possible, a t
+           8.3.2 Consequently, the final quoted result of                                         one time and in one interlaboratory experiment, to
+           chemical analysis or physical testing should be suf-                                   estimate not only repeatability and reproducibility
+           ficiently precise, highly reliable and, especially, uni-                               standard deviations but also one or more intermediate
+           versal and reproducible. A final quoted result which                                   precision standard deviations. There are, however,
+
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                             Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                             7
+                                                                                           User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                           call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                                                    4853703 0594571i 5 L b
+       IS0 5725-3:1994(E)                                                                                                                                                                                                                  Q   IS0
+
+
+
+
+       certain caveats which must be considered. as will be
+       explained in 9.8.                                                                                                                               The subscripts i, j and k suffixed to the data y in
+                                                                                                                                                       figure 1 a) for the three-factor fully-nested experiment
+                                                                                                                                                       represent, for example, a laboratory, a day of exper-
+       9.4 Fully-nested experiment                                                                                                                     iment and a replication under repeatability conditions,
+                                                                                                                                                       respectively.
+       A schematic layout of the fully-nes sd experir                                                                             n       t
+       a particular level of the test is given in figure 1                                                                                             The subscripts i, j , k and 1 suffixed to the data y in
+                                                                                                                                                       figure 1 b) for the four-factor fully-nested experiment
+      By carrying out the three-factor fully-nested exper-                                                                                             represent, for example, a laboratory, a day of exper-
+
+
+
+
+                    --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+      iment collaboratively in several laboratories, one in-                                                                                           iment, an operator and a replication under repeatability
+      termediate precision measure can be obtained a t the                                                                                             conditions, respectively.
+      same time as the repeatability and reproducibility
+      standard deviations, ¡.e. u(o),a(,) and u, can be esti-                                                                                          Analysis of the results of an n-factor fully-nested ex-
+      mated. Likewise the four-factor fully-nested exper-                                                                                              periment is carried out by the statistical technique
+      iment can be used to obtain two intermediate                                                                                                     ”analysis of variance” (ANOVA) separately for each
+      precision measures, ¡.e. a(o), a(,),a(2) and ur can be                                                                                           level of the test, and is described in detail in
+      estimated.                                                                                                                                       annex B.
+
+
+
+
+                                                                                        FACTOR
+
+                                                                                        O (laboratory)
+
+
+
+
+                                                                                                                                                                             Øl
+                                                                                        1
+
+                                                                                        2 (residual)            k ---
+                                                                                        Y i/*                           YI11                  Yi12                        Yi21                   Y I22
+
+
+                                                                                                                  a) Three-factor fully-nested experiment
+
+
+
+       FACTOR
+
+       O (laboratory)
+
+       1
+                                                                                    I
+                                                                                                     i---   I
+                                                                                                            I
+                                                                                                                                      I                                              r                                                 l
+       2
+
+       3 (residual) 1 ---
+       YiJkl                                                               Y ill1           Y ,112                       Y i121                Yi122                   Y I211                 Y I212                        Yi221              Y1222
+
+
+
+                                                                                                                   b) Four-factor fully-nested experiment
+
+
+                                                                      Figure 1 - Schematic layouts for three-factor and four-factor fully-nested experiments
+
+
+
+
+      a
+COPYRIGHT 2003; International Organization for Standardization                                                                                       Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                     User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                                     call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                    m 4853903 0594572 4 5 2 m
+          Q    IS0                                                                                                                                                           I S 0 5725-3:1994(E)
+
+
+
+           9.5 Staggered-nested experiment                                                                         should be in the lowest ranks, the lowest factor being
+                                                                                                                   considered as a residual variation. For example, in a
+           A schematic layout of the staggered-nested exper-                                                       four-factor design such as illustrated in figure 1 b and
+           iment at a particular level of the test is given in                                                     figure2, factor O could be the laboratory, factor 1 the
+           figure 2.                                                                                               operator, factor 2 the day on which the measurement
+                                                                                                                   is carried out, and factor 3 the replication. This may
+                                                                                                                   not seem important in the case of the fully-nested
+                     FACTOR                                                                                        experiment due to its symmetry.
+                     O (laboratory)                                                     j   ___
+
+                     1                                                             1                              9.7 Comparison of the nested design with
+                                                                                                                  the procedure given in I S 0 5725-2
+
+                                                                                                                  The procedure given in I S 0 5725-2, because the
+                                                                                                                  analysis is carried out separately for each level of the
+                     y 'I                                                   YI1   YI2             YI3   YI4       test (material), is, in fact, a two-factor fully-nested ex-
+                                                                                                                  perimental design and produces two standard devi-
+               Figure 2 - Schematic layout of a four-factor                                                       ations, the repeatability and reproducibility standard
+                       staggered-nested experiment                                                                deviations. Factor O is the laboratory and factor 1 the
+                                                                                                                  replication. If this design were increased by one fac-
+                                                                                                                  tor, by having two operators in each laboratory each
+                                                                                                                  obtaining two test results under repeatability con-
+           The three-factor staggered-nested experiment re-                                                       ditions, then, in addition to the repeatability and
+           quires each laboratory i to obtain three test results.                                                 reproducibility standard deviations, one could deter-
+           Test results y;, and yi2 shall be obtained under re-                                                   mine the operator-different intermediate precision
+           peatability conditions, and yi3 under intermediate pre-                                                standard deviation. Alternatively, if each laboratory
+           cision conditions with M factor(s) different                                                           used only one operator but repeated the experiment
+           ( M = 1, 2 or 3). for example under time-different in-                                                 on another day, the time-different intermediate pre-
+           termediate precision conditions (by obtaining y,, on a                                                 cision standard deviation would be determined by this
+           different day from that on which yIl and y,, were ob-                                                  three-factor fully-nested experiment. The addition of
+           tained).                                                                                               a further factor to the experiment, by each laboratory
+
+
+
+
+                      --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                                                                  having two operators each carrying out two
+           In a four-factor staggered-nested experiment, yi4 shall                                                measurements and the whole experiment being re-
+           be obtained under intermediate precision conditions                                                    peated the next day, would allow determination of the
+           with one more factor different, for example, under                                                     repeatability, reproducibility, operator-different, time-
+           [time       operator]-different intermediate precision       +                                         different, and [time                      +
+                                                                                                                                                operator]-different standard
+           conditions by changing the day and the operator.                                                       deviations.
+           Again, analysis of the results of an n-factor
+           staggered-nested experiment is carried out by the                                                       9.8 Comparison of fully-nested and
+           statistical technique "analysis of variance" (ANOVA)                                                    staggered-nested experimental designs
+           separately for each level of the test, and is described
+           in detail in annex C.                                                                                   An n-factor fully-nested experiment requires 2" - test                       '
+                                                                                                                   results from each laboratory, which can be an ex-
+           9.6 Allocation of factors in a nested                                                                   cessive requirement on the laboratories. This is the
+           experimental design                                                                                     main argument for the staggered-nested experimental
+                                                                                                                   design. This design requires less test results to pro-
+           The allocation of the factors in a nested experimental                                                  duce the same number of standard deviations, al-
+           design is arranged so that the factors affected most                                                    though the analysis is slightly more complex and there
+           by systematic effects should be in the highest ranks                                                    is a larger uncertainty in the estimates of the standard
+           (O, 1, ...1, and those affected most by random effects                                                  deviations due to the smaller number of test results.
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                    9
+                                                                                                              User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                              call the Document Policy Management Group at 1-800-451-1584.
+       IS0 5725-3:1994(E)
+                                                                                      -      4853903 0594573 399                                       =
+                                                                                                                                                                   Q   IS0
+
+
+
+
+                                                                            Annex A
+                                                                           (normative)
+
+                                                   Symbols and abbreviations used in IS0 5725
+
+       a                                 Intercept in the relationship            k         Mandel's within-laboratory consistency test sta-
+                                                                                            tistic
+                                                 s=a+bm
+                                                                                  LCL Lower control limit (either action limit or warning
+
+
+
+
+                                                                                                                                                                             --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+      A                                  Factor used to calculate the uncer-          limit)
+                                         tainty of an estimate
+                                                                                  m         General mean of the test property; level
+       b                                 Slope in the relationship
+                                                 s=a+bm                           M         Number of factors considered in intermediate
+                                                                                            precision conditions
+       B                                 Component in a test result rep-
+                                         resenting the deviation of a labora-     N         Number of iterations
+                                         tory from the general average            n         Number of test results obtained in one labora-
+                                         (laboratory component of bias)                     tory at one level (¡.e. per cell)
+                                        Component of B representing all                     Number of laboratories participating in the inter-
+                                                                                  p
+                                        factors that do not change in inter-                laboratory experiment
+                                        mediate precision conditions
+                                                                                  P         Probability
+                                        Components of B representing fac-
+                                        tors that vary in intermediate Pre-       4         Number of levels of the test property in the
+                                        cision conditions                                   interlaboratory experiment
+
+                                         Intercept in the relationship            r         Repeatability limit
+                                                 lg s = c + d I g m               R         Reproducibility limit
+                                        Test statistics
+                                                                                  RM Reference material
+       C,        CCr,,,                 Critical values for statistical tests
+                                                                                  s         Estimate of a standard deviation
+       CDf                              Critical difference for probability P
+
+                                        Critical range for probability P
+                                                                                  s^        Predicted standard deviation
+       CRf
+      d                                 Slope in the relationship                 T         Total or sum of some expression
+
+                                                 Ig s = e + d Ig m                          Number of test objects or groups
+                                                                                  t
+      e                                 Component in a test result rep-
+                                        resenting the random error occur-         UCL Upper control limit (either action limit or warning
+                                        ring in every test result                     limit)
+
+      f                                 Critical range factor                     W         Weighting factor used in calculating a weighted
+                                                                                            regression
+      Fp(V1, v2)                        p-quantile of the F-distribution with
+                                        v1 and v2 degrees of freedom              w         Range of a set of test results
+      G                                 Grubbs' test statistic
+                                                                                  x         Datum used for Grubbs' test
+      h                                 Mandel's between-laboratory con-
+                                        sistency test statistic                   y         Test result
+
+
+       10
+COPYRIGHT 2003; International Organization for Standardization                   Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                 User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                 call the Document Policy Management Group at 1-800-451-1584.
+                                                                                             4853903 0594574 225
+           0 IS0                                                                                                                                             IS0 5725-3:1994(E)
+
+
+
+           j          Arithmetic mean of test results                                                 Symbols used as subscripts
+           -
+           i          Grand mean of test results                                                      C                     Ca libration-different
+
+           C(         Significance level                                                              E                     Equipment-different
+
+           /I         Type II error probability                                                       i                     Identifier for a particular laboratory
+
+           y         Ratio of the reproducibility standard deviation to                              I( 1                   Identifier for intermediate measures of
+                     the repeatability standard deviation (oR/or)                                                           precision; in brackets, identification of
+                                                                                                                            the type of intermediate situation
+           A          Laboratory bias
+           A                                                                                         j                      Identifier      for  a particular level
+           A          Estimate of A                                                                                         (IS0 5725-2).
+                                                                                                                            Identifier for a group of tests or for a
+           d          Bias of the measurement method
+                                                                                                                            factor ( I S 0 5725-3)
+           2          Estimate of d
+                                                                                                      k                     Identifier for a particular test result in a
+           R          Detectable difference between two laboratory                                                          laboratory i a t level j
+                      biases or the biases of two measurement
+                                                                                                      L                     Between-laboratory (interlaboratory)
+                      methods
+                                                                                                      m                     Identifier for detectable bias
+           p         True value or accepted reference value of a test
+                     property                                                                         M                     Between-test-sample
+           v          Number of degrees of freedom                                                    O                     Operator-diff erent
+           e         Detectable ratio between the repeatability stan-                                P                      Probability
+                     dard deviations of method B and method A
+                                                                                                     r                      Repeatability
+           o         True value of a standard deviation
+                                                                                                     R                      Reproducibility
+           z         Component in a test result representing the
+                     variation due to time since last calibration                                    T                     Time-diffe rent
+
+           4         Detectable ratio between the square roots of                                    W                     Within-laboratory (intralaboratory)
+                     the between-laboratory mean squares of
+                     method B and method A                                                            1, 2, 3...           For test results, numbering in the order
+                                                                                                                           of obtaining them
+           $(v)      pquantile of the X*-distribution with Y degrees
+                     of freedom                                                                       ( I ) , (2). (3)... For test results, numbering in the order
+                                                                                                                           of increasing magnitude
+
+
+
+
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                11
+                                                                                              User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                              call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                             D 4851903 0594575 IbI m
+            I S 0 5725-3:1994(E)
+
+
+
+
+                                                                                                       Annex B
+                                                                                                      (normative)
+
+                                                        Analysis of variance for fully-nested experiments
+
+            The analysis of variance described in this annex has to be carried out separately for each level of the test included
+            in the interlaboratory experiment. For simplicity, a subscript indicating the level of the test has not been suffixed
+            to the data. It should be noted that the subscript j is used in this part of I S 0 5725 for factor 1 (factor O being the
+            laboratory), while in the other parts of I S 0 5725 it is used for the level of the test.
+
+            The methods described in subclause 7.3 of I S 0 5725-2:1994 should be applied to check the data for consistency
+I
+~
+            and outliers. With the designs described in this annex, the exact analysis of the data is very complicated when
+’
+            some of the test results from a laboratory are missing. If it is decided that some of the test results from a lab-
+            oratory are stragglers or outliers and should be excluded from the analysis, then it is recommended that all the
+            data from that laboratory (at the level affected) should be excluded from the analysis.
+
+
+
+
+            B. 1 Three-factor fully-nested experiment
+            The data obtained in the experiment are denoted by y#, and the mean values and ranges are as follows:
+
+
+                                                                                 Yi = 1 (Yi1
+                                                                                         -
+                                                                                             + yi2)
+
+
+
+            where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+
+            The total sum of squares, SST, can be subdivided as
+
+
+
+
+           where
+
+
+
+
+           Since the degrees of freedom for the sums of squares SSO, SS1 and SSe are p - 1, p and 2p, respectively, the
+           ANOVA table is composed as shown in table B.1,
+
+
+
+
+                               --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+           12
+    COPYRIGHT 2003; International Organization for Standardization                                          Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                            User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                            call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                                                                       ~~
+
+
+
+
+                                                                                                                                                                 4853903 0594576 O T B
+                                                                                                                                                                                                                            IS0 5725-3:1994(E)
+
+
+
+
+                                                                                                      Table B.l - ANOVA table for a three-factor fully-nested experiment
+                                                                                                                  Sum of    Degrees of
+                                                                                                                                                          Mean square                        Expected mean square
+                                                                                                  ’Ource          squares    freedom
+
+                                                                                              O                   cso       P-1                       MSO = S S O / ( p - 1)                u,’   + 207,) + 4u&
+                                                                                                                                                                                             2        2
+                                                                                              1                   ss1       P                         MSI = SSl/p                           or + Z U ( , )
+                                                                                                                                                                                             2
+                                                                                              Residual            SSe       2P                        MSe = S S e l ( 2 p )                 ur
+
+                                                                                              Total               SST       4p - 1
+
+
+           The unbiased estimates sfol, sfl) and sf of C T ~ ~ ) ,                                                                                  and o:, respectively, can be obtained from the mean squares
+           MSO, MS1 and MSe as
+                     2     1
+                    ~ ( 0=
+                         )                                                       4 (MSO - MS1)
+
+                    sf,) =
+                                                                                     1 (MSI - MSe)
+
+                         2
+                    S,                                                         = MSe
+
+
+           The estimates of the repeatability variance, one-factor-different intermediate precision variance and reproducibility
+           variance are, respectively, as follows:
+                      n
+
+                   :s
+                      2           2                                                           2
+                    S i ( 1 ) = sr                                                     + S(1)
+                         2                                                       2        2           2
+                    SR = sr                                                          + s ( l ) + s(0)
+
+
+            B.2 Four-factor fully-nested experiment
+
+
+
+
+                             --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+           The data obtained in the experiment are denoted by yIJkl, and mean values and ranges are as follows:
+
+                                                                                1
+                  RJk =                                                         7 (YIJkl + Y 1 j k 2 )                              w l j k ( l ) = lbijkl - Yuk21
+
+
+
+
+           where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+           The total sum of squares, SST, can be subdivided as follows:
+
+
+
+
+           where
+
+                    SSO =
+                                                                                      I
+                                                                                              7,Z(3-ri’ 8 x ( 3 ) 2
+                                                                                                  J       k   l
+                                                                                                                        =
+                                                                                                                                i
+                                                                                                                                            -
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                                                              Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                                                              13
+                                                                                                                                                            User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                                            call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                                                4851903 0594537 T34
+
+       I S 0 5725-3:1994(E)                                                                                                                                                                                                           Q   IS0
+
+
+
+
+                                                                                 i        j     k       l                                             1
+
+
+
+
+                       --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+      Since the degrees of freedom for the sums of squares SSO, SS1, SS2 and SSe are p - 1, p , 2p and 4p, respectively,
+      the ANOVA table is composed as shown in table 6.2.
+
+
+                                                                                                Table B.2              - ANOVA table for a four-factor fully-nested experiment
+                                                                                                                Sum of        Degrees of
+                                                                                              Source                                           Mean square                     Expected mean square
+                                                                                                                squares        freedom
+                                                                                                                                                                               2    2
+                                                                                                                sso          P-1           MSO = SSO/(p - 1)                 ur + 2up)  + 4u:,) + 80&
+                                                                                                                ss 1         P             M S I = SSl/p                     u; + 2 4 ) + 44,)
+
+                                                                                                                ss2          2P            M S 2 = SS2/(2p)                  uf    + 20;~)
+                                                                                                                                                                              2
+                                                                                          Residual              SSe          4P            M S e = SSel(4p)                  or
+
+                                                                                          Total                 SST          8p - 1
+
+
+                                                                                                            2     2      2        2   2    2    2               2
+      The unbiased estimates s ( ~ ) ,s(,), q2)and s, of a(o), a(l),a(Z)and or,respectively, can be obtained from the mean
+      squares MSO, MSI, MS2 and MSe as follows:
+
+               '(0)                                                      -1
+                                                                         -
+                                                                          8 (MSO - MSI)
+                   2                                                         1
+               s ( ~ )=                                                      4 (MS2 - MS1)
+
+                   2                                                         1
+              s ( ~ )=                                                               (MSI - MSe)
+
+                2
+              S,                                         = MSe
+
+      The estimates of the repeatability variance, one-factor-different intermediate precision variance, two-factors dif-
+      ferent intermediate precision variance and reproducibility variance are, respectively, as follows:
+                2
+              sr
+               2       2     2
+              SI(I)= sr + '(2)
+
+                2       2   2                                                                       2
+              Ji(2) = sr + S(2)                                                               + S(1)
+               2     2                                                                2         2           2
+              SR = sr                                                         + s(2) + s(l)
+                                                                                         + $(O)
+
+
+
+
+      14
+COPYRIGHT 2003; International Organization for Standardization                                                                                      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                                    call the Document Policy Management Group at 1-800-451-1584.
+           0 IS0
+
+
+
+
+                                                                                                             Annex C
+                                                                                                            (normative)
+
+                                                                                Analysis of variance for staggered-nested experiments
+
+           The analysis of variance described in this annex has to be carried out separately for each level of the test included
+
+
+
+
+                   --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+           in the interlaboratory experiment. For simplicity, a subscript indicating the level of the test has not been suffixed
+           to the data. It should be noted that the subscript j is used in this part of IS0 5725 for the replications within the
+           laboratory, while in the other parts of I S 0 5725 it is used for the level of the test.
+
+           The methods described in subclause 7.3 of I S 0 5725-2:1994 should be applied to check the data for consistency
+           and outliers. With the designs described in this annex, the exact analysis of the data is very complicated when
+           some of the test results from a laboratory are missing. If it is decided that some of the test results from a lab-
+           oratory are stragglers or outliers and should be excluded from the analysis, then it is recommended that all the
+           data from that laboratory (at the level affected) should be excluded from the analysis.
+
+
+           C. 1 Three-factor staggered-nested experiment
+           The data obtained in the experiment within laboratory i are denoted by y;] 0‘ = 1, 2, 3), and the mean values and
+           ranges are as follows:
+
+                  -                                                  1
+                  Yi(1) =                                                (Y,l   +Yi4            W i ( i ) = IYii - ~ i 2 l
+
+
+
+
+           where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+           The total sum of squares, SST, can be subdivided as follows:
+
+
+
+
+           where
+
+
+
+
+           Since the degrees of freedom for the sums of squares SSO, SS1 and SSe are p - 1 , p and p, respectively, the
+           ANOVA table is composed as shown in table C.1.
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                          Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                          15
+                                                                                                                        User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                        call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                          4851903 0594579 8 0 7
+
+      IS0 5725-3:1994(E)                                                                                                                                                                                            0 IS0
+
+
+
+
+                                                                                              Sum of        Degrees of       Mean square                    Expected mean square
+                                                                                     So"rce   squares        freedom
+
+
+
+
+                       --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                                                                                                             2      5 2               2
+                                                                                O             sso       P-1               sso/(p - 1 )                     ur +    3~ ( 1 )+ 30(0)
+                                                                                                                                                             2      4 2
+                                                                                 1            ss1       P                 ss1IP                            ur+-u,
+                                                                                                                                                                    3 0
+                                                                                                                                                            2
+                                                                                 Residual     SSe       P                 SSelP                            6,
+
+                                                                                 Total        SST       31, - 1
+
+
+                                                                                                        2       2    2
+      The unbiased estimates sfO), sfl) and sr of                                                                   a(l)and a:,   respectively, can be obtained from the mean squares
+      MSO, MS1 and MSe as follows:
+
+                 2
+               s ( ~ )=
+                                                                         1         5 MS1
+                                                                             MSO - -
+                                                                                   12
+                                                                                                +-1 MSe
+                                                                                                 12
+                 2                                                       3         3 MSe
+                                                                             MS1 - -
+               s(,) =                                                                    4
+               sr2 = MSe
+
+      The estimates of the repeatability variance, one-factor-different intermediate precision variance and reproducibility
+      variance are, respectively, as follows:
+                 2
+               sr
+
+                 2                                                       2      2
+               S i ( i ) = sr                                                + S(i)
+                2     2   2                                                             2
+               SR = sr + S(1)                                                        + S(O)
+
+
+      C.2            Four-factor staggered-nested experiment
+      The data obtained in the experiment within laboratory i are denoted by y¡, (i = 1 , 2 , 3 , 4 ) , and the mean values and
+      ranges are as follows:
+
+
+
+
+      where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+      The ANOVA table is composed as shown in table C.2.
+
+
+
+
+      16
+COPYRIGHT 2003; International Organization for Standardization                                                                    Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                  User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                  call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                         4851903 0594580 529
+           8 IS0                                                                                                                                                                                   IS0 5725-3:1994(E)
+
+
+
+
+                                                                                  Table C.2 - ANOVA table for a four-factor staggered-nested exDeriment
+                                                                                                                   ___
+
+                                                                                                                       Degrees of
+                                                                 Source                    Sum of squares                                       Mean square                              Expected mean square
+                                                                                                                        freedom
+
+              O                                                                                                    P-1
+
+              1                                                                                                    P
+
+              2                                                                                                    P
+
+              Residual                                                                                             P
+
+              Total                                                                                                4p- 1
+
+
+
+
+           C.3 Five-factor staggered- nested experiment
+           The data obtained in the experiment within laboratory i are denoted by y;, (J’ = 1, 2, 3, 4, 5), and the mean values
+           and ranges are as follows:
+
+
+
+
+               --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+           where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+           The ANOVA table is composed as shown in table C.3.
+
+
+                                                                                  Table C.3 - ANOVA table for a five-factor staggered-nested experiment
+                                                                                                                Degrees of
+                                                                 Source               Sum of squares                                   Mean square                                   Expected mean square
+                                                                                                                 freedom
+
+              O                                                           5m,(4))2- 5P6Y                    P-1
+                                                                              I
+
+
+              1                                                           4            2
+                                                                          7 cwi(4)                          P
+                                                                                  I
+
+              2                                                           3            2                    P
+                                                                          7 Cwi(3)I
+
+              3                                                           2            2                    P
+                                                                          3C W I ( 2 )
+                                                                                  I
+
+              Residual                                                    1     2                           P
+                                                                          1 ewlcli
+                                                                                  I
+
+
+              Total                                                       c ccv, - 7)’
+                                                                          1 1
+                                                                                                            5p - 1
+
+
+
+
+                                                                                                                                                                                                                      17
+COPYRIGHT 2003; International Organization for Standardization                                                                      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                                    call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                 4853903 0594583 465 9
+       I S 0 5725-3:1994(E)                                                                                                                                                                                Q   IS0
+
+
+
+
+       C.4 Six-factor staggered-nested experiment
+       The data obtained in the experiment within laboratory i are denoted by yij (j= 1, 2, 3,4, 5, 6 ) , and the mean values
+       and ranges are as follows:
+
+              -                                                        1
+                  =
+              ~i(i)                                                    2 (Yi1 + YS)                                                Wi(1) = IYil      - Yi21
+
+
+
+
+       where p is the number of laboratories which have participated in the interlaboratory experiment.
+
+       The ANOVA table is composed as shown in tableC.4.
+
+
+
+
+                     --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                               Table C.4   - ANOVA table for a six-factor staggered-nested experiment
+                                                                                            ~
+
+
+
+
+                                                                                                        Degrees of
+              Source                                                            Sum of squares                           Mean square                                  Expected mean square
+                                                                                                         freedom
+
+         O                                                                                          P-1
+
+          1                                                                                         P
+          2                                                                                         P
+          3                                                                                         P
+          4                                                                                         P
+          Residual                                                                                  P
+         Total                                                                                      6p- 1
+                                                                                                                     I                                 I
+
+
+
+
+       18
+COPYRIGHT 2003; International Organization for Standardization                                                           Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                         User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                         call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                  M 485l1903 0594582 3 T l W
+           Q IS0                                                                                                                                                         IS0 5725-3:1994(E)
+
+
+
+
+                                                                                        Annex D
+                                                                                      (informative)
+
+              Examples of the statistical analysis of intermediate precision experiments
+
+           D.l Example 1       Obtaining the [time -                                        +                     D.1.2 Analysis
+           operator]-different intermediate precision
+                                                                                                                  The data        yj2 and w, = /y,, - yj21 are shown in
+                                      within
+           standard deviation, s ~ ( ~ ~ ) ,  a specific                                                          table D.1. The analysis follows the procedure given in
+           laboratory at a particular level of the test                                                           8.2.
+
+                                                                                                                  A plot of the data [deviations from the mean of the
+                                                                                                                  measurements on both days (y,k - y/) versus the
+           D.l.l              Background
+                                                                                                                  sample number11 is shown in figure D.1, This plot and
+                                                                                                                  the application of Cochran's test indicate that the
+           a) Measurement method: Determination of the
+                                                                                                                  ranges for samples with numbers 20 and 24 are
+              carbon content in steel by vacuum emission
+                                                                                                                  outliers. There is a large discrepancy between the
+              spectrometry with test results expressed as per-
+                                                                                                                  daily measurements on these samples which is most
+              centages by mass.
+                                                                                                                  likely due to errors in recording the data. The values
+           b) Source: Routine report of a steel works in Nov-                                                     for these two samples were removed from the com-
+              ember 1984.                                                                                         putation of the [time + operator]-different intermedi-
+                                                                                                                  ate precision standard deviation,            which is
+           c) Experimental design: In a specific laboratory, a                                                    calculated according to equation (12) as
+              randomly selected sample out of the materials
+              analysed on one day was analysed again on the
+              next day by a different analyst. In a month 29 pairs
+              of such data were obtained (see table D.1).
+
+
+
+
+                                                                 Table D.l - Original data - Carbon content, % ( d m )
+
+                     ~                                           ~                                                                                 ~~~
+
+
+
+
+                 Sample                                                                                                   Sample
+                                         First day                   Next day   Range                                                       First day                Next day               Range
+                   No.                                                                                                      No.
+                         i                                             YI2       WJ                                              i                       1                 yJ2               WJ
+
+                          1                 O, 130                    0,127     0,003                                           16             O, 149                   0,144               0,005
+                         2                  O, 140                    0,132     0,008                                           17             0,044                    0,044               0,000
+                         3                  0,078                     0,080     0,002                                           18             0,127                    0.1 22              0,005
+                         4                  0,110                     0,113     0,003                                           19             0,050                    0,048               0,002
+                          5                 O, 126                    0,128     0,002                                           20             0,042                    0,146               0,104
+                         6                  0,036                     0,032     0,004                                           21             0,150                    0,145               0,005
+                         7                  0,050                     0,047     0,003                                           22             O, 135                   0,133               0,002
+                         8                  0,143                     0,140     0,003                                           23             0,044                    0,045               0,001
+                         9                  0,091                     0,089     0,002                                           24             0,100                    0,161               0,061
+                         10                 0,040                     0,030     0,Ol o                                          25             0,132                    0,131               0,001
+                         11                 0.1 1o                    0.1 13    0,003                                           26             0,047                    0,045               0,002
+                         12                 O, 142                    O, 145    0,003                                           27             0,168                    O, 165              0,003
+                         13                 0,143                     0,150     0,007                                           28             0,092                    0,088               0,004
+                         14                 0,169                     O, 165    0,004                                           29             0,041                    0,043               0,002
+                         15                 0,169                     O. 173    0,004
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization
+                                                                                   --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+                                                                                                          Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                    19
+                                                                                                          User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                          call the Document Policy Management Group at 1-800-451-1584.
+                                                                                            4651903 0594583 238
+      IS0 5725-3:1994(E)                                                                                                                                                 0 IS0
+
+
+
+
+                                          I
+
+
+
+                                          5
+                                           I     0'06
+
+
+                                          -8
+                                           E
+
+
+                                           E 0,04
+                                           Lu
+                                           c
+                                           c
+                                           Pl
+                                           c
+                                           O
+                                           n
+                                           L
+                                           6
+                                           U
+
+
+
+                                                 0.02
+
+
+
+
+                                                 O
+
+
+
+
+                                                - 0.02
+
+
+
+
+                                                - 0.04
+
+
+
+
+                                                - 0.06
+                                                                 1   5        10       15                  20                  25                   30
+                                                                                                                Sample number, j          -
+         Figure D.l             - Carbon content in steel - Deviations from the mean of the measurements on both days
+                                                                         versus the sample number
+
+
+      D.2 Example 2       Obtaining the         -                                       b) Source: ISO/TC 17, Stee//SC1, Methods of de-
+                                                                                           termination of chemical composition. Experiment
+      time-different intermediate precision
+                                                                                           carried out in May 1985.
+      standard deviation by interlaboratory
+      experiment
+                                                                                       c) Experimental design: A three-factor staggered-
+                                                                                          nested experiment was carried out with 20 lab-
+      D.2.1           Background                                                          oratories each reporting two test results obtained
+
+
+
+
+                                                                                                                                                                             --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                                                                                          under repeatability conditions on one day, fol-
+      a) Measurement method: Determination of the                                         lowed by one further test result on the next day
+         vanadium content in steel by the atomic absorp-                                  a t each of the six levels included in the exper-
+         tion spectrometric method described in the in-                                   iment. All measurements in any laboratory were
+         structions for the experiment. Test results are                                  carried out by one operator, using the same
+         expressed as percentages by mass.                                                measurement equipment.
+
+
+      20
+COPYRIGHT 2003; International Organization for Standardization                         Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                       User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                       call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                               4851903 0 5 9 4 5 8 4 I174
+           Q   IS0                                                                                                                                                                 I S 0 5725-3:1994(E)
+
+
+
+           D.2.2 Analysis                                                                                                oratory. There is a large discrepancy between the test
+                                                                                                                         result for day 2 and the mean value for d a y l , which
+           The data for all six levels are given in table D.2.                                                           is very large compared with the test results for the
+                                                                                                                         other laboratories. This laboratory was removed from
+           The analysis of variance is presented for only one of                                                         the calculations of the precision measures.
+           the levels, ¡.e. level 1.
+
+           A plot of the data (test results for day 1 and day 2                                                          In accordance with C . l of annex C, IV,(,), w , ( ~and
+                                                                                                                                                                              )
+           versus laboratory number i) is shown in figureD.2.                                                            y,(2)were computed and the results are shown in ta-
+                                                                                                                         -
+           This dot indicates that laboratory 20 is an outlier lab-                                                      ble D.3.
+
+
+
+
+                                                      I
+                                                      F
+                                                             IS0
+                                                                                   O Day 1. f i r s t test result
+                                                                                   -t Day I.
+                                                      -
+                                                      \
+                                                       x
+                                                       E
+                                                             140
+                                                                                            second test result
+                                                                                   ++ D a y 2
+                                                      E
+                                                      ag
+                                                      +
+                                                       c
+                                                      2 130
+                                                       O
+                                                       U
+
+
+                                                      5._
+                                                      D
+                                                       CI
+                                                       c
+                                                             120
+
+
+
+
+                                                             110
+
+
+
+
+                                                             100
+
+
+
+
+                                                               90
+
+
+
+
+                                                               80
+
+
+
+
+                                                               70
+                                                                               1          4                 8                      12                       16
+                                                                                                                                          Laboratory number, i            -         20
+
+
+
+
+           Figure D.2 - Vanadium content in steel                                                -Test results for day 1 and 2 at level 1 versus laboratory number
+
+
+
+
+                             --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+                                                                                                                                                                                                      21
+COPYRIGHT 2003; International Organization for Standardization                                                      Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                    User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                    call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                  4 8 5 3 9 0 3 0594585 O00
+
+        IS0 5725-3:1994(E)
+
+
+
+
+                                                        Table D.2     - Original data - Vanadium content, % ( d m )
+
+
+
+
+                                                                 o ? 2 O g & 3 O c 9 N Nr N
+                                                                 N N N hl N N N N N Cu
+                                                                                          O N? C
+                                                                                               N
+                                                                                                 z W  g S : 3 N-
+                                                                                                   N- N- N-                        N                     N.
+                                                                 o- o- o- o- o
+                                                                             ' o- o- o- o- o- o- o- o- o- o- o o o o o
+
+
+
+
+                                                                                                                                                                                    --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+                                                                 N a , r - d O a , a , a , m m N m m ~ r - d * m * r -
+                                                                 o o o o z o o o o o o o o r o o o o o o                                                      r-
+
+                                                                 o o- o- o- o- o- o- o- o- o- o- o. o- o- o- o o- o- o' 0-
+
+
+
+
+                                                                 a , m r - m r - r - m r - a a , r - m r - a , m m r - r - m a
+                                                                 m m m m m m m m m m m m m m m m m m m m
+                                                                 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                                                                 o- o- o- o- o- o- o- o- o- o- o o. o- o- o- o- o- o- o- o-
+
+                                                                 a,       m c ~ r - c ~ a , w r - r - m m r - ~ r - r - a , a , r - o
+                                                                 m G m m m m m m m m m m m m m m m m m ~
+                                                                 9 9 9 9 9 9 4 9 9 9 0 . 0 . 9 9 9 9 9 9 9 9
+                                                                 0    0   0   0   0   0   0   0   0   0     0     0     0    0     0     0     0   0     0     0
+
+
+
+
+                                                                 o o m a , o m m m m - o - m m m o o o m ~
+                                                                 8 ~ 8 8 ~ 8 8 8 8 8 s s 8 8 8 õ õ õ ~ O
+                                                                 o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o-
+
+                                                                 m    o   m   a   ,   o   a   ,   m    m      o     o    ~     ~     o     m       m    m     o     o     m     ~
+                                                                 ~ 8 ~ ~ 8 8 8 8 8 8 0 O0 00 0 0 0 0
+                                                                                                   0 -
+                                                                                                      0 0 0 0
+                                                                 o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- o- 0-
+
+                                                   ;
+                                                   c
+                                                   a o
+                                                   $2
+                                                  P
+                                                   a
+                                                  .J
+
+
+
+
+       22
+COPYRIGHT 2003; International Organization for Standardization                                    Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                  User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                  call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                                        ~
+
+
+
+
+                                                                                                                               m 4851903 0594586 T 4 7 W
+           Q   IS0                                                                                                                                                                            IS0 5725-3:1994(E)
+
+
+
+
+                                                                                                                                            -
+                                                                                                                                            -
+                                                                                                                                                                                = 0,009 798 25
+                    Table D.3                                                   - Values of w ~ ( ~ )
+                                                                                                  wl( ,                                     Y=-
+                                                                                                                                                     19
+                                                                                                                                                                &2)
+                                                                                                                                                                  .
+
+               Laboratory
+                  No.                                                                                                               From these values, the sums of squares SSO, SS1 and
+                   i                                                                                                                SSe are obtained, and the ANOVA table is prepared
+                      1                                                        0,001 1      0,000 15        0,009 700               as shown in tableD.4.
+                                                                               0,000 o
+
+
+
+
+                         --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+                      2                                                                     0,001 O0        0,009 667
+                      3                                                        0,000 5      0,000 15        0,009 300               The unbiased estimates of variances between labora-
+                     4                                                         0,000 3      0,000 45        0,008 O00               tories ,,;s between days within a laboratory s(:>, and
+                      5                                                        0,000 o      0,000 O0        0,010 O00               the estimated repeatability variance :s are obtained
+                     6                                                         0,000 5      0,000 25        0,009 233               as
+                      7                                                        0,000 1      0,000 25        0,009 933
+                     8                                                         0,000 2      0,000 40        0,009 633                    s(~)= 0,278 x 1O-
+                                                                                                                                          2
+
+                      9                                                        0,001 o      0,000 10        0,009 933
+                     10                                                        0,001 1      0,001 55        0,010 733                       s(~)= 0,218 x
+                                                                                                                                             2
+                     11                                                        0,000 o      0,001 O0        0,009 667
+                     12                                                        0,000 6      0,001 50        0,010 700
+                                                                                                                                            :s = 0,145 x
+                     13                                                        0,000 5      0,000 25        0,009 667
+                     14                                                        0,000 o      0,000 40        0,009 733
+                     15                                                        0,000 8      0,001 30        0,009 067
+                     16                                                        0,000 2      0,000 40        0,009 767               The reproducibility standard deviation s,       time-
+                     17                                                        0,000 3      0,000 85        0,Ol O 633              different intermediate precision standard deviation
+                     18                                                        0,000 2      0,001 40        0.01 O 867              siFi, and repeatability standard deviation s, are ob-
+                     19                                                        0,000 2      0,000 70        0,009 933               tained as
+
+
+          The sums of squares of w ~ ( ~w) ,~ ( ~
+                                               and)                                                               and the
+          mean value are computed as                                       7
+                   CW$,~
+                     5,52 l o p 6                                          =       x
+                                                                                                                                            siU) =     F
+                                                                                                                                                       +        s,          s(~)= 0,603 x l o v 3
+
+                     I
+
+
+
+                                                                                                                                           sr=fi=0,381                              x
+                   z w & ) = 12,44 x
+                     1
+
+
+                                                                                                                                    The values of these standard deviations for the six
+                                                                                                                                    levels of vanadium content are summarized in
+                                                                                                                                    table D.5 and shown in figure D.3.
+
+
+
+
+                                                                                                Table D.4 - ANOVA table             - Vanadium content
+                                                                                  Source
+                                                                                                  Sum of
+                                                                                                  squares     1   Degrees of
+                                                                                                                   freedom     I    e:"                     1        Expmed meansquare
+
+                                                                                                                                                                 2   5 2       2
+                                                                               O (laboratory)   24.16 x               18           1,342 x 1O-                  u, + 3u(,) + 3u(o)
+
+                                                                               1 (day)          8,29 x                19           0,436 x                      a,
+                                                                                                                                                                     2
+                                                                                                                                                                         + T4 u 2( l )
+                                                                                                                                                                     2
+                                                                               Residual         2,76 x                19           0,145 x                      o,
+
+                                                                               Total            35.21 x       I      56        I                            I
+
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                                 Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                                                                                                                 23
+                                                                                                                               User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                               call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                                 D 4851903 0594587 983 W
+       IS0 5725-3:1994(E)                                                                                                                                                                                      Q   IS0
+
+
+
+
+                                                                             Outlier
+           Level                                                          laboratories   Average (“Y)          sr   (”/.I                                sI(T)                                        SR (%)
+                                                                              No.
+               1                                                              20           0,009 8          0,381 x                                  0,603 x 1O-3                               0,801 x
+
+
+               2l
+               3
+               4
+                                                                              -
+                                                                               2
+
+
+                                                                            6 and 8
+                                                                                           0,037 8
+                                                                                           0,105 9
+                                                                                           0,213 8
+                                                                                                            0,820 x 1O-
+                                                                                                            1,739 x
+                                                                                                            3,524 x
+                                                                                                                                                     0,902
+                                                                                                                                                     2,305 x
+                                                                                                                                                     4,710 x
+                                                                                                                                                                    IO-^                        0,954 x 1O-3
+                                                                                                                                                                                                2,650 x 1O-3
+                                                                                                                                                                                                4,826 x 1O-
+               5                                                              20           0,516 4          6,237 x 1O-3                             6,436 x 1O-3                               9,412 x 1O-3
+               6                                                              20           0,748 4          9,545       10-~                         9,545                                     15,962 x
+
+
+
+
+                        --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+                                                                                                        0.01                                0.1
+                                                                                                                                          Concentration Level, %              -          1
+
+
+
+       Figure D.3     Vanadium content in steel                           -                             -
+                                                  Repeatability standard deviation s, time-different intermediate
+       precision standard deviation sim and reproducibility standard deviation ,s as functions of the concentration
+                                                          level
+
+
+
+       24
+COPYRIGHT 2003; International Organization for Standardization                                                              Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                            User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                            call the Document Policy Management Group at 1-800-451-1584.
+                                                                                                                    Y851903 0574588 8 L T
+
+          8 IS0                                                                                                                                                                   IS0 5725-3:1994(EI
+
+
+
+
+                                                                                                  Annex E
+                                                                                            (informative)
+
+                                                                                          Bibliography
+
+             [ l ] I S 0 3534-2:1993, Statistics - Vocabulary and                                                                 Part 5: Alternative methods for the determi-
+                   symbols - Part 2: Statistical quality control.                                                                 nation of the precision of a standard measure-
+                                                                                                                                  ment method.
+             [2] I S 0 3534-3:î 985, Statistics - Vocabulary and
+                 symbols - Part 3: Design of experiments.                                                                 [5] I S 0 5725-6:1994, Accuracy ftrueness and pre-
+                                                                                                                              cision) of measurement methods and results -
+             [3] I S 0 5725-4:1994, Accuracy (trueness and pre-                                                               Part 6: Use in practice of accuracy values.
+                 cision) of measurement methods and results -
+                     Part 4: Basic methods for the determination of                                                       [6] WINER,B.J. Statistical principles in experimental
+                     the trueness of a standard measurement                                                                   design. McGraw-Hill, 1962.
+                     method.
+                                                                                                                          [7] SNEDECOR, G.W. and COCHRAN,W.G. Statistical
+             [4] IS0 5725-5:-’), Accuracy (trueness and pre-                                                                  methods. Iowa University Press, 1967.
+                 cision) of measurement methods and results -
+
+
+
+
+           1) To be published.
+
+
+
+                                                                                                                                                                                                     25
+                                                                 --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+COPYRIGHT 2003; International Organization for Standardization                                                     Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                                                                   User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                                                                   call the Document Policy Management Group at 1-800-451-1584.
+                                                                                      4851903 0594589 756
+
+        IS0 5725-3:1994(E)
+
+
+
+
+                                                                                                                                                               --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+        ICs 03.120.30
+        Descriptors: measurement, tests, test results, accuracy, reproducibility,     statistical analysis.
+
+        Price based on 25 Daqes
+
+
+
+
+COPYRIGHT 2003; International Organization for Standardization               Document provided by IHS Licensee=Shell Services International B.V./5924979112,
+                                                                             User=, 03/09/2003 21:10:16 MST Questions or comments about this message: please
+                                                                             call the Document Policy Management Group at 1-800-451-1584.
+

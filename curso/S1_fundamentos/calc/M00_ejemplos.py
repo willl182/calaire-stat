@@ -54,11 +54,13 @@ for campania in ("C1", "C2"):
 por_campania = Counter(r[0] for r in registros)
 por_analista = Counter(r[1] for r in registros)
 por_campania_analista = Counter((r[0], r[1]) for r in registros)
-por_analista_dia = Counter((r[1], r[2]) for r in registros)
+por_campania_analista_dia = Counter((r[0], r[1], r[2]) for r in registros)
+assert len(por_campania_analista_dia) == 8
+assert set(por_campania_analista_dia.values()) == {2}
 print(f"I: total={len(registros)}; por campaña={dict(sorted(por_campania.items()))}; "
       f"por analista={dict(sorted(por_analista.items()))}")
 print(f"I: conteos campaña×analista={dict(sorted(por_campania_analista.items()))}")
-print(f"I: conteos analista×día={dict(sorted(por_analista_dia.items()))}")
+print(f"I: conteos campaña×analista×día={dict(sorted(por_campania_analista_dia.items()))}")
 
 # I2: ejemplo simulado de transformación ancho a largo con un dato faltante.
 tabla_ancha = [
@@ -74,7 +76,16 @@ registros_largos = [
 valores_no_faltantes = sum(
     valor is not None for fila in tabla_ancha for valor in fila[3:]
 )
+faltantes_largos = [
+    (campania, analista, dia, ciclo, "faltante")
+    for campania, analista, dia, lectura_1, lectura_2 in tabla_ancha
+    for ciclo, valor in ((1, lectura_1), (2, lectura_2))
+    if valor is None
+]
 assert len(registros_largos) == valores_no_faltantes == 3
+assert faltantes_largos == [("C1", "A2", 1, 2, "faltante")]
+assert len(registros_largos) + len(faltantes_largos) == 2 * len(tabla_ancha)
+print(f"I2: estados faltantes conservados={faltantes_largos}")
 print(f"I2: filas anchas={len(tabla_ancha)}; celdas de lectura no faltantes="
       f"{valores_no_faltantes}; registros largos={len(registros_largos)}")
 print(f"I2: registros largos={registros_largos}")

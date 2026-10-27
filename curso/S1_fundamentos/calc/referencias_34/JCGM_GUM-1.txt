@@ -1,0 +1,784 @@
+JCGM GUM-1:2023
+
+
+
+
+Guide to the expression of
+uncertainty in measurement
+— Part 1: Introduction
+
+
+Guide pour l’expression de l’incertitude de
+mesure — Partie 1: Introduction
+
+
+
+
+First edition 2023
+
+
+© JCGM 2023
+JCGM GUM-1:2023
+
+
+Document produced by Working Group 1 of the Joint         Document produit par le Groupe de travail 1 du
+Committee for Guides in Metrology (JCGM/WG 1).            Comité commun pour les guides en métrologie
+                                                          (JCGM/WG 1).
+
+Copyright of this document is shared jointly by the       Les droits d’auteur relatifs à ce document sont la
+JCGM member organizations (BIPM, IEC, IFCC,               propriété conjointe des organisations membres du
+ILAC, ISO, IUPAC, IUPAP and OIML).                        JCGM (BIPM, CEI, IFCC, ILAC, ISO, UICPA, UIPPA
+                                                          et OIML).
+
+
+
+
+Copyrights                                                Droits d’auteur
+
+Even if the electronic version of this document is        Même si une version électronique de ce document
+available free of charge on the BIPM’s website            peut être téléchargée gratuitement sur le site internet
+(www.bipm.org), copyright of this document is             du BIPM (www.bipm.org), les droits d’auteur relatifs
+shared jointly by the JCGM member organizations,          à ce document sont la propriété conjointe des
+and all respective logos and emblems are vested in        organisations membres du JCGM et l’ensemble de
+them and are internationally protected. Third parties     leurs    logos     et    emblèmes      respectifs   leur
+cannot rewrite or re-brand, issue or sell copies to the   appartiennent et font l’objet d’une protection
+public, broadcast or use it on-line. For all commercial   internationale. Les tiers ne peuvent le réécrire ou le
+use, reproduction or translation of this document         modifier, le distribuer ou vendre des copies au
+and/or of the logos, emblems, publications or other       public, le diffuser ou le mettre en ligne. Tout usage
+creations contained therein, the prior written            commercial, reproduction ou traduction de ce
+permission of the Director of the BIPM must be            document et/ou des logos, emblèmes et/ou
+obtained.                                                 publications     qu’il    comporte,     doit    recevoir
+                                                          l’autorisation écrite préalable du directeur du BIPM. .
+
+
+
+
+                                                                                © JCGM 2023 – All rights reserved
+Joint Committee for Guides in Metrology
+
+
+
+
+ Guide to the expression of uncertainty in measurement
+                 — Part 1: Introduction
+
+
+
+
+   Guide pour l’expression de l’incertitude de mesure — Partie 1:
+                           Introduction
+
+
+
+
+                              JCGM GUM-1:2023
+
+
+
+
+                                           © JCGM 2023 – All rights reserved
+ii                                                                               JCGM GUM-1:2023
+
+
+© JCGM 2023
+
+Copyright of this JCGM guidance document is shared jointly by the JCGM member organizations
+(BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP and OIML).
+Copyright
+Even if electronic versions are available free of charge on the website of one or more of the JCGM
+member organizations, economic and moral copyrights related to all JCGM publications are inter-
+nationally protected. The JCGM does not, without its written authorization, permit third parties
+to rewrite or re-brand issues, to sell copies to the public, or to broadcast or use on-line its publica-
+tions. Equally, the JCGM also objects to distortion, augmentation or mutilation of its publications,
+including its titles, slogans and logos, and those of its member organizations.
+Official versions and translations
+The only official versions of documents are those published by the JCGM, in their original languages.
+The JCGM’s publications may be translated into languages other than those in which the documents
+were originally published by the JCGM. Permission must be obtained from the JCGM before a
+translation can be made. All translations should respect the original and official format of the
+formulae and units (without any conversion to other formulae or units), and contain the following
+statement (to be translated into the chosen language):
+
+      All JCGM’s products are internationally protected by copyright. This translation of
+      the original JCGM document has been produced with the permission of the JCGM.
+      The JCGM retains full internationally protected copyright on the design and content of
+      this document and on the JCGM’s titles, slogan and logos. The member organizations
+      of the JCGM also retain full internationally protected right on their titles, slogans and
+      logos included in the JCGM’s publications. The only official version is the document
+      published by the JCGM, in the original languages.
+
+The JCGM does not accept any liability for the relevance, accuracy, completeness or quality of the
+information and materials offered in any translation. A copy of the translation shall be provided to
+the JCGM at the time of publication.
+Reproduction
+The JCGM’s publications may be reproduced, provided written permission has been granted by
+the JCGM. A sample of any reproduced document shall be provided to the JCGM at the time of
+reproduction and contain the following statement:
+
+      This document is reproduced with the permission of the JCGM, which retains full
+      internationally protected copyright on the design and content of this document and
+      on the JCGM’s titles, slogans and logos. The member organizations of the JCGM also
+      retain full internationally protected right on their titles, slogans and logos included
+      in the JCGM’s publications. The only official versions are the original versions of the
+      documents published by the JCGM.
+
+Disclaimer
+The JCGM and its member organizations have published this document to enhance access to infor-
+mation about metrology. They endeavor to update it on a regular basis, but cannot guarantee the
+accuracy at all times and shall not be responsible for any direct or indirect damage that may result
+from its use. Any reference to products of any kind (including but not restricted to any software,
+data or hardware) or links to websites, over which the JCGM and its member organizations have
+no control and for which they assume no responsibility, does not imply any approval, endorsement
+or recommendation by the JCGM and its member organizations.
+
+
+
+                                                               © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                                   iii
+
+
+Contents
+                                                                                                Page
+Foreword                                                                                           iv
+1 Scope                                                                                             1
+2 Rationale                                                                                         1
+3 Measurement                                                                                       2
+4 Guidance on evaluating measurement uncertainty                                                    3
+5 Parts of the GUM                                                                                  5
+   5.1 Using the law of propagation of uncertainty (JCGM 100:2008) . . . . . . . . . . . . . 5
+   5.2 Conformity assessment (JCGM 106:2012) . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+   5.3 Measurement models (JCGM GUM-6) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+   5.4 Propagation of distributions (JCGM 101:2008) . . . . . . . . . . . . . . . . . . . . . . . 7
+   5.5 Extension to any number of output quantities (JCGM 102:2011) . . . . . . . . . . . . 8
+Annexes                                                                                             9
+A Overview of the parts of the GUM                                                                  9
+References                                                                                        10
+
+
+
+
+© JCGM 2023 – All rights reserved
+iv                                                                     JCGM GUM-1:2023
+
+
+Foreword
+
+In 1997 a Joint Committee for Guides in Metrology (JCGM), chaired by the Director of the
+Bureau International des Poids et Mesures (BIPM), was created by the seven international
+organizations that had originally in 1993 prepared the ‘Guide to the expression of uncer-
+tainty in measurement’ and the ‘International vocabulary of basic and general terms in
+metrology’. The JCGM assumed responsibility for these two documents from the Technical
+Advisory Group 4 of the International Organization for Standardization (ISO/TAG4).
+The Joint Committee is formed by the BIPM with the International Electrotechnical Com-
+mission (IEC), the International Federation of Clinical Chemistry and Laboratory Medicine
+(IFCC), the International Laboratory Accreditation Cooperation (ILAC), the International
+Organization for Standardization (ISO), the International Union of Pure and Applied Chem-
+istry (IUPAC), the International Union of Pure and Applied Physics (IUPAP) and the Inter-
+national Organization of Legal Metrology (OIML).
+JCGM has two Working Groups. Working Group 1, ‘Expression of uncertainty in mea-
+surement’, has the task to promote the use of the ‘Guide to the expression of uncertainty
+in measurement’ and to prepare documents for its broad application. Working Group 2,
+‘Working Group on International vocabulary of basic and general terms in metrology’, has
+the task to revise and promote the use of the ‘International vocabulary of basic and general
+terms in metrology’ (the ‘VIM’).
+In 2008 the JCGM made available a slightly revised version (mainly correcting minor er-
+rors) of the ‘Guide to the expression of uncertainty in measurement’, labelling the docu-
+ment ‘JCGM 100:2008’.
+In 2017 the JCGM rebranded the documents in its portfolio that have been produced by
+Working Group 1 or are to be developed by that Group. The whole suite of documents is
+now known as the ‘Guide to the expression of uncertainty in measurement’ or ‘GUM’, and
+is concerned with the evaluation and expression of measurement uncertainty, as well as
+its application in science, trade, health, safety and other societal activities.
+This part of the suite introduces the processes involved and the subsequent parts in this
+suite giving specific guidance on these processes. This document replaces JCGM 104:2009.
+This document has been prepared by Working Group 1 of the JCGM, and has benefited
+from detailed reviews undertaken by member organizations of the JCGM and National
+Metrology Institutes.
+
+
+
+
+                                                       © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                                 1
+
+
+Guide to the expression of uncertainty in
+measurement — Part 1: Introduction
+
+
+1    Scope
+
+The ‘Guide to the expression of uncertainty in measurement’ (GUM) establishes general
+rules for evaluating and expressing uncertainty in measurement from the shop floor to
+fundamental research. Therefore, the principles of this suite of documents are intended to
+be applicable to a broad spectrum of measurements and their applications. An overview
+of the parts of the GUM is given in table A.1 in Annex A.
+NOTE Where the acronym GUM is used in this document, it refers to the suite of documents. An
+individual part of the GUM is referred to by its corresponding JCGM numbering (e.g., part 6 of the
+GUM is JCGM GUM-6:2020).
+
+This document gives a rationale for evaluating, expressing and using measurement un-
+certainty (Clause 2). A brief introduction is given to measurement (Clause 3) and to the
+decisions involved when evaluating measurement uncertainty (Clause 4). In Clause 5, a
+brief description of the contents of the parts of the GUM is given. In each of these clauses,
+the relevant parts of the GUM are identified for further guidance.
+
+
+
+2    Rationale
+
+2.1 Measurement [12, Definition 2.1] is one of the most common processes in human
+activity. Measured values of quantities [12, Definition 2.10] are required for a diverse
+range of applications and, for each of these values, a statement is needed about its credi-
+bility. Such a statement is usually expressed in terms of measurement uncertainty [12, Def-
+inition 2.26]. The two components, the measured value and the associated uncertainty,
+together constitute the most common way of reporting a measurement result [12, Defini-
+tion 2.9]. In cases where values for more than one quantity are provided by the measure-
+ment, a more elaborate statement of the uncertainty is often required (Clause 5.5; see also
+Clause 3.1).
+
+
+2.2 Measurements are performed in many branches of society for widely different pur-
+poses. Many measurements performed on a daily basis, often in automated processes,
+concern trade and commerce. Reliable measurement results are also needed for mak-
+ing informed decisions in for example health, safety, weather forecasts, law enforcement
+and science. Measurements are performed by for example greengrocers, technicians, en-
+gineers, laboratory staff, health care professionals, scientists and individuals at home, in
+very different contexts.
+
+
+2.3 Many measurements are made for the purpose of comparison of results with speci-
+fications. Such a comparison can be made for widely different purposes. This activity is
+generally known as conformity assessment [3, Definition 4.1] [10, Definition 3.3.1]; see
+also Clause 5.2.
+
+© JCGM 2023 – All rights reserved
+2                                                                      JCGM GUM-1:2023
+
+
+2.4 Comparison of measurement results is an essential activity in science, calibration and
+testing. Compatibility of measurement results [12, Definition 2.47] is the basis for being
+able to reproduce scientific findings, performing quality assurance and quality control, and
+providing the interpretation of measurement results and informed decision making. Many
+standards that set requirements for demonstrating competence in measurement require
+evaluating measurement uncertainty and identifying the major sources of uncertainty, for
+example ISO/IEC 17025 (calibration and testing laboratories) [4], ISO 17034 (reference
+material producers) [5], ISO/IEC 17043 (proficiency testing) [6] and ISO 15189 (medical
+laboratories) [2].
+
+
+2.5 Measurement uncertainty is of importance in various situations, including but not
+limited to:
+    — comparison of measurement results,
+    — comparison of a measured value with specification limits (conformity assessment),
+    — establishing metrological traceability [12, Definition 2.41],
+    — applying a decision rule [10, Definition 3.3.12],
+    — calculating risks and risk assessment,
+    — comparison of model outputs and experiments,
+    — evaluating the validity of models,
+    — setting limits for the values of physical quantities,
+    — validating or developing scientific theories, and
+    — propagation of uncertainty from one measurement to another.
+
+
+2.6 The GUM substantially contributes to the harmonization of methods for the evalua-
+tion, expression and use of measurement uncertainty. It supports the mutual recognition
+of calibration certificates and laboratory accreditations. The principles and methods of the
+GUM have been adopted in many documentary standards of ISO, IEC and other standards
+development organizations. Much software used by laboratories worldwide is based on
+the provisions of the GUM.
+
+
+
+3     Measurement
+
+3.1 The quantity intended to be measured is called the measurand [12, Definition 2.3].
+A measurement can have the objective of determining values and associated uncertainties
+for a set of output quantities, rather than a single quantity. Then the measurand is said to
+be multivariate. The measurement result is represented by the measured values and the
+measurement uncertainty.
+
+
+3.2 Measurement [12, Definition 2.1] can be described as an experimental or compu-
+tational process that, by comparison with a measurement standard [12, Definition 5.1],
+produces an estimate of the true value [12, Definition 2.11] of a property, together with
+a statement of the uncertainty associated with that estimate, and intended for use in sup-
+port of decision making. This property can be of a material or virtual object or collection
+of objects, or of a process, event or series of events [19].
+
+                                                       © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                               3
+
+
+NOTE The GUM takes a broad view of ‘measurement’ in that it recognises that there are instances
+where the process concerned is essentially computational or where the measurement result is of a
+conceptual or theoretical nature [7, Clause 1.3].
+
+
+
+3.3 In the description of ‘measurement’ (see Clause 3.2), an estimate [1, Definition 1.31]
+is an approximation of the true value [12, Definition 2.11] of the property of interest.
+Another term sometimes used for estimate is measured value [12, Definition 2.10]. By
+‘comparison with a measurement standard’ (see Clause 3.2), it is meant that somewhere
+in the process a measurement standard is used to obtain an estimate that is metrologically
+traceable to the relevant measurement unit [12, Definition 1.9].
+
+
+3.4 Measurement uncertainty is the doubt about the true value of the measurand that re-
+mains after making a measurement. Measurement uncertainty can be expressed in various
+ways. Commonly used ways include:
+    — a standard uncertainty [12, Definition 2.30],
+    — an expanded uncertainty [7, Definition 2.3.5] with a coverage factor [7, Defini-
+      tion 2.3.6],
+    — a coverage interval [12, Definition 2.36] with a stated coverage probability [9, Defi-
+      nition 3.25], or
+    — a probability distribution describing the knowledge about the measurand [8, Defini-
+      tion 3.1], often expressed as a probability density function [8, Definition 3.3].
+
+
+3.5 A measurement result should be presented in a way that is understandable and usable
+by its recipient. The measurement result should therefore include all information needed
+for its intended use [7, Clause 7]. The information available depends on whether the law
+of propagation of uncertainty (Clause 5.1), the propagation of distributions (Clause 5.4),
+or another method [11, Clause 11] has been used for the evaluation of measurement un-
+certainty.
+
+
+
+4     Guidance on evaluating measurement uncertainty
+
+4.1 The evaluation of measurement uncertainty is neither a routine task nor a purely
+mathematical one. It depends on detailed knowledge of the nature of the measurand and
+the measurement. The quality and utility of the measurement result therefore ultimately
+depend on the understanding, critical analysis, and diligence of those who contribute to
+that result [7, Clause 3.4.8].
+
+
+4.2 In selecting a method of uncertainty evaluation that suits the current needs, the user
+should consider the following:
+    1. the information available,
+    2. the assumptions to be made,
+    3. the nature of the results required (see Clause 4.3),
+    4. the extent to which use is to be made of the information available.
+
+© JCGM 2023 – All rights reserved
+4                                                                            JCGM GUM-1:2023
+
+
+4.3 Alongside the estimate of the measurand, results required from the uncertainty prop-
+agation comprise some or all of:
+    1. standard uncertainty associated with the estimate,
+    2. coverage interval for the measurand for a stated coverage probability,
+    3. probability distribution for the measurand.
+
+NOTE 1 The probability distribution for the measurand in Clause 4.3 bullet 3 is the most complete
+description of the output quantity in terms of the information used. The estimate and the items 1
+and 2 can be obtained from it.
+NOTE 2 The propagation of distributions (see Clause 5.5) provides the probability distribution for
+the measurand [8, 9].
+NOTE 3 In the case of a multivariate measurand, Clause 4.3 bullets 1 and 2 are generalized: see
+also Clause 5.5.
+
+
+4.4 The following information is required for uncertainty propagation:
+    — A measurement model (mathematical or algorithmic) suitable for the current ap-
+      plication, containing input quantities [12, Definition 2.50] of which the user has
+      knowledge and an output quantity (measurand) for which results are required [11],
+    — Either
+         * an estimate of each input quantity – from statistical analysis of observations or
+            provided by other means, and
+         * the standard uncertainty associated with each estimate and, when appropriate,
+            the degrees of freedom [1, Definition 2.54] and correlations [1, Definition 2.44]
+            between estimates, or
+    — a joint probability distribution for the input quantities.
+
+NOTE 1 Guidance on quantifying correlation is given in [7, Clause 5.2] and [11, Clause 10.5].
+NOTE 2 Probability distributions for the input quantities are often specified in uncertainty budgets
+[12, Definition 2.33].
+NOTE 3 Guidance on obtaining probability distributions for the input quantities is given in [8,
+clause 6].
+NOTE 4 Guidance on degrees of freedom in the simplest case of uncorrelated repeated observa-
+tions of an input quantity is given in [7, Annex G] and [9, Clause 6.5.3] for a set of quantities.
+
+
+4.5 To propagate measurement uncertainty using a measurement model (see also
+Clause 5.3), it is important to consider what information is available and what is re-
+quired [11, Clauses 5.1, 5.3, 5.8 and 5.9]. Also the resources necessary to take account of
+the information are important. Such resources include, for example, human effort, math-
+ematical or similar skills and computational capabilities. Finally, consideration should be
+given to how the evaluated uncertainty will be used [11, Clauses 12 and 13].
+
+
+4.6 Taking account of all available knowledge might require the services of a professional
+statistician, a data scientist or the use of sophisticated software. By contrast, an adequate
+account of information might only require a spreadsheet and relatively simple calculations.
+The uncertainty evaluation should be rigorous enough to ensure that measurement results
+are delivered to the satisfaction of the recipient. Some guidance is given in this document,
+further elaborated in the other parts of the GUM [7, Clause 3.4] [11, Clauses 6-10], to
+reach an appropriate balance between effort and outcome.
+
+                                                            © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                           5
+
+
+4.7 Omitting sources that meaningfully contribute to the measurement uncertainty in an
+uncertainty evaluation should be avoided [11, Clauses 5.6, 7, 9 and 10] [7, Clause 3.4],
+as it can be detrimental to the compatibility of measurement results, break a metrological
+traceability chain, or lead to wrong decisions in conformity assessment. Similar consider-
+ations apply to using simplifying assumptions that are not justified, such as omitting the
+evaluation of dependencies between input quantities in a measurement model. Hence, the
+measurement model should include all sources that meaningfully contribute to the mea-
+surement uncertainty and, as appropriate, be supplemented by any dependencies between
+them.
+
+
+4.8 The GUM offers two kinds of methods for the evaluation of uncertainty about the
+values of the input quantities in a measurement model. The choice of method for obtaining
+an estimate and the associated uncertainty should be based on the information available [7,
+Clause 4.1]. Guidance is provided for using the statistical analysis of series of data [7,
+Clauses 4.2, 5, F.1, H.1, H.2, H.3 and H.5] [8, Clause 6.4] [11, clause 11] or using other
+information [7, Clauses 4.3, 5.2 and F.2] [8, Clause 6]. These statistical methods are known
+as Type A methods of evaluating standard uncertainty [7, Definition 2.3.2] and the other
+methods as Type B methods [7, Definition 2.3.3], respectively.
+
+
+4.9 The GUM offers methods for propagating measurement uncertainty. This propaga-
+tion involves a measurement model [12, Definition 2.48] (see also [7, Clause 4.1.1]) relat-
+ing input quantities of which knowledge is available and output quantities about which one
+wishes to learn. The propagation of the uncertainty associated with the values of the input
+quantities to the output quantity or quantities depends on their relationships, expressed in
+the form of the measurement model [7–9, 11]. Even if the measurement considered only
+consists of taking a reading from an instrument, other factors influencing the measurement
+result should be taken into account.
+
+
+4.10 The two principal methods for propagating measurement uncertainty provided in
+the GUM are the law of propagation of uncertainty (see Clause 5.1) [7, 9, 14–17] and
+the propagation of distributions by means of the Monte Carlo method of JCGM 101:2008
+and JCGM 102:2011 (see Clause 5.4) [8, 9, 18]. The choice of method depends, among
+other, on the measurement model and the uncertainties about the input quantities [7,
+Annex G.1] [8, Clause 8.1] [9, Clause 8].
+
+
+
+5     Parts of the GUM
+
+5.1   Using the law of propagation of uncertainty (JCGM 100:2008)
+
+5.1.1 JCGM 100:2008 [7] describes the evaluation of measurement uncertainty using a
+simplified approach. This method takes the estimates and associated standard uncertain-
+ties of the input quantities and a linearised form of the measurement model to obtain the
+estimate and standard uncertainty for the output quantity, the measurand [7, Clause 5].
+Based on the assumption that the probability density function for the measurand can be de-
+scribed by a normal distribution or a scaled and shifted t-distribution, a coverage interval
+corresponding to a specified coverage probability is obtained [7, Clause 6].
+
+© JCGM 2023 – All rights reserved
+6                                                                         JCGM GUM-1:2023
+
+
+5.1.2 JCGM 100:2008 [7] provides general rules for the evaluation and expression of
+measurement uncertainty [7, Clause 3], intended to be applicable to a broad spectrum of
+measurements. The guidance in JCGM 100:2008 is mainly concerned with measurands
+in the form of a well-characterised physical quantity. The method can also be applied in
+conceptual design and theoretical analysis of experiments, methods of measurement, and
+complex components and systems [7, Clause 1].
+
+
+5.1.3 JCGM 100:2008 [7] offers methods for the evaluation of uncertainty about the
+values of the input quantities in a measurement model. Guidance is provided for using
+the statistical analysis of series of data [7, Clauses 4.2, 5.2, F.1, H.1, H.2, H.3 and H.5] or
+other information [7, Clauses 4.3, 5.2 and F.2].
+
+
+5.1.4 To support the use of JCGM 100:2008 [7], JCGM 101:2008 [8] (see also
+Clause 5.4) provides a procedure for validating it in any particular case. The procedure
+is based on a numerical comparison of the results provided by the two approaches, that
+of JCGM 101:2008 being regarded as a gold standard for the purpose. If these results
+agree to within the desired numerical accuracy, the application of JCGM 100:2008 can
+be regarded as acceptable. Otherwise, an alternative approach, such as the propagation
+of distributions (JCGM 101:2008) itself, should be considered for the uncertainty evalua-
+tion [8, Clauses 5.7-5.11].
+
+
+5.2    Conformity assessment (JCGM 106:2012)
+
+5.2.1 JCGM 106:2012 [10] provides guidance and procedures for assessing the confor-
+mity of an item (entity, object or system) to specified requirements. The item might be, for
+example, a gauge block, a grocery scale, or a blood sample. The procedures can be applied
+in the following conditions:
+    — the item is distinguished by a single scalar measurand [10, Clause 1] defined to a
+      sufficient level of detail,
+    — an interval of permissible values of the property is specified by one or two tolerance
+      limits [10, Definition 3.3.4], and
+    — the property can be measured and the measurement result [10, Clause 3.2.5] ex-
+      pressed in a manner consistent with the principles of the GUM.
+
+
+5.2.2 The procedures provided in JCGM 106:2012 [10] can be used to realize an interval,
+called an acceptance interval [10, Definition 3.3.9 and Clause 8], of permissible measured
+values of the property of interest. Acceptance limits can be chosen so as to balance the risks
+associated with accepting non-conforming items (consumer’s risk [10, Definitions 3.3.13
+and 3.3.15]) and rejecting conforming items (producer’s risk [10, Definitions 3.3.14 and
+3.3.16]) [10, Clause 9]. Such a choice for the acceptance limits is often part of an agree-
+ment between producer and consumer.
+
+
+5.2.3 Two types of conformity assessment problems are addressed in JCGM 106:2012
+[10]. The first is the setting of acceptance limits [10, Clause 8.1] that will assure a desired
+conformance probability for a single measured item (related to the specific risk). The
+second is the setting of acceptance limits to assure an acceptable level of confidence on
+
+                                                         © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                             7
+
+
+average as a number of (nominally identical) items are measured (related to the global
+risk). Guidance is given for the solution of both problems.
+
+
+5.3   Measurement models (JCGM GUM-6)
+
+5.3.1 The measurement model describes the relationship between the input quantities
+and the measurand [7, Clause 4.1]. It is used for determining the measurement result
+given the knowledge used. The model should contain every quantity, including all correc-
+tions, that contributes to the estimate of the measurand or contributes meaningfully to the
+uncertainty about the measured value [7, Clause 8] [11, Clause 5.6].
+
+
+5.3.2 Comprehensive guidance on developing measurement models is given in
+JCGM GUM-6:2020 [11]. This part of the GUM subdivides the development process lead-
+ing to a measurement model as follows:
+   1. specifying the measurand [11, Clause 6],
+   2. modelling the measurement principle [11, Clause 7],
+   3. choosing the form of the measurement model [11, Clause 8],
+   4. identifying effects arising from the measurement [11, Clause 9],
+   5. adding effects arising from the measurement [11, Clause 10].
+
+
+5.3.3 One of the challenges in developing measurement models is to identify all quanti-
+ties to be included. JCGM 100:2008 [7] contains a list of common sources of uncertainty
+to be considered [7, Clause 3.3.2]. The Eurachem/CITAC guide on quantifying measure-
+ment uncertainty [13, Appendix C] contains a customised list for applications in analyt-
+ical chemistry. Guidance on how to include the quantities in the model is provided in
+JCGM GUM-6:2020 [11, Clauses 9 and 10] and in the Eurachem/CITAC guide [13].
+
+
+5.4   Propagation of distributions (JCGM 101:2008)
+
+5.4.1 An evaluation method that can be more widely applied than the law of propa-
+gation of uncertainty is the propagation of distributions, often implemented by a Monte
+Carlo method, as described in JCGM 101:2008 [8]. Rather than taking the estimates and
+standard uncertainties of the input quantities, this method takes the probability density
+functions assigned to the input quantities (see Clause 5.1) as input [8, Clause 6]. If some
+input quantities are correlated, a joint probability density function [1, Definition 2.11 Note
+3] is required for these quantities. Using a measurement model, an approximation to the
+probability density function for the measurand is obtained [8, Clause 7], from which an
+estimate, standard uncertainty and a coverage interval with the desired coverage probabil-
+ity [8, Clauses 5.3 and 5.5] for the measurand can be calculated. The probability density
+function thus obtained can also be used in a subsequent uncertainty evaluation.
+
+
+5.4.2 A general numerical implementation of the propagation of distributions by means
+of a Monte Carlo method is described in JCGM 101:2008 [8]. With this method, a sample
+[1, Definition 1.3] of the output probability density function is obtained. The number
+of trials, i.e., the size of the sample, selected for the Monte Carlo method controls the
+numerical accuracy of the sample as an approximation to the output probability density
+
+© JCGM 2023 – All rights reserved
+8                                                                     JCGM GUM-1:2023
+
+
+function. A procedure by which an appropriate number of trials can be determined is
+provided [8, Clause 7.9].
+
+
+5.4.3 For a prescribed coverage probability, JCGM 101:2008 [8] can be used to provide
+coverage intervals for the output quantity including a probabilistically symmetric and a
+shortest coverage interval.
+
+
+5.5   Extension to any number of output quantities (JCGM 102:2011)
+
+5.5.1 JCGM 100:2008 [7] and JCGM 101:2008 [8] focus on measurement models hav-
+ing a single output quantity, i.e., univariate (scalar) models. Many measurement problems
+arise, however, for which there is more than one output quantity, depending on a common
+set of input quantities. The models of measurement that apply in such circumstances are
+referred to as multivariate models [9, Definition 3.8].
+
+
+5.5.2 To evaluate the uncertainties associated with estimates of the output quantities for
+multivariate models, the law of propagation of uncertainty and the Monte Carlo method
+for undertaking the propagation of distributions are generalized. The use of the law of
+propagation of uncertainty is also generalized to measurement models that are implicit,
+i.e., in which the input and output quantities are related such that the output quantities
+cannot be expressed explicitly in terms of the input quantities in a convenient or numeri-
+cally stable fashion.
+
+
+5.5.3 JCGM 102:2011 applies the propagation of distributions using the Monte Carlo
+method from JCGM 101:2008 to multivariate measurement models [9, Clause 7]. Expres-
+sions are given for the estimates of the output quantities, and the variances and covari-
+ances associated with the estimates, in terms of the numerical output of the Monte Carlo
+method [9, Clauses 7.4 and 7.6]. Consideration is given, as in JCGM 101:2008, to validat-
+ing results provided by the (generalized) law of propagation of uncertainty [9, Clause 8],
+and to the number of trials required by the Monte Carlo method [9, Clause 7.8].
+
+
+5.5.4 For a prescribed coverage probability, JCGM 102:2011 can be used to provide a
+coverage region for the output quantities of a multivariate model, the counterpart of a
+coverage interval for a single scalar output quantity. A procedure for providing an ap-
+proximation to the smallest coverage region, obtained from results provided by the Monte
+Carlo method, is also given [9, Clause 7.7].
+
+
+
+
+                                                      © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                                    9
+
+
+Annex A        Overview of the parts of the GUM
+
+Table A.1: Overview of the parts (published and planned) of the Guide to the expression of uncer-
+tainty in measurement
+
+   GUM part         Old reference                               Title
+   JCGM GUM-1a      JCGM 104         Guide to the expression of uncertainty in measurement —
+                                     Part 1: Introduction
+   JCGM GUM-2b                       Guide to the expression of uncertainty in measurement —
+                                     Part 2: Concepts
+   JCGM GUM-3c      JCGM 100         Guide to the expression of uncertainty in measurement —
+                                     Part 3: GUM:1995 with minor corrections
+   JCGM GUM-4d      JCGM 106         Guide to the expression of uncertainty in measurement —
+                                     Part 4: The role of measurement uncertainty in confor-
+                                     mity assessment
+   JCGM GUM-5b      JCGM 110h        Guide to the expression of uncertainty in measurement —
+                                     Part 5: Examples
+   JCGM GUM-6e      JCGM 103h        Guide to the expression of uncertainty in measurement —
+                                     Part 6: Developing and using measurement models
+   JCGM GUM-7f      JCGM 101         Guide to the expression of uncertainty in measurement —
+                                     Part 7: Propagation of distributions using a Monte Carlo
+                                     method
+   JCGM GUM-8g      JCGM 102         Guide to the expression of uncertainty in measurement —
+                                     Part 8: Extension to any number of output quantities
+   JCGM GUM-9b                       Guide to the expression of uncertainty in measurement —
+                                     Part 9: Statistical models and data analysis for interlabo-
+                                     ratory studies
+   JCGM GUM-10b                      Guide to the expression of uncertainty in measurement —
+                                     Part 10: Applications of the least squares method
+   JCGM GUM-11b                      Guide to the expression of uncertainty in measurement —
+                                     Part 11: Bayesian methods
+   JCGM GUM-12b                      Guide to the expression of uncertainty in measurement —
+                                     Part 12: Basic methods for uncertainty propagation
+
+   a
+     JCGM 104:2009 was replaced by this           e
+                                                    Available as JCGM GUM-6:2020 [11]
+     document                                     f
+                                                    Available as JCGM 101:2008 [8]
+   b
+     Planned                                      g
+                                                    Available as JCGM 102:2011 [9]
+   c
+     Available as JCGM 100:2008 [7]               h
+                                                    Reference of the committee draft
+   d
+     Available as JCGM 106:2012 [10]
+
+
+
+
+© JCGM 2023 – All rights reserved
+10                                                                   JCGM GUM-1:2023
+
+
+References
+
+ [1] ISO 3534-1 Statistics — Vocabulary and symbols — Part 1: General statistical
+     terms and terms used in probability. International Organization for Standardization,
+     Geneva, Switzerland, 2006. Second edition.
+
+ [2] ISO 15189 Medical laboratories — Requirements for quality and competence. In-
+     ternational Organization for Standardization, Geneva, Switzerland, 2022. Fourth
+     edition.
+
+ [3] ISO/IEC 17000 Conformity assessment — Vocabulary and general principles. In-
+     ternational Organization for Standardization, Geneva, Switzerland, 2020. Second
+     edition.
+
+ [4] ISO/IEC 17025 General requirements for the competence of testing and calibration
+     laboratories. International Organization for Standardization, Geneva, Switzerland,
+     2017. Third edition.
+
+ [5] ISO 17034 General requirements for the competence of reference material producers.
+     International Organization for Standardization, Geneva, Switzerland, 2016. First
+     edition.
+
+ [6] ISO/IEC 17043 Conformity assessment — General requirements for the competence
+     of proficiency testing providers. International Organization for Standardization,
+     Geneva, Switzerland, 2023. Second edition.
+
+ [7] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. Evaluation of measurement
+     data — Guide to the expression of uncertainty in measurement. Joint Commit-
+     tee for Guides in Metrology, JCGM 100:2008. URL: https://www.bipm.org/
+     documents/20126/2071204/JCGM_100_2008_E.pdf.
+ [8] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. Evaluation of measurement
+     data — Supplement 1 to the “Guide to the expression of uncertainty in measure-
+     ment” — Propagation of distributions using a Monte Carlo method. Joint Com-
+     mittee for Guides in Metrology, JCGM 101:2008. URL: https://www.bipm.org/
+     documents/20126/2071204/JCGM_101_2008_E.pdf.
+ [9] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. Evaluation of measurement
+     data — Supplement 2 to the “Guide to the expression of uncertainty in measurement”
+     — Extension to any number of output quantities. Joint Committee for Guides in
+     Metrology, JCGM 102:2011. URL: https://www.bipm.org/documents/20126/
+     2071204/JCGM_102_2011_E.pdf.
+[10] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. Evaluation of measurement
+     data — The role of measurement uncertainty in conformity assessment. Joint Com-
+     mittee for Guides in Metrology, JCGM 106:2012. URL: https://www.bipm.org/
+     documents/20126/2071204/JCGM_106_2012_E.pdf.
+[11] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. Guide to the expression of
+     uncertainty in measurement — Part 6: Developing and using measurement models.
+     Joint Committee for Guides in Metrology, JCGM GUM-6:2020. URL: https://www.
+     bipm.org/documents/20126/2071204/JCGM_GUM_6_2020.pdf.
+
+                                                     © JCGM 2023 – All rights reserved
+JCGM GUM-1:2023                                                                          11
+
+
+[12] BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, and OIML. International vocabulary
+     of metrology — Basic and general concepts and associated terms (VIM). Joint
+     Committee for Guides in Metrology, JCGM 200:2012. (3rd edition). URL: https:
+     //www.bipm.org/documents/20126/2071204/JCGM_200_2012.pdf.
+[13] S. L. R. Ellison and A. Williams, editors. Eurachem/CITAC guide: Quantifying Un-
+     certainty in Analytical Measurement (3rd edition). Eurachem/CITAC, third edition,
+     2012. ISBN 978-0-948926-30-3. URL: https://www.eurachem.org.
+
+[14] C. Gauss and G. Stewart. Theory of the Combination of Observations Least Sub-
+     ject to Errors, Part One, Part Two, Supplement. Society for Industrial and Applied
+     Mathematics, 1995. URL: https://epubs.siam.org/doi/book/10.1137/1.
+     9781611971248, doi:10.1137/1.9781611971248.
+[15] C. F. Gauss. Theoria combinationis observationum erroribus minimis obnox-
+     iae. In Werke, Band IV, Wahrscheinlichkeitsrechnung und Geometrie. Könighliche
+     Gesellschaft der Wissenschaften, Göttingen, 1823. URL: https://gdz.sub.
+     uni-goettingen.de/id/PPN236005081.
+[16] S. J. Kline and F. A. McClintock. Describing uncertainties in single-sample experi-
+     ments. Mechanical Engineering, 75(1):3–8, 1953.
+
+[17] H. H. Ku. Notes on the use of propagation of error formulas. Journal of Research of the
+     National Bureau of Standards — C. Engineering and Instrumentation, 70C:263–273,
+     October 1966. doi:10.6028/jres.070C.025.
+
+[18] M. G. Morgan and M. Henrion. Uncertainty — A Guide to Dealing with Uncertainty
+     in Quantitative Risk and Policy Analysis. Cambridge University Press, New York, NY,
+     first paperback edition, 1992. 10th printing, 2007.
+
+[19] A. Possolo. Simple guide for evaluating and expressing the uncertainty of NIST mea-
+     surement results. NIST Technical Note 1900, Oct 2015. URL: http://dx.doi.
+     org/10.6028/NIST.TN.1900, doi:10.6028/nist.tn.1900.
+
+
+
+
+© JCGM 2023 – All rights reserved
+

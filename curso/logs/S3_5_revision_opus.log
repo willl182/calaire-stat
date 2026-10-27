@@ -1,0 +1,11 @@
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+**Veredicto:** S3 aprobada con correcciones. Los cuatro capítulos (M09, M10, M11 y M12) quedan aprobados con correcciones.
+
+**Hallazgos:** 17 en total: 0 críticos, 1 mayor y 16 menores.
+
+El único mayor es O-01, en M11-A. Las cifras de falsa alarma y detección se calculan por Monte Carlo, pero el libreto dice expresamente que ese método no se enseña. Así, el participante no recibe ningún procedimiento para obtenerlas, y la práctica A le pide cuantificarlas.
+
+Informe en `curso/S3_comparacion_decision/S3_revision_opus.md`. Añadí además `calc/S3_revision_opus_recalculo.py` y su salida `.out`, con el recálculo independiente: 53 comprobaciones, todas correctas. No toqué los libretos.

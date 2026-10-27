@@ -1,0 +1,187 @@
+--- previo/M13_libreto.md
++++ sol_al_corte/M13_libreto.md
+@@ -5,11 +5,11 @@
+ | Campo | Contenido |
+ |---|---|
+ | Competencia estadística | Contrastar la propagación lineal con métodos numéricos y decidir cuál usar. |
+-| Prerrequisitos | M3: distribuciones y dependencia; M7: ajuste lineal y calibración inversa; M8: propagación de incertidumbre. |
++| Prerrequisitos | M3: distribuciones y dependencia; M5: unidad experimental y bloques; M6: efecto de día y $s_{entre}$; M7: ajuste lineal y calibración inversa; M8: propagación de incertidumbre. |
+ | Alcance por nivel | Solo A. Prop_e asigna M13 al nivel A; no hay contenidos ni secciones de nivel B o I. |
+ | Contenido A | Monte Carlo frente a propagación lineal en una calibración inversa; salidas múltiples y covarianza; bootstrap con unidad de remuestreo definida por el diseño; regresión de Huber frente a OLS ante una observación influyente, con supuestos y límites. |
+ | Datos de los ejemplos | Simulados y producidos de forma reproducible con semilla fija por `calc/M13_ejemplos.py`; no proceden del certificado F-PSMT-01 y no describen resultados de CALAIRE. El ejemplo de regresión robusta contiene una alteración simulada, declarada expresamente. |
+-| Anexos | AX.2, para la propagación lineal general; AX.5, para las ecuaciones normales y la covarianza de los parámetros; AX.9, cuando se interpreten diferencias con entradas compartidas; AX.13, para el fundamento de Monte Carlo y el control del número de ensayos. |
++| Anexos | AX.2, para la propagación lineal general; AX.4, para el efecto de día y la precisión del promedio; AX.5, para las ecuaciones normales y la covarianza de los parámetros; AX.9, cuando se interpreten diferencias con entradas compartidas; AX.13, para el fundamento de Monte Carlo y el control del número de ensayos. |
+ | Referencias clave | GUM; GUM-S1; GUM-S2; ISO/TS 28037; Efron y Tibshirani (bootstrap, referencia externa sin numeral); Huber (regresión robusta, referencia externa sin numeral). |
+ 
+ ## Nivel A — métodos numéricos y elección del método
+@@ -32,7 +32,7 @@
+ >
+ > **[NOTA AL INSTRUCTOR]** Leer la segunda expresión como «la incertidumbre al cuadrado de la estimación se aproxima mediante el gradiente transpuesto, por la matriz de covarianza de las entradas, por el gradiente». Remitir la deducción general de propagación al anexo AX.2, y aquí limitarse al contraste de métodos del M13. La ley de propagación con covarianzas se formula en la GUM [GUM 5.2.2].
+ 
+-La matriz $\mathbf{V}$ no es una lista de varianzas desconectadas. Incluye las covarianzas conocidas o justificadas entre entradas. Por eso, antes de simular, definimos las distribuciones y la dependencia: qué entrada cambia, con qué distribución, qué magnitudes comparten una fuente y cómo se representa esa relación. El Suplemento 1 de la GUM trata la propagación de distribuciones y el muestreo de las entradas; el procedimiento numérico no autoriza a reemplazar una dependencia real por independencia cómoda [GUM-S1 5.3–5.6, 6.4.8.4, 7.3].
++La matriz $\mathbf{V}$ no es una lista de varianzas desconectadas. Incluye las covarianzas conocidas o justificadas entre entradas. Por eso, antes de simular, definimos las distribuciones y la dependencia: qué entrada cambia, con qué distribución, qué magnitudes comparten una fuente y cómo se representa esa relación. El Suplemento 1 de la GUM trata la propagación de distribuciones y el muestreo de las entradas; el procedimiento numérico no autoriza a reemplazar una dependencia real por independencia cómoda [GUM-S1 5.9, 6.4.8, 7.3].
+ 
+ Hagamos un ejemplo ilustrativo. El conjunto se ha simulado y el script de cálculo fija una semilla para poder reproducir el resultado. La indicación tiene media de $420,00$ nmol/mol y desviación estándar de $0,80$ nmol/mol. El intercepto tiene media de $0,40$ nmol/mol y desviación estándar de $0,50$ nmol/mol. La pendiente tiene media de $1,002$ y desviación estándar de $0,002$. Suponemos una distribución normal conjunta para las tres entradas, con esas medias, desviaciones y correlaciones; la indicación y el intercepto son independientes, y la correlación entre intercepto y pendiente es $-0,60$ [GUM-S1 6.4.8.4]. El rótulo importa: estos valores no se extrajeron de una calibración del Level 2.
+ 
+@@ -40,15 +40,19 @@
+ 
+ La primera comprobación es aritmética. Si sustituimos las medias en la función inversa, obtenemos $418,762475$ nmol/mol. Esa sustitución no es todavía la incertidumbre y tampoco es necesariamente la media exacta de la distribución transformada. La fórmula de primer orden usa las derivadas evaluadas en las entradas centrales: la derivada respecto a la indicación es $1/b$; respecto al intercepto es $-1/b$; y respecto a la pendiente es $-(y-a)/b^2$ [GUM 5.1.2]. Como la matriz contiene una covarianza negativa entre $a$ y $b$, la varianza de salida incluye el término cruzado correspondiente. No se debe borrar ese término por conveniencia.
+ 
+-En el cálculo lineal, la incertidumbre estándar resultante es $1,041437$ nmol/mol. Ahora hacemos Monte Carlo. En cada ensayo se toma una realización conjunta de las entradas conforme a la distribución normal conjunta declarada, se conservan la correlación y las unidades, y se calcula la misma expresión inversa. Repetimos ese proceso $400\,000$ veces en el ejemplo reproducible. La media simulada de la salida es $418,763825$ nmol/mol, la desviación estándar simulada es $1,040327$ nmol/mol y el intervalo central del $95\,\%$ va de $416,733012$ a $420,803052$ nmol/mol [GUM-S1 5.5, 7.5]. La semilla fija hace que estos valores se puedan volver a generar con el mismo entorno y script.
++En el cálculo lineal, la incertidumbre estándar resultante es $1,041437$ nmol/mol. Ahora hacemos Monte Carlo. En cada ensayo se toma una realización conjunta de las entradas conforme a la distribución normal conjunta declarada, se conservan la correlación y las unidades, y se calcula la misma expresión inversa. Repetimos ese proceso $400\,000$ veces en el ejemplo reproducible. La media simulada de la salida es $418,763825$ nmol/mol, la desviación estándar simulada es $1,040327$ nmol/mol y el intervalo central del $95\,\%$ va de $416,733012$ a $420,803052$ nmol/mol [GUM-S1 7.6–7.7]. La semilla fija hace que estos valores se puedan volver a generar con el mismo entorno y script.
+ 
+ > **[PIZARRA]** $$\text{cada ensayo: }(y^{(r)},a^{(r)},b^{(r)})\longrightarrow \hat{x}^{(r)}=(y^{(r)}-a^{(r)})/b^{(r)}$$
+ >
+ > **[DIAPOSITIVA]** Cuadro comparativo: estimación al sustituir las medias, incertidumbre lineal, media Monte Carlo, desviación estándar Monte Carlo e intervalo central Monte Carlo. Rótulo visible: **datos simulados**.
+ 
+-En este caso, las dos incertidumbres estándar difieren en $0,001110$ nmol/mol, algo más de una milésima: la aproximación lineal da $1,041437$ nmol/mol y Monte Carlo da $1,040327$ nmol/mol. La proximidad aquí no demuestra que siempre sean intercambiables. Es evidencia para este modelo y esta escala de incertidumbre.
++Con estos $400\,000$ ensayos, el error estándar numérico de la media Monte Carlo es aproximadamente $0,00164$ nmol/mol; el de su desviación estándar, usando la aproximación normal, es $0,00116$ nmol/mol. Las diferencias observadas, $0,00135$ en la media y $-0,00111$ en la desviación, son de ese orden: no las atribuimos al modelo. La no linealidad puede desplazar la media, pero esta corrida no permite resolver un desplazamiento tan pequeño [GUM-S1 7.9.4; AX.13].
+ 
+-Además, la media simulada y el valor calculado al sustituir las medias no coinciden exactamente: la transformación no lineal puede desplazar la media de la salida. En otras aplicaciones puede importar la asimetría de la distribución, un límite físico, una entrada con distribución no normal o una incertidumbre suficientemente grande como para que la curvatura del modelo sea relevante.
++Comparemos ahora intervalos de cobertura, no solo incertidumbres estándar. Para $p=0,95$, la aproximación normal lineal con $k=1,959964$ da $[416,7213;420,8037]$ nmol/mol. Frente al intervalo central Monte Carlo, las diferencias de extremos son $d_{low}=0,0117$ y $d_{high}=0,0006$ nmol/mol. Expresamos la incertidumbre como $1,0$ nmol/mol, con dos cifras significativas: la tolerancia numérica es $\delta=0,05$ nmol/mol. Ambas diferencias son menores que esa tolerancia. La comparación es favorable: aquí podemos usar la linealización para cobertura del $95\,\%$, con esa precisión numérica y esas entradas. El control de los cuatro resúmenes Monte Carlo se desarrolla en AX.13; no basta con estabilizar la media [GUM-S1 7.9.2, 8.1.3].
++
++> **[PIZARRA]** $U_p=k u(\hat x)$; $d_{low}=|\hat x-U_p-x_{low}|$; $d_{high}=|\hat x+U_p-x_{high}|$; comparación favorable si ambos son $\le\delta=0,05$ nmol/mol.
++
++Leamos la regla: restamos los extremos inferiores, hacemos lo mismo con los superiores y tomamos valores absolutos. Ambos deben caber en la tolerancia declarada. Esta validación corresponde a este modelo y a esta probabilidad de cobertura; no demuestra que los métodos sean siempre intercambiables.
+ 
+ GUM-S1 presenta Monte Carlo como un método de propagación de distribuciones y especifica condiciones para resumir sus resultados; no lo describe como una mejora automática en cualquier cálculo [GUM-S1 5.10–5.11, 7.5–7.8].
+ 
+@@ -66,7 +70,7 @@
+ 
+ ### Escena A2. Pendiente, intercepto y correcciones como salidas conjuntas
+ 
+-Pasemos de una salida a varias. Cuando ajustamos una recta, solemos presentar el intercepto y la pendiente juntos. En uso inverso calculamos también estimaciones corregidas en varios niveles de indicación. Esas cifras comparten los mismos datos y los mismos parámetros: no son resultados independientes. Si informamos cada incertidumbre estándar por separado y omitimos la covarianza, perdemos una parte de la información necesaria para calcular contrastes o diferencias posteriores. GUM-S2 extiende el tratamiento a vectores de salidas y describe la matriz de covarianza conjunta [GUM-S2 5.2–5.3, 6.2, 7.6]. Para los parámetros de una recta, la ISO/TS 28037 trata las incertidumbres y covarianzas asociadas con los valores y los parámetros de calibración [ISO 28037 10.1–10.2].
++Pasemos de una salida a varias. Cuando ajustamos una recta, solemos presentar el intercepto y la pendiente juntos. En uso inverso calculamos también estimaciones corregidas en varios niveles de indicación. Esas cifras comparten los mismos datos y los mismos parámetros: no son resultados independientes. Si informamos cada incertidumbre estándar por separado y omitimos la covarianza, perdemos una parte de la información necesaria para calcular contrastes o diferencias posteriores. GUM-S2 extiende el tratamiento a vectores de salidas y describe la matriz de covarianza conjunta [GUM-S2 5.2–5.3, 6.2]. Para los parámetros de una recta, la ISO/TS 28037 trata las incertidumbres y covarianzas asociadas con los valores y los parámetros de calibración [ISO 28037 5.5; 11.1].
+ 
+ > **[PIZARRA]** $$\boldsymbol{q}=(a,b,\hat{x}_{80}-80,\hat{x}_{250}-250,\hat{x}_{420}-420)^{\mathsf T}$$
+ >
+@@ -78,9 +82,13 @@
+ 
+ > **[EJEMPLO]** Mostrar seis filas, una por día, y seis columnas, una por nivel. Rotular los datos como simulados; señalar que cada fila completa es un bloque diario.
+ 
+-El ajuste OLS del conjunto entrega un intercepto estimado de $0,65184834$ nmol/mol y una pendiente estimada de $1,00151145$. Para representar la agrupación por día, el script calcula una matriz de covarianza agrupada por conglomerado, no la covarianza OLS clásica. Con esa estimación, la covarianza entre intercepto y pendiente es $-0,0000000261$ y su correlación es aproximadamente $-0,0051$. En este cálculo casi no hay asociación estimada entre los dos parámetros. Esta matriz agrupada es solo una ilustración: con seis días, su estimación es poco estable y no debe tratarse como una caracterización precisa de la variabilidad entre días.
++Ajustamos una recta por día y promediamos los seis pares de intercepto y pendiente. Como todos los días tienen los mismos niveles y pesos, el promedio coincide con el ajuste OLS del conjunto: $a=0,65184834$ nmol/mol y $b=1,00151145$. Suponemos días independientes e intercambiables. La covarianza del promedio es la covarianza muestral de los seis pares dividida por seis; hay cinco grados de libertad entre días. Es la misma lógica del promedio diario de AX.4, ahora aplicada a dos salidas [GUM 5.2.2; GUM-S2 6.2].
++
++> **[PIZARRA]** $\boldsymbol\beta_i=(a_i,b_i)^{\mathsf T}$; $\bar{\boldsymbol\beta}=d^{-1}\sum_{i=1}^d\boldsymbol\beta_i$; $V_{\bar\beta}=\dfrac{1}{d(d-1)}\sum_{i=1}^d(\boldsymbol\beta_i-\bar{\boldsymbol\beta})(\boldsymbol\beta_i-\bar{\boldsymbol\beta})^{\mathsf T}$, con $d=6$.
+ 
+-La matriz agrupada estimada tiene varianza de intercepto $0,01183676$ y términos cruzados de aproximadamente $-0,00000003$ al redondear. La varianza de la pendiente es muy pequeña: $0,000000002191$. No la interpretemos como exactamente nula ni omitamos su escala al presentar la matriz. La simetría no es un adorno: una matriz de covarianza debe cumplirla. Las unidades tampoco son idénticas en todos sus elementos. La varianza del intercepto se expresa en $(\mathrm{nmol/mol})^2$; la varianza de la pendiente es adimensional al cuadrado; la covarianza combina una unidad de intercepto con una pendiente adimensional. No mezclen sus magnitudes ni comparen celdas como si fueran la misma unidad.
++En palabras: calculamos los productos de las desviaciones de cada par diario respecto al promedio y dividimos por seis veces cinco. Obtenemos $u(a)=0,1072$ nmol/mol y $u(b)=4,61\times10^{-5}$. La matriz tiene varianzas $1,14986\times10^{-2}$ y $2,12862\times10^{-9}$, y covarianza $-2,5383\times10^{-8}$: «menos dos coma cinco cuatro por diez a la menos ocho». Su correlación es $-0,0051$. Si ignoráramos el día y usáramos la covarianza OLS clásica, la correlación sería $-0,856$ y la incertidumbre de la corrección a 250 sería $0,0440$, frente a $0,1076$ nmol/mol entre días. La diferencia muestra por qué importa la unidad independiente. Con solo seis días, esta caracterización sigue siendo poco estable.
++
++Las unidades de las celdas son distintas: varianza del intercepto en $(\mathrm{nmol/mol})^2$, varianza de pendiente adimensional y covarianza en nmol/mol. La matriz debe ser simétrica; no comparen sus celdas como si tuvieran la misma unidad.
+ 
+ > **[DIAPOSITIVA]** Matriz $\mathbf V_{(a,b)}$ calculada por el script. Destacar diagonal, simetría y término fuera de la diagonal. Añadir debajo: «estimaciones del ejemplo simulado; cifras redondeadas solo para exposición».
+ 
+@@ -90,11 +98,10 @@
+ >
+ > **[PREGUNTA AL GRUPO]** ¿Por qué no podemos tratar las correcciones calculadas en los distintos niveles como si vinieran de tres rectas independientes? — *Respuesta esperada:* comparten los parámetros estimados y, por tanto, parte de su variación y covarianza.
+ 
+-El script propaga conjuntamente la covarianza de $a$ y $b$ hacia el vector de salidas, usando las sensibilidades locales de las correcciones respecto a esos dos parámetros. Con la matriz agrupada por día, las incertidumbres estándar de las correcciones son $0,108677$ nmol/mol a $80$ nmol/mol, $0,109195$ nmol/mol a $250$ nmol/mol y $0,110283$ nmol/mol a $420$ nmol/mol. Son estimaciones basadas en solo seis bloques y, por tanto, deben leerse con cautela. Además de esas incertidumbres individuales, obtenemos una matriz completa para intercepto, pendiente y las tres correcciones. El Suplemento 2 de la GUM pide justamente conservar la estimación conjunta y su matriz de covarianza para un vector de salidas [GUM-S2 7.6].
++El script propaga conjuntamente la covarianza de $a$ y $b$ hacia el vector de salidas, usando las sensibilidades locales de las correcciones respecto a esos dos parámetros. Con la covarianza del promedio de las rectas diarias, las incertidumbres estándar de las correcciones son $0,107113$ nmol/mol a $80$ nmol/mol, $0,107624$ nmol/mol a $250$ nmol/mol y $0,108696$ nmol/mol a $420$ nmol/mol. Son estimaciones basadas en solo seis bloques y, por tanto, deben leerse con cautela. Además de esas incertidumbres individuales, obtenemos una matriz completa para intercepto, pendiente y las tres correcciones. El Suplemento 2 de la GUM pide justamente conservar la estimación conjunta y su matriz de covarianza para un vector de salidas [GUM-S2 6.2].
+ 
+-Leamos dos términos de esa matriz. La covarianza entre las correcciones a $80$ y $250$ nmol/mol es $0,01183560$ $(\mathrm{nmol/mol})^2$. Entre las correcciones a $250$ y $420$ nmol/mol es $0,01201140$ $(\mathrm{nmol/mol})^2$, y entre las correcciones a $80$ y $420$ nmol/mol es $0,01186056$ $(\mathrm{nmol/mol})^2$. Las tres son positivas en este ejemplo. Cuando una corrección se desplaza hacia arriba, las otras tienden a hacerlo también. Las correlaciones entre las parejas $80$–$250$, $250$–$420$ y $80$–$420$ son, respectivamente, aproximadamente $0,9974$, $0,9974$ y $0,9896$. La dirección y el tamaño dependen de la geometría de la recta y del rango de uso; no hay una regla universal según la cual todas las salidas deban moverse juntas.
++Leamos dos términos de esa matriz. La covarianza entre las correcciones a $80$ y $250$ nmol/mol es $0,01149744$ $(\mathrm{nmol/mol})^2$. Entre las correcciones a $250$ y $420$ nmol/mol es $0,01166822$ $(\mathrm{nmol/mol})^2$, y entre las correcciones a $80$ y $420$ nmol/mol es $0,01152168$ $(\mathrm{nmol/mol})^2$. Las tres son positivas en este ejemplo. Cuando una corrección se desplaza hacia arriba, las otras tienden a hacerlo también. Las correlaciones entre las parejas $80$–$250$, $250$–$420$ y $80$–$420$ son, respectivamente, aproximadamente $0,9974$, $0,9974$ y $0,9896$. La dirección y el tamaño dependen de la geometría de la recta y del rango de uso; no hay una regla universal según la cual todas las salidas deban moverse juntas.
+ 
+-La matriz de correlaciones ayuda a comparar esas dependencias sin mezclar unidades. La correlación entre intercepto y pendiente es aproximadamente $-0,0051$. Las correlaciones entre las correcciones a $80$ y $250$ nmol/mol, y entre $250$ y $420$ nmol/mol, son ambas aproximadamente $0,9974$. Estos valores también son resultados del ejemplo simulado y se reproducen en el bloque A2 del script. No los trasladen a otra calibración: dependen de sus niveles, su dispersión, el modelo y la covarianza estimada.
+ 
+ > **[ERROR CRÍTICO]**
+ 
+@@ -120,7 +127,7 @@
+ 
+ ¿Qué pasaría si, en lugar de seleccionar días, sorteáramos cada fila de manera aislada? El remuestreo crearía combinaciones artificiales: niveles que originalmente compartían el efecto del mismo día podrían terminar como si vinieran de días distintos. Eso cambia la estructura de dependencia y, en general, la incertidumbre estimada ya no responde al diseño declarado. No es posible corregirlo diciendo después que se hicieron muchas réplicas: cada réplica estaría basada en el mecanismo equivocado. En la práctica técnica, la agrupación se decide antes de correr el algoritmo, y se documenta junto con el método.
+ 
+-Hay otro límite importante en nuestro ejemplo: solo tenemos seis bloques diarios. Repetir el sorteo miles de veces no crea días observados adicionales ni aumenta la información real sobre variación entre días. El intervalo bootstrap puede ser inestable cuando el número de unidades independientes es pequeño, cuando la distribución del estimador es irregular o cuando el diseño no representa la población de interés. La precisión computacional del percentil y la solidez estadística del intervalo son preguntas distintas. En consecuencia, un bootstrap por bloques no repara un estudio insuficiente ni sustituye el diseño experimental.
++Hay otro límite importante en nuestro ejemplo: solo tenemos seis bloques diarios. Hay $\binom{11}{6}=462$ multiconjuntos de seis días, sin contar el orden; no son equiprobables. Las 20 000 réplicas repiten esas composiciones. El semiancho percentil dividido por 1,96 es $0,0976$ nmol/mol para la corrección, frente a $u=0,1076$ entre días; para la pendiente, $4,13\times10^{-5}$ frente a $4,61\times10^{-5}$. Con tan pocos bloques, el percentil puede quedarse corto; no interpretamos esa comparación como una cobertura garantizada [Efron y Tibshirani 1993, no disponible en docs/]. Repetir el sorteo miles de veces no crea días observados adicionales ni aumenta la información real sobre variación entre días. El intervalo bootstrap puede ser inestable cuando el número de unidades independientes es pequeño, cuando la distribución del estimador es irregular o cuando el diseño no representa la población de interés. La precisión computacional del percentil y la solidez estadística del intervalo son preguntas distintas. En consecuencia, un bootstrap por bloques no repara un estudio insuficiente ni sustituye el diseño experimental.
+ 
+ > **[ERROR CRÍTICO]**
+ 
+@@ -128,9 +135,7 @@
+ 
+ Antes de usar un bootstrap, digan en voz alta cuál es el estimador que se remuestrea, cuál es la unidad independiente, cómo se mantienen las agrupaciones, qué intervalo se reporta y cuál población pretende representar el diseño. Si el estudio tiene estructura anidada o cruzada, una sola regla genérica de remuestreo puede no bastar: hay que reproducir el nivel de aleatorización que respalda la inferencia. Si no sabemos qué unidades son intercambiables, paramos y pedimos que el diseño se revise. El método numérico no debe presentarse como una rutina automática de software.
+ 
+-> **[ESCALAMIENTO]**
+-
+-Escalen el análisis si las unidades de remuestreo no están justificadas, si hay muy pocos bloques para sostener la inferencia requerida, si faltan bloques o la estructura cambió durante la campaña, o si la conclusión depende de una agrupación que los datos no permiten reconstruir. Registren la limitación; no oculten la dependencia mediante remuestreo de filas.
++Si no pueden justificar las unidades independientes o reconstruir los bloques, registren la limitación y consulten al responsable técnico.
+ 
+ Distingamos ahora bootstrap de Monte Carlo. Ambos generan muchas evaluaciones y pueden producir distribuciones numéricas, pero no responden a la misma pregunta ni usan la misma información. En Monte Carlo de la escena inicial, describimos las entradas mediante distribuciones justificadas y las propagamos por un modelo de medición.
+ 
+@@ -146,19 +151,33 @@
+ 
+ > **[PIZARRA]** $$\rho_c(r)=\begin{cases}\tfrac{1}{2}r^2,&|r|\le c\\c|r|-\tfrac{1}{2}c^2,&|r|>c\end{cases}$$
+ >
+-> **[PIZARRA]** OLS: minimizar $$\sum_i r_i^2$$; Huber: minimizar $$\sum_i\rho_c(r_i)$$, con una escala $$c$$ declarada.
++> **[PIZARRA]** OLS: minimizar $$\sum_i r_i^2$$; Huber: minimizar $$\sum_i\rho_c(r_i)$$, con un umbral $$c=1,345\,\hat s,\qquad \hat s=\operatorname{MAD}(r)/0,67449$$ declarado.
+ >
+-> **[NOTA AL INSTRUCTOR]** Leer la expresión: «la pérdida de Huber es cuadrática mientras el residuo no supera la escala y lineal después; la escala determina dónde cambia el trato». La implementación del ejemplo usa `scipy.optimize.least_squares` con pérdida Huber y escala `0,35` nmol/mol; los resultados no deben separarse de esa especificación.
++> **[NOTA AL INSTRUCTOR]** Leer: «la pérdida es cuadrática hasta el umbral y lineal después». MAD es la mediana de los valores absolutos de los residuos centrados en su mediana; dividir por 0,67449 la hace consistente como escala bajo normalidad. Se usa `statsmodels` 0.15.0, `RLM`, `HuberT(t=1.345)`, escala `mad` actualizada durante las iteraciones y covarianza asintótica `H1`.
+ 
+-En la práctica, la pérdida de Huber se resuelve iterativamente. Una lectura operativa equivalente es que cada observación recibe un peso que se mantiene cuando el residuo es pequeño y disminuye cuando el residuo excede la escala definida. Los pesos dependen del ajuste actual; por eso se vuelve a estimar la recta hasta que el procedimiento converge. El resultado depende de la elección de escala, la inicialización y la implementación. Para este ejemplo se ha fijado la escala de $0,35$ nmol/mol en el script y se usa la implementación especificada allí. No presenten «Huber» como una única respuesta inequívoca si no registran cómo se calculó.
++En la práctica, el ajuste se resuelve iterativamente con pesos que disminuyen cuando el residuo supera el umbral. Elegimos el factor adimensional 1,345 por su eficiencia asintótica aproximada del 95 % bajo errores normales; no es un umbral absoluto en nmol/mol. El umbral se obtiene multiplicándolo por la escala robusta estimada. En esta muestra, la escala es $0,2050$ nmol/mol y el umbral $c=0,2757$ nmol/mol [Huber 1981, no disponible en docs/]. Registramos la regla, la inicialización OLS y el criterio de convergencia del script, no solo el nombre «Huber».
+ 
+ Construimos ocho niveles simulados, desde $20$ hasta $370$ nmol/mol. Los valores sin alteración se generaron alrededor de una recta de pendiente $1,002$, con pequeñas diferencias deterministas, documentadas en el código. Para que podamos estudiar influencia, alteramos intencionalmente la última respuesta: en ese nivel, el valor simulado inicial es $371,200000$ nmol/mol y la respuesta alterada para esta demostración es $379,200000$ nmol/mol. La alteración de $8,0$ nmol/mol es deliberadamente grande, no fue detectada ni excluida de un archivo de CALAIRE. Es una intervención de enseñanza.
+ 
+ > **[EJEMPLO]** Mostrar las observaciones simuladas, marcando el punto de $x=370$ nmol/mol como «respuesta alterada de forma deliberada para la demostración». Escribir junto al gráfico: «no es un dato de laboratorio ni un criterio de exclusión».
+ 
+-Ajustemos primero OLS a los datos no alterados: obtenemos intercepto $0,49971429$ nmol/mol y pendiente $1,00201429$. Ahora ajustamos OLS después de introducir la alteración: el intercepto pasa a $-1,10028571$ nmol/mol y la pendiente a $1,01534762$. La pendiente aumenta porque el punto de respuesta alta está en el extremo alto del rango y atrae la recta. Con Huber, en los datos alterados y la escala especificada, el intercepto es $0,36428571$ nmol/mol y la pendiente $1,00314286$. En este ejemplo concreto, la pendiente robusta se mantiene más cerca de la pendiente de la recta de datos no alterados que la pendiente OLS.
++Ajustemos primero OLS a los datos no alterados: obtenemos intercepto $0,49971429$ nmol/mol y pendiente $1,00201429$. Ahora ajustamos OLS después de introducir la alteración: el intercepto pasa a $-1,10028571$ nmol/mol y la pendiente a $1,01534762$. La pendiente aumenta porque el punto de respuesta alta está en el extremo alto del rango y atrae la recta. Con Huber, en los datos alterados y la escala especificada, el intercepto es $0,38975488$ nmol/mol y la pendiente $1,00293061$. En este ejemplo concreto, la pendiente robusta se mantiene más cerca de la pendiente de la recta de datos no alterados que la pendiente OLS.
++
++Comparar una salida dentro del intervalo también ayuda. A una referencia de $200$ nmol/mol, la predicción OLS del ajuste alterado es $201,969238$ nmol/mol, mientras que la predicción de Huber es $200,975878$ nmol/mol. El residuo en la observación influyente es $4,621667$ nmol/mol con el ajuste OLS y $7,725918$ nmol/mol con Huber.
+ 
+-Comparar una salida dentro del intervalo también ayuda. A una referencia de $200$ nmol/mol, la predicción OLS del ajuste alterado es $201,969238$ nmol/mol, mientras que la predicción de Huber es $200,992857$ nmol/mol. El residuo en la observación influyente es $4,621667$ nmol/mol con el ajuste OLS y $7,672857$ nmol/mol con Huber.
++Veamos cuánto depende del umbral. Estos son ajustes con umbral absoluto fijo; la fila de $0,35$ no es la regla MAD que acabamos de usar.
++
++> **[DIAPOSITIVA]** Sensibilidad en los mismos datos alterados: umbral fijo $c$ (nmol/mol) y pendiente.
++
++| $c$ | Pendiente |
++|---|---|
++| 0,20 | 1,00279 |
++| 0,35 | 1,00314 |
++| 1,00 | 1,00500 |
++| 2,00 | 1,00786 |
++| 5,00 | 1,01535 |
++
++Al aumentar el umbral, el ajuste se acerca a OLS. Para la regla MAD reportaríamos, como análisis robusto docente, $a=0,3898$ nmol/mol y $b=1,00293$, con errores estándar asintóticos H1 de $0,1668$ nmol/mol y $0,000738$, respectivamente. OLS alterado da $u(b)=0,00764$. Son errores estándar condicionales al modelo de errores independientes y escala común, no un presupuesto metrológico completo; con ocho puntos y uno de alto apalancamiento, su aproximación asintótica exige cautela. El peso robusto del punto alterado es $0,0357$: no se lo ha borrado [Huber 1981, no disponible en docs/; implementación `statsmodels.RLM.fit`, covarianza H1]. Para este objetivo docente de estimar la tendencia central ante la alteración declarada, elegimos Huber con incertidumbre y sensibilidad explícitas; para un reporte oficial, la elección depende del procedimiento validado y de investigar la causa.
+ 
+ Que el residuo de Huber sea mayor no significa que el método haya fallado: la recta robusta no se desplaza tanto hacia ese punto, así que deja una discrepancia mayor allí y protege más el patrón global del conjunto. Pero si la observación alta representa un cambio real del sistema, «proteger» el ajuste sería precisamente una respuesta equivocada. La interpretación depende del proceso de medición y de la pregunta.
+ 
+@@ -176,9 +195,7 @@
+ 
+ No elijan Huber porque entregue una pendiente más conveniente. No eliminen el dato para que OLS y Huber coincidan. No informen una recta robusta sin declarar el estimador, la escala usada y qué observaciones entraron en el cálculo.
+ 
+-> **[ESCALAMIENTO]**
+-
+-Detengan el reporte y pidan revisión técnica si una observación influyente puede ser un cambio real, si OLS y Huber llevan a decisiones distintas, si el patrón está fuera del rango de calibración, si hay varios puntos influyentes o si la conclusión depende de una escala de Huber no justificada. En esos casos se requiere revisar el modelo y el proceso, no escoger silenciosamente el resultado que parezca más estable.
++Si OLS y Huber llevan a decisiones distintas o la observación puede representar un cambio real, detengan el reporte y revisen el proceso.
+ 
+ Noten también que el ejemplo define a propósito una comparación pareada de métodos: mismas abscisas, mismas respuestas alteradas y mismo uso, con la única diferencia de la función objetivo. Eso hace interpretable el contraste de sensibilidad. Si cambiáramos simultáneamente los datos, el rango, el modelo o la escala robusta, no sabríamos qué produjo la diferencia. En una validación de software, documentar estas decisiones es tan importante como guardar el coeficiente final. La implementación debe tener comprobaciones sobre datos representativos, y la sensibilidad a la escala debe evaluarse según el uso previsto, no tras elegir la salida más favorable.
+ 
+@@ -192,16 +209,14 @@
+ 
+ En Monte Carlo, una comprobación independiente puede ser comparar con la aproximación lineal en el régimen donde esperamos que funcione, y revisar la estabilidad de los resúmenes numéricos. En salidas múltiples, verificamos el orden del vector, las dimensiones y propiedades de la matriz, además de una salida individual recalculada. En bootstrap, verificamos que cada réplica conserve la unidad independiente y los bloques. En Huber, registramos la especificación exacta y comparamos con OLS como análisis de sensibilidad, sin transformar esa comparación en un criterio de selección posterior al resultado.
+ 
+-Hay señales que nos obligan a detenernos. Si no tenemos base para las distribuciones o covarianzas, no fingimos que la simulación las conoce. Si las salidas posteriores necesitan covarianza y la herramienta solo entrega incertidumbres individuales, no usamos la herramienta como si bastara. Si el diseño no permite identificar la unidad de remuestreo o deja muy pocas unidades independientes, no presentamos un intervalo bootstrap como solución automática. Si la estimación cambia materialmente entre OLS y Huber, investigamos la observación y el modelo antes de reportar. Y si la respuesta que necesitamos queda fuera del intervalo para el que se validó la calibración, no extrapolamos silenciosamente.
+-
+ > **[ESCALAMIENTO]**
+ 
+ Escalen al responsable técnico cuando la conclusión dependa de una dependencia desconocida, de una distribución de entrada no sustentada, de un intervalo numérico inestable, de una matriz de covarianza inadmisible, de un diseño con pocos bloques, de un ajuste sensible a una observación sin causa aclarada o de una predicción fuera del rango validado. La señal de escalamiento no es una solución estadística; es la decisión correcta de no sobreinterpretar los datos.
+ 
+-> **[TRANSICIÓN]** M13 concluye el contenido de métodos numéricos. Las deducciones asociadas a la propagación, a la covarianza de parámetros y a Monte Carlo quedan remitidas a los anexos correspondientes.
+-
+ > **[PRÁCTICA — fase de ejercicios]** Práctica integradora evaluable de métodos numéricos
+ 
++> **[TRANSICIÓN]** M13 concluye el contenido de métodos numéricos. Las deducciones asociadas a propagación, covarianza de parámetros y Monte Carlo quedan remitidas a los anexos correspondientes.
++
+ ## Cierre del capítulo
+ 
+ Cerremos con la competencia de este módulo. Ustedes deben poder contrastar la propagación lineal con Monte Carlo y decidir cuál es adecuado para el modelo inverso y el uso previsto; representar pendiente, intercepto y correcciones como salidas conjuntas, con su covarianza; remuestrear unidades que respetan los bloques del diseño; y comparar OLS con Huber ante una observación influyente, explicando los supuestos y los límites de esa comparación. Con esta base, pasaremos al taller integrador de nivel A, donde se articularán los contenidos del curso.
+@@ -217,7 +232,9 @@
+ - **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ … (GUM_1995) - libgen.li.pdf`; numerales 5.1.2 y 5.2.2 verificados con `pdftotext`.
+ - **GUM-S1.** JCGM 101:2008, *Evaluation of measurement data — Supplement 1 to the Guide to the expression of uncertainty in measurement — Propagation of distributions using a Monte Carlo method*, con corrigendum 1:2009. `docs/ISO_IEC Guide 98-3_2008 Suppl.1_2008 - libgen.li.pdf`; numerales citados verificados con `pdftotext`.
+ - **GUM-S2.** JCGM 102:2011, *Evaluation of measurement data — Supplement 2 to the Guide to the expression of uncertainty in measurement — Extension to any number of output quantities*. `docs/ISO_IEC Guide 98-3_2008 Suppl.2_2011 - libgen.li.pdf`; numerales citados verificados con `pdftotext`.
+-- **ISO 28037.** ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*. `docs/ISO 28037.pdf`; cláusula 10 verificada con `pdftotext`.
++- **ISO 28037.** ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*. `docs/ISO 28037.pdf`; apartados 5.5, 5.8.1 y 11.1 verificados con `pdftotext`.
+ - **Efron y Tibshirani.** Efron, B. y Tibshirani, R. J. *An Introduction to the Bootstrap*. Chapman & Hall, 1993. No disponible en `docs/`; se cita sin numeral; referencia externa pendiente de verificación bibliográfica local.
+ - **Huber.** Huber, P. J. *Robust Statistics*. Wiley, 1981. No disponible en `docs/`; se cita sin numeral; referencia externa pendiente de verificación bibliográfica local.
+ 
++
++- **statsmodels.** Versión 0.15.0, documentación de `RLM`, `RLM.fit` y `RLMResults.bcov_scaled`; definición H1 y escala MAD comprobadas en la implementación instalada. No disponible en `docs/`.

@@ -1,0 +1,518 @@
+Chapter 5
+Measurement Uncertainty in Decision
+Making
+
+
+
+
+5.1 Introduction
+
+Measurements are used to make important decisions ranging from accepting or
+rejecting product (Smith 1990) to deciding on R&D proposals (Cividino et al.
+2019) to assessing the outcome of medical diagnostics (Bhise et al. 2018). However,
+because all measurements have an associated uncertainty, there is inherent risk that
+incorrect decisions will be made. Decisions regarding the air pressure of footballs
+(Sect. 1.4) may be of minor consequence, but decisions based on the pandemic
+fatality rate (Sect. 1.5) can have profound consequences. In cases like these, failure
+to address measurement uncertainty leaves the risk of incorrect decisions unknown
+and unmanageable.
+   This chapter provides a statistical framework for using measurement uncertainty
+to quantify risk in measurement related decisions. Test uncertainty ratios, measure-
+ment decisions, false accept and false reject probabilities, guardbanding, and risk
+associated with biased measurements are covered. These topics will ﬁrst be
+presented in the context of a manufacturing environment in which the decision is
+to accept or reject manufactured product. The same topics will then be discussed
+in the context of a calibration lab in which a decision must be made regarding the
+state of a unit under test (UUT).
+
+
+
+
+5.2 Measurement Uncertainty and Risk
+
+In metrology, risk is deﬁned as the probability that a measurement result will lead to
+an incorrect decision. Since the actual value of a measurand can never be known,
+there is always some probability that a measured value falls within an acceptable
+region when the actual value lies outside that region. This results in a False Accept
+(FA) condition. There is also some probability that a measured value falls outside an
+
+© Springer Nature Switzerland AG 2020                                              81
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_5
+82                                        5 Measurement Uncertainty in Decision Making
+
+
+acceptable region when the actual value lies inside that region. This results in a
+False Reject (FR) condition. National standard ANSI/NCSLI Z540.3 2006 (see
+Sect. 3.7.4) recommends that compliance testing should control the false accept
+risk to be no more than 2%.
+   False accept and false reject risks are only one part of a full risk assessment.
+Another factor in the assessment, not considered in detail here, is the consequence of
+making an incorrect decision. These consequences may include the cost of rejecting
+a good part (inﬂating rework and scrap costs) or the cost of accepting a bad part
+(inﬂating future costs and risks). Depending on the consequences of an incorrect
+decision, false accept and false reject risks may need to be controlled at less than the
+typical 2%. However, controlling these risks at lower levels comes with its own
+cost, as more sampling, testing, and scrapping of marginal parts may be required.
+
+
+
+
+5.2.1 Measurement Uncertainty and Risk in Manufacturing
+
+In a manufacturing setting, a measurement is performed on each part (or a suitable
+sample of parts) at product acceptance to determine whether it meets requirements.
+Ideally, all parts that meet speciﬁcations are accepted and all parts that do not meet
+speciﬁcations are rejected. In the presence of measurement uncertainty, this ideal
+outcome is not possible. In the sections that follow, the focus is on the quantiﬁcation
+and management of risks associated with uncertainty in the measurement of
+manufactured parts.
+
+
+
+5.2.1.1 Test Uncertainty Ratio
+
+An accept or reject decision is usually based on whether a part’s measurement falls
+within its speciﬁcation limits (SL). For example, if the voltage of a battery must
+fall within 10.0 V        1.0 V for its intended application, then the speciﬁcation
+limit is SL ¼ 1.0 V. Absolute limits may also be used: in this case the lower limit
+is SLL ¼ 9.0 V and the upper limit is SLU ¼ 11.0. Most equations in this chapter use
+absolute limits to avoid ambiguity. The JCGM (2012) uses the term “tolerance
+limits” in place of “speciﬁcation limits,” and deﬁnes the tolerance interval to be
+the range of acceptable values between the limits. Tolerance limits and speciﬁcation
+limits are used interchangeably in this chapter.
+    Historically, the Test Uncertainty Ratio (TUR) has been used as an indicator of a
+measurement’s suitability to make an accept or reject decision. The TUR is deﬁned
+as TUR ¼ [ Speciﬁcation Limit]/[ Measurement Uncertainty at 95% conﬁdence].
+For example, if a part’s length must be within       0.1 inch, and the caliper used
+to measure this length has total uncertainty of 0.005 inch, the TUR is (0.1 inch/
+0.005 inch) ¼ 20. When the speciﬁcation limits are deﬁned in terms of absolute
+limits, the TUR formula can be expressed as
+5.2 Measurement Uncertainty and Risk                                                  83
+
+
+                                          SLU SLL
+                                 TUR ¼            ,                                ð5:1Þ
+                                             2U c
+
+where Uc is the expanded uncertainty (see Sect. 6.2.5), evaluated with a 95%
+conﬁdence level.
+    Requiring a TUR of at least 4 (referred to as “meeting a 4:1 ratio”) is often used to
+ensure the adequacy of a measurement to make a particular accept/reject decision,
+although sometimes a TUR of at least 10 is required for more conservative work.
+There are, however, important assumptions associated with using TUR as a metric
+and the requirement of a TUR of 4 or 10. Using a TUR assumes that all measurement
+biases have been removed from the measurement process and the measurements
+involved follow a normal distribution. If there are signiﬁcant biases that cannot be
+removed, the TUR will not account for the increased risk (see Sect. 5.2.1.5). The
+TUR was originally introduced in the 1950s as a shorthand way to evaluate a
+measurement process without a full assessment of false accept and false reject
+probabilities (Harben and Reese 2012). With modern computers now readily
+available to evaluate these probabilities, the use of TUR alone becomes question-
+able. As a result, computing the actual risk is the recommended way to ensure
+false accept and false reject rates are acceptable. All of the risk computations
+presented in this chapter are supported by the uncertainty calculator that is available
+at https://sandiapsl.github.io/.
+    The TUR is still commonly used to determine if a measurement is adequate or
+if guardbanding (Sect. 5.2.1.4) is necessary to reduce the risk of false accepts. Within
+the NSE production agencies, whenever the TUR ratio is greater than or equal to 4:1,
+a measurement result can be directly compared to the speciﬁcation limits for
+purposes of accept or reject. Otherwise, guardbanding is required (see Sect. 5.2.1.4).
+    Occasionally, the Test Accuracy Ratio (TAR) is used in place of the TUR. The
+TAR is similar to the TUR in its structure, but differs in that its denominator includes
+the uncertainty of only the test equipment, rather than including the additional
+Type A uncertainties, environmental effects, and any other known uncertainties in
+the measurement. The TAR can be expressed as:
+
+                                     Specification Limit
+                      TAR ¼                                 :                      ð5:2Þ
+                                 Accuracy of Test Equipment
+
+   The TUR as an indicator of measurement capability is recommended as it
+includes all known uncertainties in the measurement. The TAR, while simpler to
+determine, could signiﬁcantly understate the total uncertainty and associated risks.
+
+
+5.2.1.2 Measurement Decisions
+
+Any measurement performed on a manufactured part will have uncertainty, and
+any decision based on that measurement has inherent risk that should be
+considered. Figure 5.1 illustrates this concept, with y representing the measured
+86                                                      5 Measurement Uncertainty in Decision Making
+
+
+Fig. 5.3 Product
+distribution with
+speciﬁcation limits. Dotted
+lines are shown at the
+speciﬁcation limits
+
+
+
+
+5.2.1.3 False Accept and False Reject Risks
+
+The overall false accept and false reject risks associated with a manufacturing
+process can be determined by jointly considering the product and measurement
+uncertainty distributions (Smith 1990). The unconditional probability of false
+accept (PFA), sometimes called consumer’s risk, is the probability that the measure-
+ment y is in tolerance (SLL < y < SLU) when the actual value t is out of tolerance
+(t < SLL or t > SLU). This probability can be expressed as:
+
+                       PFA ¼ Pr ðSLL y SLU and t < SLL Þ
+                             þ PrðSLL y SLU and t > SLU Þ:                                      ð5:6Þ
+
+     Assuming normal distributions, this probability can be calculated as:
+                              0                                  1
+                       ZSLL          ZSLU                                        1 t μ  2
+                                               1                     C 1          2ð   pÞ
+                                                         1 ðy t Þ2
+                              B                pﬃﬃﬃﬃﬃ e 2σ2m
+            PFA ¼             @                                    dyA pﬃﬃﬃﬃﬃ e 2σp       dtþ
+                                            σ m 2π                    σ p 2π
+                       1          SLL
+
+                       0                                     1
+                  Z1          ZSLU                                         1        2
+                       B                1         1
+                                                      ðy t Þ2 C    1        2 ðt μp Þ
+                       @                pﬃﬃﬃﬃﬃ e 2σ2m        dyA pﬃﬃﬃﬃﬃ e 2σp         dt:       ð5:7Þ
+                                     σ m 2π                     σ p 2π
+                 SLU       SLL
+
+
+   In this equation, the inner integral can be thought of as the conditional probability
+of accepting the part given a particular value of t. The outer integral averages over all
+values of t that result in the false accept condition.
+   Rather than requiring speciﬁc knowledge of σ m, σ p, and (SLL, SLU), it can be
+useful to express the PFA (Eq. (5.7)) in terms of TUR and itp using Eq. (5.1) and an
+estimate of σ p based on itp and (SLL, SLU) (see Eq. (5.20)).
+88                                              5 Measurement Uncertainty in Decision Making
+
+
+Fig. 5.5 False reject risk
+curve against in-tolerance
+probability. The curves
+represent various TURs
+
+
+
+
+5.2.1.4 Guardbanding
+
+Guardbanding modiﬁes the speciﬁcation limits to reduce the level of risk (PFA)
+associated with measurement uncertainty. The original speciﬁcation limit, SL, is
+reduced by the guardband factor (GBF):
+
+                                      AL ¼ SL GBF                                    ð5:10Þ
+
+to result in new acceptance limits AL. GBF is a multiplier between 0 and 1, with a
+value of 1 meaning no guardband is applied. In terms of absolute speciﬁcation
+limits, absolute acceptance limits become
+
+                                                          SLU         SLL
+                             ALL ¼ SLL þ ð1       GBFÞ                               ð5:11Þ
+                                                                  2
+                                                          SLU         SLL
+                             ALU ¼ SLU     ð1     GBFÞ                      :        ð5:12Þ
+                                                                  2
+
+  The most popular method for calculating GBF is the root-sum-of-squares (RSS)
+method. The GBF for this method is
+                                        rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                      1
+                                   GBF ¼ 1                    :                      ð5:13Þ
+                                                 TUR2
+92                                                   5 Measurement Uncertainty in Decision Making
+
+
+between 10.055 V and 11.945 V. Risk for asymmetric requirements can be
+calculated in the manner described previously, with the region of integration
+modiﬁed for the asymmetric limits.
+   It should be pointed out that the need for guardbanding can be reduced
+by measuring marginal parts multiple times. Multiple independent measurements
+reduce the standard uncertainty, improving the ability to discriminate between good
+and bad parts. Cost models such as given by Smith (1990) consider the cost of
+additional measurements, along with the cost of false accept and false reject
+decisions.
+
+
+
+5.2.1.5 Risk with Biased Measurements
+
+While the 4:1 TUR requirement is commonly used to ensure a measurement is
+adequate for making an accept/reject determination, this metric assumes that
+the process distribution is centered between the speciﬁcation limits, that is
+μp ¼ (SLU + SLL)/2. If this is not the case, TUR cannot be reliably used as an
+indicator of risk, however, the PFA and PFR equations are still valid assuming
+the correct μp is used.
+   The measurement uncertainty distribution is also assumed to be centered about
+the actual value t when calculating TUR. The measurement process is said to be
+biased if it is not centered about t and systematically overstates or understates
+the true value of the measurement. Properly accounting for measurement bias
+provides a more accurate risk evaluation. If bias is ignored, the risk might be
+understated, perhaps signiﬁcantly.
+   In the presence of bias, the distribution of the measurement y, given the
+actual value t, shifts from a N t, σ 2m distribution to a N t bm , σ 2m distribution,
+where bm is the measurement bias.
+   With bias bm, the expressions for the PFA and PFR (without guardbanding)
+become
+                      0                                        1
+               ZSLL        ZSLU                                              1            2
+                      B              1         1
+                                                   ðy ðt bm ÞÞ2 C    1        2 ðt μp Þ
+     PFA ¼            @              pﬃﬃﬃﬃﬃ e 2σ2m             dyA pﬃﬃﬃﬃﬃ e 2σp         dt
+                                  σ m 2π                          σ p 2π
+                1         SLL
+                      0                                       1                               ð5:18Þ
+              Zþ1         ZSLU                                               1        2
+                                     1             ðy ðt bm ÞÞ2 C    1        2 ðt μp Þ
+                                               1
+                      B              pﬃﬃﬃﬃﬃ e 2σ2m
+          þ           @                                        dyA pﬃﬃﬃﬃﬃ e 2σp         dt:
+                                  σ m 2π                          σ p 2π
+              SLU         SLL
+5.2 Measurement Uncertainty and Risk                                                                    93
+                       0 SL                                            1
+                ZSLU     Z L                                                       1             2
+
+                       @           1           1 ðy   ðt bm ÞÞ   2
+                                                                           1        2 ðt μ p Þ
+      PFR ¼                        pﬃﬃﬃﬃﬃ e   2σ 2m
+                                                                     dyA pﬃﬃﬃﬃﬃ e 2σp          dt
+                                σ m 2π                                  σ p 2π
+                SLL         1
+                      0                                               1                              ð5:19Þ
+               ZSLU       Zþ1                                              1 t μ             2
+                      B            1         1
+                                                 ðy ðt bm ÞÞ2 C    1        2ð  pÞ
+           þ          @            pﬃﬃﬃﬃﬃ e 2σ2m             dyA pﬃﬃﬃﬃﬃ e 2σp      dt:
+                                σ m 2π                          σ p 2π
+               SLL        SLU
+
+
+   Figure 5.10 shows PFA and PFR when μp is shifted by 60% of the speciﬁcation
+limit SLU 2 SLL without guardbanding (GBF ¼ 1), and with bm ¼ 0. Figure 5.11
+shows PFA and PFR when the measurement is biased by 20% of the speciﬁcation
+limit (bm ¼ 0:2 SLU 2 SLL Þ.
+   As discussed earlier, if either shift is ignored and the 4:1 TUR rule is blindly
+applied, then the true PFA may exceed the traditionally accepted risk rate of 2%,
+even with a 4:1 TUR. For this reason, if it is not feasible to correct for measurement
+bias, the risk for the measurement process with bias needs to be explicitly quantiﬁed
+and deemed acceptable.
+
+
+
+5.2.2 Measurement Uncertainty and Risk in Calibration
+
+Calibration labs frequently perform tolerance tests on measurement equipment
+to ensure the equipment meets its speciﬁcations. Tolerance tests result in a pass
+or fail determination regarding whether the M&TE is in tolerance. Evaluating the
+
+
+
+
+Fig. 5.10 False accept and reject with 60% process shift. The curves represent various TURs
+5.2 Measurement Uncertainty and Risk                                                 95
+
+
+                                           SL
+                                 σp                :
+                                         1 1 þ itp                               ð5:20Þ
+                                       F
+                                              2
+
+    The itp is again in-tolerance probability, sometimes referred to as end-of-period
+reliability (EOPR), based on the observed fraction of equivalent devices that were
+determined in-tolerance when submitted for recalibration. The function F 1 is the
+inverse normal cumulative distribution function, also known as the quantile function
+or percent-point-function. Most statistical software have functions to calculate
+this quantity, which assumes the population of equivalent M&TE follows a normal
+distribution centered at nominal.
+    When a calibration lab performs a true calibration, as opposed to a tolerance
+test (Sect. 2.2.4), no pass or fail determination is being made; only a value and
+measurement uncertainty are reported on the certiﬁcate. However, the calibration
+lab’s accreditation statement lists a maximum uncertainty for a particular measure-
+ment, and the lab should verify the risk of exceeding their accredited uncertainty
+is minimal.
+    Finally, when a calibration lab makes an incorrect decision when testing M&TE,
+the consequences and costs of such a decision are different from a manufacturing
+setting. Depending on what the M&TE is used for, any measurement made with
+that equipment during its calibration cycle should be considered suspect. If the lab
+calibrates a reference standard for use in another calibration lab down the traceability
+chain, the incorrect decision can affect many downstream calibrations.
+
+
+
+5.2.2.1 Decision Rules in Calibration
+
+ISO 14253-1 2017 deﬁnes requirements for calibration labs, including a requirement
+to state a “decision rule” on calibration certiﬁcates. The decision rule deﬁnes
+the action(s) to take given a measurement result. “Simple acceptance,” sometimes
+called “as-read,” is the most common decision rule, where the outcome is a pass
+if the measurement as-read from the M&TE indicates a passing condition. This
+decision rule is commonly employed when the TUR is greater than 4:1. When
+the TUR is less than 4:1, a “guarded acceptance” decision rule is used, where the
+as-read measurement must be compared to a reduced acceptance interval.
+    Some calibration labs have begun using “indeterminate acceptance” decision
+rules, where a measured value within the acceptance limits is considered a pass,
+a value outside the speciﬁcation limits is a fail, but measured values falling
+within the guardband (between the acceptance limit and speciﬁcation limit) is an
+“indeterminate pass” condition. In this situation, the lab’s measurement indicates
+a pass condition, but with a high risk of being OOT. “Indeterminate fail” conditions
+are also occasionally used, when the measured value is outside the speciﬁcation
+limits, but only by some small tolerance. The indeterminate outcomes effectively
+shift the pass/fail decision on to the end-user of the equipment.
+96                                         5 Measurement Uncertainty in Decision Making
+
+
+   Sometimes, non-binary decision rules are used. For example, when
+manufacturing a part with a maximum diameter requirement of 1.0 cm, all
+components measuring less than 1.0 cm will be accepted, parts measuring greater
+than 1.2 cm will be rejected, but parts measuring between 1.0 cm and 1.2 cm can
+be sent for rework, and not rejected outright. The same concepts from this chapter
+apply to non-binary decision rules assuming care is taken to appropriately set the
+integration regions in the risk calculations.
+
+
+
+5.3 Summary
+
+Measurements are used to make conformity decisions, yet because all measurements
+have uncertainty, there is inherent uncertainty in the decision outcome and risk
+of making an incorrect decision. Historically, a TUR of at least 4:1 has been used
+to ensure a measurement process is adequate for ensuring compliance with a
+speciﬁcation. When a 4:1 ratio cannot be achieved, guardbanding should be
+applied to reduce the risk of false accept decisions. However, guardbanding also
+increases the risk of false reject decisions. Any non-normal behavior or bias in
+the distributions will affect the false accept and reject levels and is not accounted for
+in the TUR 4:1 rule of thumb. In this case, a full analysis of risk, including evaluation
+of PFA and PFR, is the best option to ensure adequate PFA rates.
+
+
+
+5.4 Related Reading
+
+Additional details and more motivation for the risk calculations as applied to
+manufacturing are given by Smith (1990). He includes an evaluation of the
+expected cost per part based on the cost of a false accept, the cost of a false
+reject, and the cost of making additional measurements. Basnet and Case (1992)
+and Sankle and Singh (2012) discuss evaluation of manufacturing risk based on
+sampling from a batch process rather than testing every single part. The process
+capability index, Cpk, closely related to itp deﬁned in this chapter, is a commonly
+used measure of the ability of a manufacturing process to meet requirements.
+As discussed in Mottonen et al. (2008), if the Cpk is high enough, risk is minimal
+regardless of the test measurement.
+   The discussion in this chapter calculates risk based on a single feature of a part.
+In many cases, a part will have numerous speciﬁcations that must all be met in order
+to meet requirements. Jackson (2019) discusses combined false accept rates and
+when multiple individual attributes are measured on one component.
+   Much of the background work on consumer’s and producer’s risk as applied to
+calibration was done by Deaver (1993, 1995) and Dobbert (2007, 2008). This work
+was incorporated into the NCSLI’s guidance for application of standard Z540.3 in
+National Conference of Calibration and Standards Laboratories International (2009).
+Mimbs (2007) gives an overview of measurement risk with some interesting history
+5.5 Exercises                                                                     97
+
+
+on the confusing inconsistent deﬁnitions of TAR and TUR and NASA’s decision
+to change from a 10:1 to a 4:1 TUR requirement.
+   JCGM (2012) provides general statistical guidance in calculating risk as well
+as setting acceptance and tolerance limits. To avoid confusion between different
+and often ambiguous deﬁnitions of TUR and TAR found in literature, it uses the
+term “measurement capability index,” the same quantity as TUR given in this
+chapter. ISO 10576-1 (2013) is the international standard, referenced by JCGM
+106, on conformity assessment practices. ISO 14253-1 considers conformity assess-
+ment on geometrical product speciﬁcations. The NCSLI also offers recommended
+practices for applying the concepts in these standards with NCSLI RP-18 (2014),
+which includes a discussion of risk assessment using a Bayesian approach.
+Interpreting manufacturer’s speciﬁcations with regard to risk assessment is
+discussed in National Conference of Calibration and Standards Laboratories Inter-
+national (2016). Finally, IEC 31010 2009 covers risk management from a general
+perspective, not speciﬁc to risk only in measurements.
+   Several other methods of setting acceptance limits to mitigate measurement
+risk have been proposed. Deaver (1994) compares several common methods
+based on TUR. Easterling et al. (1991) and Kim et al. (2007) consider total cost
+minimization methods, and Hund et al. (2017) proposes a data-driven probabilistic
+approach.
+   Mimbs (2011) discusses the usefulness of end-of-period reliability (EOPR) as
+a means for satisfying the 2% PFA metric required by Z540.3, differentiating
+observed EOPR from true EOPR. Mimbs, along with Dobbert (2008), introduce
+a Monte Carlo approach to calculating false accept and false reject risk that
+requires no calculus but does require a suitable random number generator
+(Chap. 8). Singh (1996) considered non-normal distributions in risk analysis, using
+an Edgeworth series expansion to approximate non-normal distributions. Castrup
+(2001) mentions the importance of accounting for bias in normal distributions, while
+Delker (2020) directly considers the effect of bias and non-normal behavior, as
+quantiﬁed by skewness and kurtosis, on false accept and false reject probabilities.
+
+
+
+
+5.5 Exercises
+
+1. Calculate the test uncertainty ratio (TUR) of a resistance measurement used
+   to verify a resistor falls within requirements 1000 Ω 4 Ω, measured with an
+   ohmmeter having 1 Ω (95% conﬁdence) uncertainty.
+2. A caliper is used to measure a component and ensure it has a diameter of less than
+   0.5 cm. If the caliper has total (95% conﬁdence) uncertainty of 0.1 mm, calculate
+   an appropriate acceptance limit for this measurement.
+3. A caliper is used to measure a component and ensure its width falls
+   between 9.9 cm and 10.1 cm. The caliper has total (95% conﬁdence) uncertainty
+   of 0.05 mm.
+References                                                                                     101
+
+
+References
+
+ANSI/NCSLI Z540.3: Requirements for the calibration of measuring and test equipment (2006)
+Basnet, C., Case, K.E.: The effect of measurement error on accept/reject probabilities for
+   homogeneous products. Qual. Eng. 4(3), 383–397 (1992)
+Bhise, V., Rajan, S., Sittig, D., Morgan, R., Chaudhary, P., Singh, H.: Deﬁning and measuring
+   diagnostic uncertainty in medicine: a systematic review. J. Gen. Intern. Med. 33(1), 103–115
+   (2018)
+Castrup, H.: Estimating bias uncertainty. NCSL Workshop and Symposium,
+   Washington D.C. (2001)
+Cividino, S., Egidi, G., Zambon, I., Colantoni, A.: Evaluating the degree of uncertainty of
+   research activities in Industry 4.0. Future Internet. 11, 196 (2019)
+Deaver, D.: How to maintain your conﬁdence. Proceedings of the NCSL Workshop and
+   Symposium, Washington D.C. (1993)
+Deaver, D.: Guardbanding with conﬁdence. In: Proceedings of the NCSL Workshop and
+   Symposium, Albuquerque, NM (1994)
+Deaver, D.: Managing calibration conﬁdence in the real world. In: Proceedings of the NCSL
+   Workshop and Symposium, Dallas, TX (1995)
+Delker, C. J.: Evaluating risk in an abnormal world: how arbitrary probability distributions
+   affect false accept and false reject. In: Proceedings of the NCSLI Workshop and Symposium,
+   Aurora, CO (2020)
+Dobbert, M.: Understanding measurement risk. Proceedings of the NCSL International Workshop
+   and Symposium, St. Paul, MN (2007)
+Dobbert, M.: A guard-band strategy for managing false-accept risk. In: Proceedings of the NCSL
+   International Workshop and Symposium, Orlando, FL (2008)
+Easterling, R., Johnson, M., Bement, T., Nachtsheim, J.: Statistical tolerancing based on
+   consumer’s risk considerations. J. Qual. Technol. 23(1), 1–11 (1991)
+Harben, J., Reese, P.: Risk mitigation strategies for compliance testing. NCSLI Meas. 7(1), 38–49
+   (2012)
+Hund, L.B., Campbell, D.L., Newcomer, J.T.: Statistical guidance for setting product speciﬁcation
+   limits. In: Proceedings of the IEEE Annual Reliability and Maintainability Symposium (2017)
+IEC 31010: Risk management – Risk assessment techniques (2009)
+ISO 10576-1: Statistical methods – Guidelines for the evaluation of conformity with speciﬁed
+   requirements (2013)
+ISO 14253-1: Geometrical product speciﬁcations (GPS) – Inspection by measurement of
+   workpieces and measuring equipment (2017)
+Jackson, D.: A surprising link between measurement decision risk and calibration interval analysis.
+   In: Proceedings of the NCSLI Workshop and Symposium, Cleveland, OH (2019)
+JCGM 106: Evaluation of measurement data - The role of measurement uncertainty in conformity
+   assessment (2012)
+Kim, J.Y., Byung, R.C., Kim, N.: Economic design of inspection procedures using guard band
+   when measurement errors are present. Appl. Math. Model. 31(5), 805–816 (2007)
+Mimbs, S.M.: Measurement decision risk - The importance of deﬁnitions. In: Proceedings of
+   the NCSLI Workshop and Symposium, St. Paul, MN (2007)
+Mimbs, S.M.: Using reliability to meet Z540.3’s 2% rule. In: Proceedings of the NCSL Workshop
+   and Symposium, National Harbor, MD (2011)
+Mottonen, M., Belt, P., Harkonen, J., Haapasalo, H., Kess, P.: Manufacturing process capability
+   and speciﬁcation limits. Open Ind. Manuf. Eng. J. 1, 29–36 (2008)
+National Conference of Calibration and Standards Laboratories International: Handbook for
+   Application of ANSI/NCSL Z540.3-2006 (2009)
+National Conference of Calibration and Standards Laboratories International: Recommended
+   Practice 18 - Estimation and Evaluation of Measurement Risk (2014)
+

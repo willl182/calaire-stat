@@ -1,0 +1,660 @@
+Chapter 7
+Analytical Methods for the Propagation
+of Uncertainties
+
+
+
+
+7.1 Introduction
+
+This chapter presents analytical methods for propagating uncertainties through an
+indirect measurement model. The method was ﬁrst introduced by Carl Gauss in the
+1820s (Gauss 1821), and was further developed by Kline and McClintock (1953). In
+1995, the Joint Committee for Guides in Metrology standardized the method using it
+as the basis for its GUM (JCGM 100 2008), so the technique is often referred to as
+the GUM method for uncertainty propagation.
+   Given an indirect measurement model, the measurand is a function of multiple
+measured values:
+
+                                   Y ¼ f ðX 1 , X 2 , . . . , X N Þ,                 ð7:1Þ
+
+where the inputs X1, X2, . . ., XN are the physical quantities to be measured and the
+function f relates the measurands to the output quantity Y. As an example, the output
+quantity Y could represent the density of a cylinder, while X1, X2, and X3 are
+quantities of mass, diameter, and height, and f is the functional relationship between
+the quantities (density ¼ mass/volume).
+   An estimate of Y, denoted y, is determined by making measurements—or esti-
+mates—of each quantity. These estimates are denoted x1, x2, . . ., xN (see GUM Sect.
+4.1.4). Then y is computed using y ¼ f(x1, x2, . . .xn). The input estimates are often the
+average of multiple independent measurements on the same quantity. Each input
+estimate has an associated standard uncertainty estimate u(xi), computed from Type
+A and Type B uncertainty components as described in Chap. 6. Continuing the
+                                                                               4m
+density example, an estimate of cylinder density is y ¼ ρ ¼ f ðm, d, hÞ ¼ πhd     2 , where
+
+m, d, and h are the average measured values of mass, diameter, and height,
+respectively.
+   The remainder of this section considers how to determine uc( y), the combined
+standard uncertainty in the output estimate y. For a small subset of problems, uc( y)
+
+
+© Springer Nature Switzerland AG 2020                                                  131
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_7
+132                              7 Analytical Methods for the Propagation of Uncertainties
+
+
+can be calculated exactly, but in most cases, the method makes an approximation to
+linearize the measurement function. A derivation of the uncertainty expression
+introduced in Chap. 6 (Eq. 6.34) assumes the measurement model can be linearly
+approximated and the inputs are uncorrelated. The correlated terms are then retained
+in the uncertainty derivation. Finally, the case where nonlinear terms in the mea-
+surement model become signiﬁcant is examined.
+
+
+
+
+7.2 Mathematical Basis
+
+This section reviews several important properties of the sums of random variables.
+These results will be used, along with a Taylor series approximation of Eq. (7.1), to
+estimate the combined uncertainty of any arbitrary measurement equation.
+    First, deﬁne E(∙) as the expectation operator, Var(∙) as the variance operator, and
+Cov(∙, ∙) as the covariance operator for random variables (see Casella and Berger
+2002). The expectation is simply the weighted average of a probability distribution,
+the variance Var(X) ¼ E(X E(X))2 is a measure of spread of the distribution, equal
+to the square of the standard deviation, and the covariance is a measure of the
+strength of the relationship between two random variables. If X1, X2, . . ., XN are
+random variables (see GUM C.2.2) and a1, a2, . . ., aN are constants, then some useful
+properties of expectation and variance are:
+
+                                EðX þ aÞ ¼ EðX Þ þ a
+                                      EðaX Þ ¼ aE ðX Þ
+                           E ðX 1 þ X 2 Þ ¼ E ðX 1 Þ þ EðX 2 Þ
+                                VarðX þ aÞ ¼ VarðX Þ
+                                VarðaX Þ ¼ a2 VarðX Þ
+               VarðX 1 þ X 2 Þ ¼ VarðX 1 Þ þ VarðX 2 Þ þ 2CovðX 1 , X 2 Þ
+
+   The above properties can be combined and generalized to multiple random
+variables:
+                                               !
+                                N
+                                X                      N
+                                                       X
+                            E         ai X i       ¼         ai EðX i Þ,
+                                i¼1                    i¼1
+
+
+and
+7.3 The Simple Case: First-Order Terms with Uncorrelated Inputs                                           133
+
+                            !
+             N
+             X                      N
+                                    X                             N 1 X
+                                                                  X   N
+       Var         ai X i       ¼         a2i VarðX i Þ þ 2                       ai a j Cov X i , X j   ð7:2Þ
+             i¼1                    i¼1                            i¼1    j¼iþ1
+
+
+   If the Xi0s are uncorrelated, the covariance terms are 0, and Eq. (7.2) reduces to
+                                                          !
+                                          N
+                                          X                       N
+                                                                  X
+                                Var              ai X i       ¼         a2i VarðX i Þ                    ð7:3Þ
+                                           i¼1                    i¼1
+
+
+    To determine the expectation and variance of an indirect measurand Y, one must
+ﬁnd the expected value of Y, E(Y ) ¼ E[f(X1, X2, . . ., XN)], and the variance of Y, Var
+(Y ) ¼ Var[f(X1, X2, . . ., XN)]. For example, consider a model that converts measure-
+ments units such as meters to centimeters: f(X) ¼ aX. Using 7.3 the variance of f(X)
+is a2Var(X) ¼ a2u2(x). Therefore, the uncertainty of the converted value is the
+uncertainty of the measurement of x in original units multiplied by the units
+conversion factor a.
+    Equations (7.2) and (7.3) allow for ﬁnding the expectation and variance of a
+measurement model consisting of a linear combination of variables, such as simple
+shifting ( f(X) ¼ X + a), scaling ( f(X) ¼ aX), or adding multiple scaled variables ( f
+(X1, X2) ¼ a1X1 + a2X2). In these cases, an exact variance is computed. Of course,
+most measurement models do not fall into one of these simple linear combinations,
+so approximation of more complex measurement equations must be considered. The
+simplest approximate case uses a linear approximation of the nonlinear model with
+uncorrelated variables, considered in Sect. 7.3.
+
+
+
+
+7.3 The Simple Case: First-Order Terms with Uncorrelated
+    Inputs
+
+The previous section considered propagating uncertainty for linear combinations of
+multiple measurements. Most measurement models, however, will be nonlinear. The
+approach for an arbitrary (nonlinear) measurement equation Y ¼ f(X1, X2) is to
+approximate the equation with a ﬁrst-order (linear) Taylor series expansion. The
+derivation of the estimated combined standard uncertainty uc( y) uses u2(xi) to
+represent an estimate of Var(Xi) and u(xi, xj) to represent an estimate of Cov(Xi,
+Xj). The “realization” or “estimate” of the random variable Xi is denoted by xi,and the
+estimate of the measurand Y is denoted by y.
+   Expanding about the input variables’ respective means, μX 1 and μX 2 , the ﬁrst-
+order approximation takes the form:
+7.3 The Simple Case: First-Order Terms with Uncorrelated Inputs                                         135
+
+
+where k ¼ tp(νeff) is computed from the t-distribution with conﬁdence level p and
+effective degrees of freedom νeff. The Welch–Satterthwaite approximation can be
+used to calculate νeff:
+
+                                                         u4c ðyÞ
+                                          νeff ¼
+                                                   P ðci uðxi ÞÞ4
+                                                   N                                                  ð7:9Þ
+                                                   i¼1        νi
+
+   Here, the ci variables are the “sensitivity coefﬁcients,” which are simply short-
+                                                                 ∂f
+hand for the partial derivative terms computed previously: ci ¼ ∂x  i
+                                                                      .
+
+
+
+
+7.3.1 Measurement Examples
+
+Consider measuring the density of a cylinder. The mass (m), diameter (d ), and height
+(h) are measured, and the density found from the measurement equation:
+
+                                                          m
+                                                ρ¼            2                                     ð7:10Þ
+                                                     π d2 h
+
+
+# Measurement equation
+rho <- function(m, h, d) {m/(pi*(d/2)^2*h)}
+
+   The measured m, h, and d values, and their standard uncertainties u(m), u(h), and
+u(d ) are all known from the measurement results and setup (Table 7.1).
+
+# Mean values and uncertainties for variables
+m <- c(5.0, 0.001)
+h <- c(2.0, 0.005)
+d <- c(0.5, 0.005)
+
+   Applying Eq. (7.7), the expression for the combined variance in density is
+
+                                      2                           2                2
+                                ∂ρ                ∂ρ                          ∂ρ
+                u2c ðρÞ ¼                 2
+                                          u ðmÞ þ                     2
+                                                                      u ðhÞ þ          u2 ðdÞ       ð7:11Þ
+                                ∂m                ∂h                          ∂d
+
+   The sensitivity coefﬁcients (denoted as cx) are:
+
+Table 7.1 Measured values            Variable                             Mean                  Uncertainty
+and uncertainties of cylinder
+                                     m                                    5.0 g                 0.001 g
+density determination
+                                     h                                    2.0 cm                0.005 cm
+                                     d                                    0.5 cm                0.005 cm
+7.4 First-Order Terms with Correlated Inputs                                         137
+
+
+   If all the measurement uncertainties have inﬁnite degrees of freedom, k ¼ 1.96
+gives a 95% conﬁdence interval, and the density is
+
+                   ρ ¼ 12:73g=cm3        0:52g=cm3 ð95%, k ¼ 1:96Þ:               ð7:15Þ
+
+
+#95% Conﬁdence interval
+k <- qnorm((1 - (.05/2)))
+confInt <- k * uComb
+confInt
+## [1] 0.5030096
+
+    To identify the variable that is the biggest contributor to total uncertainty, we
+compute the proportion of the total variance that comes from each variable via the
+          c2 u2 ðxÞ
+formula: xu2 ðyÞ    100%:
+             c
+    For this example, u(m) contributes 0.01%, u(h) contributes 1.54%, and u(d ) con-
+tributes 98.45% of the total uncertainty. If the goal is to reduce the total uncertainty,
+the focus should be on improving the uncertainty in the diameter measurement.
+
+# Proportion of Variance
+umProp <- um^2/uComb^2
+umProp
+## [1] 9.845184e-05
+
+uhProp <- uh^2/uComb^2
+uhProp
+## [1] 0.0153831
+
+udProp <- ud^2/uComb^2
+udProp
+## [1] 0.9845184
+
+
+
+
+7.4 First-Order Terms with Correlated Inputs
+
+In the previous derivation, the covariance term was set to 0 because the input
+variables were assumed to be uncorrelated. This is often not the case, so a complete
+derivation beginning with the Taylor series and retaining the covariance term is
+given here. Taking the same approach as the simple models in Sect. 7.3, f is
+approximated by the ﬁrst-order Taylor series:
+138                                              7 Analytical Methods for the Propagation of Uncertainties
+
+
+                                                     ∂f                           ∂f
+      Y ¼ f ðX 1 , X 2 Þ      f μX 1 , μX 2 þ             X1          μX 1 þ           X2       μX 2 :       ð7:16Þ
+                                                     ∂X 1                         ∂X 2
+
+   Applying Eq. (7.2) term by term (including the covariance term), the combined
+variance is
+
+                                                          ∂f                          ∂f
+         Var ðY Þ       Var        f μX 1 , μX 2 þ             X1          μX 1 þ          X2         μX 2
+                                                          ∂X 1                        ∂X 2
+                               ∂f                                        ∂f
+                    ¼ Var           X1             μX 1       þ Var           X2         μX 2
+                               ∂X 1                                      ∂X 2
+                                                                                                             ð7:17Þ
+                                    ∂f                                 ∂f
+                              þ2Cov      X1                     μX 1 ,      X2          μX 2    ,
+                                    ∂X 1                               ∂X 2
+
+with all other variance and covariance terms equal to 0. This expression yields the
+following estimated combined variance, recalling that u(x1, x2) represents an esti-
+mate of the covariance of X1 and X2:
+
+                              2                           2
+                     ∂f                     ∂f                                 ∂f ∂f
+        u2c ðyÞ ¼                  2
+                                  u ðx1 Þ þ                   u 2 ð x2 Þ þ 2           uðx1 , x2 Þ:          ð7:18Þ
+                     ∂x1                    ∂x2                                ∂x1 ∂x2
+
+   This result can also be generalized to any number of input variables as
+
+                        N
+                        X               2                  N 1 X
+                                                           X   N
+                                  ∂f                             ∂f ∂f
+            u2c ðyÞ ¼                        2
+                                            u ðxi Þ þ 2                               u xi , x j :           ð7:19Þ
+                        i¼1
+                                  ∂xi                      i¼1     j¼iþ1
+                                                                           ∂xi ∂x j
+
+    Note that when the covariance for all combinations of inputs is zero, this reduces
+to the expression found in Sect. 7.2 (Eq. 7.7).
+
+
+
+7.4.1 Covariance, Correlation, and Effect on Uncertainty
+
+It is often easier to work in terms of a correlation coefﬁcient (Eq. 4.4) than a
+covariance. The correlation coefﬁcient always ranges from 1 to +1, with
+uncorrelated values having a coefﬁcient of 0. To convert covariance into correlation
+r(xi, xj), use
+
+                                                               u xi , x j
+                                        r xi , x j ¼                      :                                  ð7:20Þ
+                                                              uðxi Þu x j
+
+   Some common cases of correlated inputs occur when two quantities in the model
+are measured using the same piece of equipment, when temperature affects two or
+7.4 First-Order Terms with Correlated Inputs                                       139
+
+
+more measurements assuming the measurements are made at the same temperature,
+or when multiple measurements are made simultaneously (as in the resistance
+example in Sect. 7.4.2). In many cases, the correlation is insigniﬁcant, but it can
+also be difﬁcult to quantify. One technique is to take multiple measurements of the
+same sample and estimate the correlation between each input using the sampled data
+(Eq. 4.4). In some cases, for example, with temperature correlations, it may be easier
+to include temperature as an independent variable in the model itself rather than
+trying to determine a correlation coefﬁcient between the other variables.
+   Correlated variables do not necessarily make the total uncertainty higher or lower.
+The direction of change due to correlation depends entirely on the sign of the
+sensitivity coefﬁcient and the sign of the correlation coefﬁcient. Consider measure-
+ments of electrical resistance using the model R ¼ V/I. Applying Eq. (7.18) to this
+expression and computing the partial derivatives, it is easy to show that the constant
+multiplier in the covariance term of the uncertainty expression is (2V/I3). Voltage
+and current always have the same sign in this situation, so a positive covariance
+always decreases the total uncertainty. However, if the same measurements were
+used to determine electrical power using the model P ¼ IV, the multiplier in the
+covariance term is 2IV,and a positive covariance increases the total uncertainty.
+
+
+
+7.4.2 Measurement Examples
+
+Semiconductor nanowires are grown by a Vapor–Liquid–Solid method in a furnace
+under tightly controlled conditions of temperature, pressure, and atmospheric com-
+position. To use a very simpliﬁed model of the complex chemistry of nanowire
+growth, material properties of the nanowires, such as electrical resistivity, depend on
+the furnace conditions, while the length and diameter dimensions depend on the
+amount of time spent in the furnace. Because both length and diameter depend on
+time, these variables are correlated.
+   The expected resistance of a batch of nanowires can be calculated using the
+resistivity (ρ), length (L), and diameter (d ):
+
+                                               4ρL
+                                        R¼                                      ð7:21Þ
+                                                d2
+
+
+# Measurement equation
+R <- function(rho, L, d) {(4*rho*L)/d^2}
+
+   The furnace has been well characterized, so for a given process the resistivity is
+known to be 9.6 10 5 Ω-m with uncertainty of 2.0 10 6 Ω-m. After growing a
+batch of wires using this process, 20 wires were sampled and the dimensions
+measured to be d ¼ 180 nm 20 nm and L ¼ 5.2 μm 0.20 μm (all k ¼ 1 standard
+142                                     7 Analytical Methods for the Propagation of Uncertainties
+
+
+which gives a 95% conﬁdence k-factor of 2.16. Therefore, the expected resistance
+for this batch of nanowires, to 95% conﬁdence, reported to the typical 2 signiﬁcant
+ﬁgures in uncertainty, is
+
+                           R ¼ 62 kΩ          27 kΩ ð95%, k ¼ 2:16Þ:                     ð7:26Þ
+
+
+# Value of R
+Rval <- R(rho = rho[1], L = L[1], d = d[1])
+Rval
+## [1] 61629.63
+#95% Conﬁdence interval
+k <- qt((1 - (.05/2)), 13)
+confInt <- k * uCombCorr
+confInt
+## [1] 26746.73
+
+
+
+
+7.5 Higher-Order Terms with Uncorrelated Inputs
+
+The analytical method discussed so far uses a ﬁrst-order Taylor series approximation
+of the measurement function. This assumes that the function can be modelled
+linearly in the region of interest (near the mean values of the measurands).
+    What does it mean to be nonlinear in this sense? Consider the model f(x) ¼ ex
+shown in Fig. 7.1. On the left side, a small x uncertainty is given. Over a small range
+like this, the exponential can be treated as linear without introducing signiﬁcant
+error. On the right side, x has a much larger uncertainty, and a linear approximation
+is no longer sufﬁcient to cover the entire range of possible f(x) values. Any function
+can be approximated as linear if the uncertainties are small enough. Unfortunately, it
+is difﬁcult to know beforehand whether this is true for a particular case without
+calculating the nonlinear effects and comparing to the required number of signiﬁcant
+digits.
+    To include nonlinear effects in the uncertainty expression, a higher-order Taylor
+series can be used. Here the second-order terms of the approximation are included
+for two input variables:
+
+                                                ∂f                  ∂f
+      Y ¼ f ðX 1 , X 2 Þ   f μX 1 , μX 2 þ          X1     μX 1 þ        X2    μX 2
+                                               ∂X 1                 ∂X 2
+                  2
+               1∂ f                 2       ∂f ∂f
+           þ           X     μX 1       þ             X1    μX 1   X2   μX 2             ð7:27Þ
+               2 ∂X 21 1                    ∂X 1 ∂X 2
+                  2
+             1∂ f                   2
+           þ         X       μX 2
+             2 ∂X 22 2
+144                                        7 Analytical Methods for the Propagation of Uncertainties
+
+
+                  N              2                   N       N            2        2
+                  X        ∂f                  1 XX       ∂f
+      u2c ðyÞ ¼                       2
+                                     u ðxi Þ þ                                         u2 ðxi Þu2 x j
+                  i¼1
+                           ∂xi                 N i¼1 j¼1 ∂xi ∂x j
+                                                                          N
+                                                                          X     3
+                                                                            ∂f ∂ f
+                                                                      þ                     u4 ðxi Þþ
+                                                                          i¼1
+                                                                              ∂xi ∂x3i                      ð7:29Þ
+                                                                                                  !2
+           XN  N
+               X  2                        2                              N   2
+                 ∂ f ∂f                         2        2             1 X∂ f 2
+                                               u ð xi Þ u x j        þ            u ðxi Þ
+           i¼1
+                 ∂x2i ∂x j                                             4 i¼1 ∂x2i
+                   j¼1
+                  j 6¼ i
+
+   Because of the complexity of these formulas, the need for higher-order partial
+derivatives, and the ignoring of correlated variables, it is often easier to use numer-
+ical approaches such as Monte Carlo methods described in Chap. 8 to account for
+nonlinearities in the measurement model.
+
+
+
+
+7.5.1 Measurement Examples
+
+Returning to the density measurement example, the same cylinder was measured
+using different equipment. Because of the larger uncertainties in this equipment, it is
+suspected that the linearity assumption may no longer be valid (Table 7.2).
+
+                                                             m
+                                                    ρ¼           2                                          ð7:30Þ
+                                                         π d2 h
+
+   Following the same calculation as in Sect. 7.3.1, using the ﬁrst-order uncertainty
+expression, and assuming all variables are independent, the density (k ¼ 1) is
+
+                                     ρ ¼ 12:7g=cm3               2:57g=cm3                                  ð7:31Þ
+
+   Applying the GUM’s expression of nonlinear uncertainty (Eq. 7.28) adds in the
+higher-order terms:
+
+
+
+
+Table 7.2 Cylinder density             Variable                           Mean                          Uncertainty
+measurement values using
+                                       m                                  5.0 g                         0.01 g
+different equipment
+                                       h                                  2.0 cm                        0.05 cm
+                                       d                                  0.5 cm                        0.05 cm
+7.6 Multiple Output Quantities                                                            145
+
+
+                                16                16m2 2             64m2 2
+               u2c,2 ðρÞ ¼             u2
+                                          ðm Þ þ           u ðh Þ þ            u ðd Þ
+                             π 2 d4 h2           π 2 d4 h4          π 2 d 6 h2
+                                                                16
+                                                           þ 2 4 4 u2 ðhÞu2 ðmÞ
+                                                             π d h
+                                           32m2 4         64
+                                      þ    2 4 6
+                                                 u ðhÞ þ 2 6 2 u2 ðdÞu2 ðmÞ             ð7:32Þ
+                                          π d h         π d h
+                                    64m2 2            2        288m2 4
+                                       þ      u ð d Þu  ðh Þ þ            u ðd Þ
+                                   π 2 d 6 h4                  π 2 d 8 h2
+                        96m             96m                      480m
+                      þ 2 5 u4 ðhÞ þ 4 3 u2 ðdÞu2 ðhÞ þ 6 u4 ðd Þ
+                       πd h            πd h                      πd h
+
+which simpliﬁes to a density of
+
+                                ρ ¼ 12:7g=cm3          2:65g=cm3                        ð7:33Þ
+
+   Note that this result is only a slightly different uncertainty than using the ﬁrst-
+order approximation, but it is a slightly better approximation to the true uncertainty.
+Using the even more complete expression in Wang and Iyer (2005) (Eq. 7.29) results
+in a density of
+
+                                ρ ¼ 12:7g=cm3          2:72g=cm3 :                      ð7:34Þ
+
+   In theory, one could keep adding terms to the Taylor expansion until the resulting
+combined uncertainty did not change within the reported signiﬁcant digits. If the
+above results were rounded and reported to the typical two signiﬁcant digits, adding
+the additional terms of the Wang and Iyer method would not change the result
+compared to the GUM method.
+
+
+
+7.6 Multiple Output Quantities
+
+Occasionally, a measurement model will result in multiple output quantities based
+on the same set of input measurements. One common example is encountered in
+microwave measurements, where the real and imaginary components of a complex-
+valued microwave signal are input to a measurement model that results in magnitude
+and phase as outputs. Other examples include measurement of voltage and current
+used to calculate both resistance and power, or a set of Coordinate Measuring
+Machine (CMM) measurements used to compute both the lengths and angle of
+intersection of two components.
+   Cases with multiple output quantities, dealt with extensively in JCGM
+102 (2011), result in an “uncertainty region” in multiple dimensions, rather than
+the simple one-dimensional “plus or minus” uncertainty region evaluated previously
+146                               7 Analytical Methods for the Propagation of Uncertainties
+
+
+in this chapter. Part of a full solution of a multiple output uncertainty evaluation is
+determining the joint probability between the multiple outputs in order to fully deﬁne
+the region of uncertainty.
+   In the bivariate case, the joint PDF of the resulting uncertainty calculation can be
+described by a bivariate normal distribution that deﬁnes an ellipse. A bivariate
+normal PDF requires the mean values of the two output quantities y1 and y2 and
+their covariance matrix Uy. Deﬁning Ux as the covariance matrix of the input
+measurements, the sensitivity matrix
+                                        2                   3
+                                        ∂f1            ∂f1
+                                      6 ∂X             ∂X 2 7
+                                      6 1                   7
+                                 Cx ¼ 6                     7                      ð7:35Þ
+                                      4 ∂f2            ∂f2 5
+                                             ∂X 1      ∂X 2
+
+with the partial derivatives evaluated at the measured values Xi ¼ xi, the covariance
+matrix of the two output quantities is given by
+                                             "                               #
+                                                  u2 ðy1 Þ     uðy1 , y2 Þ
+                      U y ¼ C x U x C Tx ¼                                         ð7:36Þ
+                                                 uðy1 , y2 Þ    u2 ðy2 Þ
+
+   These matrices can be expanded to any number of output quantities.
+
+
+
+
+7.7 Limitations of the Analytical Approach
+
+The analytical approach to uncertainty propagation has its limitations. Except for a
+few very simple cases (those described in Sect. 7.2), the solution is an approximation
+based on a Taylor series expansion. It is not obvious when nonlinearities in the
+model will become signiﬁcant, requiring use of higher-order terms. The solutions all
+require ﬁnding partial derivatives of the measurement model, which in some cases
+can be difﬁcult or impossible to solve analytically.
+   Another limitation is the normality assumption. All input variables are deﬁned by
+their mean and standard deviation, regardless of their actual distribution. Any
+information about a distribution (e.g., uniform or triangular) is lost after converting
+to a standard deviation as described in Sect. 6.3. As such, the distribution of the
+function’s output will always be treated as a normal distribution, deﬁned by a mean
+and standard deviation.
+   Finally, using the W-S formula to determine effective degrees of freedom and an
+expanded uncertainty is only justiﬁed when the model is ﬁrst-order with uncorrelated
+inputs. For these reasons, the Monte Carlo method described in Chap. 8 is often used
+in parallel with this section’s analytical methods to help conﬁrm the results.
+7.9 Exercises                                                                      147
+
+
+7.8 Related Reading
+
+The paper by Kline and McClintock (1953), and the follow-up paper by Kline
+(1985), on which the uncertainty propagation methods described in this chapter
+are based, is recommended reading simply for historical reasons. NIST published
+Technical Note 1297 (Taylor and Kuyatt 1994) which provides additional guidance
+on using the GUM method and expressing the results. NIST Technical Note 1900
+(Possolo 2015) provides many practical examples demonstrating use of the GUM
+uncertainty methods.
+   The GUM (JCGM 2008), also released as ISO/IEC Guide 98-3:2008, is the
+industry standard for guidance on uncertainty propagation, covering many additional
+aspects of uncertainty analysis. ISO 21748:2017 provides guidance for evaluating
+uncertainty due to repeatability and reproducibility in experimental measurements.
+NCSLI’s recommended practice RP-12 National Conference of Calibration and
+Standards Laboratories International (1995) provides additional recommendations
+on how to practically implement uncertainty calculations. Suggestions include
+methods of identifying sources of uncertainty in a measurement, selecting appropri-
+ate probability distributions, and choosing a coverage factor.
+   Hall and Willink (2001) investigate the Welch–Satterthwaite approximation and
+when it does or does not apply. Work on adapting the W-S approximation for
+correlated uncertainties is ongoing in Castrup (2010), Wang and Iyer (2005), Ballico
+(2000), Willink (2007), and Kuster (2013). Some other shortcomings of the GUM
+uncertainty method, such as additional correlation effects and nonlinearities, are
+explored in detail in Rabinovich (2005).
+
+
+
+7.9 Exercises
+
+1. Use the GUM uncertainty formula (Eq. 7.7) to ﬁnd an expression for the standard
+   uncertainty in:
+   (a) f ¼ x
+   (b) f ¼ x + y
+   (c) f ¼ x + y + z
+   Given uncertainties u(x), u( y), and u(z) and assuming x, y, and z are independent
+   (uncorrelated). Write a general expression for uncertainty in f ¼ ∑ xi with
+   uncertainties u(xi).
+2. Use the GUM uncertainty formula (Eq. 7.7) to compute the standard uncertainty
+   in f(x) ¼ cx, where c is a constant with no uncertainty. Apply the result to ﬁnd the
+   uncertainty in kilograms of a mass is given as 355 g with uncertainty 5.2 g.
+3. Find an expression for the uncertainty in f(x, y) ¼ x2 + y. Then solve for:
+   (a) x ¼ 4, y ¼ 3, u(x) ¼ 0.4, u( y) ¼ 0.15,
+   (b) x ¼ 4, y ¼ 3, u(x) ¼ 10%, u( y) ¼ 5%.
+References                                                                                      151
+
+
+References
+
+Ballico, M.: Limitations of the Welch-Satterthwaite approximation for measurement uncertainty
+   calculations. Metrologia. 37(1), 61–64 (2000)
+Casella, G., Berger, R.L.: Statistical Inference, 2nd edn. Duxbury, Paciﬁc Grove, CA (2002)
+Castrup, H.: A Welch-Satterthwaite relation for correlated errors. In: Measurement Science Con-
+   ference, Pasadena, CA (2010)
+Gauss, C.F.: Theoria combinationis observationum erroribus minimis obnoxiae. Carl Friedrich
+   Gauss Werke. 4, 95–100 (1821)
+Hall, B.D., Willink, R.: Does Welch-Satterthwaite make a good uncertainty estimate? Metrologia.
+   38, 9–15 (2001)
+ISO 21748: Guidance for Use of Repeatability, Reproducibility, and Trueness Estimates in Mea-
+   surement Uncertainty and Evaluation. (2017)
+JCGM 100: Evaluation of Measurement Data - Guide to the Expression of Uncertainty in Mea-
+   surement. (2008)
+JCGM 102: Evaluation of Measurement Data - Supplement 2 to the - Guide to the Expression of
+   Uncertainty in Measurement - Extension to any Number of Output Quantities. (2011)
+Kline, S. J., McClintock, F. A.: Describing uncertainties in single sample experiments. Mech. Eng.,
+   75 3–8 (1953)
+Kline, S.J.: The purposes of uncertainty analysis. J. Fluids Eng. 107, 153–160 (1985)
+Kuster, M.: Applying the Welch-Satterthwaite formula to correlated errors. NCSLI Meas. 8(1),
+   42–55 (2013)
+National Conference of Calibration and Standards Laboratories International: Recommended
+   Practice 12 - Determining and Reporting Measurement Uncertainties. (1995)
+Possolo, A.: Simple guide for evaluating and expressing the uncertainty of NIST measurement
+   results. https://doi.org/10.6028/NIST.TN.1900 (2015). Accessed 29 Apr 2020
+Rabinovich, S.G.: Measurement Errors and Uncertainties, 3rd edn. Springer, New York, NY (2005)
+Taylor, B.N., Kuyatt, C.E.: Guidelines for evaluating and expressing the uncertainty of NIST
+   measurement results. NIST Technical Note 1297. National Institute of Standards and Technol-
+   ogy, Gaithersburg, MD (1994)
+Time and Frequency from A to Z. https://www.nist.gov/pml/time-and-frequency-division/popular-
+   links/time-frequency-z (2010). Accessed 29 Apr 2020
+Walkup, N.: Eratosthenes and the mystery of the Stades. Mathematical Association of America.
+   https://www.maa.org/press/periodicals/convergence/eratosthenes-and-the-mystery-of-the-
+   stades-introduction (2005). Accessed 29 Apr 2020
+Wang, C.M., Iyer, H.K.: On higher-order corrections for propagating uncertainties. Metrologia. 42,
+   406–410 (2005)
+Willink, R.: A generalization of the Welch-Satterthwaite formula for use with correlated uncertainty
+   components. Metrologia. 44, 340–349 (2007)
+Zuckerwar, A.J.: Handbook of the Speed of Sound in Real Gasses. Academic Press, San Diego, CA
+   (2002)
+

@@ -1,0 +1,674 @@
+Chapter 9
+Design of Experiments in Metrology
+
+
+
+
+One of the topics that has received relatively little attention in the metrology
+literature is the statistical design of experiments (DOEx). A premise of statistical
+DOEx is that efﬁciency is paramount in terms of the resources (cost, time, personnel,
+equipment, etc.. . .) used to perform an experiment. In the case of metrology studies,
+individual runs in an experiment may be very costly, and the experiment must be
+designed in such a way that information regarding the measurement process is
+obtained efﬁciently. In this chapter we present a variety of experimental designs
+and approaches to efﬁciently developing, evaluating, and optimizing a measurement
+process.
+
+
+
+
+9.1 Introduction
+
+Metrology experiments will typically be used in the design and optimization of a
+new measurement process or in the evaluation of an existing measurement process.
+To design and optimize a new measurement process, factorial and fractional factorial
+designs (DOEx) will often be used to identify factors and quantify their effect on the
+measurement. To evaluate an existing measurement process, an analysis of variance
+(ANOVA) approach will often be used to estimate sources of variation that affect the
+measurement. In this chapter the basics of these types of designs are presented along
+with case studies to illustrate the approach. The strategies for experimental design
+presented here will rely on historical knowledge of the measurement process, careful
+determination of the objectives of the experiment, and sample size considerations
+to guide the choice of experimental design.
+
+
+
+
+© Springer Nature Switzerland AG 2020                                             181
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_9
+182                                                         9 Design of Experiments in Metrology
+
+
+9.2 Factorial Experiments in Metrology
+
+Section 6.4 introduced the notion of an indirect measurement as a measurement
+in which the value of the measurand is functionally related to the values of other
+measured variables. The measurement equation was represented by (Eq. 6.29):
+
+                                 y ¼ f ðX 1 , X 2 , . . . , X N Þ:
+
+  Following the approach for indirect measurements presented in Chap. 6, the
+measurement equation is approximated via the Taylor series expansion:
+
+            y ¼ f ðX 1 , X 2 , . . . , X N Þ ﬃ β0 þ β1 X 1 þ β2 X 2 þ . . . þ βN X N
+                                                N
+                                                X
+                                     ¼ β0 þ            βi X i :                           ð9:1Þ
+                                                 i¼1
+
+
+   In this relationship, the input variables, the Xis, are the sources of variation
+affecting the measurand. The coefﬁcients, the βi0s, correspond to the partial
+derivatives from the Taylor series expansion (see Eq. 6.34). In some cases, the
+form of f will not be well known and must be determined experimentally. The DOEx
+approach can be used to efﬁciently identify input variables and determine the
+relationship between the measurand and the identiﬁed variables. A vast literature
+exists on the topic of DOEx (see, for example, Box et al. 2005 and Montgomery
+2017), but little attention has been given to the use of DOEx in metrology. In
+metrology, the Xi0s may include physical quantities such as voltage, equipment
+factors, test setup factors, environmental factors, or human factors that may have
+an impact on the outcome of the measurement.
+   Factorial DOEx attempts to systematically identify important factors and
+interrelationships between factors and to quantify their effect on the measurand.
+The approach ﬁrst attempts to identify the important Xi0s and associated βi0s in
+Eq. (9.1). A second experiment may then be required to improve the estimates of
+the βi0s and to check for the presence of second order terms. This sequential approach
+to experimentation may often be more efﬁcient than a single large experiment.
+With results from a well-planned DOEx, the measurement process can be designed
+or optimized by reducing the effect of any variables that increase measurement
+uncertainty. The analysis may also point to improvements in equipment, materials,
+or procedures that reduce measurement uncertainty.
+   The sections that follow below outline a DOEx planning strategy for factorial
+experiments that we use in our work. The four basic steps are: (1) Select the
+appropriate measurand(s) and determine the objective of the experiment, (2) Select
+factors to be included in the experiment, (3) Select factor levels, and (4) Choose
+the design pattern. If the purpose of the experiment is to characterize an established
+measurement process, the methods of ANOVA that follow in Sect. 9.3 should be
+considered in addition to the factorial design strategy described in this section.
+9.2 Factorial Experiments in Metrology                                             183
+
+
+9.2.1 Deﬁning the Measurand and Objective
+      of the Experiment
+
+The ﬁrst step in any metrology experiment is to carefully deﬁne the measurand
+of interest. The deﬁnition of the measurand should include, in detail, how the
+measurement will be made, and any special physical conditions present during
+the taking of the measurement. The GUM speciﬁes that “the measurand should be
+deﬁned in sufﬁcient detail that any uncertainty arising from its incomplete deﬁnition
+is negligible in comparison with the required accuracy of the measurement.” This
+ﬁrst step in the DOEx process should also include a statement of the objective of
+the study. The objective could be to (1) identify a measurement equation including
+inputs and coefﬁcients, (2) optimize a measurement process given either a known
+or unknown measurement equation, or (3) perform an uncertainty analysis based
+on a known measurement equation.
+
+
+
+9.2.2 Selecting Factors to Incorporate in the Experiment
+
+Given a measurand and the objective of the experiment, the second step is to
+list all factors that might impact the measurement. Expert knowledge, previous
+experimental results, historical data analysis, literature research, brainstorming,
+cause and effect diagramming, etc. may be used to develop a list of potential factors.
+As an input to the measurement equation, each factor may itself be thought of as a
+measurand.
+    The next step is to determine which factors can be controlled experimentally.
+For each of the factors deemed controllable, it must be determined if the factor can be
+measurable with sufﬁcient accuracy. The possibility of interactions between factors
+and how that might impact the measurand should also be considered.
+    Finally, it must be determined how the factors will be handled during the
+experiment. The factors identiﬁed in the steps above could be controlled at
+various levels, held constant, left uncontrolled but monitored, or ignored during
+the experiment. Logistics, costs, and suspected impact will determine which of the
+potential factors will be carried forward into the metrology experiment.
+
+
+
+9.2.3 Selecting Factor Levels and Design Pattern
+
+Next, the factor levels and design pattern for the experiment should be chosen.
+Factorial design patterns under consideration should include full factorials, in which
+the experimental trials consist of all possible combinations of factor settings, and
+fractional factorials, in which the experimental trials consist of a carefully chosen
+subset of the corresponding full factorial design.
+184                                                    9   Design of Experiments in Metrology
+
+
+Table 9.1 Choosing type of design
+If the objective is                             Use this type of design
+Identify the important factors affecting a      Depending on the number of factors to be
+measurand. This information may be used to      investigated, a full factorial or fractional
+design a measurement process and identify the   factorial, usually with factors at two levels
+form of the resulting measurement equation
+Estimate coefﬁcients of a measurement equa-     Usually a full factorial with factors at two or
+tion and optimize the measurement process       three levels. Fewer factors than in the ﬁrst stage
+For an established measurement process, esti-   Factorial design or an ANOVA-based design
+mate components of variance and quantify        with a combination of random and ﬁxed factors
+measurement uncertainties                       in a crossed or nested classiﬁcation
+
+
+    The choice of factor levels and design pattern will depend on the objective of the
+experiment. Table 9.1 lists the most common objectives and the experimental plans
+that correspond to those objectives. After the type of design is determined, the low
+and high levels for each factor should be selected. Any theoretical relationships
+between the experimental factors and the measurand should be used to select
+physically meaningful levels. Levels for each factor could also be determined from
+previous experience with the same factors. The selected levels should be bold,
+yet meaningful, within the context of the measurement process being studied. For
+each qualitative factor, the levels are simply the different categories within that
+factor. For example, if the qualitative factor is “Operator,” the operators used in the
+experiment deﬁne the levels.
+    Based on the objective, the recommended choice of experimental design will
+be a full factorial, a fractional factorial, or an ANOVA-based design with random
+and possibly ﬁxed effects.
+    For a thorough discussion of the types of designs, models, and analyses
+associated with full factorial designs and mixed-level factorials, see Montgomery
+(2017). For two-level fractional factorials and second order designs, see Box et al.
+(2005), and for random and mixed effects models and estimation of variance
+components, see Searle and Gruber (2016).
+    The full factorial and fractional factorial design and analysis approach is
+illustrated with case studies that follow in Sects. 9.2.4 and 9.2.5. The random and
+ﬁxed effects design and analysis approach is illustrated with case studies that
+follow in Sects. 9.3.4 and 9.3.5.
+
+
+
+9.2.4 Analysis of CMM Errors via Design of Experiments
+      (24 Full Factorial)
+
+The ﬁrst case study demonstrates the design and analysis of a full factorial design.
+The experiment investigated the uncertainty of a coordinate measuring machine
+(CMM) contact probe measurement (Zhang, et al., 2002). The objective of the
+experiment was to quantify the uncertainty of the measurement with respect to
+several factors and to optimize use of the CMM.
+196                                               9 Design of Experiments in Metrology
+
+
+Conclusion
+Design of Experiments (DOEx) was used to analyze the uncertainty in a CMM’s
+contact probe measurement. In the absence of a pre-deﬁned measurement equation,
+a four-factor experiment was designed and performed to assess the effect of
+each factor on both the mean and standard deviation of the cylinder diameter
+measurement. The four factors included in the experiment were Sampling Speed,
+Part Size, Surface Form, and Probe Size. The objective of the experiment was
+to optimize use of the CMM in terms of minimizing uncertainty in the cylinder
+diameter measurements.
+   Analysis of the mean data showed that only Part Size and Surface Form impacted
+the mean cylinder diameter measurement. Both Sampling Speed and Probe Size
+did not affect the mean response, meaning that these factors did not introduce
+bias. Analysis of the standard deviations showed that only Surface Form and
+Probe Size impacted the standard deviation. Sampling Speed and Part Size did not
+affect the standard deviation, meaning these factors did not inﬂuence the uncertainty.
+The study indicated that the CMM performed better measuring smooth surface parts.
+When rough surface parts are measured, a larger probe size ﬁlters out the effects of
+the roughness, resulting in a smaller standard deviation. Depending on the intended
+use of the part, this may not be desired because it could mask the true condition of
+the part.
+   This experiment optimized use of the CMM in terms of these four factors, but it
+did not result in a formal uncertainty analysis. To perform a detailed uncertainty
+analysis, the CMM would be tested multiple times on multiple dimension using the
+optimal settings identiﬁed in this experiment. Both Type A and Type B uncertainties
+would be included in such a study. Methods for determining appropriate sample
+sizes for such an uncertainty study are detailed in Sect. 11.5.
+
+
+
+
+9.2.5 Finite Element Method (FEM) Uncertainty Analysis via
+      Design of Experiments (27–3 Fractional Factorial)
+
+The second case study demonstrates the design and analysis of a fractional
+factorial experiment. This experiment, taken from Fong et al. (2014), was part of
+an “uncertainty analysis of the ﬁnite element method-based solution of a proposed
+base design of a magnetic resonance imaging (MRI) RF coil.” Figures in the Fong
+et al. (2014) reference show the usage and dimensions of the birdcage coil investi-
+gated in this experiment.
+   The authors presented a “metrological approach” to the veriﬁcation and uncer-
+tainty quantiﬁcation of the FEM-based simulations by treating each simulation
+as a virtual experimental run. The response variable YC (the “measurand”) was a
+dimensionless quantity corresponding to the non-uniformity of the magnetic ﬁeld
+proﬁle produced by a run of the FEM code. The objective of the experiment was to
+identify the key factors affecting this non-uniformity measure. A second experiment,
+9.2 Factorial Experiments in Metrology                                                         205
+
+
+                                                 3
+                                                 X                3 X
+                                                                  X 3
+              YC ¼ f ðX 1 , X 2 , X 3 Þ ﬃ β0 þ         βi X i þ               βij X i X j :   ð9:5Þ
+                                                 i¼1              i¼1   j i
+
+
+   An analysis of this second order model would be used to optimize and ﬁnalize the
+RF Coil design. Once the design was ﬁnalized, a formal measurement uncertainty
+analysis could be performed using actual runs of the MRI imaging setup. Both
+Type A and Type B uncertainties would be included in such a study. Methods
+for determining appropriate sample sizes in an uncertainty study are detailed in
+Sect. 11.5.
+   The approach to fractional factorial designs presented here assumed all experi-
+mental factors were initially investigated at just two levels. In practice, fractional
+factorial designs may have factors with more than two levels, and factors with
+different numbers of levels. These more difﬁcult cases are discussed by Montgomery
+(2017), and Addelman and Kempthorne (1961), who have catalogued orthogonal
+fractional factorial designs that allow estimation of all main effects with a minimum
+number of experimental trials.
+
+
+
+
+9.2.6 Summary of Factorial DOEx Method
+
+Full factorial and fractional factorial designs can be used in the design and
+optimization of a new measurement process or in the evaluation of an existing
+measurement process. These designs will often be used to identify the most
+important factors and to quantify their effect on the measurement. The results of
+these experiments can also be used to optimize a measurement process. The premise
+of statistical DOEx is that the resulting experimental design will be efﬁcient in terms
+of the resources used to perform the study. Fractional factorial designs in particular
+provide an efﬁcient framework for the investigation of many factors in a minimum
+number of experimental trials.
+   The design pattern and sample sizes for factorial and fractional factorial designs
+will depend on the number of factors, resolution of the design, and the desired
+precision in estimating repeatability. The degrees of freedom for repeatability
+will depend on the number of replicates of each experimental trial. The resolution
+must be chosen so that the important main effects and interactions can be estimated
+without serious confounding. Once the resolution of the design and the design
+pattern has been chosen, the number of replicates per trial can be chosen. It is
+recommended that the design have 20–30 degrees of freedom for repeatability,
+with 15 as minimally acceptable. More detailed recommendations regarding degrees
+of freedom and sample size are given in Sect. 11.5.
+206                                              9 Design of Experiments in Metrology
+
+
+9.3 ANOVA Models in Metrology
+
+Analysis of variance (ANOVA) is a statistical technique used to “identify and
+quantify individual random effects in a measurement so that they may be
+properly taken into account when the uncertainty of the result of the measurement
+is evaluated” (GUM, p. 98). It is used to estimate the variance components
+associated with random effects included in a measurement model. The objective is
+to gain an understanding of the sources of variance so that the measurement process
+may be improved. ANOVA is also used to estimate ﬁxed effects that may contribute
+to the bias in a measurement. It differs from factorial design of experiments in that
+it is typically not used to identify factors or construct an indirect measurement
+equation.
+    ANOVA methods are often used in metrology when certifying reference
+standards by interlaboratory testing (GUM, p. 98). See ISO Guide 13528 (2015)
+for a detailed discussion of the statistical methods used in these comparisons. This
+testing typically consists of a reference standard being tested multiple times on
+multiple days at each of several laboratories. In this case, differences from day-to-
+day and differences between repeated measurements are treated as random. Differ-
+ences between laboratories are treated as ﬁxed. Another common use of ANOVA
+techniques is to assess the performance of a single measurement device via a
+Gauge Repeatability and Reproducibility (Gauge R&R) study, commonly used in
+manufacturing environments. These techniques can be used as key components of
+tester qualiﬁcation and tester comparison studies.
+    ANOVA techniques include the use of many different statistical models
+(Searle and Gruber 2016). The sections that follow provide an introduction to
+some of the most commonly used ANOVA models in metrology, including
+simple random effects models and mixed effects models. In this context, the term
+“mixed effects model” means an ANOVA model containing both random and ﬁxed
+effects. These models are particularly useful in measurement studies because
+they accommodate repeated measurements made on the same test unit under either
+ﬁxed or varying conditions. The case studies presented below include analyses
+of both random effects and mixed effects model.
+
+
+
+9.3.1 Random Effects Models
+
+Factors with random effects are factors whose levels can be thought of as a random
+sample from some population (Kutner et al. 2005). As an example, consider a factory
+that manufactures steel plates. In this factory there are many operators responsible
+for measuring the thickness of the plates. Selecting a random sample of parts to be
+measured by a random sample of operators leads to a random effects model for
+the analysis. Each operator performs the thickness measurement on each plate
+n times. In this case both Part and Operator would be treated as having random
+208                                                  9 Design of Experiments in Metrology
+
+
+Table 9.9 Expected values of   Mean square                    Expected value
+the mean squares for a
+two-way random effects
+                               MSPart                         σ 2Error þ nσ 2Part Oper þ onσ 2Part
+model                          MSOper                         σ 2Error þ nσ 2Part Oper þ pnσ 2Oper
+                               MSPart         Oper            σ 2Error þ nσ 2Part Oper
+                               MSError                        σ 2Error
+
+
+
+Table 9.10 Variance compo-     Variance component                               Estimate
+nent estimates for a two-way
+random effects model           σb2Part                                          MSPart MSPart Oper
+                                                                                        on
+                               σb2Oper                                          MSOper MSPart Oper
+                                                                                         pn
+
+                               σb2Part Oper                                     MSPart Oper MSError
+                                                                                         n
+                               σb2Error                                         MSError
+
+
+represents the reproducibility variance. The part-to-part variance component σ 2Part
+would not be of concern from the perspective of measurement uncertainty.
+
+
+
+
+9.3.2 Mixed Effects Models
+
+Mixed effects ANOVA models are used when both random and ﬁxed effects are
+present in the measurement study. The difference between the two types of effects
+is sometimes subtle. For random effects, interest is in the component of variance
+associated with each effect. For ﬁxed effects, interest is in the mean associated with
+each effect.
+    Consider a case where multiple calipers are being used to measure steel thickness
+and the goal is to quantify the difference between the calipers. Because the objective
+is to estimate differences between speciﬁc calipers, caliper would be considered a
+ﬁxed factor. A two-factor mixed effects model would be used in the analysis, with
+one factor (Caliper) having ﬁxed effects and one factor (Operator) having random
+effects. For simplicity, Part is excluded as a factor in this example, although it could
+easily be added as a second factor with random effects. The mixed effects model
+is thus deﬁned as
+
+      yijk ¼ Ave þ Operatori þ Caliper j þ ðOperator      CaliperÞij þ Errorijk              ð9:7Þ
+
+with i ¼ 1, . . ., o operators, j ¼ 1, . . ., c calipers, and k ¼ 1,. . ., n measurements.
+Here, Ave is again the overall average measurement. The Caliperj effects are ﬁxed,
+while the remainder of the terms are modelled as normal random variables with
+mean zero and constant variances. For the mixed model expressed as in Eq. (9.7), the
+ﬁxed factor Caliper assumes a different average for each of its levels, while
+the random factor Operator assumes the same variance for each of its levels.
+9.3 ANOVA Models in Metrology                                                                                209
+
+
+Table 9.11 Expected values       Mean square                     Expected value
+of the mean squares for a                                                                           P
+                                 MSCaliper                                                              Caliper 2j
+two-way mixed effects model                                      σ 2Error þ nσ 2Caliper Oper þ on       c 1
+                                 MSOper                          σ 2Error þ cnσ 2Oper
+                                 MSCaliper         Oper          σ 2Error þ nσ 2Caliper Oper
+                                 MSError                         σ 2Error
+
+
+Table 9.12 Variance compo-       Variance component                                     Estimate
+nent estimates for a two-way
+mixed effects model              σb2Oper                                                MSOper MSError
+                                                                                               cn
+                                 σb2Caliper Oper                                        MSCaliper Oper MSError
+                                                                                                   n
+                                 σb2Error                                               MSError
+
+
+
+   The expected mean squares and estimated variance components for the random
+factor and interaction are provided in Tables 9.11 and 9.12, respectively.
+   In the context of a measurement study, the primary focus is on the measurement-
+related variance terms σ 2Error , σ 2Oper , and σ 2Caliper Oper . The random effect terms would
+become part of the Type A combined standard uncertainty, providing estimates of
+both repeatability and reproducibility.
+   The estimate for each level of the ﬁxed factor (Caliper) can be calculated through
+ordinary least squares. The resulting equation is (Kutner et al. 2005):
+
+                                         d j ¼ y:j:
+                                       Caliper            y...                                           ð9:8Þ
+
+with variance equal to
+                                 n        o
+                               σ   d j ¼ MSCaliper Oper :
+                               b2 Caliper                                                                ð9:9Þ
+                                             on
+
+  The individual effect terms (9.8) and their corresponding variances (9.9) would
+be used to test for caliper differences that possibly introduce bias into the
+measurement.
+
+
+
+9.3.3 Underlying ANOVA Assumptions
+
+There are a few key assumptions to be aware of when performing an ANOVA:
+1. Normality. Error terms are assumed to be normal, although slight deviations from
+   normality are typically not critical.
+210                                                     9 Design of Experiments in Metrology
+
+
+2. Constant variance (homoscedasticity). This is a stronger assumption than
+   normality. In a random effects or mixed effects model, it is assumed that the
+   variance is the same at each level of a particular random effect.
+3. Independence of the error terms. Plotting the residuals eijk ¼ yijk yij: is
+   typically a good way to assess whether this assumption has been met. Lack of
+   independence can dramatically affect an analysis and its interpretation.
+   Guidance on checking ANOVA assumptions is provided in Kutner et al. (2005).
+If these assumptions are not met, there may be additional modelling options.
+See Arendacka (2014) for dealing with non-constant variance (heteroscedasticity)
+and correlations (non-independence) between the random effects.
+
+
+
+
+9.3.4 Gauge R&R Study (Random Effects Model)
+
+Gauge R&R studies are frequently used in manufacturing to assess the amount of
+variation in measured data that can be attributed to the measurement process.
+A typical Gauge R&R study consists of multiple parts being measured multiple
+times by multiple operators, to allow estimation of both repeatability and reproduc-
+ibility. More details on the structure and analysis of Gauge R&R studies are provided
+in Vardeman and Jobe (2016). A case study is presented in this section of a standard
+Gauge R&R study. It is followed by discussion and a proposal for designing Gauge
+R&R studies to improve the estimate of reproducibility.
+    A Gauge R&R study was performed to assess the uncertainty of a high-precision
+optical CMM used to inspect dimensions of a component assembled within the NSE.
+The study consisted of three operators (o ¼ 3) measuring four manufactured parts
+( p ¼ 4) three times each (n ¼ 3) for a total of 36 measurements. The data appear in
+Table 9.13.
+    The graphical analysis in Fig. 9.13 shows that Parts 1 and 3 have very different
+lengths than Parts 2 and 4, but that the Operators are similar and repeated measure-
+ments of the same part by the same operator are similar.
+    The ANOVA associated with the study appears in Table 9.14. In this analysis,
+Part and Operator were both treated as random factors, for which the equations in
+Table 9.10 apply.
+    Equating mean squares to their expected values (Table 9.10) and solving for the
+variance components, the estimates are
+
+                                    σb2Error ¼ 108:5
+                                          136:8       108:5
+                         σb2Part Oper ¼                       ¼ 9:4
+                                                  3
+9.3 ANOVA Models in Metrology                                                     215
+
+
+   A second observation regards another aspect of the W-S approximation for
+this problem. Ballico (2000) showed that the W-S approximation is not a good
+approximation when an uncertainty term with many degrees of freedom is added
+to a dominant uncertainty term with a small number of degrees of freedom.
+This is often the case with Gauge R&R studies designed according to typical
+recommendations (see, for example, Down et al. 2010). The MSOper term in the
+calculation of υRepr will often be larger, with fewer degrees of freedom, than
+the MSError term, which typically has more degrees of freedom.
+   Reproducibility is deﬁned as the uncertainty in a measurement system over time,
+under conditions that are subject to change. The standard Gauge R&R study
+typically looks at variation of a measurement system over a relatively short
+period of time, with only the operator being varied. Other factors affecting the
+reproducibility of the measurement are often not included in these studies.
+The degrees of freedom analysis above indicates that the standard Gauge R&R
+study produces little information with respect to reproducibility. The degrees of
+freedom associated with repeatability, however, is much more likely to be adequate.
+   Our recommendation is therefore to use the Gauge R&R study, as typically
+designed, to estimate only the repeatability portion of uncertainty. An estimate
+of reproducibility should be based on data collected over time under different
+conditions. This could be achieved in various ways. First, the control chart
+methodology described in Sect. 11.1 could be used to monitor uncertainty in the
+measurement over time. Repeated measurements of a check standard over time
+would provide a good estimate of reproducibility. A handful of manufactured units
+(say 3–5) could also be set aside and repeatedly measured by multiple operators
+over time. These two potential sources of data would provide a far better
+estimate of reproducibility than that obtained from a short-term Gauge R&R study
+such as described above. After acceptable estimates of R&R are obtained, a complete
+uncertainty analysis can be performed, and test uncertainty ratios (see Sect. 5.2.1.1)
+can be used to assess gauge performance relative to product speciﬁcations.
+   With few operators in a short-term Gauge R&R study, Operators could be treated
+as a ﬁxed effect. A simple check for differences between operators could then be
+made, and any signiﬁcant differences could be addressed by reviewing measurement
+procedures and training.
+   It should be noted that the same design structure used for a Gauge R&R study
+can be used for comparing laboratories, with the factor “Operator” replaced with the
+factor “Laboratory,” as in Suzuki et al. (2018).
+
+
+
+
+9.3.5 Voltage Standard Uncertainty Analysis (Mixed Effects
+      Model)
+
+An uncertainty study was performed by measuring trigger output voltages (see
+Sect. 6.3.1) with an external standard Tektronix TDS 3024 digitizer. The uncertainty
+study was performed over a three-day period with 10 measurements taken each day
+220                                               9 Design of Experiments in Metrology
+
+
+Error components together accounted for 95% of the total variation adjusted for
+voltage differences.
+   Bias and uncertainty were signiﬁcantly different at each voltage level. As a result,
+a detailed uncertainty analysis would be done at each level of input trigger voltage.
+The uncertainty analysis would follow the approach given in Sect. 6.3.1 for the
+standard tested at 350 V. A separate expanded uncertainty (see Eq. 6.27), including
+the bias term, would be reported for each level.
+
+
+
+9.3.6 Summary of ANOVA Method
+
+ANOVA models, including random effects and mixed effects models, are useful
+for assessing the amount of variation that can be attributed to random components of
+a measurement process. ANOVA techniques provide a simple way to estimate
+variance components of the associated models. The relative magnitudes of the
+estimated variance components indicate where emphasis should be placed to reduce
+measurement uncertainty.
+   Sample sizes for ANOVA-based measurement studies should be based on a
+degrees of freedom argument. Each estimated variance component has a degrees
+of freedom associated with it, often computed using the Welch–Satterthwaite
+approximation. The degrees of freedom should always be reported along with the
+estimated variance component to assess the adequacy of the estimate.
+   A recommended goal in an ANOVA is to have 20–30 degrees of freedom for the
+error variance term, with 15 as minimally acceptable. Other variance components
+in an ANOVA will typically have far fewer degrees of freedom. It is recommended
+that the number of degrees of freedom for these components be built up over time
+through ongoing monitoring of the measurement system. More detailed recommen-
+dations regarding degrees of freedom and sample size are given in Sect. 11.5.
+
+
+
+9.4 Related Reading
+
+Metrology’s guiding bodies have to date provided relatively little guidance on
+the use of design of experiments (DOEx) and ANOVA in uncertainty analyses.
+The JCGM 100 (GUM) has a brief discussion of basic ANOVA models and uses
+of ANOVA in metrology, but with no discussion of DOEx other than to say “a well-
+designed experiment can greatly facilitate reliable evaluations of uncertainty and is
+an important part of the art of measurement.” The JCGM 101 and JCGM
+102 have no mention of DOEx or ANOVA. The JCGM 103 “Developing and
+Using Measurement Models” (in draft form at this writing) discusses the use of
+experimental data to develop measurement models, but without discussion of DOEx.
+   ISO 3534-3, “Statistics - Vocabulary and Symbols - Part 3: Design of
+Experiments” deﬁnes the terms used in the ﬁeld of design of experiments, although
+222                                                 9 Design of Experiments in Metrology
+
+
+compare repeatability and reproducibility. Less attention is given to the design of the
+Gauge R&R study. The authors recommend the study include at least six operators,
+1020 parts, and two or three replicates. The book also includes a
+substantial bibliography of papers that will be helpful to practitioners of Gauge
+R&R and other ANOVA studies in metrology.
+
+
+
+9.5 Exercises
+
+1. When might a full factorial design be used in a measurement study? When might
+   a fractional factorial design be used?
+2. What are the various ways experimental factors can be handled during an
+   experiment?
+3. What is “confounding” of factors in a two-level fractional factorial design?
+   How would one determine the confounding pattern for such a design?
+4. Design a 2(6–2) fractional factorial design for six factors at two levels. What is the
+   highest resolution that can be achieved? Suppose it is suspected that the AB and
+   CE two-way interaction terms are both important. How would this affect the
+   design strategy?
+5. Table 9.17 presents measurement data from a full factorial experiment in which
+   moisture Gauges were used to measure the dewpoint of sealed containers at
+   sub-zero temperatures.
+   The experimental factors are: 3 Moisture Gauges, 3 Dewpoint Levels, and
+   2 Operators, with 2 replicates of each measurement. The standard dewpoint
+   value in the table can be considered the “actual” value. The total number of
+   experimental observations is 3 3 2 2 ¼ 36.
+      Explore the data graphically, including a main effects plot. What does the
+   graphical analysis suggest? Perform an ANOVA treating Moisture Gauge and
+   Dewpoint Level as ﬁxed factors and Operator as a random factor. Which factor
+   has the greatest effect on the dewpoint measurement? Which factors contribute
+   to the measurement uncertainty? What is the estimated repeatability standard
+   deviation? What is the total Type A standard uncertainty associated with the
+   measurement?
+      Compute the differences Delta ¼ (Measured Value Standard Value). Graph
+   the main effects associated with this calculated value. Is the measurement biased?
+   Perform an ANOVA treating Moisture Gauge and Dewpoint Level as ﬁxed
+   effects and Operator as a random effect. Which factors contribute most to the
+   measurement bias?
+6. When might a variance components design (ANOVA) be used in a measurement
+   study? What is a mixed ANOVA model? What is the difference between factors
+   that are crossed and factors that are nested?
+7. What is the Welch–Satterthwaite approximation used for in ANOVA studies?
+8. Table 9.18 gives the data resulting from a Gauge R&R study in which the length
+   of a component piece part was measured. The nominal length of the part was
+224                                                   9     Design of Experiments in Metrology
+
+
+Table 9.18 Gauge R&R study data
+Observation        Day        Operator        Part number          Replicate      Length (in)
+ 1                 1          1               1                    1              0.970558
+ 2                 1          1               1                    2              0.970183
+ 3                 1          1               1                    3              0.969758
+ 4                 1          1               2                    1              0.977658
+ 5                 1          1               2                    2              0.977967
+ 6                 1          1               2                    3              0.977933
+ 7                 1          2               1                    1              0.970275
+ 8                 1          2               1                    2              0.969833
+ 9                 1          2               1                    3              0.969817
+10                 1          2               2                    1              0.978125
+11                 1          2               2                    2              0.978125
+12                 1          2               2                    3              0.977908
+13                 2          1               1                    1              0.970625
+14                 2          1               1                    2              0.969758
+15                 2          1               1                    3              0.970258
+16                 2          1               2                    1              0.977833
+17                 2          1               2                    2              0.978525
+18                 2          1               2                    3              0.977600
+19                 2          2               1                    1              0.970425
+20                 2          2               1                    2              0.969667
+21                 2          2               1                    3              0.970058
+22                 2          2               2                    1              0.977833
+23                 2          2               2                    2              0.978075
+24                 2          2               2                    3              0.978292
+
+
+   associated with this measurement? What are the degrees of freedom for repeat-
+   ability? Reproducibility?
+
+ 9. What is an adequate number of degrees of freedom for estimating the error
+    variance component (repeatability) in an ANOVA experiment? How can
+    you increase the number of degrees of freedom to improve the estimate of
+    reproducibility in a Gauge R&R study?
+10. When would you use a Resolution III fractional factorial design?
+
+
+
+References
+
+Addelman, S., Kempthorne, O.: Orthogonal Main Effects Plans. Aeronautical Research Laboratory
+   Ofﬁce of Aerospace Research. Wright-Patterson Air Force Base, OH (1961)
+Arendacka, B.: Linear mixed models: GUM and beyond. Meas. Sci. Rev. 14(2), 52–61 (2014)
+Barari, F., Morgan, R., Barnard, P.: A design of experiments approach to optimise temperature
+   measurement accuracy in solid oxide fuel cell (SOFC). J. Phys. Conf. Ser. 547 (2014)
+

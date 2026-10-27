@@ -87,3 +87,66 @@ Durante la verificación se corrigió el ejemplo de Welch–Satterthwaite: para 
 - El texto de ISO/TS 28037 10.1 y los cálculos se circunscriben al caso didáctico `V_xy=0`; no se presenta como solución de GGMR general ni validación de software.
 - Se verificó coherencia de remisiones con la búsqueda inicial: AX.1 M02/M04; AX.2 M01/M03/M08/M09/M11/M13; AX.3 M03/M08; AX.4 M05/M06; AX.5–AX.6 M07/M13; AX.7 M04/M08; AX.8 M09; AX.9 M09/M10/M13; AX.10 M10; AX.11 M06/M12; AX.12 M11; AX.13 M13. La formulación mantiene notaciones existentes (`s_r`, `s_entre`, `u²_prec(ē)`, `cov(a,b)`, `V_xy=0`, `E_n`, `D`, `ν_eff`, EWMA/CUSUM).
 - No se modificó ningún archivo fuera de `curso/S4_numericos_integracion/`.
+
+## Corrección O-02 (S3, 2026-10-27)
+
+### Planificación
+
+Ajustar únicamente el párrafo final de AX.12 para que describa con exactitud el método de M11-A, mantenga la referencia existente, identifique los parámetros distintos del ejemplo de AX.12 y presente ARL como herramienta complementaria. No cambiar cifras, scripts ni archivos fuera de S4.
+
+### Texto anterior
+
+> M11-A usa la varianza y ARL para comparar sensibilidad a falsas alarmas y justificar intervalos de revisión. [Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]
+
+### Texto nuevo
+
+> En M11-A usamos la varianza del EWMA para definir sus límites de arranque y comparamos EWMA con $L=2,7$ y CUSUM bilateral mediante probabilidades de alarma en un horizonte fijo y demoras condicionadas a detectar; esas demoras no son ARL. El ejemplo de este anexo usa otros parámetros —EWMA con $L=3$ y límites estacionarios, y CUSUM unilateral— para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A. [Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]
+
+### Justificación
+
+La coordinación O-02 de S3 identifica que M11-A estima probabilidades de alarma en horizonte y demoras condicionadas, y declara expresamente que estas últimas no son ARL. Su diseño usa EWMA $L=2,7$ y CUSUM bilateral; el ejemplo numérico de AX.12 usa EWMA $L=3$ y CUSUM unilateral. La reescritura separa esos alcances y conserva la referencia ya existente, sin modificar cifras ni scripts.
+
+## Ajustes tras revisión Haiku O-02
+
+| ID | Decisión | Texto | Justificación |
+|---|---|---|---|
+| H-01 | aplicado | «CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior». | `calc/AX_12.py` define `k=.5` y `limit=5.`; M11-A, escena A2, especifica $k=0,5$, $h=5$ y CUSUM bilateral. Coinciden parámetros; difiere el uso unilateral frente al bilateral. |
+| H-02 | rechazado | Se conserva la referencia existente: `[Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]`. | Instrucción de conservarla; pendiente bibliográfico: unificar la clave con M11-A tras verificar edición y numeral. |
+| H-03 | aplicado | «El ejemplo de este anexo usa EWMA con $L=3$ y límites estacionarios, y CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior. Sirve para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A.» | Frases más breves y lectura oral más clara; no cambia cifras ni alcance. |
+
+## Correcciones (revisión Haiku)
+
+| ID | Decisión | Cambio hecho | Ubicación | Justificación |
+|---|---|---|---|---|
+| R01 | aplicado | Reemplazado “raíz” por cociente reducido $Q/\nu$; ejemplo expresa $3,2/4=0,8$. | `AX_libreto.md`, AX.8 | Coincide con la salida del script `AX_08.py`; no requiere recálculo. |
+| R02 | aplicado | Sustituido D por $d$, definido como número de días. | `AX_libreto.md`, AX.4 | Mantiene notación guía §4; D_d representa efecto diario, no conteo de días. |
+| R03 | aplicado | Quitada referencia a M6 de uso de límites de confianza. | `AX_libreto.md`, AX.11 | prop_e asigna esos indicadores a M12-I, no a M6. |
+| R04 | aplicado con cambios | Eliminadas notas de verificación/páginas y numerales pendientes de narración; claves quedan sin numeral cuando no se verificó. | `AX_libreto.md`, citas AX.1, AX.4–AX.6, AX.11–AX.12 y referencias | Guía §5 manda pendientes a bitácora. Se conservaron numerales comprobados; se corrigió la nota de Montgomery para indicar que referencia externa carece de edición consignada, no como dato hablado. |
+| R05 | aplicado | Quitados nombres de scripts del texto hablado. | `AX_libreto.md`, AX.3, AX.6, AX.8, AX.10–AX.11 | Trazabilidad queda en bitácora; libreto narra contenido de clase. |
+| R06 | aplicado | Normalizada notación λ; aclarado umbral $h_C$ y holgura $k$. | `AX_libreto.md`, AX.12 | Evita colisión con semiamplitud h de AX.3 y con “referencia” metrológica. |
+| R07 | aplicado | Aclarado que en θ=L, aceptar y rechazar tienen probabilidad 0,5. | `AX_libreto.md`, AX.10 | θ=L pertenece al lado conforme; formulación evita atribuir ambos riesgos condicionados a estado fuera/dentro. |
+| R08 | aplicado | Añadido conteo $2n-(n+2)=n-2$ y caso de seis puntos. | `AX_libreto.md`, AX.8 | Explicita grados de libertad del modelo de abscisas ajustadas; evita regla automática confundible con OLS. |
+| R09 | aplicado | “Primeros momentos” cambiado por “media y varianza”. | `AX_libreto.md`, AX.7 | Especifica los momentos igualados en la aproximación. |
+| R10 | aplicado | “El nuevo y” cambiado por “la nueva indicación $y_0$”. | `AX_libreto.md`, AX.6 | Distingue variable medida de conjunción. |
+| R11 | aplicado | Usada `cov` en ambas pizarras y añadido que GUM escribe la covarianza como $u(x_i,x_j)$. | `AX_libreto.md`, AX.2 | Notación uniforme con puente explícito a notación GUM. |
+| R12 | aplicado | Unificada definición en $D_i=R_i-R$. | `AX_libreto.md`, AX.9 | Conserva símbolos empleados en el ejemplo y la referencia compartida. |
+| R13 | aplicado | “Intervalación” sustituido por “construcción del intervalo”. | `AX_libreto.md`, AX.11 | Léxico correcto y natural en narración. |
+| R14 | aplicado con cambios | Claves narrativas normalizadas a “Crowder 2020” y “Hahs-Vaughn y Lomax”; referencias finales precisadas con datos bibliográficos disponibles. | `AX_libreto.md`, citas y referencias | Autor/editorial de Crowder no se pudieron verificar con seguridad en los documentos disponibles; no se inventaron. Pendiente queda registrado abajo. |
+| R15 | aplicado | Retirada referencia curricular prop_e del corchete técnico. | `AX_libreto.md`, AX.9 | prop_e justifica alcance, no respaldo técnico según guía §5. |
+| R16 | aplicado con cambios | Divididas explicaciones extensas de grados de libertad GGMR, recurrencia EWMA y matriz ARL en unidades orales más breves. | `AX_libreto.md`, AX.8 y AX.12 | Reduce carga sintáctica sin alterar deducciones ni resultados. |
+| R17 | aplicado | Añadida tabla anexo/nivel de primer uso/consumidores en ficha. | `AX_libreto.md`, ficha | Declara adaptación estructural adecuada a anexos, sin inventar niveles curriculares. |
+| R18 | aplicado | Ficha remite a cada marca “Se usa desde…” y a lista de remisiones de bitácora. | `AX_libreto.md`, ficha | Describe estructura real, no una matriz inexistente ni cierres que no siempre listan consumidores. |
+| R19 | rechazado | Se mantuvo referencia conjunta a guía §7 y prop_e §9, sin afirmar que §9 enumera todos los AX. | `AX_libreto.md`, ficha | No hay contradicción: guía §7 fija el catálogo AX.1–AX.13; prop_e §9 establece que anexos no se evalúan. La ficha ya aclara que contenido sigue guía §7 y que §9 solo respalda carácter no evaluable. |
+
+### Correcciones adicionales por iniciativa propia
+
+- Corregida la fila de tabla de remisiones en la ficha y agregada tabla compacta de consumidores por anexo; detectado al integrar R17–R18.
+- Corregida notación de AX.9 en la pizarra, alineándola con $D_i=R_i-R$.
+- Retiradas menciones residuales a páginas PDF dentro de citas narradas, conservando solo ubicaciones técnicas verificadas en referencias y bitácora.
+- Reescritas y segmentadas frases largas de AX.8 y AX.12 para lectura oral.
+- Revisada AX.8: el cociente reducido se presenta como diagnóstico, no como estimación nueva de incertidumbre. Script no cambió porque el cálculo ya era $Q/\nu=0,8$.
+
+### Pendientes bibliográficos
+
+- Verificar metadatos completos (autor, año, editorial) de Crowder 2020 y ubicación precisa para AX.1/AX.4/AX.5.
+- Verificar edición de Montgomery y ubicación de predicción inversa en ISO 28037, si se requiere granularidad adicional.

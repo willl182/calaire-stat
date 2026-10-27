@@ -21,6 +21,25 @@ u_common = 0.3
 u_random = 0.8
 u_mean_with_common = sqrt(u_common**2 + u_random**2 / n)
 
+# Deriva B3/A2: serie determinista; los residuos NO son una muestra iid.
+# Tiempo en minutos, una lectura por minuto. Pendiente conocida por construcción.
+drift_time = np.arange(16, dtype=float)
+drift_beta = 0.05
+drift_residual = np.tile([-0.8, 0.8, 0.8, -0.8], 4)
+drift_y = 420.0 + drift_beta * drift_time + drift_residual
+drift_halves = drift_y.reshape(2, 8).mean(axis=1)
+drift_blocks = drift_y.reshape(4, 4).mean(axis=1)
+drift_corrected_zero = drift_y - drift_beta * drift_time
+drift_corrected_center = drift_y - drift_beta * (drift_time - 7.5)
+drift_naive_sem = np.std(drift_y, ddof=1) / sqrt(16)
+drift_residual_sem = np.std(drift_corrected_zero, ddof=1) / sqrt(16)
+assert np.allclose(drift_halves, [420.175, 420.575])
+assert np.allclose(drift_blocks, [420.075, 420.275, 420.475, 420.675])
+assert np.isclose(drift_blocks.mean(), drift_y.mean())
+assert np.isclose(drift_halves[1] - drift_halves[0], 0.4)
+assert np.allclose(drift_corrected_zero.reshape(4, 4).mean(axis=1), 420.0)
+assert np.isclose(drift_corrected_center.mean(), 420.375)
+
 # Dos resultados con ruido parcialmente compartido; covariance = rho*u1*u2.
 u1, u2, rho = 0.8, 0.6, 0.75
 cov = rho * u1 * u2
@@ -36,10 +55,11 @@ cov_channels = rho_channels * u_A * u_B
 u_ratio_correlated = sqrt((u_A / B) ** 2 + (A * u_B / B**2) ** 2 - 2 * A * cov_channels / B**3)
 u_ratio_independent = sqrt((u_A / B) ** 2 + (A * u_B / B**2) ** 2)
 
-# Distribución discreta simulada: número de ciclos fuera de banda en cinco.
+# Un ciclo hipotético: X=0 dentro de banda, X=1 fuera de banda (B1).
 p_out_of_band = 0.1
-probability_zero_out = (1 - p_out_of_band) ** 5
-probability_one_out = 5 * p_out_of_band * (1 - p_out_of_band) ** 4
+probability_zero_out = 1 - p_out_of_band
+probability_one_out = p_out_of_band
+assert np.isclose(probability_zero_out + probability_one_out, 1.0)
 z_score = (421.6 - 420.0) / 0.8
 degrees_freedom = 5 - 1
 student_975_df4 = t.ppf(0.975, degrees_freedom)
@@ -57,8 +77,28 @@ u_diff_points_independent = sqrt(V_points[0, 0] + V_points[1, 1])
 # Demostración de admisibilidad de matriz y autocorrelación ilustrativa.
 R = np.array([[1.0, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 1.0]])
 eigenvalues = np.linalg.eigvalsh(R)
-lag1 = 0.5
+# Secuencia determinista construida, no extraída de un proceso del laboratorio.
+# Pearson entre las dos listas desplazadas; no es el estimador ACF de media global.
+series = np.array([1, .5, -.5, -1, -.5, .5, 1, .5, -.5, -1, -.5, .5, 1])
+lag1 = np.corrcoef(series[:-1], series[1:])[0, 1]
 normal_quantiles_5 = norm.ppf((np.arange(1, 6) - 0.5) / 5)
+
+# Conversión operativa de correlaciones a covarianzas y propagación matricial.
+std = np.array([0.2, 0.3, 0.4])  # nmol/mol, orden de los tres puntos de R
+V = np.diag(std) @ R @ np.diag(std)
+c = np.array([-1.0, 0.0, 1.0])
+u_matrix_difference = sqrt(c @ V @ c)
+invalid_R = np.array([[1.0, 1.2], [1.2, 1.0]])
+invalid_eigenvalues = np.linalg.eigvalsh(invalid_R)
+assert np.allclose(V, V.T)
+assert np.all(np.linalg.eigvalsh(V) >= -1e-12)
+assert np.isclose(u_matrix_difference, sqrt(0.16))
+assert np.isclose(lag1, 0.5)
+assert invalid_eigenvalues.min() < 0
+# Contraste de la propagación escalar con la forma matricial.
+V_two = np.array([[u1**2, cov], [cov, u2**2]])
+assert np.isclose(np.array([1, -1]) @ V_two @ np.array([1, -1]), u_diff_correlated**2)
+assert np.isclose(u_mean_with_common**2, u_common**2 + sem_independent**2)
 
 for label, value in [
     ("rectangular_semiamplitud_h", rect_h),
@@ -94,4 +134,20 @@ print(f"u_diferencia_puntos_independientes={u_diff_points_independent:.10g}")
 print(f"matriz_simetrica={np.allclose(R, R.T)}")
 print(f"autovalores_matriz={eigenvalues}")
 print(f"matriz_admisible={bool(np.all(eigenvalues >= -1e-12))}")
-print(f"correlacion_retraso_1_ilustrativa={lag1:.10g}")
+print(f"serie_simulada={series.tolist()}")
+print(f"correlacion_Pearson_listas_desplazadas_1={lag1:.10g}")
+print(f"matriz_covarianza_desde_R={V.tolist()}")
+print(f"u_diferencia_puntos_3_menos_1={u_matrix_difference:.10g}")
+print(f"autovalores_matriz_invalida={invalid_eigenvalues.tolist()}")
+print(f"deriva_tiempos_min={drift_time.tolist()}")
+print(f"deriva_residuos_declarados={drift_residual.tolist()}")
+print(f"deriva_lecturas={drift_y.tolist()}")
+print(f"deriva_medias_mitades={drift_halves.tolist()}")
+print(f"deriva_medias_bloques={drift_blocks.tolist()}")
+print(f"deriva_media_global={drift_y.mean():.10g}")
+print(f"deriva_s_sobre_raiz_n_no_validado={drift_naive_sem:.10g}")
+print(f"deriva_medias_bloques_corregidos_t0={drift_corrected_zero.reshape(4, 4).mean(axis=1).tolist()}")
+print(f"deriva_media_corregida_t0={drift_corrected_zero.mean():.10g}")
+print(f"deriva_media_corregida_t7_5={drift_corrected_center.mean():.10g}")
+print(f"deriva_residuos_s_sobre_raiz_n_no_validado={drift_residual_sem:.10g}")
+print("comprobaciones_M03=OK")

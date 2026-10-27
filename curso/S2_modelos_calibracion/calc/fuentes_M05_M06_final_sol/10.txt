@@ -1,0 +1,72 @@
+A
+                                                     INTERNATIONAL STANDARD ISO 5725-1:1994
+                                                     TECHNICAL CORRIGENDUM 1
+
+                                                     Published 1998-02-15
+
+
+INTERNATIONAL ORGANIZATION FOR STANDARDIZATION • Ã≈∆ƒ”Õ¿–ŒƒÕ¿fl Œ–√¿Õ»«¿÷»fl œŒ —“¿Õƒ¿–“»«¿÷»» • ORGANISATION INTERNATIONALE DE NORMALISATION
+
+
+
+
+Accuracy (trueness and precision) of measurement
+methods and results —
+Part 1:
+General principles and definitions
+TECHNICAL CORRIGENDUM 1
+
+
+Exactitude (justesse et fidélité) des résultats et méthodes de mesure —
+Part 1: Principes généraux et définitions
+
+RECTIFICATIF TECHNIQUE 1
+
+
+
+
+Technical Corrigendum 1 to International Standard ISO 5725-1:1994 was prepared by Technical Committee
+ISO/TC 69, Applications of statistical methods, Subcommittee SC 6, Measurement methods and results.
+
+
+
+
+Page 10, table 2
+
+Replace table 2 with the following table (taken from table 1 of ISO 5725-4:1994):
+
+
+
+
+ICS 03.120.30; 17.020                                                                       Ref. No. ISO 5725-1:1994/Cor.1:1998(E)
+
+Descriptors: measurement, tests, test results, accuracy, reproducibility, statistical analysis, definitions, generalities.
+
+© ISO 1998
+Printed in Switzerland
+ISO 5725-1:1994/Cor.1:1998(E)                                                                              © ISO
+
+
+
+           Table 2 — Values of A, the uncertainty of an estimate of the bias of the measurement method
+
+     No. of
+    labora-                                              Value of A
+     tories
+                            g=1                            g=2                             g=5
+      p
+                 n=2        n=3       n=4        n=2       n=3        n=4       n=2        n=3           n=4
+       5         0,62       0,51      0,44       0,82      0,80       0,79       0,87      0,86          0,86
+      10         0,44       0,36      0,31       0,58      0,57       0,56       0,61      0,61          0,61
+      15         0,36       0,29      0,25       0,47      0,46       0,46       0,50      0,50          0,50
+      20         0,31       0,25      0,22       0,41      0,40       0,40       0,43      0,43          0,43
+      25         0,28       0,23      0,20       0,37      0,36       0,35       0,39      0,39          0,39
+      30         0,25       0,21      0,18       0,33      0,33       0,32       0,35      0,35          0,35
+      35         0,23       0,19      0,17       0,31      0,30       0,30       0,33      0,33          0,33
+      40         0,22       0,18      0,15       0,29      0,28       0,28       0,31      0,31          0,31
+
+
+
+
+2
+

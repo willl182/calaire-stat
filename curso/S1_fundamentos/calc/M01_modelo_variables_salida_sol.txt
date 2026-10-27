@@ -11,3 +11,7 @@ sensitivity_alpha=-1.642069163 nmol/mol per (atm^-1 cm^-1)
 scale x=100.000000: y=101.290000; e=1.290000 nmol/mol; e/x=1.290000 %
 scale x=500.000000: y=506.450000; e=6.450000 nmol/mol; e/x=1.290000 %
 shared example: Y1=2.300000; Y2=1.900000; delta=0.400000 nmol/mol
+scale y only: e=6.73477000 nmol/mol
+scale x and y: e=1.31677000 nmol/mol; e/x=0.309523810 %
+shared S=2.0: Y1=2.300000; Y2 equal=1.900000; delta equal=0.400000; Y2 unequal=1.500000; delta unequal=0.800000 nmol/mol
+shared S=3.0: Y1=3.300000; Y2 equal=2.900000; delta equal=0.400000; Y2 unequal=2.300000; delta unequal=1.000000 nmol/mol

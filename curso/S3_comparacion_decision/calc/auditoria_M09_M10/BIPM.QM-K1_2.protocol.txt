@@ -1,0 +1,1129 @@
+                                           Protocol for BIPM.QM-K1,
+                                             On-demand Key Comparison of
+                                               Ozone at ambient level
+
+Coordinating laboratory: Bureau International des Poids et Mesures
+Contact person: Joële Viallon, BIPM, Pavillon de Breteuil, F-92312 France, jviallon@bipm.org,
+
+Contents:
+
+ 1.      Introduction .................................................................................................................................. 2
+ 2.      Participants ................................................................................................................................... 2
+ 3.      Measurement schedule ................................................................................................................. 2
+ 4.      Measurand, quantities and units ................................................................................................... 3
+ 5.      Terms and definitions ................................................................................................................... 3
+ 6.      Linking an RMO comparison to BIPM.QM-K1 .......................................................................... 4
+
+BIPM.QM-K1 PROTOCOL A ............................................................................................................ 5
+ 1.      Transport of instruments to and from the BIPM .......................................................................... 5
+ 2.      Handling of instruments sent to the BIPM ................................................................................... 5
+ 3.      Comparison description ................................................................................................................ 6
+ 4.      Pre-comparison requirements ....................................................................................................... 6
+ 5.      Comparison procedure.................................................................................................................. 7
+ 6.      Uncertainty budgets ...................................................................................................................... 8
+ 7.      Linear regression fits .................................................................................................................... 8
+ 8.      Degrees of equivalence................................................................................................................. 9
+ 9.      Data acquisition and backup ......................................................................................................... 9
+ 10.       Reporting of results ................................................................................................................... 9
+
+BIPM.QM-K1 PROTOCOL B........................................................................................................... 11
+ 1. Transport of instruments to and from the BIPM ........................................................................ 11
+ 2. Handling of instruments sent to the BIPM ................................................................................. 11
+ 3. Stability and characteristics of transfer standards ...................................................................... 12
+ 4. Comparison description .............................................................................................................. 12
+ 5. Comparison between the national standard and the transfer standard before travelling with the
+ transfer standard .................................................................................................................................. 13
+ 6. Comparison between the transfer standard and BIPM-SRP27 at the BIPM .............................. 14
+ 7. Subsequent comparison between the national standard and the transfer standard at the
+ laboratory of the participating institute ............................................................................................... 16
+ 8. Uncertainty budgets .................................................................................................................... 17
+ 9. Calculation of the relationship between the national standard and the reference standard ........ 18
+ 10.     Degrees of equivalence ........................................................................................................... 18
+ 11.     Comparability of the two degrees of equivalence for each nominal value ............................. 19
+ 12.     Reporting of results ................................................................................................................. 20
+
+APPENDIX 1 - BIPM-SRP27 UNCERTAINTY BUDGET ............................................................ 21
+ 1.      Uncertainty budget ..................................................................................................................... 21
+ 2.      Simple expression of the uncertainty ......................................................................................... 22
+ 3.      Covariance terms ........................................................................................................................ 24
+
+BIPM.QM-K1 protocol v2.1.docx                                                         09 Oct. 25                                Page 1 of 25
+1. Introduction
+The on-going key comparison BIPM.QM-K1 is aimed at evaluating the level of
+comparability of ozone reference standards that are maintained as national standards,
+or as primary standards within international networks for ambient ozone measurements.
+
+This protocol applies to ozone standards based on the UV photometry principle. Other
+types of instruments can participate in the key comparison, but with a modified version
+of the protocol. Laboratories wishing to participate with such a standard should contact
+the comparison coordinator.
+
+The level of comparability will be determined using the NIST Standard Reference
+Photometer (BIPM-SRP27) maintained by the BIPM Headquarter (here after simplified as
+BIPM only) as a common reference. Comparisons will be performed at the BIPM either
+directly with a visiting laboratory’s national standard, or by means of the visiting
+laboratory’s transfer standard. Instruments (national or transfer standards) participating
+in comparisons at the BIPM can be either sent or brought by a person from the
+participating laboratory.
+
+This document contains protocols for both these situations.
+
+Laboratories that send or bring their national ozone standard to the BIPM should
+follow Protocol A.
+
+Laboratories that send or bring a transfer standard to the BIPM should follow
+Protocol B.
+
+The ozone amount fraction range covered by the comparisons starts at the limit of
+quantification of the common reference, 2 nmol mol−1, and ends by convention at
+500 nmol mol−1.
+
+An expression for the degree of equivalence between each national standard and the
+common reference BIPM-SRP27 will be calculated by the BIPM from the comparison
+results and measurement uncertainties submitted by participating laboratories.
+
+
+2. Participants
+BIPM.QM-K1 is open to laboratories listed in Appendix A of the CIPM MRA, available on
+the BIPM website (https://www.bipm.org/en/cipm-mra/participation).
+
+
+3. Measurement schedule
+ Laboratories wishing to participate should register their interest using the registration
+form provided (BIPM.QM-K1-R4) and return this to the BIPM at least three months before
+the requested comparison date. A date will then be agreed between the laboratory and
+
+
+BIPM.QM-K1 protocol v2.1.docx                     09 Oct. 25              Page 2 of 25
+the coordinator, which may differ from the proposal depending on the workload of the
+BIPM.
+
+
+4. Measurand, quantities and units
+The measurand is the amount fraction of ozone in dry air, with measurement results being
+expressed in mol mol-1 (or one of its multiples mmol mol-1, μmol mol-1 or nmol mol-1). The
+numerical value of the amount fraction of ozone in air expressed in this unit, is equivalent
+to the numerical value of the volume fraction expressed as ppb (parts per billion, 1 billion
+= 109) or ppbv, which may be encountered but not recommended.
+
+
+1.1 Absorption cross-section for ozone
+Ozone standards based on the UV photometry principle make use of the ozone
+absorption cross section at 253.7 nm, to calculate the measured ozone amount fraction.
+Starting on 1st January 2025, this quantity is expected to take the consensus value named
+CCQM.O3.2019 recommended by the Consultative Committee for Amount of
+Substance: Metrology in Chemistry and Biology (CCQM) 1. The value of CCQM.O3.2019
+is 1.1329(35) × 10−17 cm2 molecule−1. This value is also recommended in the ISO Standard
+13964:1998/Amd 1:2024.
+
+Participants in BIPM.QM-K1 may still be using the previous recommended value of
+1.147×10–17 cm2 reported by Hearn in 1961 and included in the previous version of the ISO
+Standard 13964:1998. Using a different value than CCQM.O3.2019 will result in a
+noticeable difference in the agreement between the participant and the BIPM.
+
+In the comparison of two UV photometers using the same value of the absorption cross-
+section, its uncertainty can be set to zero. However, in the comparison of different
+methods, or of UV photometers with different values, or when considering the complete
+uncertainty budget of the method, the uncertainty of the absorption cross-section should
+be included.
+
+
+5. Terms and definitions
+-   xnom: nominal ozone amount fraction in dry air furnished by the ozone generator
+-   xA,i: ith measurement of the nominal value xnom by the photometer A.
+-   x A : the mean of N measurements of the nominal value xnom measured by the
+                              1 N
+    photometer A : x A =         ∑
+                              N i =1
+                                     x A ,i
+
+
+
+
+1
+ Recommendation 1 (2020): On the recommended value of the ozone absorption cross section per molecule at
+253.65 nm (air) for applications including the measurement of atmospheric ozone amount fractions.
+
+BIPM.QM-K1 protocol v2.1.docx                                09 Oct. 25                   Page 3 of 25
+-   sA : standard deviation of N measurements of the nominal value xnom measured by the
+                              1 N
+    photometer A : s A 2 =          ∑
+                             N − 1 i =1
+                                        ( x A ,i − x A ) 2
+
+-   The result of the linear regression fit performed between two sets of data measured
+    by the photometers A and B during a comparison is written: x A = a A,B x B + bA,B . With
+    this notation, the photometer A is compared versus the photometer B. aA,B is
+    dimensionless and bA,B is expressed in units of nmol mol−1.
+
+
+6. Linking an RMO comparison to BIPM.QM-K1
+A laboratory can compare its ozone national standard to the common reference
+BIPM−SRP27 via a comparison with the ozone national standard of another laboratory in
+the same Regional Metrology Organisation. The protocol to apply is similar to the protocol
+B of this key comparison, the transfer standard being the national standard of the so-
+called "linking laboratory". The comparison between the national standards of the
+candidate laboratory and the linking laboratory can take place in either of the two
+laboratories.
+
+As the linking laboratory's national standard plays the role of a transfer standard, its
+stability should be assessed. Following the protocol B, its comparison with the candidate
+laboratory standard should be repeated in a reasonable time interval. Furthermore, the
+linking laboratory should ensure that the results of its comparison relative to the
+reference standard performed at the BIPM are still valid when undertaking comparison
+with another laboratory.
+
+The comparison information and results form BIPM.QM-K1-R3, available on the BIPM web
+page, shall be completed by the linking laboratory and sent to the BIPM after completion
+of the comparison. The excel file created should be named BIPM.QM-K1-R3-LAB-YY.xls
+(LAB stands for the candidate laboratory acronym, YY stands for the year on two digits).
+The results of the comparison between the candidate laboratory and the BIPM will be
+calculated by the BIPM.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                                09 Oct. 25     Page 4 of 25
+                            BIPM.QM-K1 Protocol A
+                 For laboratories that send or bring their
+                      national standard to the BIPM
+
+1. Transport of instruments to and from the BIPM
+It is the responsibility of the participating laboratory to organise transport of their
+instrument(s) to and from the BIPM, and to ensure that proper arrangements are made
+for local customs formalities. There are three likely scenarios depending on the location
+of the participating laboratory:
+
+•   countries within the E.U.;
+
+•   countries outside the E.U. and where the ATA carnet system is recognised;
+
+•   countries outside the E.U. but where the ATA is not recognised.
+
+Laboratories are invited to consult the BIPM administrative document ADM-DOU-T-02 –
+Information for laboratories shipping equipment to the BIPM for comparisons - for
+additional information regarding the steps to be taken in each of the three cases above.
+
+Laboratories are invited to inform the BIPM of its transport and customs arrangements
+prior to the cylinders leaving their laboratory by completing and returning the BIPM
+administrative document ADM-DOU-F-02 – Shipping instructions for comparisons. Any
+additional cost associated with custom clearance process which may be applied in case
+no form has been received will be charged to the participant.
+
+At the conclusion of the comparison period the participants are responsible for the
+arrangements and costs of shipping the instrument(s) from the BIPM back to their
+laboratories. Any instrument(s) still remaining at the BIPM 4 months after the comparison
+will be shipped by the BIPM back to the participants at the participants’ expense.
+
+
+2. Handling of instruments sent to the BIPM
+Instruments that are sent to the BIPM and that will be handled only by the BIPM staff
+during the comparison should be accompanied with a list of instructions. They should
+include unpacking instructions, any tests to be carried out before measurements, the
+conditions of use of the instruments during measurements, and any other relevant
+information.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                    09 Oct. 25              Page 5 of 25
+3. Comparison description
+A direct comparison will be performed at the BIPM between BIPM-SRP27 and the national
+ozone reference standard of the visiting laboratory over 12 amount fractions of ozone in
+dry air in the range (0 to 500) nmol mol−1. Where possible, BIPM-SRP28 will also be
+included in the comparison to ensure the stability of BIPM-SRP27.
+
+The BIPM will provide the source of zero air for the comparison. The BIPM will utilise its
+ozone generator for the comparisons, unless the visiting laboratory’s instrument cannot
+operate in this mode, in which case the visiting laboratory’s generator will be used. Data
+will be acquired using the SRP control programme unless the communication between
+this programme and the participating laboratory’s standard is not possible.
+
+A copy of the comparison information and results form BIPM.QM-K1-R1, available on the
+BIPM website, shall be completed and verified by the participating laboratory and the
+BIPM staff. The form is an excel workbook protected with a password (O3K1). The copy
+should be renamed BIPM.QM-K1-R1-LAB-YY.xls (LAB stands for the laboratory acronym,
+YY stands for the year).
+
+
+4. Pre-comparison requirements
+Stabilisation of instruments
+Prior to the comparison, all the instruments that will be used for the comparison shall be
+switched on and allowed to stabilise for at least eight hours.
+
+Test and adjustment of the instrument measurement system
+The instruments measurement system can be tested after the initial warm up period,
+following their usual operating procedures. If any adjustments are required, they will be
+noted.
+
+Source of purified air
+One common source of pure air will be used to provide the flows of reference air and
+ozone. This air will be furnished by the BIPM. It is ambient air compressed with an oil-free
+compressor, dried and scrubbed with a commercial purification system so that the
+amount fraction of ozone, hydrocarbons, and nitrogen oxides remaining in the air is below
+detectable limits. The relative humidity of the reference air is monitored and the amount
+fraction of water in air typically found to be less than 3 μmol/mol. The maximum available
+flow rate is 25 L/min.
+
+Ozone generator
+One common ozone generator will be used to generate the ozone in dry air flow to be
+measured by all the instruments included in the comparison. The ozone generator
+utilised in the comparison will be capable of producing stable ozone amount fractions
+over the range (0 to 500) nmol mol−1, at a minimum flow rate equal to 2 L/min plus the flow
+rate needed by the guest instrument plus an excess flow rate of 1 L/min. When possible,
+ozone will be generated with one of the BIPM ozone generators.
+
+
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25               Page 6 of 25
+Gas manifold
+When possible, the BIPM external dual manifold system will be used to redistribute the
+zero air and ozone/air to instruments. If the guest instrument possesses its own manifold,
+the participating laboratory shall decide whether or not it wishes to make use of it.
+
+Flow rates
+Gas flows shall be provided to photometers with a minimum excess of 1 L/min compared
+to the combined requirements of the photometers included in the comparison.
+
+
+5. Comparison procedure
+The following procedure will be followed for the comparison.
+
+Conditioning of the photometers and the pneumatic lines before the comparison
+At the beginning of the comparison, the photometers as well as interconnecting
+pneumatic lines will be conditioned with a nominal value of the ozone amount fraction
+greater than 500 nmol mol−1 for at least 2 hours. This step can be combined with the
+instrument stabilisation period.
+
+Ozone amount fraction nominal values
+12 nominal values will be measured by the photometers. These values include the
+measurement of 0 nmol mol−1 (no ozone produced) at the beginning and the end of the
+comparison. The 12 nominal values will be produced in the following sequence: (0, 220,
+80, 420, 120, 320, 30, 370, 170, 500, 270, and 0) nmol mol−1. Due to the operational
+characteristics of ozone generators, it is expected that the actual delivered values will be
+within ± 15 nmol mol−1 of those nominal values.
+
+Ozone generator stability
+For each nominal value of the ozone amount fraction xnom furnished by the ozone
+generator, it is important to ensure that the photometers are measuring a stable value.
+To this end, the standard deviation sSRP27 on the set of 10 consecutive measurements
+xSRP27,i recorded by BIPM-SRP27 will be calculated. This set is considered as valid if sSRP27
+is less than 1 nmol mol−1. If sSRP27 is found greater than 1 nmol mol−1, another set of 10
+consecutive measurements of the same nominal values is taken. Repeated instances of
+unacceptable values of sSRP27 indicate that there are instabilities in the ozone generator or
+in the BIPM-SRP27 measurement system. The reasons for these will be examined and
+documented prior to continuing the comparison.
+
+Recorded values
+For each nominal value xnom, the value recorded for each photometer A is the mean ( x A )
+of 10 consecutive single measurements xA,i taken in a stable regime as defined above.
+
+Comparison repeatability
+The comparison procedure may be repeated to evaluate its repeatability. The participant
+and the BIPM will commonly decide when both instruments are stable enough to start
+recording a set of measurement results to be considered as the official comparison
+results. These measurement results will be recorded in the form BIPM.QM-K1-R1-LAB-
+YY.xls. In between the comparison repeats, ozone at a nominal value greater than
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25               Page 7 of 25
+500 nmol mol−1 should be flowed through the instruments, or the comparison procedure
+should be repeated continuously. Details of this choice will be reported in the same form.
+The all process should not take more than three days.
+
+
+6. Uncertainty budgets
+National standard
+The standard uncertainties associated with the twelve values measured by the national
+standard (NS) will be evaluated by the participating laboratory. The laboratory will provide
+an uncertainty budget used to calculate the values in the report form BIPM.QM-K1-R1-
+LAB-YY.xls. This budget should preferably be presented in a table, showing the different
+uncertainty components with their type as described in the GUM.
+
+Reference standard
+The uncertainties associated with the twelve values 𝑥𝑥̅SRP27 (and eventually 𝑥𝑥̅SRP28 )
+measured by the BIPM-SRP27 (and BIPM-SRP28 if appropriate) will be evaluated by the
+BIPM. Details of the uncertainty budget for the BIPM-SRPs can be found at the end of this
+document.
+
+Absorption cross section value and uncertainty
+As introduced in section 1.1, ozone photometers measure ozone amount fractions by the
+absorption of radiation by ozone at 253.7 nm. Consequently, the uncertainty on the
+absorption cross section of ozone at 253.7 nm can be conventionally set to zero if all the
+instruments use the same value for this parameter but must be included if different
+values are used. The value and uncertainty of the ozone absorption cross-section used
+by the participant shall appear clearly in the result form and the uncertainty budgets.
+
+
+7. Linear regression fits
+The sets of the twelve data points (𝑥𝑥̅SRP27 and 𝑥𝑥̅ NS ) will be fitted using the generalised
+least square program OzonE, taking into account the associated uncertainties u(𝑥𝑥̅SRP27 ),
+u(𝑥𝑥̅ NS ) as well as the covariance terms u(xSRP27,i , xSRP27,j) in between two different ozone
+amount fraction measurements performed by BIPM-SRP27. This will be performed by the
+BIPM. The parameters aNS,SRP27 and bNS,SRP27 of the linear relationship between xNS and xSRP27
+( xNS= aNS,SRP27 xSRP27 +bNS,SRP27 ) will be calculated as well as their uncertainties.
+
+Covariance terms for the participant standard, u(xNS,i, xNS,j) can be taken into account if
+they are written as a constant times the product of the two ozone amount fractions:
+
+                            𝑢𝑢�𝑥𝑥NS,𝑖𝑖 , 𝑥𝑥NS,𝑗𝑗 � = 𝛼𝛼𝑥𝑥NS,𝑖𝑖 𝑥𝑥NS,𝑗𝑗                [1]
+Where α is a constant to be entered into the program OzonE. The participant is free to
+provide a value for this constant. If no value is given, the covariance terms will be
+assumed to be zero. As an example, covariance terms in between two measurement
+results of the BIPM SRPs are described in annex.
+
+
+BIPM.QM-K1 protocol v2.1.docx                                  09 Oct. 25      Page 8 of 25
+8. Degrees of equivalence
+Two degrees of equivalence will be evaluated at two ozone nominal values: 80 nmol mol−1
+and 420 nmol mol−1.
+
+The degree of equivalence of the national standard with the reference standard SRP27,
+at the nominal value xnom is the following:
+
+                           𝑫𝑫 = 𝒙𝒙𝑵𝑵𝑵𝑵 − 𝒙𝒙𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺                               [2]
+Where xNS and xSRP27 are the measurement results of the national standard (𝑥𝑥̅ NS ) and of
+SRP27 (𝑥𝑥̅ SRP27) at the nominal value xnom.
+
+Its associated standard uncertainty is:
+
+                           𝑢𝑢(𝑫𝑫) = �𝒖𝒖𝟐𝟐 (𝒙𝒙𝑵𝑵𝑵𝑵 ) + 𝒖𝒖𝟐𝟐 (𝒙𝒙𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺 )          [3]
+
+
+9. Data acquisition and backup
+The SRP control software automatically generates one excel file per comparison run. This
+file contains all the data recorded during the run. A copy of all recorded files can be
+provided on demand to the participant, but they are not considered as the results of the
+comparison. Names and location of the original files kept at the BIPM will be noted in the
+form BIPM.QM-K1-R1.
+
+
+10. Reporting of results
+The measurement results together with the uncertainties and any additional information
+required will be reported in the excel form BIPM.QM-K1-R1-LAB-YY.xls. A PDF version of
+this file will be created and stored at the BIPM. If, on examination of the results, one or
+more appear to be anomalous, the institute is invited to check their results for numerical
+errors but without being informed as to the magnitude or sign of the apparent anomaly. If
+no numerical error is found, the final results are then derived and communicated to the
+participant. Note that once the participant has been informed of the results, individual
+values and uncertainties may be changed or removed only with the agreement of the
+Consultative Committee, and on the basis of a failure of a standard or some other
+phenomenon.
+
+The BIPM is responsible for the preparation of a report of the comparison. A report will be
+produced for each bilateral comparison. There are a number of stages to the publication
+of the results before they can be accepted for degrees of equivalence in the key
+comparison database. Two formal stages are referred to here as Drafts A and B.
+
+The Draft A report of a bilateral comparison is prepared as soon as the results have been
+agreed by the participant. It includes the results transmitted by the participant, identified
+by name, full details of the comparison, the uncertainty budgets, the proposals for
+degrees of equivalence with the key comparison reference value. It is sent in confidence
+
+BIPM.QM-K1 protocol v2.1.docx                               09 Oct. 25       Page 9 of 25
+to the participant for discussion and approbation. The report is then termed a Draft B and
+is sent for review to the reviewers designated by the Gas Analysis Working Group (GAWG)
+of the CCQM. The Draft B is amended according to comments received. Once the report
+has been approved by the reviewers it is considered to be the final report of the
+comparison and is published in Metrologia Technical Supplement, and the results
+published in the key comparison database.
+
+In the procedure for producing Drafts A and B, the following points should be noted:
+
+-   A result from a participant is not considered complete without an associated
+    uncertainty and will not be published in Draft A unless it is accompanied by an
+    uncertainty supported by a complete uncertainty budget.
+-   An institute that considers its result unrepresentative of its standards may request
+    a subsequent separate comparison with the BIPM. This should take place as soon
+    as possible after the completion of the comparison. The subsequent comparison
+    is considered as a new and distinct comparison, the results of which will
+    supersede those of the earlier comparison.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25             Page 10 of 25
+                            BIPM.QM-K1 Protocol B
+              For laboratories that send or bring a transfer
+                          standard to the BIPM
+
+1. Transport of instruments to and from the BIPM
+It is the responsibility of the participating laboratory to organise transport of their
+instrument(s) to and from the BIPM, and to ensure that proper arrangements are made
+for local customs formalities. There are three likely scenarios depending on the location
+of the participating laboratory:
+
+•   countries within the E.U.;
+
+•   countries outside the E.U. and where the ATA carnet system is recognised;
+
+•   countries outside the E.U. but where the ATA is not recognised.
+
+Laboratories are invited to consult the BIPM administrative document ADM-DOU-T-02 –
+Information for laboratories shipping equipment to the BIPM for comparisons - for
+additional information regarding the steps to be taken in each of the three cases above.
+
+Laboratories are invited to inform the BIPM of its transport and customs arrangements
+prior to the cylinders leaving their laboratory by completing and returning the BIPM
+administrative document ADM-DOU-F-02 – Shipping instructions for comparisons. Any
+additional cost associated with custom clearance process which may be applied in case
+no form has been received will be charged to the participant.
+
+At the conclusion of the comparison period the participants are responsible for the
+arrangements and costs of shipping the instrument(s) from the BIPM back to their
+laboratories. Any instrument(s) still remaining at the BIPM 4 months after the comparison
+will be shipped by the BIPM back to the participants at the participants’ expense.
+
+
+2. Handling of instruments sent to the BIPM
+Instruments that are sent to the BIPM and that will be handled only by the BIPM staff
+during the comparison should be accompanied with a list of instructions. They should
+include unpacking instructions, any tests to be carried out before measurements, the
+conditions of use of the instruments during measurements, and any other relevant
+information
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                    09 Oct. 25             Page 11 of 25
+3. Stability and characteristics of transfer standards
+Laboratories employing a transfer standard should ensure that the standard has good
+short-term stability and stability during transport. Ozone reference transfer standards
+should fulfil the requirements described in section 6 of this protocol.
+
+
+4. Comparison description
+A series of comparisons will be performed utilising an ozone reference transfer standard
+in order to determine the degree of equivalence between the participating laboratory
+national standard (designated with NS) and the BIPM-SRP27. Comparisons shall be
+performed over 12 amount fractions of ozone in dry air in the range (0 to 500) nmol mol−1.
+The comparisons will be in three parts:
+
+  1.   National standard (NS) vs. Transfer standard (TS) comparison at the
+       laboratory of the participating institute: within the six weeks prior to
+       sending the transfer standard to the BIPM, a direct comparison between
+       the transfer standard and the national standard will be performed in the
+       laboratory of the participating institute. The corresponding section of the
+       comparison information and results form BIPM.QM-K1-R2, attached to this
+       protocol, shall be completed by the participating laboratory. The excel file
+       created should be named BIPM.QM-K1-R2-LAB-YY.xls (LAB stand for the
+       laboratory acronym, YY stand for the year of the comparison date on two
+       digits) and sent to the BIPM.
+
+  2.   Transfer standard (TS) vs. BIPM-SRP27 at the BIPM: comparison between
+       the transfer standard (TS) and BIPM-SRP27 will be performed at the BIPM.
+       The corresponding section of the form BIPM.QM-K1-R2-LAB-YY.xls shall be
+       completed and verified by the participating laboratory and the BIPM staff.
+
+  3.   National standard (NS) vs. Transfer standard (TS) comparison at the
+       laboratory of the participating institute: within the six weeks following the
+       comparison at the BIPM, a second comparison between the transfer
+       standard (TS) and the national standard (NS) will be performed in the
+       laboratory of the participating institute. The corresponding section of the
+       form BIPM.QM-K1-R2-LAB-YY.xls, shall be completed by the participating
+       laboratory and sent to the BIPM.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                     09 Oct. 25              Page 12 of 25
+5. Comparison between the national standard and the transfer
+   standard before travelling with the transfer standard
+
+   5.1. Pre-comparison requirements
+Stabilisation of instruments
+Prior to the comparison, all the instruments that will be used for the comparison shall be
+switched on and allowed to stabilise for at least 8 hours.
+
+Test and adjustment of the instrument measurement system
+The instruments measurement system can be tested after the initial warm up period,
+following their usual operating procedures. If any adjustments are required, they will be
+noted.
+
+Source of purified air
+One common source of pure air shall be used to provide the flows of reference air and
+ozone. The source of pure air shall be free of ozone, nitrogen oxides and any other
+interfering substance that can cause an undesired positive or negative response in the
+UV photometer.
+
+Ozone generator
+One common ozone generator will be used to generate the ozone to be measured by the
+national standard and the transfer standard. This ozone generator should be able to
+produce a maximum of 500 nmol mol−1 of ozone amount fractions in dry air at the flow
+rate needed for the comparison.
+
+Flow rates
+All the gas flows provided to the instruments (reference air and/or ozonized air) should
+have flow rates with a minimum excess of 1 L/min compared to what is needed by the
+national standard plus the transfer standard.
+
+
+   5.2. Comparison procedure
+Conditioning of the photometers and the pneumatic lines before the comparison
+At the beginning of the comparison, the photometers as well as interconnecting
+pneumatic lines will be conditioned with a nominal value of the ozone amount fraction
+greater than 500 nmol mol−1 for at least 2 hours. This step can be combined with the
+instruments stabilisation period.
+
+Ozone amount fraction nominal values
+12 nominal values will be measured by the photometers. These values include the
+measurement of 0 nmol mol−1 at the beginning and the end of the comparison. The 12
+nominal values will be produced in the following sequence: (0, 220, 80, 420, 120, 320, 30,
+370, 170, 500, 270, 0) nmol mol−1. Due to the operational characteristics of ozone
+generators, it is expected that the actual delivered values will be within ± 15 nmol mol−1
+of those nominal values.
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                     09 Oct. 25             Page 13 of 25
+Ozone generator stability
+For each nominal value of the ozone amount fraction xnom furnished by the ozone
+generator, it is important to ensure that the photometers are measuring a stable value.
+To this end, each of the twelve points will be sampled for at least ten minutes by the two
+photometers. Following this, ten consecutive output values from each instrument will be
+recorded. The averages x NS and x T as well as the standard deviations sNS and sTS of the
+recorded values will be evaluated. The two values x NS and xT are considered as valid if
+the associated standard deviation sNS and sTS do not exceed 2 nmol mol−1 or 1.5 % of the
+average value (whichever is the largest). If any of the two values is not valid, the point will
+be taken again after five minutes of sampling at the same nominal value. Repeated
+instances of unacceptable values of sNS or sTS indicate that there are instabilities in the
+ozone generator or in the measurement systems. The reasons for these will be examined
+and documented prior to the comparison continuing.
+Laboratories are free to use more restrictive conditions than those described above (see
+for example the conditions used with an SRP in protocol A). These conditions shall be
+noted in the comparison information form BIPM.QM-K1-R2-LAB-YY.xls.
+
+Comparison repeatability
+The comparison procedure may be repeated to evaluate its repeatability. The participant
+will then decide when both instruments are stable enough to start recording a set of
+measurement results to be considered as the official comparison results. Those
+measurement results will be recorded in the form BIPM.QM-K1-R2-LAB-YY.xls. In
+between the comparison repeats, ozone at a nominal value greater than 500 nmol mol−1
+should be flowed inside the instruments, or the comparison procedure should be
+repeated continuously. Details of this choice will be reported in the same form. The all
+process should not take more than three days.
+
+
+6. Comparison between the transfer standard and BIPM-SRP27 at
+   the BIPM
+
+   6.1. Comparison description
+A direct comparison will be made at the BIPM between BIPM-SRP27 and the transfer
+standard of the visiting laboratory over 12 amount fractions of ozone in dry air in the range
+(0 to 500) nmol mol−1. Where possible, BIPM-SRP28 will also be included in the
+comparison to ensure the stability of BIPM-SRP27.
+
+The BIPM will provide the source of zero air for the comparison. The BIPM will utilise its
+ozone generator for the comparisons, unless the visiting laboratory’s instrument cannot
+operate in this mode, in which case the visiting laboratory’s generator will be used. Data
+will be acquired using the SRP control programme 03 Conductor version 03D or higher
+unless the communication between this programme and the participating standard is not
+possible.
+
+The comparison information form BIPM.QM-K1-R2, attached to this protocol, shall be
+completed and verified by the participating laboratory and the BIPM staff.
+
+BIPM.QM-K1 protocol v2.1.docx                        09 Oct. 25              Page 14 of 25
+   6.2. Pre-comparison requirements
+Stabilisation of instruments
+Prior to the comparison, all the instruments that will be used for the comparison shall be
+switched on and allowed to stabilise for at least eight hours.
+
+Test and adjustment of the instrument measurement system
+The instruments measurement system can be tested after the initial warm up period,
+following their usual operating procedures. If any adjustments are required, they will be
+noted.
+
+Source of purified air
+One common source of pure air will be used to provide the flows of reference air and
+ozone. This air will be furnished by the BIPM. It is ambient air compressed with an oil-free
+compressor, dried and scrubbed with a commercial purification system so that the
+amount fraction of ozone, hydrocarbons, and nitrogen oxides remaining in the air is below
+detectable limits. The relative humidity of the reference air is monitored and the amount
+fraction of water in air typically found to be less than 3 μmol/mol. The maximum available
+flow rate is 25 L/min.
+
+Ozone generator
+One common ozone generator will be used to generate the ozone in dry air flow to be
+measured by all the instruments included in the comparison. The ozone generator
+utilised in the comparison will be capable of producing stable ozone amount fractions
+over the range (0 to 500) nmol mol−1, at a minimum flow rate equal to 2 L/min plus the flow
+rate needed by the guest instrument plus an excess flow rate of 1 L/min. When possible,
+ozone will be generated with one of the BIPM ozone generators.
+
+Gas manifold
+When possible, the BIPM external dual manifold system will be used to redistribute the
+zero air and ozone/air to instruments. If the guest instrument possesses its own manifold,
+the participating laboratory shall decide whether or not it wishes to make use of it.
+
+Flow rates
+Gas flows shall be provided to photometers with a minimum excess of 1 L/min compared
+to the combined requirements of the photometers included in the comparison.
+
+
+
+
+   6.3. Comparison procedure
+The following procedure will be followed for the comparison.
+
+Conditioning of the photometers and the pneumatic lines before the comparison
+At the beginning of the comparison, the photometers as well as interconnecting
+pneumatic lines will be conditioned with a nominal value of the ozone amount fraction
+greater than 500 nmol mol−1 for at least 2 hours. This step can be combined with the
+instrument stabilisation period.
+
+
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25             Page 15 of 25
+Ozone amount fraction nominal values
+12 nominal values will be measured by the photometers. These values include the
+measurement of 0 nmol mol−1 (no ozone produced) at the beginning and the end of the
+comparison. The 12 nominal values will be produced in the following sequence: (0, 220,
+80, 420, 120, 320, 30, 370, 170, 500, 270, and 0) nmol mol−1. Due to the operational
+characteristics of ozone generators, it is expected that the actual delivered values will be
+within ± 15 nmol mol−1 of those nominal values.
+
+Ozone generator stability
+For each nominal value of the ozone amount fraction xnom furnished by the ozone
+generator, it is important to ensure that the photometers are measuring a stable value.
+To this end, the standard deviation sSRP27 on the set of 10 consecutive measurements
+xSRP27,i recorded by BIPM-SRP27 will be calculated. This set is considered as valid if sSRP27
+is less than 1 nmol mol−1. If sSRP27 is found greater than 1 nmol mol−1, another set of 10
+consecutive measurements of the same nominal values is taken. Repeated instances of
+unacceptable values of sSRP27 indicate that there are instabilities in the ozone generator or
+in the BIPM-SRP27 measurement system. The reasons for these will be examined and
+documented prior to continuing the comparison.
+
+Recorded values
+For each nominal value xnom, the value recorded for each photometer A is the mean ( x A )
+of 10 consecutive single measurements xA,i taken in a stable regime as defined above.
+
+Comparison repeatability
+The comparison procedure may be repeated to evaluate its repeatability. The participant
+and the BIPM will commonly decide when both instruments are stable enough to start
+recording a set of measurement results to be considered as the official comparison
+results. These measurement results will be recorded in the form BIPM.QM-K1-R1-LAB-
+YY.xls. In between the comparison repeats, ozone at a nominal value greater than
+500 nmol mol−1 should be flowed through the instruments, or the comparison procedure
+should be repeated continuously. Details of this choice will be reported in the same form.
+The all process should not take more than three days.
+
+
+   6.4. Data acquisition and backup
+The SRP control software automatically generates one excel file per comparison run. This
+file contains all the data recorded during the run. A copy of all recorded files can be
+provided on demand to the participant, but they are not considered as the results of the
+comparison. Names and location of the original files kept at the BIPM will be noted in the
+form BIPM.QM-K1-R2.
+
+
+7. Subsequent comparison between the national standard and the
+   transfer standard at the laboratory of the participating institute
+The aim of this second comparison between the national and the transfer standard is to
+demonstrate that no significant drift has occurred in those instruments since the time of
+
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25              Page 16 of 25
+their first comparison at the participating institute’s laboratory. In consequence, this
+comparison should be as close as possible of the first comparison.
+
+
+   7.1. Pre-comparison requirements
+The requirements are the same as those described for the first comparison in the
+paragraph 5.1 of this protocol.
+
+
+   7.2. Comparison procedure
+The comparison procedure is the same as the one described in the paragraph 5.2 of this
+protocol. The comparison information form BIPM.QM-K1-R2 attached to this protocol
+shall be completed by the participating laboratory. The comparison should be completed
+and relevant results form received by the BIPM no later than six weeks after the
+comparison at the BIPM.
+
+
+8. Uncertainty budgets
+National standard
+The standard uncertainties associated with the twelve values x NS will be evaluated by
+the participating laboratory. The laboratory will provide an uncertainty budget used to
+calculate the values in the report form BIPM.QM-K1-R2. This budget should preferably be
+presented in a table, showing the different uncertainty components with their type as
+described in the GUM.
+
+Reference standard
+The uncertainties associated with the twelve values x SRP27 (and eventually x SRP28 )
+measured by the BIPM-SRP27 (and eventually BIPM-SRP28) will be evaluated by the
+BIPM. Details of the uncertainty budget for the BIPM-SRPs can be found at the end of this
+document.
+
+Transfer standard
+Only the components of the uncertainty corresponding to the repeatability and
+reproducibility of a transfer standard’s measurements should be considered, since it is
+assumed that any causes of bias in the transfer standard’s measurement remains
+constant over the time period of the comparisons.
+
+The repeatability time scale may be taken as the duration of the measurement of one
+nominal ozone amount fraction. The reproducibility time scale is at least the time
+between the two comparisons performed between the national standard and the transfer
+standard.
+
+Absorption cross section value and uncertainty
+As introduced in section 1.1, ozone photometers measure ozone amount fractions by the
+absorption of radiation by ozone at 253.7 nm. Consequently, the uncertainty on the
+absorption cross section of ozone at 253.7 nm can be conventionally set to zero if all the
+instruments use the same value for this parameter but must be included if different
+BIPM.QM-K1 protocol v2.1.docx                     09 Oct. 25             Page 17 of 25
+values are used. The value and uncertainty of the ozone absorption cross-section used
+by the participant shall appear clearly in the result form and the uncertainty budgets..
+
+
+9. Calculation of the relationship between the national standard
+   and the reference standard
+The parameters aNS,SRP27 and bNS,SRP27 of the linear relationship between xNS and xSRP27 ( xNS=
+aNS,SRP27 xSRP27 +bNS,SRP27 ) will be computed by the BIPM using the program OzonE. This will
+be done from the measurement results of the two comparisons performed via the
+transfer standard and their related uncertainties:
+
+     • The first comparison results are calculated by performing a linear regression on
+the twelve data points from the BIPM visit (xRS, xTS) (calibration of the transfer standard)
+followed by a second linear regression of the twelve data points from the pre BIPM visit
+(xNS, x’TS), x’TS being the corrected values of the transfer standard calibrated by the
+reference standard.
+
+     • The second comparison results are calculated by performing a linear regression
+on the twelve data points from the BIPM visit (xRS, xTS) (calibration of the transfer standard)
+followed by a second linear regression of the twelve data points from the post BIPM visit
+(xNS, x’TS), x’TS being the corrected values of the transfer standard calibrated by the
+reference standard.
+
+Covariance terms in between two measurement results of the BIPM SRPs will be included.
+They are described at the end of this document.
+
+Covariance terms for the participant national standard u(xNS,i, xNS,j) can be taken into
+account if they are written as a constant times the product of the two ozone amount
+fractions:
+
+                            𝒖𝒖(𝒙𝒙𝑵𝑵𝑵𝑵,𝒊𝒊 , 𝒙𝒙𝑵𝑵𝑵𝑵,𝒋𝒋 ) = 𝜶𝜶 ⋅ 𝒙𝒙𝑵𝑵𝑵𝑵,𝒊𝒊 ⋅ 𝒙𝒙𝑵𝑵𝑵𝑵,𝒋𝒋           [4]
+Where α is a constant to be entered into the program OzonE. The participant is free to
+provide a value for those constants. If no value is given, the covariance terms will be
+assumed to be zero.
+
+Covariance terms for the transfer standard are not taken into account in this protocol.
+
+The two linear relationships will be noted in the form BIPM.QM-K1-R2.
+
+
+10. Degrees of equivalence
+
+   10.1. Definition
+Two degrees of equivalence will be evaluated at two ozone nominal values: 80 nmol mol−1
+and 420 nmol mol−1.
+
+BIPM.QM-K1 protocol v2.1.docx                                        09 Oct. 25       Page 18 of 25
+In order to evaluate the difference between the measurement results of the national
+standard and the common reference SRP27, the transfer standard is first calibrated by
+SRP27. Thus, the degree of equivalence of the national standard with the reference
+standard SRP27, at the nominal value xnom is the following:
+
+                                                  �𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺
+                                    𝑫𝑫 = 𝒙𝒙𝑵𝑵𝑵𝑵 − 𝒙𝒙                                                               [5]
+Where xNS is the measurement results of the national standard at the nominal value xnom,
+and xˆSRP 27 is the predicted value of SRP27 at the same nominal value, deduced from the
+transfer standard measurement result during its comparison with the national standard.
+
+Its associated standard uncertainty is:
+
+                                    𝑢𝑢(𝐷𝐷) = �𝑢𝑢2 (𝑥𝑥𝑵𝑵𝑵𝑵 ) + 𝑢𝑢2 (𝒙𝒙
+                                                                   �𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺𝑺 )                                   [6]
+
+   10.2. Calculation of SRP27 predicted values and their related uncertainties
+The comparison performed at the BIPM between the transfer standard and the reference
+standard SRP27 is used to calibrate the transfer standard. The data xRS and xTS will be
+fitted using the generalised least square program OzonE, taking into account the
+associated uncertainties u ( xRS ) and u ( xTS ) , as well as covariance terms between the
+reference standard measurement results.
+
+The parameters aRS,TS and bRS,TS of the linear relationship between xRS and xTS ( xRS = aRS,TS xTS
++bRS,T ) will be calculated as well as their uncertainties.
+
+Then, for each value xTS measured with the transfer standard during its comparison with
+the national standard, a predicted value xˆRS for the reference standard will be evaluated
+using the linear relationships between the two instruments calculated above.
+
+The standard uncertainties associated with the predicted values xˆRS will be evaluated
+according to the equation:
+
+=  ˆRS )
+u( x       u 2 (bRS ,TS ) + xTS
+                             2
+                                ⋅ u 2 (aRS ,TS ) + aRS
+                                                    2
+                                                       ,TS ⋅ u ( xTS ) + 2 xTS ⋅ u ( aRS ,TS , bRS ,TS )
+                                                              2
+                                                                                                                   [7]
+
+Where the uncertainty components u(aRS,TS), u(bRS,TS) and u(aRS,TS, bRS,TS) are calculated with
+the generalised least-square software OzonE.
+
+
+11. Comparability of the two degrees of equivalence for each
+  nominal value
+As protocol B includes two comparison between the national standard and the transfer
+standard (before and after the comparison at the BIPM), two degrees of equivalence are
+calculated for one nominal value xnom.
+
+At each nominal value, these two degrees of equivalence will be compared with their
+associated enlarged uncertainties (k=2).
+BIPM.QM-K1 protocol v2.1.docx                                           09 Oct. 25                         Page 19 of 25
+12. Reporting of results
+The measurement results together with the uncertainties and any additional information
+required will be reported in the excel form BIPM.QM-K1-R2-LAB-YY.xls. A PDF version of
+this file will be created and stored at the BIPM. If, on examination of the results, one or
+more appear to be anomalous, the institute is invited to check their results for numerical
+errors but without being informed as to the magnitude or sign of the apparent anomaly. If
+no numerical error is found, the final results are then derived and communicated to the
+participant. Note that once the participant has been informed of the results, individual
+values and uncertainties may be changed or removed only with the agreement of the
+Consultative Committee, and on the basis of a failure of a standard or some other
+phenomenon.
+
+The BIPM is responsible for the preparation of a report of the comparison. A report will be
+produced for each bilateral comparison. There are a number of stages to the publication
+of the results before they can be accepted for degrees of equivalence in the key
+comparison database. Two formal stages are referred to here as Drafts A and B.
+
+The Draft A report of a bilateral comparison is prepared as soon as the results have been
+agreed by the participant. It includes the results transmitted by the participant, identified
+by name, full details of the comparison, the uncertainty budgets, the proposals for
+degrees of equivalence with the key comparison reference value. It is sent in confidence
+to the participant for discussion and approbation. The report is then termed a Draft B and
+is sent for review to the reviewers designated by the Gas Analysis Working Group (GAWG)
+of the CCQM. The Draft B is amended according to comments received. Once the report
+has been approved by the reviewers it is considered to be the final report of the
+comparison and is published in Metrologia Technical Supplement, and the results
+published in the key comparison database.
+
+In the procedure for producing Drafts A and B, the following points should be noted:
+
+-   A result from a participant is not considered complete without an associated
+    uncertainty and will not be published in Draft A unless it is accompanied by an
+    uncertainty supported by a complete uncertainty budget.
+-   An institute that considers its result unrepresentative of its standards may request
+    a subsequent separate comparison with the BIPM. This should take place as soon
+    as possible after the completion of the comparison. The subsequent comparison
+    is considered as a new and distinct comparison, the results of which will
+    supersede those of the earlier comparison.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                      09 Oct. 25              Page 20 of 25
+             APPENDIX 1 - BIPM-SRP27 uncertainty budget
+
+1. Uncertainty budget
+The uncertainty budget associated with the ozone amount fraction in dry air x measured
+by BIPM-SRP27 and BIPM-SRP28 in the range (0 to 500) nmol mol−1 is given in the following
+table. More details on the uncertainty components can be found in a published paper 2.
+As explained in this paper, this uncertainty budget applies to SRPs maintained by the
+BIPM, in which two biases have recently been identified. The first one is a bias in the
+temperature measurement leading to a 0.4 % under evaluation of ozone amount fraction
+measurements. This bias is removed thanks to a temperature control unit. The second
+one is a bias in the optical path length leading to a 0.5 % over evaluation of ozone amount
+fraction measurements. This bias is numerically corrected, and its uncertainty
+represents the main contribution to the standard uncertainty on ozone amount fractions
+measurements (2.89×10−3x).
+
+
+
+
+2
+ Viallon J, Moussay P, Norris J.E, Guenther F and Wielgosz R.I, “A study of systematic biases and
+measurement uncertainties in ozone mole fraction measurements with the NIST Standard Reference
+Photometer » Metrologia 43 (2006) 441-450.
+
+BIPM.QM-K1 protocol v2.1.docx                         09 Oct. 25              Page 21 of 25
+                                           Uncertainty u(y)                          Sensitivit
+                                                                                                      contribution
+                                                                                        y
+                                                             Combined                                    to u(x)
+  Component (y)                                     Standard  standard coefficien
+                           Source     Distributi                                                           c i ⋅ u( y )
+                                                                                 ∂x
+                                      on         Uncertainty uncertainty t c i =                          nmol mol−1
+                                                                 u(y)            ∂y
+
+                      Measurement
+                                  Rect.            0.0006 cm
+                      Scale
+                                                                                           x
+ Optical Path Lopt                                                  0.52 cm           −                   2.89×10−3x
+                      Repeatability   Normal       0.01 cm                                Lopt
+                      Bias            Rect         0.52 cm
+
+                      Pressure
+                                      Rect.        0.029 kPa
+                      gauge                                                                   x
+ Pressure P                                                         0.034 kPa             −               3.37×10−4x
+                      Difference                                                              P
+                                    Rect.          0.017 kPa
+                      between cells
+                      Temperature
+                      probe
+                                      Rect.        0.03 K                                 𝑥𝑥
+ Temperature T                                                      0.07 K                                2.29×10−4x
+                      Residual bias Rect.          0.058 K
+                                                                                          𝑇𝑇
+                      Scalers                                                            x
+ Ratio of                             Rect.        8×10-6
+                      resolution                                    1.4×10-5          D ln(D)                0.28
+ intensities D
+                      Repeatability   Triang.      1.1×10-5
+
+                      Conventional
+ Absorption           value                         0.35×10−19       0.35×10−19               𝑥𝑥
+ Cross section σ      CCQM.O3.20
+                                                                                       −                        -
+                                                   cm molecule
+                                                      2        −1
+                                                                    cm molecule
+                                                                      2         −1
+                                                                                              𝜎𝜎
+                      19
+
+
+
+
+2. Simple expression of the uncertainty
+To obtain a simple form for the combined standard uncertainty u(x), the measurement
+equation
+
+                            −1 R Tmes
+                      x=                 ln( D)                                                     [8]
+                           2α L N A Pmes
+can to be written :
+
+                      x = B ln( D)                                                                  [9]
+where
+
+                            −1 R Tmes
+                      B=                                                                           [10]
+                           2α L N A Pmes
+
+BIPM.QM-K1 protocol v2.1.docx                               09 Oct. 25                    Page 22 of 25
+and is constant for a given temperature and pressure.
+
+So that the uncertainty contribution from the ratio of intensities D (to the combined
+standard uncertainty of x) can be written:
+
+                            𝒖𝒖(𝑫𝑫)𝒙𝒙     𝒖𝒖(𝑫𝑫)𝑩𝑩
+                  𝒖𝒖𝑫𝑫 = 𝑫𝑫 𝒍𝒍𝒍𝒍(𝑫𝑫) =     𝑫𝑫
+                                                    ≈ 𝒖𝒖(𝑫𝑫)𝑩𝑩                                           [11]
+
+
+
+Since for the measurement range (0 to 500) nmol mol−1:
+
+                  𝑫𝑫 ≈ 𝟏𝟏                                                                                [12]
+
+
+And the combined standard uncertainty u(x) :
+
+                                                                        𝟐𝟐
+                                                        𝒖𝒖(𝑳𝑳𝒐𝒐𝒐𝒐𝒐𝒐 )        𝒖𝒖(𝑷𝑷) 𝟐𝟐   𝒖𝒖(𝑻𝑻) 𝟐𝟐
+                  𝒖𝒖(𝒙𝒙) = �(𝒖𝒖(𝑫𝑫)𝑩𝑩)𝟐𝟐 + ��                        � +�
+                                                                               𝑷𝑷
+                                                                                  � + � 𝑻𝑻 � � 𝒙𝒙𝟐𝟐 [13]
+                                                          𝑳𝑳𝒐𝒐𝒐𝒐𝒐𝒐
+
+
+
+
+The application for BIPM-SRP27 (L = 89.8 cm), with a measurement temperature equal
+to 295 K and a measurement pressure equal to 100 kPa gives a numerical equation
+(where the numerical values of x are for ozone amount fractions given in units
+of nmol mol−1) :
+
+                  𝒖𝒖(𝒙𝒙) = �(𝟎𝟎. 𝟐𝟐𝟐𝟐)𝟐𝟐 + (𝟐𝟐. 𝟗𝟗𝟗𝟗 ⋅ 𝟏𝟏𝟎𝟎−𝟑𝟑 𝒙𝒙)𝟐𝟐                                     [14]
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                                           09 Oct. 25                   Page 23 of 25
+The Figure 1 depicts the corresponding variations of u(x) with the ozone amount fraction
+x.
+
+
+
+                             1.5
+
+
+
+
+           u(x) (noml/mol)
+                              1
+
+
+
+                             0.5
+
+
+
+                              0
+                                   0            100          200                   300                   400   500
+                                                             x (nmol/mol)
+
+Figure 1 : Combined standard uncertainty associated with the measured amount fraction of ozone in
+dry air for BIPM-SRP27.
+
+
+
+3. Covariance terms
+When considering the SRP measurement equation, it appears that there are correlations
+in between the results of two measurements performed at two different ozone amount
+fractions with the same SRP. This should be taken into account when a generalized least-
+squares regression is performed on measurements performed with an SRP.
+
+The general expression of the covariance terms between two measurement results xi and
+xj given by the GUM (Section F.1.2.3 equation F.2) is:
+                                                                     𝜕𝜕                       𝜕𝜕
+                                       𝑢𝑢(𝑥𝑥𝑖𝑖 , 𝑥𝑥𝑗𝑗 ) = ∑𝐿𝐿𝑙𝑙=1 �𝜕𝜕𝑞𝑞 𝑥𝑥𝑖𝑖 � �𝜕𝜕𝑞𝑞 𝑥𝑥𝑗𝑗 � 𝑢𝑢(𝑞𝑞𝑙𝑙 )2                  [15]
+                                                                             𝑙𝑙                    𝑙𝑙
+
+Where the ql are common variables in between xi and xj.
+
+The common variables between xi and xj are the temperature T, the pressure P, and the
+optical path length Lopt. For those three variables, the partial derivate of xi takes the same
+expression:
+                                       𝝏𝝏𝒙𝒙𝒊𝒊      𝒙𝒙
+                                                = 𝒒𝒒𝒊𝒊                                                                  [16]
+                                       𝝏𝝏𝒒𝒒𝒍𝒍           𝒍𝒍
+
+So that:
+                                                                   𝑥𝑥             𝑥𝑥
+                                       𝑢𝑢(𝑥𝑥𝑖𝑖 , 𝑥𝑥𝑗𝑗 ) = ∑𝐿𝐿𝑙𝑙=1 �𝑞𝑞𝑖𝑖 � �𝑞𝑞𝑗𝑗� 𝑢𝑢(𝑞𝑞𝑙𝑙 )2                             [17]
+                                                                        𝑙𝑙             𝑙𝑙
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                                                               09 Oct. 25           Page 24 of 25
+                                                                          𝑢𝑢(𝑞𝑞 )2
+                           𝑢𝑢(𝑥𝑥𝑖𝑖 , 𝑥𝑥𝑗𝑗 ) = 𝑥𝑥𝑖𝑖 ⋅ 𝑥𝑥𝑗𝑗 ∑𝐿𝐿𝑙𝑙=1 � 𝑞𝑞2𝑙𝑙 �                                                 [18]
+                                                                                  𝑙𝑙
+
+Or, with the variables ql expressed:
+
+                                                               𝑢𝑢2 (𝑇𝑇)           𝑢𝑢2 (𝑃𝑃)        𝑢𝑢2 (𝐿𝐿𝑜𝑜𝑜𝑜𝑜𝑜 )
+                           𝑢𝑢(𝑥𝑥𝑖𝑖 , 𝑥𝑥𝑗𝑗 ) = 𝑥𝑥𝑖𝑖 ⋅ 𝑥𝑥𝑗𝑗 � 𝑇𝑇 2 +                            +                  �          [19]
+                                                                                       𝑃𝑃 2         𝐿𝐿𝑜𝑜𝑜𝑜𝑜𝑜 2
+
+This can be written:
+
+                           𝑢𝑢(𝑥𝑥𝑖𝑖 , 𝑥𝑥𝑗𝑗 ) = 𝑥𝑥𝑖𝑖 ⋅ 𝑥𝑥𝑗𝑗 ⋅ 𝑢𝑢𝑏𝑏2                                                           [20]
+Where:
+
+                                     𝑢𝑢2 (𝑇𝑇)       𝑢𝑢2 (𝑃𝑃)       𝑢𝑢2 (𝐿𝐿𝑜𝑜𝑜𝑜𝑜𝑜 )
+                           𝑢𝑢𝑏𝑏2 =              +              +                                                            [21]
+                                       𝑇𝑇 2           𝑃𝑃 2           𝐿𝐿𝑜𝑜𝑜𝑜𝑜𝑜 2
+
+The value of ub is given by the expression of the measurement uncertainty: ub = 2.92×10-3.
+
+
+
+
+BIPM.QM-K1 protocol v2.1.docx                                             09 Oct. 25                                 Page 25 of 25
+

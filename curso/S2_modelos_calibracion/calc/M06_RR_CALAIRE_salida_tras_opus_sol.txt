@@ -1,0 +1,19 @@
+EXPLORATORIO CONDICIONAL: signo, fechas y cruce de bloques pendientes.
+Modelo docente: analista, bloque e interacción aleatorios normales; días independientes.
+45 F_analyst=0.016194 F_interaction=1.295788 F_block=0.016346 MS_day=0.011255 MS_interaction=0.014584 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.106090
+90 F_analyst=0.270084 F_interaction=2.555499 F_block=1.704575 MS_day=0.013688 MS_interaction=0.034979 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.116994
+135 F_analyst=0.662011 F_interaction=6.611516 F_block=1.071480 MS_day=0.012276 MS_interaction=0.081163 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.110797
+180 F_analyst=0.010391 F_interaction=2.457704 F_block=1.273914 MS_day=0.019906 MS_interaction=0.048922 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.141088
+225 F_analyst=0.000719 F_interaction=0.883871 F_block=9.699396 MS_day=0.013411 MS_interaction=0.011853 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.115804
+270 F_analyst=0.153168 F_interaction=2.564126 F_block=1.297642 MS_day=0.026377 MS_interaction=0.067633 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.162409
+315 F_analyst=1.238163 F_interaction=2.610134 F_block=4.795937 MS_day=0.015984 MS_interaction=0.041720 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.126428
+360 F_analyst=0.000869 F_interaction=4.308688 F_block=0.937961 MS_day=0.042538 MS_interaction=0.183282 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.206247
+405 F_analyst=0.290735 F_interaction=6.473497 F_block=3.946271 MS_day=0.020841 MS_interaction=0.134917 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.144365
+405_block_means_by_analyst= [[0.271164, 0.420925, 0.218887], [0.248355, 0.728979, 0.131696]]
+455 F_analyst=1.017831 F_interaction=5.065435 F_block=5.945266 MS_day=0.026503 MS_interaction=0.134250 Fcrit_analyst=18.512821 Fcrit_interaction=3.315830 s_day=0.162798
+455_block_means_by_analyst= [[0.28509, 0.49143, 0.128956], [0.198505, 0.827887, 0.248736]]
+max_F_analyst= 1.238163
+significant_interactions= [135, 360, 405, 455]
+interaction_range_selected= [np.float64(6.611516), np.float64(4.308688), np.float64(6.473497), np.float64(5.065435)]
+s_day_range= 0.106090 0.206247
+multiplicidad: m=10; esperados falsos positivos bajo H0 global=0.50; Fcrit_interaccion_Bonferroni(alfa=0.05/10)=6.354689; superan=[135, 405]

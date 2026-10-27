@@ -1,0 +1,5 @@
+Aprobado con correcciones menores. Informe en `curso/S4_numericos_integracion/AX_revision_haiku_O02.md`.
+
+- **H-01 (corregir):** el CUSUM de AX.12 usa k=0,5 y h=5, los mismos de M11-A. Solo cambia el lado (unilateral frente a bilateral). El párrafo dice «otros parámetros» y debe precisarlo.
+- **H-02 (baja):** la clave «Montgomery» no coincide con «Montgomery 2013» de M11. Se conserva la referencia; queda como pendiente bibliográfico.
+- **H-03 (baja):** frase larga con dos incisos; partirla para lectura oral.

@@ -1,0 +1,1831 @@
+                                                                                                                           11
+
+
+
+
+2
+
+Experimental Design
+
+2.1 Introduction
+Although all chemists acknowledge the need to be able to design laboratory-based experiments, formal statistical
+(or chemometric) rules are rarely developed as part of mainstream chemistry. In contrast, a biologist or a psychol-
+ogist will often spend weeks in carefully constructing a formal statistical design before investing months or years in
+time-consuming and often unrepeatable experiments and surveys. e simplest of experiments in chemistry are rela-
+tively quick and can be repeated, if necessary, under slightly diﬀerent conditions; hence, not all chemists observe the
+need for formalised experimental design early in their career. For example, there is little point in spending a week for
+constructing a set of experiments that take a few hours to perform. is lack of expertise in formal design permeates all
+levels from management to professors and students. However, in contrast, some real-world experiments are expensive;
+for example, optimising conditions for a synthesis, testing compounds in a quantitative structure–activity relationships
+(QSAR) study or improving the chromatographic separation of isomers, and can take days or months of people’s time,
+and it is essential to, under such circumstances, to have a good appreciation of the fundamentals of design.
+     ere are several key reasons why the chemist can be more productive if he or she understands the basis of design,
+including the following four main areas.
+• Screening. ese types of experiments involve considering factors that are important for the success of a process.
+  An example may be the study of a chemical reaction, dependent on the proportion of the solvent, catalyst con-
+  centration, temperature, pH, stirring rate and so on. Typically, 10 or more factors might be relevant. Which can
+  be eliminated, and which should be studied in detail? Approaches such as factorial and Plackett–Burman designs
+  (Sections 2.3.1–2.3.3) are useful in this context.
+• Optimisation. is is one of the commonest applications in chemistry. How to improve a synthetic yield or a chro-
+  matographic separation? Systematic methods can result in a better optimum, found more rapidly. Simplex is a
+  classical method for optimisation (Section 2.6), although several designs such as mixture designs (Section 2.5) and
+  central composite designs (Section 2.4) can also be employed to ﬁnd optima.
+• Saving time. In industry, this is possibly the major motivation for experimental design. ere are obvious examples in
+  optimisation and screening, but even more radical cases, as in the area of quantitative structure–property relation-
+  ships. From structural data of existing molecules, it is possible to predict a small number of compounds for further
+  testing, representative of a larger set of molecules. is allows saving of enormous time. Fractional factorial, Taguchi
+  and Plackett–Burman designs (Sections 2.3.2 and 2.3.3) are good examples, although almost all experimental designs
+  have this aspect in mind.
+• Quantitative modelling. Almost all experiments, ranging from simple linear calibration in analytical chemistry to
+  complex physical processes, where a series of observations are required to obtain a mathematical model of the
+  system, beneﬁt from good experimental design. Many such designs are based around the central composite design
+  (Section 2.4), although calibration designs (Section 2.3.4) are also useful.
+  An example of where systematic experimental design is valuable is the optimisation of the yield of a reaction as
+a function of reagent concentration and pH. A representation is given in Figure 2.1. In reality, this relationship is
+unknown in advance, but the experimenter wishes to determine that the pH and concentration (in mM) provide the
+best reaction conditions. Within 0.2 of a pH and concentration unit, this optimum happens to be pH 4.4 and 1.0 mM.
+Many experimentalists will start by guessing one of the factors, say concentration, and then ﬁnding the best pH at that
+concentration.
+
+Chemometrics: Data Driven Extraction for Science, Second Edition. Richard G. Brereton.
+© 2018 John Wiley & Sons Ltd. Published 2018 by John Wiley & Sons Ltd.
+Companion website: http://booksupport.wiley.com
+14    Chemometrics
+
+        For introductory purposes, multiple linear regression (MLR) analysis is used to relate the experimental response to
+      the values of the factors, as is common to most texts in this area, but it is important to realise that other regression
+      methods such as partial least squares (PLS) are applicable in many cases, as discussed in Chapter 6. Certain designs
+      such as those discussed in Section 2.3.4 have direct relevance to multivariate calibration. In some cases, multivariate
+      methods such as PLS can be modiﬁed by inclusion of squared and interaction terms as described below for MLR. It is
+      important to remember, however, that in many areas of chemistry, quite a lot of information is available about a data
+      set, and conceptually simple approaches based on MLR are often adequate.
+
+
+
+      2.2 Basic Principles
+      2.2.1 Degrees of Freedom
+      Fundamental to the understanding of experimental designs is the idea of degrees of freedom. An important outcome of
+      many experiments is the measurement of errors. is can tell us how conﬁdently a phenomenon can be predicted; for
+      example, are we really sure that we can estimate the activity of an unknown compound from its molecular descriptors,
+      or are we happy with the accuracy with which a concentration can be determined using spectroscopy? In addition,
+      what is the weak link in a series of experiments? Is it the performance of a spectrometer or the quality of the vol-
+      umetric ﬂasks? Each experiment involves making a series of observations, which allow us to try to answer some of
+      these questions, the number of degrees of freedom relating to the amount of information available for each answer. Of
+      course, the more the degrees of freedom, the more certain we can be of our answers, but the more the eﬀort and work
+      required. If we have only a limited time, it is important to provide some information to allow us to answer all the desired
+      questions.
+        Most experiments result in some sort of model, which is a mathematical way of relating an experimental response to
+      the value or state of a number of factors. An example of a response is the yield of a synthetic reaction; the factors may be
+      pH, temperature and catalyst concentration. An experimenter wishes to run a reaction under a given set of conditions
+      and predict the yield. How many experiments should be performed in order to provide conﬁdent predictions of the
+      yield at any combination of the three factors? 5, 10 or 20? Usually, the more the experiments, the more certain the
+      predictions, but the greater the time, eﬀort and expense. Hence, there is a balance, and experimental design helps to
+      guide the chemist as to how many and what type of experiments should be performed.
+        Consider a linear calibration experiment, for example, measuring the peak height using electronic absorption spec-
+      troscopy as a function of concentration, at ﬁve diﬀerent concentrations, illustrated in Figure 2.5. A chemist may wish
+      to ﬁt a straight-line model to the experiment of the form
+                              y = b0 + b1 x
+      where y is the response (in this case the peak height), x is the value of the factor (in this case concentration) and b0
+      and b1 are the coeﬃcients of the model. ere are two coeﬃcients in this equation, but ﬁve experiments have been
+
+                         1
+
+
+                        0.8
+
+
+
+
+     Peak height (AU)
+                        0.6
+
+
+                        0.4
+
+
+                        0.2
+
+
+                         0
+                              0       1       2       3       4    5   6
+                                              Concentration (mM)
+
+      Figure 2.5 Graph of spectroscopic peak height against concentration at ﬁve concentrations.
+                                                                                                               Experimental Design    17
+
+Table 2.1 Three experimental designs.
+
+                     Design 1                 Design 2                  Design 3
+ Experiment
+ number              [A]        [B]           [A]        [B]            [A]        [B]
+
+ 1                   1          1             1          2              1          3
+ 2                   2          1             2          1              1          1
+ 3                   3          1             2          2              3          3
+ 4                   1          2             2          3              3          1
+ 5                   2          2             3          2              1          3
+ 6                   3          2             2          2              1          1
+ 7                   1          3             2          2              3          3
+ 8                   2          3             2          2              3          1
+ 9                   3          3
+
+
+experimental designs in Table 2.1.      e aim is to produce a linear model of the form
+       y = b0 + b1 x1 + b2 x2
+     e response y may represent the absorbance in a spectrum, the two x’s the concentrations of two compounds.                    e
+value of P is equal to 3 in all cases.
+• Design 1. is has a value of R equal to 0 and D of 6. ere is no information about experimental error and all
+  eﬀort has taken into determining the model. If the relationship between the response and concentration is known
+  with certainty (or this information is not of interest), this experiment may be a good one, but otherwise too little
+  eﬀort is taken in measuring replicates. Although this design may appear to provide an even distribution over the
+  experimental domain, the lack of replication could, in some cases, lose crucial information.
+• Design 2. is has a value of R equal to 3 and D of 2. ere is a reasonable balance between taking replicates and
+  examining the model. If nothing much is known about the certainty of the system, this is a good design taking into
+  account the need to economise on experiments.
+• Design 3. is has a value of R equal to 4 and D of 1. e number of replicates is rather large compared with the
+  number of unique experiments. However, if the main aim is simply to investigate experimental reproducibility over
+  a range of concentrations, this approach might be useful.
+  It is always possible to break down a set of planned experiments in this manner, and it is recommended as a ﬁrst step
+before modelling.
+
+ 1.   An experiment is performed to study the relationship of the yield of a reaction as a function of pH, all other conditions
+      are kept constant. Five pH values are studied, seven experiments are performed, three of which are at pH 6. The num-
+      ber of replicates is
+       (a) 2
+       (b) 3
+       (c) 4
+ 2.   The number of degrees of freedom for estimating the lack-of-ﬁt is always more than the number of coeﬃcients in the
+      model.
+       (a) True
+       (b) False
+
+
+2.2.2 Analysis of Variance
+A key aim of modelling is to ask how signiﬁcant a factor is. In Section 2.2.1, we discussed about designing an experiment
+that allows suﬃcient degrees of freedom to determine the signiﬁcance of a given factor; below we will introduce an
+important way of providing numerical information about this signiﬁcance.
+                                                                                                               Experimental Design   23
+
+   Most statistical packages produce ANOVA tables if required, and it is not always necessary to determine these errors
+manually, although it is important to appreciate the principles behind such calculations. However, for simple examples,
+a manual calculation is often quite quick and a good alternative to the interpretation of the output of complex statistical
+packages.
+     e use of ANOVA is widespread and is based on these simple ideas. Normally, two mean errors are compared, for
+example, one due to replication and the other due to lack-of-ﬁt, although any two errors or variances may be compared.
+As an example, if there are 10 possible factors that might have an inﬂuence over the yield in a synthetic reaction, try
+modelling the reaction removing one factor at a time and see how much the lack-of-ﬁt error increases. If not much
+relative to the replicates, the factor is probably not signiﬁcant. It is important to recognise that reproducibility of the
+reaction has an inﬂuence over apparent signiﬁcance also, as does the accuracy of measurement of the yield. If there is
+a large replicate error, then some signiﬁcant factors might be missed out.
+
+    1.   The sum of squares for predicted data is always less than the sum of squares for the observed data.
+          (a) True
+          (b) False
+    2.   The mean sum of square lack-of-ﬁt error is always less than the mean sum of square replicate error.
+          (a) True
+          (b) False
+    3.   Nine experiments are performed as follows: condition 1 (1 experiment), condition 2 (2 experiments), condition 3 (3
+         experiments), condition 4 (2 experiments) and condition 5 (1 experiment). The total sum of square replicate error is
+         0.736. The mean square replicate error is
+          (a) 0.105
+          (b) 0.184
+          (c) 0.245
+
+
+2.2.3 Design Matrices and Modelling
+   e design matrix is a key concept. A design may consist of a series of experiments performed under diﬀerent condi-
+tions, for example, a reaction at diﬀering pHs, temperatures and concentrations. Table 2.6 illustrates a typical experi-
+mental set-up, together with an experimental response, for example, the rate constant of a reaction. Note the replicates
+in the ﬁnal ﬁve experiments: in Section 2.4, we will discuss such an experimental design commonly called a central
+composite design.
+
+2.2.3.1     Models
+It is normal to describe experimental data by forming a mathematical relationship between the factors or independent
+variables such as temperature and a response or dependent variable such as a synthetic yield, a reaction time or a
+percentage impurity. A typical equation involving three factors might be of the form
+          ̂y =                                     (response)
+             b0 +                                  (an intercept or average)
+            b1 x1 + b2 x2 + b3 x3 +                (linear terms depending on each of the three factors)
+            b11 x1 2 + b22 x2 2 + b33 x3 2 +       (quadratic terms depending on each of the three factors)
+            b12 x1 x2 + b13 x1 x3 + b23 x2 x3      (interaction terms between the factors).
+  Notice the ‘hat’ on top of y, this is because the model estimates its value and is unlikely to give an exact value that
+agrees with the observed value because of error.
+    e explanation for these terms is as follows:
+•       e intercept is the estimated response when the values of all factors is 0: if the factors are coded to be centred at 0
+     (see Section 2.2.4.1), it is the estimated response in the centre of the design usually corresponding to the average
+     values of the factors. It is an important term because a response of 0 is not normally achieved when the factors are at
+     their average values. Only in certain circumstances (e.g. spectroscopy: if it is known, there are no baseline problems
+     or interferences), this term can be safely ignored.
+24   Chemometrics
+
+     Table 2.6 Typical experimental design.
+
+
+      pH      Temperature (∘ C)   Concentration (mM)            Response (y)
+
+      6                     60                    4             34.841
+      6                     60                    2             16.567
+      6                     20                    4             45.396
+      6                     20                    2             27.939
+      4                     60                    4             19.825
+      4                     60                    2              1.444
+      4                     20                    4             37.673
+      4                     20                    2             23.131
+      6                     40                    3             23.088
+      4                     40                    3             12.325
+      5                     60                    3             16.461
+      5                     20                    3             33.489
+      5                     40                    4             26.189
+      5                     40                    2              8.337
+      5                     40                    3             19.192
+      5                     40                    3             16.579
+      5                     40                    3             17.794
+      5                     40                    3             16.650
+      5                     40                    3             16.799
+      5                     40                    3             16.635
+
+
+
+     •    e linear terms allow for a direct relationship between the response and a given factor. For some experimental data,
+       there are only linear terms. If pH increases, does the yield increase or decrease, and if so by how much?
+     • In many situations, quadratic terms are important. is allows curvature and is one way of obtaining a maximum
+       or minimum. Most chemical reactions have an optimum performance at a particular pH, for example. Almost all
+       enzymic reactions work in this way. Quadratic terms balance out the linear terms.
+     • In Section 2.1, we discussed the need for interaction terms. ese arise because the inﬂuence of two factors on the
+       response is rarely independent. For example, the optimum pH at one temperature may diﬀer from that at a diﬀerent
+       temperature.
+       Some of these terms may not be very signiﬁcant or relevant, but it is up to the experimenter to check using approaches
+     such as ANOVA (Section 2.2.2) and the related signiﬁcance tests (Section 2.2.4). In advance of modelling, it is often
+     hard to predict which factors are important.
+
+         1.   If we are interested in the relationship between a response y and two factors x 1 and x 2 and obtain a model with all
+              possible intercept, linear, quadratic and interaction terms, how many terms are there in the model?
+              (a) 4
+              (b) 5
+              (c) 6
+
+     2.2.3.2     Matrices
+       ere are 10 terms or parameters in the above equation. Many chemometricians ﬁnd it convenient to work using
+     matrices. Although a signiﬁcant proportion of traditional statistical texts often shy away from matrix-based notation,
+     with modern computer packages and spreadsheets, it is easy and rational to employ matrices. In later chapters, we will
+     use matrix notation more frequently. e design matrix is simply one in which
+     • the rows refer to experiments and
+     • the columns refer to individual terms in the mathematical model or equation linking the response to the values of
+       the individual factors.
+26   Chemometrics
+
+     Table 2.7 Design matrix for the experiment in Table 2.6 using the model discussed in Section 2.2.3.1.
+
+
+      Intercept               Linear terms                       Quadratic terms                             Interaction terms
+      b0              b1       b2            b3            b11      b22             b33       b12              b13               b23
+      Intercept       pH       Temp.         Conc.         pH2      Temp.2          Conc.2    pH × temp.       pH × conc.        Temp. × conc.
+
+      1               6        60            4             36       3600            16        360              24                240
+      1               6        60            2             36       3600            4         360              12                120
+      1               6        20            4             36       400             16        120              24                80
+      1               6        20            2             36       400             4         120              12                40
+      1               4        60            4             16       3600            16        240              16                240
+      1               4        60            2             16       3600            4         240              8                 120
+      1               4        20            4             16       400             16        80               16                80
+      1               4        20            2             16       400             4         80               8                 40
+      1               6        40            3             36       1600            9         240              18                120
+      1               4        40            3             16       1600            9         160              12                120
+      1               5        60            3             25       3600            9         300              15                180
+      1               5        20            3             25       400             9         100              15                60
+      1               5        40            4             25       1600            16        200              20                160
+      1               5        40            2             25       1600            4         200              10                80
+      1               5        40            3             25       1600            9         200              15                120
+      1               5        40            3             25       1600            9         200              15                120
+      1               5        40            3             25       1600            9         200              15                120
+      1               5        40            3             25       1600            9         200              15                120
+      1               5        40            3             25       1600            9         200              15                120
+      1               5        40            3             25       1600            9         200              15                120
+
+
+     2.2.3.3    Determining the Model
+        e relationship between the response, the coeﬃcients and the experimental conditions can be expressed in matrix
+     form by
+               ŷ = D b
+     as illustrated in Figure 2.12. Readers unfamiliar with matrix notation should read Section A.1.
+       It is simple to show that this is the matrix equivalent to the equation introduced in Section 2.2.3.1. It is surprisingly
+     easy to calculate b (or the coeﬃcients in the model) knowing D and y using MLR. is approach will be discussed in
+     greater detail in Chapter 6.
+
+           Response       =                  Design matrix           Coefficients
+
+                                                  10 (P)
+                  1                                                          1
+
+
+
+                                                                    10        b
+     20                       20
+                  y       =                          D
+                                                                     (P)
+     (N)                      (N)
+
+
+
+
+     Figure 2.12 Relationship between response, design matrix and coeﬃcients.
+28   Chemometrics
+
+     Table 2.8 The vectors b and ŷ for data in
+     Table 2.6.
+
+      Parameters                   Predicted y
+      b0              58.807       35.106
+      b1              −6.092       15.938
+      b2              −2.603       45.238
+      b3               4.808       28.399
+      b11              0.598       19.315
+      b22              0.020         1.552
+      b33              0.154       38.251
+      b12              0.110       22.816
+      b13              0.351       23.150
+      b23              0.029       12.463
+                                   17.226
+                                   32.924
+                                   26.013
+                                     8.712
+                                   17.208
+                                   17.208
+                                   17.208
+                                   17.208
+                                   17.208
+                                   17.208
+
+
+     2.2.3.4   Predictions
+     Once b is determined, it is then possible to predict or estimate y and to calculate the sums of squares and other statis-
+     tics as outlined in Sections 2.2.2 and 2.2.4. For the data in Table 2.6, the results are presented in Table 2.8, using the
+     pseudo-inverse to obtain b and then predict ŷ. Note that the size of the parameters does not necessarily relate to sig-
+     niﬁcance, in this example. It is a common misconception that the larger the coeﬃcient, the more important it is. For
+     example, it may appear that b22 is small (0.020) relative to the b11 parameter (0.598), but this depends on the physical
+     measurement units.
+     •   e pH range is between 4 and 6; hence, the square of pH varies between 16 and 36 or by 20 units overall.
+     •   e temperature range is between 20 and 60 ∘ C, the squared range varying between 400 and 3600 or by 3200 units
+       overall, which is a 160-fold diﬀerence in range compared with pH.
+     •   erefore, to be of equal importance, b22 would need to be 160 times smaller than b11 .
+     • As the ratio between of b11 :b22 is 29.95, b22 is in fact considerably more signiﬁcant than b11 .
+       In Section 2.2.4, we discuss in more detail how to tell whether a given parameter is signiﬁcant, but it is indeed very
+     dangerous to rely on visual inspection of tables of regression parameters and make deductions from these without
+     understanding carefully how the data are scaled.
+       If carefully interpreted, three types of information can come from the model.
+     •    e size of the coeﬃcients can help the experimenter decide how signiﬁcant the coeﬃcient is, although the absolute
+       value may be misleading in some cases. For example, does a change in pH signiﬁcantly change the yield of a reaction?
+       Or is the interaction between pH and temperature signiﬁcant? In other words, does the temperature at which the
+       reaction has a maximum yield diﬀer substantially at pH 5 and at pH 7?
+     •    e coeﬃcients can be used to construct a model of the response, for example, the yield of a reaction as a func-
+       tion of pH and temperature, and to establish the optimum conditions for obtaining the best yield. In this case, the
+       experimenter is not so interested in the precise equation for the yield but is very interested in the best pH and
+       temperature.
+     • Finally, a quantitative model may be interesting. Predicting the concentration of a compound from the absorption
+       in a spectrum requires an accurate knowledge of the relationship between the variables. Under such circumstances,
+                                                                                                              Experimental Design   29
+
+Table 2.9 Coding of data.
+
+
+ Variable                   Units         −1          +1
+
+ pH                         −log[H+ ]     4           6
+ Temperature                ∘C            20          60
+ Concentration              mM            2           4
+
+
+  the value of the coeﬃcients is important. In some cases, it is known that there is a certain kind of model, and the
+  task is primarily to obtain a regression or calibration equation.
+  Although the emphasis in this chapter is on using MLR techniques, it is important to recognise that the analysis of
+designed experiments is not restricted to such approaches, and it is legitimate to employ multivariate methods such
+as principal components regression and PLS as described in detail in Chapter 6.
+
+
+ 1.   The term b1 in a model is estimated at 0.736 and b2 at 5.129. Does this imply b1 is less signiﬁcant than b2 ?
+      (a) Yes
+      (b) Cannot tell unless the design matrix is known
+      (c) Cannot tell unless the replicate error is known.
+
+
+
+2.2.4 Assessment of Signiﬁcance
+In many traditional books on statistics and analytical chemistry, large sections are devoted to signiﬁcance testing.
+Indeed, an entire and very long book could easily be written about the use of signiﬁcance tests in chemistry. However,
+much of the work on signiﬁcance testing goes back nearly a 100 years, to the work of ‘Student’ (a pseudonym for
+W.S. Gossett), and slightly later to R.A. Fisher. Although their methods based primarily on the t-test and F-test have
+had a huge inﬂuence in applied statistics, they were developed before the modern computer age. A typical statistical
+calculation using pen and paper and perhaps a book of logarithm or statistical tables might take several days, compared
+with a few seconds on a modern microcomputer. Ingenious and elaborate approaches were developed, including special
+types of graph papers and named methods for calculating the signiﬁcance of various eﬀects.
+      ese early methods were developed primarily for use by specialised statisticians, mainly trained as mathematicians,
+in an environment where user-friendly graphics or easy analysis of data was inconceivable. A mathematical statistician
+will have a good feeling for the data and so is unlikely to perform calculations or compute statistics from a data set unless
+satisﬁed that the quality of data is appropriate. In the modern age, everyone can have access to these tools without a
+great deal of mathematical expertise, but correspondingly, it is possible to misuse these methods in an inappropriate
+manner. e practicing chemist needs to have a numerical and graphical feel for the signiﬁcance of his or her data, and
+traditional statistical tests are only one of a battery of approaches to determine the signiﬁcance of a factor or eﬀect in
+an experiment.
+      is section provides an introduction to a variety of approaches for assessing signiﬁcance. For historic reasons, some
+methods such as cross-validation and independent testing of models are best described in the chapters on multivariate
+methods (see Chapters 4–6), although the chemometrician should have a broad appreciation of all such approaches
+and not be restricted to any one set of methods.
+
+2.2.4.1     Coding
+In Section 2.2.3, we introduced an example of a three-factor design, given in Table 2.6, described by 10 terms in the
+corresponding model. Our comment was that the signiﬁcance of the coeﬃcients cannot easily be assessed by inspection
+because the physical scale for each variable is diﬀerent. In order to have a better idea of the signiﬁcance, it is useful to
+put each variable on a comparable scale. It is common to code experimental data. Each variable is placed on a common
+scale, often with the highest coded value of each variable equal to +1 and the lowest to −1. Table 2.9 represents a
+possible way to scale the data; hence, for factor 1 (pH), a coded value (or level) or −1 corresponds to a true pH of 4.
+Note that coding does not need to be linear: in fact, pH is actually measured on a logarithmic scale; hence, we are not
+coding [H+ ] using a linear scale.
+32   Chemometrics
+
+     2.2.4.2     Size of Coeﬃcients
+        e simplest approach to determining signiﬁcance is to simply look at the magnitude of the terms (or coeﬃcients) in
+     the model. Provided the data is coded correctly, the larger the term, the greater its signiﬁcance. is depends on each
+     coded factor varying over approximately the same range (between +1 and −1 in this case). Clearly, small diﬀerences
+     in range are not important, often the aim is to say whether a particular term has a signiﬁcant inﬂuence or not, rather
+     than a detailed interpretation of their size. A value of 5.343 for b1 implies that on average, in the centre of the design,
+     the response is higher by 5.343 if the value of b1 is increased by one coded pH unit. is is easy to verify and provides
+     an alternative, classical approach to the calculation of the coeﬃcients.
+     • Consider the 10 experiments in Table 2.6 at which b1 is at a coded level of either +1 or −1, namely the ﬁrst 10
+       experiments.
+     •    en, group these in ﬁve pairs, each of which the levels of the other two main factors are identical. ese pairs are
+       {1,5}, {2,6}, {3,7}, {4,8} and {9,10}.
+     • Take the diﬀerence between the responses at the levels and average them
+                 [(34.841 − 19.825) + (16.567 − 1.444) + (45.396 − 37.673) + (27.939 − 23.131) + (23.088 − 12.325)]∕5,
+       which gives an answer of 10.687, representing the average change in value of the response when the pH is increased
+       from a coded value of −1 to one of +1, half of which equals the coeﬃcient 5.343.
+     • Note that this calculation is only valid because b1 is at its central value (i.e. a coded value of 0) for the remaining 10
+       experiments. It will not be valid for the b2 and b3 unless diﬀerent experiments are chosen.
+         It is useful to make practical deductions from the data, which will guide the experimenter.
+     •    e response varies over a range of 43.953 units between the lowest and highest observation in the experimental
+       range.
+     • Hence, the linear eﬀect of pH, on average, is to increase the response by twice the coded coeﬃcient or 10.687 units
+       over this range, approximately 25% of the variation, probably quite signiﬁcant. e eﬀect of the interaction between
+       pH and concentration (b13 ), however, is only 0.702 units or a relatively small contribution, rather less than the repli-
+       cate error; hence, this factor is unlikely to be signiﬁcant.
+     •    e squared terms must be interpreted slightly diﬀerently. e lowest possible coded value for the squared terms is
+       0, not −1; hence, we do not double these values to obtain an indication of signiﬁcance, the range of variation of the
+       squared terms being between 0 and +1, or half that of the other terms.
+       It is not, of course, necessary to have replicates to perform this type of analysis. If the yield of a reaction varies
+     between 50% and 90% over a range of experimental conditions, then a factor that contributes, on average, to only 1% of
+     this increase is unlikely to be too important. However, it is vital that the factors are coded for meaningful comparison.
+     In addition, certain important properties of the design (namely orthogonality), which will be discussed in detail in later
+     sections, are also important.
+       Provided the factors are coded correctly, it is quite easy to make qualitative comparisons of signiﬁcance simply by
+     examining the size of the coeﬃcients either numerically and graphically. In some cases, the range of variation of each
+     individual factor might diﬀer slightly (e.g. squared and linear terms above), but provided this is not dramatic, for rough
+     indications, the size of the factors can be legitimately compared. In the case of two-level factorial designs (described in
+     Sections 2.3.1–2.3.3), each factor is normally scaled between −1 and +1; hence, all coeﬃcients are on the same scale.
+
+         1.   A design is coded so that a temperature of 15 ∘ C is −1 and 55 ∘ C +1. Temperature is donated as factor 1 and b1 = +8%
+              of the range of yields of a reaction over the design. This implies, on average, in the centre of the design
+               (a) We expect the yield to increase at the rate of 8% every 10 ∘ C
+               (b) We expect the yield to increase at the rate of 4% every 10 ∘ C
+               (c) We expect the yield to increase at the rate of 16% every 10 ∘ C.
+
+     2.2.4.3     Student’s t-Test
+     An alternative, statistical indicator based on Student’s t-test can be used, provided more experiments are performed
+     than the terms in the model. Although this and related statistical indicators have a long and venerated history, it is
+     always important to back up the statistics by simple graphs and considerations about the data. ere are many diverse
+     applications of a t-test, but in the context of analysing the signiﬁcance of factors on designed experiments, the following
+     main steps are used and are illustrated in Table 2.11 for the example described above using the coded values in Table 2.9.
+34   Chemometrics
+
+       the signiﬁcance, the smaller the percentage, so simply subtract from 100). e higher this probability, the greater
+       the conﬁdence that the factor or term is signiﬁcant. Hence, using Table A.3, we see that a critical value of 4.1437
+       indicates 99.9% certainty and that a parameter is signiﬁcant for 10 degrees of freedom; hence, any value above this is
+       highly signiﬁcant. A 95% signiﬁcance results in a value of 1.8125, so b23 is just above this level. In fact, the numbers
+       in Table 2.11 were calculated using the Excel function TDIST, which provides probabilities for any value of t and
+       any number of degrees of freedom. Normally, quite high probabilities are expected if a factor is signiﬁcant, often in
+       excess of 95%.
+     • In some articles, p values are used instead of percentage conﬁdence. Analytical chemists tend to like the idea of con-
+       ﬁdence but statisticians like the idea of p values, for historic reasons. A p value of 0.05 corresponds to a percentage
+       conﬁdence of 95%. Strictly speaking, we talk about the probability of rejecting the null hypothesis. e null hypoth-
+       esis test whether any given term has no signiﬁcance in the model. If a p value is calculated to be 0.01, this means
+       that there is a 1% chance of rejecting the null hypothesis, or that it is very unlikely the term has no signiﬁcance, but
+       chemists often like to say that there is 99% conﬁdence that the term is signiﬁcant. Additionally, this conﬁdence or p
+       value assumes that the underlying sample errors are normally distributed, an assumption that is often only roughly
+       obeyed in practice; however, low p values or high conﬁdence will usually suggest that a term or factor should be
+       retained.
+
+      1.   The p value for a term is calculated to be 0.02. This implies that it is not signiﬁcant.
+           (a) True
+           (b) False
+      2.   A design consists of 15 experiments in total, and a 10-term model is formed. How many degrees of freedom are
+           remaining for determining the conﬁdence in the regression model?
+           (a) 10
+           (b) 5
+           (c) 1
+      3.   The t-test can be employed to determine the signiﬁcance of terms in a full factorial model for a full factorial design.
+           (a) True
+           (b) False
+
+
+     2.2.4.4   F-Test
+        e F-test is another alternative. A common use of the F-test is together with ANOVA and determines the signiﬁcance
+     of one variance (or mean sum of squares) in relation to another. Typically, the lack-of-ﬁt is compared with the replicate
+     error. Simply determine the ratio Slof :Srep (e.g. see Table 2.4) and check the size of this number. F-distribution tables
+     are commonly presented at various probability levels, which are often called conﬁdence levels. We use a one-tailed
+     F-test in this case as the aim is to see whether one variance is signiﬁcantly bigger than another, not whether it diﬀers
+     signiﬁcantly; this diﬀers from the t-test that is two tailed in the application described in Section 2.2.4.3. e columns
+     correspond to the number of degrees of freedom for Slof and the rows to Srep (in the case discussed in here). e table
+     allows to determine the signiﬁcance of the error (or variance) represented along the columns relative to that represented
+     along the rows. Consider the proposed models for data sets A and B, both excluding the intercept. Locate the relevant
+     number (for a 95% conﬁdence, the lack-of-ﬁt is signiﬁcant – or for a p value of 0.05, the null hypothesis is rejected,
+     with ﬁve degrees of freedom for the lack-of-ﬁt and four degrees of freedom for the replicate error, this number is 6.26,
+     see Table A.5 (given by a distribution often called F(5,4) see Section A.3.5) – hence, an F-ratio must be greater than this
+     value for this level of conﬁdence). Returning to Table 2.4, it is possible to show that the chances of lack-of-ﬁt to a model
+     without an intercept are not very high for the data in Figure 2.9 (ratio = 0.49); however, there is some doubt about the
+     data arising from Figure 2.10 (ratio = 1.79); using the FDIST function in Excel, we can see that the probability is 70.4%,
+     below the 95% conﬁdence the intercept is signiﬁcant (or in other words with a p = 0.396, the null hypothesis is correct,
+     so over one time in three if there were no underlying signiﬁcance in the intercept, we will still expect to obtain this
+     value of F or more), but still high enough to give us some doubts. Nevertheless, the evidence is not entirely conclusive
+     because the intercept term (2.032) is approximately the same order of magnitude as the replicate error (1.194); for this
+     level of experimental variability, it will never be possible to predict and model the presence of an intercept of this size
+     with a high degree of conﬁdence.
+                                                                                                             Experimental Design   35
+
+Table 2.12 F-ratio for experiment with low experimental error.
+
+                                                  Model with     Model without
+ Concentration        Absorbance                  intercept      intercept
+
+ 1                      3.500        b0            0.854         n/a
+ 1                      3.398        b1            2.611          2.807
+ 2                      6.055
+ 3                      8.691        Sreg         0.0307          1.4847
+ 3                      8.721        Srep         0.0201          0.0201
+ 4                    11.249         Slof         0.0107          1.4646
+ 4                    11.389
+ 5                    13.978
+ 6                    16.431
+ 6                    16.527         F-ratio       0.531         58.409
+
+     e solution is to perform new experiments, perhaps on a diﬀerent instrument, in which the reproducibility is much
+greater. Table 2.12 is of such a data set, with essential statistics indicated. Now the F-ratio for the lack-of-ﬁt without the
+intercept becomes 58.409, which is signiﬁcant at the >99% level (critical value from Table A.4), whereas the lack-of-ﬁt
+with the intercept included is less than the experimental error.
+
+ 1.   F(6,3) is equal to F(3,6) .
+      (a) True
+      (b) False
+ 2.   It is essential to have replicate measurements for both an F-test and a t-test to determine the signiﬁcance of terms in
+      a model using the methods described in this chapter.
+      (a) Yes.
+      (b) No, only for an F-test.
+      (c) No, only for a t-test.
+      (d) No, for neither.
+
+2.2.4.5   Normal Probability Plots
+For designs where there are no replicates (essential for most uses of the F-test) and also where there no degrees of
+freedom available to assess the lack-of-ﬁt to the data (essential for a t-test), other approaches can be employed to
+examine the signiﬁcance of coeﬃcients.
+   As will be discussed in Section 2.3, two-level factorial designs are common, and providing the data are appropriately
+coded, the size of the coeﬃcients directly relates to their signiﬁcance. Normally, several terms are calculated, and an
+aim of modelling is to determine which have signiﬁcance, the next step, possibly being to then perform another, a
+more detailed design for quantitative modelling of the signiﬁcant eﬀects. Often it is convenient to present the coef-
+ﬁcients graphically, and a classical approach is to plot them on a normal probability paper. Before the computer age,
+a large number of diﬀerent types of statistical graph paper would be available, assisting data interpretation. However,
+nowadays, it is quite easy to obtain relevant graphs using simple computer packages.
+     e principle of normal probability plots is that in the absence of any systematic trend, a randomly generated set of
+numerical values will fall into a normal distribution (see Section A.3.2). Hence, if, for example, we look at the size of
+seven eﬀects, for example, as assessed by their values of b (provided the data are properly coded and the experiment is
+well designed, of course), and the eﬀects are simply random, on average, we would expect the probable size of each eﬀect
+to be normally distributed. In Figure 2.14, seven lines are indicated on the normal distribution curve (the horizontal
+axis representing the number of standard deviations from the mean) so that the areas between each line equal 1/7
+the total area (the areas at the extremes adding up to 1/7 in total). If, however, an eﬀect is very large, it will fall at
+a very high or low value, so large that it is unlikely to be the consequence of a random process, and is signiﬁcant.
+Normal probability plots can be used to rank the coeﬃcients in size (the most negative being the lowest, the most
+positive being the highest), from the rank determining the expected position in the normal probability plot and then
+                                                                                                        Experimental Design   37
+
+                            2
+
+
+                           1.5
+                                                                     b2
+                            1
+                Expected
+                standard
+                deviations 0.5                   b12
+                from mean
+                            0
+−10             −5               0           5              10            15
+
+                         −0.5                     Value of b
+
+
+                           −1
+
+
+                         −1.5
+           b1
+                           −2
+
+Figure 2.15 Normal probability plot for data in Table 2.13 with signiﬁcant factors marked.
+
+
+in certain cases, it can provide useful preliminary graphical information, although probably is not much used in modern
+computer-based chemometrics.
+
+
+ 1.   Normal probability plots can be used where there are no replicates and no degrees of freedom to determine lack of
+      ﬁt in a model.
+      (a) True
+      (b) False
+
+
+2.2.4.6   Dummy Factors
+Another very simple approach is to include one or more dummy factors. ese can be built into a design and might,
+for example, be the colour of shoes worn by the experimenter, some factor that is not likely to have a real eﬀect on the
+experiment: level −1 might correspond to black shoes and level +1 to brown shoes. Mathematical models can be built
+including this factor, and eﬀects smaller than this are ignored (remembering as ever to ensure that the coding of the
+data is sensible).
+
+
+ 1.   The size of the term arising from the dummy factor is same size as the replicate error.
+      (a) True
+      (b) False
+
+
+2.2.4.7   Limitations of Statistical Tests
+Although many traditionalists often enjoy the security statistical signiﬁcance tests give, it is important to recognise
+that these tests do depend on assumptions about the underlying data that may not be correct, and a chemist should
+beware of making decisions based only on a probability obtained from a computerised statistical software package,
+without looking at the data, often graphically. Some typical drawbacks are as follows.
+• Most statistical tests assume that the underlying samples and experimental errors are normally distributed. In some
+  cases, this is not so; for example, when analysing some analytical signals, it is unlikely that the noise distribution
+  will be normal; it is often determined by electronics and sometimes even data pre-processing such as the common
+  logarithmic transform used in electronic absorption and infrared spectroscopy. In such circumstances, it may be
+  possible to transform the data ﬁrst before performing statistical analysis.
+38   Chemometrics
+
+     •    e tests assume that the measurements arise from the same underlying population. Sometimes this is not the
+       case, and systematic factors will come into play. A typical example involves calibration curves. It is well known
+       that the performance of an instrument can vary from day to day. Hence, an absorption coeﬃcient measured on
+       Monday morning is not necessarily the same as the measured coeﬃcient on Tuesday morning; yet, all the coeﬃcients
+       calculated on Monday morning might fall into the same class. If a calibration experiment is performed over several
+       days or even hours, the performance of the instrument may vary and one solution may be to make a very large number
+       of measurements over a long timescale, which may be impractical. Another trick is to randomise the sequence of
+       experiments, but then it may be important to test additional eﬀects such as the day the samples were recorded, just
+       to work out whether this has a signiﬁcant inﬂuence on the experimental data.
+     •    e precision of an instrument must be considered. Many typical measurements, for example, in atomic spec-
+       troscopy, are recorded to only two signiﬁcant ﬁgures. Consider a data set in which about 95% of the readings were
+       recorded between 0.10 and 0.30 absorbance units; yet, a statistically designed experiment is used to estimate 64
+       eﬀects. e t-test provides information on the signiﬁcance of each eﬀect. However, statistical tests assume that the
+       data are recorded to a high degree of accuracy and will not take this lack of numerical precision into account. For
+       the obvious eﬀects, chemometrics will not be necessary, but for less obvious eﬀects, the statistical conclusions may
+       be invalidated because of the low numerical accuracy in the raw data.
+        Often it is suﬃcient simply to look at the size of factors, the signiﬁcance of the lack-of-ﬁt statistics, perform quite
+     simple ANOVA or produce a few graphs to make quite valid scientiﬁc deductions. In most cases, signiﬁcance testing
+     is used primarily for a preliminary modelling of the data and detailed modelling should be performed after eliminating
+     those factors that are deemed unimportant. It is not necessary to have a very detailed theoretical understanding of
+     statistical signiﬁcance tests before the design and analysis of chemical experiments, although a conceptual appreciation
+     of, for example, the importance of coding is essential.
+
+
+         1.   For a series of measurements, the time they were performed can be included as a factor in the experimental design.
+              (a) True
+              (b) False
+
+
+
+     2.2.5 Leverage and Conﬁdence in Models
+     An important experimental question relates to how well quantitative information can be predicted after a series of
+     experiments has been carried out. For example, if observations have been made between 40 and 80 ∘ C, what can we
+     predict about the experiment at 90 ∘ C? It is traditional to sharply cut oﬀ the model outside the experimental region, so
+     that the model is used to predict only within the experimental limits. However, this approach misses much information.
+         e ability to make a prediction often reduces smoothly from the centre of the experiments, being best at 60 ∘ C and
+     worse the farther away from the centre as described in the example above. is does not imply that it is impossible to
+     make any statement about the response at 90 ∘ C, simply that there is less conﬁdence in the prediction than at 80 ∘ C,
+     which, in turn, is predicted less well than at 60 ∘ C. It is important to be able to visualise how the ability to predict a
+     response (e.g. a synthetic yield or a concentration) varies as the independent factors (e.g. pH and temperature) are
+     changed.
+        When only one factor is involved in the experiment, the predictive ability is often visualised by conﬁdence bands. e
+     ‘size’ of these conﬁdence bands depends on the magnitude of the experimental error. e ‘shape’, however, depends on
+     the experimental design and can be obtained from the design matrix (Section 2.2.3) and is inﬂuenced by the arrange-
+     ment of experiments, replication procedure and mathematical model. e concept of leverage is used as a measure of
+     such conﬁdence. e mathematical deﬁnition is given by
+               H = D(D′ D)−1 D′
+     where D is the design matrix. is new matrix is sometimes called the hat matrix and is a symmetric square matrix with
+     the number of rows and columns equal to the number of experiments. Each experimental point n has a corresponding
+     value of leverage hnn (the diagonal element of the hat matrix) associated with it. Alternatively, the value of leverage for
+     experiment n can be calculated as follows:
+               hnn = dn (D′ D)−1 d′n
+                                                                                                         Experimental Design   43
+
+
+
+ 2                                                    2
+
+
+
+ 1                                                    1
+
+
+
+ 0                                                    0
+
+
+
+−1                                                   −1
+
+
+
+−2                                                   −2
+
+
+      −2          −1       0        1         2             −2        −1        0        1         2
+
+
+
+
+ 2                                                    2
+
+
+
+ 1                                                    1
+
+
+
+ 0                                                    0
+
+
+
+−1                                                   −1
+
+
+
+−2                                                   −2
+
+
+      −2          −1       0        1         2             −2       −1         0        1         2
+
+Figure 2.19 Two experimental arrangements together with the corresponding leverage for a linear model.
+
+
+ 2.   The hat matrix is always a diagonal matrix
+      (a) True
+      (b) False
+ 3.   If we know how far an experiment is from the centre of a design and the mathematical model used, we can then
+      calculate leverage.
+      (a) True
+      (b) False
+
+
+
+2.3 Factorial Designs
+In this and the remaining sections of this chapter, we will introduce a number of possible designs, which can be under-
+stood using the building blocks introduced in Section 2.2. Factorial designs are some of the simplest, often used for
+screening or when there are a large number of possible factors. As will be seen, they have limitations but are the easiest
+to understand. Many designs are presented as a set of rules that provide the experimenter with a list of conditions,
+below we will present the rules for many common methods.
+44   Chemometrics
+
+     2.3.1 Full Factorial Designs
+     Full factorial designs at two levels are mainly used for screening, which is to determine the inﬂuence of a number of
+     eﬀects on a response and to eliminate those that are not signiﬁcant, the next stage being to undertake a more detailed
+     study. Sometimes where detailed predictions are not required, the information from factorial designs is adequate, at
+     least in situations where the aim is fairly qualitative (e.g. to improve the yield of a reaction rather than obtain a highly
+     accurate rate dependence that is then interpreted in fundamental molecular terms).
+       Consider a chemical reaction whose performance is known to depend on pH and temperature, including their inter-
+     action. A set of experiments can be proposed to study these two factors, each at two levels (e.g. two temperatures),
+     using a two-level, two-factor experimental design. e number of experiments is given by N = lk , where l is the num-
+     ber of levels (=2) and k the number of factors (=2); hence, in this case, N equals 4. For three factors, the number of
+     experiments will equal 8 and so on, provided the design is performed only at two levels. e following stages are used
+     to construct the design and interpret the results.
+     •    e ﬁrst step is to choose a high and low level for each factor; for example, if temperature is factor 1, use 30 and
+       60 ∘ C, and if pH is factor 2, use 4 and 6. is choice will require the experimenter’s judgment to determine sensible
+       ranges.
+     •    e next step is to use a standard design. e value of each factor is usually coded (see Section 2.2.4.1) as ‘−’ (low)
+       or ‘+’ (high). Note that some authors use −1 and +1 or even 1 and 2 for low and high. When reading diﬀerent
+       texts, do not get confused; always ﬁrst understand what notation has been employed. ere is no universally agreed
+       convention for coding; however, design matrices that are symmetric around 0 are almost always easier to handle
+       computationally. ere are four possible unique sets of experimental conditions that can be represented as a table
+       analogous to four binary numbers 00 (−−), 01 (−+), 10 (+−) and 11 (++), which can be related to a set of physical
+       conditions. For example, the set of experiments represented by −+ involve performing an experiment at 30 ∘ C and
+       pH 6 in our case.
+     • Next, perform the experiments and obtain the response under each set of experimental conditions. Table 2.16 illus-
+       trates the coded and true set of experimental conditions plus the corresponding response, which might, for example,
+       be the percentage of a by-product, the lower the better. Something immediately appears strange from these results.
+       Although it is obvious that the higher the temperature, the higher the percentage by-product, there does not at ﬁrst
+       seem to be any consistent trend as far as pH is concerned. Provided the experimental results were recorded correctly,
+       this suggests that there must be an interaction between temperature and pH. At a lower temperature, the percentage
+       decreases with an increase in pH, but the opposite is observed at a higher temperature. How can we interpret this?
+     •    e next step, of course, is to analyse the data, by constructing a design matrix (Section 2.2.3). We know that an inter-
+       action term must be taken into account and can set up a design matrix as given in Table 2.17 based on a model of the
+
+     Table 2.16 Coding of a simple two factor, two level design and corresponding responses.
+
+         Experiment
+         number           Factor 1    Factor 2         Temperature         pH               Response
+
+             1                 −          −                 30             4                  12
+             2                 −          +                 30             6                  10
+             3                 +          −                 60             4                  24
+             4                 +          +                 60             6                  25
+
+
+     Table 2.17 Design matrix.
+
+         Intercept    Temperature    pH   Temp. × pH             1    x1       x2   x1 x2
+
+             1            30         4           120             +    −         −    −
+
+             1            30         6           180             +    −         +    −
+
+             1            60         4           240             +    +         −    +
+
+             1            60         6           360             +    +         +    +
+                                                                                                                Experimental Design   49
+
+Figure 2.21 Three- and four-level full factorial designs.                         +1
+
+
+
+
+                                                                                  0
+
+
+
+
+                                                                                  −1
+                                                                                       −1             0               +1
+
+
+
+                                                                        +1.5
+
+
+
+
+                                                                        0.5
+
+
+
+
+                                                                        −0.5
+
+
+
+
+                                                                        −1.5
+                                                                           −1.5             −0.5             +0.5             +1.5
+
+
+ 3.   It is desired to form a two-level, ﬁve-factor full factorial design and model the data using just the intercept, linear and
+      two-factor interaction terms. How many degrees of freedom are available to determine ﬁt to the model?
+      (a) 32
+      (b) 16
+      (c) 10
+
+
+2.3.2 Fractional Factorial Designs
+A weakness of full factorial designs is the large number of experiments that must be performed. For example, for
+a 10-factor design at two levels, 1024 experiments are required, which may be impracticable. e large number of
+experiments does not always result in useful or interesting extra information; hence, performing all these result in
+waste of time and resources. Especially in the case of screening, where a large number of factors may be of potential
+interest, it is ineﬃcient to run so many experiments in the ﬁrst instance. ere are numerous tricks to reduce the
+number of experiments.
+  Consider a three-factor, two-level design. Eight experiments are listed in Table 2.21, the conditions being coded as
+usual. Figure 2.22 is a symbolic representation of the experiments, often presented on the corners of a cube, whose
+axes correspond to each factor. e design matrix for all the possible coeﬃcients that can be set up as is also presented
+in Table 2.21 and consists of eight possible columns, equal to the number of experiments. Some columns represent
+interactions, such as the three-factor interaction, that may not be very signiﬁcant. At ﬁrst screening, we may primarily
+wish to say whether the three factors have any real inﬂuence on the response, not to study the model in detail. In a more
+complex situation, we may wish to screen 10 possible factors; hence, reducing the number of factors to be studied in
+                                                                                                              Experimental Design   55
+
+2.3.3 Plackett–Burman and Taguchi Designs
+Where the number of factors is quite large, the constraint that the number of experiments must be equal to a power
+of 2 can be rather restrictive. As the number of experiments must always exceed the number of factors by at least one
+(to take into account the intercept), this would mean, for example, that 32 experiments are required for the study of 19
+factors and 64 experiments for the study of 43 factors. In order to overcome this problem and reduce the number of
+experiments, other approaches are needed.
+  Plackett and Burman published their classic paper in 1946, which has been much cited by chemists. eir work
+originated from the need for wartime testing of components in equipment manufacture. A large number of factors
+inﬂuenced the quality of these components; thus, eﬃcient procedures were required for screening. ey proposed a
+number of two-level factorial designs, where the number of experiments is a multiple of 4. Hence, designs exist for
+N = 4, 8, 12, 16, 20, 24 and so on experiments. e number of experiments exceeds the number of factors, k, by 1,
+hence available for factors 3, 7, 11 and so on.
+  One such design is given in Table 2.26 for 11 factors and 12 experiments and has various features.
+• In the ﬁrst row, all factors are at the same level, in this case at the low (−) level.
+•    e ﬁrst column from rows 2 to k is called a generator. e key to the design is that there are only certain allowed
+  generators that can be obtained from tables. Note that the number of factors will always be an odd number equal to
+  k = 4m − 1 (or 11 in this case), where m is any integer. If the ﬁrst row consists of ‘−’, the generator will consist of 2m
+  (=6 in this case) experiments at ‘+’ level and 2m − 1 (=5 in this case) at ‘−’ level, the reverse being true if the ﬁrst
+  row is at the ‘+’ level. In Table 2.26, the generator is + + − + + + + − − − + −, as outlined by a box.
+•    e next 4m − 2 (=10) columns are generated from the ﬁrst column simply by shifting the down cells by one row.
+     is is indicated by diagonal arrows in the table. Notice that experiment 1 is not included in this procedure.
+•    e level of factor j in experiment (or row) 2 equals to the level of this factor in the row k for factor j − 1. For example,
+  the level of factor 2 in experiment 2 equals the level of factor 1 in experiment 12.
+    ere are as many high as low levels of each factor over the 12 experiments, as would be expected. e most important
+property of the design, however, is orthogonality. Consider the relationship between factors 1 and 2.
+•    ere are six instances in which factor 1 is at a high level, and factor 6 at a low level.
+• For each of the six instances at which factor 1 is at a high level, factor 2 is at a high level in three cases and it is at a
+  low level in the other three cases. A similar relationship exists where factor 1 is at a low level. is implies that the
+  factors are orthogonal or uncorrelated, an important condition for a good design.
+• Any combination of two factors is related in a similar way.
+  Only certain generators possess all these properties; hence, it is important to use only known generators.
+  Standard Plackett–Burman designs exist for 7, 11, 15, 19 and 23 factors; generators are given in Table 2.27. A few
+of the designs for more than 23 factors are slightly more complicated to construct, for which readers should refer to
+their paper of 1946. Note that for 7 and 15 factors, it is also possible to use fractional factorial designs as discussed
+in Section 2.3.2. However, in the old adage, ‘all roads lead to Rome’; in fact, fractional factorial and Plackett–Burman
+designs are equivalent, the diﬀerence simply being in the way the experiments and factors are organised in the data
+
+Table 2.26 A Plackett–Burman design for 11 factors, generator outlined by a box.
+
+                                      Factors
+                    1   2   3   4   5    6    7      8     9     10    11
+               1    –   –   –   –   –    –    –      –     –     –     –
+               2    +   –   +   –   –    –    +      +     +     –     +
+               3    +   +   –   +   –    –    –      +     +     +     –
+               4    –   +   +   –   +    –    –      –     +     +     +
+
+
+ Experiments
+               5    +   –   +   +   –    +    –      –     –     +     +
+               6    +   +   –   +   +    –    +      –     –     –     +
+               7    +   +   +   –   +    +    –      +     –     –     –
+               8    –   +   +   +   –    +    +      –     +     –     –
+               9    –   –   +   +   +    –    +      +     –     +     –
+               10   –   –   –   +   +    +    –      +     +     –     +
+               11   +   –   –   –   +    +    +      –     +     +     –
+               12   –   +   –   –   –    +    +      +     –     +     +
+                                                                                                           Experimental Design   57
+
+Western practices. His philosophy was that consumers desire products that have constant properties within narrow
+limits. For example, a consumer panel may taste the sweetness of a product, rating it from 1 to 10. A good marketable
+product may result in a taste panel score of 8: above this, the product is too sickly, and below, the consumer expects the
+product to be sweeter. ere will be a huge number of factors in the manufacturing process that might cause deviation
+from the norm, including suppliers of raw materials, storage and preservation of the food and so on. Which factors are
+signiﬁcant? Taguchi developed designs for screening large number of potential factors.
+   His designs are presented in the form of table similar to that of Plackett and Burman, but with a ‘1’ for a low and
+‘2’ for a high level. Superﬁcially, Taguchi’s designs might appear diﬀerent, but by changing the notation, and swapping
+rows and columns around, it is possible to show that both types of design are identical, and, indeed, the simpler designs
+are the same as the well-known fractional factorial designs. ere is a great deal of controversy surrounding Taguchi’s
+work; although many statisticians feel that he has reinvented the wheel, he was an engineer, and his way of thinking
+had a major and positive eﬀect on Japanese industrial productivity. Before globalisation and the Internet, there was
+less exchange of ideas between diﬀerent cultures. His designs are part of a more comprehensive approach to quality
+control in industry.
+   Taguchi’s designs can be extended to three or more levels, but construction becomes fairly complicated. Some texts
+do provide tables of multi-level screening designs, and it is also possible to mix the number of levels, for example,
+having one factor at two levels and another at three levels. is could be useful, for example, if there are three alternative
+sources of one raw material and two of another raw material. Remember that the factors can fall into discrete categories
+and do not have to be numerical values such as temperature or concentrations. A large number of designs have been
+developed from Taguchi’s work, but most are quite specialist, and it is not easy to generalise. e interested reader is
+advised to consult the source literature.
+
+ 1.   For seven factors, a quarter factorial and a Plackett–Burman design are the same apart from rearrangement of rows
+      and/or columns.
+      (a) True
+      (b) False
+ 2.   How many experiments are necessary for the study of 10 factors, using a Plackett–Burman design?
+      (a) 12
+      (b) 11
+      (c) 10
+ 3.   If we want to study the eﬀects of 13 factors using a Plackett–Burman design, how many dummy factors are necessary?
+      (a) 0
+      (b) 1
+      (c) 2
+
+
+2.3.4 Partial Factorials at Several Levels: Calibration Designs
+Two-level designs are useful for exploratory purposes and can sometimes result in quite useful models, but in many
+areas of chemistry, such as calibration (see Chapter 5 for more details), it is desirable to have several levels, especially
+when studying mixtures. Much of chemometrics is concerned primarily with linearly additive models of the expected
+form X = C S, where X is an observed matrix, such as a set of spectra, each row consisting of a spectrum and each
+column of a wavelength, C is a matrix of, for example, concentrations, each row consisting of the concentration of
+a number of compounds in a spectrum, and S could consist of the corresponding spectra of each compound. ere
+are innumerable variations on this theme; in some cases, all the concentrations of all the components in a mixture
+are known, whereas in other cases, the concentrations of only a few components in a mixture are known. In many
+situations, it is possible to control the experiments by mixing up components in the laboratory, but in other cases,
+this is not practicable, samples are being taken from the ﬁeld. A typical laboratory-based experiment might involve
+recording a series of four component mixtures in which each component is studied at ﬁve concentration levels.
+   A recommended strategy is as follows:
+• Perform a calibration experiment, by producing a set of mixtures of a series of compounds of known concentrations
+  to give a ‘training set’.
+62   Chemometrics
+
+     Table 2.30 Parameters for construction of a multi-level calibration design.
+
+
+                             Max number
+
+               Experiments
+                                                                             Diﬀerence
+                                          Repeater
+                                                                                                                        Cyclic
+      Levels                 Orthogonal
+                                                                             vectors
+                               factors                                                                               permuters
+
+
+      3           9              4        Any        {01}, {10}
+      4        16                5        Any        {021}, {120}
+      5        25               12          0        {0231}, {1320}, {2013}, {3102}                      −2 → −1 → 2 → 1 → −2,
+                                                                                                         −2 → 1 → 2 → −1 → −2
+      7        49               16          0        {241035}, {514302}, {451023}, {124350}, {530142},   −3 → 2 → 3 → −1 → 1 → −2 → −3,
+                                                     {203415}, {320154}, {053421}                        −3 → 1 → −1 → 2 → 3 → −2 → −3,
+                                                                                                         −3 → −2 → 3 → 2 → −1 → 1 → −3,
+                                                                                                         −3 → −2 → 1 → −1 → 3 → 2 → −3
+
+
+
+     to expand the number of compounds in the mixture, involving twice the number of experiments for a doubling of the
+     number of factors.
+
+      1.       It is possible to set up a calibration design for three levels involving 18 experiments.
+               (a) True
+               (b) False
+      2.       For each factor, only one experiment is performed at the repeater level for all factors in a calibration design.
+               (a) True
+               (b) False
+      3.       It is possible to set up a calibration design using six levels
+               (a) True
+               (b) False
+
+
+
+     2.4 Central Composite or Response Surface Designs
+     Two-level factorial designs are primarily useful for exploratory purposes, and calibration designs have special uses in
+     areas such as multivariate calibration, where we often expect an independent linear response from each component in
+     a mixture. It is often, though, important to provide a more detailed model of a system. ere are two prime reasons.
+        e ﬁrst is for optimisation – to ﬁnd the conditions that result in a maximum or minimum as appropriate. An example
+     is when improving the yield of synthetic reaction or a chromatographic resolution. e second is to produce a detailed
+     quantitative model: to predict mathematically how a response relates to the values of various factors. An example may
+     be to know how the near-infrared spectrum of a manufactured product relates to the nature of the material and process
+     employed in manufacturing.
+        Most exploratory designs do not involve recording replicates, nor do they provide information on squared terms;
+     some such as Plackett–Burman and highly fractional factorials do not even provide details of interactions. When we
+     want to form a detailed model, it is often desirable at a ﬁrst stage to reduce the number of factors via exploratory
+     designs, described in Section 2.3, to a small number of main factors (perhaps 3 or 4) that are to be studied in detail, for
+     which both squared and interaction terms in the model are of interest.
+
+
+     2.4.1 Setting up the Design
+     Many designs for use in chemistry for modelling are based on the central composite design (sometimes called a response
+     surface design), the main principles of which will be illustrated via a three-factor example (Figure 2.28 and Table 2.31).
+                                                                                                                    Experimental Design   65
+
+• Performing a full factorial design, a star design and ﬁve replicates, results in 20 experiments. is design is a type of
+  central composite design. When the axial or star points are situated at a = ±1, the design is sometimes also called a
+  face-centred cube design, see Table 2.31. Note that the number of replicates is one less than the number of experi-
+  ments performed in the centre.
+
+
+    1.   How many experimental points are required for a four-factor star design?
+         (a) 7
+         (b) 4
+         (c) 8
+         (d) 9
+    2.   How many experiments are required for a ﬁve-factor central composite design with ﬁve replicates in the centre?
+         (a) 47
+         (b) 48
+         (c) 31
+         (d) 32
+
+
+
+2.4.2 Degrees of Freedom
+In this section, we analyse the features of such designs in detail. However, many factors are used in most cases, only
+two-factor interactions are computed; hence, higher order interactions are ignored, although, of course, these provide
+suﬃcient degrees of freedom to estimate the lack-of-ﬁt.
+•       e ﬁrst step is to set up a model. A full model including all two-factor interactions consists of 1 + 2k + [k(k − 1)]/
+     2 = 1 + 6 + 3 or 10 coeﬃcients in the case of a three-factor design relating to
+     – 1 intercept term (of the form b0 )
+     – 3 (=k) linear terms (of the form b1 )
+     – 3 (=k) squared terms (of the form b11 )
+     – and 3 (=[k(k − 1)]/2) interaction terms (of the form b12 )
+     or in equation form
+             ŷ = b0 + b1 x1 + b2 x2 + b3 x3 + b11 x1 2 + b22 x2 2 + b33 x3 2 + b12 x1 x2 + b13 x1 x3 + b23 x2 x3
+• A degree-of-freedom tree can be drawn up as illustrated in Figure 2.29.
+  We can see that
+  – there are 20 (=N) experiments overall,
+  – 10 (=P) parameters in the model,
+  – 5 (=R) degrees of freedom to determine replication error and
+  – 5 (=N − P − R) degrees of freedom for the lack-of-ﬁt.
+  Note that the number of degrees of freedom for the lack-of-ﬁt equals that for replication in this case, suggesting
+  quite a good design.
+         e total number of experiments N (=20) equals the sum of
+• 2k (=8) factorial points, often represented as the corners of the cube,
+• 2k + 1 (=7) star points, often represented as axial points on (or above) the faces of the cube plus one in the centre
+  and
+• R (=5) replicate points, in the centre.
+    A large number of variations are present on this theme, but each design can be deﬁned by four parameters, namely,
+•    e number of factorial or cubic points (Nf ),
+• the number of axial points (Na ), usually one less than the number of points in the star design,
+• the number of central points (Nc ), usually one more than the number of replicates and
+• the position of the axial points a.
+66   Chemometrics
+
+
+
+                         Number of experiments
+                                 (20)
+
+
+
+
+           Number of parameters           Remaining degrees of
+                  (10)                       freedom (10)
+
+
+
+
+                                                          Number of degrees of
+                        Number of replicates (5)
+                                                        freedom to test model (5)
+
+
+     Figure 2.29 Degrees of freedom for central composite design.
+
+        In most cases, it is best to use a full factorial design for the factorial points; however, if the number of factors is large,
+     it is legitimate to reduce this and use a partial factorial design. ere are always 2k axial points.
+            e number of central points is often chosen according to the number of degrees of freedom required to assess errors
+     via ANOVA and the F-test (see Sections 2.2.2 and 2.2.4.4) and should be approximately equal to the number of degrees
+     of freedom for the lack-of-ﬁt, with a minimum of about 4 unless there are special reasons for reducing this.
+
+
+      1.     For a central composite design for four factors, using a model with the intercept, all possible linear, quadratic and
+             two-factor interaction terms, how many degrees of freedom are there for determining the lack-of-ﬁt error?
+             (a) 6
+             (b) 10
+             (c) 15
+
+
+     2.4.3 Axial Points
+        e choice of the position of the axial (or star) points and how this relates to the number of replicates in the centre
+     is an interesting consideration. Although many chemists use these designs fairly empirically, it is worth noting two
+     statistical properties that inﬂuence the property of these designs. It is essential to recognise, although, that there is no
+     single perfect design, indeed many of the desirable properties of a design are incompatible with each other.
+     • Rotatability implies that the conﬁdence in the predictions depends only on the distance from the centre of the design.
+       For a two-factor design, this means that all experimental points in a circle of a given radius will be predicted equally
+       well. is has useful practical consequences; for example, if the two factors correspond to concentrations of acetone
+       and methanol, we know that the farther the concentrations are from the central point (in coded values), the lower the
+       conﬁdence. Methods for visualising this were described in Section 2.2.5. If a design is rotatable, the conﬁdence does
+                                                                                                                       4
+       not depend on the number of replicates in the centre, but only on the value of a, which should equal                Nf , where
+                                                            k
+       Nf is the number of factorial points, equal to 2 if a full factorial is used, for this property. Note that the position of
+       the axial points will diﬀer if a fractional factorial design is used.
+     • Orthogonality implies that all the terms (linear, squared and two factor interactions) are orthogonal to each other in
+       the design matrix; that is, the correlation coeﬃcient between any two terms (apart from the zero order term where
+       it is not deﬁned) equals 0. For linear and interaction terms, this will always be so, but squared terms are not so sim-
+       ple, and in the majority of central composite designs, they are not orthogonal. e rather complicated condition is
+                                                                                                              Experimental Design   67
+
+                         )
+  a=          N × Nf − Nf ∕2, which depends on the number of replicates, as a term for the overall number of exper-
+  iments is included in the equation. A small lack of orthogonality in the squared terms can sometimes be tolerated,
+  but it is often worth checking any particular design for this property.
+  Interestingly, these two conditions are usually not compatible, resulting in considerable dilemmas. Although in
+practical situations, the diﬀerences of a for the two diﬀerent properties are not so large, and in some cases, it is not
+experimentally very meaningful to get too concerned about small diﬀerences in the axial points of the design. Table 2.32
+analyses the properties of three, two-factor designs with a model of the form y = b0 + b1 x1 + b2 x2 + b11 x21 + b22 x22 +
+b12 x1 x2 (P = 6). Design A is rotatable, Design B is orthogonal and Design C has both properties. However, the third is
+ineﬃcient in which seven replicates are required in the centre; indeed, half the design points are in the centre, which
+makes little practical sense, although this design is both rotatable and orthogonal. Table 2.33 lists the values of a for
+rotatability and orthogonality for diﬀerent numbers of factors and replicates. For the ﬁve-factor design, a half factorial
+design is also tabulated; in all other cases, the factorial part is full. It is interesting to note that for a two-factor design
+with one central point (i.e. no replication), the value of a for orthogonality is 1, making it identical to a two-factor,
+three-level design (see Table 2.20(a)), being four factorial and ﬁve star points or 32 experiments in total.
+  Terminology varies according to authors, some calling only the rotatable designs as true central composite designs. It is
+very important to recognise that the use of statistics is very widespread throughout science, especially in experimental
+areas such as biology, medicine and chemistry, and check carefully an author’s precise terminology. It is important
+not to get locked in a single textbook (even this one!), a single software package or course provider. In many cases, to
+simplify, a single terminology is employed from any one source. As there are no universally accepted conventions, in
+which chemometrics diﬀers from, for example, organic chemistry, and most historic attempts to set up committees
+have come to grief or been dominated by one speciﬁc strand of opinion, every major group has its own philosophy.
+      e true experimental conditions can be easily calculated from a coded design. For example, if coded levels +1, 0
+and −1 for a rotatable design correspond to temperatures of 30∘ , 40∘ and 50∘ for a two-factor design, the axial points
+correspond to temperatures of 25.9∘ and 54.1∘ , whereas for a four-factor design, these points are 20∘ and 60∘ . Note
+that these designs are only practicable where factors can be numerically deﬁned and cannot normally be employed if
+some data are categorical, unlike factorial designs. However, it is sometimes possible to set the axial points at values
+such as ±1 or ±2 under some circumstance to allow for factors that can take discrete values, for example, the number
+of cycles in an extraction procedure, although this does restrict the properties of the design.
+  A rotatable four-factor design consists of 30 experiments, namely
+• 16 factorial points at all possible combinations of ±1,
+• nine star points, including a central point of (0,0,0,0) and eight points of the form (±2,0,0,0) and so on and
+• typically ﬁve further replicates in the centre; note that a very large number of replicates (11) would be required to
+  satisfy orthogonality with the axial points at 2 units, and this is probably overkilled in many real experimental situa-
+  tions. Indeed, if resources are available for so many replicates, it might make sense to replicate diﬀerent experimental
+  points to check whether errors are even over the response surface.
+
+
+ 1.   We know the position of the axial points for a central composite design with all factorial points.
+      (a) We can tell whether the design is rotatable but do not have enough information to tell whether it is orthogonal.
+      (b) We can tell whether the design is orthogonal but do not have enough information to tell whether it is rotatable.
+      (c) We do not have enough information to tell whether the design is orthogonal or rotatable.
+ 2.   Not all rotatable designs are orthogonal, but all orthogonal designs are rotatable.
+      (a) True
+      (b) False
+
+
+2.4.4 Modelling
+Once the design is performed, it is then possible to calculate the values of the coeﬃcients in the model using regres-
+sion and design matrices or almost any standard statistical procedure and assess the signiﬁcance of each term using
+ANOVA, F-tests and t-tests if felt appropriate. We can then answer, for example, whether an interaction is signiﬁcant,
+or whether to take into account quadratic terms: these may then allow us to further simplify our model or else to ask
+                                                                                                          Experimental Design   69
+
+Table 2.33 Position of the axial points for rotatability and orthogonality for
+central composite designs with varying number of replicates (one less than
+the number of central points).
+
+
+           Rotatability                             Orthogonality
+                                                         R
+
+ k                                        3              4              5
+
+ 2                         1.414          1.210          1.267          1.320
+ 3                         1.682          1.428          1.486          1.541
+ 4                         2.000          1.607          1.664          1.719
+ 5                         2.378          1.764          1.820          1.873
+ 5 (half factorial)        2.000          1.719          1.771          1.820
+
+
+
+questions that can be given a physical interpretation. Sometimes the signiﬁcance of terms is indicated in an ANOVA
+table using *s, the more the greater the signiﬁcance of each term (or lower p value). It is important to remember that
+ANOVA tables assume that the underlying errors are normally distributed.
+  It is also important to recognise that these designs are mainly employed in order to produce a detailed model and
+also to look at interactions and higher order (quadratic) terms. e number of experiments becomes excessive if the
+number of factors is large. If more than about ﬁve signiﬁcant factors are to be studied, it is best to narrow down the
+problem ﬁrst using exploratory designs, although the possibility of using fractional factorials on the corners helps.
+Remember also that it is conventional (but not always essential) to ignore interaction terms above second order.
+  After the experiments have been performed, it is then possible to produce a detailed mathematical model of the
+response surface. If the purpose is optimisation, it might then be useful, for example, by using contour or 3D plots,
+to determine the position of the optimum. For relatively straightforward cases, partial derivatives can be employed to
+solve the equations, as illustrated in Problems 7 and 16; however, if there are a large number of terms, an analytical
+solution can be diﬃcult and there can also be more than one optimum. It is always recommended to try to look at the
+system graphically, even if there are too many factors to visualise the whole of the experimental space at once. It is also
+important to realise that there may be other issues that inﬂuence our deﬁnition of an optimum, such as expense of raw
+materials, availability of key components or even time. Sometimes a design can be used to model several responses,
+and each one can be analysed separately, perhaps one might be the yield of a reaction, another the cost of raw materials
+and another the level of impurities in a produce. Chemometricians should resist the temptation to insist on a single
+categorical ‘correct’ answer.
+
+
+ 1.    The signiﬁcance of terms in a model obtained using a central composite design can be evaluated using ANOVA.
+      (a) True
+      (b) False
+
+
+
+2.4.5 Statistical Factors
+Another important use of central composite designs is to determine a good range of compounds for testing, as in
+QSAR. Consider the case in Figure 2.4. Rather than the axes being physical variables such as concentrations, they can
+be abstract mathematical or statistical variables such as principal components (see Chapter 4). ese could come from
+molecular property descriptors, for example, bond lengths and angles, hydrophobicity, dipole moments and so on.
+Consider, for example, a database of several hundred compounds. Perhaps selection is interesting for biological tests.
+It may be very expensive to test all compounds; hence, a sensible strategy is to reduce the number of compounds to a
+selection. Taking the ﬁrst two PCs as the factors, a selection of nine representative compounds can be obtained using
+a central composite design as follows:
+• Determine the scores of the principal components of the original data set.
+• Scale each PC, for example, so that the highest score equals +1 and the lowest score equals −1.
+70   Chemometrics
+
+     •    en, choose those compounds whose scores are closest to the desired values. For example, in the case in Figure 2.4,
+       choose a compound whose score is closest to (−1,−1) for the bottom left-hand corner and closest to (0,0) for the
+       centre point.
+     • Perform experimental tests on this subset of compounds and then use some form of modelling to relate the desired
+       activity to structural data. Note that this modelling does not have to be multi-linear modelling, as discussed in this
+       section, but could also be PLS, as introduced in Chapter 6.
+
+         1.     It is possible for factors to be multivariate combinations of raw variables.
+                (a) True
+                (b) False
+
+
+
+
+     2.5 Mixture Designs
+     Chemists and statisticians use the term mixture in diﬀerent ways. To a chemist, any combination of several substances
+     is a mixture. In more formal statistical terms, however, a mixture involves a set of factors whose total is a constant sum,
+     this property is often called closure and will be discussed in completely diﬀerent contexts in the area of scaling data
+     before principal components analysis (Sections 4.6 and 7.2.4). Hence, in statistics (and chemometrics), a solvent system
+     in HPLC or a blend of components in products, such as paints, drugs or food, is considered a mixture, as each compo-
+     nent can be expressed as a proportion and the total adds up to 1 or 100%. e response could be a chromatographic
+     separation, or the taste of a foodstuﬀ or physical properties of a manufactured material. Often the aim of modelling
+     is to ﬁnd an optimum blend of components that taste best, or provide the best chromatographic separation or the
+     material that is most durable.
+        Compositional mixture experiments involve some quite specialist techniques and a whole range of considerations
+     must be made before designing and analysing such experiments. e principal consideration is that the value of each
+     factor is constrained. Take, for example, a three-component mixture of acetone, methanol and water, which may be
+     solvents used as the mobile phase for a chromatographic separation. If we know that there is 80% water in the mixture,
+     there can be no more than 20% acetone or methanol in the mixture. If there is also 15% acetone, the amount of methanol
+     is ﬁxed at 5%. In fact, although there are three components in the mixtures, these translate into two independent
+     factors.
+
+     2.5.1 Mixture Space
+     Most chemists represent their experimental conditions in mixture space, which corresponds to all possible allowed pro-
+     portions of components that add up to 100%. A three-component mixture can be represented by a triangle (Figure 2.30),
+
+                                                                              100% component 2
+                                                                                     B
+
+                      B
+
+
+
+
+              Component 2
+      100%
+
+                                   100%
+
+
+                                      n   t3
+                     0%            ne          C
+         0%                     po                                 C
+                               m
+                            Co                                                                            A
+                                                          A      100% component 3              100% component 1
+                                   0%              100%
+
+                                   Component 1
+
+     Figure 2.30 Three-component mixture space.
+                                                                                                         Experimental Design   71
+
+which is a two-dimensional cross-section of a three-dimensional space, represented by a cube, showing the allowed
+region in which the proportions of the three components add up to 100%. Points within this triangle or mixture space
+represent possible mixtures or blends.
+•     e three corners correspond to single components,
+• points along the edges correspond to binary mixtures,
+• points inside the triangle correspond to ternary mixtures,
+• the centre of the triangle corresponds to an equal mixture of all the three components and
+• all points within the triangle are physically allowable blends.
+ As the number of components increases, so does the dimensionality of the mixture space. Physically meaningful
+mixtures can be represented as points in this space.
+• For two components, the mixture space is simply a straight line,
+• for three components a triangle and
+• for four components a tetrahedron.
+   Each object (pictured in Figure 2.31) is called a simplex – the simplest possible object in space of a given dimension-
+ality: the dimensionality is one less than the number of components in a mixture, so a tetrahedron (three dimensions)
+represents a four-component mixture.
+   A number of common designs can be envisaged as ways of determining a sensible number and arrangement of points
+within the simplex.
+
+
+ 1.   A four-component mixture can be represented by a tetrahedron. Possible blends consisting of three of the compo-
+      nents are represented
+      (a) On the corners
+      (b) On the faces
+      (c) Within the tetrahedron
+
+
+
+
+2.5.2 Simplex Centroid
+2.5.2.1   Design
+    ese designs are probably the most widespread. For k components, they involve performing 2k − 1 experiments; that
+is, for four components, 15 experiments are performed. It involves all possible combinations of the proportions 1, 1/2
+to 1/k and is best illustrated by an example. A three-component design consists of
+• three single-component combinations,
+• three binary combinations and
+• one ternary combination.
+      ese experiments are represented graphically in mixture space in Figure 2.32 and tabulated in Table 2.34.
+
+
+
+
+One dimension              Two dimensions               Three dimensions
+
+Two components             Three components             Four components
+
+Figure 2.31 Simplex in one, two and three dimensions.
+72   Chemometrics
+
+                            Component 1                          Figure 2.32 Three-component simplex centroid design.
+
+                                1
+
+
+
+
+                        5                 4
+
+                                7
+
+
+
+
+           3                    6                    2
+
+     Component 2                               Component 3
+
+
+     Table 2.34 Three-component simplex centroid mixture design.
+
+                              Component             Component             Component
+     Experiment                     1                    2                     3
+
+      1                             1                    0                     0
+      2                             0                    1                     0      Single component
+      3                             0                    0                     1
+      4                             1/2                  1/2                   0
+      5                             1/2                  0                    1/2     Binary
+      6                             0                    1/2                  1/2
+      7                             1/3                  1/3                  1/3     Ternary
+
+
+
+
+      1.       How many experiments are there for a four-component simplex centroid design?
+               (a) 7
+               (b) 12
+               (c) 15
+
+
+     2.5.2.2      Model
+     Just as previously, a model and design matrix can be obtained. However, the nature of the model requires some detailed
+     thought. Consider trying to estimate the model for a three-component design of the form
+                y = c0 + c1 x1 + c2 x2 + c3 x3 + c11 x21 + c22 x22 + c33 x23 + c12 x1 x2 + c13 x1 x3 + c23 x2 x3
+
+          is model consists of 10 terms, impossible if only seven experiments are performed. How can the number of terms
+     be reduced? Arbitrarily removing three terms such as the quadratic or interaction terms has little theoretical justiﬁ-
+     cation. A major problem with the equation above is that the value of x3 depends on x1 and x2 , as it equals 1 − x1 − x2
+     so there are, in fact, only two independent factors. If a design matrix consisting of the ﬁrst four terms of the equation
+     mentioned above was set up, it would not have an inverse, and the calculation is impossible. e solution is to set up
+     a reduced model. Consider, instead, a model consisting only of the ﬁrst three terms:
+                y = a0 + a1 x1 + a2 x2
+
+               is is, in eﬀect, equivalent to a model containing just the three single-component terms without an intercept as
+                y = a0 (x1 + x2 + x3 ) + a1 x1 + a2 x2 = (a0 + a1 )x1 + (a0 + a2 )x2 + a0 x3 = b1 x1 + b2 x2 + b3 x3
+                                                                                                            Experimental Design   73
+
+  It is not possible to produce a model containing both the intercept and the three single-component terms. Closed
+data sets, as in mixtures, have a whole series of interesting mathematical properties, but it is primarily important simply
+to watch for these anomalies.
+      e two common types of models, one with an intercept and one without, are related. Models excluding the intercept
+are often referred to as Sheﬀé models, whereas those with the intercept are referred to as Cox models. Normally, a full
+Sheﬀé model includes all higher order interaction terms, and for this design is given by
+          y = b1 x1 + b2 x2 + b3 x3 + b12 x1 x2 + b13 x1 x3 + b23 x2 x3 + b123 x1 x2 x3
+  As seven experiments have been performed, all the seven terms can be calculated, namely
+• three one-factor terms,
+• three two-factor interactions and
+• one three-factor interaction.
+     e design matrix is given in Table 2.35, and being a square matrix, the coeﬃcients can easily be determined using
+the inverse.
+     e full seven-term Cox model is given by
+          y = a0 + a1 x1 + a2 x2 + a11 x21 + a22 x22 + a12 x1 x2 + a1122 (x21 x2 + x22 x1 )
+  Note that only x1 and x2 are involved in the model because x3 is dependent on the other two terms. We could relate
+the models as x1 + x2 + x3 = 1. Note the rather ugly last term that is required if we want to ﬁt a full model. Obviously,
+for both types of models, we can omit terms to provide some degrees of freedom for the lack-of-ﬁt.
+
+ 1.   Intercept terms are used in
+      (a) The full Sheﬀé model
+      (b) The full Cox model
+      (c) Both types of model
+
+
+2.5.2.3     Multi-component Designs
+A full simplex centroid design for k components consists of 2k − 1 experiments of which there are
+• k single blends,
+• k × (k − 1)/2 binary blends, each component being present in a proportion of 1/2,
+• k!/[(k − m)!m!] blends containing m components (these can be predicted by the binomial theorem or Pascal’s trian-
+  gle), each component being present in a proportion of 1/m and
+• ﬁnally 1 blend consisting of all components, each component being present in a proportion of 1/k.
+  Each type of blend yields an equivalent number of interaction terms in the Sheﬀé model. Hence, for a ﬁve-component
+mixture and three-component blends, there will be 5!/[(5 − 3)!3!] = 10 mixtures such as (1/3 1/3 1/3 0 0) containing all
+possible combinations and 10 terms such as b1 b2 b3 .
+  It is normal to use all possible interaction terms in the mixture model, although this does not leave any degrees of
+freedom for determining lack-of-ﬁt. Reducing the number of higher order interactions in the model but maintaining
+
+Table 2.35 Design matrix for a three-factor simplex centroid design.
+
+
+ x1                 x2                x3               x1x2              x1 x3            x2x3    x1 x2x3
+
+ 1.000              0.000             0.000            0.000             0.000            0.000   0.000
+ 0.000              1.000             0.000            0.000             0.000            0.000   0.000
+ 0.000              0.000             1.000            0.000             0.000            0.000   0.000
+ 0.500              0.500             0.000            0.250             0.000            0.000   0.000
+ 0.500              0.000             0.500            0.000             0.250            0.000   0.000
+ 0.000              0.500             0.500            0.000             0.000            0.250   0.000
+ 0.333              0.333             0.333            0.111             0.111            0.111   0.037
+74   Chemometrics
+
+     the full design is possible; however, this must be carefully thought because each term can also be re-expressed, in
+     part, as lower order interactions using the Cox model. is will, although, allow the calculation of some measure of
+     conﬁdence in predictions. It is important to recognise that the columns of the mixture design matrix are not orthogonal
+     and can never be because the proportion of each component depends on all others; hence, there will always be some
+     correlation between the factors.
+        For multi-component mixtures, it is often impracticable to perform a full simplex centroid design; one approach
+     is to simply remove higher order terms, not only from the model but also from the design. A ﬁve-component design
+     containing up to second-order terms is presented in Table 2.36. Such designs can be denoted as {k,m} simplex centroid
+     designs, where k is the number of components in the mixture and m the highest order interaction. Note that at least
+     binary interactions are required for squared terms (in the Cox model) and so for optimisation.
+
+
+      1.       How many possible ternary blends are there for a six-component mixture?
+               (a) 20
+               (b) 15
+               (c) 10
+      2.       How many experiments are required for a {4,2} simplex centroid design?
+               (a) 6
+               (b) 10
+               (c) 11
+
+
+     2.5.3 Simplex Lattice
+     Another class of designs called simplex lattice has been developed and is often preferable to the reduced simplex
+     centroid design when it is required to reduce the number of interaction terms: they span the mixture space more
+     evenly.
+       A {k,m} simplex lattice design consists of all possible combinations of 0, 1/m, 2/m … m/m or a total of
+                N = (k + m − 1)!∕[(k − 1)!m!]
+     experiments where there are k factors. A {3,3} simplex lattice design can be set up analogous to the {3,3} simplex
+     centroid design given in Table 2.34. ere are
+
+     Table 2.36 A {5,2} simplex centroid design.
+
+
+      Comp 1               Comp 2             Comp 3          Comp 4           Comp 5
+
+           1                  0                     0            0                0
+           0                  1                     0            0                0
+           0                  0                     1            0                0
+           0                  0                     0            1                0
+           0                  0                     0            0                1
+       1/2                   1/2                   0             0                0
+       1/2                    0                    1/2           0                0
+       1/2                    0                    0            1/2               0
+       1/2                    0                    0             0               1/2
+           0                 1/2                   1/2           0                0
+           0                 1/2                   0            1/2               0
+           0                 1/2                   0             0               1/2
+           0                  0                    1/2          1/2               0
+           0                  0                    1/2           0               1/2
+           0                  0                     0           1/2              1/2
+76   Chemometrics
+
+
+         1.        How many experiments are needed for a {5,3} simplex lattice design?
+                   (a) 21
+                   (b) 35
+
+
+
+     2.5.4 Constraints
+     In chemistry, there are frequent constraints on the proportions of each component. For example, it might be of interest
+     to study the eﬀect of changing the proportion of ingredients in a cake. Sugar will be one ingredient, but there is no point
+     in baking a cake using 100% sugar and 0% of each other ingredients. A more sensible approach is to put a constraint on
+     the amount of sugar, perhaps between 2% and 5%, and look for solutions in this reduced mixture space. A good design
+     will only test blends within the speciﬁed regions.
+       Constrained mixture designs are often quite diﬃcult to set up, but there are four fundamental situations, exempliﬁed
+     in Figure 2.34, each of which requires a diﬀerent strategy.
+     • Only a lower bound for each component is speciﬁed in advance.
+       –    e ﬁrst step is to determine whether the proposed lower bounds are feasible. e sum of the lower bounds must
+         be less than 1. For three factors, lower bounds of 0.5, 0.1 and 0.2 are satisfactory, whereas lower bounds of 0.3, 0.4
+         and 0.5 are not as they add up to more than 1.
+       –    e next step is to determine new upper bounds. For each component, these are one minus the sum of the lower
+         bounds for all other components. If the lower bounds for three components are 0.5, 0.1 and 0.2, then the upper
+         bound for the ﬁrst component is 1 − 0.1 − 0.2 = 0.7; hence, the upper bound of one component plus the lower
+         bounds of the other two must equal 1.
+
+                            100% component 1                                 100% component 1
+                   Lower
+                   bound
+                                                                                                      Upper
+                                                                   Allowed                            bound
+                                                Lower              mixture
+              Allowed                           bound
+              mixture
+                                                                 Upper                                 Upper
+                                                        Lower    bound                                 bound
+                                                        bound
+
+
+
+     100% component 2                      100% component 3      100% component 2           100% component 3
+                                     (a)                                            (b)
+
+                                                                              100% component 1
+
+                                                                 Allowed
+                                                                 mixture
+
+
+
+
+     Component 2
+                      Component 3
+
+
+
+
+                                                                  100% component 2          100% component 3
+                        Component 1
+
+                               (c)                                                    (d)
+
+     Figure 2.34 Four situations encountered in constrained mixture designs. (a) Lower bounds deﬁned, (b) upper bounds deﬁned, (c) upper
+     and lower bounds deﬁned, fourth factor as ﬁller and (d) upper and lower bounds deﬁned.
+                                                                                                          Experimental Design   81
+
+Table 2.42 (Continued)
+
+ Five vertices
+      Lower                        0.1                    0.3                 0
+      Upper                        0.7                    0.6                 0.4
+
+
+ Step 1
+      0.7 + 0.3 + 0.0 = 1.0
+      0.1 + 0.6 + 0.0 = 0.7
+      0.1 + 0.3 + 0.4 = 0.8
+      0.7 + 0.6 + 0 = 1.3
+      0.7 + 0.3 + 0.4 = 1.4
+      0.1 + 0.6 + 0.4 = 1.1
+ so v = 5
+
+
+ Steps 2 and 3 Vertices
+        A                                0.7                    0.3           0.0
+        B                                0.4                    0.6           0.0
+        C                                0.1                    0.6           0.3
+        D                                0.1                    0.5           0.4
+        E                                0.3                    0.3           0.4
+
+
+ Steps 4 and 5 Design
+        1                      A                    0.7               0.3    0.0
+        2                      Average A&B          0.55              0.45   0.0
+        3                      B                    0.4               0.6    0.0
+        4                      Average B&C          0.25              0.6    0.15
+        5                      C                    0.1               0.6    0.3
+        6                      Average C&D          0.1               0.55   0.35
+        7                      D                    0.1               0.5    0.4
+        8                      Average D&E          0.2               0.4    0.4
+        9                      E                    0.3               0.3    0.4
+        10                     Average E&A          0.5               0.3    0.2
+        11                     Centre               0.32              0.46   0.22
+
+
+
+2.5.5 Process Variables
+Finally, it is useful to brieﬂy mention designs for which there are two types of variables: conventional (often called
+process) variables, such as pH and temperature, and mixture variables, such as solvent composition. A typical experi-
+mental design is represented in Figure 2.35, in the case of two process variables and three mixture variables consisting
+of 28 experiments. Such designs are relatively straightforward to set up, using the principles of this and earlier sections,
+but care should be taken when calculating a model, which can become very complex. e interested reader is strongly
+advised to check the detailed literature as it is easy to get very confused when analysing such types of design, although
+it is important not to get put oﬀ, many problems in chemistry involve both types of variables and as there are often
+interactions, between mixture and process variables (a simple example is that the pH dependence of a reaction depends
+on solvent composition), such situations can be quite common.
+
+ 1.      A design involving varying solvent composition consisting of methanol and acetone and changing pH and
+         temperature.
+         (a) There are one mixture and two process variables.
+82   Chemometrics
+
+                                                               Figure 2.35 Mixture design with process variables.
+
+
+
+
+          (b) There are two mixture and two process variables.
+          (c) All variables are process variables.
+
+
+
+     2.6 Simplex Optimisation
+     Experimental designs can be employed for a large variety of purposes, one of the most successful being optimisation.
+     Traditional statistical approaches normally involve forming a mathematical model of a process, and then, either com-
+     putationally or algebraically, optimising this model to determine the best conditions. ere are many applications,
+     however, in which obtaining a mathematical relationship between the response and the factors that inﬂuence it are not
+     of primary interest. Is it necessary to model precisely how pH and temperature inﬂuence the yield of a reaction? When
+     shimming an NMR machine, is it really important to know the precise relationship between ﬁeld homogeneity and
+     resolution? In engineering, especially, methods for optimisation have been developed, which do not require a mathe-
+     matical model of the system. e philosophy is to perform a series of experiments, changing the values of the control
+     parameters, until a desired response is obtained. Statisticians may not like this approach, as it is not normally possible
+     to calculate conﬁdence in the model and the methods may fall down when experiments are highly irreproducible, but
+     in practice, sequential optimisation has been very successfully applied throughout chemistry.
+       One of the most popular approaches is called simplex optimisation. A simplex is the simplest possible object in N
+     dimensional space, for example, a line in one dimension and a triangle in two dimensions, as introduced previously
+     (Figure 2.31). Simplex optimisation implies that a series of experiments are performed on the corners of such a ﬁgure.
+     Most simple descriptions are of two-factor designs, where the simplex is a triangle, but, of course, there is no restriction
+     on the number of factors.
+
+     2.6.1 Fixed Sized Simplex
+       e most common, and easiest to understand, method of simplex optimisation is called the ﬁxed sized simplex. It is
+     best described as a series of rules.
+          e main steps are as follows, exempliﬁed by a two-factor experiment.
+     • Deﬁne how many factors are of interest, which we will call k.
+     • Perform k + 1 (=3 in our case) experiments on the vertices of a simplex (or triangle for two factors) in factor space.
+          e conditions for these experiments depend on the step-size. is deﬁnes the ﬁnal ‘resolution’ of the optimum.
+          e smaller the step-size, the better the optimum can be deﬁned, but the more the experiments necessary. A typical
+       initial simplex might consist of the three experiments, for example
+       – pH 3 temperature 30 ∘ C
+       – pH 3.01 temperature 31 ∘ C
+       – pH 3.02 temperature 30 ∘ C
+84   Chemometrics
+
+                                                                      Figure 2.37 Progress of a ﬁxed sized simplex.
+
+
+
+
+     Factor 2
+
+
+
+
+                             Factor 1
+
+
+
+          1.    Six factors are being optimised. How many points are in the simplex?
+                (a) 3
+                (b) 5
+                (c) 6
+                (d) 7
+          2.    The step-size of a simplex is deﬁned by the initial conditions.
+                (a) True
+                (b) False
+
+
+     2.6.2 Elaborations
+     Many elaborations have been developed over the years. One of the most important is the k + 1 rule. If a vertex has
+     remained part of the simplex for k + 1 steps, perform the experiment again. e reason for this is that response sur-
+     faces may be noisy, so an unduly optimistic response could have been obtained because of experimental variability. is
+     is especially important when the response surface is ﬂat near the optimum. Another important issue relates to bound-
+     ary conditions. Sometimes there are physical reasons why a condition cannot cross a boundary, an obvious case being
+     a negative concentration. It is not always easy to deal with such situations, but it is possible to deﬁne xnew = c + c − x2
+     rather than xnew = c + c − x1 under such circumstances. If the simplex constantly tries to cross a boundary, either the
+     constraints are a little unrealistic and so should be changed or the behaviour near the boundary needs further investi-
+     gation. Starting a new simplex near the boundary with a small step-size may solve the problem.
+
+
+          1.    Signiﬁcant experimental irreproducibility may cause oscillation around an optimum.
+                (a) True
+                (b) False
+
+
+     2.6.3 Modiﬁed Simplex
+     A weakness with the standard method for simplex optimisation is a dependence on the initial step-size, which is deﬁned
+     by the initial conditions. For example, in Figure 2.36, we set a very small step-size for both variables; this may be ﬁne
+     if we are quite sure we are near the optimum, otherwise a bigger triangle would reach the optimum quicker. However,
+     the problem is that the bigger step-size may miss the optimum altogether. An alternative method is called the modiﬁed
+86   Chemometrics
+
+
+      1.    The modiﬁed simplex allows the step-size to both expand and contract.
+            (a) False, it can only expand to reach an optimum faster.
+            (b) False, it can only contract when close to an optimum to deﬁne it better.
+            (c) True.
+
+
+
+     2.6.4 Limitations
+     In many well-behaved cases, simplex performs well and is quite an eﬃcient approach for optimisation.            ere are,
+     however, a number of limitations.
+     • If there is a large amount of experimental error, then the response is not very reproducible. is can cause problems,
+       for example, when searching a fairly ﬂat response surface.
+     • Sensible initial conditions and scaling (coding) of the factors are essential. is can only come from empirical chem-
+       ical knowledge.
+     • If there are serious discontinuities in the response surface, this cannot always be taken into account.
+     •     ere is no modelling information. Simplex does not aim to predict unknown responses, produce a mathematical
+       model or test the signiﬁcance of the model using ANOVA. ere is no indication of the size of interactions or related
+       eﬀects.
+          ere is some controversy as to whether simplex methods should genuinely be considered as experimental designs,
+     rather than algorithms for optimisation. Some statisticians often totally ignore this approach, and, indeed, many books
+     and courses of experimental design in chemistry will omit simplex methods altogether, concentrating exclusively
+     on approaches for mathematical modelling of the response surface. However, engineers and programmers have
+     employed simplex and related approaches for optimisation for many years, and these methods have been much used,
+     for example, in spectroscopy and chromatography, thus should be considered by the chemist. As a practical tool
+     where the detailed mathematical relationship between response and underlying variables is not of primary concern,
+     the methods described above are very valuable. ey are also easy to implement computationally and to automate and
+     simple to understand.
+
+
+      1.    Simplex designs assume there are no interactions.
+            (a) True
+            (b) False
+
+
+
+     Problems
+      2.1    A Two-Factor, Two-Level Design
+             Section 2.2.3 Section 2.3.1
+               e following represents the yield of a reaction recorded at two catalyst concentrations and two reaction times
+
+
+                Concentration (mM)      Time (h)     Yield
+
+                0.1                     2            29.8
+                0.1                     4            22.6
+                0.2                     2            32.6
+                0.2                     4            26.2
+
+
+             1. Obtain the design matrix from the raw data, D, containing four coeﬃcients of the form
+                        y = b0 + b1 x1 + b2 x2 + b12 x1 x2
+

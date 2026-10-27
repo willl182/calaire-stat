@@ -1,0 +1,373 @@
+10
+Bivariate Measures of Association
+
+
+
+
+Chapter Outline
+10.1 What Bivariate Measures of Association Are and How They Work
+     10.1.1 Characteristics
+     10.1.2 Power
+     10.1.3 Effect Size
+     10.1.4 Assumptions
+10.2 Computing Bivariate Measures of Association Using SPSS
+     10.2.1 Bivariate Correlations
+     10.2.2 Using Crosstabs to Compute Correlations
+10.3 Computing Bivariate Measures of Association Using R
+     10.3.1 Reading Data Into R
+    Reading data into R.10.3.2 Generating Correlation Coef cients
+10.4 Data Screening
+     10.4.1 Scatterplots to Examine Linearity Using SPSS
+     10.4.2 Hypothesis Tests to Examine Linearity Using SPSS
+     10.4.3 Scatterplots to Examine Linearity Using R
+10.5 Power Using G*Power
+10.6 Research Question Template and Example Write-Up
+10.7 Additional Resources
+
+
+
+
+Key Concepts
+   1. Scatterplot
+   2. Strength and direction
+   3. Covariance
+   4. Correlation coef cient
+   5. Fisher’s Z transformation
+   6. Linearity assumption, causation, and restriction of range issues
+
+
+
+
+                                                                         369
+370                                                        Statistical Concepts: A First Course
+
+
+
+We have considered various inferential tests in the last four chapters, speci cally those that
+deal with tests of means, proportions, and variances. In this chapter we examine measures
+of association as well as inferences involving measures of association. Methods for directly
+determining the relationship among two variables are known as bivariate analysis, rather
+than univariate analysis, which is only concerned with a single variable. The indices used
+to directly describe the relationship among two variables are known as correlation coef -
+cients (in the old days known as co-relation) or as measures of association.
+   These measures of association allow us to determine how two variables are related to
+one another and can be useful in two applications: (a) as a descriptive statistic by itself and
+(b) as an inferential test. First, a researcher may want to compute a correlation coef cient
+for its own sake, simply to tell the researcher precisely how two variables are related or
+associated. For example, we may want to determine whether there is a relationship between
+the GRE-Quantitative Reasoning (GRE-Q) subtest and performance on a statistics exam. Do
+students who score relatively high on the GRE-Q perform higher on a statistics exam than
+do students who score relatively low on the GRE-Q? In other words, as scores increase on
+the GRE-Q, do they also correspondingly increase their performance on a statistics exam?
+   Second, we may want to use an inferential test to assess whether (a) a correlation is sig-
+ni cantly different from zero or (b) two correlations are signi cantly different from one
+another. For example, is the correlation between GRE-Q and statistics exam performance
+signi cantly different from zero? As a second example, is the correlation between GRE-Q
+and statistics exam performance the same for younger students as it is for older students?
+   The following topics are covered in this chapter: scatterplot; covariance; Pearson
+product-moment correlation coef cient; inferences about the Pearson product-moment
+correlation coef cient; some issues regarding correlations; other measures of association;
+SPSS and R; and power. We utilize some of the basic concepts previously covered in Chap-
+ters 6 through 9. New concepts to be discussed include the following: scatterplot, strength
+and direction, covariance, correlation coef cient, Fisher’s Z transformation, linearity
+assumption, causation, and restriction of range issues. Our objectives are that by the end
+of this chapter, you will be able to (a) understand the concepts underlying the correlation
+coef cient and correlation inferential tests, (b) select the appropriate type of correlation,
+and (c) determine and interpret the appropriate correlation and inferential test.
+
+
+
+
+10.1 What Bivariate Measures of Association Are and How They Work
+Challie Lenge, along with her accomplished cohort of graduate research assistants work-
+ing in the statistics lab, continues to assist with various research projects. We now nd her
+embarking on exciting challenge with a community partner.
+
+
+ The faculty advisor for the stats lab received a telephone call from Dr. Amberly, the
+ director of marketing for the local animal shelter. Based on a recent survey of donors
+ to the shelter, it appears that the donors who contribute the largest donations also have
+ children and pets. In an effort to attract more donors to the animal shelter, Dr. Amberly
+ is targeting select groups—one of which she believes may be families that have chil-
+ dren at home and who also have pets. Dr. Amberly believes if there is a relationship
+ between these variables, she can more easily reach the intended audience with her
+388                                                        Statistical Concepts: A First Course
+
+
+
+
+FIGURE 10.4
+Nonlinear relationship.
+
+
+
+
+10.2 Computing Bivariate Measures of Association Using SPSS
+Next let us see what SPSS has to offer in terms of measures of association using the
+children–pets example dataset. SPSS has two tools for obtaining measures of association,
+dependent on the measurement scale of your variables: the Bivariate Correlation program
+(for computing the Pearson, Spearman’s rho, and Kendall’s tau) and the Crosstabs pro-
+gram (for computing the Pearson, Spearman’s rho, Kendall’s tau, phi, Cramer’s phi, and
+several other types of measures of association).
+
+
+
+10.2.1. Bivariate Correlations
+Step 1. To locate the Bivariate Correlations program, we go to “Analyze” in the top pull-
+down menu, then select ”Correlate,” and then ”Bivariate.” Following the screenshot of Step
+1 in Figure 10.5 produces the “Bivariate” dialog box.
+   Step 2. Next, from the main “ Bivariate Correlations” dialog box, click the variables
+to correlate (i.e., “Number of children” and “Number of pets”) and move them into
+the “Variables” box by clicking the arrow button. In the bottom half of this dialog box
+options are available for selecting the type of correlation (this is where it’s important
+that you understand the measurement scales of your variables so that you are computing
+the correct correlation coefficient given the scale of measurement of your variables), one- or
+two-tailed test (i.e., directional or nondirectional test), and whether to flag statisti-
+cally significant correlations. For illustrative purposes, we will place a checkmark to
+generate the “Pearson,” “ Kendall’s tau-b,” and “ Spearman’s rho” correlation coefficients.
+We will also select the radio button for a “ Two-tailed” test of significance and at the
+very bottom check “Flag signi�cant correlations” (which simply means an asterisk will
+be placed next to significant correlations in the output). See the screenshot of Step 2
+in Figure 10.6.
+Bivariate Measures of Association                                                                          397
+
+
+
+10.3 Computing Bivariate Measures of Association Using R
+Next we consider R for a bivariate measures of association model. Note that the scripts are
+provided within the blocks with additional annotation to assist in understanding how the
+command works. Should you want to write reminder notes and annotation to yourself as
+you write the commands in R (and we highly encourage doing so), remember that any text
+that follows a hashtag (i.e., #) is annotation only and not part of the R script. Thus, you can
+write annotations directly into R with hashtags. We encourage this practice so that when
+you call up the commands in the future, you’ll understand what the various lines of code
+are doing. You may think you’ll remember what you did. However, trust us. There is a good
+chance that you won’t. Thus, consider it best practice when using R to annotate heavily!
+
+10.3.1 Reading Data Into R
+
+ getwd()
+R is always pointed to a directory on your computer. To ﬁnd out which directory it is pointed to,
+run this “get working directory” function. We will assume that we need to change the working
+directory, and will use the next line of code to set the working directory to the desired path.
+
+ setwd(“E:/FolderName”)
+To set the working directory, change what is in quotation marks to your ﬁle location. Also, if you are
+copying the directory name, it will copy in slashes. You will need to change the slash (i.e., \) to a forward
+slash (i.e., /). Note that you need your destination name within quotation marks in the parentheses.
+
+ Ch10_kidspets <- read.csv(“Ch10_kidspets.csv”)
+The read.csv function reads our data into R. What’s to the left of the <- will be what the data will be
+called in R. In this example, we’re calling the R dataframe “Ch10_kidspets.” What’s to the right of
+the <- tells R to ﬁnd this particular .csv ﬁle. In this example, our ﬁle is called “Ch10_kidspets.csv.”
+Make sure the extension (i.e., .csv) is included in your script. Also note that the name of your ﬁle
+should be in quotation marks within the parentheses.
+
+ names(Ch10_kidspets)
+The names function will produce a list of variable names for each dataframe as follows. This is a
+good check to make sure your data have been read in correctly.
+
+ [1] “Children” “Pets”
+ View(Ch10_kidspets)
+The View function will let you view the dataset in spreadsheet format in RStudio.
+
+ summary(Ch10_kidspets)
+The summary function will produce basic descriptive statistics on all the variables in your dataframe. This
+is a great way to quickly check to see if the data have been read in correctly and to get a feel for your data,
+if you haven’t already. The output from the summary statement for this dataframe looks like this.
+  Children               Pets
+Min.   :1           Min.   : 2
+1st Qu.:2           1st Qu.: 4
+Median :3           Median : 6
+Mean   :3           Mean   : 6
+3rd Qu.:4           3rd Qu.: 8
+Max.   :5           Max.   :10
+
+FIGURE 10.13
+Reading data into R.
+398                                                              Statistical Concepts: A First Course
+
+
+
+10.3.2 Generating Correlation Coefficients
+
+ cor.test(Ch10_kidspets$Children, Ch10_kidspets$Pets,
+ use = “everything”,
+ method = “pearson”,
+ conf.level = 0.95)
+
+The cor.test function will compute a Pearson (i.e., method = “pearson”) correlation coefﬁcient for
+variables children and pets (i.e., “Ch10_kidspets$Children,” “Ch10_kidspets$Pets”) and related
+p value using an alpha of .05 (i.e., conf.level = .95). The use = “everything” command will compute
+the correlation using all available data (“NA” will be the output if any variables have missing data;
+we could have used complete.obs for listwise deletion or pairwise.complete.obs for pairwise deletion,
+among other options). Because we have no missing data, the method for “use” will not matter;
+however, if you have missing data, be thoughtful in how you approach this!
+Note: To compute Spearman or Kendall’s tau, simply change the method (i.e., method = “pearson”) to
+method = “kendall” or method = “spearman,” using all lowercase letters.
+Our output looks like this. We see our observed probability, p = .037, which is statistically signiﬁcant
+at alpha of .05. We have a 95% conﬁdence interval of the correlation coefﬁcient (.086, .993), and our
+Pearson correlation coefﬁcient, r, is .90.
+
+Pearson’s product-moment correlation
+data: Ch10_kidspets$Children and Ch10_kidspets$Pets
+t = 3.5762, df = 3, p-value = 0.03739
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+0.08610194 0.99343752
+sample estimates:
+cor
+0.9
+
+FIGURE 10.14
+Generating correlation coef cients in R.
+
+
+
+
+10.4 Data Screening
+As noted previously, the assumptions of the Pearson correlation coef cient are linearity
+and independence. While the assumption of independence is based on how the data are
+sampled (with random sampling meeting the assumption of independence), we can use
+our data to examine the extent to which we meet the assumption of linearity.
+
+
+10.4.1 Scatterplots to Examine Linearity Using SPSS
+Step 1. As alluded to earlier in the chapter, understanding the extent to which linearity is a
+reasonable assumption is an important rst step prior to computing a Pearson correlation
+coef cient. To generate a scatterplot, go to “Graphs” in the top pulldown menu. From there,
+select “Legacy Dialogs,” then “Scatter/Dot” (see the screenshot for Step 1 in Figure 10.15).
+404                                                             Statistical Concepts: A First Course
+
+
+
+10.4.3.1 Interpreting Linearity Evidence
+Scatterplots are also often examined to determine visual evidence of linearity prior to com-
+puting Pearson correlations. Scatterplots are graphs that depict coordinate values of X and
+Y. Linearity is suggested by points that fall in a straight line or relatively straight line. This line
+may suggest a positive relation (as scores on X increase, scores on Y increase, and vice versa),
+a negative relation (as scores on X increase, scores on Y decrease, and vice versa), little or
+no relation (relatively random display of points), or a polynomial relation (e.g., curvilinear).
+In this example, our scatterplot generally suggests evidence of linearity and, more specif-
+ically, a positive relationship between number of children and number of pets (see Figure
+10.21, generated in R, and Figure 10.22, generated in SPSS). Thus, proceeding to compute
+a bivariate Pearson correlation coef cient is reasonable.
+
+
+
+
+FIGURE 10.22
+Scatterplot.
+
+
+
+
+10.5 Power Using G*Power
+A priori and post hoc power could again be determined using the specialized software
+described previously in this text (e.g., G*Power), or you can consult a priori power tables (e.g.,
+Cohen, 1988). As an illustration, we use G*Power to compute the post hoc power of our test.
+
+
+10.5.1.1 Post Hoc Power for the Pearson Bivariate Correlation Using G*Power
+The rst thing that must be done when using G*Power for computing post hoc power
+is to select the correct test family. In our case, we conducted a Pearson correlation.
+408                                                           Statistical Concepts: A First Course
+
+
+
+recommended so that you avoid a situation where, post hoc, you nd that the sample size
+was not suf cient to reach the desired level of power (given the observed parameters). In
+our situation, we don’t need to worry that post hoc power was less than desirable as we
+found a statistically signi cant correlation.
+
+
+
+
+10.6 Research Question Template and Example Write-Up
+Finally, we conclude the chapter with a template and an APA-style paragraph detailing the
+results from an example dataset. As you may recall, our graduate research assistant, Challie
+Lenge, was working with the marketing director of the local animal shelter, Dr. Amberly.
+Challie’s task was to assist Dr. Amberly in generating the test of inference to answer her
+research question, “Is there a relationship between the number of children in a family and the
+number of pets?” A Pearson correlation was the test of inference suggested by Challie. A
+template for writing a research question for a correlation (regardless of which type of cor-
+relation coef cient is computed) follows:
+
+
+  Is there a correlation between [variable 1] and [variable 2]?
+
+
+   It may be helpful to include in the results information on the extent to which the assump-
+tions were met (recall there are two assumptions: independence and linearity). This assists the
+reader in understanding that you were thorough in data screening prior to conducting the test
+of inference. Recall that the assumption of independence is met when the cases in our sample
+have been randomly selected from the population. One or two sentences are usually suf cient
+to indicate if the assumptions are met. It is also important to address effect size in the write-up.
+Correlations are unique in that they are already effect size measures, so computing an effect
+size in addition to the correlation value is not needed. However, it is desirable to interpret the
+correlation value as an effect size. Effect size is easily interpreted from the correlation coef -
+cient value utilizing Cohen’s (1988) subjective standards previously described or in compar-
+ison to similar studies that have used like variables. Here is an example paragraph of results
+for the correlation between number of children and number of pets.
+
+
+  A Pearson correlation coef cient was computed to determine if there is a relationship
+  between the number of children in a family and the number of pets in the family. The
+  test was conducted using an alpha of .05. The null hypothesis was that the relationship
+  would be zero. The assumption of independence was met via random selection. The
+  assumption of linearity was reasonable given a visual review of a scatterplot of the
+  variables along with hypothesis tests to examine quadratic and cubic trends (neither of
+  which were statistically signi cant).
+     The Pearson correlation coef cient between children and pets is .90 (CI .09, .99),
+  which is positive, is interpreted as a large effect size (Cohen, 1988), and is statistically
+  different from zero (r = .90, n = 5, p = .037). Thus, the null hypothesis that the correlation
+  is zero was rejected at the .05 level of signi cance. There is a strong, positive correlation
+  between the number of children in a family and the number of pets in the family.
+Bivariate Measures of Association                                                               409
+
+
+
+
+10.7 Additional Resources
+This chapter has provided an introduction to conducting correlational analysis. However, there
+are a number of areas related to correlation, particularly as it relates to correlation as a precur-
+sor to regression, that space limitations prevent us from delving into. Those who are interested
+in general coverage of correlation as a precursor to regression may wish to review Sahay (2016).
+
+
+
+
+Problems
+Conceptual Problems
+
+ 1.   The variance of X is 9, the variance of Y is 4, and the covariance between X and Y is
+      2. What is rXY?
+      a. .039
+      b. .056
+      c. .233
+      d. .333
+ 2.   The standard deviation of X is 20, the standard deviation of Y is 50, and the covari-
+      ance between X and Y is 30. What is rXY?
+      a. .030
+      b. .080
+      c. .150
+      d. .200
+ 3.   Which of the following correlation coef cients, each obtained from a sample of 1000
+      children, indicates the weakest relationship?
+      a. −.90
+      b. −.30
+      c. +.20
+      d. +.80
+ 4.   Which of the following correlation coef cients, each obtained from a sample of 1000
+      children, indicates the strongest relationship?
+      a. −.90
+      b. −.30
+      c. +.20
+      d. +.80
+ 5.   If the relationship between two variables is linear, which of the following is necessar-
+      ily true?
+      a. The relation can be most accurately represented by a straight line.
+      b. All the points will fall on a curved line.
+      c. The relationship is best represented by a curved line.
+      d. All the points must fall exactly on a straight line.
+

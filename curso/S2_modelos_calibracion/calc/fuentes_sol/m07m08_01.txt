@@ -1,0 +1,2421 @@
+                                                                      INTERNATIONAL                                                ISO
+                                                                      STANDARD                                                    6143
+
+                                                                                                                                Second edition
+                                                                                                                                   2001-05-01
+
+
+
+
+                                                                      Gas analysis — Comparison methods for
+                                                                      determining and checking the composition
+                                                                      of calibration gas mixtures
+                                                                      Analyse des gaz — Méthodes comparatives pour la détermination et la
+                                                                      vérification de la composition des mélanges de gaz pour étalonnage
+
+
+
+
+                                                                                                                             Reference number
+                                                                                                                             ISO 6143:2001(E)
+
+
+
+                                                                                                                                   © ISO 2001
+                                                                   --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+Copyright International Organization for Standardization
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                        Not for Resale
+          ISO 6143:2001(E)
+
+
+
+                                                                                        PDF disclaimer
+               This PDF file may contain embedded typefaces. In accordance with Adobe's licensing policy, this file may be printed or viewed but shall not
+               be edited unless the typefaces which are embedded are licensed to and installed on the computer performing the editing. In downloading this
+               file, parties accept therein the responsibility of not infringing Adobe's licensing policy. The ISO Central Secretariat accepts no liability in this
+               area.
+               Adobe is a trademark of Adobe Systems Incorporated.
+               Details of the software products used to create this PDF file can be found in the General Info relative to the file; the PDF-creation parameters
+               were optimized for printing. Every care has been taken to ensure that the file is suitable for use by ISO member bodies. In the unlikely event
+               that a problem relating to it is found, please inform the Central Secretariat at the address given below.
+
+
+
+
+          © ISO 2001
+          All rights reserved. Unless otherwise specified, no part of this publication may be reproduced or utilized in any form or by any means, electronic
+          or mechanical, including photocopying and microfilm, without permission in writing from either ISO at the address below or ISO's member body
+          in the country of the requester.
+                ISO copyright office
+                Case postale 56 · CH-1211 Geneva 20
+                Tel. + 41 22 749 01 11
+                Fax + 41 22 749 09 47
+                E-mail copyright@iso.ch
+                Web www.iso.ch
+          Printed in Switzerland
+
+
+
+
+                                                   --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+          ii
+Copyright International Organization for Standardization                                                                          © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                Not for Resale
+                                                                                                                                                                                              ISO 6143:2001(E)
+
+
+
+
+                Contents                                                                                                                                                                                             Page
+
+
+                Foreword.....................................................................................................................................................................iv
+                Introduction .................................................................................................................................................................v
+                1                                        Scope ..............................................................................................................................................................1
+                2                                        Terms and definitions ...................................................................................................................................1
+                3                                        Symbols and abbreviated terms ..................................................................................................................3
+                4                                        Principle..........................................................................................................................................................4
+                5                                        General procedure .........................................................................................................................................6
+                6                                        Special procedures......................................................................................................................................14
+                7                                        Test report ....................................................................................................................................................14
+                Annex A (normative) Procedures for data evaluation ...........................................................................................16
+                Annex B (informative) Examples .............................................................................................................................23
+                Annex C (informative) Computer implementation of recommended methods ...................................................31
+                Bibliography ..............................................................................................................................................................33
+
+
+
+
+                    --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                                                                                                   iii
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                                   Not for Resale
+          ISO 6143:2001(E)
+
+
+
+
+          Foreword
+          ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO
+          member bodies). The work of preparing International Standards is normally carried out through ISO technical
+          committees. Each member body interested in a subject for which a technical committee has been established has
+          the right to be represented on that committee. International organizations, governmental and non-governmental, in
+          liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical
+          Commission (IEC) on all matters of electrotechnical standardization.
+
+          International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 3.
+
+          Draft International Standards adopted by the technical committees are circulated to the member bodies for voting.
+          Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+          Attention is drawn to the possibility that some of the elements of this International Standard may be the subject of
+          patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+
+          International Standard ISO 6143 was prepared by Technical Committee ISO/TC 158, Analysis of gases, to cancel
+          and replace the first edition (ISO 6143:1981), of which the methods for the design and evaluation of calibrations of
+          analytical systems have been updated and a method for estimating the uncertainty of the composition of calibration
+          gas mixtures has been added. It also cancels and replaces ISO 6711:1981, of which entirely new methods for
+          checking the composition of calibration gases have been specified, thus replacing the method which is no longer in
+          use.
+
+          Annex A forms a normative part of ISO 6143. Annexes B and C are for information only.
+
+
+
+
+                                                                                                                                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          iv
+Copyright International Organization for Standardization                                             © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS      Not for Resale
+                                                                                                               ISO 6143:2001(E)
+
+
+
+
+                Introduction
+                In gas analysis, calibration of analytical systems, as specified in the first edition of ISO 6143, has largely been
+                confined to the determination of a straight line through the origin, or of a straight-line segment, using only the
+                minimum number of calibration standards (one for a straight line through the origin, two for a line segment). The
+                approach adopted in the revision, relating to calibration as well as to uncertainty evaluation, goes far beyond this
+                simple scheme by
+
+                ¾       including non-linear response curves and/or functions,
+
+                ¾       replacing interpolation by regression,
+
+                ¾       taking into account the uncertainty on the calibration standards,
+
+                ¾       including validation of calculated response curves and/or functions,
+
+                ¾       calculating uncertainties by uncertainty propagation.
+
+                As a consequence of adopting non-linear response models, advanced regression techniques (errors in both
+                variables) and uncertainty propagation, the main calculation procedures can only be performed on a computer,
+                using a specific program. Such a program is available (see annex C). As an alternative, sufficient information is
+                given in the document to enable the user to develop a program on his own.
+
+
+
+
+                                                                                                                                       --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                          v
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS             Not for Resale
+                                                                   --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+Copyright International Organization for Standardization
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                        Not for Resale
+                INTERNATIONAL STANDARD                                                                                                              ISO 6143:2001(E)
+
+
+
+
+                Gas analysis — Comparison methods for determining and
+                checking the composition of calibration gas mixtures
+
+
+
+                1                                     Scope
+                This International Standard provides methods for
+
+
+
+                 --`,,```,,,,````-`-`,,`,,`,`,,`---
+                ¾                                     determining the composition of a calibration gas mixture by comparison with appropriate reference gas
+                                                      mixtures,
+
+                ¾                                     calculating the uncertainty of the composition of a calibration gas mixture in relation to the known uncertainty of
+                                                      the composition of the reference gas mixtures with which it was compared,
+
+                ¾                                     checking the composition attributed to a calibration gas mixture by comparison with appropriate reference gas
+                                                      mixtures,
+
+                ¾                                     comparing the composition of several calibration gas mixtures, e.g. for the purpose of comparing different
+                                                      methods of gas mixture preparation, or for testing consistency among gas mixtures of closely related
+                                                      composition.
+
+                NOTE         In principle, the method described in this document is also applicable to the analysis of (largely) unknown samples
+                instead of prospective calibration gas mixtures (i.e. gas mixtures which are intended for use as calibration gas mixtures). Such
+                applications, however, require appropriate care and consideration of additional uncertainty components, for example concerning
+                the effect of matrix differences between the reference gases used for calibration and the analysed sample.
+
+
+
+                2                                     Terms and definitions
+                For the purposes of this International Standard, the following terms and definitions apply.
+
+                2.1
+                composition
+                characteristic of a gas mixture given by the kind and content of each specified mixture component (analyte) and the
+                composition of the complementary gas (matrix)
+
+                NOTE        In this International Standard, the analyte content is specified as a mole fraction, exclusively. Mole fractions have
+                the advantage of being perfectly independent of the pressure and the temperature of the gas mixture. Therefore their use is
+                recommended. However, for specific measuring systems, other composition measures (e.g. mass concentrations) may be more
+                appropriate. Their use then requires due care concerning the dependence on pressure and temperature.
+
+                2.2
+                comparison method
+                method for determining the content of a specified gas mixture component (analyte) by measuring an instrumental
+                response
+
+                NOTE        Comparison of measuring systems requires calibration, in which the relationship between response and analyte
+                content is established. This is achieved by measuring the response to known values of analyte content provided by reference
+                gas mixtures.
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                                               1
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                           Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          2.3
+          calibration
+          set of operations that establish, under specified conditions, the relationship between values of quantities indicated
+          by a measuring instrument or measuring system, or values represented by a material measure or reference
+          material, and the corresponding values realized by standards
+
+          [VIM]
+
+          2.4
+          response function
+          functional relationship between instrumental response and analyte content
+
+          NOTE 1     The response function can be expressed in two different ways as a calibration function or an analysis function,
+          depending on the choice of the dependent and the independent variable.
+
+          NOTE 2       The response function is conceptual and cannot be determined exactly. It is determined approximately through
+          calibration.
+
+          2.4.1
+          calibration function
+          instrumental response expressed as a function of analyte content
+
+          2.4.2
+          analysis function
+          analyte content expressed as a function of instrumental response
+
+          2.5
+          uncertainty of measurement
+          parameter, associated with the result of a measurement, that characterizes the dispersion of the values that can
+          reasonably be attributed to the measurand
+
+          [GUM]
+
+          NOTE       In keeping with the GUM, in this International Standard the uncertainty of the composition of a gas mixture is
+          expressed as a standard uncertainty, i.e. as a single standard deviation.
+
+          2.6
+          traceability
+          property of the result of a measurement or the value attributed to a standard whereby it can be related to stated
+          references, usually national or international standards, through an unbroken chain of comparisons all having stated
+          uncertainties
+
+          [VIM]
+
+          2.7
+          measurement standard
+          material measure, measuring instrument, reference material, or measuring system, intended to define, realize,
+          conserve, or reproduce a unit or one or more values of a quantity to serve as a reference
+
+          [VIM]
+
+          2.8
+          reference standard
+          standard, generally having the highest metrological quality available at a given location or in a given organization,
+          from which measurements made there are derived
+
+          [VIM]
+
+
+
+
+                                                                   --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          2
+Copyright International Organization for Standardization                                                                 © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                        Not for Resale
+                                                                                                                  ISO 6143:2001(E)
+
+
+
+                2.9
+                working standard
+                standard that is used routinely to calibrate or check material measures, measuring instruments or reference
+                materials
+
+                [VIM]
+
+                NOTE                     A working standard is usually calibrated against a reference standard.
+
+                2.10
+                reference material
+                material or substance one or more of whose property values are sufficiently homogeneous and well established to
+                be used for the calibration of an apparatus, the assessment of a measuring method, or for assigning values to
+                materials
+
+                [ISO Guide 30]
+
+                2.11
+                calibration gas mixture
+                gas mixture whose composition is sufficiently well established and stable to be used as a working standard of
+                composition
+
+                2.12
+                reference gas mixture
+                gas mixture whose composition is sufficiently well established and stable to be used as a reference standard of
+                composition
+
+
+                3          Symbols and abbreviated terms
+                aj                    parameters of the calibration function F ( j = 0, 1, ..., N)
+
+                bj                    parameters of the analysis function G ( j = 0, 1, ..., N)
+
+                D                     sensitivity matrix
+
+                F                     calibration function, y = F(x), for the specified analyte
+
+                G                     analysis function, x = G(y), for the specified analyte
+
+                k                     coverage factor
+
+                L                     limit of detection
+
+                Mcal                  (sample of) calibration gas mixture
+
+                Mref                  (sample of) reference gas mixture
+
+                Q                     transform matrix
+
+                S                     sum of weighted squared deviations
+
+                Sres                  residual sum of weighted squared deviations
+
+                t                     Student's t-factor
+
+                U(q)                  expanded uncertainty of an estimated quantity q, U(q) = ku(q)
+
+
+
+              --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+                © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                        3
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                            Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          u(q)              uncertainty of an estimated quantity q, expressed as a standard deviation (standard uncertainty)
+
+          u(p,q)            covariance of two estimated quantities p and q
+
+          u2(q)             variance of an estimated quantity q
+
+          V                 variance/covariance matrix
+
+          W                 half-width of a confidence range
+
+          x                 mole fraction of the specified analyte
+
+          (xi, yi)          calibration points (i = 1, 2, ..., n)
+
+            xˆ i , yˆ i  adjusted calibration points (i = 1, 2, ..., n)
+          y                 instrumental response of the specified analyte
+
+          Z                 normal distribution percentage point
+
+          @                 relative analytical accuracy
+
+          C                 dilution factor
+
+          /                 measure of goodness-of-fit
+
+
+          4        Principle
+          The composition of a gas mixture is determined by separate determination of the mole fraction of every specified
+          analyte. Therefore the procedure for determining the mole fraction of only one specified analyte is described.
+          Possible interferences of other components on the measurement of the analyte under consideration should be
+          considered by the user and taken into account. However, this subject is not addressed in this International
+          Standard.
+
+          This International Standard is also applicable if other composition quantities than mole fraction are used. However
+          it is recommended that the final result be expressed as a mole fraction.
+
+          The general procedure for determining the mole fraction x of a specified analyte in a sample of a calibration gas
+          mixture, or in a series of such samples, is performed in a sequence of steps summarized below.
+
+          a)       Specify the analytical range of interest, i.e. the range of the mole fractions x to be determined, and the
+                   acceptable uncertainty level (see 5.1, step A).
+
+          b)       Specify the analytical method and the measuring system to be used (see 5.1, step B).
+
+          c)       Examine the available information on the relevant response characteristics of the measuring system (e.g.
+                   linearity and sensitivity), paying attention to possible interferences. If necessary, carry out a performance
+                   evaluation to check the suitability of the system. Specify the type of mathematical function to be considered for
+                   description of the response in the specified range (see 5.1, step C).
+
+          d)       Design a calibration experiment in which the relevant experimental parameters are specified. Examples are:
+
+                   ¾        calibration range (to include the analytical range),
+
+                   ¾        composition, including uncertainty, of the reference gas mixtures for calibration,
+
+
+
+                                                    --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          4
+Copyright International Organization for Standardization                                                         © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                         Not for Resale
+                                                                                                                            ISO 6143:2001(E)
+
+
+
+                        ¾        parameters of the analytical method,
+
+                        ¾        conditions of measurement, if relevant,
+
+                        ¾        number and sequence of calibration measurements (see 5.1, steps D, E, F).
+
+                e)      Perform the calibration experiment, i.e. measure the response, y, for samples of the chosen reference gas
+                        mixtures, and estimate the uncertainty u(y) of these response values (see 5.1, step G).
+
+                f)      Calculate the analysis function, x = G(y), from the calibration data, using regression analysis (see 5.1, step H).
+
+                g)      Examine whether the calculated analysis function is consistent with the calibration data within the relevant
+                        uncertainties. If the result is acceptable, proceed to h). If not, revise the calibration design (see 5.2.1).
+
+                h)      Determine the uncertainty level of the prospective results based on the analysis function for the relevant
+                        ranges of responses and analyte contents. If the result is acceptable, proceed to i). If not, revise the calibration
+                        design (see 5.2.2).
+
+                i)      Prior to analysing a prospective calibration gas sample, test for instrument drift to ensure that the analysis
+                        function is still valid for the specified analytical task (see 5.2.3). If the result is acceptable, proceed to j). If not,
+                        recalibrate the measuring system.
+
+                        If the prospective calibration gas contains other components than the reference gas mixtures used for
+                        calibration, validate the applicability of the analysis function using at least one additional reference gas mixture
+                        of appropriate composition (see 5.2.4).
+
+                NOTE       It is not necessary to test for drift in conjunction with every analysis of a calibration gas sample. The frequency
+                should be based on experience concerning the stability of the measuring system.
+
+                Similarly, the composition of additional reference gas mixtures used for validation should be based on experience concerning
+                the cross-sensitivities of the measuring system.
+
+                j)      Determine the composition of the prospective calibration gas as follows:
+
+                        ¾        measure the response y,
+
+                        ¾        determine the uncertainty u(y) of the response y,
+
+                        ¾        calculate the mole fraction x = G(y) using the analysis function determined in f),
+
+                        ¾        calculate the uncertainty u(x) of the mole fraction x using the results obtained in h) (see 5.3).
+
+                k)      State the result of the entire analysis (see clause 7).
+
+                In addition to determining the composition of a (prospective) calibration gas mixture, the general procedure may be
+                used to check a pre-established composition. To this end, the mixture under consideration is analysed using the
+                procedure outlined above, and the composition obtained is compared with the pre-established composition.
+                Clause 6 specifies a procedure where, for each analyte concerned, the difference between the content obtained by
+                the confirmation analysis and the pre-established content is examined against the uncertainty on this difference for
+                significant departure from zero.
+
+                The general procedure may also be used to examine the mutual consistency of pre-established composition data
+                for a series of calibration gas mixtures or reference gas mixtures. Clause 6 specifies a procedure where, for each
+                analyte concerned, the measured responses and the pre-established analyte contents of all calibration gases
+                under consideration are tested for compatibility with the known response behaviour of the measuring system.
+
+
+
+
+                                                       --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                        5
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                            Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          5        General procedure
+
+          5.1         Determination of the analysis function
+
+          For a specified analyte and a specified measuring system, including relevant operating conditions, the calibration
+          function, y = F(x), is a mathematical function approximately expressing measured responses y1, y2, ..., yn in relation
+          to known analyte contents x1, x2, ..., xn of appropriate reference gas mixtures. Inversely, the analysis function,
+          x = G(y), approximately expresses known analyte contents x1, x2, .., xn in relation to corresponding measured
+          responses y1, y2, ..., yn. The analysis function is required for calculating unknown analyte contents x of calibration
+          gas mixtures from measured responses y.
+
+          The analysis function can be determined either directly, or indirectly by determination of the calibration function and
+          subsequent inversion. It is recommended to make a direct determination of the analysis function. Therefore only
+          this procedure is specified in the body of this International Standard. In particular applications, however, indirect
+          determination using the calibration function may be preferable. For such applications, a brief description of this
+          procedure is given in A.5.
+
+          The following description, in terms of a series of steps, of the calibration experiment and its evaluation resumes and
+          elaborates the principles outlined in clause 4.
+
+          a) Step A: Specify the analytical range, i.e. the range of the analyte contents x in the calibration gas mixtures
+             considered, and the acceptable uncertainty level of analytical results.
+
+          b) Step B: Specify the measuring system to be used and its operating conditions, e.g. sample pressure, sample
+             temperature and sample flow.
+
+          c) Step C: Specify the type of mathematical function to be considered for the analysis function, x = G(y). Select
+             the function from the following:
+
+                   ¾        linear functions                                       x = b 0 + b1 y
+
+                   ¾        second-order polynomials                               x = b 0 + b1 y + b 2 y 2
+
+
+                   ¾        third-order polynomials                                x = b 0 + b1 y + b 2 y 2 + b 3 y 3
+
+                   ¾        power functions                                        x = b 0 + b1y b 2
+
+                   ¾        exponential functions                                  x = b 0 + b1e b 2y
+
+                   The parameters bj of the analysis function are determined by regression analysis using the values from the
+                   calibration data set, i.e. the response data collected in the calibration experiment and the composition data
+                   taken from the specification of the reference gases used for calibration.
+
+                   The type of mathematical function is chosen according to the response characteristics of the measuring
+                   system, which may be linear or non-linear. Although the method described in this International Standard is, in
+                   principle, completely general, it is recommended to restrict its use to linear response curves and to non-linear
+                   response curves which only moderately deviate from a straight line.
+
+                    NOTE       In this International Standard, only a limited number of types of functions are explicitly considered. However, the
+                    procedures equally apply to other types of functions, e.g. the algebraic inverses of the types of functions specified above,
+                    as far as feasible.
+
+          d) Step D: Specify the number n of calibration points (xi, yi) required, depending on the type of mathematical
+             function to be used for the analysis function.
+
+
+
+
+                                              --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+          6
+Copyright International Organization for Standardization                                                                 © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                        Not for Resale
+                                                                                                                                ISO 6143:2001(E)
+
+
+
+                            The minimum number of calibration points recommended for the different types of functions considered is:
+
+                            ¾ 3                      for a linear function,
+
+                            ¾ 5                      for a second-order polynomial,
+
+                            ¾ 7                      for a third-order polynomial,
+
+                            ¾ 5                      for a power function,
+
+                            ¾ 5                      for an exponential function.
+
+                            The recommended number of calibration points is greater than the number of indeterminate parameters of the
+                            analysis function because it is also necessary to validate the function chosen. If calibration experiments were
+                            only based on the minimum number of calibration points, it would be necessary to validate the analysis
+                            function using additional reference gas mixtures. It is better, instead, to incorporate these additional “reference
+                            points” into the set of calibration points so as to reduce the calibration uncertainty of the estimated parameters.
+
+                            For the majority of comparison methods, an appropriate “zero gas” will provide a valid calibration point.
+
+                 e) Step E: Select reference gas mixtures Mref,1, Mref,2, ..., Mref,n such that their analyte contents x1, x2, ..., xn span
+                    an appropriate calibration range, i.e. approximately equally spaced, with one value below the lower limit and
+                    one value above the upper limit of the analytical range.
+
+                            The analyte contents shall be determined independently to the greatest possible extent. Dilution series may
+                            only be used under the conditions specified in 5.4.2.
+
+                            If interferences between mixture components cannot be safely excluded, it may be necessary to use reference
+                            gases of similar composition to those of the calibration gases considered, for the critical components. In any
+                            case, it is recommended to use reference gas mixtures with the same complementary gas.
+
+                            Calibration designs using equally spaced values for analyte contents are not the optimum choice for cases of
+                            strongly non-linear response. They are, however, well suited for linear and moderately non-linear responses,
+                            as considered in this International Standard [see c), step C].
+
+                 f)        Step F: Establish the standard uncertainties u(x1), u(x2), ..., u(xn) of the analyte contents x1, x2, ..., xn.
+
+                            For reference gas mixtures prepared or analysed by recently standardized methods, the standard uncertainty
+                            for the content of each specified component should be contained in the certificate of mixture composition.
+
+                            For reference gas mixtures with other specifications of uncertainty, e.g. in terms of tolerance limits, these data
+                            have to be converted into standard uncertainties. If xmin and xmax are the lower and upper tolerance limit of the
+                            analyte content, and if all the values within this interval are equally likely as potentially true values, the data
+                            recommended for use as the analyte content and its standard uncertainty are the mean and the standard
+                            deviation of a rectangular distribution between the tolerance limits as follows:
+
+                                           x    + x min                   x    - x min
+                                        x = max         ,          u(x ) = max
+                                                2                              12
+
+                            The conversion of other uncertainty specifications is treated in A.1.
+
+                            If the complementary gas is taken as a reference gas for zero analyte content, xmin = 0, and xmax = Lx. Here Lx
+                            denotes the limit of detection (see reference [6]) of the analytical method used for determining the potential
+                            impurity, i.e. the maximum content of the analyte in the complementary gas that the analytical method fails to
+                            detect.
+
+                 g) Step G: Determine the responses y1, y2, ..., yn to the analyte contents x1, x2, ..., xn, together with their standard
+                    uncertainties u(y1), u(y2), ..., u(yn).
+
+        --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+                 © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                      7
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                         Not for Resale
+          ISO 6143:2001(E)
+
+
+
+                   So as to establish the response data yi and u(yi) for a given xi, it is recommended to use the mean value of ten
+                   individual responses, yi1, yi2, ..., yi10, measured independently under appropriate reproducibility conditions and
+                   to take the standard deviation of this mean value.
+
+                                                                      10
+                                                                 1
+                                                         yi =         å
+                                                                10 j =1
+                                                                        y ij
+
+
+
+                                                                               10
+                                                                       1
+                                                         u( y i ) =
+                                                                       90
+                                                                               å ( y ij - y i ) 2
+                                                                               j =1
+
+
+                   The purpose in requiring ten independent measurements for each reference gas is to ensure that the response
+                   data, yi and u(yi), are determined with acceptable precision. If the analytical system is under statistical control,
+
+
+
+
+                    --`,,```,,,,````-`-`,,`,,`,`,,`---
+                   the mean value yi may be determined from a smaller number of independent measurements and the standard
+                   uncertainty u(yi) may be calculated from the known method standard deviation.
+
+                   The requirement of appropriate reproducibility conditions means that the variability of the conditions of
+                   measurement in the calibration experiment should be about the same as those in the applications.
+
+                   If the complementary gas is taken as a reference gas for zero analyte content and if the response to zero
+                   content is known to be zero response (and positive to non-zero contents), the values of y and u(y) can be
+                   calculated from the response limit of detection, Ly, as follows:
+
+                                                              Ly                      Ly
+                                                         y=      ,          u(y ) =
+                                                              2                        12
+
+                   Here the response limit of detection is the upper limit of fluctuations at zero response.
+
+                   To secure the independence of the individual responses, and to randomize sample interaction effects, e.g.
+                   memory effects, it is recommended to measure the responses for the reference gas mixtures Mref,1, Mref,2, ...,
+                   Mref,n in an irregular sequence.
+
+                   Depending on the number of repeated measurements, the “uncertainty of the uncertainty” of a mean value (i.e.
+                   the relative standard deviation of the standard deviation of a mean value) can be surprisingly large, for
+                   example for ten measurements, it is 24 % (see reference [2] of the Bibliography). Therefore a smaller number
+                   of repeated measurements should not be used when determining the standard deviation of a mean value.
+
+          h) Step H: Calculate the parameters bj of the mathematical function to be used for the analysis function.
+
+                   The set of input data for this calculation consists of:
+
+                   ¾                                     the analyte contents (expressed as mole fractions), x1, x2, ..., xn,
+
+                   ¾                                     the standard uncertainties of the analyte contents, u(x1), u(x2), ..., u(xn),
+
+                   ¾                                     the responses to the analyte contents, y1, y2, ..., yn,
+
+                   ¾                                     the standard uncertainties of the responses, u(y1), u(y2), ..., u(yn).
+
+                   These parameters are calculated by regression analysis, according to the method described in A.2.
+
+                   In contrast with ordinary least squares regression, the regression technique used in this International Standard
+                   equally takes into account the uncertainties of the composition of the reference gas mixtures and the
+                   uncertainties of the measured responses.
+
+
+
+
+          8
+Copyright International Organization for Standardization                                                                                 © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                               Not for Resale
+                                                                                                                                     ISO 6143:2001(E)
+
+
+
+                5.2        Validation of the analysis function
+
+                5.2.1         Purpose
+
+                Before using the analysis function determined according to 5.1, it is necessary to perform validations. These
+                validations serve a number of different purposes:
+
+                ¾       to validate the response model,
+
+                ¾       to examine compliance with uncertainty requirements,
+
+                ¾       to control drift of the measuring system,
+
+                ¾       to validate the applicability to mismatching calibration gases.
+
+                5.2.2         Validation of the response model
+
+                The response model shall be validated by testing whether the selected type of analysis function is compatible with
+                the calibration data set:
+
+                ¾       the analyte contents (mole fractions), x1, x2, ..., xn,
+
+                ¾       the standard uncertainties of the analyte contents, u(x1), u(x2), ..., u(xn),
+
+                ¾       the responses to the analyte contents, y1, y2, ..., yn,
+
+                ¾       the standard uncertainties of the responses, u(y1), u(y2), ... u(yn).
+
+                To assess the overall fit of a calculated response curve to the calibration data, the residual sum of weighted
+                squared deviations, Sres, is compared with the relevant degrees of freedom (equal to the number of calibration
+                points less the number of response curve parameters), as given in A.2. For the purpose of this International
+                Standard, however, satisfactory fit is required for each individual calibration point by using the following test
+                procedure. For each experimental calibration point (xi, yi), an adjusted calibration point  xˆ i , yˆ i  is calculated, as a
+                by-product of the regression analysis used to determine the analysis function (see A.2). The coordinates xˆ i and yˆ i
+                of the adjusted calibration point are estimates of the true analyte content and of the true response, respectively, for
+                the reference gas Mref,i (i = 1, 2, ..., n). By construction the calculated response curve passes through the adjusted
+                calibration points. The selected response model is considered compatible with the calibration data set if the
+                following conditions are fulfilled for every calibration point (i = 1, 2,…, n):
+
+                          xˆ i - x i u 2u  x i                   and                                yˆ i - y i u 2u  y i 
+
+                NOTE 1     In almost all cases, this condition is equivalent to requiring that the calculated response curve pass through every
+                experimental “calibration rectangle” [xi ± 2u(xi), yi ± 2u(yi)], based on the expanded uncertainty U = ku with the standard
+                coverage factor k = 2.
+
+                If the model validation test fails, one possibility is to examine other response models until a model is found that is
+                compatible with the calibration data set. Another possibility is to examine, and possibly revise, the calibration data.
+
+                To effectively test the compatibility of a prospective analysis function, calculate the measure of goodness-of-fit, /,
+                defined as the maximum value of the weighted differences, xˆ i - x i u  x i  and yˆ i - y i u  y i  , between the
+                coordinates of measured and adjusted calibration points (i = 1, 2, ..., n). A function is admissible if / u 2.
+
+                If several functions are considered and found to be admissible, take the final choice as follows:
+
+                a)      If a physical model of the response behaviour of the analytical system is available, and if the function
+                        corresponding to this model is admissible, use this function.
+
+                                                                         --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                           9
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                    Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          b)       If no such physical model is available, and if several functions give about the same fit, i.e. similar values of the
+                   goodness-of-fit parameter /, use the simplest function, i.e. the one with the lowest number of parameters.
+
+          c)       If no physical model is available and admissible functions differ considerably with respect to their fit, use the
+                   function which gives the best fit, i.e. the lowest value of /.
+
+          NOTE 2 The individual weighted differences can be used as a diagnostic tool for identifying potential outliers among the
+          calibration data.
+
+          In addition to the procedures described above, every calculated response curve has to be inspected visually. This
+          visual inspection is necessary to reveal “nonsense correlations” which can occur without being detected by local
+          examination of the curve fit to the calibration points. Such nonsense correlations are liable to occur in the case of
+          polynomial response functions, which can exhibit non-monotonic behaviour with excellent local fit. Another case of
+          nonsense correlations can occur if, by mistake, one of the calibration data uncertainties is very small. Then this
+          calibration point is given erroneously a very high weight. Consequently, the response curve is forced through this
+          point with little importance given to the other calibration points.
+
+          5.2.3                                     Examining compliance with uncertainty requirements
+
+          For the specified analytical range, an upper bound is determined for the uncertainty of the prospective results
+          based on the analysis function. This upper bound is compared with the acceptable uncertainty.
+
+          For determining this upper bound, the calculation described in 5.3 is performed, using simulated extreme response
+          data ylo, u(ylo) and yhi, u(yhi), respectively. The data ylo and u(ylo) are given by the response of the reference gas
+          with the lowest analyte content, and by the standard uncertainty of that response, as determined in the calibration
+          experiment. Analogously, yhi and u(yhi) are given by the calibration data determined on the reference gas with the
+          highest analyte content. From these response data, the values of u(xlo) and u(xhi) can be calculated. The larger of
+          these two values, max[u(xlo), u(xhi)], constitutes an upper bound of the uncertainty of the prospective results based
+          on the analysis function.
+
+          NOTE        The calculated uncertainty takes its highest values at the limits of the calibration range, as given by xlo and xhi. This
+          calibration range includes the specified analytical range.
+
+          5.2.4                                    Drift control of the measuring system
+
+          If significant changes of the response of the analytical system cannot be safely excluded, it is necessary to perform
+          a drift test. A simple one-point validation procedure is described below, aimed at providing the minimum required
+          protection against systematic errors due to drift. If more information on the performance of the analytical system is
+          available, e.g. due to extensive monitoring, drift tests of better performance should be used.
+
+          Drift control means to test whether a previously determined analysis function is still valid or whether the response of
+          the analytical system has changed significantly.
+
+          Perform drift control in a problem-specific mode, i.e. tailored for the prospective calibration gas mixture Mcal under
+          investigation, by measuring the response of one of those two reference gas mixtures among Mref,1, Mref,2, ..., Mref,n
+          which bracket the analyte content of the calibration gas mixture Mcal.
+
+          Before and after measuring the response of the calibration gas mixture Mcal, make ten independent measurements
+          of the selected reference gas mixture, Mref,i. These data are used to derive mean responses, yi(before) and
+          yi(after), which are to be compared with the mean response, yi(calib), obtained on Mref,i at the time of calibration,
+          and with each other. The drift test is passed if none of the three differences, |yi(before) - yi(calib)|,
+          |yi(calib) - yi(after)| and |yi(before) - yi(after)| exceeds the critical value for these differences. This critical value is
+          given by 2,83u[yi(calib)], where u[yi(calib)] is the standard deviation of the mean response obtained at calibration
+          (see 5.1, step G). Should any of these differences be greater than the critical value, then the drift control test has
+          failed, and the analytical system has to be recalibrated.
+
+
+
+
+                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+          NOTE        The drift control test assumes that for each of the series of measurements performed on the drift control mixture
+          Mref,i before and after measuring the calibration gas mixture Mcal, the standard deviation is about the same as that for the
+          series of calibration measurements performed on Mref,i. Based on this assumption and a significance level of 95 %, the critical
+
+
+
+          10
+Copyright International Organization for Standardization                                                         © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                Not for Resale
+                                                                                                                                         ISO 6143:2001(E)
+
+
+
+                value for any of the three differences is given by 2 2 times the standard deviation of the mean response obtained in
+                calibration.
+
+                If it is impractical to make ten measurements (n = 10) on the drift control gas before and after measuring a
+                prospective calibration gas, fewer measurements (n < 10) may be made but will result in a lower drift-detection
+                capability. If fewer measurements are made, the critical values for the differences have to be changed accordingly.
+                The conditions for passing the drift control test then are given by
+
+                                                                                                    10
+                                           ½yi(before) - yi(calib)½ u 2 1 +                            ´ u[yi(calib)]
+                                                                                                     n
+
+                                                                                                 10
+                                           ½yi(calib) - yi(after)½ u 2 1 +                          ´ u[yi(calib)]
+                                                                                                  n
+
+                                                                                                20
+                                           ½yi(before) - yi(after)½ u 2                            ´ u[yi(calib)]
+                                                                                                 n
+
+                The period bracketed by the two sets of measurements on the drift control gas may be extended to include
+                measurements of several prospective calibration gases of similar composition, at the risk of having to discard a
+                larger set of measurements.
+
+                If the drift control test fails, recalibrate the analytical system.
+
+                5.2.5                                          Validation of applicability to mismatching calibration gases
+
+                If the calibration gas mixture under investigation contains other components than the reference gas mixtures used
+                for determining the analysis function, it is necessary to validate the applicability of the analysis function. This
+                validation requires at least one additional reference gas mixture whose composition is sufficiently similar to that of
+                the prospective calibration gas mixture so as to ensure that the uncertainty due to matrix mismatch is kept under
+                adequate control.
+
+                Perform the validation as follows. First, identify the critical analytes, whose determination is likely to be sensitive to
+                matrix mismatch. Second, for each critical analyte, measure the response for the reference gas mixture. Thirdly,
+                using the response data, calculate the analyte content, xobs, and its standard uncertainty, u(xobs), using the analysis
+                function. Finally, compare the observed value, xobs, with the established reference value, xref, of the analyte content
+                of the reference gas mixture, taking into account the uncertainty of these values. If the following condition holds
+                true for each critical analyte:
+
+
+
+                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+                                                             x obs - x ref u 2 u 2  x obs  + u 2  x ref 
+
+                the analysis function can be used for determining the composition of the mismatching gas mixture.
+
+                5.3                                          Determination of the composition of a calibration gas mixture
+
+                Determination of the composition of a (prospective) calibration gas mixture, Mcal, consists in determining the
+                content (mole fraction), x, and its standard uncertainty, u(x), of each specified analyte. For any specified analyte,
+                these data are determined in a series of three steps as follows.
+
+                a) Step I: Determine the response y for the analyte content together with its standard uncertainty u(y). For
+                   establishing these data, it is recommended to use the mean value of ten individual responses, y1, y2, ... , y10,
+                   measured independently, and the standard deviation of this mean value.
+
+                                                                           10
+                                                                        1
+                                                                  y=      å
+                                                                       10 j =1
+                                                                               yj
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                              11
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                        Not for Resale
+          ISO 6143:2001(E)
+
+
+
+                                                                                     10
+                                                                          1
+                                                            u( y ) =
+                                                                          90
+                                                                                     å ( yj - y ) 2
+                                                                                     j =1
+
+
+                   The purpose in requiring ten independent measurements to be made is to ensure that the response data, y
+                   and u(y), are determined with acceptable precision. If the analytical system is under statistical control, the
+                   mean value y may be determined from a smaller number of independent measurements, and the standard
+                   uncertainty u(y) may be calculated from the known method standard deviation.
+
+                   The conditions of measurement shall be the same as those of the calibration experiment. Otherwise, it is
+                   necessary to correct the results for the differences in the measuring conditions and to incorporate the
+                   uncertainty relating to these corrections into the calculation of uncertainty.
+
+                   The response y shall be located well within the calibration range of responses to ensure that the analyte
+                   content x is included in the specified analytical range.
+
+
+
+
+                       --`,,```,,,,````-`-`,,`,,`,`,,`---
+          b) Step J: Calculate the analyte content, x = G(y), using the analysis function determined according to the
+             procedure described in 5.1. The input value for this calculation is the response y determined in a) step I.
+
+          c) Step K: Calculate the standard uncertainty of the analyte content, u(x), using the propagation of uncertainty on
+             the measured response and on the parameters of the analysis function, as follows.
+
+                                                                                                           2              N -1 N æ
+                                                                                                                                          ¶G ö æ ¶G ö
+                                                                                 2             N æ
+                                                                2(x ) = æ ¶G ö                        ¶G ö 2
+                                                            u          çè ¶y ÷ø u
+                                                                                     2(y ) +
+                                                                                               å    ç
+                                                                                                      ¶
+                                                                                                          ÷ u ( b j ) + 2    å å        ç
+                                                                                                                                          ¶
+                                                                                                                                              ÷ç
+                                                                                                                                                è ¶b l ÷ø
+                                                                                                                                                          u(b j, b l )
+                                                                                               j =0 è b j ø               j =0 l = j + 1è b j ø
+
+
+                   where
+
+                                                            u(x)              is the standard uncertainty of the analyte content x, calculated using x = G(y);
+
+                                                            u(y)              is the standard uncertainty of the response y, determined in a) step I.
+
+                                                            u2(bj)            is the variance of the parameter bj of the analysis function;
+
+                                                            u(bj,bl)          is the covariance of the parameters bj, bl of the analysis function.
+
+                   The input data required for calculating the standard uncertainty u(x) according to this equation are determined
+                   as follows.
+
+                   The partial derivatives (¶G/¶y) and (¶G/¶bj) are derived by formal differentiation from the mathematical
+                   expression for the analysis function.
+
+                   The standard uncertainty of the response, u(y), is determined according to a) step I.
+
+                   The variances u2(bj) are calculated by propagation of uncertainty on the calibration data according to the
+                   procedure described in A.3.
+
+                   The covariances u(bj,bl) are calculated by propagation of uncertainty on the calibration data according to the
+                   procedure described in A.3.
+
+                   NOTE      In general, the parameters of the analysis function are independent physical quantities. However, as a rule, the
+                   estimators of these quantities are dependent, since they are based on the same set of calibration data. Therefore the
+                   parameter covariances u(bj, bl) have to be included in the uncertainty calculation. The algebraic sign of the covariance
+                   terms can be positive or negative (positive or negative correlation). Hence their contribution can be additive or subtractive.
+
+                   If several prospective calibration gases are analysed using the same analysis function, the results are
+                   correlated. This correlation shall be taken into account if these gases are used jointly in the same application.
+                   For this purpose, in addition to the standard uncertainty of the analyte content, the covariance of the analyte
+
+
+
+          12
+Copyright International Organization for Standardization                                                                                                                 © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                                        Not for Resale
+                                                                                                                              ISO 6143:2001(E)
+
+
+
+                        contents for every pair of gases has to be known. This covariance can be calculated by propagation of the
+                        uncertainty on the measured responses, and on the parameters of the analysis function, using a similar
+                        equation as the one for calculating the standard uncertainty. An analogous equation is given in A.3, where the
+                        covariance between analysis function parameters is calculated by uncertainty propagation.
+
+                5.4                                            Supplementary instructions
+
+                5.4.1                                           Exceptional uncertainties
+
+                In exceptional cases it may happen that the uncertainty calculated for the analyte content in a calibration gas
+                mixture Mcal is lower than the uncertainty of the analyte content in some or even all of the reference gas mixtures
+                Mref,1, Mref,2, ..., Mref,n. This effect may occur when using a large number of reference gas mixtures whose analyte
+                contents have been established independently, and a high-precision comparison method yielding response data
+                with a relative uncertainty below that of the analyte contents in the reference gas mixtures. However, failing to
+                account for correlations, as for example present in dilution series, or underestimating the uncertainty of response
+                data would completely invalidate any such uncertainty statement. Claiming an exceptional uncertainty in the sense
+                specified above therefore requires positive proof that
+
+                a) there is no major correlation between analyte contents of different reference gas mixtures,
+
+                b) the uncertainty of response measurements has not been underestimated,
+
+                c) the analysis function has been rigorously validated.
+
+                Major correlation between analyte contents in different reference gas mixtures will occur if they have a major
+                uncertainty component in common. This is most often the case in dilution series, see 5.4.2.
+
+
+
+
+                          --`,,```,,,,````-`-`,,`,,`,`,,`---
+                The uncertainty of response measurements will be grossly underestimated if based on a series of measurements
+                obtained under repeatability conditions instead of appropriate reproducibility conditions, see 5.1, step G.
+
+                Rigorous validation implies demonstration that
+
+                ¾       the analysis function is compatible with the calibration data, and
+
+                ¾       there are no significant uncertainty contributions from other sources such as instrumental drift or matrix
+                        mismatch.
+
+                5.4.2                                           Correlation between reference gas mixtures
+
+                NOTE 1      In this clause, ponderous verbal constructions such as “correlation between the contents of the analyte under
+                consideration in different gas mixtures” have been simplified to “correlation between different mixtures” and similar.
+
+                The procedure for determining the analysis function is restricted to uncorrelated or at most weakly correlated
+                reference gas mixtures, i.e. there shall be no correlations or at most weak correlations between analyte contents of
+                different reference gas mixtures. Therefore the analyte contents shall, to the greatest possible extent, be
+                determined independently for all reference gas mixtures used. This is, however, not the case for dilution series
+                which are often used in multi-level calibration. Mixtures prepared by dilution from the same parent mixture are
+                always correlated. Therefore measures have to be taken to limit the extent (number and strength) of such
+                correlations to an acceptable level as follows.
+
+                ¾       In minimum sets of reference gases, i.e. sets containing only the minimum number required for the type of
+                        analysis function (see 5.1, step D), all mixtures shall be totally independent. In extended sets of reference
+                        gases, i.e. sets containing more than this minimum number, mixtures beyond a minimum set may be related by
+                        dilution.
+
+                ¾       Subsets of mixtures related by dilution shall either be two independent dilutions of the same parent gas or a
+                        single dilution and the parent gas. Successive dilutions and larger subsets of dilution series than pairs shall not
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                   13
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                             Not for Resale
+          ISO 6143:2001(E)
+
+
+
+                   be used. For either case of pairs, the relative uncertainty of the parent mixture shall be much lower (factor of
+                   1/3 or less) than the relative uncertainty of dilution factors.
+
+          NOTE 2      In the case of correlated reference gas mixtures, the data evaluation procedure has to be modified by including
+          covariances in the weighted regression and in the uncertainty propagation. As shown in a recent publication [15], the main
+          impact of correlations is on the uncertainty of the parameters, while the parameters themselves are much less affected. For
+          weak correlations, the parameters may be estimated using the regression procedure without correlations, while correlations
+          have to be included in estimating the uncertainty of the parameters. This is covered by this International Standard. Strong
+          correlations have to be included in the regression procedure too. Such a procedure has been developed at the BAM (see
+          reference [15]), but is beyond the scope of this International Standard.
+
+
+
+          6        Special procedures
+
+          6.1         Checking of a pre-assigned composition
+
+          For every analyte considered, determine:
+
+          ¾        the content;
+
+          ¾        the uncertainty of the content.
+
+          Then check whether the determined content and the pre-assigned content agree within their uncertainty limits.
+
+          For this purpose the following compatibility criterion, based on a coverage factor of k = 2, may be used (see 5.2.5).
+
+                     x det - x pas u 2 u 2  x det  + u 2 x pas      
+          In this inequality xdet and xpas denote the determined content and the pre-assigned content, respectively, and
+          u(xdet), u(xpas) denote the standard uncertainties of these quantities.
+
+          If the determined content and the pre-assigned content agree within uncertainty limits, this provides an
+          independent confirmation of the pre-assigned content. The level of added confidence depends on the ratio of
+          uncertainties. If u(xdet) and u(xpas) are about the same, then agreement with xdet ± u(xdet) adds significant
+          confidence in xpas ± u(xpas). This can be expressed by using a mean value and the standard uncertainty of that
+          mean value, resulting in a reduction of uncertainty by a factor of 1/ 2 . If u(xdet) is much larger than u(xpas), then
+          agreement with xdet ± u(xdet) does not provide much added confidence in xpas ± u(xpas).
+
+          6.2         Comparison of several calibration gas mixtures
+
+          The method requires an analytical system with known type of response, preferably linear. Given this, for every
+          analyte considered, determine the responses and their uncertainties for every calibration gas mixture.
+
+          Then check whether the pre-assigned contents and uncertainties together with the measured responses and
+          uncertainties are compatible with the known response type, that is, whether there is a straight line passing through
+          all the uncertainty rectangles (see 5.2.1).
+
+
+          7        Test report
+
+
+
+
+                                                                                                                                            --`,,```,,,,````-`-`,,`,,`,`,,`---
+          Report the results in accordance with the requirements of ISO 17025. Prepare certificates for calibration gas
+          mixtures in accordance with the requirements of ISO 6141.
+
+          The test report shall contain the following information:
+
+          a) a description of the analytical system used;
+
+
+
+          14
+Copyright International Organization for Standardization                                                 © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS           Not for Resale
+                                                                                                                         ISO 6143:2001(E)
+
+
+
+                b) the composition, including uncertainty, of the reference gas mixtures used for calibration;
+
+                c) the mathematical function type used for the analysis function;
+
+                d) a reference to this International Standard, i.e. ISO 6143:2001.
+
+                In stating the results of analysis, the analyte contents, x, shall preferably be expressed as a mole fraction. The
+                uncertainty of the analyte contents shall be expressed as standard uncertainties, u(x), i.e. as one standard
+                deviation. In addition, an expanded uncertainty, U(x) = ku(x), may be given. The recommended coverage factor is
+                k = 2. The coverage factor used shall be specified. Uncertainties can be expressed as an absolute value or as a
+                relative value.
+
+                For the special procedures followed in accordance with clause 6, the report of results has to be designed
+                accordingly.
+
+
+
+
+                                                                   --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                              15
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                        Not for Resale
+          ISO 6143:2001(E)
+
+
+
+                                                                                                           Annex A
+                                                                                                          (normative)
+
+                                                                                        Procedures for data evaluation
+
+
+
+          A.1 Uncertainty specifications for reference gas mixtures
+
+          A.1.1 Conversion to standard uncertainties
+
+          This International Standard requires that for the analyte under consideration, the uncertainties, u(x1), u(x2), ..., u(xn),
+          ascribed to the analyte contents, x1, x2, ..., xn in the reference gas mixtures Mref,1, Mref,2, ..., Mref,n used for
+          calibration, be expressed as standard uncertainties.
+
+          Producers and manufacturers of reference gas mixtures usually express uncertainties for analyte contents using
+          specifications other than standard uncertainties.
+
+          This annex gives guidance on the conversion of frequently used specifications to standard uncertainties.
+
+          A.1.2 Expanded uncertainty
+
+          Should the uncertainty be expressed as an expanded uncertainty, U(xi) = ku(xi), then the producer should indicate
+          on the certificate the coverage factor, k, used to determine the quoted value.
+
+          In this case the standard uncertainty is given by:
+
+                                                                U xi 
+                    u xi  =
+                                                                   k
+
+          If the certificate does not indicate the coverage factor used to determine the quoted uncertainty, then it is
+          reasonable to assume a coverage factor of 2.
+
+          A.1.3 Confidence limits
+
+          The uncertainty for the analyte content may be expressed using confidence limits of the form xi ± W(xi) with a stated
+          confidence probability, i.e. the true value of xi is expected to lie within the range xi - W(xi) to xi + W(xi) with a stated
+          probability. In this case, it is reasonable to assume that the estimate of the true value is distributed normally about
+          the certified value. The standard uncertainty can be determined by dividing half the width of the confidence range,
+          W(xi), by a factor Z, corresponding to the tabulated value for the stated probability in two-sided normal distribution
+          tables as follows:
+
+                                                              W ( x i)
+                    u( x i ) =
+                                                                Z
+
+          The most widely used confidence probability is the 95 % level for which the tabulated value of Z is 1,96.
+
+
+
+
+                         --`,,```,,,,````-`-`,,`,,`,`,,`---
+          NOTE                                                As a first approximation, this is equivalent to an expanded uncertainty using a coverage factor of 2.
+
+          Occasionally a Student's t-factor t, relating to a specified number of degrees of freedom, is used instead of Z. Then
+          W(xi) has to be divided by the appropriate t value.
+
+
+
+
+          16
+Copyright International Organization for Standardization                                                                                               © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                    Not for Resale
+                                                                                                                                        ISO 6143:2001(E)
+
+
+
+                A.1.4 Analytical accuracy
+
+                Analyte contents are regularly quoted with a given analytical accuracy, e.g. xi (1 ± 10 %). In this case, it has to be
+                assumed that the true value has a uniform probability of lying within the range xi (1 - 10 %) to xi (1 + 10 %).
+
+                In the general case of xi (1 ± @ %), the true value of xi is expected to lie within a rectangular distribution with mean
+                xi and half range @ x i 100 . Since the variance of a rectangular distribution of width 2a is given by a2/3 (see 4.3.7 in
+                reference [2]), the standard uncertainty is given by
+
+                                                                         @ xi
+                                                            u( x i ) =
+                                                                         100 3
+
+                A.1.5 Range or tolerance
+
+                If the analyte concentration is defined by a range or tolerance, e.g. xmax - xmin, then it is necessary to assume that
+                the true value for xi has a uniform probability of lying within this range.
+
+                In this case, the true value of xi is expected to lie within a rectangular distribution with mean (xmax + xmin)/2, taken
+                as the certified value for the analyte concentration, and half range (xmax - xmin)/2. Since the variance of a
+                rectangular distribution of width 2a is given by a2/3 (see 4.3.7 in reference [2]), the standard uncertainty is given by
+
+                                                                      x    - x min x max - x min
+                                                            u( x i ) = max        =
+                                                                         2 3            12
+
+
+                A.2 Calculation of the parameters of the analysis function
+                The parameters of the analysis function are calculated according to the Deming's generalized least-squares
+                method (see reference [8]). Recent implementations and applications of this method are given in references [9] to
+                [14].
+
+                The principle of this method is the following. For each calibration point (xi, yi), an adjusted point ( xˆ i , yˆ i ) is
+
+
+
+                       --`,,```,,,,````-`-`,,`,,`,`,,`---
+                determined such that the corresponding sum of squared deviations, weighted by the inverse squares of the
+                associated uncertainties, is a minimum.
+
+                                                                   n é
+                                                                                     yˆ i - y i ù
+                                                                                 2               2
+                                                                      xˆ i - x i
+                                                            S=    å ê
+                                                                    ê u 2 xi 
+                                                                                   +
+                                                                                      u  2
+                                                                                            y  
+                                                                                                   ú = minimum
+                                                                                                   ú
+                                                               i =1 ë                          i û
+
+
+                Here the condition is that the coordinates ( xˆ i , yˆ i ) of the adjusted points satisfy the equation anticipated for the
+                analysis function.
+
+                                                            xˆ i = G  yˆ i  for i = 1, 2, …, n
+
+                In the case of a linear analysis function, this condition means that the adjusted points are subject to lie on a straight
+                line. For a non-linear model function, the adjusted points are subject to lie on a corresponding response curve.
+
+                By insertion of the condition xˆ i = G  yˆ i  into the expression for the sum S, the generalized least-squares problem
+                takes the form
+
+                                                                   n éG     yˆ i  - xi + yˆ i - y i 2 úù = minimum
+                                                                                         2
+                                                                   ê
+                                                            S=   å ê
+                                                                            u 2( x i )
+                                                                                                        ú
+                                                                                             u 2( y i ) ú
+                                                               i=1 ê
+                                                                   ë                                    û
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                             17
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                       Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          where the analysis function G depends on a specified number of indeterminate parameters, b0, b1, ..., bN. Thus the
+          problem is to simultaneously determine the optimum values of the parameters bj and of the y-coordinates, yˆ i , of
+          the adjusted points, which make the sum S a minimum. For this purpose, the condition S = minimum is converted
+          into a system of equations for the unknown parameters bj and the y-coordinates yˆ i (the so-called normal
+          equations) as follows.
+
+          The minimum of a function of several variables or parameters is specified when the partial derivatives of the
+          function with respect to each variable or parameter are zero. That is, the optimum values of the parameters bj and
+          the y-coordinates yˆ i are given by the solution of the following system of (N + 1) + n equations.
+
+                                                       ¶S
+                                                            =0              ( j = 0, 1, ..., N )
+                                                       ¶b j
+
+                                                       ¶S
+                                                              =0               ( i = 1, 2, ..., n)
+                                                       ¶ yˆ i
+
+          These equations are solved by numerical methods, as indicated below. The missing x-coordinates, xˆ i , are
+          calculated from the y-coordinates, yˆ i , using the analysis function determined before.
+
+          NOTE       In the generalized least-squares method, the normal equations are always non-linear, even for a linear analysis
+          function. Therefore no closed-form analytical solution is available, and numerical methods have to be used. This, however, is
+          not a problem if the computations are performed using a personal computer.
+
+          The recommended numerical procedure is a two-step iteration where in the first step the estimates of the analysis
+          function parameters are re-calculated while in the second step the estimates of the coordinates are adjusted.
+          These two steps are repeated alternately until convergence is achieved.
+
+          The method described above provides unbiased estimates for the parameters bj ( j = 0, 1, ..., N) of the analysis
+          function. In addition, for each reference gas mixture Mref,i (i = 1, 2, ..., n), the method provides an estimate xˆ i of the
+          true value of the analyte content and an estimate yˆ i of the true value of the response.
+
+          The residual sum of squared weighted deviations, Sres, i.e. the minimum value of S obtained after convergence,
+          provides an overall measure of fit. The expected value of this minimum is n – N, and this value should not be
+          exceeded by more than a factor of two. For the purpose of this International Standard, however, the definitive
+          acceptance test is the goodness-of-fit test specified in 5.2.2. In this procedure, the fit is examined at each individual
+          calibration point.
+
+
+          A.3 Calculation of the parameter variances and covariances
+
+          A.3.1 General
+
+          The variances, u2(bj), and the covariances, u(bj,bl), of the parameters of the analysis function are calculated from
+          the calibration data as follows:
+
+                                                                          n æ¶        2       n æ¶ ö           2        n -1 n æ ¶ ö æ ¶b ö
+                                                                            b jö 2                 bj                                bj
+                                                                      å                              å                         åå
+                                                                                                                                              j
+                                                       u 2 (b j ) =       ç¶ ÷    u ( xi ) +     ç¶ ÷   u 2
+                                                                                                            ( y i ) + 2           ç     ÷ ç ¶ ÷ u( x i,x h )
+                                                                      i=1 è x i ø            i=1 è
+                                                                                                   y iø                             ¶
+                                                                                                                        i=1 h=i +1è x i ø è x h ø
+
+
+
+
+                  --`,,```,,,,````-`-`,,`,,`,`,,`---
+                                                                                                                                         n- 1 n é ¶
+                                                                           n
+                                                                              æ ¶b j ö æ ¶b l ö 2            n æ¶ öæ
+                                                                                                                  b j ¶b l ö 2                        æ b j ö æ ¶b l ö æ ¶ b l ö æ ¶b j ö ù
+                                                       u (b j , b l ) =   å   ç ¶ ÷ç¶ ÷
+                                                                                       è xi ø
+                                                                                               u  ( x i ) +  å  ç¶ ÷ç¶ ÷      u ( y i )+         ååêç                 +                        ú u( x i , x h )
+                                                                                                                                                       ¶ ÷ çè ¶ x h ÷ø çè ¶ x i ÷ø çè ¶ x h ÷ø úû
+                                                                          i=1 è x i ø                       i=1 è                        i=1 h=i +1êë è x i ø
+                                                                                                                  yi ø è yi ø
+
+
+
+
+          18
+Copyright International Organization for Standardization                                                                                                                           © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                                        Not for Resale
+                                                                                                                                   ISO 6143:2001(E)
+
+
+
+                where
+
+                         u2(xi)                   is the variance of the analyte content xi of the reference gas mixture Mref,i;
+
+                         u2(yi)                   is the variance of the corresponding response yi;
+
+                         u(xi,xh)                 is the covariance of the analyte contents xi and xh of the reference gas mixtures Mref,i and Mref,h.
+
+                In most cases, in both these equations the third term can be considered equal to zero, because in general the
+                analyte contents of different reference gas mixtures are determined independently. However, there are also other
+                cases such as dilution series. If two daughter gases, Mref,i and Mref,h are derived from the same parent gas, then
+                the uncertainty of the analyte content of the parent gas propagates to the daughter gases in a (positively)
+                correlated fashion. As a consequence, the corresponding covariance, u(xi,xh), is different from zero, and has to be
+                included in the calculation.
+
+                The input data required for calculating the parameter variances and the covariances according to these equations
+                are determined as follows:
+
+                The derivatives (¶bj/¶xi), (¶bj/¶yi) are calculated by numerical differentiation from                                    the    function
+                bj = fj(x1,...,xN, y1,..., yN) which is implicitly given by the regression algorithm described in A.2.
+
+                The variances u2(xi) and u2(yi) are given by the squared standard uncertainties, i.e. u2(xi) = [u(xi)]2 and
+                u2(yi) = [u(yi)]2.
+
+                If relevant, the covariances u(xi,xh) are calculated by propagation of uncertainty for those variables, on which both
+                analyte contents depend. The procedure for this calculation is described in A.4.
+
+                So as to implement the procedure described above practically, the following methods are recommended.
+
+                A.3.2 Transform matrix approach
+
+                In this approach, the variance/covariance matrix Vout relating to the output variables of the regression calculation is
+                calculated from the variance/covariance matrix Vin relating to the input variables of the regression calculation by
+                means of a transform matrix Q according to the following equation:
+
+                                                       T
+                         V out = Q × V in × Q
+
+                Here the output variables are the analysis function parameters bj and the y-coordinates yˆ i of the adjusted
+                calibration points. The input variables are the analyte contents, xi, of the reference gases used for calibration, and
+                the corresponding responses, yi.
+
+                The transform matrix Q is calculated from the sensitivity matrices Din and Dout, relating to the normal equations
+                (see A.2). These are matrices consisting of second-order derivatives ¶2S/¶p¶q where S is the objective function to
+                be minimized, p is one of the output variables and q is again one of the output variables in the case of Dout,
+                whereas in the case of Din, q is one of the input variables. In terms of these sensitivity matrices, the transform
+                matrix is given by
+
+                         Q = D out -1 × D in
+
+                A major problem in this procedure is the inversion of the matrix Dout.
+
+                The parameter variances and covariances, u2(bj) and u(bj,bl), constitute a diagonal block of the output
+                variance/covariance matrix Vout.
+
+
+
+
+                                                              --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+                © ISOrganization
+Copyright International 2001 –forAll rights reserved
+                                 Standardization                                                                                                     19
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                   Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          A.3.3 Numerical differentiation
+
+          This approach is based on the observation that any product (¶F/¶z)u(z) consisting of a derivative (¶F/¶z) and the
+          standard uncertainty u(z) of the variable concerned can be calculated approximately as follows:
+
+                    (¶F /¶z )u(z ) » D z = F [ z + u(z )/2] - F [ z - u(z )/2]
+
+          Due to the fact that a variance is the square of a standard uncertainty according to u2(z) = [u(z)]2, and that a
+          covariance can be expressed as the product of two standard uncertainties and the correlation coefficient according
+          to u(z,z') = r(z,z')u(z)u(z'), the expressions for the variances, u2(bj), and the covariances, u(bj,bl), of the analysis
+          function parameters are sums of products of two such compound terms, with an additional factor r in the case of
+          terms involving reference gas correlations (covariances).
+
+          Using this approach the parameter variances and covariances, u2(bj) and u(bj,bl), are calculated as follows.
+
+          One after the other, the calibration data xi and yi are changed, first by adding the respective u/2, second by
+          subtracting u/2, while the other calibration data keep their original value. For each of these locally changed
+          calibration data sets, the analysis function parameters are calculated. From the resulting data set, i.e. 4n sets of
+          analysis function parameter values in the case of n calibration points, the approximate values of the parameter
+          variances and covariances are calculated.
+
+          For these calculations the use of a spreadsheet computer program is recommended.
+
+
+          A.4 Correlations between reference gases
+          In general, the analyte contents of different reference gas mixtures are determined independently. However, there
+          are also other cases such as dilution series. If two daughter gases, Mref,i and Mref,h, are derived from the same
+          parent gas, then an error in the analyte content of the parent gas propagates to the daughter gases in a (positively)
+          correlated fashion. As a consequence, there is a non-zero covariance, u(xi,xh), which has to be included in the
+          uncertainty calculation, in addition to the standard uncertainties u(xi) and u(xh). Specifically, these covariances are
+          required for the calculation according to A.3.
+
+          The general procedures for deciding whether correlations between reference gases are relevant and calculating
+          the associated covariances may be summarized as follows.
+
+          a) Correlations are relevant if the analyte contents of different reference gases depend on the same quantity, or
+             on a common set of quantities, and if the uncertainty on these quantities is significant.
+
+          b) Covariances are calculated by propagation of uncertainties on the common variables, as follows. If the analyte
+             contents xi and xh depend on common quantities p, q, ... , then the covariance u(xi,xh) is given by
+
+                                              æ ¶x ö æ ¶x ö          æ ¶x ö æ ¶x ö
+                             u( x i , x h ) = ç i ÷ ç h ÷ u 2 (p ) + ç i ÷ ç h ÷ u 2(q ) + ...
+                                              è ¶ p ø è ¶p ø         è ¶q ø è ¶q ø
+
+                   where u2(p), u2(q), ... are the variances of the quantities p, q, ...
+
+          EXAMPLE          If a reference gas mixture Mref,2 is derived from another reference gas mixture Mref,1 by dilution, the analyte
+          contents x1 and x2 are correlated, since an error in x1 will propagate to x2. If x2 is expressed as x2 = C x1 with a dilution factor C ,
+          the variances u2(x1) and u2(x2) result as follows
+
+
+                    u 2  x 1 = éëu  x1ùû
+                                                  2
+
+
+
+
+                    u 2  x 2  = C 2 éëu  x 1 ùû + x 12 éëu C ùû
+                                                        2               2
+
+
+
+
+          20
+                                                                                 --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+Copyright International Organization for Standardization                                                                © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                       Not for Resale
+                                                                                                                              ISO 6143:2001(E)
+
+
+
+                where
+
+                        u(x1)         is the standard uncertainty of the analyte content x1;
+
+                        u(C )         is the standard uncertainty of the dilution factor C .
+
+                In addition to these terms, there is a non-zero covariance term as follows.
+
+
+                         u( x1, x 2) = C éëu  x1ùû
+                                                          2
+
+
+
+                If another reference gas mixture Mref,3 is derived from Mref,1 using a different dilution factor C ¢ , then the covariance between the
+                analyte contents of Mref,2 and Mref,3 is given by
+
+                                                                   2
+                         u( x 2, x 3 ) = C C ¢ éëu( x1)ùû
+
+                Multiple-step dilution series can be treated analogously but are not relevant for this International Standard.
+
+
+                A.5 Indirect determination of the analysis function
+                Indirect determination of the analysis function proceeds in two steps. In the first step, an estimate of the calibration
+                function, y = F(x), is determined from the calibration data, using regression analysis. In the second step, the
+                estimate of the calibration function is inverted to yield an estimate of the analysis function, x = G(y). This procedure
+
+
+
+                                                                                                                                                  --`,,```,,,,````-`-`,,`,,`,`,,`---
+                has two major disadvantages:
+
+                ¾       indirect determination of the analysis function most often results in larger uncertainties of the analytical results;
+
+                ¾       the inversion of the calibration function may cause problems, e.g. in the case of polynomials.
+
+                For these reasons, this International Standard recommends direct determination of the analysis function.
+
+                In particular cases, however, indirect determination of the analysis function may be preferable, for example if there
+                are good reasons to assume that the response behaviour of an analytical system is very accurately described by a
+                specific type of non-linear calibration function. If this model function can be inverted algebraically, the inverse
+                should be used as a prospective analysis function. However, if algebraic inversion is not possible, the model
+                function can only be used as a prospective calibration function. Then the parameters, aj, are determined by
+                regression, using the method described in A.2 with a slight adaptation, as follows:
+
+                The parameters aj of the calibration function are determined by minimizing the expression of S obtained by
+                elimination of the coordinates yˆ i .
+
+                                   n é        2
+                                                  F ( xˆ i ) - y i
+                                                                       2ù
+                                 ê xˆ i - x i                           ú = minimum
+                         S=      å
+                                 ê 2( )
+                                                +
+                                                     u 2( y i )         ú
+                            i=1 êë u x i                                úû
+
+                Here the calibration function, F, depends on a specified number of indeterminate parameters, a0, a1, ..., aN. The
+                problem then is to determine, simultaneously, the optimum values for these parameters and for the x-coordinates,
+                xˆ i , of the adjusted points. The y-coordinates, yˆ i , are calculated from the xˆ i , using the calibration function
+                determined before.
+
+                After determination of the parameters the (estimated) calibration function, y = F(x), has to be inverted to yield the
+                (estimated) analysis function, x = G(y). This inversion, however, can only be done numerically, solving the equation
+                y = F(x) point-by-point, that is, for individual input values y, yielding the corresponding output values x = G(y). For
+                this purpose, any equation solver, as contained in general purpose mathematical software program, can be used.
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                                      21
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                               Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          For an indirectly determined analysis function, the uncertainty calculation described in 5.3 has to be modified
+          accordingly.
+
+                                             2                 N æ        2            N -1 N æ
+                        2(x ) = æ ¶G ö                              ¶G ö 2                         ¶G ö æ ¶G ö
+                    u             çè ¶y ÷ø u
+                                                 2(y ) +
+                                                              å   ç
+                                                                    ¶
+                                                                        ÷ u ( aj ) + 2    åå     ç
+                                                                                                   ¶
+                                                                                                       ÷ç
+                                                                                                         è ¶ a l ÷ø
+                                                                                                                    u( a j , a l )
+                                                              j=0 è a j ø              j=0 l= j+1è a j ø
+
+
+          In this equation, G is the inverted calibration function, calculated numerically, and the aj are the parameters of the
+          calibration function.
+
+          Due to the fact that G was obtained from F by numerical inversion, the partial derivatives (¶G/¶y) and (¶G/¶aj) have
+          to be calculated by numerical methods, too.
+
+          The variances u2(aj) and the covariances u(aj,al) of the parameters of the calibration function are calculated by
+          propagation of uncertainty on the calibration data, analogously to the procedure described in A.3.
+
+
+
+
+                                                                                                                                                                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          22
+Copyright International Organization for Standardization                                                                             © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                           Not for Resale
+                                                                                                                                   ISO 6143:2001(E)
+
+
+
+                                                                                     Annex B
+                                                                                   (informative)
+
+                                                                                     Examples
+
+
+
+                B.1 General considerations
+                The following practical examples illustrate the application of the method recommended in this International
+                Standard. Furthermore, they may serve as a reference for checking the performance of tailored software. These
+                practical examples have been taken from different laboratories using different analytical methods.
+
+                All calculations have been made using B_LEAST, a computer program implementing the methodology of this
+                International Standard (see annex C for program description). The program has extensively been tested and
+                validated. It is made available in good faith and does not contain known errors. However, this does not imply any
+                warranty for any contractual or commercial situations nor a guarantee of warranted properties of the
+                software, in particular no guarantee that it is error-free.
+
+                Moreover, users of B_LEAST or any other tailored software implementing the methodology of this International
+                Standard should be aware of the following considerations.
+
+                ¾                     The process of solving generalized least-squares problems is iterative even for linear model functions.
+                                      Consequently, the results obtained may differ slightly in dependence on the numerical algorithms used and the
+                                      truncation criterion applied.
+
+                ¾                     B_LEAST is not intended for use to solve least-squares problems in general. If used as such (in particular for
+                                      problems beyond the scope of this International Standard), the user should do this with due care, and all the
+                                      responsibility lies with him for carrying out appropriate checks regarding the truncation criterion and (possible)
+                                      dependencies of the results on the initial guesses.
+
+                ¾                     B_LEAST is a compromise between robustness, short processing times and result accuracy. When special
+                                      applications are concerned, the user should adjust accuracy (by altering the truncation criterion) at the
+                                      expense of longer data processing times. Stiff data sets may even require an alteration of the initial guesses
+                                      (set by default), and ill-posed problems may cause unexpected program termination.
+
+                NOTE        Standard uncertainties can hardly be estimated with a relative precision better than 10 %. Therefore, standard
+                uncertainties u(x) should not be specified with more than two digits and for the corresponding data x, the decimal presentation
+                should be matched to that for u(x). However, for comparison purposes, in the examples input and output of the computer
+                program B_LEAST, the decimal presentation is given with a higher number of digits.
+
+
+
+                B.2 Examples
+
+                B.2.1 Example 1
+
+                In this example, the application of the main procedure as described in clause 5 has been followed so as to
+                determine the content of NO in N2. Therefore, it is subdivided into steps A to H of 5.1, the validation procedure of
+                5.2.1, and steps I to K of 5.3. Actions and results are summarized and briefly commented under the corresponding
+                step.
+
+                a) Step A: The content of NO in N2 is determined as a mole fraction in the range of 10-6 (approximately
+                   5 µmol/mol to 50 µmol/mol).
+
+                b) Step B: Measurements are carried out using UV absorption at a wavelength of 190,5 nm with a spectral
+                   bandwidth of the analyser of 2 nm.
+
+
+
+
+                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                             23
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                           Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          c) Step C: UV absorption intensity is known to be a linear function of analyte content over a wide range.
+             Therefore a linear model function is considered.
+
+          d) Step D: For a straight line, the minimum number of calibration points is three. A minimum calibration design
+             with three reference gas mixtures (no blank) is used.
+
+          e) Steps E + F: For the selected reference gas mixtures, the analyte contents and their standard uncertainties are
+             given in Table B.1.
+
+                                                                                  Table B.1
+
+                                                      Reference gas No.              xi                                                 u(xi)
+
+                                                                   1                 4,5                                               0,045
+                                                                   2               18,75                                               0,187 5
+                                                                   3                 50                                                  0,5
+
+
+          f)      Step G: The responses to the analyte contents (as the mean of ten individual measurements) and response
+                  uncertainties (as the corresponding standard deviation) are determined and yield the values given in
+                  Table B.2.
+
+                                                                                  Table B.2
+
+                                                      Reference gas No.              yi                                                 u(yi)
+                                                                   1               0,196 9                                            0,003 938
+                                                                   2               0,787 4                                            0,015 748
+                                                                   3               2,022 8                                            0,040 456
+
+
+          g)       Step H: The complete data set for the determination of the parameters of the analysis function and their
+                   uncertainties is given in Table B.3.
+
+                                                                                  Table B.3
+
+                                               xi                         u(xi)                                   yi                                   u(yi)
+                                             4,5                          0,045                            0,196 9                                 0,003 938
+                                           18,75                       0,187 5                             0,787 4                                 0,015 748
+                                              50                           0,5                             2,022 8                                 0,040 456
+
+
+                   The parameters are calculated by regression analysis (see A.2). Using B_LEAST for calculations, the following
+                   function parameters and their uncertainties are obtained:
+
+                            intercept b0:                                          - 3,574 7 ´ 10-1
+
+                            slope b1:                                                2,461 2 ´ 10
+
+                            standard uncertainty of the intercept:                   1,571 6 ´ 10-1
+
+                            standard uncertainty of the slope:                       4,804 8 ´ 10-1
+
+                            covariance between intercept and slope:                - 5,692 1 ´ 10-2
+
+
+
+          24
+Copyright International Organization for Standardization
+                                                                                                 --`,,```,,,,````-`-`,,`,,`,`,,`---
+                                                                                                                                                  © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                          Not for Resale
+                                                                                                                                                              ISO 6143:2001(E)
+
+
+
+                h)      Validation step (see 5.2.1): For the calculated regression line, the residual sum of squared (weighted)
+                        deviations, Sres, is 0,674 3, a value small enough for a good fit. The uncertainty-weighted deviations of
+                        adjusted points from corresponding calibration points with respect to analyte content and response are given in
+                        Table B.4.
+
+                                                                                                                   Table B.4
+
+                                                                                                      Weighted deviation                Weighted deviation
+                                                           Reference gas No.                            with respect to                  with respect to
+                                                                                                      analyte content (xi)                response (yi)
+                                                                         1                                        4,52 ´ 10-2              - 9,73 ´ 10-2
+                                                                         2                                        - 2,75 ´ 10-1             5,68 ´ 10-1
+                                                                         3                                        2,31 ´ 10-1              - 4,60 ´ 10-1
+
+
+
+                        The measure of goodness-of-fit, /, (maximum absolute value of the six values listed above) is 0,568, far below
+                        the critical value of 2, indicating excellent compatibility of the regression line with the calibration data.
+                        Therefore, the linear model function may be used for determining the analyte content of prospective calibration
+                        gas mixtures.
+
+                i)      Step I: The prospective calibration gas mixtures are selected and their responses and the corresponding
+                        uncertainties (mean and standard deviation of ten individual measurements) are determined. For the three
+                        mixtures selected here, the results are given in Table B.5.
+
+                                                                                                                   Table B.5
+
+                                                                   Mixture No.                       Analyser response y                 Uncertainty u(y)
+                                                                         1                                    2,580 0 ´ 10-1              5,160 0 ´ 10-3
+                                                                         2                                    6,000 0 ´ 10-1              1,200 0 ´ 10-2
+                                                                         3                                          1,800 0               3,600 0 ´ 10-2
+
+
+                j)      Steps J + K: For the selected mixtures, the analyte contents and their uncertainties are calculated using the
+                        analysis function determined in step H as described in 5.3. Using B_LEAST for calculations, the values given
+                        in Table B.6 are obtained.
+
+                                                                                                                   Table B.6
+
+                                                              Mixture No.                           Assigned value of x                    Uncertainty u(x)
+                                                                     1                                             5,992 3                  1,637 7 ´ 10-1
+                                                                     2                                        1,440 9 ´ 10                  3,559 9 ´ 10-1
+                                                                     3                                        4,394 3 ´ 10                     1,163 1
+
+
+                Due to the fact that the same calibration was used for determining the NO content in all three mixtures, the
+                assigned values have covariances. Covariances are as follows:
+
+                        ¾ between values for mixtures 1 and 2:                                               1,16 ´ 10-2
+
+                        ¾        between values for mixtures 1 and 3:                                        1,48 ´ 10-2
+
+                        ¾        between values for mixtures 2 and 3:                                        1,37 ´ 10-1
+
+                                                                             --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                                                   25
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                       Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          If the mixtures are to be used together within a set of standards for further calibration, covariances between them
+          should be taken into account properly.
+
+          B.2.2 Example 2
+
+          In this example, nitrogen N2 in a synthetic natural gas is determined by gas chromatography (GC) as the analytical
+          method. A GC equipped with a thermal conductivity detector is used. The calibration data set consists of seven
+          data points derived from measurement of reference gas mixtures (standards) and a blank measurement as given in
+          Table B.7.
+
+                                                                                   Table B.7
+
+                                               xi                      u(xi)                              yi          u(yi)
+
+                                    1,500 ´ 10-3                   9,000 ´ 10-4                     6,000 ´ 10    3,500 ´ 10
+                                    1,888 ´ 10-1                   4,500 ´ 10-4                    7,786 ´ 103   1,357 ´ 102
+                                           1,990                   4,000 ´ 10-3                    8,170 ´ 104    3,670 ´ 10
+                                           3,796                   3,900 ´ 10-2                    1,562 ´ 105   2,232 ´ 102
+                                           5,677                   1,250 ´ 10-2                    2,333 ´ 105   1,372 ´ 102
+                                           7,118                   1,250 ´ 10-2                    2,930 ´ 105   2,455 ´ 102
+                                           9,210                   2,000 ´ 10-2                    3,806 ´ 105   1,251 ´ 102
+
+
+
+
+                                                                                                                                                    --`,,```,,,,````-`-`,,`,,`,`,,`---
+                                      1,090 ´ 10                   2,500 ´ 10-2                    4,497 ´ 105   3,218 ´ 102
+
+
+
+          The number of data points allows all four types of model functions to be fit to this data. Determining a linear
+          analysis function using the method recommended in this International Standard, the following parameters are
+          obtained:
+
+                   intercept b0:                                                   3,918 9 ´ 10-4
+
+                   slope b1:                                                       2,428 6 ´ 10-5
+
+                   standard uncertainty of the intercept:                          1,145 8 ´ 10-3
+
+                   standard uncertainty of the slope:                              2,416 1 ´ 10-8
+
+                   covariance between intercept and slope:                        - 7,274 7 ´ 10-12
+
+          The residual sum of squared deviations, Sres, is 6,169 7, indicating an acceptable fit. Accordingly, the measure of
+          goodness-of-fit, /, is 1,632 2, still below the critical value of 2. Therefore, compatibility is acceptable, and the linear
+          model function may be used for determining the analyte content of the prospective calibration gas mixtures. For the
+          two mixtures selected here, results are given in Table B.8.
+
+
+
+
+          26
+Copyright International Organization for Standardization                                                         © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                         Not for Resale
+                                                                                                                                     ISO 6143:2001(E)
+
+
+
+                                                                                             Table B.8
+
+                                Analyser response y                         Uncertainty u(y)            Assigned value of x   Uncertainty u(x)
+                                                  70 000                             40                            1,700 4     2,024 4 ´ 10-3
+                                                370 000                              200                           8,986 3     9,971 8 ´ 10-3
+
+
+                For comparison, a second order polynomial model function is fitted to the same data. The polynomial coefficients
+                and their uncertainties are:
+
+                         Coefficient                                         Value                      Uncertainty
+                               b0                                       - 1,403 7 ´ 10-4               1,175 ´ 10-3
+                               b1                                       2,440 3 ´ 10-5                 5,901 ´ 10-8
+                               b2                                      - 4,109 6 ´ 10-13              1,895 ´ 10-13
+
+
+                and the covariances between polynomial coefficients:
+
+                        Covariance (b0, b1):                        -2,057 ´ 10-11
+
+                        Covariance (b0, b2):                         4,667 ´ 10-17
+
+                        Covariance (b1, b2):                        -1,020 ´ 10-20
+
+                The residual sum of squared deviations, Sres, is only 1,468 7. Correspondingly, the measure of goodness-of-fit, /, is
+                0,867 8, indicating good compatibility.
+
+                Using the second order polynomial as the analysis function, the values obtained for the mixtures selected are given
+                in Table B.9.
+
+                                                                                             Table B.9
+
+                               Analyser response y                          Uncertainty u(y)           Assigned value of x    Uncertainty u(x)
+                                                  70 000                             40                            1,706 1     3,291 0 ´ 10-3
+                                                370 000                              200                           8,972 7     1,176 2 ´ 10-2
+
+
+                As can be expected, a certain improvement of the fit is achieved by using a second order polynomial model
+                function. However, the significant first order coefficient is found to remain nearly unchanged (i.e. altered by less
+                than 0,5 %) by adding the second order term. Recalling that polynomials treated here are normal (not orthogonal),
+                it may not be absolutely essential to retain the second order term. Furthermore, both the straight-line and the
+                quadratic model function are compatible with the data within their uncertainties. In the absence of any (external)
+                considerations suggesting or demanding the use of second order polynomials, it may be recommendable (see
+                5.2.1) to choose the model function with the fewest number of parameters.
+
+                In the set of standards used for calibration in this example, some standards have a common history, consequently,
+                the assigned values of these standards show non-zero covariances. The gas standards 4 and 7 stem from a
+                dilution series (standard 7 was diluted by a factor of approximately 3), and standards 5 and 8 are traceable to a
+                common set of (primary) standards, for example their values have been determined using a common calibration.
+                Therefore, the covariances between these standards are:
+
+                        covariance (standard 4, standard 7):                           0,000 16
+
+                        covariance (standard 5, standard 8):                           0,000 1
+
+                               --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                          27
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                  Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          According to the method recommended in this International Standard, these covariances shall be taken into
+          account when calculating standard uncertainties and covariances of the analysis function parameters by means of
+          uncertainty propagation. As far as they are considered in this stage of calculation, the function parameters
+          themselves should remain unchanged. For the straight-line analysis function determined earlier, the following
+          values are obtained:
+
+                                                     intercept b0:                                   3,918 9 ´ 10-4
+
+                                                     slope b1:                                       2,428 6 ´ 10-5
+
+                                                     standard uncertainty of the intercept:          1,146 3 ´ 10-3
+
+                                                     standard uncertainty of the slope:              2,549 8 ´ 10-8
+
+                                                     covariance between intercept and slope:        -7,601 8 ´ 10-12
+
+          Using the straight-line analysis function with these parameters for determination, the values in Table B.10 are
+          obtained.
+
+                                                                                                    Table B.10
+
+                                                         Analyser response y          Uncertainty u(y)     Assigned value of x       Uncertainty u(x)
+                                                                 70 000                       40                           1,700 4    2,092 6 ´ 10-3
+                                                                 370 000                      200                          8,986 3    1,040 6 ´ 10-2
+
+
+          As expected, the uncertainties of the assigned values are slightly increased.
+
+          B.2.3 Example 3
+
+          In this example, calibration data exhibiting significant non-linearity are considered. As in example 1, the content of
+          NO in N2 is measured. However, in this example the analytical method is non-dispersive IR absorption. The
+          calibration data set consists of 12 data points derived from measurement of reference gas mixtures (standards) and
+          does not contain blank measurements. Results are given in Table B.11.
+
+
+
+
+                --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          28
+Copyright International Organization for Standardization                                                                              © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                          Not for Resale
+                                                                                                                               ISO 6143:2001(E)
+
+
+
+                                                                                            Table B.11
+
+                                                    xi                             u(xi)                            yi        u(yi)
+                                              1,000 6                            0,001 34                       963,798 8      14
+                                              1,001 0                            0,001 1                        966,258 5     12,5
+                                              1,999 5                            0,003 2                        1 912,569 2   16,8
+                                              3,001 8                            0,003 4                        2 846,930 6   11,6
+                                              3,998 2                            0,005 8                        3 754,938 6   10,8
+
+
+
+
+                                                                                                                                            --`,,```,,,,````-`-`,,`,,`,`,,`---
+                                              4,004 3                            0,005 8                        3 764,590 5   12,1
+                                              4,998 1                            0,005 8                        4 647,151 1   14,4
+                                              5,996 1                            0,007 8                        5 529,999 1   12,1
+                                              7,997 4                            0,008 4                        7 246,008 2   11,9
+                                              7,999 5                             0,010                         7 240,476 7   10,7
+                                              9,998 0                             0,012                         8 884,695 5   10,1
+                                             10,006 0                            0,010 4                        8 902,691 6   14,1
+
+
+
+                For the fit of a straight-line analysis function to this data, the residual sum of squared deviations, Sres, is
+                unsatisfactorily high: 272,639 2. Furthermore, the measure of goodness-of-fit, /, is 6,835 2 and exceeds the critical
+                value by a factor of 3,5. Within their uncertainties, data are incompatible with a straight-line analysis function.
+
+                For this reason, two non-linear function types are tested, namely a power function and an exponential function. The
+                exponential function gives an excellent fit to the data. Results for the parameters and their standard uncertainties
+                are:
+
+                         Coefficient                                     Value                  Uncertainty
+                                  b0                                 - 4,801 9 ´ 10            7,965 4 ´ 10-2
+                                  b1                                  4,802 4 ´ 10             7,252 5 ´ 10-2
+                                  b2                                 2,126 1 ´ 10-5           3,621 0 ´ 10-11
+
+                and the covariances between coefficients:
+
+                        covariance (b0, b1):                       - 5,767 9 ´ 10-3
+
+                        covariance (b0, b2):                        5,026 4 ´ 10-15
+
+                        covariance (b1, b2):                       - 4,821 6 ´ 10-15
+
+                The residual sum of squared deviations, Sres, is 0,658 1 and the corresponding measure of goodness-of-fit is, /,
+                0,355 2, thus indicating excellent compatibility.
+
+                Compatibility between data and fitted analysis function is also achieved using a power function. In this case, the
+                results for the parameters and their standard uncertainties are:
+
+                         Coefficient                                     Value                  Uncertainty
+                                  b0                                 1,212 8 ´ 10-1            1,782 1 ´ 10-2
+                                  b1                                 5,121 3 ´ 10-4            2,369 3 ´ 10-5
+                                  b2                                 8,498 6 ´ 10-2            4,974 5 ´ 10-3
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                    29
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                               Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          and the covariances between coefficients:
+
+                   covariance (b0, b1):                            - 3,826 5 ´ 10-7
+
+                   covariance (b0, b2):                             7,932 6 ´ 10-5
+
+                   covariance (b1, b2):                            - 1,178 0 ´ 10-7
+
+          The residual sum of squared deviations, Sres, is 8,380 4 and the corresponding measure of goodness-of-fit, /, is
+          1,159 4. The latter value is well below the critical value, indicating satisfactory compatibility.
+
+          Given these data, both function types may be used as the analysis function. For a selected mixture, the results
+          given in Table B.12 are obtained.
+
+                                                                                                           Table B.12
+
+                          Analyser response y                              Uncertainty u(y)                         Assigned value of x        Uncertainty u(x)
+                                         4 950,6                                       11
+                                                     using power function:                                                           5,345 6    1,414 1 ´ 10-2
+                                               using exponential function:                                                           5,335 7    1,329 1 ´ 10-2
+
+
+
+          Results show that both assigned values mutually lie within a range of plus or minus the single standard uncertainty
+          of the other value. Consequently, the assigned values can be considered as being the same within their
+          uncertainties.
+
+          Considering the results above, it is possible to conclude that the exponential function is the function-of-choice in
+          this example (due to the achieved excellence of the fit). The calculated exponential factor of the analysis function,
+          b2, is small and positive, i.e. the corresponding parameter of the calibration function will be negative. This may be
+          treated as an indication of some detector saturation in the range of high NO concentrations.
+
+
+
+
+                                                                               --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+           30 Organization for Standardization
+Copyright International                                                                                                                         © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                                    Not for Resale
+                                                                                                                                                ISO 6143:2001(E)
+
+
+
+                                                                                                       Annex C
+                                                                                                     (informative)
+
+                                                                    Computer implementation of recommended methods
+
+
+                A validated computer program implementing the recommended methods described in this International Standard is
+                available through the German standardization body DIN. Inquiries should be directed to the following address:
+
+                                                      Normenausschub Materialprüfung (NMP)
+                                                      im DIN Deutsches Institut für Normung e.V.
+                                                      D - 10772 Berlin
+                                                      Germany
+                The program will normally be supplied on 3,5" double-sided high-density diskettes, but other formats are possible.
+                A specification and the price per copy is available upon request.
+
+
+
+
+                 --`,,```,,,,````-`-`,,`,,`,`,,`---
+                The program has been written for use with IBM-compatible personal computers and the MS-DOS operating
+                system. Programming was carried out on an IBM-compatible PC under MS-DOS 6.22. Tests have shown that the
+                program may be executed under earlier versions of MS-DOS down to version 4.01. The program may also be run
+                in DOS Windows of Win 95/98 and NT.
+
+                The program language is Power BASIC, version 2.10a. The source code has been converted to executable code
+                using the Power BASIC compiler of the same version.
+
+                The program consists of
+
+                ¾                                     the CALIBRATION module which implements the methods of determining the analysis or calibration function
+                                                      from calibration data recommended in this International Standard,
+
+                ¾                                     the EXPLORER module which implements the methods of applying the analysis function parameters to
+                                                      measured response data (determination) recommended in this International Standard,
+
+                ¾                                     tools for visualisation of function graphs and printing.
+
+                Input data files have to be in ASCII, data have to be arranged in a well-defined manner (see Description). The
+                standard output file format is ASCII, too.
+
+                There are no limitations on the units of input data, consequently, output data will be in the same or (as far as fit
+                parameters are concerned) derivatives of the same units.
+
+                The program was developed by the Federal Institute for Materials Research and Testing (BAM), Section I.01 by
+                Dr. Wolfram Bremser. Inquiries on the technical details of the program may be directed to the e-mail address:
+                wolfram.bremser@bam.de.
+
+                The program was validated
+
+                ¾                                     by a large series of tests using both artificial and real data sets,
+
+                ¾                                     by comparison with results of Monte-Carlo simulations,
+
+                ¾                                     by comparison with results of similar calculations reported in scientific publications.
+
+                Furthermore, the program was thoroughly tested by experts of ISO/TC 158.
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                                                     31
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                                             Not for Resale
+          ISO 6143:2001(E)
+
+
+
+          Users interested in details of the validation studies should contact BAM (e-mail address above).
+
+          To a large extent, the program is self-explanatory. Some help is available within the program.
+
+          However, it is strongly recommended for users to study this International Standard before working with the
+          program, and to refer to the description for all information about installation, input/output file formats and usage of
+          the program modules. The description is contained in a readme-file on the program diskette. A paper version is
+          supplied together with the diskette.
+
+          NOTE 1 Although the program and the associated test data files will be made available in good faith, there is no implied
+          warranty for their use in contractual or other commercial applications, and no guarantee that they are all error-free. However,
+          they have undergone testing and contain no known errors at the time of publication.
+
+          NOTE 2 Applications of the methods for fitting different function types to data recommended in this International Standard
+          have been reported in scientific publications only for linear and polynomial functions so far. Therefore, comparison to published
+          results is limited to this extent.
+
+
+
+
+                        --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+          32
+Copyright International Organization for Standardization                                                     © ISO 2001 – All rights reserved
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS           Not for Resale
+                                                                                                                    ISO 6143:2001(E)
+
+
+
+                                                                                   Bibliography
+
+
+                [1]           International vocabulary of basic and general terms in metrology (VIM). BIPM, IEC, IFCC, ISO, IUPAC, IUPAP,
+                              OIML, 2nd ed., 1993.
+
+                [2]           Guide to the expression of uncertainty in measurement (GUM). BIPM, IEC, IFCC, ISO, IUPAC, IUPAP,
+                              OIML, 1st edition, corrected and reprinted in 1995.
+
+                [3]           ISO Guide 30, Terms and definitions used in connection with reference materials, 2nd ed., 1992.
+
+                [4]           ISO 6141, Gas analysis — Requirements for certificates for calibration gases and gas mixtures.
+
+                [5]           ISO/IEC 17025, General requirements for the competence of calibration and testing laboratories.
+
+                [6]           ISO 11843-1, Capability of detection — Part 1: Terms and definitions.
+
+                [7]           EURACHEM Guide, Quantifying uncertainty in analytical measurements, 2nd ed., 2000.
+
+                [8]           DEMING W. Statistical Adjustment of Data. Wiley, New York, 1943.
+
+                [9]           GANS P. Data Fitting in the Chemical Sciences. Wiley, Chichester, 1992.
+
+                [10]          PRESS W., TEUKOLSKY S., VETTERLING W. and FLANNERY B. Numerical Recipes — The Art of Scientific
+                              Computing. Cambridge University Press, 2nd ed., 1992.
+
+                [11]          RIPLEY B. and THOMPSON M. Regression techniques for the detection of analytical bias. Analyst, 112, 1987,
+                              pp. 377-383.
+
+                [12]          POWELL D. and MACDONALD J.R. A rapidly convergent iterative method for the solution of the generalised
+                              nonlinear least squares problem. Comput. J., 15, 1972, pp. 148-155.
+
+                [13]          LYBANON M. A better least-squares method when both variables have uncertainties. Am. J. Phys., 52, 1984,
+                              pp. 22-26.
+
+                [14]          SOUTHWELL W.H. Fitting data to nonlinear functions with uncertainties in all measurement variables.
+                              Comput. J., 19, 1976, pp. 69-73.
+
+                [15]          BREMSER W. and HÄSSELBARTH W. Shall we consider covariances? Accred. Qual. Assur., 3, 1998,
+                              pp. 106-110.
+
+
+
+
+                                              --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+               © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization                                                                              33
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS                        Not for Resale
+          ISO 6143:2001(E)
+
+
+
+
+                                                                                    --`,,```,,,,````-`-`,,`,,`,`,,`---
+
+
+
+
+           ICS 71.040.40
+           Price based on 33 pages
+
+
+
+           © ISO 2001 – All rights reserved
+Copyright International Organization for Standardization
+Provided by IHS under license with ISO
+No reproduction or networking permitted without license from IHS   Not for Resale
+

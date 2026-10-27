@@ -1,0 +1,30 @@
+M08 — ejemplos simulados; nmol/mol salvo indicación distinta
+Context own-data design count: 12 points x 8 readings x 6 days = 576; sqrt(count)=24
+Grados de libertad suministrados para s_r: 7 (m=8 datos independientes de evaluación)
+B media y=100.60000000; a=0.40000000; b=1.00200000; x_hat=100.0000000000
+uA(y mean)=0.0848528137; uB(resolution mean)=0.0102062073; u(y)=0.0854644175
+u(a)=0.1500000000; u(b)=0.0020000000
+Kragten rows: input, u(input), x_hat(input+u), effect
+  y 0.0854644175 100.0852938299 0.0852938299
+  a 0.1500000000 99.8502994012 -0.1497005988
+  b 0.0020000000 99.8007968127 -0.1992031873
+B uc=0.2633765679; U(k=2)=0.5267531358
+I sensitivities: cy=0.9980039920; ca=-0.9980039920; cb=-99.8003992016
+I components variance=[0.007171286170174618, 0.00010375124667498005, 0.022410269281795688, 0.03984047872319233]; uc(linear)=0.2636774268; nu_eff=657.9543169019; k95=1.9635760392; U=0.5177506774
+u(resolution δ=0.1)=0.0288675135; u(tolerance ±0.3)=0.1732050808
+s=0.24000000; s/sqrt(n)=0.0848528137; n=8
+I M06 precision mean=0.1272792206; repeat-only=0.0346410162; invalid sqrt576=0.0100000000
+I individual=0.4975942122; calibration mean=0.3408812110; future mean=0.4594562003
+I U(k=2), only if justified: mean=0.6817624220; future=0.9189124006
+I regression s_res=0.3946064948; u(y future)=s_res; correct=0.4256157164; duplicated=0.5800164457
+I inverse chain: x=249.9001426534; sensitivity=0.9985734665; SRP term=0.2796005706; parameter variance=0.0259523898; Level2=0.3225753832; client=0.5291048627
+I chain: u(SRP)=0.28000000; u(Level2)=0.4482186966; u(client)=0.6142475071; U(k=2)=1.2284950142
+A common x1=100.00000000; x2=102.00000000; ub=0.00300000; cov=0.0918000000
+A u(diff) independence=0.5349168160; shared=0.3202124295; abs diff=2.00000000
+A no lineal: nominal=100.00000000; b+u -> 83.33333333; b-u -> 125.00000000; cambio lineal ±20.00000000
+A interval: x, u(x), U(k=2), hypothetical CMC, max(U, CMC)
+  0.00000000 0.2800000000 0.5600000000 0.8000000000 0.8000000000
+  80.00000000 0.5556977596 1.1113955192 1.1200000000 1.1200000000
+  250.00000000 1.5259095648 3.0518191296 1.8000000000 3.0518191296
+  500.00000000 3.0130383336 6.0260766673 2.8000000000 6.0260766673
+A interval check: coef=[0.000128, -0.0064, -0.3264]; roots in [0,500]=[np.float64(81.3471)]; grid(0.1) changes near=[np.float64(81.4)]; CMC dominates below, U above

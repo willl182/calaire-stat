@@ -1,0 +1,413 @@
+4
+The Normal Distribution and Standard Scores
+
+
+
+
+Chapter Outline
+4.1 The Normal Distribution and How It Works
+    4.1.1 History
+    4.1.2 Characteristics
+4.2 Standard Scores and How They Work
+    4.2.1 z Scores
+    4.2.2 Other Types of Standard Scores
+4.3 Skewness and Kurtosis Statistics
+    4.3.1 Symmetry
+    4.3.2 Skewness
+    4.3.3 Kurtosis
+4.4 Computing Graphs and Standard Scores Using SPSS
+    4.4.1 Explore
+    4.4.2 Descriptives
+    4.4.3 Frequencies
+    4.4.4 Graphs
+    4.4.5 Transform
+4.5 Computing Graphs and Standard Scores Using R
+    4.5.1 Reading Data into R
+    4.5.2 Generating Skewness and Kurtosis
+    4.5.3 Generating a Histogram
+    4.5.4 Creating a Standardized Variable
+4.6 Research Question Template and Example Write-Up
+4.7 Additional Resources
+
+
+
+
+Key Concepts
+  1. Normal distribution (family of distributions, unit normal distribution, area under the
+     curve, points of in ection, asymptotic curve)
+  2. Standard scores (z, T, IQ)
+  3. Symmetry
+  4. Skewness (positively skewed, negatively skewed)
+
+                                                                                       119
+120                                                        Statistical Concepts: A First Course
+
+
+
+   5. Kurtosis (leptokurtic, platykurtic, mesokurtic)
+   6. Moments around the mean
+
+In Chapter 3, we continued our discussion of descriptive statistics, which were de ned as
+techniques that allow us to tabulate, summarize, and depict a collection of data in an abbre-
+viated fashion. We considered the following three topics: summation notation (method for
+summing a set of scores), measures of central tendency (measures for boiling down a set
+of scores into a single value used to represent the data), and measures of dispersion (mea-
+sures dealing with the extent to which a collection of scores vary).
+   In this chapter, we delve more into the eld of descriptive statistics in terms of three
+additional topics. First, we consider the most commonly used distributional shape, the
+normal distribution. Although in this chapter we discuss the major characteristics of the
+normal distribution and how it is used descriptively, in later chapters we see how the nor-
+mal distribution is used inferentially as an assumption for certain statistical tests. Second,
+several types of standard scores are considered. To this point we have looked at raw scores
+and deviation scores. Here we consider scores that are often easier to interpret, known as
+standard scores. Third, we examine two other measures useful for describing a collection
+of data, namely skewness and kurtosis. As we show shortly, skewness refers to the lack of
+symmetry of a distribution of scores and kurtosis refers to the peakedness of a distribution
+of scores. Finally, we provide a template for writing research questions, develop an APA-
+style paragraph of results for an example dataset, and also illustrate the use of SPSS and R.
+Concepts to be discussed include the normal distribution (i.e., family of distributions, unit
+normal distribution, area under the curve, points of in ection, asymptotic curve), standard
+scores (e.g., z, T, IQ), symmetry, skewness (positively skewed, negatively skewed), kurtosis
+(leptokurtic, platykurtic, mesokurtic), and moments around the mean. Our objectives are
+that by the end of this chapter, you will be able to (a) understand the normal distribution
+and utilize the normal table; (b) determine and interpret different types of standard scores,
+particularly z scores; and (c) understand and interpret skewness and kurtosis statistics.
+
+
+
+
+4.1 The Normal Distribution and How It Works
+You may remember the following research scenario that was rst introduced in Chapter 2.
+We will revisit our talented group of graduate students in this chapter as they continue to
+explore the data.
+
+
+ The graduate students in the statistics lab, Addie Venture, Oso Wyse, Challie Lenge,
+ and Ott Lier, have been assigned their rst task as research assistants. Dr. Debhard, a
+ statistics professor, has given the group of students quiz data collected from 25 stu-
+ dents enrolled in an introductory statistics course and has asked the group to sum-
+ marize the data. Working now with Challie Lenge, Dr. Debhard has asked Challie to
+ revisit the following research question related to distributional shape: What is the dis-
+ tributional shape of the statistics quiz score? Additionally, Dr. Debhard has asked Challie
+ to standardize the quiz score and compare student 1 to student 3 relative to the mean.
+ The corresponding research question that Challie is provided for this analysis is as
+ follows: In standard deviation units, what is the relative standing to the mean of student 1
+ compared to student 3?
+The Normal Distribution and Standard Scores                                                     127
+
+
+
+variable, X or z, is irrelevant in terms of determining such areas. In the next section we deal
+more with such transformations.
+
+
+
+
+4.2 Standard Scores and How They Work
+We have already devoted considerable attention to z scores, which are one type of stan-
+dard score. In this section we describe an application of z scores leading up to a discussion
+of other types of standard scores. As we show, the major purpose of standard scores is to
+place scores on the same standard scale so that comparisons can be made across individu-
+als and/or variables. Without some standard scale, comparisons across individuals and/
+or variables would be dif cult to make. Examples are coming right up.
+
+
+
+4.2.1 z Scores
+You have just interviewed for your dream job. As part of your interview, you completed
+a cognitive ability assessment (which measured problem-solving skills and ability to
+learn and understand instructions) and a motivation index (designed to measure work
+engagement motivation). On the cognitive ability assessment, you receives a score of 75
+and on the motivation index you receive a score of 60. The natural question to ask is,
+“Which performance was the stronger one?” The suspense is killing you! No information
+about any of the following is available: maximum score possible, mean of the candidates
+who were interviewed (or any other central tendency measure), or standard deviation of
+the candidates who were interviewed (or any other dispersion measure). It is possible,
+and quite likely, that the two assessments had a different number of possible points,
+different means, and/or different standard deviations. How can we possibly answer our
+question?
+  The answer, of course, is to use z scores if the data are assumed to be normally distrib-
+uted, once the relevant information is obtained. Let us take a minor digression before we
+return to answer our question in more detail. Recall the formula for standardizing variable
+X into a z score:
+
+                                                 (Xi − µ X )
+                                          zi =
+                                                    σX
+
+where the X subscript has been added to the mean and standard deviation for purposes of
+clarifying which variable is being considered. If variable X is the number of items correct
+on a test, then the numerator is the deviation of the student’s raw score from the class mean
+(i.e., the numerator is a deviation score as previously de ned in Chapter 3), measured in
+terms of items correct, and the denominator is the standard deviation of the class, measured
+in terms of items correct. Because both the numerator and denominator are measured in
+terms of items correct, the resultant z score is measured in terms of no units (as the units of
+the numerator and denominator essentially cancel out). Given that z scores have no units (i.e.,
+the z score is interpreted as the number of standard deviation units above or below the mean), this
+allows us to compare two different raw score variables with different scales, means, and/or standard
+130                                                            Statistical Concepts: A First Course
+
+
+
+  Consider a realistic example where we have a raw score variable we want to trans-
+form into a standard score, and we want to control the mean and standard deviation.
+For example, we have statistics midterm raw scores with 225 points possible. We want
+to develop a standard score with a mean of 50 and a standard deviation of 5. We also
+have scores on other variables that are on different scales with different means and dif-
+ferent standard deviations (e.g., statistics nal exam scores worth 175 points, a set of 20
+lab assignments worth a total of 200 points, a statistics performance assessment worth
+100 points). We can standardize each of those variables by placing them on the same
+scale with the same mean and same standard deviation, thereby allowing comparisons
+across variables. This is precisely the rationale used by testing companies and research-
+ers when they develop standard scores. In short, from z scores we can develop a T, IQ,
+“stat,” or any other type of standard score. Examples of types of standard scores are
+summarized in Box 4.1.
+
+
+
+   BOX 4.1 Examples of Types of Standard Scores
+                     Standard Score                                                  Distribution*
+
+   Z (unit normal)                                                                   N(0,1)
+   College Entrance Examination Board (CEEB) score                                   N(500,10,000)
+   T score                                                                           N(50,100)
+   Weschler intelligence scale                                                       N(100,225)
+   Stanford-Binet intelligence scale                                                 N(100,256)
+
+
+      (
+   *N µ , σ 2   )
+
+
+4.3 Skewness and Kurtosis Statistics
+In previous chapters we discussed the distributional concepts of symmetry, skewness, cen-
+tral tendency, and dispersion. In this section we more closely de ne symmetry as well as
+the statistics commonly used to measure skewness and kurtosis.
+
+
+4.3.1 Symmetry
+Conceptually, we de ne a distribution as being symmetric if when we divide the distribution
+precisely in one-half, the left-hand half is a mirror image of the right-hand half. That is, the dis-
+tribution above the mean is a mirror image of the distribution below the mean. To put it
+another way, a distribution is symmetric around the mean if for every score that is q units
+below the mean, there is a corresponding score that is q units above the mean.
+   Two examples of symmetric distributions are shown in Figure 4.4. In Figure 4.4a, we
+have a normal distribution, which is clearly symmetric around the mean. In Figure 4.4b,
+we have a symmetric distribution that is bimodal, unlike the previous example. From these
+and other numerous examples, we can make the following two conclusions. First, if a dis-
+tribution is symmetric, then the mean is equal to the median. Second, if a distribution is
+The Normal Distribution and Standard Scores                                                            135
+
+
+
+
+        Property                   Characteristics                                 Conventions
+
+                       Platykurtic distributions have negative     Conservative convention: kurtosis
+                       kurtosis values (being at rather than       within ±1.0 are normal.
+                       peaked).                                    Kurtosis values outside the range
+                       Kurtosis values can range from negative     of ±2 standard errors of kurtosis
+                       to positive in nity.                        suggest a distribution that is
+                       Kurtosis can be computed on variables       nonnormal.
+                       that are interval or ratio in scale.
+
+
+
+
+4.4 Computing Graphs and Standard Scores Using SPSS
+Here we review what SPSS has to offer for examining distributional shape and computing
+standard scores. The following tools have proven to be quite useful for these purposes:
+Explore, Descriptives, Frequencies, Graphs, and Transform.
+
+
+
+4.4.1 Explore
+Step 1. Explore can be invoked by clicking “Analyze” in the top pulldown menu, then
+“Descriptive Statistics,” and then “Explore.” Following the screenshot for “EXPLORE: Step 1” in
+Figure 4.7 produces the Explore dialog box. For brevity, we have not reproduced this initial
+screenshot when we discuss the Descriptives and Frequencies tools; however, you see here
+where they can be found from the pulldown menus.
+
+                                          A                          FREQUENCIES and
+                                                                 DESCRIPTIVES can also be
+                                                                  invoked from this menu.
+
+
+
+                                      B
+                                                                                       C
+
+
+
+
+                                                                        EXPLORE:
+                                                                         Step 1
+
+
+
+
+FIGURE 4.7
+EXPLORE: Step 1.
+The Normal Distribution and Standard Scores                                                                      143
+
+
+
+
+4.5 Computing Graphs and Standard Scores Using R
+Next we consider R for various statistics and graphs. The scripts are provided within the
+blocks with additional annotation to assist in understanding how the commands work.
+Should you want to write reminder notes and annotation to yourself as you write the
+commands in R (and we highly encourage doing so), remember that any text that follows
+a hashtag (i.e., #) is annotation only and not part of the R code. Thus, you can write anno-
+tations directly into R with hashtags. We encourage this practice so that when you call up
+the commands in the future, you’ll understand what the various lines of code are doing.
+You may think you’ll remember what you did. However, trust us. There is a good chance
+that you won’t. Thus, consider it best practice when using R to annotate heavily!
+
+
+4.5.1 Reading Data into R
+We will rst read in our data (Figure 4.19). We will be working with the Ch4_quiz.csv data.
+
+
+ getwd()
+
+R is always pointed to a directory on your computer. To nd out which directory it is pointed to, run this “get
+working directory” command. We will assume that we need to change the working directory, and will use the
+next line of code to set the working directory to the desired path.
+
+ setwd(“E:/Folder”)
+
+To set the working directory, use the setwd function and change what is in quotation marks here to your le
+location. Also, if you are copying the directory name, it will copy in slashes. You will need to change the slash
+(i.e., \) to forward slash (i.e., /). Note that you need your destination name within quotation marks in the
+parentheses.
+
+ Ch4_quiz <- read.csv(“Ch4_quiz.csv”)
+
+The read.csv function reads your data into R. What’s to the left of the <- will be what you want to call the
+data in R. In this example, we’re calling the R dataframe “Ch4_quiz.” What’s to the right of the <- tells R to
+  nd this particular csv le. In this example, our le is called “Ch4_quiz.csv.” Make sure the extension (i.e.,
+.csv) is included in your script. Also note that you need the name of your le in quotation marks within the
+parentheses.
+
+ names(Ch4_quiz)
+
+The names function will produce a list of variable names for each dataframe as follows. This is a good check to
+make sure your data has been read in correctly.
+
+[1] “quiz”
+
+ View(Ch4_quiz)
+
+The View function will let you view the dataset in spreadsheet format in RStudio.
+
+ summary(Ch4_quiz)
+
+
+FIGURE 4.19
+Reading data into R.
+146                                                                    Statistical Concepts: A First Course
+
+
+
+ View(Ch4_quiz)
+
+We use the View function to con rm that our new variable has been created and added to our dataframe by
+displaying the dataframe in RStudio.
+
+ summary(Ch4_quiz)
+
+We use the summary function to generate basic descriptive statistics on our variable. We see that the mean of our
+new standardized variable, “Zquiz.v1,” is 0, which is expected!
+
+quiz                        Zquiz.V1
+Min.   : 9.00         Min.   :-2.0737630
+1st Qu.:13.00         1st Qu.:-0.8092734
+Median :17.00         Median : 0.4552163
+Mean   :15.56         Mean   : 0.0000000
+3rd Qu.:18.00         3rd Qu.: 0.7713387
+Max.   :20.00         Max.   : 1.4035835
+
+FIGURE 4.22 (continued)
+Creating a standardized variable.
+
+
+
+
+4.6 Research Question Template and Example Write-Up
+As stated in the previous chapter, depending on the purpose of your research study, you
+may or may not write a research question that corresponds to your descriptive statistics. If
+the end result of your research paper is to present results from inferential statistics, it may
+be that your research questions correspond only to those inferential questions, and thus no
+question is presented to represent the descriptive statistics. That is quite common. On the
+other hand, if the ultimate purpose of your research study is purely descriptive in nature,
+then writing one or more research questions that correspond to the descriptive statistics is
+not only entirely appropriate, but (in most cases) absolutely necessary.
+   It is time again to revisit our graduate research assistant, Challie Lenge, who was reintro-
+duced at the beginning of the chapter. As a reminder, Challie was working with Dr. Debhard,
+a statistics professor. Challie’s task was to continue to summarize data from 25 students
+enrolled in a statistics course, this time paying particular attention to distributional shape
+and standardization. The questions posed this time by Dr. Debhard were as follows: What is
+the distributional shape of the statistics quiz score? In standard deviation units, what is the relative
+standing to the mean of student 1 compared to student 3? The following is a template for writing a
+descriptive research question for summarizing distributional shape (this may sound familiar
+as this was rst presented in Chapter 2 when we initially discussed distributional shape). This
+is followed by a template for writing a research question related to standardization.
+
+
+  What is the distributional shape of the [variable]? In standard deviation units, what is
+  the relative standing to the mean of [unit 1] compared to [unit 3]?
+
+
+  Next, we present an APA-style paragraph summarizing the results of the statistics quiz
+data example answering the questions posed to Marie.
+The Normal Distribution and Standard Scores                                                147
+
+
+
+ The skewness value is −.598 (SE = .464) and the kurtosis value is −.741 (SE = .902).
+ Skewness and kurtosis values within the range of ±2 (SE) are generally considered
+ normal. Given our values, skewness is within the range of −.928 to +.928 and kurtosis is
+ within the range of −1.804 and +1.804, and these would be considered normal. Another
+ convention is that the skewness and kurtosis values should fall within an absolute
+ value of 2.0 to be considered normal. Applying this rule, normality is still evident. The
+ histogram with a normal curve overlay is depicted in Figure 4.15. Taken with the skew-
+ ness and kurtosis statistics, these results indicate that the quiz scores are reasonably
+ normally distributed. There is a slight negative skew such that there are more scores
+ at the high end of the distribution than a typical normal distribution. There is also a
+ slight negative kurtosis indicating that the distribution is slightly atter than a normal
+ distribution, with a few more extreme scores at the low end of the distribution. Again,
+ however, the values are within the range of what is considered a reasonable approxi-
+ mation to the normal curve.
+    Prior to standardization, student 1 had a score of 9 and student 3 had a score of 20. The
+ quiz score data were standardized using the unit normal formula. After standardization,
+ student 1’s score was −2.07 and student 3’s score was 1.40. This suggests that student 1
+ was slightly more than two standard deviation units below the mean on the statistics
+ quiz score while student 3 was nearly 1.5 standard deviation units above the mean.
+
+
+
+
+4.7 Additional Resources
+In the previous chapters, we have mentioned a number of excellent resources for learning
+statistics. As we are still in the early stages of learning statistics, there are no additional
+resources that we suggest that are speci cally related to normal distributions and standard
+scores. Rather, we refer you back to earlier chapters for supplemental resources for statis-
+tics as well as statistical software.
+
+
+
+
+Problems
+Conceptual Problems
+ 1.   For which of the following distributions will the skewness value be zero?
+      a. N(0,1)
+      b. N(0,2)
+      c. N(10,50)
+      d. All of the above
+ 2.   For which of the following distributions will the kurtosis value be zero?
+      a. N(0,1)
+      b. N(0,2)
+      c. N(10,50)
+      d. All of the above
+

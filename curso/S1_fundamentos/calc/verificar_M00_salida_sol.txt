@@ -1,0 +1,1 @@
+M00: Decimal confirma errores, media 0.425, falso pareo 50.8 y conteos 16/8/4.

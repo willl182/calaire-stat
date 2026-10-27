@@ -1,0 +1,42 @@
+diff --git c/curso/S2_modelos_calibracion/calc/M07_ejemplos.py w/curso/S2_modelos_calibracion/calc/M07_ejemplos.py
+index 61fb7ad..8234e97 100644
+--- c/curso/S2_modelos_calibracion/calc/M07_ejemplos.py
++++ w/curso/S2_modelos_calibracion/calc/M07_ejemplos.py
+@@ -24,16 +24,12 @@ def main():
+     a, b = beta
+     s_res = np.sqrt(s2)
+     r = np.corrcoef(x, y)[0, 1]
+-    t_slope = (b - 1.0) / np.sqrt(covb[1, 1])
+-    p_slope = 2 * stats.t.sf(abs(t_slope), len(x)-2)
+     r2 = 1 - np.sum(resid**2) / np.sum((y-y.mean())**2)
+     print("OLS simulado: x=", x.tolist(), "y=", y.tolist())
+-    t_r = r*np.sqrt((len(x)-2)/(1-r**2))
+-    p_r = 2*stats.t.sf(abs(t_r),len(x)-2)
+-    print(f"Pearson r={r:.8f}; prueba rho=0: t={t_r:.8f}, g.l.={len(x)-2}, p={p_r:.8g}; R2={r2:.8f}; a={a:.8f}; b={b:.10f}")
++    # M7 no incluye pruebas de correlación ni de pendiente (fuera del alcance de prop_e M7).
++    print(f"Pearson r={r:.8f}; R2={r2:.8f}; a={a:.8f}; b={b:.10f}")
+     print("residuos=", np.round(resid, 8).tolist())
+     print(f"s_res={s_res:.8f}; SE(a)={np.sqrt(covb[0,0]):.8f}; SE(b)={np.sqrt(covb[1,1]):.10f}; cov(a,b)={covb[0,1]:.10f}")
+-    print(f"prueba de pendiente b=1: t={t_slope:.8f}; g.l.={len(x)-2}; p={p_slope:.8f}")
+     print("R2 no es criterio autónomo de aceptación; cifras arriba son solo ajuste a datos simulados.")
+ 
+     # Uso inverso: respuesta nueva simulada y corrección aditiva.
+@@ -41,10 +37,16 @@ def main():
+     xhat = (y_new-a)/b
+     correction = xhat-y_new
+     print(f"uso inverso para y={y_new:.2f}: xhat={xhat:.8f}; xhat-y={correction:.8f} nmol/mol")
++    # u(y nueva) ya representa toda la dispersión de esa indicación.
++    # ISO/TS 28037 11.1.3: no añadir de nuevo s_res como fuente independiente.
+     u_y_new=0.20
+-    u2_xhat=(u_y_new**2+s_res**2+covb[0,0]+xhat**2*covb[1,1]+2*xhat*covb[0,1])/b**2
++    parameter_variance=covb[0,0]+xhat**2*covb[1,1]+2*xhat*covb[0,1]
++    u2_xhat=(u_y_new**2+parameter_variance)/b**2
+     u_xhat=np.sqrt(u2_xhat)
+-    print(f"incertidumbre inversa linealizada (u(y)={u_y_new:.2f}, covarianza de parámetros): u(xhat)={u_xhat:.8f} nmol/mol; k_t95={stats.t.ppf(.975,len(x)-2):.8f}; U={stats.t.ppf(.975,len(x)-2)*u_xhat:.8f}")
++    # El bloque completo de parámetros comparte la estimación residual (4 g.l.).
++    nu_eff=(u_y_new**2+parameter_variance)**2/(parameter_variance**2/(len(x)-2))
++    k_inverse=stats.t.ppf(.975,nu_eff)
++    print(f"incertidumbre inversa linealizada (u(y) total={u_y_new:.2f}): u(xhat)={u_xhat:.8f} nmol/mol; nu_eff={nu_eff:.8f}; k95={k_inverse:.8f}; U={k_inverse*u_xhat:.8f}")
+     # Intervalo de confianza de la media de respuesta y predicción de nueva lectura.
+     x0 = 250.0
+     X0 = np.array([1.0, x0])

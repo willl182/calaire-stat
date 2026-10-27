@@ -127,6 +127,23 @@ Se comprobaron los numerales y el contenido con extracciones `pdftotext -f … -
 | R18 | aplicado | La lectura de la fórmula de razón se dividió en frases más cortas, separando los términos. | Libreto, A1 | Facilita seguir oralmente la expresión sin cambiar el contenido matemático. |
 | R19 | aplicado | Se cambió «razón real» por «razón entre dos canales» y se corrigió la enumeración de autovalores. | Libreto, A1 y A2 | Elimina ambigüedad expresiva y puntuación innecesaria. |
 
+### Correcciones Opus O-03, O-06 y O-09 (26 de octubre de 2026)
+
+Este registro describe el estado actual; los pendientes y rótulos del desarrollo original que figuran arriba son históricos y no sustituyen las referencias y rótulos vigentes del libreto.
+
+| Hallazgo | Acción | Ubicación |
+|---|---|---|
+| O-03 | Se añadió una serie simulada determinista de 16 lecturas, una por minuto: nivel 420, pendiente conocida por construcción 0,05 nmol/mol por minuto y residuos que repiten cuatro veces [−0,8; 0,8; 0,8; −0,8]. Se explican ventanas, mitades y por qué s/√n no cuantifica el cambio de nivel. | M03 B3; calc/M03_ejemplos.py y salida existente |
+| O-03 | Sobre la misma serie se comparan media global, cuatro bloques consecutivos iguales y corrección de tendencia a un instante declarado. Se distingue tendencia conocida de pendiente estimada, cuya incertidumbre y covarianzas habría que propagar. No se desarrollaron prácticas. | M03 A2 |
+| O-06 | Se retiró la atribución de la construcción chi-cuadrado a Hahs-Vaughn §§8.2 y 9.1.1. Se conserva §9.1.1 exclusivamente para F. La referencia de la suma de cuadrados de normales estándar independientes queda explícitamente pendiente de verificar, sin inventar fuente ni numeral. | M03 I2 |
+| O-09 | Se quitaron las comillas angulares de la narración, se colocó la definición de variable aleatoria antes del ejemplo discreto y se sustituyó la exclusión duplicada del escalamiento A por una remisión a A2. | M03 B1 y todo el capítulo; escalamiento A |
+
+Cifras reproducidas: medias de mitades 420,175 y 420,575; diferencia 0,400; media global 420,375; medias de bloques 420,075, 420,275, 420,475 y 420,675 nmol/mol. La corrección conocida a t₀=0 da media global y medias de bloques 420,000; a t₀=7,5 min da media 420,375. El cálculo mecánico s/√16 es 0,2149612368 antes y 0,2065591118 después de corregir; ninguno se presenta como incertidumbre validada porque los residuos son construidos, no una muestra iid. La contribución aleatoria bajo el modelo independiente separado con σ=0,8 es 0,200 nmol/mol.
+
+Referencias cotejadas en esta corrección con `pdftotext -layout archivo -`, sin guardar extracciones fuera de S1: GUM F.1.1.3 plantea explícitamente investigar deriva y comparar medias de las dos mitades; Hahs-Vaughn §9.1.1, página impresa 347 del PDF completo `docs/Statistical Concepts – A First Course.pdf`, presenta F como cociente de dos chi-cuadrado escaladas por sus grados de libertad. El extracto c09 tiene paginación distinta: para esta comprobación se tomó el PDF completo. Se buscaron también la construcción chi-cuadrado y expresiones de suma de cuadrados en `docs/intro_stats_metro_c03.pdf`, `docs/Introduction to Statistics in Metrology.pdf`, `docs/metrology_measure_uncer_c03.pdf`, el PDF completo Hahs-Vaughn y la GUM; no se localizó un pasaje que verificara esa construcción. **Pendiente O-06:** localizar y cotejar una fuente explícita para χ² como suma de cuadrados de normales estándar independientes; no atribuir esta construcción a los numerales retirados.
+
+Pruebas: ejecución de `curso/.venv/bin/python -I curso/S1_fundamentos/calc/M03_ejemplos.py`, con actualización de `calc/M03_ejemplos_salida_sol.txt`; aserciones nuevas de medias, diferencia entre mitades, equivalencia de promedio de bloques y global, y corrección a dos instantes. El verificador existente `calc/verificar_M03_M04_personal.py` pasó sus 33 comprobaciones y regeneró sus evidencias existentes dentro de S1 (incluye la reproducción de la salida M04 sin cambios de contenido). No se editaron el libreto ni el script de M04, revisión_sol, índice ni otros capítulos.
+
 ### Correcciones adicionales por iniciativa propia
 
 - Se actualizó `calc/M03_ejemplos.py` para reproducir las probabilidades del nuevo ejemplo discreto, los cuantiles normales del gráfico y los cálculos de covarianza entre puntos; se ejecutó con `curso/.venv/bin/python -I` y los resultados coincidieron con el libreto.

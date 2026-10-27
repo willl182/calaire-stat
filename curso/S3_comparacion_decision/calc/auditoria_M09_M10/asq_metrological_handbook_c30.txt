@@ -1,0 +1,206 @@
+                            Chapter 30
+                    Measurement Risk
+                    and Decision Rules
+
+
+
+MEASUREMENT RISK
+  Measurements are frequently utilized in our daily activities. We make decisions
+  on measurements that are made to accept/reject or buy/sell products and
+  services. A company might budget research and development (R&D) costs based
+  on specifications required or mandated by the customer or regulations. Medical
+  professionals use measurement results to assess the outcome of diagnostic tests.
+  Different industries utilize test method results by conducting defined or random
+  sampling methods on individual parts, sub-assemblies, and assemblies to make
+  conformance decisions. For example, a satellite to be deployed in Earth’s orbit will
+  undergo various environmental, structural, reliability, and other tests.
+       Imagine that a satellite that has been launched into space behaves in a way in
+  which it is not designed to function. Suppose the satellite experiences a wobble,
+  which causes connectivity problems at the receiving station on Earth. The cause
+  of the wobbling is identified as use of a calibration provided with an incorrect
+  measurement uncertainty, which thus resulted in an incorrect measurement
+  conformance decision. For example, each of the load cells used to measure the
+  fuel load stored in the satellite must include the confidence probability limit in
+  its calibration. However, if a calibration provider does not have the measurement
+  confidence due to incorrect assumptions, the load cell calibration may not be fit for
+  the purpose. In this case, the result is a wobbling satellite requiring significantly
+  more resources to fix the problem. A wobbly satellite is one example of many
+  where measurement uncertainty, when not adequately accounted for, leads to
+  significant engineering disasters, trillions of dollars in losses, and potentially
+  the loss of human life. Fixing the faulty satellite is not as easy as hopping on a
+  commercial flight and renting a car to get to it! These scenarios are played out
+  daily in all fields of measurement, including the treatment of diseases and medical
+  advances to save or prolong life.
+       Measurements made and reported for any application must exhibit measurement
+  confidence, and the decision made must be fit for the purpose.
+       Measurement confidence comes from these “three pillars of measurement”:
+       1. Measurement Uncertainty
+       2. Metrological Traceability
+       3. Measurement Decision Rules fit for the purpose, taking into account
+          the acceptable risk
+
+                                       349
+360 Part V: Uncertainty in Measurement
+
+
+
+        • Incorrect evaluation of measurement uncertainty (CMC) listed on their
+          Scope of Accreditation (SoA)
+        • Incorrect application of decision rules to make conformance decisions
+        • Not understanding the conformance requirements of the customer,
+          regulatory standards, or normative standards
+         Most importantly, making a conformance decision requires the engagement
+    of the customer or end user. Traditionally, the consumer (customer) of calibration
+    and test services relies on the expertise of the calibration and test provider, and
+    the conformance decision relies on the manufacturer’s specifications without
+    taking the associated measurement uncertainty into account. Therefore, it
+    becomes important to note the requirements of ISO/IEC 17025:2017: “When the
+    customer requests a statement of conformity to a specification or standard for the
+    test or calibration (e.g., pass/fail, in-tolerance/out-of-tolerance), the specification
+    or standard and the decision rule shall be clearly defined. Unless inherent
+    in the requested specification or standard, the decision rule selected shall be
+    communicated to, and agreed with, the customer.
+         Note: For further guidance on statements of conformity, see ISO/IEC
+    Guide 98-4.”22
+         The customer must understand the capability of its test and calibration
+    provider and its own conformance requirements before it can specify the test and
+    calibration service to reduce their risk appetite. It must specify the decision rules
+    required for the test and calibration provider that is making the conformance
+    decision on a product. The test and calibration provider must understand the
+    customer requirements for conformance decisions so that when the measurement
+    result is reported with a confidence statement it considers:
+        • The proper evaluation measurement uncertainty
+        • Proof of metrological traceability
+        • Proper application of measurement decision rules to address the risk
+          required in reporting any statements of conformity
+
+TEST UNCERTAINTY RATIO (TUR)
+    Another decision rule that is quite frequently employed is the application of the Test
+    Uncertainty Ratio (TUR). This rule has its roots in the U.S. military specifications,
+    and its application was listed in the MIL STD 45662 as early as the 1960s. The
+    TUR has its limitations regarding conformance decisions and risk mitigation. In
+    addition, there are different interpretations of how the TUR is calculated, which
+    leads to further confusion.
+
+Calculation of Test Uncertainty Ratio
+    Correctly calculating TUR is crucial because it is a commonly accepted practice
+    when making a statement of conformity. It helps you analyze measurement
+    risk and is often used in decision rules. Although TUR is defined in the
+    ANSI/NCSL Z540.3 standard (NCSL International’s Handbook for the
+                              Chapter 30: Measurement Risk and Decision Rules 367
+
+
+
+       USL = Upper Specification Limit
+       Uncert. Dist = Uncertainty Distribution
+       LAL = Lower Acceptance Limit
+       UAL = Upper Acceptance Limit
+
+
+
+A 4:1 TUR
+   In “Why a 4:1 TUR is not Enough,” Zumbrun notes that several organizations
+   and publications reference or insist on maintaining a 4:1 Test Uncertainty Ratio
+   without understanding the level of measurement risk. The assumption is that
+   if the lab performing the calibrations has standards at least four times better
+   than what they are calibrating, everything is good. In Clause 5.3 b), ANSI/NCSL
+   Z540.3, Requirements for Calibration of Measuring and Test Equipment, allows for use
+   of a TUR equal to or greater than 4:1 when it is not practical to estimate the false
+   accept risk of less than 2 %. That Clause then goes on to say that objective evidence
+   of nonpracticability of this determination is expected, as in an agreement with
+   the customer TUR use. The 4:1 TUR seems to be a fallback position that many
+   industries have adopted, maybe because they did not understand or want to deal
+   with guard bands. The assumption is that the higher the TUR, the higher the
+   probability that the measuring equipment will have a probability of false accept
+   (PFA) of less than 2 %, assuming that the measured reading is closer to the nominal
+   value.36
+        Many fail to realize what is described in Introduction to Statistics in Metrology:
+   Using a TUR assumes that all measurement biases have been removed from
+   the measurement process and the measurements involved follow a normal
+   distribution. If there are significant biases that cannot be removed, then the TUR
+   will not account for the increased risk.37
+
+
+
+CONCLUSION
+   Any decision rule used in making a conformance decision can affect the outcome
+   of the application of the unit under test.
+        ISO/IEC 17025:2017 dictates that the decision rule must be agreed upon by
+   the customer when a statement of conformity is to be made. The customer shall
+   specify the tolerance requirements for conformity. If no conformance requirement
+   is requested, then the requirement for decision rules is not necessary. Simply
+   put, regarding decision rules, if you choose not to decide, you still have made a
+   choice (shared risk). In this scenario, the consumer can bear as much as 50 % of
+   the measurement risk. If the UUT is used to propagate measurement uncertainty
+   further, Type II error is more likely to occur. However, the test and calibration
+   providers are still obligated to report the measurement result and its associated
+   measurement uncertainty.
+        Part of any risk mitigation strategy should consider the following:
+       • Selecting a calibration supplier that offers the smallest measurement
+         uncertainty
+368 Part V: Uncertainty in Measurement
+
+
+
+                         • Utilizing the appropriate reference standards
+                         • Improving reliability by managing calibration intervals
+                         • Monitoring of standards using control charts
+                         • Continual improvement of the calibration processes
+                         • Using the appropriate decision rules
+                        This chapter has provided guidance on applying and interpreting decision
+                    rules to meet customer, regulatory, and normative requirements for reporting
+                    statements of conformity and the associated measurement risk. Annex A gives an
+                    example of application of both methods 5 and 6 guard bands.
+
+ANNEX A
+                           Nominal Value                 1000
+                                                                  2
+                     Lower Specification Limit            998
+                     Upper Specification Limit           1002    1.8
+                           Measured Value              1001.5
+                                                                 1.6
+                          Std. Uncert. (k=1)              0.23
+                    Test Uncertainty Ratio (TUR)          4.44   1.4
+Z540.3 Method 5          Upper Guardband            1001.5376
+                                                                 1.2
+                         Lower Guardband             998.4624
+ (GB LSL & GB          Total Guardband Risk           1.319%      1
+
+     USL)
+                      Upper Guardband Risk            1.319%
+                                                                 0.8
+                      Lower Guardband Risk            0.000%
+                    Test Uncertainty Ratio (TUR)          4.44   0.6
+                       0.38 × In(TUR) – 0.54     0.026544558     0.4
+
+  Z540.3 Method 6
+                                M2%                   1.310%
+                          Acceptance Limit       1.994100589     0.2
+                       U2% Acceptance Limit      1001.994101      0
+
+    (LM6 & UM6)
+                       L2% Acceptance Limit      998.0058994      997.5   998   998.5    999     999.5   1000 1000.5 1001 1001.5 1002 1002.5 1003
+                        U2% PASS OR FAIL                PASS
+                                                                          MV       LSL         Nominal Value     USL     Uncert. Dist   GB LSL
+                         L2% PASS OR FAIL               PASS
+                         TUR For Method 6                 4.44            GB USL         UM6        LM6
+
+
+Figure 30.28 ANSI/NCSL Z540.3 Handbook Methods 5 and 6 guard bands.
+Source: Reproduced by permission from Morehouse and E = mc 3 Solutions. 38
+
+                         Figure 30.28 shows application of both methods 5 and 6 guard bands per
+                    NCSL International’s ANSI/Z540.3 Handbook. The example uses a 1,000 lbf load
+                    cell with a resolution of 0.1 lbf and a 0.2 % of full-scale tolerance requirement.
+                    The standard uncertainty, which includes the Calibration and Measurement
+                    Capability uncertainty parameter and contributions from the unit under test from
+                    resolution, repeatability, environmental, and other error sources, is 0.23 lbf.
+                         When calculated correctly, the TUR is 4.44:1. The methods shown in Figure
+                    30.28 take into account the location of the measurement of 1001.5. If either of these
+                    methods were to be used for a conformity assessment, the instrument would pass,
+                    assuming the requirement was a PFA of less than 2 %; however, the acceptance
+                    limits are different. Method 5 is much more conservative, meaning a higher
+                    probability of false reject (PFR) and less risk for the end-user. If the value observed
+                    for the unit under test was read anywhere from 1001.6–1001.9, it would fail using
+                    method 5 and pass using method 6.
+

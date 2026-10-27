@@ -1,0 +1,9 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"sdk"}
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"sdk"}
+Aplicados 18 hallazgos O-01–O-18; tabla de decisiones, índice y estado de entrega actualizados.
+Cinco scripts y controles de entrega, continuidad y formato verificados; 12 marcadores conservados.
+Escrituras limitadas a S2; pendientes: validación histórica R&R, fuentes externas y fase de ejercicios.

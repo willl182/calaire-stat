@@ -1,0 +1,28 @@
+OLS simulado: x= [0.0, 100.0, 200.0, 300.0, 400.0, 500.0] y= [0.2, 100.7, 200.1, 301.0, 400.4, 501.2]
+R2=0.99999645; a=0.24285714; b=1.0014285714
+residuos= [-0.04285714, 0.31428571, -0.42857143, 0.32857143, -0.41428571, 0.24285714]
+s_res=0.39460649; SE(a)=0.28559521; SE(b)=0.0009432899; cov(a,b)=-0.0002224490
+R2 no es criterio autónomo de aceptación; cifras arriba son solo ajuste a datos simulados.
+uso inverso para y=250.50: xhat=249.90014265; xhat-y=-0.59985735 nmol/mol
+incertidumbre inversa linealizada (u(y) total=0.20): u(xhat)=0.25644562 nmol/mol; nu_eff=25.83249497; k95=2.05617834; U=0.52729793
+en x=250.0: yhat=250.60000000; IC95 media ±0.44727816; IP95 nueva lectura ±1.18338678
+recta forzada al origen: pendiente=1.0020909091; intercepto fijado=0
+WLS simulado: incertidumbres estándar y= [0.25, 0.3, 0.4, 0.6, 0.9, 1.2]
+OLS a=0.44761905, b=1.0007428571; WLS a=0.41685160, b=1.0009213402
+pesos relativos 1/u(y)^2= [16.0, 11.111111, 6.25, 2.777778, 1.234568, 0.694444]
+validación WLS simulada, 12 puntos: chi2_obs=1.27964725; g.l.=10; chi2_0.95=18.30703805; max|residuo ponderado|=0.61604636
+falta de ajuste simulada: a=0.01000000, b=1.0026000000; SS_LOF=0.96600000; SS_PE=0.08000000; F(2,8)=48.30000000; p=0.00003422
+medias por nivel= [0.20000000000000004, 100.2, 200.1, 301.09999999999997]
+residuos absolutos de medias por nivel= [0.18999999999993536, -0.07000000000003581, -0.43000000000003524, 0.3100000000000023]
+residuos relativos por nivel (%)= [95.0, -0.06986, -0.214893, 0.102956]
+GGMR simulado (Vxy=0):
+a=0.30472535; b=1.0013144319; x ajustadas=[-0.00132811, 99.98983445, 200.0372091, 299.94405354, 400.04764027, 499.98259075]
+chi2 ponderado=0.40890065; g.l. declarados para el ejemplo=4; cola superior p=0.98174172
+Vx diagonal más componente común 0.12^2; Vy diagonal 0.40^2; Vxy=0
+GGMR simulado con datos casi perfectamente lineales: chi2 ponderado=3.51304384253e-29; mismo modelo y covarianzas
+GGMR simulado con discrepancia introducida en un punto: chi2 ponderado=83.36173290; mismo modelo y covarianzas
+Mismo conjunto: OLS=[0.3047619  1.00131429]; WLS=[0.3047619  1.00131429]; GGMR=[0.30472535 1.00131443]
+Componente común: u(a) con=0.36203815, sin=0.34151683; u(b)=0.0011279930
+GGMR colas: inferior=0.01825828; superior con discrepancia=3.3764702e-17
+ISO publicado: a=0.34240092; b=1.00123076; Q=1.77184745; u(a)=2.05692207; u(b)=0.00901163; cov=-0.01288320
+Contraste ISO: parámetros, abscisas y Q concuerdan con el redondeo publicado; no valida todos los casos Vxy=0.

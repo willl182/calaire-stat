@@ -1,0 +1,38 @@
+B — carta I-MR simulada; datos en unidades de pendiente respecto de 1
+valores: 0.0000000; 0.0004000; -0.0002000; 0.0001000; 0.0005000; 0.0018000; 0.0002000; -0.0001000
+MR: 0.0004000; 0.0006000; 0.0003000; 0.0004000; 0.0013000; 0.0016000; 0.0003000
+línea base: primeras cinco observaciones; límites: 3 sigma, constantes 2.66 y 3.267
+centro=0.000160000; MR_bar_base=0.000425000; LIC_I=-0.000970500; LSC_I=0.001290500; LSC_MR=0.001388475
+señales carta I (número de observación): [6]
+señales carta MR (número de observación): [7]
+media siete observaciones=0.361428571; media cinco últimas=0.450000000; diferencia (cinco últimas - siete)=0.088571429
+
+I — regresión de deriva simulada; respuesta en nmol/mol, tiempo en días
+slope=0.003023809523809524
+intercept=0.0892857142857143
+se_slope=9.221388919541354e-05
+ci_slope=(np.float64(0.0027867661752504144), np.float64(0.0032608528723686338))
+p=4.956734690239967e-07
+residual_sd=0.014638501094228004
+prediction_120=0.4521428571428572
+ci_mean_120=(np.float64(0.4362415059130866), np.float64(0.4680442083726278))
+pi_future_120=(np.float64(0.41129154617056796), np.float64(0.4929941681151464))
+drift_180=0.5442857142857144
+
+A — riesgo de falsa alarma bajo H0, simulación Monte Carlo iid N(0,1)
+seed=11026; paths=100000; horizon=50; EWMA(lambda=0.2,L=2.7): P(alarm)=0.199090
+CUSUM bilateral(k=0.5,h=5): P(alarm)=0.091770
+Alternativa: +1 sigma desde la observación 26
+P(detección | sin alarma previa): EWMA=0.987946; CUSUM=0.983156
+P(detección, total): EWMA=0.882700; CUSUM=0.944410
+demora media entre señales detectadas (ocasión 26 cuenta como 1): EWMA=8.324; CUSUM=9.306 observaciones
+cambio esperado por la pendiente I a 30/60/90 días: 0.090714; 0.181429; 0.272143 nmol/mol
+I — fases: media1=0.000160000; media2=0.001160000; media mezclada=0.000660000
+I — incremento a 120 días: 0.362857143; u_delta=0.011065667; u_uso=0.022857143 nmol/mol
+A — ocasión 1: Z=0.200000; límite EWMA=0.540000; C+=0.500000; C-=0.000000
+A — ocasión 2: Z=0.360000; límite EWMA=0.691537; C+=1.000000; C-=0.000000
+A — serie constante +1: primera señal EWMA=11; CUSUM=11 (umbral estricto)
+A — P(exceder +0.20 antes de 30 días)=0; P(cumplir)=1
+A — P(exceder +0.20 antes de 60 días)=0.000394556495; P(cumplir)=0.999605444
+A — P(exceder +0.20 antes de 90 días)=1; P(cumplir)=0
+Pruebas: I-MR, OLS matricial, EWMA cerrada, CUSUM acumulado y riesgo: OK

@@ -26,14 +26,29 @@ print("B histogram bins [99.7, 100.0, 100.3, 100.6] counts",
       histogram_counts.tolist())
 print("B histogram relative frequencies", (histogram_counts / readings.size).tolist())
 print("B CV percent", 100 * np.std(readings, ddof=1) / np.mean(readings))
+q1, q3 = np.quantile(readings, [0.25, 0.75], method="linear")
+iqr = q3 - q1
+print("B box IQR and min/max whiskers", iqr,
+      (float(np.min(readings)), float(np.max(readings))))
+assert histogram_counts.tolist() == [2, 3, 3]
+assert np.isclose(np.var(readings, ddof=1), 0.06)
 
 # Simulated paired reference and indication values over three days.
-reference = np.array([80.0, 80.0, 200.0, 200.0, 420.0, 420.0])
-indication = np.array([80.2, 80.1, 199.9, 200.1, 420.3, 420.1])
+reference = np.array([199.8, 199.8, 200.0, 200.0, 200.2, 200.2])
+indication = np.array([200.0, 199.9, 199.9, 200.1, 200.5, 200.3])
+assert np.allclose(indication - reference, [0.2, 0.1, -0.1, 0.1, 0.3, 0.1])
+assert np.isclose(np.std(indication, ddof=1), 0.2401388487258385)
 error = indication - reference
 print("B multi-day reference", describe(reference))
 print("B multi-day indication", describe(indication))
 print("B multi-day errors", error.tolist(), describe(error))
+variance_terms = np.array([np.var(reference, ddof=1), np.var(error, ddof=1),
+                           2 * np.cov(reference, error, ddof=1)[0, 1]])
+assert np.allclose(variance_terms, [0.032, 0.0176666666666667, 0.008])
+assert np.isclose(variance_terms.sum(), np.var(indication, ddof=1))
+print("B variance decomposition reference/error/cross", variance_terms.tolist())
+print("B descriptive variance shares percent",
+      (100 * variance_terms / variance_terms.sum()).tolist())
 for day, values in enumerate(error.reshape(3, 2), start=1):
     print(f"B day {day} error mean and sample SD", float(np.mean(values)),
           float(np.std(values, ddof=1)))
@@ -77,6 +92,16 @@ group_1 = np.array([0.4, 0.5, 0.3, 0.4])
 group_2 = np.array([-0.4, -0.5, -0.3, -0.4])
 combined = np.concatenate([group_1, group_2])
 with_influential = np.append(combined, 1.8)
+# Separate didactic unequal-size dataset, not an exclusion from observed data.
+negative_small = np.array([-0.4, -0.4])
+unequal = np.concatenate([group_1, negative_small])
+print("A unequal group sizes: pooled mean, unweighted mean of means",
+      float(np.mean(unequal)), float((np.mean(group_1) + np.mean(negative_small)) / 2))
+assert np.isclose(np.mean(unequal), 0.8 / 6)
+assert np.allclose([intercept, slope], [0.08, 0.002075])
+assert np.isclose(np.mean(zero_truncated), 0.06)
+assert np.isclose(np.mean(error), 0.7 / 6)
+assert np.isclose(np.median(absolute_deviations), 0.1)
 for label, values in (("A group 1", group_1), ("A group 2", group_2),
                       ("A combined", combined), ("A combined plus influential", with_influential)):
     median = float(np.median(values))

@@ -1,0 +1,574 @@
+Chapter 4
+Introduction to Statistics and Probability
+
+
+
+
+This chapter provides an overview of statistics and probability concepts that are used
+in metrology. It begins with a discussion on data types along with Exploratory Data
+Analysis techniques that can be used to help understand and visualize data. It then
+gives an overview of probability distributions common to metrology with guidance
+on choosing probability distributions based on available information. This chapter
+concludes with information on estimating parameters and assessing goodness-of-ﬁt
+of probability models.
+
+
+
+
+4.1 Introduction
+
+The practice of metrology relies heavily on a variety of statistical methods used to
+design, characterize, and quantify the uncertainty of measurement systems. In this
+section we provide an overview of basic probability and statistics concepts that are
+often used to this end.
+   In statistics for metrology, the primary goal is to draw conclusions (e.g., estimate
+parameters) about a target population (measurement system) using a ﬁnite sample
+from that population. In metrology the parameters of concern are usually uncertainty
+terms, expressed as standard deviations. Once uncertainty terms have been
+estimated, probability statements can be made regarding future measurements. The
+probability statement will usually be in the form of an interval that is expected
+to contain the true value of a measurand.
+   This chapter will ﬁrst introduce different types of data and will then discuss
+statistical methods that can be used to describe sample data. It will end with
+an overview of common probability distributions used in metrology, as well as
+guidance for estimating parameters of those distributions and assessing the
+goodness-of-ﬁt of probability models.
+
+
+
+© Springer Nature Switzerland AG 2020                                               59
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_4
+60                                             4 Introduction to Statistics and Probability
+
+
+4.2 Types of Data
+
+A ﬁrst step before analysis is to identify the type of data that was collected
+and the methods that may be appropriate for that type of data. Data can be
+divided into two broad categories: continuous and discrete. Continuous variables,
+such as temperature and voltage, can take on any value in a continuous interval.
+Alternatively, discrete variables can only take on distinct, separate values. There
+are several types of discrete data, including:
+• Binary data, which can fall into one of two categories. Commonly, binary data are
+  described as “Pass/Fail”, “0/1,” or “Go/No Go.” In metrology, it may be of
+  interest to evaluate the performance of a “Go/No Go” gauge used in the inspec-
+  tion of manufactured parts.
+• Count data, in which the data are nonnegative integers. The integer values come
+  from a counting process rather than from measuring some characteristic on a
+  continuous scale. An example is using a neutron detector to count the number of
+  neutrons produced by a manufactured neutron source.
+• Categorical data, in which the data fall into one of several distinct, nonnumeric
+  categories. Categorical data can be further divided as ordinal or nominal. Ordinal
+  data has an intrinsic ordering (such as low, medium, and high), while nominal
+  data is nonordered (such as Tester A vs. Tester B).
+   In metrology, the data are most likely to be continuous variables, although we will
+present examples of assessing uncertainty using both binary (Sect. 11.3) and count
+data (Sect. 6.4.1).
+   It is important to identify the variable type as it affects the exploratory data
+analysis (Sect. 4.3) and choice of probability distribution (Sect. 4.4). Note
+that continuous data provide much more information than discrete data, so it is
+advantageous to use continuous measures whenever possible. For example, if
+instead of categorizing temperature using ratings such as “low,” “medium,” and
+“high,” the measurements are on a continuous scale, then more information is
+available to estimate population parameters such as the mean or standard deviation.
+
+
+
+4.3 Exploratory Data Analysis
+
+Once the data type has been determined, Exploratory Data Analysis (EDA) can
+be used to better understand the overall characteristics of the data. In particular,
+EDA can be helpful for
+• Identifying potential outliers and trends present in the data. Outliers can inﬂate
+  the uncertainty standard deviations. If an “assignable cause” of an outlier can
+  be identiﬁed and removed from the measurement process, the outlier can be
+  discounted. Trends over time that are identiﬁed in the measurement process
+  must be accounted for when estimating uncertainty intervals that are expected
+  to be valid over time.
+4.3 Exploratory Data Analysis                                                      61
+
+
+• Determining an appropriate probability distribution. The validity of uncertainty
+  intervals will depend on correctly specifying the underlying probability
+  distribution.
+• Detecting subpopulations in the data. Subpopulations (i.e., a subset of measure-
+  ments taken under very different conditions than the bulk of the data) can have
+  the effect of inﬂating the measurement uncertainty. Subpopulations may need
+  to be discounted or analyzed separately.
+• Generating summary statistics. Summary statistics (e.g., sample means and
+  standard deviations) are inputs to uncertainty analyses for both direct and indirect
+  measurements (Chap. 6).
+   Commonly, EDA consists of two main parts: calculating summary statistics and
+creating graphical displays of the sampled data.
+
+
+
+
+4.3.1 Calculating Summary Statistics
+
+A statistic is simply a measure of some attribute of sampled data. There are many
+summary statistics that can be used to concisely describe features of data. Generally,
+for continuous data, measures of the distribution’s center (e.g., mean, median or
+mode) and spread (e.g., range, standard deviation, inter-quartile range) are used.
+For data sets with multiple continuous variables, the relationship between variables
+(measured by the correlation coefﬁcient) is often of interest in metrology studies.
+The following sections describe each of these measures in more detail. A discussion
+of summary statistics for discrete data follow below.
+
+
+
+4.3.1.1 Summary Statistics for Continuous Data
+
+Measures of Central Tendency Measures of central tendency are often used to
+quantify where the mid-point or center of sampled data falls. The most commonly
+used measure is the sample mean, also known as the sample average, which is simply
+the sum of the data values divided by the number of observations n. Formally,
+for observations x1, x2, . . ., xn it is deﬁned as
+
+                                            n
+                                         1X
+                                    x¼        x:                                ð4:1Þ
+                                         n i¼1 i
+
+   Another common measure of central tendency is the median, deﬁned as the 50th
+percentile of the data (i.e., the point below which 50% of the observations fall).
+The mode is the most frequently observed value in the sampled dataset and can
+also be used as a measure of central tendency.
+4.3 Exploratory Data Analysis                                                           63
+
+
+where n is the sample size, and xi, yi are the individual measurements of variable
+x and y. The formula assumes a natural pairing of the x and y variables. Values of rxy
+close to zero indicate little to no correlation, while values of |rxy| close to one suggest
+strong correlation (positive or negative) between the variables. If variables
+that appear in a measurement equation (Eq. (6.27)) are highly correlated, the total
+variance (Eq. (7.25)) associated with the measurement equation must include
+additional terms to account for the correlation. This component of the EDA is thus
+an important consideration in any complex measurement system uncertainty
+analysis.
+
+
+4.3.1.2 Summary Statistics for Discrete Data
+
+For discrete categorical data, common summary statistics are the frequency and
+relative frequency of each category in which the data fall. Frequency is deﬁned as the
+number of values in a category, while relative frequency is deﬁned as the frequency
+divided by the total number of data points.
+    The values in a frequency table provide a rough estimate of how the data
+are distributed. Table 4.1 provides an example of the frequencies and relative
+frequencies for binary data. In this example most of the data are classiﬁed as Pass.
+Again, discrete data inherently provide less information than continuous data, so it
+is preferable to use a continuous measure if possible.
+    For discrete count data, the summary statistics described above for continuous
+variables data still apply, but the interpretation of the sample means and standard
+deviations may be different depending on the speciﬁc distribution used to describe
+the data. For example, the sample mean (Eq. (4.1)) of count data assumed to be
+from a Poisson distribution (Sect. 4.4.1.2) estimates both the mean and variance of
+the distribution. Interpretation of the summary statistics in these cases must thus
+consider the particular discrete probability distribution.
+
+
+
+4.3.2 Graphical Displays of Data
+
+In addition to summary statistics, it can be useful to visualize data to assess if there
+are signiﬁcant outliers, trends, correlations, subpopulations, or unusual variation
+present. Graphical tools can also be used to suggest which probability distribution
+may be appropriate for the measurement variables. The choice of graphical display
+also depends on the type of data.
+
+Table 4.1 Frequency and         Category           Frequency            Relative frequency
+relative frequency for
+                                Pass               15                   15/20 ¼ 0.75
+discrete data
+                                Fail               5                    5/20 ¼ 0.25
+                                Total              20                   20/20 ¼ 1.00
+64                                                   4 Introduction to Statistics and Probability
+
+
+4.3.2.1 Graphical Displays for Continuous Data
+
+Histograms Histograms are generated by ﬁrst dividing the range of the
+variable into equally spaced intervals, and then tabulating the number of data
+points that fall within each interval. The height of the histogram bar is equal to the
+proportion of data in its corresponding interval. Histograms provide a visualization
+of the distribution of continuous data including its central tendency and spread.
+The histogram can also be used to identify outliers and subpopulations and help
+determine an appropriate probability distribution.
+Note that histograms can be sensitive to the choice of bin width; that is, the size
+of the interval spanned by the bar. Smaller bin widths will produce a more-reﬁned
+version of the histogram, while larger bin widths will produce a less-reﬁned
+histogram. The choice of bin width can be particularly important when there are
+subtle characteristics in the data distribution. The left and right plots of Fig. 4.1 show
+a histogram with small and large bin widths, respectively. The data are centered
+around zero and they appear to be normally distributed. Also included in these plots
+is a smoothed estimate of the histogram, shown as a black line. This smoothed
+estimate was created using Kernel Density Estimation (KDE), which is a nonpara-
+metric approach to estimating a distribution of data. KDE can be performed in most
+statistical software packages; for more information, see Silverman (1986).
+Boxplots Boxplots provide a simple way to visualize the central tendency and
+spread of a dataset. Four characteristics can be assessed from a boxplot:
+•    The location of the median.
+•    The spread of the data.
+•    Whether the distribution of the data is skewed or symmetric.
+•    Whether there are potential outliers.
+
+
+
+
+Fig. 4.1 Histograms with varying bin-widths. The left plot shows a smaller bin width (and a more-
+reﬁned histogram), while the right plot shows a larger bin width (and a less-reﬁned histogram)
+66                                                   4 Introduction to Statistics and Probability
+
+
+
+
+Fig. 4.3 Example of scatterplots of temperature data across time. The top plot shows no observable
+trend, while the bottom plot shows data with decreasing variance over time
+
+   The graphs below (each plotting a y variable versus an x variable) show examples
+of both low correlation (rxy near zero) and high correlation (|rxy| near 1) (Fig. 4.4).
+   This component of the EDA can be used to help determine what terms should
+be included in the expression for the total variance (Eq. (7.25)) in an uncertainty
+analysis.
+
+
+
+4.3.2.2 Graphical Displays for Discrete Data
+
+For discrete data, the most commonly used graphical display is a frequency plot
+(also known as a bar plot). A frequency plot is similar to a histogram; the primary
+difference is that bars are given for each category or level of the discrete
+variable. The height of the bar is equal to the number of data points that fall
+into that category. Figure 4.5 gives a frequency plot with the discrete variable
+(temperature) on the x-axis and the count on the y-axis.
+68                                             4 Introduction to Statistics and Probability
+
+
+Fig. 4.6 Example
+frequency plot for discrete
+probability distribution
+
+
+
+
+data were sampled. This distribution predicts future events based on the parameters
+estimated for the population.
+
+
+
+4.4 Probability Distributions
+
+Probability distributions are used in metrology to express the uncertainty in both
+direct measurements and in the input variables of an indirect measurement equation
+(Chap. 6). These input variables can be considered random variables, deﬁned in ISO
+3534-1 1993 as “a variable that may take any of the values of a speciﬁed set of values
+and with which is associated a probability distribution.” A probability distribution is
+the function that assigns probabilities to the various outcomes of a random variable.
+Probability distributions are deﬁned differently for discrete and continuous random
+variables. For a continuous random variable, a Probability Density Function (PDF)
+is used to assign probabilities to intervals of potential outcomes, while for a
+discrete random variable, a Probability Mass Function (PMF) assigns probabilities
+to potential outcomes that are exact values (Casella and Berger 2002).
+   The characteristics of a probability distribution are determined by its parameters.
+Most distributions have between one and three parameters. For example, the location
+and spread of a normal distribution are determined by its two parameters: μ, the
+mean, and σ 2, the variance. For a normal distribution, these parameters can be
+estimated directly from the data using the sample mean and the sample variance
+(as deﬁned above). For other distributions, parameters can be estimated using a
+variety of techniques, as discussed in Sect. 4.4.2.
+   The three key steps of ﬁtting a probability distribution are:
+4.4 Probability Distributions                                                   69
+
+
+1. Determine a set of potential distributions,
+2. Estimate the parameters for the potential distributions, and
+3. Assess the distributional ﬁts.
+   The following sections describe each of these steps in greater detail.
+
+
+
+
+4.4.1 Identiﬁcation of Probability Distributions
+
+There are several factors to consider when identifying a probability distribution,
+including:
+• Type of data: As discussed above, different distributional forms should be
+  considered depending on whether the data are discrete or continuous.
+• Amount of available data: When limited data are available, additional informa-
+  tion (such as historical data, manufacturer’s speciﬁcations, or expert opinion)
+  may be required before choosing an appropriate distribution. If a large amount
+  of data is available, the results from the EDA (histogram, probability plots) can
+  help inform which distribution might be appropriate.
+• Information about the location, spread, and shape of the distribution: Using EDA
+  and/or expert judgement to determine whether the data are bounded or if certain
+  values are more probable than others can help inform the choice of distribution.
+• Accuracy required for the distribution: Distributions for variables that greatly
+  affect the analysis should be chosen with great care. In many metrology
+  applications, accuracy in the tails of the distribution is most important.
+   Continuous and discrete distributions that are commonly used in metrology are
+given below.
+
+
+
+4.4.1.1 Continuous Distributions
+
+Normal Distribution The normal distribution is an unbounded (in its argument x),
+symmetric, bell-shaped distribution that is regularly used in metrology. The PDF of
+the normal (also known as Gaussian) distribution is deﬁned as
+
+                         1           1 x μ 2
+                f ðxÞ ¼ pﬃﬃﬃﬃﬃ exp                      1 < x < 1,           ð4:5Þ
+                       σ 2π          2  σ
+
+where μ is the mean and σ is the standard deviation. Figure 4.7 provides a visual
+depiction of a normal distribution with μ ¼ 0 and σ ¼ 1. A normal distribution with
+these parameter values is called a standard normal distribution.
+74                                                   4 Introduction to Statistics and Probability
+
+
+Table 4.2 Characteristics of probability distributions commonly used in metrology
+                 Bounded     Knowledge of
+Distribution     data        probability of values   When to use
+Normal           No          Yes                     Continuous variables such as voltage,
+                                                     temperature
+Rectangular      Yes         No                      Calibration interval without additional
+                                                     details regarding probability density
+Triangular       Yes         Yes                     Bounded interval with data more likely near
+                                                     the midpoint
+t-Distribution   No          Yes                     Computing expanded uncertainties
+(n < 30)
+
+
+
+
+Fig. 4.12 Comparison of normal, uniform, triangular, and t-distributions. Here, the normal
+distribution has mean 0 and standard deviation 1, the uniform and triangular distributions are
+bounded on [ 3, 3], and the t-distribution has three degrees of freedom
+
+
+
+
+4.4.1.2 Discrete Distributions
+
+Poisson Distribution The Poisson distribution is often used when the data are
+counts of some event or process occurrence. For example, when counting the
+number of defects that occur per manufactured part, the Poisson distribution
+would likely be appropriate (Montgomery 2013). The count of neutrons produced
+by a laboratory neutron source, analyzed in Sect. 6.4.1, was also modelled using
+a Poisson distribution.
+The Poisson distribution is deﬁned as
+4.4 Probability Distributions                                                     75
+
+
+                                  e λ λx
+                         pðxÞ ¼          , with x ¼ 0, 1, 2, 3, . . .         ð4:10Þ
+                                    x!
+
+   The parameter λ, known as the event rate, is both the mean and variance
+of the distribution. Figure 4.13 provides an example of the Poisson distribution
+with λ equal to 3. As the value of λ increases, the shape of the distribution becomes
+more symmetric, and can be approximated by a normal distribution in uncertainty
+analyses.
+
+
+
+
+4.4.2 Estimating Distribution Parameters
+
+EDA and expert judgement should be used to identify potential distributions.
+After identiﬁcation of reasonable distributions for the data, parameters for those
+distributions are estimated. A commonly used method for estimating parameters of a
+distribution with moderate to large sample sizes is Maximum Likelihood Estimation
+(MLE). MLE chooses parameters that are most probable (likely) for a distribution
+based on the observed data. Many statistical software packages perform MLE. Note
+that there are many other ways to estimate parameters (particularly if the samples
+are small), such as the method of moments and Bayesian inference (See Sect. 11.6).
+For more information on parameter estimation, see Casella and Berger (2002).
+
+
+Fig. 4.13 Poisson
+distribution with mean and
+variance equal to 3
+76                                                  4 Introduction to Statistics and Probability
+
+
+4.4.3 Assessing Distributional Fit
+
+Goodness of ﬁt diagnostics can be used to compare empirical distributions to
+different hypothesized distributions after parameters have been estimated. A
+common diagnostic tool is a probability plot. A probability plot is a visual tool
+used to assess whether data come from a particular probability distribution. A
+common probability plot is known as the QQ plot, where the empirical quantiles
+are plotted against the theoretical quantiles of the hypothesized probability
+distribution. If the data come from the hypothesized distribution, the points should
+be approximately linear. If the probability plot is markedly nonlinear, it is evidence
+that the hypothesized probability distribution is not a good ﬁt.
+   Figure 4.14 shows how to use the QQ plot as a diagnostic tool. The left and
+right plots show simulated data generated from normal and Weibull distributions,
+respectively. The quantiles of the data are compared to the quantiles of a normal
+distribution. Conﬁdence bounds are also given to show the maximum deviation from
+the line that should encompass most of the data. In this case, the normal-generated
+data falls within the conﬁdence bounds, providing evidence that the data are
+normally distributed. Alternatively, the simulated Weibull data deviate from the
+ﬁtted line and several points fall outside the conﬁdence bounds, evidence that a
+normal distribution may not be appropriate.
+   In metrology applications, assessment of the distributional ﬁt will often be most
+important in the tails of the distribution. For small sample sizes, it is often difﬁcult
+to determine which distribution best ﬁts the data, particularly in the tails. Caution
+should be exercised before choosing a distribution with limited data. Expert
+judgement or additional data may be needed to properly identify a distribution.
+
+
+
+
+Fig. 4.14 Examples of normal QQ plots used to assess whether data are normally distributed. The
+left and right plots show data that were generated from normal and Weibull distributions,
+respectively
+4.5 Related Reading                                                                77
+
+
+   When the data are clearly non-normal, the standard uncertainty analysis (Chap. 6)
+will need to be modiﬁed. Monte Carlo (simulation) methods (Chap. 8) may be
+more appropriate in this case.
+
+
+
+
+4.5 Related Reading
+
+Annex C of the JCGM 100 (2008) (GUM) provides deﬁnitions for basic statistical
+concepts and terms. It gives formal mathematical deﬁnitions for some of these
+concepts along with brief comments on how they might be used in metrology
+applications. The deﬁnitions in the GUM are taken from ISO 3534-1 1993. This
+ISO provides additional probability and general statistical deﬁnitions that are not
+included in the GUM, including a list of symbols and abbreviations.
+   The JCGM 101 (2008) (GUM-S1) expands on probability density functions
+(PDFs) in metrology, including a brief description of how Bayesian methods can be
+used to estimate a PDF (see Sect. 11.6). The GUM-S1 discusses the principle of
+maximum entropy for choosing a PDF among a candidate of possible PDFs. Table 1
+on p. 20 provides high level guidance on choosing the appropriate PDF based on the
+type of available information. It includes less-common PDFs such as the curvilinear
+trapezoid, trapezoidal, and arc sine distributions. It also includes mention of the
+multivariate Gaussian distribution. The multivariate t-distribution is discussed
+in the JCGM 102 (2011) (GUM-S2), along with a brief mention of methods for
+the construction of multivariate PDFs.
+   Heumann et al. (2016) introduces statistics at an undergraduate level. It provides
+additional discussion on types of data, methods for analyzing variables using
+graphs, and summary statistics. It also includes methods for multivariate
+data including joint and marginal distributions and graphical representations of
+bi-variate data. Later it discusses elements of probability theory, random variables,
+and PDFs, with applications of these methods in R.
+   Additional publications provide an overview of statistical methods in metrology.
+Chapter 2 of Vardeman and Jobe (2016) begins with basic concepts of statistics
+along with an introduction to probability modeling. The authors then discuss how
+one-sample and two-sample statistical methods can be applied to measurement data.
+The remainder of the chapter brieﬂy discusses several of the concepts covered later
+in this book, including linear regression (Chap. 9) and Gauge R&R studies
+(Chap. 10). The National Bureau of Standard’s Special Publication 747 (Ku 1988)
+offers an overview of statistical concepts in metrology along with a postscript on
+statistical graphics used to check models and their assumptions (e.g. residual plots).
+   Willink (2006) provides a discussion of principles for probability and statistics
+in metrology that aid in good decision making. These principles are given with
+the intent of helping practitioners of metrology produce a statistically defensible
+analysis. This paper provides high-level considerations for both uncertainty analysis
+and interlaboratory comparisons.
+78                                             4 Introduction to Statistics and Probability
+
+
+4.6 Exercises
+
+The data in Table 4.3 provide 15 measurements of temperature, pressure, and
+number of defects. It will be used for Exercises 4.1–4.8 below.
+      4.1 Categorize the temperature, pressure, and defects data as continuous or
+discrete. Further categorize any discrete variables as binary, count or categorical.
+      4.2 Calculate the following summary statistics for the sample of temperature
+and pressure data—mean, median, mode, variance, standard deviation.
+      4.3 What is the standard error of the mean of the pressure data? How can the
+standard error be interpreted?
+      4.4 What graphical display(s) are most appropriate for continuous data? For
+categorical data?
+      4.5 Generate a histogram of the temperature data. What characteristics do you
+notice about the spread of these data?
+      4.6 Generate a boxplot for the pressure data. Are there any outliers present
+according to the boxplot? If so, what should be done about these outliers?
+      4.7 Plot the defects data. What distribution would be most appropriate for this
+type of data?
+      4.8 Generate a scatterplot for pressure and temperature where pressure is the
+dependent variable. What do you notice? Now calculate the correlation coefﬁcient
+for pressure and temperature. How can the correlation coefﬁcient be interpreted?
+      4.9 Provide an example of when a uniform distribution might be more
+appropriate than a normal distribution.
+      4.10 Choose the appropriate probability distribution(s) for the following cases.
+         a. A manufacturer’s speciﬁcation states that the radius of a cylinder is
+expected to fall between 10% of the nominal value.
+
+Table 4.3 Data for Exercises 4.1–4.8
+Measurement               Temperature ( F)         Pressure (mmHg)                Defects
+1                         64.69                    645.22                         2
+2                         73.67                    728.04                         3
+3                         71.61                    717.41                         1
+4                         68.26                    678.02                         5
+5                         76.42                    761.36                         4
+6                         64.93                    644.97                         0
+7                         67.45                    678.63                         2
+8                         69.16                    687.6                          2
+9                         68.49                    689.78                         4
+10                        80.13                    814.8                          1
+11                        74.5                     744.32                         0
+12                        70.68                    706.27                         0
+13                        68.99                    683.18                         1
+14                        65.97                    661.92                         3
+15                        73.22                    737.01                         2
+References                                                                                    79
+
+
+Table 4.4 Data for Exercise 4.11
+Measurement       Length (m)       Measurement     Length (m)      Measurement      Length (m)
+1                 1.118            13              0.861           25               1.036
+2                 1.262            14              1.055           26               1.618
+3                 1.118            15              0.834           27               1.187
+4                 0.480            16              1.106           28               0.884
+5                 1.014            17              0.912           29               0.858
+6                 0.955            18              0.773           30               1.269
+7                 0.978            19              0.958           31               0.811
+8                 0.972            20              1.152           32               0.811
+9                 1.190            21              1.324           33               0.636
+10                1.055            22              2.192           34               0.710
+11                0.886            23              0.779           35               0.675
+12                1.071            24              0.692           36               0.830
+
+
+         b. The angle of a weld is known to be between 30 and 60 , though angles
+near 45 are most likely.
+         c. 50 measurements are taken of the internal pressure of a tank. A plot of the
+data shows that these measurements are relatively symmetric around the mean value
+of 50 MPa.
+      4.11 The data in Table 4.4 show 36 length measurements of a steel plate. Use
+these data and the statistical software of your choice to complete the following:
+         a. Calculate the sample mean and standard deviation.
+         b. Plot a histogram of the data.
+         c. Use the mean and standard deviation calculated in (a) to ﬁt a normal
+distribution to the data. Overlay a curve of the normal distribution on the plotted
+histogram in (b).
+         d. Generate a QQ plot that compares the data in Table 4.4 to the quantiles of
+the normal distribution. Does the normal distribution seem appropriate in this case?
+Why or why not?
+
+
+
+References
+
+Casella, G., Berger, R.L.: Statistical Inference, 2nd edn. Duxbury, Paciﬁc Grove, CA (2002)
+Heumann, C., Schomaker, M., Shalabh, A.: Introduction to Statistics and Data Analysis. Springer,
+   New York (2016)
+ISO 3534-1: Statistics vocabulary and symbols – Part 1: Probability and general statistical terms
+   (1993)
+JCGM 100: E valuation of measurement data - Guide to the expression of uncertainty in measure-
+   ment (2008)
+JCGM 101 Evaluation of measurement data - Supplement 1 to the guide to the expression of
+   uncertainty in measurement - Propagation of distributions using a Monte Carlo method (2008)
+JCGM 102 Evaluation of measurement data - Supplement 2 to the -guide to the expression of
+   uncertainty in measurement - extension to any number of output quantities (2011)
+

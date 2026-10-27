@@ -9,3 +9,24 @@ API Error: 500 Post "https://chatgpt.com/backend-api/codex/responses": utls: dia
 ⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
 Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
 [claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+Terminé la revisión de S3. La sección queda entregada en fase de contenido, con su índice `S3_00_indice.md` actualizado y el cierre en `S3_revision_sol.md`.
+1. De las 42 ediciones interrumpidas (bloques D01–D36 del diff y R01–R06 de la última ejecución), conservé 40, ajusté D10 y revertí R06. En D10 cambié la frase de covarianza del grado de equivalencia (M09-A2). R06 era un ejemplo de M12-A3 que resolvía la práctica A con números; también quité su bloque de `calc/M12_indicadores.py`.
+2. Registré 37 hallazgos S-… en `S3_revision_sol.md`, cada uno con su edición, decisión y ubicación. Las correcciones de más peso: el riesgo específico de M10-A seguía JCGM 106 (debe condicionarse al resultado observado, no a un valor verdadero fijo); M12-A3 traía una serie de dos periodos con medias que no cuadraban; y las demoras de M11-A no son ARL.
+3. Los 7 scripts de `calc/` se ejecutan sin error con `curso/.venv/bin/python` y pasan sus comprobaciones, incluido el contraste con ISO/TS 28037. Recalculé a mano las cifras clave y coinciden; la salida completa está en `calc/revision_opus_final.out`.
+4. Comprobé con pdftotext los numerales nuevos del QAPP, el TAD, ISO 17025, Crowder y JCGM 106 (este en copia oficial, no está en docs/). Hay 12 marcadores de práctica, uno por nivel y capítulo, sin desarrollar.
+5. Queda pendiente confirmar cómo se interpreta «<+ 1 ppb» del QAPP, preparar los paquetes de ejercicios y la revisión Opus del paso 5; la sección no está lista para impartirse.

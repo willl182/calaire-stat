@@ -1,0 +1,102 @@
+[
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/intro_stats_metro_c09.pdf",
+    "text": "00.txt",
+    "sha256": "9b95376e356a51ff6f2eb2265fddbad4eaf8e94d388d4f1360bf65c506f7d04b"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/chemometrics_c02.pdf",
+    "text": "01.txt",
+    "sha256": "a54a4ef18f30d55576f22d86655b5cdc61c64a35bfcb13367a976cc7ad75862b"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/statistical_concepts_c06.pdf",
+    "text": "02.txt",
+    "sha256": "2855d33295c4132ef1ccb35d5a615dedcadf42f438f9d5d28c69eaccf597e99e"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/statistical_concepts_c09.pdf",
+    "text": "03.txt",
+    "sha256": "765406861a91efda60ef8f3eef8092b69c80a2b9c12139de5fa4dc10a45353dc"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/Statistical Concepts – A First Course.pdf",
+    "text": "04.txt",
+    "sha256": "51df308f24e495b08cf4ebe1ab4a8812b540b734f0bdfc9e7decb62611e5e799"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-3_1994.pdf",
+    "text": "05.txt",
+    "sha256": "a35a4bb01104903ff0ae90e4ee82fc5c4dddbbce5602b92ab69d1eb5edde4fc8"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-3_1994_Cor 1_2001.pdf",
+    "text": "06.txt",
+    "sha256": "7124577ce96042d57be28b2473cb1298fdd0ef75db95086278cdf53e9d6876f7"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-2_1994.pdf",
+    "text": "07.txt",
+    "sha256": "5b22d2c368e7c390c33b198698074dd2c4027d7b6d252ef2c18638d0f4fd7498"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-4_1994.pdf",
+    "text": "08.txt",
+    "sha256": "4757f5b948904085cf1d5869b3dd1cbc9c107c99aeb116e96a4bfb15d4c2de9e"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-6_1994.pdf",
+    "text": "09.txt",
+    "sha256": "1cf5b06d9d8e817cc299f49b4f160cbeab65b7ca71acdf4790ba2d8d464f54cc"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO 5725-1_1994_Cor 1_1998 .pdf",
+    "text": "10.txt",
+    "sha256": "b50c0cb725180b8413b43ea5abefc7a192195e76660f5724aa52b0c886dca4e4"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/BS EN 14625_2012.pdf",
+    "text": "11.txt",
+    "sha256": "5f5250ecd0bb80ff11a34455a55261e704e123516555543c3379d493fa18baf4"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/BS EN ISO_IEC 17025_2017.pdf",
+    "text": "12.txt",
+    "sha256": "91098cfa6106e59f5ea75ce70a0f76bfa3d511bd2372907a5efb08918bd34546"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/srp_qapp.pdf",
+    "text": "13.txt",
+    "sha256": "b019e63b0830ec54abd68aa45e32e02a26676ef1104565c18213f913ecb33b94"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/srp_sop.pdf",
+    "text": "14.txt",
+    "sha256": "1c7ca974aaead4c6fcb8bf61afc17f0cda38869d00c145ca0678a32710f80bed"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/o3_tad_508_20230906_final.pdf",
+    "text": "15.txt",
+    "sha256": "83ccfa9d2e4511bc1ea0d6ab3665861b1f5f74358ca132d87ad3a3998a2541c8"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/Air quality_ Determination of ozone in ambient air_ ISO 13964.pdf",
+    "text": "16.txt",
+    "sha256": "105c1136fa0c8e5d9d58228d33f2c863bb23a0acb019b55f73749499a0751358"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/Metrology and Measurement Uncertainty.pdf",
+    "text": "17.txt",
+    "sha256": "b7647d7b3248c62ca1459dfba0e4ec96859c8e19a6a205102cab599fa7e002d2"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/Chemometrics _ data driven extraction for science.pdf",
+    "text": "18.txt",
+    "sha256": "9ed2d06d72481a1728fff5e2e72395e5a9bb51390881a6982a548cada277cc33"
+  },
+  {
+    "source": "/home/w182/w421/calaire-stat/docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf",
+    "text": "19.txt",
+    "sha256": "5197228eb16183c90afe1c4995a3471cc4506b5387f53fdbc87848db9f87a306"
+  }
+]

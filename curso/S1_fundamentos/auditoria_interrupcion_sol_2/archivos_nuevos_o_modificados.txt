@@ -1,0 +1,68 @@
+ M curso/S1_fundamentos/M00_libreto.md
+ M curso/S1_fundamentos/M01_libreto.md
+ M curso/S1_fundamentos/M02_libreto.md
+ M curso/S1_fundamentos/M03_libreto.md
+ M curso/S1_fundamentos/M04_libreto.md
+ M curso/S1_fundamentos/calc/M00_ejemplos.py
+ M curso/S1_fundamentos/calc/M00_ejemplos_salida_sol.txt
+ M curso/S1_fundamentos/calc/M01_modelo_variables.py
+ M curso/S1_fundamentos/calc/M02_examples.py
+ M curso/S1_fundamentos/calc/M03_ejemplos.py
+ M curso/S1_fundamentos/calc/M04_ejemplos.py
+?? curso/S1_fundamentos/S1_00_indice.md
+?? curso/S1_fundamentos/calc/entorno_sol.txt
+?? curso/S1_fundamentos/calc/fuentes_00_sha256.txt
+?? curso/S1_fundamentos/calc/informe_00.md
+?? curso/S1_fundamentos/calc/referencias_00/LEEME.md
+?? curso/S1_fundamentos/calc/referencias_00/en14625.txt
+?? curso/S1_fundamentos/calc/referencias_00/gum.txt
+?? curso/S1_fundamentos/calc/referencias_00/iso17025.txt
+?? "curso/S1_fundamentos/calc/referencias_12/Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).txt"
+?? curso/S1_fundamentos/calc/referencias_12/BIPM.QM-K1_2.protocol.txt
+?? curso/S1_fundamentos/calc/referencias_12/Hahs_Vaughn_completo.txt
+?? "curso/S1_fundamentos/calc/referencias_12/ISO 28037.txt"
+?? "curso/S1_fundamentos/calc/referencias_12/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt"
+?? curso/S1_fundamentos/calc/referencias_12/JCGM_GUM_6_2020.txt
+?? curso/S1_fundamentos/calc/referencias_12/M01_salida.txt
+?? curso/S1_fundamentos/calc/referencias_12/M02_salida.txt
+?? "curso/S1_fundamentos/calc/referencias_12/Ozone UV spectroscopy I_ Absorption cross-sections at room.txt"
+?? "curso/S1_fundamentos/calc/referencias_12/Ozone UV spectroscopy_ II_ Absorption cross-sections .txt"
+?? "curso/S1_fundamentos/calc/referencias_12/The ASQ Metrology Handbook.txt"
+?? curso/S1_fundamentos/calc/referencias_12/busqueda_11329_docs.txt
+?? curso/S1_fundamentos/calc/referencias_12/contraste_independiente_12.txt
+?? curso/S1_fundamentos/calc/referencias_12/cotejo_Hahs_cuerpo.txt
+?? curso/S1_fundamentos/calc/referencias_12/cotejo_numerales.txt
+?? curso/S1_fundamentos/calc/referencias_12/intro_stats_metro_c04.txt
+?? curso/S1_fundamentos/calc/referencias_12/manifest_fuentes.txt
+?? curso/S1_fundamentos/calc/referencias_12/metrology_measure_uncer_c03.txt
+?? curso/S1_fundamentos/calc/referencias_12/nistir6963.txt
+?? curso/S1_fundamentos/calc/referencias_12/o3_tad_508_20230906_final.txt
+?? curso/S1_fundamentos/calc/referencias_12/pasajes_cuerpo_verificados.txt
+?? curso/S1_fundamentos/calc/referencias_12/statistical_concepts_c02.txt
+?? curso/S1_fundamentos/calc/referencias_12/statistical_concepts_c03.txt
+?? curso/S1_fundamentos/calc/referencias_12/statistical_concepts_c05.txt
+?? curso/S1_fundamentos/calc/referencias_12/validacion_12.txt
+?? curso/S1_fundamentos/calc/referencias_34/JCGM_GUM-1.txt
+?? curso/S1_fundamentos/calc/referencias_34/JCGM_GUM_6_2020.txt
+?? curso/S1_fundamentos/calc/referencias_34/M03_antes.txt
+?? curso/S1_fundamentos/calc/referencias_34/M04_antes.txt
+?? curso/S1_fundamentos/calc/referencias_34/gum1995.txt
+?? curso/S1_fundamentos/calc/referencias_34/gum_s2.txt
+?? curso/S1_fundamentos/calc/referencias_34/hahs_completo.txt
+?? curso/S1_fundamentos/calc/referencias_34/hahs_creditos.txt
+?? curso/S1_fundamentos/calc/referencias_34/intro_stats_metro_c04.txt
+?? curso/S1_fundamentos/calc/referencias_34/intro_stats_metro_c07.txt
+?? curso/S1_fundamentos/calc/referencias_34/metrology_measure_uncer_c03.txt
+?? curso/S1_fundamentos/calc/referencias_34/milton2006.txt
+?? curso/S1_fundamentos/calc/referencias_34/otto.txt
+?? curso/S1_fundamentos/calc/referencias_34/pdftotext_hahs.stderr
+?? curso/S1_fundamentos/calc/referencias_34/pdftotext_s2.stderr
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c04.txt
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c05.txt
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c06.txt
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c07.txt
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c08.txt
+?? curso/S1_fundamentos/calc/referencias_34/statistical_concepts_c09.txt
+?? curso/S1_fundamentos/calc/verificar_M00_salida_sol.txt
+?? curso/S1_fundamentos/calc/verificar_M00_sol.py
+?? curso/S1_fundamentos/calc/verificar_entrega_sol.py

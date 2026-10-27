@@ -1,0 +1,1962 @@
+United States              Office of Air Quality              EPA
+Environmental Protection   Planning and Standards
+Agency                     Research Triangle Park, NC 27711   February, 2017
+Air
+
+
+
+
+Quality Assurance Document
+
+
+Quality Assurance Project Plan
+for the Standard Reference
+Photometer Program
+
+
+
+
+              Final
+          February 2017
+                                         Foreword
+
+
+U.S. Environmental Protection Agency (EPA) policy requires that all projects involving the
+generation, acquisition, and use of environmental data be planned and documented and have an
+Agency-approved Quality Assurance Project Plan (QAPP) before the start of data collection. The
+primary purpose of the QAPP is to provide a project overview, describe the need for the
+measurements, and define quality assurance/quality control (QA/QC) activities to be applied to
+the project, all within a single document.
+
+The following document represents the QAPP for the environmental data operations involved in
+EPA’s Standard Reference Photometer (SRP) Program. This QAPP was generated using the
+following EPA monitoring and QA regulations and guidance:
+      40 CFR Part 58 Appendix A and C
+      EPA QA/R-5, EPA Requirements for Quality Assurance Project Plans
+      EPA QA/G-5, Guidance for Quality Assurance Project Plans.
+
+All pertinent elements of the QAPP regulations and guidance are addressed in this QAPP.
+
+This document has been reviewed by all EPA Regions implementing SRPs in their respective
+Regions and is considered acceptable (see the following approval page).
+
+Mention of corporation names, trade names, or commercial products does not constitute
+endorsement or recommendation for use.
+
+
+
+
+                                              ii
+                                    Acknowledgments
+
+
+This Quality Assurance Project Plan (QAPP) is the product of the combined efforts of the U.S.
+Environmental Protection Agency’s (EPA’s) Office of Air Quality Planning and Standards
+(OAQPS); and the EPA Regional Offices. The review of the material in this document was
+accomplished through the activities of the Ambient Air QA Community. The following
+individuals are acknowledged for their contributions.
+
+
+EPA Regions
+Region 1 - Chris St. Germain
+Region 2 - Avraham Teitz
+Region 4 - Mike Crowe
+Region 5 - Scott Hamilton
+Region 6 - Clarence Jackson
+Region 7 - James Regehr
+Region 8 -Joshua Rickard
+Region 9 - Andy Lincoff
+
+
+Office of Air Quality Planning and Standards
+Mark Shanis
+Mike Papp
+
+ORD
+
+Scott Moore
+
+
+
+
+                                              iii
+                           Acronyms and Abbreviations
+
+AA-PGVP   Ambient Air Protocol Gas Verification Program
+AQS       Air Quality System
+CAA       Clean Air Act
+CFR       Code of Federal Regulations
+COC       chain of custody
+DQA       data quality assessment
+DQOs      data quality objectives
+EDO       environmental data operation
+EPA       Environmental Protection Agency
+FEM       Federal equivalent method
+FIPS      Federal Information Processing Standards
+FRM       Federal reference method
+GMIS      (NIST- Certified) Gas Manufacturer’s Internal Standard
+LAN       local area network
+MDW       measurement data worksheet
+MQOs      measurement quality objectives
+NAACA     National Association of Clean Air Agencies
+NAAQS     National Ambient Air Quality Standards
+NIST      National Institute of Standards and Technology
+NTRM      (NIST) Traceable Reference Material
+OAQPS     Office of Air Quality Planning and Standards
+OARM      Office of Administration and Resources Management
+ORD       Office of Research and Development
+PC        personal computer
+PD        percent difference
+PE        performance evaluation
+QA/QC     quality assurance/quality control
+QA        quality assurance
+QAM       Quality Assurance Manager
+QAO       Quality Assurance Officer
+QAPP      Quality Assurance Project Plan
+QMP       Quality Management Plan
+RAVL      Regional Analytical Verification Laboratory
+RD        relative difference
+RPD       relative percent difference
+SLAMS     state and local monitoring stations
+SOP       standard operating procedure
+SOW       statement of work
+SRP       standard reference photometer
+TAMS      Tribal Air Monitoring Services
+TSA       technical system audit
+WAM       Work Assignment Manager
+
+
+
+
+                                         iv
+                                                        Tables
+Number   Title                                                                                                     Section/Page
+7-1      Summary Specifications for the Family of Ozone Standards .......................................                7/3
+9-1      SRP File Structure ......................................................................................       9/2
+15-1     Preventive Maintenance in SRP- Laboratories .......................................................            15/3
+20-1     Assessment Summary ..................................................................................          20/2
+
+
+
+
+                                                       Figures
+Number   Title                                                                                                       Section/Page
+4.1      Family of Level 1 SRPs .................................................................................         4/1
+4.2      SRP Program Structure..................................................................................          4/3
+5.1      Ambient air ozone traceability scheme ................................................................           5/1
+6.1      SRP Basic Equipment ...................................................................................          6/3
+13.1     Quality Bulletin ..........................................................................................     13/2
+14.1     QA/QC Check Sheet.....................................................................................          14/2
+14.2     Example Verification Report ...........................................................................         14/3
+14.3     Example Verification Summary Report................................................................             14/4
+
+
+
+
+                                                            v
+                                                                            Project: SRP QAPP
+                                                                               Element No.: 1.0
+                                                                                Revision No.: 2
+                                                                                      Date:2/17
+                                                                                     Page 1 of 2
+
+
+
+
+              1.0 QA Project Plan Identification and Approval
+
+Title: Standard Reference Photometer Program Quality Assurance Project Plan
+
+Category: 1
+
+The attached Quality Assurance Project Plan (QAPP) for the Standard Reference Photometer
+(SRP) Program is hereby recommended for approval and commits the participants of the program
+to follow the elements described within.
+Project: SRP QAPP
+   Element No.: 1.0
+    Revision No.: 2
+          Date:2/17
+         Page 2 of 2
+                                                                                                                             Project: SRP QAPP
+                                                                                                                                Element No.: 2.0
+                                                                                                                                 Revision No.: 1
+                                                                                                                                      Date: 12/14
+                                                                                                                                      Page 1 of 2
+
+
+
+                                                   2.0 Table of Contents
+                                                                                                                            Element No. - Page
+Foreword................................................................................................................................... ii
+Acknowledgments ..................................................................................................................... iii
+Acronyms and Abbreviations .....................................................................................................v
+Tables ...................................................................................................................................... vii
+Figures ................................................................................................................................... viii
+1.0        Title and Approval Page ............................................................................................ 1-1
+2.0        Table of Contents ....................................................................................................... 2-1
+3.0        Distribution ................................................................................................................ 3-1
+4.0        Project/Task Organization ......................................................................................... 4-1
+           4.1 Family of “level 1” SRPs ..................................................................................... 4-1
+5.0        Problem Definition/Background ................................................................................ 5-1
+6.0        Project/Task Description ............................................................................................ 6-1
+           6.1     Description of Work to be Performed ............................................................ 6-1
+           6.2     Measurements Expected ................................................................................ 6-1
+           6.3     Personnel ........................................................................................................ 6-3
+           6.4     Equipment ...................................................................................................... 6-3
+7.0        Data Quality Objectives and Criteria for Measurement ............................................. 7-1
+           7.1   Data Quality Objectives ................................................................................. 7-1
+           7.2   Measurement Quality Objectives ................................................................... 7-2
+8.0        Special Training Requirements/Certification............................................................. 8-1
+9.0        Documentation and Records ...................................................................................... 9-1
+           9.1  Documents and Records for the EPA SRP Network ..................................... 9-1
+           9.2  Data Reporting Package Archiving and Retrieval ......................................... 9-4
+10.0       Sampling Design ...................................................................................................... 10-1
+           10.1 Rationale for the Design .............................................................................. 10-1
+11.0       Sampling Methods Requirements ............................................................................ 11-1
+12.0       Sample Handling and Custody................................................................................. 12-1
+13.0       Analytical Methods Requirements ........................................................................... 13-1
+                                                                                                               Project: SRP QAPP
+                                                                                                                  Element No.: 2.0
+                                                                                                                   Revision No.: 1
+                                                                                                                        Date: 12/14
+                                                                                                                        Page 2 of 2
+
+                                                                                                               Element No. - Page
+14.0   Quality Control Requirements ................................................................................. 14-1
+       14.1 QC Procedures ............................................................................................. 14-1
+       14.2 Reporting...................................................................................................... 14-3
+15.0   Instrument/Equipment Testing, Inspection, and Maintenance Requirements.......... 15-1
+       15.1 Testing.......................................................................................................... 15-1
+       15.2 Inspection ..................................................................................................... 15-2
+       15.3 Maintenance ................................................................................................. 15-2
+16.0   Instrument Calibration and Frequency ..................................................................... 16-1
+       16.1 Calibration.................................................................................................... 16-1
+17.0   Inspection/Acceptance for Supplies and Consumables............................................ 17-1
+       17.1 Supplies, Consumables, and Spare Parts ......................................................... 17-1
+18.0   Data Acquisition Requirements ............................................................................... 18-1
+       18.1 Acquisition of Non-Direct Measurement Data ............................................ 18-1
+19.0   Data Management .................................................................................................... 19-1
+       19.1 Information needed for SRP Program .............................................................. 19-1
+       19.2 Computer Hardware and Software ................................................................... 19-1
+       19.3 Data Recording ................................................................................................ 19-4
+20.0   Assessments and Response Actions......................................................................... 20-1
+       20.1 Assessment Activities and Project Planning ................................................ 20-1
+       20.2 Documentation of Assessments ................................................................... 20-2
+21.0   Reports to Management ........................................................................................... 21-1
+       21.1 Verification Reports ..................................................................................... 21-1
+       21.2 Annual Verification Report Summary ........................................................ 21-1
+       21.3 3- Year SRP QA Report .............................................................................. 21-2
+22.0   Data Review, Validation, and Verification Requirements ....................................... 22-1
+       22.1 Verification/Validation Through the SRP Digital Data System ................. 22-1
+23.0   Reconciliation with Data Quality Objectives........................................................... 23-1
+                                                                                 Project: SRP QAPP
+                                                                                    Element No.: 3.0
+                                                                                     Revision No.: 2
+                                                                                          Date: 02/17
+                                                                                          Page 1 of 1
+
+
+
+
+                                     3.0 Distribution
+A copy of this QAPP will be distributed to the SRP leads in each Regions and the CA Air
+Resources Board who also implement an SRP.
+
+Since the SRP leads may change before this QAPP needs updating, the AMTIC SRP site will list
+the current SRP leads and can be found at https://www3.epa.gov/ttn/amtic/srpqa.html.
+
+Regions 3 and 10 do not presently implement an SRP but are provided this documentation for
+their records since monitoring organization in their respective Regions will need to go to SRPs in
+other Regions for service.
+
+If any personnel besides the personnel listed above implement the program, they will be trained
+by the personnel currently listed above on the standard operating procedure (SOPs), provided a
+copy of this QAPP and expected to adhere to the requirements within. Trained personnel will be
+documented in the SRP- Program Files. A copy of this document will be made available on
+AMTIC at the site listed above. The document will be reviewed annually and updated as needed.
+Minor modification we be made by way of a quality bulletin but minimally this QAPP will be
+revised and re-issued every 5 years.
+                                                                                          Project: SRP QAPP
+                                                                                             Element No.: 4.0
+                                                                                              Revision No.: 2
+                                                                                                   Date: 02/17
+                                                                                                   Page 1 of 4
+
+
+                                   4.0 Project/Task Organization
+See Figure 4.1 for a graphic representation of the relationships between and among the various
+SRPs in the Ambient Air Monitoring Program (AAMP) Network. This section will describe how
+the SRP Program is organized and the roles of the various parties.
+
+
+                                                              4.1       Family of “level 1” SRPs
+                                                    Figure 4.1 represents the family of Level 1
+                                                    standard reference photometers. Ideally, only
+                                                    one Level 1 (often termed reference standard)
+                                                    exists for each entity to be measured. The
+                                                    International Bureau of Weights and Measures
+                                                    (BIPM) 1 maintains an SRP (#27) as the World's
+                                                    ozone reference standard. All EPA SRPs are
+                                                    now traceable to SRP #27. Each member state
+                                                    of the Convention of the Meter 2 has one
+                                                    laboratory designated to provide traceability to
+                                                    its country. NIST represents that laboratory for
+                                                    the United States. Every 2 years, NIST
+                                                    compares the designated U.S. National ozone
+                                                    reference standard (SRP #2) to SRP #27
+                                                    indirectly using SRP #0. For ozone, NIST has
+                                                    developed a number of identical SRPs
+                                                    (numbered sequentially in order of date
+                                                    assembled) that it distributes to other countries
+                                                    and organizations as well as EPA. Within EPA,
+the EPA Office of Research and Development Metrology laboratory maintains EPA SRP #1 and
+#7. Each year it sends SRP #1 to NIST for verification and #7 every three years. The verification
+is deemed acceptable when the relationship of SRP #1 vs. SRP #2 is 1.00 + 0.01 (slope) and an
+intercept of 0.0 + 1 nmol/mol (ppbv). This relates to a bias of 1%. SRP #7 is then verified
+against SRP#1. Upon acceptable verification, SRP #7 is then sent to the EPA Regions to verify
+the SRPs operated in the Regions and used for the ambient air program. Acceptance limits for
+this verification are basically the same as that for #7 and #1. When SRP#7 is sent back to RTP it
+is compared to SRP #1 to ensure it maintains an acceptable level of data comparability. Based
+on this process, all transfer standards are traceable to BIPM #27. Therefore, NIST, ORD, and
+EPA work cooperatively to maintain the family of Level 1 SRPs for the AAMP. Figure 4.2
+represents the organizational structure for the SRP Program. The lead contacts for each
+organization listed below can be found on the SRP Schedule for Verification and Upgrades
+located on AMTIC 3. Names are not included in the QAPP since they can change at frequencies
+that may not be conducive to QAPP updates/revisions.
+
+1
+    http://www.bipm.org/en/scientific/chem/gas_metrology/ozone_comparisons.html
+2
+    http://www.speedylook.com/Convention_of_the_Meter.html
+3
+    http://www.epa.gov/ttnamti1/srpqa.html
+                                                                                  Project: SRP QAPP
+                                                                                     Element No.: 4.0
+                                                                                      Revision No.: 2
+                                                                                           Date: 02/17
+                                                                                           Page 2 of 4
+
+
+
+National Institute for Standards and Technology (NIST). Through an interagency agreement,
+EPA provides resources annually to NIST to recertify SRP number 1. NIST also performs
+upgrades on its SRP hardware and software. It informs EPA of these advancements and provides
+software upgrades and either provides hardware for purchase or recommends adequate
+replacements.
+
+EPA Office of Research and Development (ORD) Air Pollution Prevention and Control
+Division (APPCD). The lead SRP contact for APPCD can be found on the Annual Verification
+Schedule which is posted on AMTIC. The APPCD SRP Lead provides a number of services to
+the ambient monitoring community including:
+
+   •   Attending any SRP Operator meetings
+   •   Maintaining SRP #7 that travels to the EPA Regions for verification of the Regional
+       SRPs certification
+   •   Maintaining SRP #1 that acts as a check for #7 when it comes back in from the Regions
+   •   Providing verification services of level 1 SRPs if Regions decide (optional) to send Level
+       1 SRPs to RTP
+   •   Certifying temperature, pressure, and electrical instruments intheir metrology laboratory
+       for use in diagnostic checks on the SRP
+   •   Providing verification services of level 2 transfer standards when asked and time permits
+   •   Upgrading the regional SRPs as needed. This sometimes can be handled by the Regional
+       SRP operators but in some cases the regional SRP will be sent back to Research Triangle
+       Park (RTP) for the work to be performed in the APPCD laboratory
+   •   Coordination with NIST to provide funding for annual SRP #1 verifications and any
+       hardware /software needed
+   •   Providing training on SRP verifications as needed
+   •   Coordination with OAQPS on funding for the SRP Program and to provide results of
+       verifications on an annual basis. Verification data are stored on EPA-RTP servers and
+       access is provided to OAQPS
+   •   Maintaining/revising the Annual Verification Schedule
+
+EPA Regional Offices. The EPA Regional Offices roles include:
+
+   •   Coordinating the delivery of SRP#7 with OAQPS and APPCD
+   •   Timely verification of Regional SRP with SRP #7 and shipment back to APPCD
+   •   Submission of SRP to SRP verification results to OAQPS
+   •   Scheduling SRP level 2 verifications with monitoring organizations
+   •   Following SRP SOPs for verification of level 2 transfer standards
+   •   Providing verification results to monitoring organization and filing results at regional
+       level
+
+EPA OAQPS- OAQPS has overall technical oversight responsibilities for the SRP Program.
+OAQPS roles include:
+                                                                                    Project: SRP QAPP
+                                                                                       Element No.: 4.0
+                                                                                        Revision No.: 2
+                                                                                             Date: 02/17
+                                                                                             Page 3 of 4
+
+
+      •    Developing the QAPP and SOPs with the assistance of APPCD and the EPA Regions
+      •    Posting and updating the Annual Verification Schedule on AMTIC 4
+      •    Scheduling quarterly SRP conference calls
+      •    Providing funding for the maintenance, upkeep, and shipping of the SRPs
+      •    Providing funding for NISTs’ annual verifications
+      •    Coordinating SRP to SRP verifications with ORD on a shared server
+      •    Coordinating SRP Workgroup
+
+SRP Workgroup. The SRP Workgroup is made up of the entities described above and meet
+annually or when necessary to address technical issues with the program. This SRP Program has
+been implemented for many years and has not changed significantly in that time period.
+Therefore, there are not many “new” issues that arise and those that do are usually related to
+software or hardware upgrades. Workgroup meetings will be used to develop annual SRP to
+SRP schedules, any procedural modifications and new training activities.
+
+Monitoring Organizations. The monitoring organizations are required to provide a level 2
+transfer standard (see Section 5) for verification against the level 1 standard on an annual basis.
+Guidance on the theory and process behind the implementation of the transfer standards can be
+found in the document titled: Transfer Standards for Calibration of Air Monitoring Analyzers
+for Ozone 5. Regional SRP operators will conduct the verification and provides results to the
+monitoring organizations.
+
+
+
+
+4
+    http://www.epa.gov/ttnamti1/srpqa.html
+5
+    http://www.epa.gov/ttnamti1/qapollutant.html
+Project: SRP QAPP
+   Element No.: 4.0
+    Revision No.: 2
+         Date: 02/17
+         Page 4 of 4
+                                                                                                Project: SRP QAPP
+                                                                                                   Element No.: 5.0
+                                                                                                    Revision No.: 1
+                                                                                                         Date: 02/17
+                                                                                                         Page 1 of 2
+
+
+
+                             5.0 Problem Definition/Background
+
+                                                             In ambient air monitoring
+                                                             applications, precise ozone
+                                                             concentrations called standards are
+                                                             required for the calibration of ozone
+                                                             analyzers. Gaseous ozone
+                                                             standards cannot be stored for any
+                                                             practical length of time due to the
+                                                             reactivity and instability of the gas.
+                                                             Therefore, ozone concentrations
+                                                             must be generated and “verified” on
+                                                             site. When the monitor to be
+                                                             calibrated is located at a remote
+                                                             monitoring site, it is necessary to
+                                                             use a transfer standard that is
+                                                             traceable to a more authoritative
+                                                             standard. Traceability is the
+                                                             “property of a measurement result
+                                                             whereby the result can be related to
+                                                             a stated reference through a
+                                                             documented unbroken chain of
+calibrations, each contributing to the measurement uncertainty” 1 (ISO).
+
+
+A transfer standard is defined as a transportable device or apparatus which, together with
+associated operational procedures, is capable of accurately reproducing pollutant concentration
+standards or of producing accurate assays of pollutant concentrations which are quantitatively
+related to a higher level and more authoritative standard. The transfer standard’s purpose is to
+transfer the authority of a Level 1 pollutant standard to a remote point where it is used to verify
+or calibrate an air monitoring analyzer.
+
+Transfer standards may be used for many different purposes. In this document, however, the
+discussion of transfer standards for ozone (O3) applies to the family of standards that are used
+beyond standard reference photometers or Level 1 standards. This document identifies the
+family of standard reference photometers (SRPs) as Level 1 standards. Beyond the SRPs, all
+standards will be considered transfer standards and will be numbered (starting with 2) based on
+its “distance in the traceability chain” from a verification against a Level 1 standard.
+
+1
+    International Standards Organization (ISO)- International Vocabulary of Basic Terms in Metrology
+                                                                                 Project: SRP QAPP
+                                                                                    Element No.: 5.0
+                                                                                     Revision No.: 1
+                                                                                          Date: 02/17
+                                                                                          Page 2 of 2
+
+
+
+
+A claim of traceability requires three elements:
+
+   1. a declaration of the source of traceability (e.g., NIST),
+   2. a full description of the traceability chain from the source to the measurement of interest,
+      and
+   3. an uncertainty claim with supporting data. The responsibility for providing support for an
+      uncertainty claim rests with the entity making the claim (i.e., the provider), but the
+      responsibility for assessing the validity of such a claim rests with the consumer.
+
+Figure 5.1 represents the scheme that will be employed to ensure that the use of ozone transfer
+standards are applied in a manner that will ensure a specified level of measurement uncertainty
+and traceability. Measurement uncertainty describes a region about an observed value of a
+physical quantity which is likely to enclose the true value of that quantity. Measurement
+uncertainty is related with both the systematic and random error of a measurement, and depends
+on both the bias and precision of the measurement instrument. At each measurement phase (e.g.,
+levels in Fig. 5.1) errors can occur, that in most cases, are additive.
+
+The goal of this QAPP is to describe the quality system requirements to conduct the traceability
+steps 1 and 2:
+
+   1. Level 1 SRP #7 to Regional SRP Verification
+   2. Regional SRP to monitoring organization Level 2 transfer standard.
+                                                                                  Project: SRP QAPP
+                                                                                     Element No.: 6.0
+                                                                                      Revision No.: 1
+                                                                                           Date: 02/17
+                                                                                           Page 1 of 4
+
+
+
+                                  6.0 Project/Task Description
+The purpose of this element is to provide a background of the types of activities to be conducted,
+the measurements that will be taken and the associated quality assurance/quality control
+(QA/QC) goals, procedures, and timetables for collecting the measurements. Due to the nature of
+the verification activity, OAQPS has identified a Category 1 QAPP for this program.
+
+The goal of this project is to verify that the Regional SRPs operating in the AAMP network are
+within the acceptance limits explained below and identified in section 7. It conforms to 40 CFR
+Part 58 Appendix A which requires that test concentrations for ozone (O3) must be obtained in
+accordance with the ultra violet photometric calibration procedure specified in 40 CFR Part 50
+Appendix D, or by means of a certified O3 transfer standard. This process has been deemed to
+meet the acceptance requirements for certifying transfer standards.
+
+6.1        Description of Work to be Performed
+
+The following activities will occur each year but not necessarily on a calendar year basis:
+
+      •    The SRP Workgroup will meet (face to face or via conference call) on a quarterly basis
+           to:
+               o Discuss general issues/updates in the program,
+               o discuss necessary funds for the year to include upgrades, repairs, and NIST
+                   verification. OAQPS will secure funds each year, and
+               o set up the SRP # 7 regional delivery and upgrade schedule (if upgrades necessary).
+                   This schedule will be posted on SRP site on AMTIC 1
+      •    APPCD will work with NIST to transfer both SRP#7 (every 3 years) and SRP #1 (every
+           year) to NIST for re-verification. NIST will verify #1 and #7 and provide results to
+           APPCD and OAQPS.
+      •    APPCD will ship SRP#7 to the Regional Offices for SRP to SRP verifications. The
+           Regions will verify their SRP against #7 using the SRP SOPs (also on SRP AMTIC site)
+           and provide verification data to OAQPS SRP Lead.
+      •    APPCD will receive SRP #7 back from Regions and check it against SRP#1 at
+           frequencies described in the quality control section.
+      •    Regional offices will schedule SRP to level 2 transfer standard verifications with
+           monitoring organization and follow SRP SOPs for verifications. Verification results will
+           be provided to the monitoring organization and stored in the Regions SRP Verification
+           database.
+
+
+
+
+1
+    http://www.epa.gov/ttnamti1/srpqa.html
+                                                                                  Project: SRP QAPP
+                                                                                     Element No.: 6.0
+                                                                                      Revision No.: 1
+                                                                                           Date: 02/17
+                                                                                           Page 2 of 4
+
+
+6.2 Measurements Expected
+
+The SRP program is fairly straight forward. The process entails the generation of an ozone
+concentration from the authoritative instrument and comparing this value to the measure
+concentration of the instrument being verified. The measurements expected will be similar for
+SRP to SRP verifications versus SRP to Level 2 standards but will be discussed separately.
+
+6.2.1 SRP #7 to Regional SRP Re-Verification.
+
+The SRP#7 comparison is accomplished by averaging 10 points per concentration with a
+minimum of 12 concentration points, which includes a zero at the start and at the end each re-
+verification run. (see Figure 9.7.19.1 Verification Control Box in the SRP SOP). Each of these
+individual concentration sets (or re-verification run) is considered a cycle in the SRP Control
+Software. At a minimum, the SRP comparison will consist of 3 cycles (approximately 2 hours
+per cycle). For an acceptable comparison, the average of all the cycles, the regression slope must
+be 1.00 + 0.01 and the intercept must be + 1ppb.
+
+
+6.2.2 SRP to Level 2 Standard Re-Verifications
+
+The SRP comparison is accomplished by averaging 8 stable readings for each concentration
+point. There should be a minimum of 6 concentration points and a zero at the start and at the end
+of each cycle. This is considered a cycle. At a minimum, the SRP comparison will consist of
+three cycles (approximately 1 hour per cycle). For an acceptable comparison, the average slopes
+of all the cycles are <+ 3ppb and the intercept must be 0 + 3ppb . There is a separate standard
+operating procedure (SOP) for this comparison so it is not discussed in any detail in this QAPP.
+Table 7-1, which summarizes the transfer standard acceptance criteria, includes this comparison
+as a “Re-Verification” to the SRP” and should not be misconstrued as an “initial 6x6
+verification” (discussed below).
+
+6.2.3 SRP to Level 2 “6x6” Verification
+
+Upon initial receipt of a new transfer standard that will be designated as a level 2 standard, or a
+level 2 standard that has undergone repair, a “6x6” verification is required. The verification
+requires the averaging of 6 comparisons between the transfer standard and a level 1standard.
+Each comparison must cover the full range of O3 concentrations (6 concentrations) and is to be
+carried out on different days (6 days). The process is the same as described in 6.2.2 with the
+exception of carrying the process out over 6 days. This process is more fully described in Section
+4 of the document Transfer Standards For The Calibration of Ambient Air Monitoring
+Analyzers 2. This document is considered a reference to this QAPP and does not need to be
+
+2
+    http://www.epa.gov/ttnamti1/qapollutant.html
+                                                                                Project: SRP QAPP
+                                                                                   Element No.: 6.0
+                                                                                    Revision No.: 1
+                                                                                         Date: 02/17
+                                                                                         Page 3 of 4
+
+repeated in this document. A new Level 2 standard or one that was adjusted or repaired would
+also be expected to undergo an initial 6x6 verification with an SRP. Using a Level 2 Standard to
+perform a 6X6 verification of another Level 2 Standard is discouraged
+
+6.3 Personnel
+
+Personnel performing this work will be federal EPA personnel or personnel working under EPA
+contracts. Personnel performing this work will be federal EPA personnel or personnel working
+under EPA contracts. A working knowledge of the SRP and the various Level 2 standards that
+arrive for verification are needed to conduct this work. SRPs have been operated out of the
+Regional laboratories for many years and training is passed down from operator to operator with
+the use of the SRP-SOPs. However, operators must be able to demonstrate proficiency and
+overall understanding of the SRP system. When necessary the APPCD will provide training for
+new operators.
+
+6.4 Equipment
+
+Figure 6.1 demonstrates a set-up of the SRP in a laboratory setting. Each SRP consists of a
+separate optical bench SRP Photometer and two instrumentation modules (electronics and
+pneumatics).
+                                                                                Project: SRP QAPP
+                                                                                   Element No.: 6.0
+                                                                                    Revision No.: 1
+                                                                                         Date: 02/17
+                                                                                         Page 4 of 4
+
+
+
+
+In addition, the system requires:
+
+   • SRP isolation power transformer. (optional)
+   • Computer with optional printer
+   • SRP Control Program for WindowsXP Service Pack 3
+   • Zero grade air generator capable of supplying clean air at 35 pounds per square
+     inch (psi) and 30 liters per minute (LPM)
+   • Teflon tubing
+   • NIST traceable barometer, for lab pressure reading.
+   • NIST traceable thermometer, for lab temperature reading
+   • Agency server for reliable data storage
+                                                                                      Project: SRP QAPP
+                                                                                           Element No: 7
+                                                                                           Revision No: 1
+                                                                                               Date: 02/17
+                                                                                               Page 1 of 4
+
+
+
+
+          7.0 Data Quality Objectives and Criteria for Measurement
+The purpose of this element is to document the DQOs of the project and to establish performance
+criteria for the environmental data operation (EDO) that will be used in generating the data.
+
+7.1        Data Quality Objectives
+DQOs are qualitative and quantitative statements derived from the DQO process that clarify the
+monitoring objectives, define the appropriate type of data, and specify the tolerable levels of
+decision errors.
+
+As indicated in 40 CFR Part 58 Appendix A:
+
+2.6.2 Test concentrations for ozone (O3) must be obtained in accordance with the ultra violet
+photometric calibration procedure specified in appendix D to part 50 of this chapter, or by
+means of a certified O3 transfer standard.
+
+At present, all monitoring organizations calibrate ozone analyzers using a certified transfer
+standard. The SRP Program provides traceability for the standards used by monitoring
+organization to calibrate ozone analyzers.
+
+Since the first environmental data operation is to establish traceability among the family of Level
+1 SRPs, the data quality objective for a Level 1 (host) to Level 1 (guest) comparison is:
+
+Regression slope = 1.00 + 0.01 and intercept <+ 1 ppb
+
+This estimate is based on an SRP to SRP comparison of three cycles, by averaging 10 points per
+concentration with a minimum of 12 concentration points, which includes a zero at the start and
+at the end each verification run. The host standard is considered the authoritative standard.
+Relative to this QAPP, SRP #7 is considered the host and the Regional SRP is considered the
+guest.
+
+The second environmental data operation is to establish traceability of the Level 1 Regional SRP
+to the Level 2 standards brought in by the monitoring organizations. There are two checks that
+may be accomplished.
+Initial 6 x 6 verification = RSD of six slopes 3.7% Std. Dev. of six intercepts 1.5
+Reverification = Average slope of each individual point difference < + 3%
+
+The initial 6 x 6 evaluation is described in the document Transfer Standards for Calibration of
+Air Monitoring Analyzers for Ozone 1, and helps to establish the accuracy and repeatability of the
+Level 2 standard over a six-day period. Once the Level 2 standard passes the 6x6 verification, in
+subsequent years it will undergo an annual reverification with a minimum of 6 upscale
+
+1
+    http://www.epa.gov/ttnamti1/qapollutant.html
+                                                                                   Project: SRP QAPP
+                                                                                        Element No: 7
+                                                                                        Revision No: 1
+                                                                                            Date: 02/17
+                                                                                            Page 2 of 4
+
+
+
+concentration points (plus zero at start and end) with each concentration point replicated 7 times.
+
+7.2 Proposed Measurement Quality Objectives for Precision and Bias Data Quality
+Indicators
+
+Based upon the criteria above, the quality of the data must be evaluated and controlled to ensure
+that it is maintained within the established acceptance criteria. Measurement quality objectives
+(MQOs) are designed to evaluate and control various phases of the measurement process to
+ensure that total measurement uncertainty is within the range recommended by the DQOs. The
+MQOs can be defined in terms of the following data quality indicators:
+
+Precision—A measure of mutual agreement among individual measurements of the same
+property usually under prescribed similar conditions. This is the random component of error.
+Replication of individual concentration points can be used to assess precision.
+Bias—The systematic or persistent distortion of a measurement process, which causes error in
+one direction. Bias will be determined by estimating the positive and negative deviations from
+the true value as a percentage of the true value. Comparison of the authoritative SRP (host) to the
+subordinate SRP or transfer standard (guest) identifies acceptable or unacceptable levels of bias.
+Representativeness—A measure of the degree in which data accurately and precisely represent a
+characteristic of a population, parameter variations at a sampling point, a process condition, or an
+environmental condition. Since the SRP Program is a quality control technique, its goal is to
+ensure that the transfer standards can provide reliable concentrations of ozone to ozone monitors
+to ensure they are within calibration acceptance requirements. In that regard, testing of these
+standards are made across the operating ranges all Federal Reference Method (FRM) ozone
+monitors and from that respect they provide representative concentrations even though ambient
+air concentrations of ozone will rarely extend to the instruments operating range.
+Detectability—The determination of the low-range critical value of a characteristic that a
+method-specific procedure can reliably discern. Transfer standards are tested at low
+concentration ranges and help establish that the analyzers that use the transfer standards are linear
+at these low concentrations.
+Completeness—A measure of the amount of valid data obtained from a measurement system
+compared to the amount that was expected to be obtained under correct, normal conditions. Since
+the SRP verifications are accomplished in a controlled laboratory setting, a goal of 90%
+completeness is established.
+Comparability—A measure of confidence with which one dataset can be compared to another.
+By use of the same SOP/QAPP, and the traceability of all SRPs to a common SRP, the SRP
+Program is able to ensure the comparability of SRP devices between the Regional laboratories.
+
+In order to achieve acceptable verification results, a number of checks must be made to the SRP.
+Table 7-1 provide a description of the checks, their frequency, acceptance criteria and the section
+of the SRP-SOP where they can be found.
+                                                                                                         Project: SRP QAPP
+                                                                                                              Element No: 7
+                                                                                                              Revision No: 1
+                                                                                                                  Date: 02/17
+                                                                                                                  Page 3 of 4
+
+
+
+
+Table 7-1 Summary Specifications for the Family of Ozone Standards.
+      Requirement                    Frequency                  Acceptance Criteria                 Information /Action
+
+                            Level 1 Traveling SRP to Regional Level 1 SRP
+Verification Procedure      1/year                        Regression slope = 1.00 + 0.01       Usually at a Regional Office
+                            (3 evaluation cycles of 10    and intercept <+ 1 ppb               and compared against the
+                            concentrations and zero)                                           traveling EPA SRP
+SRP & STOLAB                Every Verification            SRP> 8 hour                          SOP Section 4.2.4
+Calibrator Warm Up                                        STOLAB > 15 minutes
+Time
+Verification for Zero Air   Once a year (annual           0 ± 0.2 ppb                          SOP section 4.3.8. Check
+                            maintenance) or if there is                                        against zero air tank
+                            a suspected problem.
+
+Temperature Check           Every Verification            STEP 1: > 0.0 mV and <1.0mV          SOP section 4.2.5
+                                                          STEP 2: 300.0 mV ± 0.1 mV or
+                                                          1000.0 mV ± 0.1 mV
+                                                          STEP 3: >0.0 mV and <1.0 mV
+                                                          STEP 4: 30°C (or 100°C) ±0.01
+                                                          All 4 steps must pass
+
+Pressure Check              Every Verification            1) + 0.2 mb                          SOP Section 4.2.6
+                            1) from lab standard          2) ± 0.1 mb from 700.0 mb
+                            2) in CAL position
+Source lamp and O3          Every Verification            Readings with + 0.1o C (of           SOP Section 4.2.7
+generator lamp                                            Watlow set point) actual
+temperature                                               temperature setting will vary from
+                                                          SRP to SRP
+Scaler Counts               Every Verification            Scaler 1: >100,000 and               SOP Section 4.2.8
+                                                          <250,000
+                                                          Scaler 2: >80,000 and
+                                                          <250,000
+Dark Counts                 Every Verification            >5 and <25 counts                    SOP Section 4.2.9
+
+Stability Test              Every Verification            Last 3 < 0.000030 Ratio              SOP section 4.1.10
+                                                          Std Dev of Scaler1 and Scaler2
+                                                          Last 3 < 15
+Volt Meter-Certification    1/year                        Resolution of at least 0.1 mV
+
+STOLAB Certification        1/year
+
+Lab Pressure Standard       1/year by manufacturer or
+Certification               ISO 17025 Accredited Lab
+
+Level 1 Regional SRP to Level 2 Transfer Standard
+ Verification (6x6)         After qualification (we do    RSD of six slopes 3.7%               Transfer Standard Doc
+One per day over six days   not do qualifications any     Std. Dev. of 6 intercepts 1.5 and    EPA-454/B-10-001 Section
+6 concentration points      more) see SRP SOP 5.2         Slope of 1.00 +/- 3% and             4.1
+Zero before and after       and for new units or any      Intercept of 0 +/- 3ppb              SOP
+Average 7 points per        unit after major repairs.
+concentration.
+                                                                                                         Project: SRP QAPP
+                                                                                                              Element No: 7
+                                                                                                              Revision No: 1
+                                                                                                                  Date: 02/17
+                                                                                                                  Page 4 of 4
+
+
+
+      Requirement                     Frequency                Acceptance Criteria                   Information /Action
+Re-Verification              After qualification and     Average slope of each individual    Level 2 standard usually
+                             upon                        point difference < + 3%             transported to EPA
+Total of three cycles on 1   receipt/adjustment/repair                                       Region’s SRP for
+day                          1/year                                                          comparison
+6 concentration points
+Zero before and after
+Average 7 points per
+concentration.
+
+
+
+
+SRP & STOLAB                 Every Verification          > 4 hour preferably overnight for   5.1.4
+Calibrator Warm Up                                       SRP
+Time                                                     STOLAB >15 min
+Verification for Zero Air    Annually or as needed.      0 ± 0.2 ppb                         SOP section 4.3.8. Check
+                                                                                             against zero air tank
+Temperature Check            Every Verification/Re-      STEP 1: > 0.0 mV and <1.0mV         Take corrective action (see
+                             Verification                STEP 2: 300.0 mV ± 0.1 mV or        SOP)
+                                                         1000.0 mV ± 0.1 mV
+                                                         STEP 3: >0.0 mV and <1.0 mV
+                                                         STEP 4: 30°C (or 100°C) ±0.01
+                                                         All 4 steps must pass
+
+Pressure Check               Every Verification/Re-      1) > + 0.2 mb                       SOP Section 5.1.1.6
+                             Verification                2) ± 0.1 mb from 700.00mb
+                             1) from lab standard
+                             2) in CAL position
+Source lamp and O3           Every Verification/Re-      Readings with + 0.1o C of each      SOP Section 5.1.1.7
+generator lamp               Verification                other
+temperature
+Scaler Counts                Every Verification/Re-      >100,000 and <250,000               SOP Section 5.1.1.8
+                             Verification
+Dark Counts                  Every Verification/Re-      >5 and <25 counts                   SOP Section 5.1.1.9
+                             Verification
+Stability Test               Every Verification/Re-      Last 3 < 0.0003 Ratio Std Dev       SOP section 5.1.1.10
+                             Verification                dstab131 or other
+                                                         Last 3 < 15 Count ratio
+Volt Meter-Certification     1/year                      To be based on the instrument
+Resolution of at least 0.1                               certifying laboratory (NIST
+mV                                                       Traceable or ISO 17025
+                                                         accredited)
+Lab Temperature              1/year                      To be based on the instrument
+Standard Certification                                   certifying laboratory (NIST
+resolution of +0.1oC                                     Traceable or ISO 17025
+                                                         accredited)
+Lab Pressure Standard        1/year                      To be based on the instrument
+Certification Resolution                                 certifying laboratory (NIST
+of at least 0.1 mbar                                     Traceable or ISO 17025
+                                                         accredited)
+
+
+
+Information in red are not acceptance criteria they are the criteria upon which one chooses a
+standard.
+                                                                                 Project: SRP-QAPP
+                                                                                    Element No.:8.0
+                                                                                     Revision No.: 2
+                                                                                          Date: 02/17
+                                                                                          Page 1 of 1
+
+
+
+
+              8.0 Special Training Requirements/Certification
+For this project, no special training requirements or certifications are required. Each new EPA
+SRP operator gets training from the ORD SRP lead, if possible, at the new operator’s location.
+The SRP SOP is the basis of the training. The training will be documented in a certificate, with
+dates of the training, including hours involved, trainer and trainees name(s), and the training
+location (see Section 9). This information will be posted on the EPA QA SharePoint Site.
+
+The training will include the comparison of the Regional SRP to the RTP SRP (#7). The training
+will also include an initial verification of a monitoring agency’s level 2 standard.
+
+If the ORD lead is not available, very experienced EPA Regional SRP operators can provide the
+training. A final alternative is sending the new operator to NIST, when the NIST SRP lead is
+available.
+                                                                                    Project: SRP QAPP
+                                                                                       Element No.: 9.0
+                                                                                        Revision No.: 2
+                                                                                             Date: 02/17
+                                                                                             Page 1 of 4
+
+
+
+                           9.0 Documentation and Records
+The purpose of this element is to define the records critical to the project, the information to be
+included in reports, the data reporting format, and the document control procedures to be used.
+
+A document, from a records management perspective, is a volume that contains information,
+which describes, defines, specifies, reports, certifies, or provides data or results pertaining to
+environmental programs. As defined in the Federal Records Act of 1950 and the Paperwork
+Reduction Act of 1995 (now 44 U.S.C. 3101-3107), records are: “...books, papers, maps,
+photographs, machine readable materials, or other documentary materials, regardless of physical
+form or characteristics, made or received by an agency of the U.S. Government under Federal
+Law or in connection with the transaction of public business and preserved or appropriate for
+preservation by that agency or its legitimate successor as evidence of the organization, functions,
+policies, decisions, procedures, operations, or other activities of the Government or because of
+the informational value of data in them...”
+
+The following information describes the document and records procedures for the SRP Program.
+In EPA’s QAPP regulation and guidance, EPA uses the term “reporting package,” which will be
+defined as all of the information required to support the concentration data reported to EPA. This
+information includes all data required to be collected, as well as data deemed important by the
+SRP Program.
+
+9.1       Documents and Records for SRP Network
+
+The following documents will be kept by the OAQPS and ORD SRP leads:
+
+      •   Paper and electronic SOPs and the QA Project Plan
+
+      •   SRP vs SRP comparison records/reports,
+
+      •   Equipment/service purchases, and maintenance/repair records/logbooks, are kept in RTP,
+          NC, where they are generated or sent by NIST or the EPA Regions to RTP. For example,
+          the comparisons of one or both of the 2 RTP SRPs against the NIST-located SRPs are
+          provided by NIST to RTP. These records will also be archived.
+
+The OAQPS and ORD SRP leads will keep these records and reports on an ORD server as
+described in Section 9.2. In addition, the SOP, QAPP, and Level 1 verifications will also be
+archived on the Ambient Air QA Program SharePoint site in the SRP Program file.
+                                                                                               Project: SRP QAPP
+                                                                                                  Element No.: 9.0
+                                                                                                   Revision No.: 2
+                                                                                                        Date: 02/17
+                                                                                                        Page 2 of 4
+
+Similarly, SRP Program records and reports generated or sent to the Regional SRP operators are
+kept as required by EPA in the offices of the Regional SRP operators, and the reports are kept by
+the agencies that Regional operators are conducting the comparisons for.
+
+Since Regions 3 and 10 do not have SRPs, the records and reports of the Region 3 and 10 state
+and local agencies that sent their primary ozone standards to Regions 2 and 9, respectively, may
+be kept by the “comparing” and the “home” Regions, and by the state or local agencies.
+
+In addition, it should be said that Region 10 has been primarily- or entirely- having its standards
+(those state primary ozone standards to the CA ARB ozone SRP operator in the Sacramento CA
+labs of CA ARB, and not to the SRP in the EPA Region 9 labs in Richmond, CA.
+
+9.1.1 Data Reporting Package
+
+All information that is sent to RTP for the SRP for a particular year will be filed using the
+following file naming convention.
+
+     1. Program Identifier: SRP
+     2. SRP Serial Number 1: (i.e., 06 is the identifier for the Region 5 SRP)
+     3. Year: YYYY
+
+As an example the file structure for the Region 5 SRP whether in the Region, or in RTP would
+be “SRP-06_2014” for calendar year 2014.
+
+The SRP files will be further separated into functional areas as shown in Table 9-1. Section 19
+lists the raw data that will be collected, saved and archived for the SRP. Table 9-1 provides the
+documents and records that will be kept for the program.
+
+Table 9-1 SRP File Structure
+Program Identifier                 SRP
+      SRP S/N
+        Year
+    SRP File Code
+                                 Category                            Record/Document Types
+      Function
+PM                    Program Management Files         Policy Memorandum
+
+
+
+
+1
+ Serial numbers for all SRPs in the ambient air program can be found on the AMTIC website at
+http://www.epa.gov/ttnamti1/srpqa.html
+                                                                                           Project: SRP QAPP
+                                                                                              Element No.: 9.0
+                                                                                               Revision No.: 2
+                                                                                                    Date: 02/17
+                                                                                                    Page 3 of 4
+
+
+Program Identifier                 SRP
+        SRP S/N
+         Year
+  SRP File Code
+                                 Category                        Record/Document Types
+     Function
+CO                    Communications Files        Telephone record and e-mail communication between:
+                                                      • RTP- ORD and OAQPS
+                                                      • Monitoring Orgs
+                                                      • Other
+QA                    Quality Assurance Files     SRP QAPP
+                                                  Instrument and Standard Certifications
+                                                  QA/QC Check Reports
+                                                  Data validation summaries
+TE                    Technical Files             Standard operating procedures (SOPs)
+                                                  Documentation of instrument inspection
+                                                     and maintenance
+                                                  Laboratory notebook
+                                                  Calibration Records
+                                                  Procurement logs
+                                                  Inventories of capital equipment, operating supplies,
+                                                     and consumables
+                                                  Repair and maintenance (e.g., service records)
+DF                    Data Files                  SRP-SRP verifications (Annual)
+                                                  SRP-Level 2 (by Quarter)
+RE                    Reports                     Verification Reports (by Quarter)
+                                                  Journal articles/papers/presentations
+TR                    Training                    Training audit document
+                                                  Training materials
+
+
+As an example, in 2014 SRP-36 received a verification from 3/11-3/13/2014 this data would be
+stored in “SRP_36_2014_DF_SRP-SRP”
+
+It is suggested that the Regions follow a similar structure but the structure above is not a
+requirement.
+
+9.1.2     Notebooks
+Laboratory notebooks- will be uniquely numbered and be associated with each SRP instrument.
+The notebook will be used to record calibration dates, analytical runs, routine maintenance
+information and any information that may support a particular analytical run.
+
+Laboratory Binders- Three-ring binders will contain inspection and maintenance forms and
+SOPs.
+                                                                                  Project: SRP QAPP
+                                                                                     Element No.: 9.0
+                                                                                      Revision No.: 2
+                                                                                           Date: 02/17
+                                                                                           Page 4 of 4
+
+9.1.3   Electronic Data Collection
+All data for re-verifications, verifications or calibrations (also referred to as cycles) are
+automatically entered into an Excel spreadsheet. The SRP can record up to three different guests
+at the same time and all raw data is recorded into these spreadsheets. After the required number
+of cycles have been completed the start time, end time, date, file name, guest instrument
+identification information, slope, intercept, R2 and average of each concentration point are linked
+to a summary report. The critical elements are evaluated and then the spreadsheet will
+automatically evaluate and display a PASS/FAIL decision for the dataset (see Figure 14.2).
+
+More details about this process can be found in Element 18.0, Data Acquisition Requirements,
+and Element 19.0, Data Management.
+
+Various hard copies are created from electronic systems, such as reports and spreadsheets used
+by the NIST SRP lead, EPA ORD-APPCD, Regional SRP operators, and others. Hard copies that
+are determined to be permanent record (e.g., data that lead to significant findings or conclusions)
+will be filed as a data reporting package to ensure that all SRP Program data are properly
+archived.
+
+9.1.4   Hand-Entered Data
+There will be some data forms that will be entered by hand. These can be found in the SRP
+SOPs. All hard copy information will be completed in indelible ink. Corrections will be made by
+inserting one line through the incorrect entry, initialing this correction, and placing the correct
+entry alongside the incorrect entry, if this can be accomplished legibly, or by providing the
+information on a new line.
+
+9.1.5   E-mail and Attachments
+
+OAQPS, ORD-APPCD, and the Regional SRP operators will create file folders for SRP Program
+Correspondence. Personnel participating in the program will save any emails that they consider
+important to the project either in relation to changes/revisions to the Implementation
+Plan/QAPP/SOPs, changes to analysis timelines and correspondence among monitoring
+organizations and producer participants.
+
+9.2     Data Reporting Package Archiving and Retrieval
+The information discussed above will be retained for 4 years, and it is based on a calendar year
+(i.e., all data from calendar year 2009 will be archived until 12/31/2013). Upon reaching the 4-
+year archival date, hardcopies records can be disposed of. Electronic data will be maintained in
+archive indefinitely.
+                                                                                       Project: SRP QAPP
+                                                                                        Element No.: 10.0
+                                                                                           Revision No.: 2
+                                                                                                Date: 02/17
+                                                                                                Page 1 of 1
+
+
+
+
+                                        10.0 Sampling Design
+The purpose of this element is to describe all of the relevant components of the SRP sampling
+design, the key parameters to be estimated, the number and types of samples to be expected, and
+how the samples are to be collected. In order to provide efficiencies and avoid redundancies:
+
+      •    Section 5 described the background of the program and identified the requirement in 40
+           CFR Part 58 Appendix A, and
+
+      •    Section 6.0 details the critical time lines and activities for the SRP Program.
+
+10.1 Rationale for the Design
+
+The rationale for the implementation design for the SRP Program is to establish traceability and
+acceptable measurement uncertainty (as defined in Table 7-1) across all ozone transfer standards
+used in the AAMP.
+
+Each year, EPA will establish traceability of Level 1 ozone standards from NIST through a
+process whereby all Regional SRPs will be verified by the RTP traveling SRP #7 or #1. This
+process ensures traceability and comparability among the family of Level 1 SRPs. Due to the
+number of Level 1 standards in the Regions, the fact that the Level 1 standards are very stable
+and the traveling standards come back to RTP for re-verification, verification at higher
+frequencies are not needed and could not be accomplished without additional Level-1 SRPs.
+
+The second step in this process provides traceability to the monitoring organizations Level 2
+transfer standards through an annual verification (as defined in Table 7-1). Often, this Level 2
+standard will be located at the monitoring organizations laboratory. From there, Level 3 transfer
+standards that are transported to the field can be verified every 6 months (or beginning and end of
+ozone season). The verification of Level 3 and higher standards are beyond the scope of this
+QAPP and can be found in the document Transfer Standards for Calibration of Air Monitoring
+Analyzers for Ozone 1.
+
+
+
+
+1
+    http://www.epa.gov/ttnamti1/qapollutant.html
+                                                                               Project: SRP QAPP
+                                                                                Element No.: 11.0
+                                                                                   Revision No.: 2
+                                                                                        Date: 02/17
+                                                                                        Page 1 of 1
+
+
+
+
+                    11.0 Sampling Methods Requirements
+This QAPP is strictly for describing the quality system requirements for the SRP to SRP Level #1
+verifications and the SRP to Level 2 verifications. Therefore, there is no ambient air sampling
+and therefore no ambient air sampling methods required in this program beyond the SRP SOP
+listed on AMTIC and referenced in this QAPP.
+                                                                                 Project: SRP QAPP
+                                                                                  Element No.: 12.0
+                                                                                     Revision No.: 2
+                                                                                          Date: 02/17
+                                                                                          Page 1 of 1
+
+
+
+
+                       12.0 Sample Handling and Custody
+This QAPP is strictly for describing the quality system requirements for the SRP to SRP Level #1
+verifications and the SRP to Level 2 verifications. Therefore, there is no sampling and therefore
+sample handling and custody are not required.
+
+Although there is no chain of custody in this process it is extremely important that the traveling
+SRP (Level 1) and Level 2 standards are handled with care. The SRP-SOPs provide for the
+unpacking and packing of the traveling SRP. In many cases, the Level 2 transfer standards are
+brought to the Regional SRP labs by the monitoring organizations. If so, they are unpacked by
+the monitoring organization representative. If not, SRP operators will carefully unpack the
+instruments and note if any damage has occurred in transit. If damage has occurred, it will be
+immediately reported to the monitoring organization as well as a determination if the damage can
+be repaired and whether a verification can be implemented.
+                                                                                 Project: SRP QAPP
+                                                                                  Element No.: 13.0
+                                                                                      Revision No.:2
+                                                                                          Date: 02/17
+                                                                                          Page 1 of 2
+
+
+
+
+                          13.0 Analytical Methods Requirements
+The SRP Program will follow the procedure Standard Operating Procedure (SOP) for the
+Verification and Re-verification of EPA’s Ozone Standard Reference Photometers. This
+document is on the SRP website on AMTIC 1. Since SOPs may change more frequently than the
+QAPP, it is not included in this document.
+
+The procedure is used to verify both the regional SRPs against the traveling SRP (with the
+traveling SRP called the “host” SRP), as well as the verification of the Regional SRP to the
+monitoring organizations Level 2 standards (in this case the Regional SRP is considered the
+“host”).
+
+The SOP will be followed as written unless:
+           •     Changes in the SOP are required
+           •     TSAs uncover findings that need correction to the method.
+           •     New instrumentation requires a change.
+Regions or the ORD SRP contact will notify the EPA RTP SRP Lead if a change is needed.
+After discussion with ORD and the Regions, if a change is needed to improve data quality, it will
+be instituted immediately and a record, in the form of a quality bulletin (see Fig. 13.1), will
+document the reason for the change, and the affect it had on verifications prior to the change. An
+addendum will be made to the SOP that will cover the change until there is time for the SOP to
+be revised (within one year of identification). Changes that do not effect the quality of data but
+are either grammatical in nature or provide an alternate acceptable procedure will be made on a
+less frequent basis.
+
+
+
+
+1
+    http://www.epa.gov/ttnamti1/srpqa.html
+                                                                                Project: SRP QAPP
+                                                                                 Element No.: 13.0
+                                                                                     Revision No.:2
+                                                                                         Date: 02/17
+                                                                                         Page 2 of 2
+
+
+
+
+                                         Quality Bulletin
+
+
+  Subject:                                              Number __________________
+                                                        Date _____________________
+                                                        Page _________of _________
+                                                        Supersedes No. ____________
+                                                        Dated ____________________
+
+
+  Replace and Discard Original
+
+
+
+
+  Add Material to Document
+
+
+
+
+  Notes:
+
+
+
+
+                                                             ________________________
+                                                                 SRP QA Coordinator
+
+
+
+
+              Retain this bulletin until further notice
+              Discard this bulletin after noting contents
+              This bulletin will be invalid after (Date) _____________
+              This bulletin will be incorporated into quality
+              Procedure No. ____________ by (Date) _____________
+
+
+Figure 13.1. Quality bulletin
+                                                                                  Project: SRP QAPP
+                                                                                      Element No.:14
+                                                                                      Revision No.: 2
+                                                                                          Date: 02 /17
+                                                                                           Page 1 of 4
+
+
+
+                       14.0 Quality Control Requirements
+To assure the quality of data from air monitoring measurements, two distinct and important
+interrelated functions must be performed. One function is the control of the measurement process
+through broad QA activities, such as establishing policies and procedures, developing DQOs,
+assigning roles and responsibilities, conducting oversight and reviews, and implementing
+corrective actions. The other function is the control of the measurement process through the
+implementation of specific QC procedures, such as audits, calibrations, checks, replicates, and
+routine self-assessments. In general, the greater the control of a given monitoring system, the
+better will be the resulting quality of the monitoring data.
+
+QC is the overall system of technical activities that measures the attributes and performance of a
+process, item, or service against defined standards to verify that the stated requirements
+established by the customer are met. In the case of the AAMG, QC activities are used to ensure
+that measurement uncertainty, as discussed in Section 7, is maintained within acceptance criteria
+for the attainment of the DQO.
+
+14.1 QC Procedures
+There are basically two facets of the program that are important to control verification, and
+information collection/assessment/reporting. Each will briefly be discussed below.
+
+14.1 Verification (Analysis)
+
+The Regional SRP Operator will be responsible for establishing and implementing internal QC
+procedures for the measurement of the SRP to SRP verifications and the SRP to Level 2
+verifications, along with associated documentation such as:
+
+   •   SOPs, laboratory notebooks and maintenance records
+   •   Analytical and support equipment selected to conduct the verification
+   •   Configuration of analytical instruments
+   •   Documentation of the measurements and QC checks via the Operation Characteristic
+       Data Sheet (OCDS) (see Figure 14.1)
+   •   Estimated uncertainty of the measured concentrations via the SRP software
+
+Table 7-1 in Section 7 provides the QC checks that will be implemented for this program.
+Section 4 of the SRP SOP provides procedures for all the QC checks described in Table 7-1.
+
+There are only two files/programs needed to implement and document a verification:
+
+The SRP OCDS- Figure 14.1 the OCDS provides the preliminary information necessary to
+check the SRPs operation before a verification begins. Procedures for implementing these checks
+can be found in Section 4 of the SRP-SOP. These checks must pass for the host instrument prior
+to the start of a verification.
+                                                                                  Project: SRP QAPP
+                                                                                      Element No.:14
+                                                                                      Revision No.: 2
+                                                                                          Date: 02 /17
+                                                                                           Page 2 of 4
+
+
+
+
+The Verification Data- The SRP program uses SRP Control Software developed by NIST for
+the verification application which can input both the host and guest instruments to set up a
+verification run, program the necessary concentration levels, and collect the information to assess
+the verification. Procedures for the Control Software can be found in the SOP in Sections 9.3.6,
+9.3.7, and 9.7
+                                                                                                                   Project: SRP QAPP
+                                                                                                                       Element No.:14
+                                                                                                                       Revision No.: 2
+                                                                                                                           Date: 02 /17
+                                                                                                                            Page 3 of 4
+
+14.2 Reporting
+
+An example of the results from a verification run are illustrated in Figure 14.2.
+                                 Standard Reference Photometer
+                                            Verification Report
+
+Calibrating Institute:      EPA Region 9                                        Date:         13-Mar-14
+   Operator:                Bob Hopeman                                         Start Time:   20:05
+   Instrument:              SRP 36      Cell Length=89.59                       End Time:     22:10
+   Comment:                 SRP 36 vs. SRP 7                                    Filename:     c0313002.xls
+
+Calibrated Instrument:      SRP 7         Cell Length=89.40          Calibration                Standard      Ordinary Least Squares
+   Owner:                   OAQPS                                    Results         Value     Uncertainty     1.00169431       0.152088621
+   Contact:                 Scott Moore                              Slope            1.00169       0.00012    0.00012279       0.050351308
+   Make:                    SRP                                      Intercept        0.15209       0.05035    0.99999985       0.114028881
+   Model:                   SRP                                      Covariance                 -5.2459E-09    66546861.1                10
+   Serial Number:           7                                        Res Std Dev      0.10872                  865281.268       0.130025858
+Calibration Parameters:     Zero Start&End;Raw Saved;Dark Count On (4)                                        U(m,b)           -5.24592E-09
+   Air Flow Rate:                     6.0 l/min                                                               Res StdDev        0.108722272
+   Lamp Intensity Range:              0.0       to              88.0 %                                        Points                     12
+   Number Conc. Points:                12               Points/Concentration:               12                Data Ranges
+   Conditioning:            none                                                                              SRP          $C$24:$C$35
+Calibration            SRP 36                       SRP 7                      SRP 7                          Guest        $E$24:$E$35
+Data Points Result          Std. Dev      Result        Std. Dev     Predicted Residual                       Predicted    $G$24:$G$35
+ Dark Count 1             7                          16                                                       Residual     $H$24:$H$35
+ Dark Count 2            13                          17                                                       LampSettings
+             1          0.0           0.2           0.2          0.1         0.15         0.02                           0
+             2      785.9             0.2         787.4          0.6       787.38        -0.02                          88
+             3      680.3             0.2         681.5          0.5       681.58        -0.11                       79.67
+             4      584.1             1.0         585.5          0.5       585.24         0.28                       71.33
+             5      492.7             0.4         493.7          0.4       493.70        -0.03                          63
+             6      407.8             0.5         408.5          0.3       408.66        -0.15                       54.67
+             7      324.4             0.4         325.1          0.3       325.09         0.02                       46.33
+             8      241.8             0.2         242.4          0.2       242.41        -0.03                          38
+             9      144.9             0.2         145.4          0.2       145.32         0.06                       29.67
+            10        45.6            0.2          45.9          0.1        45.88         0.01                       21.33
+            11        16.0            0.2          16.1          0.1        16.17        -0.09                          13
+            12         -0.1           0.1           0.1          0.2         0.05         0.04                           0
+Figure 14.2 Example Verification Report
+
+Upon completion of a full verification, a report is generated. Figure 14.3 represents an example
+summary report for the verification of SRP-36. The highlight row represents the data for the
+verification shown in Figure 14.2. The RTP verifier will send a pdf of the NIST Report of
+Calibration of the host instrument (usually #7) with the instrument. The Standard Uncertainties
+are available for review. Data for SRP to SRP verification are filed at RTP and the respective
+EPA Regions while SRP to Level 2 verifications are filed at the office for which they are
+performed. These data files and reports will be stored as described in Section 9
+                                                  Project: SRP QAPP
+                                                      Element No.:14
+                                                      Revision No.: 2
+                                                          Date: 02 /17
+                                                           Page 4 of 4
+
+
+
+
+Figure 14.3 Example Verification Summary Report
+                                                                                   Project: SRP QAPP
+                                                                                    Element No.: 15.0
+                                                                                       Revision No.: 2
+                                                                                            Date: 02/17
+                                                                                            Page 1 of 3
+
+
+15.0 Instrument/Equipment Testing, Inspection, and
+Maintenance Requirements
+The purpose of this element is to discuss the procedures used to verify that all instruments and
+equipment are maintained in sound operating condition, especially after shipping, and are
+capable of operating at acceptable performance levels. All instrument inspection and
+maintenance activities are documented and filed.
+
+15.1 Testing
+15.1.1 Equipment Testing
+The following equipment is used in the EPA’s SRP Program
+
+   •   NIST Standard Reference Photometers (SRPs)
+   •   Thermo 49C or i and /or API Teledyne 400 Ozone standards (Optional but nice to have a
+       transfer standard available)
+   •   API Teledyne 701H or other Zero Air Generator
+   •   Environics calibrator or other Ozone Generator-containing device (this is optional)
+   •   Primary flow standard (BIOS ML-800 and BIOS Definer 220), MolBlok or Gilabrator.
+   •   SRP temperature and pressure sensors
+   •   Lab temperature, pressure, and RH Standards
+
+SRPs and support instruments used for the EPA SRP Program have been used for verifications
+by trained EPA RTP and EPA Regional SRP operator staff for many years and are known to be
+suitable for this activity. Testing of this equipment occurs through the use of annual SRP
+verifications. The SRPs and support equipment are used to certify (verify, but not
+adjust/calibrate) the commercial ozone standard equipment (Level 2 and greater transfer
+standards), perform ongoing SRP QC checks, and are used as source of the known
+concentrations from which the verification/re-verifications are performed.
+Failure of the SRP, based upon QC checks, will result in troubleshooting and re-calibrations. If
+Regional SRP trouble shooting and recalibration is not successful, OAQPS and ORD APPCD in
+RTP will be notified. APPCD has thoroughly checked and had NIST recertify at least one of the
+2 (traveling and non-traveling) RTP SRPs each year. This traveling SRP will replace the
+Regional SRP until the Regional SRP can be repaired and calibrated.
+                                                                                  Project: SRP QAPP
+                                                                                   Element No.: 15.0
+                                                                                      Revision No.: 2
+                                                                                           Date: 02/17
+                                                                                           Page 2 of 3
+
+
+15.1.2 SRP Testing
+
+Since the agreement of the Photometers from the Regional SRPs are key to a successful SRP
+program, their performance will be monitored and will be re-verified by EPA RTP SRPs before
+the estimated expiration date of the last Regional SRP verification if required. This RTP SRP re-
+verification, with an acceptable result, will provide assurance of the quality of the verification
+data.
+
+15.2 Inspection
+Inspection of various equipment and components can be subdivided into the laboratory and field
+activities.
+15.2.1 Inspection in the Regions
+SRP-07 will be accompanied by a certificate verification from RTP and the certificate of Analysis
+from NIST (per Section 3.9 of the SRP SOP). Regional SRP Operators will perform an inspection
+upon receipt of the traveling SRP (per Section 9.2 of the SRP SOP) to ensure that the traveling
+SRP integrity appears intact and that the certificate of verification (RTP) and Analysis (NIST) is
+complete.
+
+15.2.2 Annual Inspection of Laboratory Items
+In addition to the 3 SRP modules (Pneumatic, Electronic, and Bench), there are several items that
+need routine inspection in the laboratory. The following items will be inspected on an annual
+basis:
+
+   •   Leaks in stainless steel and Teflon tubing and fittings used in the SRP interconnection
+       arrangements for multi-device comparisons.
+   •   Leaks in the SRP module connections used in the verification comparisons
+   •   Minimum of 15 psi zero air gas supply sufficient for the ozone and zero air used in the
+       comparisons
+   •   Leaks/cracks in ¼” o.d. thin walled Teflon tubing
+   •   NIST’s SRP computer data acquisition system
+   •   Leaks around ¼” Swagelok nuts and ferrules
+
+15.3 Maintenance
+There are items in the laboratory that need maintenance attention in the SRP program. There are
+no maintenance activities associated with the field.
+                                                                                      Project: SRP QAPP
+                                                                                       Element No.: 15.0
+                                                                                          Revision No.: 2
+                                                                                               Date: 02/17
+                                                                                               Page 3 of 3
+
+15.3.1 Laboratory Maintenance Items
+The successful execution of a preventive maintenance program by the SRP Regional operators
+will go a long way towards the success of the SRP Program. Table 15-1 provides information
+on laboratory preventive maintenance. The laboratory notebook will document maintenance
+activities.
+
+Table 15-1 Preventive Maintenance in SRP- Laboratories
+                        Item                        Responsibility                    Frequency
+ General laboratory maintenance/cleaning
+ Table cleaning                                  Laboratory Analyst (LA)   Every day of a verification/re-
+                                                                           verification
+
+ Overall laboratory                                        LA              Once a month
+ Analytical Equipment
+ Cleaning                                                  LA              Every 6 months
+ Calibration/verification                                  LA              Annually
+ Tubing replacement                                        LA              Annually
+ Regulator cleaning                                 LA/Support staff       Yearly
+ Laboratory Computers
+ Computer backup                                           LA              Flash drive backup with every
+                                                                           verification run
+ SRP database distribution to OAQPS?                       LA              Flash drive backup with every
+ Computer system preventive maintenance (clean    PC support personnel     As needed
+ out old files, compress hard drive, inspect)
+                                                                               Project: SRP QAPP
+                                                                                Element No.: 16.0
+                                                                                   Revision No.: 2
+                                                                                        Date: 02/17
+                                                                                        Page 1 of 1
+
+
+
+16.0 Instrument Calibration and Frequency
+The purpose of this element is to discuss the procedures used to verify that the SRP
+components, and all instruments and equipment used to do the QC checks on the SRPs, are
+calibrated and are capable of operating at acceptable performance levels. All instrument
+calibration activities are documented and filed.
+
+16.1 Calibration
+16.1.1 Equipment Testing and Frequency
+
+The following equipment is used to perform the QC checks on critical components of the SRPs
+in the EPA’s SRP Program, and need to be calibrated (certified) against a more accurate (higher
+level) standard, at an acceptable frequency, in both RTP and the Regions. These activities need
+to be recorded, signed and dated, and the records and certificates kept available for auditing.
+
+   •   Primary flow standard (BIOS ML-800 and BIOS Definer 220); not critical for ozone
+       concentration, but valuable to have available for troubleshooting.
+   •   SRP Lab pressure sensor (Barometric Pressure Standard, to measure in millibars (mb),
+       with a resolution of at least 0.1 mb; recertified annually
+   •   SRP Lab temperature standard (e.g., a STOLAB Temperature Calibrator), recertified
+       annually
+   •   Voltmeter, accurate to (resolution of) at least 0.1 mv (e.g., Fluke 744B “Calibrator”);
+       recertified within up to 2 years
+                                                                                Project: SRP QAPP
+                                                                                 Element No.: 17.0
+                                                                                    Revision No.: 2
+                                                                                         Date: 02/17
+                                                                                         Page 1 of 2
+
+
+17.0 Inspection/Acceptance for Supplies, Consumables
+and Spare Parts
+The purpose of this element is to discuss the procedures used to verify that all supplies,
+consumables and spare parts needed to ensure the continuing adequate performance of the
+RTP and Regional EPA SRPs are on hand, meet the required specifications and are
+maintained in sound operating condition, especially after shipping, and are capable of
+operating at acceptable performance levels. All supplies, consumables and spare parts
+inspection and acceptance activities are documented and filed.
+
+17.1 Supplies, Consumables, and Spare Parts
+
+The following supplies, consumables, and spare parts should be kept on hand in RTP, at least,
+and, potentially in each Region, for use in the EPA’s SRP Program
+
+   •   Scrubber materials for the zero air supply (purafil, Mole sieve, activated
+       charcoal, etc.)
+   •   Brailsford (and any other) pumps (and/or pump parts)
+   •   O-rings, diaphragms
+   •    Ultra Violet (UV) lamps for the detector and for the ozone generator
+   •   Dwyer Rotameter (s)
+   •   STOLAB Low Temperature Calibrator
+   •   Spare circuit boards and power supplies (RTP)
+   •   Teflon tubing and fittings
+
+
+17.2 Inspection and Acceptance
+       NOTE: If, upon inspection, a problem is discovered, email the exact details
+       immediately to the manufacturer or distributor from whom you purchased
+       these items. You should not accept damaged goods, and the email should
+       document what you have found. A good manufacturer and/or distributor should
+       stand by what they send you.
+
+Upon inspection, the scrubber materials should not appear to be clumped together, nor should
+there be any sign of moisture or unexpected coloration. They should already be in, or, if not, put
+in containers that will keep moisture or other contaminants away from them while they are in
+storage.
+
+The Brailsford pumps should be inspected for any sign of shipping damage. This procedure can
+be facilitated if accompanying paperwork includes a diagram of the pump. If appropriate power
+(24 VDC) can be applied, as a test that the pump is working. If not available, upon receipt from
+                                                                                  Project: SRP QAPP
+                                                                                   Element No.: 17.0
+                                                                                      Revision No.: 2
+                                                                                           Date: 02/17
+                                                                                           Page 2 of 2
+
+shipping, and if no verification needs to occur immediately, then the new pump could be used in
+place of the one already in the SRP.
+
+The O-rings and diaphragms should be received in protective shipping containers, such as sealed,
+transparent plastic bags. They should not be moist, oily, or discolored. They should not have any
+cuts or creases. They should be flexible, not rigid.
+
+The UV Lamps should be carefully inspected to make sure there is no damage; no breaks in the
+glass, no breaks in any visible wires, or breaks or bends in metal plug in connectors.
+
+Inspect the Dwyer Rotameters and insure that there are no cracks, that the rotameter level
+indicating ball is present and moves freely, that the rotameter flow rate indicating lines are
+present and easily readable; and that there is no inappropriate material, either wet or dried, on the
+inside of the rotameter cylinder.
+
+Inspect the STOLAB Temperature Cards and the Ozone Generator block to make sure they are
+seated well in place (most often they come loose during shipping) and have not incurred any
+shipping damage. Look for dents, component breaks, in comparison to diagrams from the
+manufacturers, and to the existing identical parts in the SRPs.
+
+The (FEP) Teflon tubing and fittings should be received in protective shipping containers, such
+as sealed, transparent plastic bags. They should not be moist, oily, or discolored. The tubing
+should not have any (sharp) bends, and no cuts or breaks. The tubing should be flexible, not
+rigid. Make sure that the fittings have any necessary ferules; and that the threads inside the ferule
+caps, and that their other, mating halves, are present, and are not stripped or dented in any way.
+                                                                           Project: SRP QAPP
+                                                                            Element No.: 18.0
+                                                                               Revision No.: 2
+                                                                                    Date: 02/17
+                                                                                    Page 1 of 1
+
+
+18.0 Data Acquisition Requirements
+This element addresses data not obtained by direct measurement from the SRP Program. Since
+all of the data used in the SRP Program will be direct measurements acquired by the SRP
+Program laboratory analysts, this section is not applicable.
+                                                                               Project: SRP QAPP
+                                                                                Element No.: 19.0
+                                                                                   Revision No.: 2
+                                                                                        Date:02/17
+                                                                                       Page: 1 of 4
+
+
+19.0 Data Management
+This element will discuss the SRP Program’s important information that needs to be
+collected, stored, and reported, and how those functions will be managed. Currently, all QC
+check, verification and reporting documentation is kept by the SRP operators performing the
+activities in the locations where the activities are performed. NIST keeps their records, EPA
+RTP keeps their records, and the Regions keep their records. The one exception, so far, is
+that a Report of Calibration that documents the NIST SRP to RTP SRP comparison. This
+comparison is provided to RTP and RTP provides a copy of the document to the Regions
+along with the traveling SRP.
+
+The majority of data used in the EPA SRP program will be direct measurements acquired by
+the RTP and Regional EPA SRP operators in the SRP software systems.
+
+19.1 Information Needed for the SRP Program
+
+Information required to successfully implement the EPA SRP program include:
+
+   •   Paper or electronic records of SRP related purchases, and of maintenance and calibrations
+       of the Temperature, Pressure, and voltage testing/calibrating equipment, and the zero air
+       providing equipment, used to support the accurate and reliable performance of the SRP.
+   •   Electronic records of the QC checks (Fig. 14.1) and verifications performed by the EPA
+       RTP or Regional SRP laboratory operators.
+
+
+19.2 Computer Hardware and Software
+Hardware:
+
+Over the past several years, the network of NIST SRPs has undergone significant upgrades in its
+electronic systems, sampling configuration, and control software. Each SRP consists of a
+separate optical bench and two instrumentation modules (electronics and pneumatics). The
+Optical Bench consists of a single mercury ultraviolet (UV) discharge lamp, UV filter, UV beam
+splitter, two absorption cells, and signal-processing electronics
+SRPs made by NIST and used by EPA have been upgraded over time. From 1989 through 2004,
+a series of 11 individual upgrades were made, including redesign” of the detector module (see
+reference, “Upgrade and Intercomparison…,” June, 2004). The following material in quotes are
+derived from the two references listed in section 12.4.
+                                                                                   Project: SRP QAPP
+                                                                                    Element No.: 19.0
+                                                                                       Revision No.: 2
+                                                                                            Date:02/17
+                                                                                           Page: 2 of 4
+
+The first upgrade involved “replacing 4 independent function circuit boards, and a separate relay
+circuit board, with one main circuit board, called the Digital Interface and Timing Generation
+(DI/TG) Board. Board connections and mounting bracket were improved, and a 24 DC volt power
+supply added. Critical parameter adjustment controls were installed on the front panel, which
+allowed the unit to remain thermally stable during adjustment, which the old design had not
+allowed. The main board is a multi-layer board providing more stringent handling of transmitted
+signals. Particular attention was paid to separation of the digital and analog grounds to avoid
+interference, and various test points are available for convenience during testing. The
+specifications of the signal amplifiers used on the temperature and pressure input signals are 50%
+more stable than those used in the original design. Electric contact relays used in the original
+design for powering the lamp shutter and solenoid valves were replaced by solid state relays, thus
+minimizing power spikes throughout the system. The front panel displays for the two scaler
+channels, temperature and pressure, are brighter and easier to view”.
+
+
+“The electronics upgrade also involved a complete redesign of the detector module. The original
+housing was costly and impractical. The new design utilizes an extruded aluminum box with
+internal mounting brackets. The new detector/ preamp board provides 2 independent, stable
+voltages corresponding to the light intensity in the absorption cells and utilizes a signal amplifier
+with a factor of 5 improvement in stability compared to its predecessor. The new detector V/f
+converters are more stable, and three times faster than the previous ones. These features provide
+increased measurement sensitivity through higher resolution scalar counts, and longer source
+lamp life. The open-collector devices used in the original design for transmitting the V/f output
+signals to the electronics module were replaced with TTL line drivers. Further design
+improvements were made such that these signals are now transmitted over independent coaxial
+cables for improved signal fidelity. Summary: Overall, the new detector modules provide faster
+V/f conversion, a lower noise level, and a smoother output signal.”
+
+
+“Use of the Industry Standard Architecture (ISA) bus in Personal Computers (PCs) has vanished,
+and it has become impossible to purchase a PC with the ISA expansion slots necessary for the
+operation of the version 3 software. A fourth generation control program for the SRP has been
+developed by NIST. New software was required due to the unavailability of new computers with
+the ISA bus. New computers then became available with the Peripheral Component Interface
+(PCI) bus only, which means that the SRPs had to use these PCI control cards. A direct
+replacement of the ISA multi-function card previously used was not available in a PCI version.
+The PCI replacement uses a different connector, so an additional signal distribution module was
+designed and produced to handle the new connector used on the PCI card. This modification
+allowed continued use of existing SRP control cables. A direct replacement for the 24-bit Digital
+Input/ Output (DIO) card for controlling a guest SRP became available for PCI bus operation.
+                                                                                Project: SRP QAPP
+                                                                                 Element No.: 19.0
+                                                                                    Revision No.: 2
+                                                                                         Date:02/17
+                                                                                        Page: 3 of 4
+
+Several of the EPA operators had their SRP computer connected to the Agency network as a
+convenient way to store data to a server and work on data from a remote location. Newer
+computers may have at least one PCI slot and several e-PCIs.”
+
+
+A “dual external manifold was designed using borosilicate glass and the same fittings as on the
+original SRP nmanifolds.TO incorporate the new manifolds into existing SRPs, the original
+manifolds were removed from the front panel of the pneumatics module, and an adaptor plate
+installed with 2 Teflon bulkhead unions. The new arrangement has allowed easy connections to
+manifolds in commercial ozone instruments.”
+
+
+By April of 2013, the redesign and testing of the source /optics lamp block with different
+mounting components had been made and tested. During the same period, an issue of optical path
+length bias had been addressed, and then tested, using a modified design for the optical cell,
+incorporating 3°-tilted windows. The SRPs upgraded with these changes have shown improved
+overall agreement.
+
+
+Software
+
+The first SRP version control software was written in HP Series 80 software. Version 2 was
+written in QuickBasic version 4.5. Version 3 was written using “C” programming language,
+using a front end graphical interface similar to Windows, but was Disk Operating system
+(DOS)–based. In 2000, new hardware using Peripheral Component Interconnect (PCI) control
+cards and Windows Based Visual Basic software were used. In Nov.2001/April 2002, new
+version software was written in Visual Basic Version 6, under a Windows NT, 2000, or XP
+environment, and works with EXCEL 2003. It is planned that software written in Lab View will
+replace Visual Basic.
+
+Physical and Chemical properties data and conversion constants are often required in the
+processing of raw data into reporting units. This type of information, which has not already been
+specified in the monitoring regulations, will be obtained from nationally (and internationally)
+recognized sources. Other data sources may be used with approval from the National SRP
+Program Project Leader. The following sources may be used in the EPA SRP Program without
+prior approval.
+
+NIST –US SRP Technical Lead, makes all SRPs; tests, and retests EPA RTP SRPs
+
+   •   International Organization for Standardization (ISO), International Union of Pure and
+       Applied Chemistry (IUPAC), American National Standards Institute (ANSI), and other
+       widely recognized national and international standards organizations.
+                                                                                 Project: SRP QAPP
+                                                                                  Element No.: 19.0
+                                                                                     Revision No.: 2
+                                                                                          Date:02/17
+                                                                                         Page: 4 of 4
+
+   •   The US Environmental Protection Agency (EPA). Particularly relevant is the Technical
+       Assistance Document (TAD), Transfer Standards for the Calibration of Air Monitoring
+       Analyzers for Ozone (5/31/2009).
+
+   •   The current edition of certain standard handbooks may be used without prior approval
+       from the EPA OAQPS SRP Program Project Leader. Two that are relevant are the CRC
+       Press Handbook of Chemistry and Physics and Lange’s Handbook of Chemistry.
+
+Proposed Future Upgrades: Low voltage temperature cards, made by the company STOLAB,
+to minimize a 0.2 °C observed temperature bias; four temperature sensors, one each on the inlet
+and outlet of each of the cells. Possibly two pressure transducers to measure the pressure from
+each cell and the LabView Control Software.
+
+19.3 Data Recording
+It is the policy of the EPA SRP Program that no data obtained from the Internet, computer
+bulletin boards, or databases from outside organizations shall be used in creating reportable data
+or published reports without approval from the National EPA SRP Program Leader. Requests
+may be raised to the SRP Program Leader, who will discuss it with the OAQPS and ORD
+management of the Program. This policy is intended to ensure the use of high quality data in
+EPA SRP publications.
+                                                                                Project: SRP QAPP
+                                                                                 Element No.: 20.0
+                                                                                    Revision No.: 2
+                                                                                         Date: 02/17
+                                                                                         Page 1 of 2
+
+
+20.0 Assessments and Response Actions
+For the purposes of this QAPP, an assessment is defined as an evaluation process used to
+measure the performance of the quality system and various measurement phases of the data
+operation.
+
+The results of assessments indicate whether the QA/QC efforts are adequate or need to be
+improved. Both qualitative and quantitative assessments of the effectiveness of these control
+efforts will identify those areas most likely to impact the data quality.
+
+To ensure the adequate performance of the quality system, the SRP Program will perform the
+following assessments:
+
+   •   Data Quality Assessments (DQAs)
+   •   Performance Evaluations – The inter-comparisons between NIST and RTP, between RTP
+       and the Regions, and then between the Regions and the states, are Performance
+       Evaluations of the highest order.
+
+20.1 Assessment Activities and Project Planning
+
+20.1.1 Data Quality Assessments
+
+A DQA is a statistical analysis of environmental data used to determine whether the quality of
+data is adequate to support a decision based on the DQOs. Data are appropriate if the level of
+uncertainty is acceptable for the decision (intended use of the data) based on the data.
+
+For NIST to RTP Verifications and RTP to Regional SRP verifications, the SRP acceptance
+criteria must be met or the Level 1 SRP will be taken off line and repaired and only put back into
+service when the SRP meets acceptance criteria. However, every three years EPA will provide a
+DQA of the Level 1 SRP data and the Level 1 to Level 2 data in the network to evaluated how
+well the acceptance criteria is being met. This information may identify trends in data quality
+that may be used to take corrective actions.
+
+20.1.2 Performance Evaluations
+
+Performance evaluations (PEs) are a type of audit in which the quantitative data generated in a
+measurement system are obtained independently and compared with routinely obtained data to
+evaluate the proficiency of an analyst, or a laboratory. NIST will be invited to audit the
+verification activities by challenging the measurement system with an independent SRP. This is
+done every year for the RTP SRPs by bringing them to NIST and having NIST verify one or both
+of the RTP SRPs against one or both of the NIST Gaithersburg, MD-based SRPs.
+                                                                        Project: SRP QAPP
+                                                                         Element No.: 20.0
+                                                                            Revision No.: 2
+                                                                                 Date: 02/17
+                                                                                 Page 2 of 2
+
+
+
+
+20.2 Documentation of Assessments
+
+
+Table 20-1 summarizes each of the assessments discussed above.
+
+Table 20-1. Assessment Summary
+ Assessment        Frequency Personnel             Report Completion    Resolution
+ Activity                     Responsible
+ DQAs              1/3 year   Reg, ORD,            120 days after the   OAQPS, ORD-
+                              OAQPS                calendar year        APPCD
+ PE                Every year ORD, NIST,           30 days after the    APPCD, OAQPS
+                                                   activity
+                                                                                        Project: SRP QAPP
+                                                                                         Element No.: 21.0
+                                                                                           Revision No.: 2
+                                                                                                Date: 2/17
+                                                                                               Page 1 of 2
+
+
+
+
+                        21.0 Reports to Management
+
+This element describes the quality–related reports and communications to management necessary to
+support the SRP program. For the SRP program, management is considered to be the supervisor of the
+ORD technical lead, the OAQPS AAMG QA team leader, and the OAQPS AAMG Group leader, who is
+the supervisor of the AAMG QA Team leader and of the AAMG SRP Program lead; and the EPA
+Regional Managers of the EPA Regional SRP operators; and the supervisor of the California Air
+Resources Board’s SRP operator.
+
+
+21.1 Verification Reports
+
+Within two to three weeks of completion of a verification, the RTP or Regional SRP operator will report
+its verification results in the form of a database file to the RTP ORD APPCD SRP technical lead and
+OAQPS and to the appropriate agency monitoring organization. At a minimum, the draft verification
+results shall include:
+
+    •   The name of the agency and a description of the agency’s primary standard, and original
+        certified characterization of its ozone response slope, intercept, and uncertainties.
+    •   the raw measurement data, measured concentrations, and estimated total uncertainties.
+    •   the percent (or, for low concentrations, ppb) difference between original certified concentrations
+        and calculated measured concentrations.
+    •   a documentation checklist for each EPA certified concentration with any non-conformances
+        (concentration outside of the SRP SOP’s acceptance limits.
+    •   written documentation showing the calculation that the SRP, or agency primary standard
+        operator, used to convert the raw measurement data into the measured concentrations, and their
+        estimated uncertainties.
+
+21.2 Annual Verification Report Summary
+
+Each year ORD/OAQPS will provide a summary report on AMTIC that include the dates when the
+NIST to RTP and the RTP to Regional Level 1 SRPOs were scheduled, when they were accomplished
+and whether the results were acceptable. Comment will be included if there are any technical issues with
+the verification. This Summary will be posted on the SRP page of AMTIC.
+
+EPA Regions will keep a similar summary of SRP to Level 2 verification. Fields for this report will be
+similar to the summary described above but will include PQAO and monitoring agency codes.
+                                                                                       Project: SRP QAPP
+                                                                                        Element No.: 21.0
+                                                                                          Revision No.: 2
+                                                                                               Date: 2/17
+                                                                                              Page 2 of 2
+
+21.3 SRP 3-Year QA Report
+
+The report will provide a summary of the QA information related to the SRP program. It will summarize
+the QC data from all the runs with respect to achieving the MQOs as well as aggregating QC data from
+the runs to provide overall data quality statistics for each Region and RTP. It will summarize any
+external assessments that were performed, the audit results and findings, and any corrective actions that
+were needed. It will provide lessons learned and improvements needed for program improvement.
+                                                                                        Project: SRP QAPP
+                                                                                          Element No.: 22.0
+                                                                                            Revision No.: 2
+                                                                                                 Date: 2/17
+                                                                                                Page 1 of 1
+
+
+
+
+22.0 Data Review, Validation, and Verification Requirements
+
+This element describes how the SRP program will verify and validate the data collection operations
+associated with the program. “Verification” can be defined as confirmation by examination and
+provision of objective evidence that specified requirements have been fulfilled. “Validation” can be
+defined as confirmation by examination and provision of objective evidence that the particular
+requirements for a specific intended use are fulfilled. The major objective for the SRP program is to
+Ensure standards used to calibrate and QC ozone monitors meet acceptance requirements and are
+traceable to NIST.
+
+This section will describe the verification and validation activities that occur during a number of the
+important data collection phases. Earlier elements of this QAPP and the SRP SOPs describe how the
+activities in these data collection phases will be implemented to meet the DQOs of the program. Review
+and approval of this QAPP provide initial agreement that the processes described in the QAPP, if
+implemented, will provide data of adequate quality. To verify and validate the phases of the data
+collection operation, the SRP program will use various qualitative assessments (e.g., performance
+evaluations, technical system audits, etc.) to verify that the QAPP is being followed and will rely on the
+various laboratory QC checks to validate the measurement process.
+
+
+22.1 Verification/Validation Through the SRP Digital Data System
+
+As indicated in Section 13.0, Analytical Methods Requirements, details of the requirements for the
+analytical methods are given in the SRP SOP. The verification/validation process for the SRP program is
+fairly simple. If the Regional SRP operators’ verifications of their SRP to the RTP or NIST SRP are
+within the acceptable range, then one can expect that the derived concentrations of the SRPs against the
+state, local, tribal, or CASTNET level 2 ozone standards are acceptable.
+
+As explained in section 19, Data Management, the RTP or Regional SRP operators will use SRP
+software system to generate the verification reports needed for the program. Verification reports can be
+seen in Element 14.
+                                                                                       Project: SRP QAPP
+                                                                                        Element No.: 23.0
+                                                                                           Revision No.: 2
+                                                                                                 Date: 2/17
+                                                                                                Page 1 of 1
+
+
+
+                23.0 Reconciliation with Data Quality Objectives
+
+Due to the nature and use of the data, all MQOs in Table 7-1 will be achieved before the Regional SRP
+concentration data will be considered acceptable. If these criteria are not met the Regional SRP will be
+taken off line and will either be replaced by an RTP SRP, or verification will be delayed or moved to
+another Region until the SRP meets the acceptance criteria.
+
+Table 7-1 also lists the acceptance requirements for the Regional SRP verifications against the Level 2
+standards. Based on the information provided above, if the acceptance criteria is not met, the Level 2
+standard is considered suspect. EPA Regions are not responsible for determining the cause nor taking
+corrective action to fix the Level 2 standard. Further corrective action is the responsibility of the
+monitoring organization. If the Region notices a trend in failure rates of the Level 2 standards it may
+believe that the SRP has degraded and should contact ORD for a re-verification of the SRP.
+

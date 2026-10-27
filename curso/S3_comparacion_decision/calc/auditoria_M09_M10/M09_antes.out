@@ -1,0 +1,27 @@
+VALIDACION ISO/TS 28037 cl. 10, Tablas 25-26: coincide dentro de atol=0.0002
+a=0.3424; b=1.0012; u(a)=2.0569; u(b)=0.0090; cov(a,b)=-0.0129; chi2=1.772
+
+B — diferencia independiente simulada
+y1=100.000000; y2=100.350000; Delta=y2-y1=0.350000 nmol/mol
+u1=0.200000; u2=0.150000; k=2.000000; U1=0.400000; U2=0.300000
+u(Delta)=0.250000000; denominator_En=0.500000000; E_n=0.700000000; abs(E_n)<=1: True
+
+I — diferencia con patrón compartido simulada
+u1=0.200000; u2=0.150000; u1^2=0.040000000; u2^2=0.022500000; cov12=0.018000 (nmol/mol)^2
+u(Delta)^2=0.026500000 (nmol/mol)^2; u(Delta)_independencia=0.250000000; u(Delta)_cov=0.162788206
+U(Delta)=k_delta*u(Delta), k_delta=2.000000: 0.325576412 nmol/mol
+termino expandido -2*k_delta^2*cov12=-0.144000000 (nmol/mol)^2
+covarianza positiva maxima admisible=0.030000 (nmol/mol)^2; u(Delta)=0.050000 nmol/mol
+
+I — interpolacion con parametros simulados
+a=0.120000 nmol/mol; b=1.001000000; x0=200.000000 nmol/mol; interpolated_y=200.320000000; D=a+(b-1)*x0=0.320000000 nmol/mol
+u(a)=0.100000; u(b)=0.000500000; cov(a,b)=-0.000035000 nmol/mol
+variance_terms: a=0.010000000; b=0.010000000; covariance=-0.014000000 (nmol/mol)^2
+u(D)=0.077459667 nmol/mol; variance_D=0.006000000000 (nmol/mol)^2
+
+A — SRP 36/SRP 7, datos publicados y modelo adaptado
+n=12; orientation: x=SRP 7; y=SRP 36; u_common=0.002920000; V_xy=0
+a=-0.184237121 nmol/mol; b=0.998350748; u(a)=0.031189175; u(b)=0.004125035
+cov(a,b)=-3.83046347101e-06; chi2_obs=6.318259554; dof=10; chi2_95=18.307038053; CDF=0.212146646
+x0=80.0; D=-0.316177321 nmol/mol; u(D)=0.330547626 nmol/mol
+x0=420.0; D=-0.876923167 nmol/mol; u(D)=1.731866683 nmol/mol

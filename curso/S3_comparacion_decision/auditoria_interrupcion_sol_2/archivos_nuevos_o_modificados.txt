@@ -1,0 +1,41 @@
+ M curso/S3_comparacion_decision/M09_libreto.md
+ M curso/S3_comparacion_decision/M10_libreto.md
+ M curso/S3_comparacion_decision/M11_libreto.md
+ M curso/S3_comparacion_decision/M12_libreto.md
+ M curso/S3_comparacion_decision/S3_revision_sol.md
+ M curso/S3_comparacion_decision/calc/M09_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M10_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M11_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M12_indicadores.py
+?? curso/S3_comparacion_decision/S3_01_ficha_criterios.md
+?? curso/S3_comparacion_decision/calc/M09_M10_verificacion.py
+?? curso/S3_comparacion_decision/calc/M11_verificacion_sol.out
+?? curso/S3_comparacion_decision/calc/M12_evidencias_fuentes.md
+?? curso/S3_comparacion_decision/calc/S3_verificar_entrega.py
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/BIPM.QM-K1_2.protocol.txt
+?? "curso/S3_comparacion_decision/calc/auditoria_M09_M10/BS EN ISO_IEC 17025_2017.txt"
+?? "curso/S3_comparacion_decision/calc/auditoria_M09_M10/ISO 28037.txt"
+?? "curso/S3_comparacion_decision/calc/auditoria_M09_M10/ISO 6143 2001.txt"
+?? "curso/S3_comparacion_decision/calc/auditoria_M09_M10/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt"
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/M09_antes.out
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/M09_despues.out
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/M10_antes.out
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/M10_despues.out
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/asq_metrological_handbook_c30.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/intro_stats_metro_c05.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/jcgm106_fuente/JCGM_106_2012_E.pdf
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/jcgm106_fuente/JCGM_106_2012_E.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/metrology_measure_uncer_c08.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/o3_tad_508_20230906_final.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/srp_qapp.txt
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/srp_sop.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/Crowder10.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/Crowder11.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/GUM.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/ISO17025.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/NIST20.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/NIST_CUSUM.html
+?? curso/S3_comparacion_decision/calc/fuentes_M11/NIST_EWMA.html
+?? curso/S3_comparacion_decision/calc/fuentes_M11/NIST_IMR.html
+?? curso/S3_comparacion_decision/calc/fuentes_M11/NIST_constants.html
+?? curso/S3_comparacion_decision/calc/fuentes_M11/Otto.txt

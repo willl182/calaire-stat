@@ -1,0 +1,862 @@
+2.2.2 Histogram
+PDF p. 44
+ Graphical Display of Distributions
+    2.2.1 Bar Graph
+    2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+    2.2.5 Shapes of Frequency Distributions
+    2.2.6 Stem-and-Leaf Display
+2.3 Percentiles
+    2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+2.4 Recommendations Based on Measurement Scale
+2.5 Computing Tables, Graphs, and More Using SPSS
+    2.5.1 Introduction to SPSS
+    2.5.2 Frequencies
+    2.5.3 Graphs
+2.6 Computing Tables, Graphs, and More Using R
+    2.6.1 Introduction to R
+    2.6.2 Frequencies
+    2.6.3 Graphs
+2.7 Research Question Template and Example Write-Up
+2.8 Additional Resources
+
+
+
+
+                                                        25
+26                                                        Statistical Concepts: A First Course
+
+
+
+
+Key Concepts
+      1. Frequencies, cumulative frequencies, relative frequencies, and cumulative relative
+         frequencies
+      2. Ungrouped and grouped frequency distributions
+      3. Sample size
+      4. Real limits and intervals
+      5. Frequency polygons
+      6. Normal, symmetric, and skewed frequency distributions
+      7. Percentiles, quartiles, and percentile ranks
+
+In the first chapter we introduced the wonderful world of statistics. We discussed the value
+of statistics, met a few of the more well-known statisticians, and defined several basic sta-
+tistical concepts, including population, parameter, sample, statistic, descriptive and infer-
+ential statistics, types of variables, and scales of measurement. In this chapter we begin
+our examination of descriptive stat
+PDF p. 53
+he bar graph is the recommended graphic for nominal data.
+
+
+2.2.2 Histogram
+A method somewhat similar to the bar graph that is appropriate for data that are at least
+ordinal in scale (i.e., ordinal, interval, or ratio) is the histogram. Because the data are at
+least theoretically continuous (even though they may be measured in whole numbers), the
+main difference in the histogram (as compared to the bar graph) is that the bars touch one
+another, much like intervals touching one another as real limits. An example of a histo-
+gram for the statistics quiz data is shown in Figure 2.2 (generated in SPSS using the default
+options). As you can see, along the X axis we plot the values of the variable X and along
+the Y axis the frequencies for each interval. The height of the bar again corresponds to the
+frequencies for a particular value of X. This figure represents an ungrouped histogram as
+the interval size is 1. That is, along the X axis the midpoint of each bar is the midpoint of the
+interval; each bar begins on the left at the lower real limit of the interval, the bar ends on
+the right at the upper real limit, and the bar is 1 unit wide. If we wanted to use an interval
+size of 2, for example, using the grouped frequency distribution in Table 2.3, then we could
+construct a grouped histogram in the same way; the differences would be that the bars
+would be 2 units wide, and the height of the bars would obviously change. Try this one on
+your own for practice.
+  One could also plot relative frequencies on the Y axis to reflect the percentage of students
+in the sample whose scores fell into a particular interval. In reality, all that we have 
+
+2.3.2 Quartiles
+PDF p. 44
+-and-Leaf Display
+2.3 Percentiles
+    2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+2.4 Recommendations Based on Measurement Scale
+2.5 Computing Tables, Graphs, and More Using SPSS
+    2.5.1 Introduction to SPSS
+    2.5.2 Frequencies
+    2.5.3 Graphs
+2.6 Computing Tables, Graphs, and More Using R
+    2.6.1 Introduction to R
+    2.6.2 Frequencies
+    2.6.3 Graphs
+2.7 Research Question Template and Example Write-Up
+2.8 Additional Resources
+
+
+
+
+                                                        25
+26                                                        Statistical Concepts: A First Course
+
+
+
+
+Key Concepts
+      1. Frequencies, cumulative frequencies, relative frequencies, and cumulative relative
+         frequencies
+      2. Ungrouped and grouped frequency distributions
+      3. Sample size
+      4. Real limits and intervals
+      5. Frequency polygons
+      6. Normal, symmetric, and skewed frequency distributions
+      7. Percentiles, quartiles, and percentile ranks
+
+In the first chapter we introduced the wonderful world of statistics. We discussed the value
+of statistics, met a few of the more well-known statisticians, and defined several basic sta-
+tistical concepts, including population, parameter, sample, statistic, descriptive and infer-
+ential statistics, types of variables, and scales of measurement. In this chapter we begin
+our examination of descriptive statistics, which we previously defined as techniques that
+allow us to tabulate, summarize, and depict a collection of data in an abbreviated fashion.
+We used the example of collecting data from 100,000 graduate studen
+PDF p. 59
+ar percentiles that are often of interest, the quartiles.
+
+
+2.3.2 Quartiles
+One common way of dividing a distribution of scores into equal groups of scores is known
+as quartiles. This is done by dividing a distribution into fourths or quartiles where there
+are four equal groups, each containing 25% of the scores. In the previous examples, we
+determined P25, P50, and P75, which divided the distribution into four equal groups, from
+0 to 25, from 25 to 50, from 50 to 75, and from 75 to 100. Thus the quartiles are special cases
+Data Representation                                                                                41
+
+
+
+of percentiles. A different notation, however, is often used for these particular percentiles,
+where we denote P25 as Q1, P50 as Q2, and P75 as Q3. The Qs represent the quartiles.
+   An interesting aspect of quartiles is that they can be used to determine whether a distri-
+bution of scores is positively or negatively skewed. This is done by comparing the values
+of the quartiles as follows. If (Q3 − Q2) > (Q2 − Q1), then the distribution of scores is posi-
+tively skewed as the scores are more spread out at the high end of the distribution and more
+bunched up at the low end of the distribution (remember the shapes of the distributions
+from Figure 2.5). If (Q3 − Q2) < (Q2 − Q1), then the distribution of scores is negatively skewed
+as the scores are more spread out at the low end of the distribution and more bunched up
+at the high end of the distribution. If (Q3 − Q2) = (Q2 − Q1), then the distribution of scores is
+obviously not skewed, but is symmetric (see Chapter 4). For the example statistics quiz data
+(Q3 −
+
+2.3.4 Box-and-Whisker
+PDF p. 44
+centiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+2.4 Recommendations Based on Measurement Scale
+2.5 Computing Tables, Graphs, and More Using SPSS
+    2.5.1 Introduction to SPSS
+    2.5.2 Frequencies
+    2.5.3 Graphs
+2.6 Computing Tables, Graphs, and More Using R
+    2.6.1 Introduction to R
+    2.6.2 Frequencies
+    2.6.3 Graphs
+2.7 Research Question Template and Example Write-Up
+2.8 Additional Resources
+
+
+
+
+                                                        25
+26                                                        Statistical Concepts: A First Course
+
+
+
+
+Key Concepts
+      1. Frequencies, cumulative frequencies, relative frequencies, and cumulative relative
+         frequencies
+      2. Ungrouped and grouped frequency distributions
+      3. Sample size
+      4. Real limits and intervals
+      5. Frequency polygons
+      6. Normal, symmetric, and skewed frequency distributions
+      7. Percentiles, quartiles, and percentile ranks
+
+In the first chapter we introduced the wonderful world of statistics. We discussed the value
+of statistics, met a few of the more well-known statisticians, and defined several basic sta-
+tistical concepts, including population, parameter, sample, statistic, descriptive and infer-
+ential statistics, types of variables, and scales of measurement. In this chapter we begin
+our examination of descriptive statistics, which we previously defined as techniques that
+allow us to tabulate, summarize, and depict a collection of data in an abbreviated fashion.
+We used the example of collecting data from 100,000 graduate students on various char-
+acteristics (e.g., height, 
+PDF p. 61
+ are used graphically to depict a distribution of scores.
+
+
+2.3.4 Box-and-Whisker Plot
+A simplified form of the frequency distribution is the box-and-whisker plot (often
+referred to simply as a box plot), developed by Tukey (1977). This is shown in Figure
+2.7 (generated in SPSS using the default options) for the example data. The box-and-
+whisker plot was originally developed to be constructed on a typewriter using lines in a
+minimal amount of space. The box in the center of the figure displays the middle 50% of
+the distribution of scores with the thick black line representing the median. The bottom
+edge or hinge of the box represents the 25th percentile (or Q1) (i.e., the bottom or lowest
+25% of values). The top edge or hinge of the box represents the 75th percentile (or Q3)
+(i.e., the top or highest 25% of values). The middle thick vertical line in the box represents
+the 50th percentile (also known as Q2 or the median). The lines extending from the box
+are known as the whiskers. The purpose of the whiskers is to display data outside of
+the middle 50%. The bottom whisker can extend down to the lowest score (as is the case
+with SPSS using default options), or to the 5th or the 10th percentile (by other means), to
+display more extreme low scores, and the top whisker correspondingly can extend up to
+the highest score (again, as is the case with SPSS using default options), or to the 95th or
+90th percentile (elsewhere), to display more extreme high scores. The choice of where to
+extend the whiskers is the preference of the researcher and/or the software. Scores that
+fall beyond the end of the whiskers, known as outliers due to their ex
+
+3.2.2 The Median
+PDF p. 104
+ion
+3.2 Measures of Central Tendency
+    3.2.1 The Mode
+    3.2.2 The Median
+    3.2.3 The Mean
+    3.2.4 Summary of Measures of Central Tendency
+3.3 Measures of Dispersion
+    3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+    3.3.5 Recommendations Based on Measurement Scale
+3.4 Computing Sample Statistics Using SPSS
+    3.4.1 Explore
+    3.4.2 Descriptives
+    3.4.3 Frequencies
+3.5 Computing Sample Statistics Using R
+    3.5.1 Reading Data into R
+    3.5.2 Generating Sample Statistics
+3.6 Research Question Template and Example Write-Up
+3.7 Additional Resources
+
+
+
+
+Key Concepts
+  1. Summation
+  2. Central tendency
+  3. Outliers
+  4. Dispersion
+  5. Exclusive versus inclusive range
+  6. Deviation scores
+  7. Bias
+                                                       85
+86                                                          Statistical Concepts: A First Course
+
+
+
+In Chapter 2, we began our discussion of descriptive statistics, previously defined as tech-
+niques that allow us to tabulate, summarize, and depict a collection of data in an abbre-
+viated fashion. We considered various methods for representing data for purposes of
+communicating something to the reader or audience. In particular, we were concerned
+with ways of representing data in an abbreviated fashion through both tables and figures.
+   In this chapter, we delve more into the field of descriptive statistics in terms of three
+general topics. First, we examine summation notation, which is important for much of the
+chapter, and to some extent, the remainder of the text. Second, measures of central tendenc
+PDF p. 109
+                    Statistical Concepts: A First Course
+
+
+
+3.2.2 The Median
+A second measure of central tendency represents a concept that you are already familiar
+with. The median is that score which divides a distribution of scores into two equal parts. In other
+words, one-half of the scores fall below the median and one-half of the scores fall above
+the median. We already know this from Chapter 2 as the 50th percentile or Q2. In other
+words, the 50th percentile, or Q2, represents the median value. The formula for computing
+the median is
+
+                                                50% (n) − cf 
+                                                              (w )
+                               Median = LRL +                 
+                                                    f
+                                                                
+
+   where the notation is the same as previously described in Chapter 2. Just as a reminder,
+LRL is the lower real limit of the interval containing the median, 50% is the percentile
+desired, n is the sample size, cf is the cumulative frequency of all intervals less than but not
+including the interval containing the median (cf below), f is the frequency of the interval
+containing the median, and w is the interval width. For the example quiz data, the median
+is computed as follows:
+
+                                     50% (25) − 12 
+                                                    (1) = 16.5 + 0.10 = 16.60
+                   Median = 16.5 +                  
+                                         5
+                                                      
+
+Occas
+
+3.2.3 The Mean
+PDF p. 104
+entral Tendency
+    3.2.1 The Mode
+    3.2.2 The Median
+    3.2.3 The Mean
+    3.2.4 Summary of Measures of Central Tendency
+3.3 Measures of Dispersion
+    3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+    3.3.5 Recommendations Based on Measurement Scale
+3.4 Computing Sample Statistics Using SPSS
+    3.4.1 Explore
+    3.4.2 Descriptives
+    3.4.3 Frequencies
+3.5 Computing Sample Statistics Using R
+    3.5.1 Reading Data into R
+    3.5.2 Generating Sample Statistics
+3.6 Research Question Template and Example Write-Up
+3.7 Additional Resources
+
+
+
+
+Key Concepts
+  1. Summation
+  2. Central tendency
+  3. Outliers
+  4. Dispersion
+  5. Exclusive versus inclusive range
+  6. Deviation scores
+  7. Bias
+                                                       85
+86                                                          Statistical Concepts: A First Course
+
+
+
+In Chapter 2, we began our discussion of descriptive statistics, previously defined as tech-
+niques that allow us to tabulate, summarize, and depict a collection of data in an abbre-
+viated fashion. We considered various methods for representing data for purposes of
+communicating something to the reader or audience. In particular, we were concerned
+with ways of representing data in an abbreviated fashion through both tables and figures.
+   In this chapter, we delve more into the field of descriptive statistics in terms of three
+general topics. First, we examine summation notation, which is important for much of the
+chapter, and to some extent, the remainder of the text. Second, measures of central tendency
+allow us to boil do
+PDF p. 110
+the 50th percentile, i.e., the median) are inappropriate.
+
+
+3.2.3 The Mean
+The final measure of central tendency to be considered is the mean, also known as the arith-
+metic mean or average (although the term “average” is used rather loosely by laypeople).
+Note that there are different types of means; we will generally be concerned only with the
+arithmetic mean. Statistically, we define the mean as the sum of all of the scores divided by the
+number of scores. Thought of in those terms, you may have been computing the mean for
+many years, and may not have even known it.
+  The population mean is denoted by μ (lowercase Greek mu) and computed as follows:
+                                                      N
+
+                                          m=
+                                             ∑ X      i=1
+                                                               i
+
+                                                      N
+
+For sample data, the sample mean is denoted by X (read “X bar”) and computed as follows:
+                                                      n
+
+                                          X=
+                                             ∑ X      i=1
+                                                               i
+
+                                                      n
+For the example quiz data, the sample mean is computed as follows:
+                                           n
+
+                                  X=
+                                     ∑ X = 389 = 15.56
+                                           i =1
+                                                  i
+
+                                        
+
+3.3.3 Deviational
+PDF p. 104
+es of Dispersion
+    3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+    3.3.5 Recommendations Based on Measurement Scale
+3.4 Computing Sample Statistics Using SPSS
+    3.4.1 Explore
+    3.4.2 Descriptives
+    3.4.3 Frequencies
+3.5 Computing Sample Statistics Using R
+    3.5.1 Reading Data into R
+    3.5.2 Generating Sample Statistics
+3.6 Research Question Template and Example Write-Up
+3.7 Additional Resources
+
+
+
+
+Key Concepts
+  1. Summation
+  2. Central tendency
+  3. Outliers
+  4. Dispersion
+  5. Exclusive versus inclusive range
+  6. Deviation scores
+  7. Bias
+                                                       85
+86                                                          Statistical Concepts: A First Course
+
+
+
+In Chapter 2, we began our discussion of descriptive statistics, previously defined as tech-
+niques that allow us to tabulate, summarize, and depict a collection of data in an abbre-
+viated fashion. We considered various methods for representing data for purposes of
+communicating something to the reader or audience. In particular, we were concerned
+with ways of representing data in an abbreviated fashion through both tables and figures.
+   In this chapter, we delve more into the field of descriptive statistics in terms of three
+general topics. First, we examine summation notation, which is important for much of the
+chapter, and to some extent, the remainder of the text. Second, measures of central tendency
+allow us to boil down a set of scores into a single value, a point estimate, which some-
+how represents the entire set. The most commonly used measures of
+PDF p. 114
+priate for all scales of measurement except for nominal.
+
+
+
+3.3.3 Deviational Measures
+In this section we examine deviation scores, population variance and standard deviation,
+and sample variance and standard deviation, all methods that deal with deviations from
+the mean.
+
+
+3.3.3.1 Deviation Scores
+In the last category of measures of dispersion are those that utilize deviations from the
+mean. Let us define a deviation score as the difference between a particular raw score and the
+mean of the collection of scores (population or sample, either will work). For population data
+we define a deviation as di = Xi – μ. In other words, we can compute the deviation from the
+mean for each individual or object. Consider the credit card dataset as shown in Table 3.3.
+96                                                                Statistical Concepts: A First Course
+
+
+
+                                  TABLE 3.3
+                                  Credit Card Dataset
+                                     X                 X−μ     (X − μ)2
+
+                                      1                –5        25
+                                      5                –1          1
+                                      6                    0       0
+                                      8                    2       4
+                                     10                    4     16
+                                   ∑ = 30              ∑=0     ∑ = 46
+                                    N=5
+                                    μ=6
+
+
+
+To make matters simple, we only have a small population of data, five values to be exact.
+The first column lists the raw 
+
+1.5
+PDF p. 10
+���������������������������������������������������� 9
+     1.5 Scales of Measurement����������������������������������������������������������������������������������������������� 10
+     1.6 Additional Resources������������������������������������������������������������������������������������������������� 17
+     Problems���������������������������������������������������������������������������������������������������������������������������������� 17
+
+  2. Data Representation . ........................................................................................................... 25
+     2.1 Tabular Display of Distributions������������������������������������������������������������������������������26
+     2.2 Graphical Display of Distributions��������������������������������������������������������������������������32
+     2.3 Percentiles�������������������������������������������������������������������������������������������������������������������� 39
+     2.4 Recommendations Based on Measurement Scale�������������������������������������������������� 44
+     2.5 Computing Tables, Graphs, and More Using SPSS������������������������������������������������ 44
+     2.6 Computing Tables, Graphs, and More Using R������������������������������������������������������ 57
+     2.7 Research Question Template and Example Write-Up������������������������������������������� 69
+     2.8 Additional Resources������������������������������������������������������������������������������������������������� 70
+     Problems����������������������������������������������������������������������������������������������������
+PDF p. 20
+tions
+    1.3.1 Statistical Notation
+1.4 Types of Variables
+1.5 Scales of Measurement
+    1.5.1 Nominal Measurement Scale
+    1.5.2 Ordinal Measurement Scale
+    1.5.3 Interval Measurement Scale
+    1.5.4 Ratio Measurement Scale
+    1.5.5 Summary of Terms
+1.6 Additional Resources
+
+
+
+
+Key Concepts
+  1. General statistical concepts
+     Population
+     Parameter
+     Sample
+     Statistic
+     Descriptive statistics
+     Inferential statistics
+  2. Variable-related concepts
+     Variable
+     Constant
+     Categorical variables
+     Dichotomous variables
+                                                                                  1
+2                                                           Statistical Concepts: A First Course
+
+
+
+       Numerical variables
+       Discrete variables
+       Continuous variables
+     3. Measurement scale concepts
+        Measurement
+        Nominal scale
+        Ordinal scale
+        Interval scale
+        Ratio scale
+
+Welcome to the wonderful world of statistics! More than ever, statistics are everywhere.
+Listen to the weather report and you hear about the measurement of variables such as tem-
+perature, rainfall, barometric pressure, and humidity. Watch a sporting event and you hear
+about batting averages, percentage of free throws completed, and total rushing yardage.
+Read the financial page and you can track the Dow Jones average, the gross national prod-
+uct (GNP), and bank interest rates. Turn to the entertainment section to see movie ratings,
+movie revenue, or the top 10 best-selling novels. These are just a few examples of statistics
+that surround you in every aspect of your life. This is n
+PDF p. 20
+tation
+1.4 Types of Variables
+1.5 Scales of Measurement
+    1.5.1 Nominal Measurement Scale
+    1.5.2 Ordinal Measurement Scale
+    1.5.3 Interval Measurement Scale
+    1.5.4 Ratio Measurement Scale
+    1.5.5 Summary of Terms
+1.6 Additional Resources
+
+
+
+
+Key Concepts
+  1. General statistical concepts
+     Population
+     Parameter
+     Sample
+     Statistic
+     Descriptive statistics
+     Inferential statistics
+  2. Variable-related concepts
+     Variable
+     Constant
+     Categorical variables
+     Dichotomous variables
+                                                                                  1
+2                                                           Statistical Concepts: A First Course
+
+
+
+       Numerical variables
+       Discrete variables
+       Continuous variables
+     3. Measurement scale concepts
+        Measurement
+        Nominal scale
+        Ordinal scale
+        Interval scale
+        Ratio scale
+
+Welcome to the wonderful world of statistics! More than ever, statistics are everywhere.
+Listen to the weather report and you hear about the measurement of variables such as tem-
+perature, rainfall, barometric pressure, and humidity. Watch a sporting event and you hear
+about batting averages, percentage of free throws completed, and total rushing yardage.
+Read the financial page and you can track the Dow Jones average, the gross national prod-
+uct (GNP), and bank interest rates. Turn to the entertainment section to see movie ratings,
+movie revenue, or the top 10 best-selling novels. These are just a few examples of statistics
+that surround you in every aspect of your life. This is not to mention the way statisti
+PDF p. 20
+ales of Measurement
+    1.5.1 Nominal Measurement Scale
+    1.5.2 Ordinal Measurement Scale
+    1.5.3 Interval Measurement Scale
+    1.5.4 Ratio Measurement Scale
+    1.5.5 Summary of Terms
+1.6 Additional Resources
+
+
+
+
+Key Concepts
+  1. General statistical concepts
+     Population
+     Parameter
+     Sample
+     Statistic
+     Descriptive statistics
+     Inferential statistics
+  2. Variable-related concepts
+     Variable
+     Constant
+     Categorical variables
+     Dichotomous variables
+                                                                                  1
+2                                                           Statistical Concepts: A First Course
+
+
+
+       Numerical variables
+       Discrete variables
+       Continuous variables
+     3. Measurement scale concepts
+        Measurement
+        Nominal scale
+        Ordinal scale
+        Interval scale
+        Ratio scale
+
+Welcome to the wonderful world of statistics! More than ever, statistics are everywhere.
+Listen to the weather report and you hear about the measurement of variables such as tem-
+perature, rainfall, barometric pressure, and humidity. Watch a sporting event and you hear
+about batting averages, percentage of free throws completed, and total rushing yardage.
+Read the financial page and you can track the Dow Jones average, the gross national prod-
+uct (GNP), and bank interest rates. Turn to the entertainment section to see movie ratings,
+movie revenue, or the top 10 best-selling novels. These are just a few examples of statistics
+that surround you in every aspect of your life. This is not to mention the way statistics have,
+probably unnoticeably, infl
+PDF p. 20
+l Measurement Scale
+    1.5.2 Ordinal Measurement Scale
+    1.5.3 Interval Measurement Scale
+    1.5.4 Ratio Measurement Scale
+    1.5.5 Summary of Terms
+1.6 Additional Resources
+
+
+
+
+Key Concepts
+  1. General statistical concepts
+     Population
+     Parameter
+     Sample
+     Statistic
+     Descriptive statistics
+     Inferential statistics
+  2. Variable-related concepts
+     Variable
+     Constant
+     Categorical variables
+     Dichotomous variables
+                                                                                  1
+2                                                           Statistical Concepts: A First Course
+
+
+
+       Numerical variables
+       Discrete variables
+       Continuous variables
+     3. Measurement scale concepts
+        Measurement
+        Nominal scale
+        Ordinal scale
+        Interval scale
+        Ratio scale
+
+Welcome to the wonderful world of statistics! More than ever, statistics are everywhere.
+Listen to the weather report and you hear about the measurement of variables such as tem-
+perature, rainfall, barometric pressure, and humidity. Watch a sporting event and you hear
+about batting averages, percentage of free throws completed, and total rushing yardage.
+Read the financial page and you can track the Dow Jones average, the gross national prod-
+uct (GNP), and bank interest rates. Turn to the entertainment section to see movie ratings,
+movie revenue, or the top 10 best-selling novels. These are just a few examples of statistics
+that surround you in every aspect of your life. This is not to mention the way statistics have,
+probably unnoticeably, influenced our everyday lives—just consi
+
+standard error of the mean
+PDF p. 127
+sted in are the values of the
+median (median), mean (mean), standard error of the mean (SE.mean; we will learn about this in an upcoming
+chapter), 95% confidence interval of the mean (CI.mean.0.95), variance (var), standard deviation, (std.dev), and
+coefficient of variation (coef.var).
+
+     nbr.val           nbr.null             nbr.na
+  25.0000000          0.0000000          0.0000000
+          min               max             range
+    9.0000000        20.0000000        11.0000000
+         sum             median              mean
+ 389.0000000         17.0000000        15.5600000
+
+FIGURE 3.9
+Summary statistics using the pastecs package.
+Univariate Population Parameters & Statistics                                                             109
+
+
+      SE.mean CI.mean.0.95                   var
+    0.6326663    1.3057591            10.0066667
+      std.dev         coef.var
+    3.1633316        0.2032989
+
+FIGURE 3.9 (continued)
+Summary statistics using the pastecs package.
+
+
+
+  If we want to produce just one statistic, such as the mean, standard deviation, or vari-
+ance, we can generate those values with the following scripts (Figure 3.10). The first part of
+the script defines the function (i.e., mean, sd, var) to compute the mean, standard deviation,
+or variance, respectively. What is enclosed in parentheses tells R which dataframe (i.e.,
+“Ch3_quiz”) and which variable within that dataframe (i.e., “quiz”) to use to compute the
+statistics. These terms are separated by a $.
+
+
+ mean(Ch3_quiz$quiz)
+ sd(Ch3_quiz$quiz)
+ var(Ch3_quiz$quiz)
+
+The mean, sd, and var functions can be used to generate, respectively, the mean, standard devi
+PDF p. 172
+
+   4. Sampling distribution of the mean
+   5. Variance and standard error of the mean (sampling error)
+   6. Confidence intervals (point vs. interval estimation)
+   7. Central limit theorem
+
+In Chapter 4 we extended our discussion of descriptive statistics. We considered the fol-
+lowing three general topics: the normal distribution, standard scores, and skewness and
+kurtosis. In this chapter we begin to move from descriptive statistics into inferential statis-
+tics (in which normally distributed data plays a major role). The two basic topics described
+in this chapter are (a) probability and (b) sampling and estimation. First, as a brief intro-
+duction to probability, we discuss the importance of probability in statistics, define proba-
+bility in a conceptual and computational sense, and discuss the notion of intuition versus
+probability. Second, under sampling and estimation, we formally move into inferential
+statistics by considering the following topics: simple random sampling (and briefly other
+types of sampling), and estimation of population parameters and sampling distributions.
+Concepts to be discussed include probability, inferential statistics, simple random sam-
+pling (with and without replacement), sampling distribution of the mean, variance and
+
+                                                                                           153
+154                                                       Statistical Concepts: A First Course
+
+
+
+standard error of the mean (sampling error), confidence intervals (point vs. interval esti-
+mation), and central limit theorem. Our objectives are that by the end of this chapter, you
+wil
+PDF p. 173
+                    Statistical Concepts: A First Course
+
+
+
+standard error of the mean (sampling error), confidence intervals (point vs. interval esti-
+mation), and central limit theorem. Our objectives are that by the end of this chapter, you
+will be able to (a) understand the most basic concepts of probability; (b) understand and
+conduct simple random sampling; and (c) understand, determine, and interpret the results
+from the estimation of population parameters via a sample.
+
+
+
+
+5.1 Brief Introduction to Probability
+The area of probability became important and began to be developed during the Middle
+Ages (17th and 18th centuries) when royalty and other well-to-do gamblers consulted with
+mathematicians for advice on games of chance. For example, in poker if you hold two
+jacks, what are your chances of drawing a third jack? Or in craps, what is the chance of
+rolling a 7 with two dice? During that time, probability was also used for more practical
+purposes, such as to help determine life expectancy to underwrite life insurance policies.
+Considerable development in probability has obviously taken place since that time. In
+this section, we discuss the importance of probability, provide a definition of probability,
+and consider the notion of intuition versus probability. Although there is much more to
+the topic of probability, here we simply discuss those aspects of probability necessary for
+the remainder of the text. For additional information on probability, take a look at texts by
+Rudas (2004) or Tijms (2004).
+
+
+5.1.1 Importance of Probability
+Let us first consider why probability is important in statistics. A researcher is out colle
+PDF p. 181
+f those sample means becomes
+smaller and smaller.
+
+
+5.2.2.3 Standard Error of the Mean
+We can also compute the standard deviation of the sampling distribution of the mean,
+known as the standard error of the mean, by
+
+                                                      σX
+                                           σX =
+                                                          n
+
+Thus, for our example we have
+
+                                           σX         2.8284
+                                    σX =         =              =2
+                                            n               2
+
+Because the applied researcher typically does not know the population variance, the pop-
+ulation variance error of the mean and the population standard error of the mean can be
+estimated by the following, respectively:
+
+                                                      sX2
+                                            sX2 =
+                                                       n
+Probability and Sample Statistics                                                         163
+
+
+
+and
+                                                    sX
+                                             sX =
+                                                     n
+
+5.2.2.4 Confidence Intervals
+Thus far we have illustrated how a sample mean is a point estimate of the population mean
+and how a variance error gives us some sense of the variability among the sample means.
+Putting these concepts together, we can also build an interval estimate for the population
+mean to give us a sense of how confident we are in our particular sample mean. We can
+form a confidence inte
+PDF p. 181
+tion of the sampling distribution of the mean,
+known as the standard error of the mean, by
+
+                                                      σX
+                                           σX =
+                                                          n
+
+Thus, for our example we have
+
+                                           σX         2.8284
+                                    σX =         =              =2
+                                            n               2
+
+Because the applied researcher typically does not know the population variance, the pop-
+ulation variance error of the mean and the population standard error of the mean can be
+estimated by the following, respectively:
+
+                                                      sX2
+                                            sX2 =
+                                                       n
+Probability and Sample Statistics                                                         163
+
+
+
+and
+                                                    sX
+                                             sX =
+                                                     n
+
+5.2.2.4 Confidence Intervals
+Thus far we have illustrated how a sample mean is a point estimate of the population mean
+and how a variance error gives us some sense of the variability among the sample means.
+Putting these concepts together, we can also build an interval estimate for the population
+mean to give us a sense of how confident we are in our particular sample mean. We can
+form a confidence interval around a particular sample mean as follows. As we learned in
+Chapter 4, for a normal distribution 68% of the distributio

@@ -1,0 +1,245 @@
+# M06. ANOVA y componentes de varianza
+
+## Ficha del capítulo
+
+| Elemento | Contenido |
+|---|---|
+| Competencia estadística | Separar fuentes de variación y usar cada componente según el resultado que se reporta. |
+| Prerrequisitos | M4: inferencia, grados de libertad y distribuciones t, F y chi-cuadrado. M5: factores, réplicas, bloques, estructuras cruzadas y anidadas, y unidad experimental. |
+| Nivel B | Repetibilidad y precisión intermedia; interpretación de componentes ya estimadas; contribución de precisión al promedio de errores; condiciones y límites de la fórmula. No ejecuta ANOVA. |
+| Nivel I añade | ANOVA de un factor aleatorio; sumas de cuadrados, grados de libertad, cuadrados medios y F; estimación de componentes y su incertidumbre; efectos fijos y aleatorios; dos factores e interacción; residuos, heterogeneidad y prueba de Cochran; ISO 5725 cuando corresponde. |
+| Nivel A añade | Analista × campaña con días anidados; elección de denominadores; componentes negativas y alternativas de estimación; aplicabilidad de ISO 5725, incluido el sesgo de un laboratorio. |
+| Datos | Ejemplos metodológicos: simulados, generados con valores fijados en `calc/M06_ejemplos.py`. Estudio R&R 2022–2023 de CALAIRE: propio, `docs/Resultados R&r_2022 2023 (1).xlsx`, hojas por nivel; resultados analíticos reproducidos en `calc/M06_RR_CALAIRE.py`. |
+| Anexos | AX.4: deducción de cuadrados medios esperados y contribución de precisión del promedio. AX.11: incertidumbre de indicadores de precisión cuando corresponda. |
+| Referencias clave | Crowder 2020, *Introduction to Statistics in Metrology*, cap. 9; ISO 5725-3; GUM JCGM 100, Anexos G.4 y H.5; MMU, §4.4; ISO 5725-2 y -6. Ver Referencias del capítulo. |
+
+## Nivel B — interpretar componentes entregadas
+
+### Escena B1. Una dispersión no responde todas las preguntas
+
+> **[DIAPOSITIVA]** Se proyectan dos preguntas distintas: «¿cuánto difieren las lecturas tomadas en condiciones parecidas?» y «¿cuánto puede cambiar el resultado si cambia el día?».
+
+Hoy vamos a separar dos preguntas que a veces quedan escondidas dentro de una sola desviación estándar. La primera se refiere a lecturas repetidas en un mismo día, bajo condiciones de repetibilidad. La precisión intermedia describe la dispersión cuando cambian condiciones dentro del laboratorio, por ejemplo, el día o el operador [VIM; ISO 5725-3 §§5–6]. En el modelo de hoy, el efecto aleatorio de día representa una de esas condiciones. Para quien opera el Level 2, esta distinción importa porque el resultado que se informa puede ser una lectura, el promedio de una jornada o el promedio de una calibración hecha durante varios días. La dispersión apropiada depende de cuál de esos resultados queremos describir [VIM; ISO 5725-1; MMU §4.4].
+
+En este nivel ustedes no construyen una tabla ANOVA. Reciben dos estimaciones ya calculadas: `s_r`, que estima la desviación estándar de lectura dentro del día, y `s_entre`, que estima la desviación estándar del efecto aleatorio de día, sin incluir repetibilidad. Lo digo despacio porque el nombre puede inducir a error: `s_entre` no es la desviación estándar de los promedios diarios. Es la estimación de la variación propia de los efectos de día en el modelo que vamos a usar.
+
+El modelo equilibrado de referencia se escribe así: $e_{dj}=\mu+D_d+\varepsilon_{dj}$. Se lee: «el error de la lectura j del día d es la media general más el efecto de ese día más el error de lectura». En la pizarra, voy a señalar cada parte. $\mu$ es el nivel medio del error en el conjunto de condiciones estudiado. $D_d$ es el efecto del día d; cambia de un día a otro y tiene varianza $\tau^2$. $\varepsilon_{dj}$ representa la variación entre lecturas dentro de ese día y tiene varianza $\sigma^2$. El modelo supone que los efectos de día son independientes entre sí; que los errores de lectura son independientes entre sí; y que errores de lectura y efectos de día son independientes. En la notación del curso, `s_entre` estima `τ` y `s_r` estima `σ` [ISO 5725-3 §8].
+
+> **[PIZARRA]** $e_{dj}=\mu+D_d+\varepsilon_{dj}$; $\operatorname{Var}(D_d)=\tau^2$; $\operatorname{Var}(\varepsilon_{dj})=\sigma^2$; $s_{\mathrm{entre}}=\hat\tau$; $s_r=\hat\sigma$.
+
+Pensemos en el Level 2 comparado con el SRP 55. Si repetimos las lecturas en el mismo día, el efecto de ese día aparece en todas ellas. Repetir lecturas puede aclarar el ruido de lectura, pero no crea nuevos días. Si las jornadas difieren por estabilización, ambiente, secuencia de trabajo u otras condiciones que varíen con el día, esas diferencias pertenecen a otra escala temporal. No vamos a atribuir una causa física concreta sin datos; estadísticamente, lo que hacemos es reconocer que los valores de un mismo día comparten un efecto de grupo [Crowder 2020 §9.3.1; ISO 5725-3 §8].
+
+Cuando el interés es la dispersión de una lectura futura en un día futuro, el modelo contiene las dos fuentes: efecto de día y error de lectura. Cuando el interés es el promedio de varias lecturas de varios días, cada fuente contribuye de manera distinta. Al promediar lecturas dentro de un día, la contribución de lectura se reduce con ese promedio. La variación entre días se reduce al promediar días. Esta diferencia de escala es la razón por la que no hay un divisor único que se aplique mecánicamente a cualquier dispersión [GUM H.5; ISO 5725-3 §8].
+
+> **[PREGUNTA AL GRUPO]** Si duplicamos las lecturas del mismo día, ¿hemos duplicado también la información sobre variación entre días? — *Respuesta esperada:* no; añadimos lecturas dentro de ese día, pero no añadimos días independientes.
+
+### Escena B2. Contribución de precisión al promedio de errores
+
+> **[EJEMPLO]** Las componentes y el diseño que aparecen en esta escena son valores ilustrativos simulados. No son resultados del Level 2 ni de CALAIRE. Se muestran para practicar la lectura y el uso de una fórmula ya especificada.
+
+Supongamos que nos entregan `s_r = 0,24 nmol/mol` y `s_entre = 0,30 nmol/mol`, estimadas previamente con un diseño equilibrado que cumple los supuestos del modelo. El promedio que nos interesa combina ocho lecturas en cada uno de seis días. Antes de calcular, declaramos la respuesta: promedio de errores, no lectura individual; la unidad de repetición para la componente de repetibilidad es la lectura dentro del día, y para la componente entre días es el día; la escala temporal es una campaña de seis días. Estos datos de ejemplo y sus resultados se reproducen en `calc/M06_ejemplos.py`.
+
+La contribución de precisión a la varianza del promedio de errores se escribe $u^2_{\mathrm{prec}}(\bar e)=s^2_{\mathrm{entre}}/d+s^2_r/(d\,n)$. La leo así: «la varianza de precisión del error medio es el cuadrado de la desviación entre días dividido por el número de días, más el cuadrado de la desviación de repetibilidad dividido por el producto del número de días por el número de lecturas de cada día». Sustituyo los valores: $0,30^2/6+0,24^2/(6\cdot8)=0,0162\ (\mathrm{nmol/mol})^2$. La raíz cuadrada es $u_{\mathrm{prec}}(\bar e)=0,1273\ \mathrm{nmol/mol}$. Si el ejercicio declara un factor de cobertura `k = 2`, la contribución expandida parcial es $U_{\mathrm{prec}}=k\,u_{\mathrm{prec}}=0,2546\ \mathrm{nmol/mol}.
+
+Insisto en «parcial». Este cálculo cubre solo la contribución de precisión bajo el modelo indicado. No es todavía la incertidumbre completa del resultado ni reemplaza el presupuesto de M8. Tampoco se interpreta `k = 2` como regla universal: aquí se declara porque el ejemplo lo fija, mientras que en un presupuesto real la cobertura se elige con los grados de libertad y el modelo pertinentes [GUM G.4]. El informe declara `U_prec` como componente parcial y deja el presupuesto completo para M8.
+
+Ahora comparemos con el cálculo que dejaría fuera la variación entre días. Si solo se usara la repetibilidad, la incertidumbre estándar del promedio sería $s_r/\sqrt{d n}=0,0346\ \mathrm{nmol/mol}$. El resultado queda bastante menor que el valor que incorpora `s_entre`, porque el término entre días domina en este ejemplo. La diferencia no prueba que siempre debamos incluir cualquier variación etiquetada «día»; prueba que, para el resultado declarado y el modelo supuesto, omitir un componente estimado cambia el presupuesto. La decisión debe corresponder al mensurando y al diseño, no a cuál cifra resulta más conveniente [GUM H.5].
+
+Hay otra forma legítima de resumir los mismos datos, pero debemos reconocer qué resumen recibimos. Si nos entregan la desviación estándar de los promedios diarios, `s_medias`, y no `s_entre`, bajo este mismo modelo se usa directamente $s^2_{\mathrm{medias}}/d$ para la varianza del promedio de los días. En el ejemplo, la desviación de las medias diarias es $0,3118\ \mathrm{nmol/mol}$, y al dividirla por la raíz de seis obtenemos de nuevo $0,1273\ \mathrm{nmol/mol}$. No volvemos a sumar repetibilidad: ya está incluida en la dispersión de las medias diarias. La fórmula alternativa y la igualdad numérica se comprueban en el mismo script.
+
+> **[ERROR CRÍTICO]** Si la cantidad entregada ya es la desviación estándar de los promedios diarios, no se vuelve a sumar el término de repetibilidad. Hacerlo cuenta dos veces esa fuente. Y si la cantidad entregada es `s_entre`, no se la trata como si fuera la desviación de las medias: los nombres describen estimadores diferentes.
+
+La fórmula escrita supone el mismo número de lecturas por día y una estructura equilibrada. También supone las independencias del modelo que acabamos de nombrar. Si hay días con diferente cantidad de lecturas, dependencia serial, una deriva que conecta jornadas, o confusión entre día y ciclo, no se reemplaza `n` por una media ni se conserva la fórmula por costumbre. Se detiene el cálculo y se revisa el diseño y el modelo con quien tenga autoridad técnica. La fórmula nos ayuda bajo sus supuestos; no valida los supuestos por sí sola [Crowder 2020 §9.3.3].
+
+> **[PIZARRA]** $u^2_{\mathrm{prec}}(\bar e)=\dfrac{s^2_{\mathrm{entre}}}{d}+\dfrac{s_r^2}{dn}$; si se entrega $s_{\mathrm{medias}}$: $u^2_{\mathrm{prec}}(\bar e)=\dfrac{s^2_{\mathrm{medias}}}{d}$, sin sumar otra vez repetibilidad.
+
+> **[PREGUNTA AL GRUPO]** En una serie con seis días y ocho lecturas por día, ¿qué cifra cambia si pasamos de reportar una lectura futura a reportar un promedio de la campaña? — *Respuesta esperada:* cambia la combinación de componentes y sus divisores; se debe declarar primero el resultado de interés.
+
+### Práctica B
+
+> **[PRÁCTICA — fase de ejercicios]** Contribución de precisión al promedio de errores
+
+### Señales de escalamiento
+
+Antes de seguir una plantilla, deténganse si no está claro si la dispersión entregada corresponde a lecturas, a promedios diarios o a una componente entre días. También escalen si el número de lecturas cambia entre días, si hay menos jornadas que las previstas, si las lecturas están correlacionadas, si día y ciclo coinciden de modo que no puedan separarse, o si la variación cambia con la concentración. Una advertencia gráfica o una lectura extrema no autoriza a borrarla; primero se investiga y se documenta. En todos esos casos, la fórmula B deja de ser una instrucción automática y se requiere revisar el modelo en I o A [Crowder 2020 §9.3.3].
+
+> **[ESCALAMIENTO]** El operador básico entrega el cálculo realizado, identifica el supuesto que no puede confirmar y consulta. No fuerza un ANOVA ni elige por cuenta propia un divisor para hacer coincidir el resultado con un criterio.
+
+## Nivel I — estimar componentes y justificar el modelo
+
+Al comenzar el nivel intermedio, damos por vistos los conceptos del básico: la diferencia entre repetibilidad y precisión intermedia, y la lectura de una contribución al promedio. Ahora añadimos cómo se obtienen componentes mediante ANOVA, cómo se eligen los denominadores de las pruebas y cómo se revisa si el modelo describe los datos. En este nivel el operador prepara y justifica el análisis, pero cada resultado sigue condicionado a la estructura experimental.
+
+### Escena I1. De la variación total a la tabla ANOVA
+
+> **[DIAPOSITIVA]** Una tabla con tres columnas: fuente de variación, suma de cuadrados y grados de libertad; a su lado, un dibujo de observaciones agrupadas por día.
+
+Partamos de una pregunta concreta: ¿la variación observada entre días es compatible con el ruido de lectura dentro de los días, o hay evidencia de una diferencia entre medias diarias? En el ejemplo más sencillo, cada grupo es un día, y en cada día tenemos el mismo número de lecturas. El ANOVA de un factor descompone la variación total en una parte entre grupos y una parte dentro de los grupos: $SS_{\mathrm{total}}=SS_{\mathrm{entre}}+SS_{\mathrm{dentro}}$. Se lee: «la suma de cuadrados total es la suma de cuadrados entre días y la suma de cuadrados dentro de días» [Crowder 2020 §9.3.1].
+
+No vamos a derivar las ecuaciones aquí; la deducción de los cuadrados medios esperados está en el Anexo AX.4. Para usar la tabla, necesitamos saber qué representa cada término. La suma entre días mide cuánto se apartan las medias diarias de la media general, ponderadas por cuántas observaciones aporta cada día. La suma dentro de días recoge las desviaciones de cada lectura respecto de la media de su propio día. Si hay `d` días y `N` observaciones en total, el diseño de un factor asigna `d − 1` grados de libertad a la parte entre grupos y `N − d` a la parte residual. En un diseño equilibrado con `n` lecturas por día, `N = d n` [Crowder 2020 §9.3.1].
+
+> **[PIZARRA]** $SS_{\mathrm{total}}=\sum_d\sum_j(e_{dj}-\bar e)^2$; $SS_{\mathrm{entre}}=n\sum_d(\bar e_d-\bar e)^2$; $SS_{\mathrm{dentro}}=\sum_d\sum_j(e_{dj}-\bar e_d)^2$; $SS_{\mathrm{total}}=SS_{\mathrm{entre}}+SS_{\mathrm{dentro}}$.
+
+Dividimos cada suma de cuadrados por sus grados de libertad y obtenemos cuadrados medios: $MS_{\mathrm{entre}}=SS_{\mathrm{entre}}/(d-1)$ y $MS_{\mathrm{dentro}}=SS_{\mathrm{dentro}}/(N-d)$. En voz alta: «cuadrado medio de días es suma de cuadrados de días dividida por sus grados de libertad; cuadrado medio residual es suma de cuadrados dentro de los días dividida por sus grados de libertad». El cociente $F=MS_{\mathrm{entre}}/MS_{\mathrm{dentro}}$ contrasta si las medias de los días difieren más de lo que esperaríamos por la variación dentro de los días, bajo los supuestos del modelo. Cuando la hipótesis nula de igualdad de medias es cierta y se cumplen los supuestos, este cociente se compara con una distribución F con los grados de libertad de numerador y denominador correspondientes [Crowder 2020 §9.3.1].
+
+> **[EJEMPLO]** Las doce observaciones siguientes son simuladas para enseñar la mecánica de una tabla de ANOVA. No son datos observados en el laboratorio. Las tres columnas representan tres días con cuatro lecturas cada uno; el script `calc/M06_ejemplos.py` vuelve a calcular todos los resultados.
+
+Proyectamos las observaciones, expresadas en nmol/mol como errores con signo: día uno, menos 0,2; 0,0; 0,1; 0,1. Día dos, 0,3; 0,5; 0,6; 0,6. Día tres, menos 0,1; 0,1; 0,2; 0,2. La media general es 0,20 nmol/mol; las medias de los tres días son 0,00; 0,50 y 0,10 nmol/mol. Al descomponer, obtenemos `SS_entre = 0,56`, `SS_dentro = 0,18` y `SS_total = 0,74`, en unidades cuadradas de nmol/mol. Los grados de libertad son dos entre días y nueve dentro de días. Por tanto, `MS_entre = 0,28` y `MS_dentro = 0,02`; el cociente `F = 14,0`. Para los grados de libertad de este ejemplo, el cuantil superior de 5 % es aproximadamente 4,26. Bajo el modelo ilustrativo, el cociente excede ese umbral. Esta conclusión estadística señala diferencia entre medias diarias en el ejemplo; no identifica por sí sola una causa de laboratorio [Crowder 2020 §9.3.1].
+
+> **[PIZARRA]** Tabla ANOVA del ejemplo: entre días: SS 0,56; g.l. 2; MS 0,28; F 14,0. Dentro: SS 0,18; g.l. 9; MS 0,02. Total: SS 0,74; g.l. 11.
+
+Una prueba F no reemplaza el análisis del diseño. Si las lecturas sucesivas de un día comparten una dependencia, el número nominal de observaciones puede exagerar la información disponible. Tampoco la prueba convierte los días en una muestra aleatoria adecuada si fueron seleccionados por un criterio que limita las condiciones cubiertas. En M5 se definió la unidad experimental; aquí la usamos para decidir si los grados de libertad y el denominador representan replicación real [Crowder 2020 §9.3.3].
+
+### Escena I2. Efectos aleatorios y componentes de varianza
+
+> **[DIAPOSITIVA]** Se muestran dos modelos para días: «días concretos de interés» y «días como muestra de condiciones futuras».
+
+La ANOVA anterior puede servir para preguntar si ciertas medias concretas son iguales. Pero a veces el objetivo es distinto: no nos interesan únicamente estos días, sino estimar cuánto varían los días de una población de jornadas posibles. Ahí cambia la interpretación del factor. En un modelo de efectos fijos, los niveles observados son precisamente los niveles que queremos comparar; sus efectos se tratan como parámetros. En un modelo de efectos aleatorios, los niveles observados se consideran una muestra de una población de niveles, y el interés recae en la varianza de ese efecto. Para días de trabajo, analistas o campañas, esa segunda pregunta puede ser útil si el diseño y la población objetivo están bien definidos [Crowder 2020 §9.3.1; ISO 5725-3 §§5–6].
+
+Para el modelo aleatorio equilibrado de un factor, el cuadrado medio dentro de días estima la varianza de lectura, `σ²`. El cuadrado medio entre días contiene esa misma contribución más otra asociada a las diferencias entre días, multiplicada por el número de lecturas por día. En símbolos, sus esperanzas son $E(MS_{\mathrm{dentro}})=\sigma^2$ y $E(MS_{\mathrm{entre}})=\sigma^2+n\tau^2$. Restando la primera de la segunda y dividiendo por `n`, obtenemos el estimador por momentos de la varianza entre días: $\hat\tau^2=(MS_{\mathrm{entre}}-MS_{\mathrm{dentro}})/n$. La varianza de repetibilidad se estima con $\hat\sigma^2=MS_{\mathrm{dentro}}$. La deducción está en el Anexo AX.4 [GUM H.5].
+
+> **[PIZARRA]** $\hat\sigma^2=MS_{\mathrm{dentro}}$; $\hat\tau^2=(MS_{\mathrm{entre}}-MS_{\mathrm{dentro}})/n$; $s_r=\sqrt{\hat\sigma^2}$; $s_{\mathrm{entre}}=\sqrt{\hat\tau^2}$.
+
+Volvamos a los datos simulados recién calculados. Con cuatro lecturas por día, `MS_entre` fue 0,28 y `MS_dentro` fue 0,02. El estimador de la varianza entre días es `(0,28 − 0,02)/4 = 0,065 (nmol/mol)²`. Su raíz da `s_entre ≈ 0,255 nmol/mol`; la raíz del cuadrado medio dentro da `s_r ≈ 0,141 nmol/mol`. Son componentes estimadas a partir de este conjunto pequeño; deben informarse con su contexto y no como constantes físicas del instrumento. El script deja estos cálculos reproducibles.
+
+También necesitamos decir cuánto confiamos en una componente estimada. La incertidumbre depende de los grados de libertad y de la estructura de los cuadrados medios; la raíz de una componente no elimina esa incertidumbre. En el ejemplo, el cuadrado medio residual estima `σ² = 0,0200 (nmol/mol)²` con nueve grados de libertad. Si los residuos son normales e independientes, el intervalo de confianza chi-cuadrado de 95 % para esa varianza queda aproximadamente entre `0,00946` y `0,06666 (nmol/mol)²`. Es un intervalo ancho. La estimación puntual no debe reportarse como si fuera exacta. La construcción de límites de confianza para indicadores de precisión se desarrolla en el Anexo AX.11 [GUM H.5].
+
+Para la componente entre días, una aproximación por momentos que usa ambos cuadrados medios y sus grados de libertad da un error estándar aproximado de `0,0700 (nmol/mol)²` para `τ̂²`. Al transformar a `s_entre` mediante la aproximación delta, el error estándar aproximado es `0,1374 nmol/mol`. Estos errores estándar no son intervalos de confianza exactos para `τ`; tampoco son cifras transferibles a otro diseño. El cálculo reproducible está en `calc/M06_ejemplos.py`. La referencia para la aproximación delta queda pendiente de verificación y se registra en la bitácora.
+
+Con pocos días, la componente entre días puede ser muy imprecisa aunque el número de lecturas dentro de cada día sea grande. Los grados de libertad pertenecen al factor que se repite: agregar lecturas mejora la estimación de repetibilidad, pero no reemplaza días adicionales para estimar variación entre días.
+
+> **[ERROR CRÍTICO]** No se asignan grados de libertad de las lecturas a una componente cuyo factor es el día. La cantidad de lecturas intradía no convierte a los días observados en más días independientes.
+
+Si la diferencia entre cuadrados medios produjera una componente negativa, su interpretación y tratamiento se abordan en el nivel avanzado, en la Escena A2.
+
+### Escena I3. Dos factores, interacción y denominadores
+
+> **[DIAPOSITIVA]** Matriz de dos factores cruzados: cada fila y columna contiene todas las combinaciones observadas. Se destaca la celda que necesita réplicas para estimar el error puro.
+
+Un solo factor no alcanza cuando queremos separar, por ejemplo, analista y campaña, o día y ciclo. Si todos los niveles del primer factor aparecen con todos los niveles del segundo, el diseño es cruzado. Si cada nivel de un factor aparece dentro de uno solo del otro, es anidado. Esta diferencia se establece mirando cómo se recogieron las observaciones, no cómo nos gustaría que estuvieran organizadas en una hoja de cálculo [Crowder 2020 §9.3.1; ISO 5725-3 §§5–6].
+
+Para dos factores cruzados, un modelo con interacción puede escribirse $e_{ijk}=\mu+A_i+P_j+(AP)_{ij}+\varepsilon_{ijk}$. Se lee: «el error con signo es la media general, más el efecto del nivel i del factor A, más el efecto del nivel j del factor P, más la interacción entre esos dos niveles, más el error de lectura (o de réplica)». La interacción dice que el efecto de un factor no es constante en todos los niveles del otro. Si las medias de los analistas cambian en dirección o magnitud según la campaña, no basta con informar un único efecto medio del analista [Crowder 2020 §9.3.1–9.3.2].
+
+La interacción se puede separar del error de réplica si tenemos réplicas dentro de cada combinación de factores. Sin réplicas, una diferencia particular de celda no puede atribuirse por separado a interacción y error; el diseño confunde esas fuentes. Antes de correr cualquier prueba, dibujamos la tabla de combinaciones y anotamos cuántas observaciones independientes hay en cada celda [Crowder 2020 §9.3.1; ISO 5725-3 §§9.3–9.5].
+
+> **[EJEMPLO]** El conjunto de la diapositiva es otro ejemplo simulado, creado con dos niveles del factor A, tres del factor P y dos réplicas en cada celda. No es un estudio de CALAIRE. El archivo `calc/M06_ejemplos.py` calcula los cuadrados medios y los cocientes F.
+
+En este ejemplo, las sumas de cuadrados son 0,0833 para A, 0,5600 para P, 0,1067 para la interacción y 0,1200 para el residuo. Los grados de libertad respectivos son uno, dos, dos y seis. Los cuadrados medios resultan 0,0833, 0,2800, 0,0533 y 0,0200. En un modelo equilibrado de efectos aleatorios cruzados, el denominador para evaluar A es el cuadrado medio de la interacción, porque los valores esperados de ambos cuadrados medios comparten los otros componentes salvo el efecto A; de modo análogo, P se contrasta contra interacción. La interacción se compara con el error de réplica. Los cocientes de este conjunto resultan 1,56 para A, 5,25 para P y 2,67 para interacción [Crowder 2020 §9.3.1].
+
+> **[PIZARRA]** $F_A=MS_A/MS_{AP}$; $F_P=MS_P/MS_{AP}$; $F_{AP}=MS_{AP}/MS_E$. El denominador depende del modelo y de la esperanza de cada cuadrado medio.
+
+No memoricen «siempre dividir por el residual». En un modelo de efectos aleatorios, el denominador apropiado es el cuadrado medio cuyo valor esperado coincide con el del numerador excepto por el componente que se contrasta. Si el factor es fijo, aleatorio o mixto, cambian la pregunta y los cuadrados medios esperados. Por eso primero escribimos el modelo y el diseño; después definimos la prueba. Los cuadrados medios esperados de los modelos relevantes están desarrollados en el Anexo AX.4, no en la pizarra [GUM H.5; Crowder 2020 §9.3.1–9.3.2].
+
+### Escena I4. Residuos, heterogeneidad y Cochran
+
+> **[DIAPOSITIVA]** Gráfico de residuos por nivel de concentración y por día. Se muestra una nube sin estructura junto a otra cuya dispersión aumenta con el nivel.
+
+Una tabla ANOVA entrega números bajo un modelo, pero no garantiza que el modelo sea razonable. Revisamos los residuos: la diferencia entre cada observación y el valor ajustado por el modelo. Miramos si quedan patrones por orden temporal, si la dispersión se mantiene aproximadamente comparable entre grupos, si aparecen observaciones muy separadas y si la forma de los residuos resulta incompatible con el supuesto de normalidad requerido por la inferencia usada. Los gráficos no son una prueba automática de validez; son una manera de detectar señales que obligan a pensar en una estructura omitida [Crowder 2020 §9.3.3].
+
+En una calibración de ozono, la dispersión puede cambiar con la concentración. Si las varianzas difieren mucho entre niveles, juntar todas las lecturas en un único ANOVA de varianza común puede ser inadecuado. Una opción congruente con el alcance curricular es analizar cada nivel por separado; otra es ajustar explícitamente cómo cambia la varianza, siempre que el modelo esté justificado y validado. No elegimos después de ver qué opción produce el resultado más conveniente. Declaramos la pregunta y el modelo, y explicamos la elección [Crowder 2020 §9.3.3].
+
+La prueba de Cochran se usa para evaluar si la mayor de varias varianzas muestrales es inusualmente grande respecto de su suma, en un diseño con tamaños de muestra comparables y condiciones apropiadas. La cantidad se puede escribir $C=\max(s_i^2)/\sum_i s_i^2$. La leo: «C es la mayor varianza de grupo dividida por la suma de las varianzas». La referencia tabulada depende del número de grupos, de los grados de libertad y del nivel de significación; no basta con que un valor de C parezca grande. Un resultado señalado por Cochran no es una instrucción para eliminar el grupo: es una señal para revisar datos, condiciones y modelo, y para aplicar el protocolo de análisis previamente definido [ISO 5725-2; Crowder 2020 §9.3.3].
+
+> **[EJEMPLO]** Para ilustrar el estadístico, no para decidir sobre datos reales, consideremos cuatro varianzas simuladas: 0,010; 0,012; 0,011 y 0,027 `(nmol/mol)²`. Su suma es 0,060 y la mayor representa `C = 0,45` de esa suma. El cálculo se reproduce en `calc/M06_ejemplos.py`. Sin consultar el valor crítico apropiado al diseño, no declaramos significación ni retiramos observaciones [ISO 5725-2].
+
+> **[ERROR CRÍTICO]** La prueba de Cochran no identifica automáticamente un error de transcripción, no demuestra que el dato sea falso y no autoriza a eliminarlo. Toda exclusión exige una causa técnica documentada y se conserva el original.
+
+Cuando el patrón de residuos muestra deriva, agrupamiento o autocorrelación, el supuesto de independencia puede fallar aunque las varianzas sean parecidas. Cuando un grupo de concentración presenta dispersión distinta, el supuesto de varianza común puede fallar aunque el promedio sea estable. Un resumen único de residuos no reemplaza la inspección por secuencia, día y nivel [Crowder 2020 §9.3.3; ISO 5725-3 §8].
+
+### Escena I5. Precisión, repetibilidad y marco ISO 5725
+
+La palabra «precisión» no nombra una sola condición. La repetibilidad describe resultados bajo condiciones de repetibilidad definidas; la reproducibilidad se refiere a condiciones más amplias y a menudo entre laboratorios; la precisión intermedia describe condiciones dentro de un laboratorio cuando cambian factores como tiempo, operador o equipo. En este capítulo nos interesa sobre todo separar repetibilidad y variación intermedia dentro del laboratorio, por ejemplo, por días o campañas. La interpretación exacta depende de qué factores se variaron en el estudio [VIM; ISO 5725-1; MMU §4.4].
+
+En la formulación de ISO 5725, un resultado de ensayo se representa como una media o valor verdadero convencional más términos asociados a las condiciones y un término de error. El límite de repetibilidad y el de reproducibilidad se expresan como múltiplos convencionales de sus desviaciones estándar bajo las condiciones de la norma; no se trasladan de manera automática a cualquier presupuesto de incertidumbre ni a cualquier diseño. La elección de la parte aplicable de ISO 5725 depende de si el estudio es dentro de un laboratorio o entre laboratorios y de la estructura de los factores observados [ISO 5725-1; ISO 5725-3 §8; ISO 5725-6].
+
+Para un laboratorio individual, la Parte 3 aborda la precisión intermedia bajo condiciones variables dentro del laboratorio, y el diseño debe permitir separar las fuentes que se quieren estimar. Las Partes 2 y 4 se refieren a estudios entre laboratorios en contextos distintos; no se invocan como si fueran el modelo directo de un estudio interno. Las estimaciones ANOVA pueden aportar evaluaciones tipo A a un presupuesto de incertidumbre, pero la desviación estándar informada solo cubre las fuentes que efectivamente variaron en el estudio. Si no cambió el equipo o no se incluyó otro operador, el estudio no estima por sí solo esas contribuciones [ISO 5725-2; ISO 5725-3 §8; ISO 5725-4; ISO 5725-6; GUM H.5].
+
+No confundamos la comparación de medias concretas, que se estudia en M4, con la estimación de componentes de varianza: que una diferencia media no se detecte no demuestra que la variación entre operadores sea despreciable [ISO 5725-3 §8].
+
+### Práctica I
+
+> **[PRÁCTICA — fase de ejercicios]** ANOVA de días en un nivel del Level 2
+
+## Nivel A — estructura real, interacción y límites de estimación
+
+En el nivel avanzado damos por vistos el análisis de un factor, la lectura de los cuadrados medios, los componentes y el diagnóstico de residuos. Añadimos ahora el diseño analista × campaña con días anidados, la selección explícita de denominadores, el tratamiento de componentes negativas y la decisión sobre el marco de ISO 5725 adecuado para un solo laboratorio. El caso CALAIRE que sigue usa datos propios; no se presenta como una evaluación nueva del desempeño del instrumento, sino como una demostración de cómo la estructura determina el análisis.
+
+### Escena A1. Los días no se emparejan por su número
+
+> **[DIAPOSITIVA]** Se proyecta el esquema usado por el cálculo: dos analistas, tres bloques de seis días dentro de cada analista. La asociación de cada bloque con una campaña identificada en BASE DE DATOS no está confirmada.
+>
+> **[NOTA AL INSTRUCTOR]** Antes de impartir, confirmar con el responsable del libro la asignación de bloques a campañas y el criterio por el que se usan tres bloques y no los cinco pares listados. La nota de BASE DE DATOS habla de cuatro calibraciones, lo que también requiere aclaración frente a los cinco pares enumerados. Hasta entonces, presentar solo la estructura observada en las hojas por nivel.
+
+Miremos el estudio R&R de CALAIRE de 2022–2023. Las hojas por nivel analizadas contienen tres bloques de seis días por analista y un error medio por día. La hoja BASE DE DATOS enumera cinco pares de calibraciones; no se ha localizado en el libro un criterio que explique qué pares corresponden a los tres bloques analizados ni la exclusión de los otros. La asociación de los bloques con campañas concretas es una inferencia y no se presenta aquí como dato confirmado. Los días de un analista no son los mismos días de la otra persona; por eso «día uno» de analista uno no es una pareja de «día uno» de analista dos. El origen de los datos es propio: archivo `docs/Resultados R&r_2022 2023 (1).xlsx`, hojas por nivel [CALAIRE R&R].
+
+El modelo debe respetar esa estructura. Para una concentración dada, podemos escribir $e_{ijk}=\mu+A_i+B_j+(AB)_{ij}+D_{k(ij)}$, donde A es analista; B representa el bloque observado en la hoja; la interacción AB es específica de cada combinación; y D representa los días anidados dentro de analista por bloque. Si se confirma que cada bloque corresponde a una campaña, B se interpreta como campaña. Si hay lecturas repetidas dentro de cada día, añadiríamos un nivel más; en el conjunto que se analiza aquí, la respuesta usada es un error medio por día, no cada lectura intradía. No podemos inferir repetibilidad desde esos promedios diarios, porque la variación intradía ya no está disponible como réplica en este análisis [ISO 5725-3 §§8–9.5].
+
+> **[PIZARRA]** $e_{ijk}=\mu+A_i+B_j+(AB)_{ij}+D_{k(ij)}$; los días están anidados en analista × bloque.
+
+La estructura balanceada ofrece una forma transparente de elegir denominadores. Para evaluar el efecto medio del analista frente a una población de bloques —interpretables como campañas solo si se confirma su asignación—, el cuadrado medio de analista se compara con el de la interacción analista × bloque, no con el residual de días. La interacción se compara con el cuadrado medio de días anidados. El denominador para un efecto se elige de modo que su esperanza comparta los demás componentes y difiera por el componente bajo prueba. Si el diseño cambia, los denominadores pueden cambiar también; una tabla de F memorizada no resuelve un diseño distinto [Crowder 2020 §9.3.1–9.3.2; GUM H.5; AX.4].
+
+> **[EJEMPLO]** El siguiente resultado se reproduce desde las hojas de nivel del archivo CALAIRE con `calc/M06_RR_CALAIRE.py`. Se calculan las sumas de cuadrados para analista, bloque, su interacción y días anidados, manteniendo tres bloques de seis observaciones por analista.
+
+Al analizar los diez niveles, el mayor cociente F del efecto medio de analista es 1,24, mientras que el valor crítico de referencia para el diseño del ejemplo es 18,51. En esta prueba no aparece un efecto medio detectable de analista. La conclusión es acotada: con este diseño y estos datos, no se detecta una diferencia media de analista. No significa que el analista no contribuya nunca a la variabilidad, ni que la reproducibilidad sea cero. El denominador con pocos niveles de analista y bloque limita la potencia para responder preguntas sobre poblaciones más amplias [Crowder 2020 §9.3.4].
+
+En cambio, la interacción analista × bloque supera el valor crítico aproximado de 3,32 en cuatro niveles: 135, 360, 405 y 455 nmol/mol. Los cocientes reproducidos son aproximadamente 6,61; 4,31; 6,47 y 5,07. La diferencia entre analistas no se mantiene igual en todos los bloques; cambia según el bloque. Si la asignación se confirma, se interpretará como interacción con campaña. Esta variación es parte del fenómeno que el modelo debe conservar, no un detalle que podamos borrar promediando primero los bloques [CALAIRE R&R].
+
+> **[PIZARRA]** Para los niveles donde se detecta interacción: `F_interacción > F_crítico`; la diferencia entre analistas depende del bloque. No se informa «sin efecto del analista» como sinónimo de «sin variabilidad entre analistas».
+
+En el mismo análisis, la desviación de los días dentro de las combinaciones se sitúa aproximadamente entre 0,11 y 0,21 nmol/mol. El cociente F de bloque cambia de forma irregular entre niveles, desde aproximadamente 0,02 hasta 9,70. En 405 y 455 nmol/mol destacan medias diarias de 0,73 y 0,83 nmol/mol para el analista 2 en el segundo bloque. En las demás combinaciones, las medias van de 0,13 a 0,49 nmol/mol. Las cifras y el patrón se vuelven a calcular con los valores de la hoja, no se atribuyen a un mecanismo causal sin evidencia. Para el modelo, basta con ver que una sola media global ocultaría diferencias importantes entre bloques. El cálculo se reproduce en `calc/M06_RR_CALAIRE.py`.
+
+> **[PREGUNTA AL GRUPO]** Si los días no corresponden entre analistas, ¿qué perdemos al tratarlos como pares? — *Respuesta esperada:* inventamos una correspondencia que el diseño no tiene; la variación diaria queda asignada al término incorrecto y la conclusión puede cambiar.
+
+> **[ERROR CRÍTICO]** No se ejecuta una t pareada sobre dos secuencias solo porque cada columna tenga un renglón rotulado «día uno», «día dos» y así sucesivamente. La pareja estadística debe existir en el diseño y en las fechas, no únicamente en la posición de la celda.
+
+### Escena A2. Componentes negativas, alternativas y reporte
+
+> **[EJEMPLO]** En este conjunto simulado, `MS_entre = 0,00653` y `MS_dentro = 0,01667`. Con cuatro lecturas por día, la estimación no restringida es `(0,00653 − 0,01667)/4 = −0,00253 (nmol/mol)²`. No la presentamos como varianza física: indica que los datos no resuelven con precisión una componente entre días positiva. El ejemplo y el cálculo se reproducen en `calc/M06_ejemplos.py`.
+
+Cuando una componente estimada por momentos resulta negativa, mantenemos clara la separación entre el parámetro y su estimación. El parámetro de varianza está restringido a valores no negativos; el estimador algebraico no restringido puede bajar de cero por la variación de las muestras de cuadrados medios. Hay varias decisiones válidas dependiendo del modelo: informar la estimación no restringida como diagnóstico, usar un estimador restringido, aplicar máxima verosimilitud o REML, o estimar intervalos para componentes. No son intercambiables. El informe debe identificar el método, las restricciones, los grados de libertad y la incertidumbre, y debe conservar las estimaciones originales para que la decisión sea auditable [Crowder 2020 §9.3.1–9.3.2; GUM H.5].
+
+En un modelo de efectos aleatorios con factores cruzados y anidados, una componente cercana a cero puede deberse a que su fuente aporta poco respecto del error, a un diseño con pocos niveles, a confusión entre factores o a una estructura mal especificada. Por eso, la respuesta técnica no es simplemente «cortar los negativos en cero». Primero se verifica que las unidades, agrupaciones y réplicas corresponden a la descripción del estudio. Después se compara la estimación por momentos con la alternativa validada y se explica qué cambia en los demás componentes y en la incertidumbre [GUM H.5; ISO 5725-3 §§8–9.5].
+
+Para estimar repetibilidad, día y analista en una misma campaña de trabajo, el diseño debe incluir varios analistas, varios días y al menos dos ciclos independientes por analista y día, con orden sorteado. El ciclo independiente es necesario para separar la variación entre ciclos de la variación de lectura dentro del ciclo. Si solo se agregan lecturas consecutivas al mismo ciclo, se obtiene más información sobre ese conjunto de condiciones, pero no necesariamente una réplica independiente. Para la componente entre analistas, los grados de libertad dependen del número de analistas; añadir lecturas no sustituye añadir analistas [ISO 5725-3 §§8–9.5].
+
+> **[DIAPOSITIVA]** Diagrama de diseño recomendado para estudiar lectura, ciclo, día y analista: analistas en paralelo; días dentro de analista; al menos dos ciclos independientes dentro de cada analista-día; orden aleatorizado.
+
+La aplicación de ISO 5725 también se limita por la pregunta. La Parte 3 es la referencia pertinente para la precisión intermedia dentro de un laboratorio. Las Partes 2 y 4 corresponden a estudios interlaboratorio, así que no se convierten en el modelo directo de un estudio interno de CALAIRE; la Parte 6 trata el uso práctico de valores de exactitud dentro de su alcance. Además, la veracidad o el sesgo respecto de un valor de referencia es distinto de la precisión. Si se evalúa sesgo en un laboratorio, debe declararse qué referencia se usa, cómo se obtuvo y qué incertidumbre tiene; observar diferencias entre medias no basta para cuantificar todos los componentes de dispersión, y una estimación de precisión no corrige automáticamente el sesgo. La fuente del valor de referencia y la pregunta estadística deben justificar qué parte de la norma resulta aplicable [ISO 5725-3 §8; ISO 5725-2; ISO 5725-4; ISO 5725-6].
+
+En los presupuestos de incertidumbre, una desviación de precisión intermedia representa las fuentes incluidas y las condiciones efectivamente cubiertas por el estudio. No añadimos «analista» como componente si no hubo varios analistas; no llamamos repetibilidad a la variación de campañas; y no usamos un estudio de promedios diarios para recuperar la dispersión de lecturas individuales. Las contribuciones que falten deben obtenerse con otros datos, especificaciones justificadas o modelos apropiados en M8. La ANOVA organiza evidencia sobre fuentes de variación; no completa por sí sola todo el presupuesto [GUM H.5; ISO 5725-3 §8].
+
+> **[ERROR CRÍTICO]** Una prueba t no significativa entre analistas no demuestra que la reproducibilidad sea despreciable. Una interacción significativa, por su parte, no se reduce a un único desplazamiento medio: hay que conservar la interacción en el modelo y en la interpretación.
+
+### Práctica A
+
+> **[PRÁCTICA — fase de ejercicios]** Análisis R&R con analista × campaña y días anidados
+
+### Señales de escalamiento del nivel avanzado
+
+Escalen si el modelo no representa el orden real de toma de datos; si la replicación usada para estimar el residual no es independiente; si faltan niveles de un factor o hay celdas vacías; si no se puede distinguir una interacción de una variación residual; si el denominador de la prueba no tiene una esperanza compatible con el efecto que se contrasta; si la componente negativa cambia materialmente otra estimación; o si la conclusión depende de incluir o excluir una campaña. Para un estudio destinado a sustentar una decisión metrológica, la incertidumbre de los componentes, la definición de la población de días/analistas y la cobertura del estudio se deben revisar antes de reportar [Crowder 2020 §9.3.3–9.3.6; GUM G.4; ISO 5725-3 §8].
+
+> **[ESCALAMIENTO]** Si la estructura no se puede reconstruir con las hojas disponibles, no se intenta inferirla por la forma de la tabla. Se documenta qué información falta y se consulta al responsable técnico antes de firmar componentes o un presupuesto.
+
+## Cierre del capítulo
+
+En el nivel básico aprendimos a interpretar `s_r` y `s_entre` como fuentes distintas y a calcular su contribución al promedio de errores solo cuando el diseño y los supuestos lo permiten. Recordamos que una desviación de medias diarias ya contiene repetibilidad y no debe descomponerse por segunda vez.
+
+En el nivel intermedio construimos la lógica del ANOVA: sumas de cuadrados, grados de libertad, cuadrados medios y cocientes F; distinguimos efectos fijos de aleatorios; estimamos componentes a partir de sus cuadrados medios esperados; leímos interacciones y revisamos residuos y heterogeneidad. No usamos una tabla ANOVA desconectada del diseño.
+
+En el avanzado respetamos la anidación de días en analista × campaña, escogimos denominadores según el modelo, interpretamos componentes negativas sin ocultarlas y limitamos ISO 5725 a la parte correspondiente al estudio. En el caso propio de CALAIRE, no detectar un efecto medio de analista no elimina la interacción con campaña ni prueba que una componente sea nula.
+
+En el siguiente módulo vamos a pasar de describir y separar fuentes de variación a ajustar una relación entre referencia e indicación. La recta de calibración también dependerá del diseño, de los supuestos y de qué incertidumbres estén presentes en cada eje.
+
+## Referencias del capítulo
+
+- **VIM.** JCGM 200:2012. *International vocabulary of metrology — Basic and general concepts and associated terms (VIM)*, 3.ª ed. (no disponible en `docs/`).
+- **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008). *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. Anexos G.4 y H.5. Archivo: `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`.
+- **Crowder 2020.** Crowder, S.; Delker, C.; Forrest, E.; Martin, N. *Introduction to Statistics in Metrology*. Springer Nature Switzerland, 2020. Capítulo 9, §§9.3.1–9.3.6. Archivo: `docs/intro_stats_metro_c09.pdf`.
+- **ISO 5725-1.** ISO 5725-1:1994. *Accuracy (trueness and precision) of measurement methods and results — Part 1: General principles and definitions*. Archivo: `docs/ISO 5725-1_1994_Cor 1_1998 .pdf`.
+- **ISO 5725-2.** ISO 5725-2:1994. *Accuracy (trueness and precision) of measurement methods and results — Part 2: Basic method for the determination of repeatability and reproducibility of a standard measurement method*. Archivo: `docs/ISO 5725-2_1994.pdf`.
+- **ISO 5725-3.** ISO 5725-3:1994. *Accuracy (trueness and precision) of measurement methods and results — Part 3: Intermediate measures of the precision of a standard measurement method*. Archivo: `docs/ISO 5725-3_1994.pdf`.
+- **ISO 5725-4.** ISO 5725-4:1994. *Accuracy (trueness and precision) of measurement methods and results — Part 4: Basic methods for the determination of the trueness of a standard measurement method*. Archivo: `docs/ISO 5725-4_1994.pdf`.
+- **ISO 5725-6.** ISO 5725-6:1994. *Accuracy (trueness and precision) of measurement methods and results — Part 6: Use in practice of accuracy values*. Archivo: `docs/ISO 5725-6_1994.pdf`.
+- **MMU.** Rosario, P. P. N. do; Mendes, A. *Metrology and Measurement Uncertainty: Concepts and Applications*. Springer Nature Switzerland, 2025. §4.4, “Repeatability and Reproducibility”. Archivo: `docs/Metrology and Measurement Uncertainty.pdf`.
+- **CALAIRE R&R.** Estudio de repetibilidad y reproducibilidad del Level 2 frente al SRP 55, 2022–2023. Archivo: `docs/Resultados R&r_2022 2023 (1).xlsx`, hojas por nivel y `BASE DE DATOS` (datos propios).
+- **AX.4.** Anexo de deducciones del curso: cuadrados medios esperados del ANOVA de un factor aleatorio y contribución de precisión al promedio, según `curso/guia_libreto.md`, §7.
+- **AX.11.** Anexo de deducciones del curso: límites de confianza para indicadores de precisión y sesgo, según `curso/guia_libreto.md`, §7.

@@ -1,6 +1,8 @@
 """Reproduce resúmenes del estudio R&R con medias diarias del libro CALAIRE.
 
 Origen de entrada: docs/Resultados R&r_2022 2023 (1).xlsx, hojas por nivel.
+Advertencia: signo y correspondencia cruzada de bloques no confirmados.
+Los F son descomposición exploratoria condicional, no inferencia histórica validada.
 El cálculo conserva tres bloques de seis días por analista y no empareja días entre analistas.
 La asignación de los bloques a campañas requiere confirmación en el libro.
 Ejecutar con curso/.venv/bin/python desde la raíz del repositorio.
@@ -44,16 +46,21 @@ def nested_anova(x):
 
 def main():
     wb = openpyxl.load_workbook(BOOK, data_only=True, read_only=True)
+    print("EXPLORATORIO CONDICIONAL: signo, fechas y cruce de bloques pendientes.")
+    print("Modelo docente: analista, bloque e interacción aleatorios normales; días independientes.")
     results = []
     for level in LEVELS:
         ws = wb[f"{level}ppb"]
         rows = list(ws.iter_rows(min_row=6, max_row=23, min_col=2, max_col=3, values_only=True))
         data = np.asarray(rows, dtype=float).reshape(3, 6, 2).transpose(2, 0, 1)
+        if not np.isfinite(data).all():
+            raise ValueError(f"Faltan valores numéricos finitos en {level}ppb B6:C23")
         result = nested_anova(data)
         results.append((level, result))
         print(level, " ".join(f"{key}={value:.6f}" for key, value in result.items()))
         if level in (405, 455):
             print(f"{level}_block_means_by_analyst=", np.round(data.mean(axis=2), 6).tolist())
+    wb.close()
     analyst = [r["F_analyst"] for _, r in results]
     interactions = [(level, r["F_interaction"]) for level, r in results]
     day_sd = [r["s_day"] for _, r in results]
@@ -61,6 +68,12 @@ def main():
     print("significant_interactions=", [level for level, value in interactions if value > results[0][1]["Fcrit_interaction"]])
     print("interaction_range_selected=", [round(value, 6) for level, value in interactions if level in (135, 360, 405, 455)])
     print("s_day_range=", f"{min(day_sd):.6f}", f"{max(day_sd):.6f}")
+    # Multiplicidad: diez niveles contrastados por separado, cada uno al 5 %.
+    m = len(LEVELS)
+    fcrit_bonf = f.ppf(1 - 0.05/m, 2, 30)
+    print(f"multiplicidad: m={m}; esperados falsos positivos bajo H0 global={0.05*m:.2f}; "
+          f"Fcrit_interaccion_Bonferroni(alfa=0.05/{m})={fcrit_bonf:.6f}; "
+          f"superan={[level for level, value in interactions if value > fcrit_bonf]}")
 
 
 if __name__ == "__main__":

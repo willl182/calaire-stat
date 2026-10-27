@@ -1,0 +1,37 @@
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+You've hit your session limit · resets 10:20am (America/Bogota)
+**Veredicto global S1: aprobada con correcciones.** Escribí el informe en `curso/S1_fundamentos/S1_revision_opus.md`.
+
+| Capítulo | Veredicto |
+|---|---|
+| M00 | aprobada con correcciones |
+| M01 | aprobada con correcciones |
+| M02 | aprobada con correcciones |
+| M03 | aprobada con correcciones |
+| M04 | aprobada con correcciones |
+
+**Hallazgos (14):** 0 críticos, 4 mayores, 10 menores.
+
+**Mayores:**
+- **O-01 (M00):** el ejemplo de conteos agrupa por día mezclando las dos campañas, justo lo que el propio capítulo prohíbe unos párrafos después.
+- **O-02 (M02):** en el nivel B no se enseña a explicar cuánta variación de las indicaciones viene del cambio de la referencia, aunque prop_e lo pide para la práctica B.
+- **O-03 (M03):** la deriva no tiene ningún ejemplo numérico y las estrategias de promediado del nivel A no se explican. Dos prácticas dependen de ese contenido.
+- **O-04 (M04):** se dan los resultados de potencia y tamaño de muestra sin el método para obtenerlos.
+
+**Menores:**
+- **Referencias imprecisas (O-05 a O-08):**
+  - M01 define mensurando, error y corrección con VIM sin numeral, aunque hay equivalentes verificables en la GUM.
+  - Tres citas no respaldan la afirmación concreta:
+    - chi-cuadrado en Hahs-Vaughn (M03);
+    - Welch en secciones de software (M04);
+    - límite del CV cerca de cero con ASQ (M02).
+- **Forma y coherencia del guion (O-09 a O-12):** M03 va todo entre comillas, define variable aleatoria después de su ejemplo y repite el párrafo de exclusiones. Hay mezcla de tú/usted en M00 y M01. M01 no conecta la covarianza con M03-I. Las señales de escalamiento de B nombran conceptos que aún no se han visto.
+- **Registro y auditoría (O-13, O-14):** cuatro ubicaciones mal anotadas en `S1_revision_sol.md`. Las ediciones de los scripts de la segunda interrupción no figuran como decididas, aunque su contenido es correcto.
+
+**Verificaciones:**
+- Los cinco scripts corren y reproducen exactamente sus salidas guardadas.
+- Recalculé con un script propio todas las cifras narradas de M00–M04 y coinciden.
+- Coteje 19 numerales con pdftotext; no hay referencias inventadas.
+- Todas las ediciones de las tres auditorías (C01–C27, D2-01–D2-37, R3-01–R3-16) están registradas con su decisión.

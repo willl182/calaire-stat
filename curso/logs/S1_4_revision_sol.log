@@ -9,3 +9,21 @@ API Error: 500 Post "https://chatgpt.com/backend-api/codex/responses": utls: dia
 ⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
 Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
 [claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+You've hit your session limit · resets 12:10am (America/Bogota)
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+1. Las tres interrupciones dejaron ediciones sin decisión: 27 cambios C01–C27, 37 bloques D2 y 16 bloques R3. Todas quedan registradas en `S1_revision_sol.md` con su hallazgo S-… (S-001 a S-115). Las conservé o ajusté con justificación técnica; no revertí ninguna.
+2. Hallazgos nuevos de M03 y M04: probabilidad cero no implica evento imposible, independencia en F, aproximación $c^TVc$, supuestos y unidad de cada ejemplo, y margen de equivalencia ±0,30 común con B. Corregí S-115 en M03/M04: las citas de NIST/SEMATECH decían «verificado en la web» o «consultado el 26» sin evidencia en S1; ahora dicen «recurso web externo, no cotejado».
+3. Cálculos: los cinco scripts de `calc/` corren sin error con `.venv` y sus salidas coinciden con `*_salida_sol.txt`. `verificar_M03_M04_personal.py` da 33/33 y `verificar_entrega_sol.py` da OK. Con pdftotext confirmé numerales de GUM (4.2.7, 4.3.3, 5.2.2, 6.2.1, E.4.3, G.3.2), la tabla 2.10 de Otto y los §§7.2 y 7.4 de Crowder.
+4. Hay 15 marcadores de práctica (3 por capítulo) sin desarrollo. Actualicé el índice `S1_00_indice.md` con las tres auditorías y el estado. Añadí la nota del supervisor y cerré con «## Estado de entrega»; plan y nota del orquestador quedan intactos.
+5. Límites: con esfuerzo bajo, M00–M02 se ratificaron sobre la verificación anterior sin repetirla, y en M03/M04 los numerales se cotejaron por muestreo. VIM, NIST y Lakens no están en `docs/` y quedan sin numeral. Faltan la fase de ejercicios y el cotejo de esas fuentes externas.

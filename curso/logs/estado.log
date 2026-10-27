@@ -159,3 +159,197 @@
 2026-10-25 19:36:44  CAPITULO M09 COMPLETO
 2026-10-25 19:37:03  === S3: capítulos listos, inicia revisión de sección ===
 2026-10-25 19:37:03  INICIO sol -> S3_4_revision_sol.log (intento 1)
+2026-10-25 20:21:01  NOTA orquestador: M08 paso 3 terminado antes de la detención (tabla R01–R16 en bitácora)
+2026-10-25 20:21:01  CAPITULO M08 COMPLETO
+2026-10-25 20:21:01  NOTA orquestador: entorno migrado a /home/w182; ROOT dinámico en common.sh; .venv recreado (numpy, scipy, statsmodels, openpyxl); 28 scripts calc verificados OK
+2026-10-25 20:21:01  === REANUDACIÓN 2: secciones S1–S3 y AX (pasos 2–3), luego S4 ===
+2026-10-25 20:21:01  INSTANTÁNEA antes_P4_sol -> curso/S3_comparacion_decision/versiones/20261025_202101_antes_P4_sol
+2026-10-25 20:21:01  INSTANTÁNEA antes_P4_sol -> curso/S2_modelos_calibracion/versiones/20261025_202101_antes_P4_sol
+2026-10-25 20:21:01  INSTANTÁNEA antes_P4_sol -> curso/S1_fundamentos/versiones/20261025_202101_antes_P4_sol
+2026-10-25 20:21:01  INICIO haiku -> AX_2_revision_haiku.log (intento 1)
+2026-10-25 20:21:01  INICIO sol -> S2_4_revision_sol.log (intento 1)
+2026-10-25 20:21:01  INICIO sol -> S1_4_revision_sol.log (intento 1)
+2026-10-25 20:21:01  INICIO sol -> S3_4_revision_sol.log (intento 1)
+2026-10-25 20:24:46  GUARDIÁN de cierre activo (pid 20001)
+2026-10-25 20:25:12  GUARDIÁN de cierre activo (pid 20171)
+2026-10-25 20:25:14  FIN    haiku -> AX_2_revision_haiku.log OK
+2026-10-25 20:25:14  INSTANTÁNEA antes_P3_AX -> curso/S4_numericos_integracion/versiones/20261025_202514_antes_P3_AX
+2026-10-25 20:25:14  INICIO luna -> AX_3_ajustes_luna.log (intento 1)
+2026-10-25 20:26:23  CIERRE SOLICITADO: cada cadena termina su paso actual
+2026-10-25 20:30:08  FIN    luna -> AX_3_ajustes_luna.log OK
+2026-10-25 20:30:08  CAPITULO AX COMPLETO
+2026-10-25 20:30:08  INSTANTÁNEA antes_P4_sol -> curso/S4_numericos_integracion/versiones/20261025_203008_antes_P4_sol
+2026-10-25 20:30:08  INICIO sol -> S4_4_revision_sol.log (intento 1)
+2026-10-25 20:30:10  PAUSA S4: detenida antes del paso 4 (sin trabajo hecho en ese paso)
+2026-10-25 20:30:21  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 1)
+2026-10-25 20:31:09  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 1)
+2026-10-25 20:31:21  INICIO sol -> S3_4_revision_sol.log (intento 2)
+2026-10-25 20:31:23  PAUSA S3: detenida antes del paso 4 (sin trabajo hecho en ese paso)
+2026-10-25 20:32:09  INICIO sol -> S1_4_revision_sol.log (intento 2)
+2026-10-25 20:32:11  PAUSA S1: detenida antes del paso 4 (sin trabajo hecho en ese paso)
+2026-10-25 21:59:55  === FASES 1–3 TERMINADAS (reanudación 2) ===
+2026-10-25 21:59:55  CIERRE COMPLETO: ningún agente activo; seguro desconectar. Reanudar: bash curso/scripts/reanudar_pausa.sh
+2026-10-25 21:59:57  PAUSA S2: detenida por el orquestador en el paso 4 (agente bloqueado por 429 desde 20:31; había editado libretos)
+2026-10-25 22:00:40  CIERRE CANCELADO
+2026-10-25 22:00:40  NOTA orquestador: supervisor sol sustituido por Opus 5.5 effort low (decisión del usuario)
+2026-10-25 22:00:40  === REANUDACIÓN desde pausa ===
+2026-10-25 22:00:40  INSTANTÁNEA antes_P4_sol -> curso/S1_fundamentos/versiones/20261025_220040_antes_P4_sol
+2026-10-25 22:00:40  INSTANTÁNEA antes_P4_sol -> curso/S4_numericos_integracion/versiones/20261025_220040_antes_P4_sol
+2026-10-25 22:00:40  INSTANTÁNEA antes_P4_sol -> curso/S3_comparacion_decision/versiones/20261025_220040_antes_P4_sol
+2026-10-25 22:00:40  INSTANTÁNEA antes_P4_sol -> curso/S2_modelos_calibracion/versiones/20261025_220040_antes_P4_sol
+2026-10-25 22:00:40  INICIO sol -> S4_4_revision_sol.log (intento 1)
+2026-10-25 22:00:40  INICIO sol -> S2_4_revision_sol.log (intento 1)
+2026-10-25 22:00:40  INICIO sol -> S3_4_revision_sol.log (intento 1)
+2026-10-25 22:00:40  INICIO sol -> S1_4_revision_sol.log (intento 1)
+2026-10-25 22:03:22  FIN    sol -> S4_4_revision_sol.log OK
+2026-10-25 22:03:23  INICIO opus -> S4_5_revision_opus.log (intento 1)
+2026-10-25 22:04:04  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 1)
+2026-10-25 22:04:10  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 1)
+2026-10-25 22:04:16  FALLO  opus -> S4_5_revision_opus.log rc=1 (intento 1)
+2026-10-25 22:05:04  INICIO sol -> S1_4_revision_sol.log (intento 2)
+2026-10-25 22:05:07  FALLO  sol -> S2_4_revision_sol.log rc=1 (intento 1)
+2026-10-25 22:05:08  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 2)
+2026-10-25 22:05:10  INICIO sol -> S3_4_revision_sol.log (intento 2)
+2026-10-25 22:05:13  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 2)
+2026-10-25 22:05:16  INICIO opus -> S4_5_revision_opus.log (intento 2)
+2026-10-25 22:05:20  FALLO  opus -> S4_5_revision_opus.log rc=1 (intento 2)
+2026-10-25 22:06:07  INICIO sol -> S2_4_revision_sol.log (intento 2)
+2026-10-25 22:06:11  FALLO  sol -> S2_4_revision_sol.log rc=1 (intento 2)
+2026-10-25 22:07:08  INICIO sol -> S1_4_revision_sol.log (intento 3)
+2026-10-25 22:07:11  FALLO  sol -> S1_4_revision_sol.log rc=1 (intento 3)
+2026-10-25 22:07:13  INICIO sol -> S3_4_revision_sol.log (intento 3)
+2026-10-25 22:07:16  FALLO  sol -> S3_4_revision_sol.log rc=1 (intento 3)
+2026-10-25 22:07:20  INICIO opus -> S4_5_revision_opus.log (intento 3)
+2026-10-25 22:07:23  FALLO  opus -> S4_5_revision_opus.log rc=1 (intento 3)
+2026-10-25 22:08:11  INICIO sol -> S2_4_revision_sol.log (intento 3)
+2026-10-25 22:08:15  FALLO  sol -> S2_4_revision_sol.log rc=1 (intento 3)
+2026-10-25 22:10:11  ABORTA S1 en revisión sol
+2026-10-25 22:10:16  ABORTA S3 en revisión sol
+2026-10-25 22:10:23  ABORTA S4 en revisión Opus
+2026-10-25 22:11:15  ABORTA S2 en revisión sol
+2026-10-25 22:11:15  === FASES 1–3 TERMINADAS (reanudación desde pausa) ===
+2026-10-26 05:25:51  GUARDIÁN de cierre activo (pid 174103)
+2026-10-26 05:26:10  === REANUDACIÓN desde pausa ===
+2026-10-26 05:26:10  INSTANTÁNEA antes_P4_sol -> curso/S1_fundamentos/versiones/20261026_052610_antes_P4_sol
+2026-10-26 05:26:10  INICIO opus -> S4_5_revision_opus.log (intento 1)
+2026-10-26 05:26:10  INSTANTÁNEA antes_P4_sol -> curso/S2_modelos_calibracion/versiones/20261026_052610_antes_P4_sol
+2026-10-26 05:26:10  INSTANTÁNEA antes_P4_sol -> curso/S3_comparacion_decision/versiones/20261026_052610_antes_P4_sol
+2026-10-26 05:26:10  INICIO sol -> S1_4_revision_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 05:26:10  INICIO sol -> S2_4_revision_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 05:26:10  INICIO sol -> S3_4_revision_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 05:35:47  FIN    opus -> S4_5_revision_opus.log OK
+2026-10-26 05:35:47  INSTANTÁNEA antes_P6_sol -> curso/S4_numericos_integracion/versiones/20261026_053547_antes_P6_sol
+2026-10-26 05:35:47  INICIO sol -> S4_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 05:38:18  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S3_4_revision_sol.log): cuota de sol agotada
+2026-10-26 05:38:18  INICIO sol -> S3_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 05:38:58  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S4_6_correcciones_sol.log): cuota de sol agotada
+2026-10-26 05:38:58  INICIO sol -> S4_6_correcciones_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 05:39:03  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S1_4_revision_sol.log): cuota de sol agotada
+2026-10-26 05:39:03  INICIO sol -> S1_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 05:39:04  AUDITORÍA respaldo -> curso/S4_numericos_integracion/auditoria_respaldo_20261026_053904 (12 bloques)
+2026-10-26 05:39:07  AUDITORÍA respaldo -> curso/S1_fundamentos/auditoria_respaldo_20261026_053907 (16 bloques)
+2026-10-26 05:41:53  FIN    sol -> S1_4_revision_sol.log OK
+2026-10-26 05:41:53  INICIO opus -> S1_5_revision_opus.log (intento 1)
+2026-10-26 05:41:55  FIN    sol -> S4_6_correcciones_sol.log OK
+2026-10-26 05:41:55  SECCION S4 COMPLETA
+2026-10-26 05:42:35  FIN    sol -> S3_4_revision_sol.log OK
+2026-10-26 05:42:35  INICIO opus -> S3_5_revision_opus.log (intento 1)
+2026-10-26 05:46:37  LÍMITE de sesión Claude (S1_5_revision_opus.log): espera 30 min (espera 1) — resets 10:20am
+2026-10-26 05:46:38  LÍMITE de sesión Claude (S3_5_revision_opus.log): espera 30 min (espera 1) — resets 10:20am
+2026-10-26 05:48:09  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S2_4_revision_sol.log): cuota de sol agotada
+2026-10-26 05:48:09  INICIO sol -> S2_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 05:48:13  LÍMITE de sesión Claude (S2_4_revision_sol.log): espera 30 min (espera 1) — resets 10:20am
+2026-10-26 06:16:37  INICIO opus -> S1_5_revision_opus.log (intento 1)
+2026-10-26 06:16:38  INICIO opus -> S3_5_revision_opus.log (intento 1)
+2026-10-26 06:16:41  LÍMITE de sesión Claude (S1_5_revision_opus.log): espera 30 min (espera 2) — resets 10:20am
+2026-10-26 06:16:41  LÍMITE de sesión Claude (S3_5_revision_opus.log): espera 30 min (espera 2) — resets 10:20am
+2026-10-26 06:18:13  INICIO sol -> S2_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 06:18:16  LÍMITE de sesión Claude (S2_4_revision_sol.log): espera 30 min (espera 2) — resets 10:20am
+2026-10-26 06:46:41  INICIO opus -> S3_5_revision_opus.log (intento 1)
+2026-10-26 06:46:41  INICIO opus -> S1_5_revision_opus.log (intento 1)
+2026-10-26 06:46:45  LÍMITE de sesión Claude (S1_5_revision_opus.log): espera 30 min (espera 3) — resets 10:20am
+2026-10-26 06:46:45  LÍMITE de sesión Claude (S3_5_revision_opus.log): espera 30 min (espera 3) — resets 10:20am
+2026-10-26 06:48:16  INICIO sol -> S2_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 06:48:20  LÍMITE de sesión Claude (S2_4_revision_sol.log): espera 30 min (espera 3) — resets 10:20am
+2026-10-26 07:16:51  INICIO opus -> S1_5_revision_opus.log (intento 1)
+2026-10-26 07:16:51  INICIO opus -> S3_5_revision_opus.log (intento 1)
+2026-10-26 07:17:01  LÍMITE de sesión Claude (S1_5_revision_opus.log): espera 30 min (espera 4) — resets 10:20am
+2026-10-26 07:17:02  LÍMITE de sesión Claude (S3_5_revision_opus.log): espera 30 min (espera 4) — resets 10:20am
+2026-10-26 07:18:20  INICIO sol -> S2_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 07:18:24  LÍMITE de sesión Claude (S2_4_revision_sol.log): espera 30 min (espera 4) — resets 10:20am
+2026-10-26 19:52:50  AUDITORÍA respaldo -> curso/S2_modelos_calibracion/auditoria_respaldo_20261026_195250 (40 bloques)
+2026-10-26 19:53:53  GUARDIÁN de cierre activo (pid 10104)
+2026-10-26 19:53:54  === REANUDACIÓN desde pausa ===
+2026-10-26 19:53:54  INSTANTÁNEA antes_P4_sol -> curso/S2_modelos_calibracion/versiones/20261026_195354_antes_P4_sol
+2026-10-26 19:53:54  INICIO opus -> S1_5_revision_opus.log (intento 1)
+2026-10-26 19:53:54  INICIO opus -> S3_5_revision_opus.log (intento 1)
+2026-10-26 19:53:54  INICIO sol -> S2_4_revision_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:01:17  FIN    opus -> S1_5_revision_opus.log OK
+2026-10-26 20:01:17  INSTANTÁNEA antes_P6_sol -> curso/S1_fundamentos/versiones/20261026_200117_antes_P6_sol
+2026-10-26 20:01:17  INICIO sol -> S1_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:02:56  FIN    opus -> S3_5_revision_opus.log OK
+2026-10-26 20:02:56  INSTANTÁNEA antes_P6_sol -> curso/S3_comparacion_decision/versiones/20261026_200256_antes_P6_sol
+2026-10-26 20:02:56  INICIO sol -> S3_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:08:41  AUDITORÍA respaldo -> curso/S1_fundamentos/auditoria_respaldo_20261026_200841 (23 bloques)
+2026-10-26 20:08:41  AUDITORÍA respaldo -> curso/S2_modelos_calibracion/auditoria_respaldo_20261026_200841 (19 bloques)
+2026-10-26 20:08:41  AUDITORÍA respaldo -> curso/S3_comparacion_decision/auditoria_respaldo_20261026_200841 (24 bloques)
+2026-10-26 20:08:55  GUARDIÁN de cierre activo (pid 18126)
+2026-10-26 20:08:56  === REANUDACIÓN desde pausa ===
+2026-10-26 20:08:56  INSTANTÁNEA antes_P4_sol -> curso/S2_modelos_calibracion/versiones/20261026_200856_antes_P4_sol
+2026-10-26 20:08:56  INSTANTÁNEA antes_P6_sol -> curso/S3_comparacion_decision/versiones/20261026_200856_antes_P6_sol
+2026-10-26 20:08:56  INSTANTÁNEA antes_P6_sol -> curso/S1_fundamentos/versiones/20261026_200856_antes_P6_sol
+2026-10-26 20:08:56  INICIO sol -> S2_4_revision_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:08:56  INICIO sol -> S1_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:08:56  INICIO sol -> S3_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-26 20:14:02  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S1_6_correcciones_sol.log): cuota de sol agotada
+2026-10-26 20:14:02  AUDITORÍA respaldo -> curso/S1_fundamentos/auditoria_respaldo_20261026_201402 (3 bloques)
+2026-10-26 20:14:02  INICIO sol -> S1_6_correcciones_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 20:14:11  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S2_4_revision_sol.log): cuota de sol agotada
+2026-10-26 20:14:11  AUDITORÍA respaldo -> curso/S2_modelos_calibracion/auditoria_respaldo_20261026_201411 (2 bloques)
+2026-10-26 20:14:11  INICIO sol -> S2_4_revision_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 20:14:55  FIN    sol -> S1_6_correcciones_sol.log OK
+2026-10-26 20:14:55  SECCION S1 COMPLETA
+2026-10-26 20:15:26  RESPALDO sol -> Opus 5.5 esfuerzo bajo (S3_6_correcciones_sol.log): cuota de sol agotada
+2026-10-26 20:15:26  AUDITORÍA respaldo -> curso/S3_comparacion_decision/auditoria_respaldo_20261026_201526 (7 bloques)
+2026-10-26 20:15:26  INICIO sol -> S3_6_correcciones_sol.log (intento 1) [Opus 5.5 con esfuerzo bajo, en sustitución de claude-sol por cuota agotada]
+2026-10-26 20:16:46  FIN    sol -> S3_6_correcciones_sol.log OK
+2026-10-26 20:16:46  SECCION S3 COMPLETA
+2026-10-26 20:19:16  FIN    sol -> S2_4_revision_sol.log OK
+2026-10-26 20:19:49  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 20:20:28  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 1) — resets 12:50am
+2026-10-26 20:50:33  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 20:50:37  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 2) — resets 12:50am
+2026-10-26 21:20:37  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 21:20:41  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 3) — resets 12:50am
+2026-10-26 21:50:41  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 21:50:45  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 4) — resets 12:50am
+2026-10-26 22:20:45  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 22:20:48  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 5) — resets 12:50am
+2026-10-26 22:50:49  SIN RED: esperando…
+2026-10-26 22:55:09  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 22:55:13  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 6) — resets 12:50am
+2026-10-26 23:25:13  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 23:25:17  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 7) — resets 12:50am
+2026-10-26 23:55:17  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-26 23:55:21  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 8) — resets 12:50am
+2026-10-27 00:25:21  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-27 00:25:25  LÍMITE de sesión Claude (S2_5_revision_opus.log): espera 30 min (espera 9) — resets 12:50am
+2026-10-27 00:55:25  INICIO opus -> S2_5_revision_opus.log (intento 1)
+2026-10-27 01:05:54  FIN    opus -> S2_5_revision_opus.log OK
+2026-10-27 01:05:54  INSTANTÁNEA antes_P6_sol -> curso/S2_modelos_calibracion/versiones/20261027_010554_antes_P6_sol
+2026-10-27 01:05:54  INICIO sol -> S2_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol)]
+2026-10-27 01:06:46  === REANUDACIÓN 6: solo sol/luna/haiku esfuerzo bajo; S2 desde paso 6
+2026-10-27 01:06:46  INSTANTÁNEA antes_P6_sol -> curso/S2_modelos_calibracion/versiones/20261027_010646_antes_P6_sol
+2026-10-27 01:06:46  INICIO sol -> S2_6_correcciones_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 01:07:45  INSTANTÁNEA antes_O02 -> curso/S4_numericos_integracion/versiones/20261027_010745_antes_O02
+2026-10-27 01:07:45  INICIO luna -> S4_O02_luna.log (intento 1) [claude-luna, esfuerzo bajo]
+2026-10-27 01:08:12  FIN    luna -> S4_O02_luna.log OK
+2026-10-27 01:08:12  INICIO haiku -> S4_O02_haiku.log (intento 1) [Haiku 5.5, esfuerzo bajo]
+2026-10-27 01:08:43  FIN    haiku -> S4_O02_haiku.log OK
+2026-10-27 01:08:43  O-02 AX.12 COMPLETO (luna + haiku)
+2026-10-27 01:08:55  INICIO luna -> S4_O02_luna2.log (intento 1) [claude-luna, esfuerzo bajo]
+2026-10-27 01:09:24  FIN    luna -> S4_O02_luna2.log OK
+2026-10-27 01:09:24  O-02 AX.12 AJUSTES COMPLETO
+2026-10-27 01:14:52  FIN    sol -> S2_6_correcciones_sol.log OK
+2026-10-27 01:14:52  SECCION S2 COMPLETA
+2026-10-27 01:16:28  REVISIÓN FINAL del orquestador -> curso/revision_final.md (fase de contenido aprobada)

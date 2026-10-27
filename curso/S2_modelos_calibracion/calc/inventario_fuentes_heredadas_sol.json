@@ -1,0 +1,420 @@
+[
+  {
+    "archivo": "calc/fuentes_sol/00.txt",
+    "sha256": "9b95376e356a51ff6f2eb2265fddbad4eaf8e94d388d4f1360bf65c506f7d04b",
+    "primeras_lineas": [
+      "Chapter 9",
+      "Design of Experiments in Metrology",
+      "",
+      "",
+      "",
+      "",
+      "One of the topics that has received relatively little attention in the metrology",
+      "literature is the statistical design of experiments (DOEx). A premise of statistical",
+      "DOEx is that efﬁciency is paramount in terms of the resources (cost, time, personnel,",
+      "equipment, etc.. . .) used to perform an experiment. In the case of metrology studies,",
+      "individual runs in an experiment may be very costly, and the experiment must be",
+      "designed in such a way that information regarding the measurement process is"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/01.txt",
+    "sha256": "0ac9f410df8348c469fedc08b7415facdc6da1537488890db50dffbcf2ec6121",
+    "primeras_lineas": [
+      "Chapter 10",
+      "Determining Uncertainties in Fitted Curves",
+      "",
+      "",
+      "",
+      "",
+      "This chapter discusses methods of ﬁtting curves to measured data while accounting",
+      "for uncertainty in the data. We start with equations for the best linear ﬁt and",
+      "uncertainties in the slope and intercept. A short discussion of linear ﬁts when there",
+      "is uncertainty in the x-values is presented next. Conﬁdence and prediction bands",
+      "are presented for expressing uncertainty in the ﬁtted line and uncertainty in",
+      "predictions made using the ﬁtted line. Goodness-of-ﬁt metrics are used to assess"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/02.txt",
+    "sha256": "56d2055e8bcfd6d2234a362350052b79ed0ffd517e8ca224a87b6e4be5b92be0",
+    "primeras_lineas": [
+      "Chapter 6",
+      "The Measurement Model and Uncertainty",
+      "",
+      "",
+      "",
+      "",
+      "This chapter introduces the basic terms and models used to quantify the uncertainty",
+      "of both direct and indirect measurements. Basic deﬁnitions such as Type A and Type",
+      "B evaluation of uncertainty are introduced, and the GUM approach to the propaga-",
+      "tion of uncertainties is explained. Case studies are used to illustrate the approaches to",
+      "uncertainty analyses for both types of measurements.",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/03.txt",
+    "sha256": "630f42e7b91c6ef511f21c80dc76f72aeebfea7cb780fde3f89b6a97a93293d5",
+    "primeras_lineas": [
+      "Chapter 7",
+      "Analytical Methods for the Propagation",
+      "of Uncertainties",
+      "",
+      "",
+      "",
+      "",
+      "7.1 Introduction",
+      "",
+      "This chapter presents analytical methods for propagating uncertainties through an",
+      "indirect measurement model. The method was ﬁrst introduced by Carl Gauss in the",
+      "1820s (Gauss 1821), and was further developed by Kline and McClintock (1953). In"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/04.txt",
+    "sha256": "a35a4bb01104903ff0ae90e4ee82fc5c4dddbbce5602b92ab69d1eb5edde4fc8",
+    "primeras_lineas": [
+      "                                                                                                                                                                                              Y",
+      "                                                                                 INTERNATIONAL STANDARD I S 0 5725-3~1994",
+      "                                                                                 TECHNICAL CORRIGENDUM 1",
+      "",
+      "                                                                                 Published 2001-10-15",
+      "",
+      "           INTERNATIONALORGANIZATIONFOR STANDARDIZATION                 .    MDK~YHAPO~~HAROPrAHmAum no C T A H W T M ~ M M                      ORGANISATIONINTERNATIONALEDE NORMALISATION",
+      "",
+      "",
+      "",
+      "",
+      "          Accuracy (trueness and precision) of measurement methods and"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/05.txt",
+    "sha256": "5b22d2c368e7c390c33b198698074dd2c4027d7b6d252ef2c18638d0f4fd7498",
+    "primeras_lineas": [
+      "INTERNATIONAL                                                     Is0",
+      "STANDARD                                                       5725-2",
+      "                                                                      First edition",
+      "                                                                       1994-12-15",
+      "",
+      "",
+      "",
+      "",
+      "Accuracy (trueness and precision) of",
+      "measurement    methods and results -",
+      "Part 2:",
+      "Basic method for the determination of"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/06.txt",
+    "sha256": "4757f5b948904085cf1d5869b3dd1cbc9c107c99aeb116e96a4bfb15d4c2de9e",
+    "primeras_lineas": [
+      "                                                                  INTERNATIONAL                                                                                            IS0",
+      "                                                                  STANDARD                                                                                       5725-4",
+      "                                                                                                                                                                          First edition",
+      "                                                                                                                                                                           1994-l 2-l 5",
+      "",
+      "",
+      "",
+      "",
+      "                                                                                                                                                                                        --``````,,,,````,,````,,,````-`-`,,`,,`,`,,`---",
+      "",
+      "",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/07.txt",
+    "sha256": "5d2f2496724702f59566d86c2ae38d7c20bfae6de04d6821e5752693ac2f125f",
+    "primeras_lineas": [
+      "TECHNICAL                                                ISO/TS",
+      "SPECIFICATION                                             28037",
+      "",
+      "                                                               First edition",
+      "                                                               2010-09-01",
+      "",
+      "",
+      "",
+      "",
+      "Determination and use of straight-line",
+      "calibration functions",
+      "Détermination et utilisation des fonctions d'étalonnage linéaire"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/08.txt",
+    "sha256": "c0628e97c2a50ff75672e307ea8a3118bd11aea0f9e590e298335c7f285d7770",
+    "primeras_lineas": [
+      "                                                                      INTERNATIONAL                                                ISO",
+      "                                                                      STANDARD                                                    6143",
+      "",
+      "                                                                                                                                Second edition",
+      "                                                                                                                                   2001-05-01",
+      "",
+      "",
+      "",
+      "",
+      "                                                                      Gas analysis — Comparison methods for",
+      "                                                                      determining and checking the composition",
+      "                                                                      of calibration gas mixtures"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/09.txt",
+    "sha256": "a628e60c7ba6381c534584d121aa5ec8b5e6b2241d4864a04d1e513b414f9a2d",
+    "primeras_lineas": [
+      "JCGM GUM-6:2020",
+      "",
+      "",
+      "",
+      "",
+      "Guide to the expression of",
+      "uncertainty in measurement —",
+      "Part 6: Developing and using",
+      "measurement models",
+      "",
+      "Guide pour l’expression de l’incertitude de",
+      "mesure — Partie 6: Élaboration et"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/10.txt",
+    "sha256": "a54a4ef18f30d55576f22d86655b5cdc61c64a35bfcb13367a976cc7ad75862b",
+    "primeras_lineas": [
+      "                                                                                                                           11",
+      "",
+      "",
+      "",
+      "",
+      "2",
+      "",
+      "Experimental Design",
+      "",
+      "2.1 Introduction",
+      "Although all chemists acknowledge the need to be able to design laboratory-based experiments, formal statistical",
+      "(or chemometric) rules are rarely developed as part of mainstream chemistry. In contrast, a biologist or a psychol-"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/11.txt",
+    "sha256": "13bd40e1023fe40cca6adc7855a74c63fef2929f1e344596884db65c04908f6f",
+    "primeras_lineas": [
+      "",
+      "Matthias Otto",
+      "",
+      "Chemometrics",
+      "",
+      "Matthias Otto",
+      "",
+      "",
+      "",
+      "",
+      "Chemometrics",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/12.txt",
+    "sha256": "9ed2d06d72481a1728fff5e2e72395e5a9bb51390881a6982a548cada277cc33",
+    "primeras_lineas": [
+      "",
+      "",
+      "Chemometrics",
+      "",
+      "",
+      "Chemometrics",
+      "",
+      "Data Driven Extraction for Science",
+      "",
+      "",
+      "",
+      "Richard G. Brereton"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/13.txt",
+    "sha256": "51df308f24e495b08cf4ebe1ab4a8812b540b734f0bdfc9e7decb62611e5e799",
+    "primeras_lineas": [
+      "",
+      "“This edition delivers on many fronts and sets this book apart from the rest. The clear and",
+      "conversational style emphasizes the applied and practical without compromising the theo-",
+      "retical and conceptual underpinnings. The parallel use of SPSS and R that walks the reader",
+      "step-by-step through the procedures coupled with fully annotated interpretation of print-",
+      "outs are very appealing to both novice and more seasoned applied researchers. Rather than",
+      "treating subjects like power and effect size or verification of assumptions in isolation, the",
+      "authors do a fantastic job of blending them with the analyses to make the story behind the",
+      "numbers more compelling and complete. The abundance of visuals and APA style write-",
+      "ups all contribute to simplify and enhance the learning experience.”",
+      "     —Devdass Sunnassee, Assistant Clinical Professor, University of North Carolina, USA",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/14.txt",
+    "sha256": "b7647d7b3248c62ca1459dfba0e4ec96859c8e19a6a205102cab599fa7e002d2",
+    "primeras_lineas": [
+      "Pedro Paulo Novellino do Rosario",
+      "Alexandre Mendes",
+      "",
+      "",
+      "",
+      "",
+      "Metrology and",
+      "Measurement",
+      "Uncertainty",
+      "Concepts and Applications",
+      "",
+      "Metrology and Measurement Uncertainty"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/15.txt",
+    "sha256": "5f5250ecd0bb80ff11a34455a55261e704e123516555543c3379d493fa18baf4",
+    "primeras_lineas": [
+      "                             BS EN 14625:2012",
+      "",
+      "",
+      "",
+      "",
+      "BSI Standards Publication",
+      "",
+      "         Ambient air — Standard",
+      "         method for the measurement",
+      "         of the concentration of ozone",
+      "         by ultraviolet photometry",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/16.txt",
+    "sha256": "91098cfa6106e59f5ea75ce70a0f76bfa3d511bd2372907a5efb08918bd34546",
+    "primeras_lineas": [
+      "                         BS EN ISO/IEC 17025:2017",
+      "                         Incorporating corrigendum March 2018",
+      "",
+      "",
+      "",
+      "",
+      "BSI Standards Publication",
+      "",
+      "",
+      "",
+      "",
+      "General requirements for the competence"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/17.txt",
+    "sha256": "1c7ca974aaead4c6fcb8bf61afc17f0cda38869d00c145ca0678a32710f80bed",
+    "primeras_lineas": [
+      "                          INTERNAL OAQPS PROCEDURE",
+      "",
+      "",
+      "",
+      "",
+      "     Standard Operating Procedure",
+      "     (SOP) for the Verification and",
+      "     Re-Verification of EPA’s Ozone",
+      "          Standard Reference",
+      "              Photometers",
+      "Office of Air Quality Planning and Standards (OAQPS)",
+      "Office of Research and Development (ORD)"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/18.txt",
+    "sha256": "b019e63b0830ec54abd68aa45e32e02a26676ef1104565c18213f913ecb33b94",
+    "primeras_lineas": [
+      "United States              Office of Air Quality              EPA",
+      "Environmental Protection   Planning and Standards",
+      "Agency                     Research Triangle Park, NC 27711   February, 2017",
+      "Air",
+      "",
+      "",
+      "",
+      "",
+      "Quality Assurance Document",
+      "",
+      "",
+      "Quality Assurance Project Plan"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/19.txt",
+    "sha256": "83ccfa9d2e4511bc1ea0d6ab3665861b1f5f74358ca132d87ad3a3998a2541c8",
+    "primeras_lineas": [
+      "Transfer Standards for Calibration",
+      "of Air Monitoring Analyzers for",
+      "Ozone",
+      "",
+      "Technical Assistance Document",
+      "",
+      "",
+      "",
+      "",
+      "January 2023",
+      "",
+      "                                     EPA-454/B-22-003"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/20.txt",
+    "sha256": "105c1136fa0c8e5d9d58228d33f2c863bb23a0acb019b55f73749499a0751358",
+    "primeras_lineas": [
+      "BRITISH STANDARD          BS ISO",
+      "                          13964:1998",
+      "",
+      "",
+      "",
+      "",
+      "Air quality —",
+      "Determination of ozone",
+      "in ambient air —",
+      "Ultraviolet photometric",
+      "method",
+      ""
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  },
+  {
+    "archivo": "calc/fuentes_sol/21.txt",
+    "sha256": "5197228eb16183c90afe1c4995a3471cc4506b5387f53fdbc87848db9f87a306",
+    "primeras_lineas": [
+      "GUIDE 98-3",
+      "",
+      "",
+      "",
+      "",
+      "Uncertainty of measurement —",
+      "Part 3:",
+      "Guide to the expression of",
+      "uncertainty in measurement",
+      "(GUM:1995)",
+      "",
+      "Incertitude de mesure —"
+    ],
+    "estado": "extracto heredado; no atribuir PDF por número sin cotejo"
+  }
+]

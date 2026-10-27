@@ -1,0 +1,7 @@
+auditoria_interrupcion_sol_2/cambios_sol.diff: reconstrucción exacta de los cuatro libretos.
+auditoria_interrupcion_sol_3/cambios.diff: reconstrucción exacta de los cuatro libretos.
+auditoria_respaldo_20261026_195250/cambios.diff: reconstrucción exacta de los cuatro libretos.
+auditoria_respaldo_20261026_200841/cambios.diff: reconstrucción exacta de los cuatro libretos.
+Estado al corte idéntico a la instantánea previa de esta reanudación.
+Último estado al corte idéntico a la instantánea 20261026_200856.
+Cadena histórica de libretos cubierta por 94 bloques; auxiliares auditados aparte.

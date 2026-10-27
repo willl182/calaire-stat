@@ -1,0 +1,118 @@
+[
+  {
+    "archivo": "auditoria_interrupcion_sol_2/LEEME.md",
+    "sha256": "b1b6709f1f2127bbd10c41a41ddfb7a4d5d73dcb0e5176df0f6f784c32d09d24"
+  },
+  {
+    "archivo": "auditoria_interrupcion_sol_2/archivos_nuevos_o_modificados.txt",
+    "sha256": "82bc8fe1ddd059b9b3b77197cf1c13e97f96e26aa9cac999ed028053d4e8a67c"
+  },
+  {
+    "archivo": "auditoria_interrupcion_sol_2/cambios_sol.diff",
+    "sha256": "b41f35108ef5c46c0edf28d10c6a62863cf42c51d17a25aa9574a930cf526b38"
+  },
+  {
+    "archivo": "auditoria_interrupcion_sol_3/LEEME.md",
+    "sha256": "9d587ed99ef34707921612c485890c674ee83756e43de1fa487f0d5f9b59bedf"
+  },
+  {
+    "archivo": "auditoria_interrupcion_sol_3/calc_tocados_22h.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "archivo": "auditoria_interrupcion_sol_3/cambios.diff",
+    "sha256": "0558b99cc006ec425dc18ae3d14c97877ecfec3646cca0cb704127e344eb3c22"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/LEEME.md",
+    "sha256": "e2a2191752d0f9d7d0603605721ecd3152756b27de3ff3cdaf629a88e3c1cc12"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/cambios.diff",
+    "sha256": "553a179d893f35a9957c00d6ab572f51b20241ce727b5bcd791e756d1254baaa"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/estado_al_corte/M05_libreto.md",
+    "sha256": "d3f9034f68ba4c043d05df9e74b78da59d2f9d81596f409e62b46f2b0905023a"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/estado_al_corte/M06_libreto.md",
+    "sha256": "b337f76d1046e5b41c2cc2ad43351e5323ae36dd33c0202ab725724cb10210f4"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/estado_al_corte/M07_libreto.md",
+    "sha256": "6c7a6a4390a40776747baa00621f9720987afb2ca5de76602937aba8e5f0278b"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/estado_al_corte/M08_libreto.md",
+    "sha256": "d2e3cbe10bfe45fe6d1d7d9a8a3cc4a06ab796a9f12648c81570cc52fe9db7b3"
+  },
+  {
+    "archivo": "auditoria_respaldo_20261026_195250/estado_al_corte/S2_revision_sol.md",
+    "sha256": "23f2f1ec83945765e460e786cfdd4ec54f7ffc1e9706dfcea9926f8edb736fab"
+  },
+  {
+    "archivo": "versiones/20261025_202101_antes_P4_sol/M05_libreto.md",
+    "sha256": "fc6256ff50da0f779861092a44315323f4a516eddd1b139c78525e3c1373e5d0"
+  },
+  {
+    "archivo": "versiones/20261025_202101_antes_P4_sol/M06_libreto.md",
+    "sha256": "56a713c7ac966df67f577e92e4e52f9236976eddb025870a8ad24d5776509bed"
+  },
+  {
+    "archivo": "versiones/20261025_202101_antes_P4_sol/M07_libreto.md",
+    "sha256": "2ed74ab93f31d1bc0c3d526fa2fa11f3e9ecf5bc6770fedf81437db26d5fef37"
+  },
+  {
+    "archivo": "versiones/20261025_202101_antes_P4_sol/M08_libreto.md",
+    "sha256": "6f2b62aee6eaee7dcc67fa754be8506a880ed94f7910c075fa8e933d74fa7e60"
+  },
+  {
+    "archivo": "versiones/20261025_220040_antes_P4_sol/M05_libreto.md",
+    "sha256": "fc6256ff50da0f779861092a44315323f4a516eddd1b139c78525e3c1373e5d0"
+  },
+  {
+    "archivo": "versiones/20261025_220040_antes_P4_sol/M06_libreto.md",
+    "sha256": "56a713c7ac966df67f577e92e4e52f9236976eddb025870a8ad24d5776509bed"
+  },
+  {
+    "archivo": "versiones/20261025_220040_antes_P4_sol/M07_libreto.md",
+    "sha256": "91784b7abe5dd56123086451c8ecc6b6591ee5d4d6bb1f6784e871bcca3a5873"
+  },
+  {
+    "archivo": "versiones/20261025_220040_antes_P4_sol/M08_libreto.md",
+    "sha256": "6f2b62aee6eaee7dcc67fa754be8506a880ed94f7910c075fa8e933d74fa7e60"
+  },
+  {
+    "archivo": "versiones/20261026_052610_antes_P4_sol/M05_libreto.md",
+    "sha256": "46cfcb38f761dba48e1dc9404c5c0c6656b421e90fd6e51cdf553238271bf64d"
+  },
+  {
+    "archivo": "versiones/20261026_052610_antes_P4_sol/M06_libreto.md",
+    "sha256": "13eeb12ea9c03fb2f4c53cfbf5cb62506b5515deae7705dbea9583751e424415"
+  },
+  {
+    "archivo": "versiones/20261026_052610_antes_P4_sol/M07_libreto.md",
+    "sha256": "f09d5041a4fd294ad3074034ebc1658513acc76d8dc83099bfc8457f4db012bd"
+  },
+  {
+    "archivo": "versiones/20261026_052610_antes_P4_sol/M08_libreto.md",
+    "sha256": "2cba4b5333703ff5807371125a7a01271a0b15991d97c6c3f3eb40423aaabd2e"
+  },
+  {
+    "archivo": "versiones/20261026_195354_antes_P4_sol/M05_libreto.md",
+    "sha256": "d3f9034f68ba4c043d05df9e74b78da59d2f9d81596f409e62b46f2b0905023a"
+  },
+  {
+    "archivo": "versiones/20261026_195354_antes_P4_sol/M06_libreto.md",
+    "sha256": "b337f76d1046e5b41c2cc2ad43351e5323ae36dd33c0202ab725724cb10210f4"
+  },
+  {
+    "archivo": "versiones/20261026_195354_antes_P4_sol/M07_libreto.md",
+    "sha256": "6c7a6a4390a40776747baa00621f9720987afb2ca5de76602937aba8e5f0278b"
+  },
+  {
+    "archivo": "versiones/20261026_195354_antes_P4_sol/M08_libreto.md",
+    "sha256": "d2e3cbe10bfe45fe6d1d7d9a8a3cc4a06ab796a9f12648c81570cc52fe9db7b3"
+  }
+]

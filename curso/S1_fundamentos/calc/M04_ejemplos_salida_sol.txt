@@ -49,6 +49,13 @@ H0_razon=1
 F=0.8408045977011491
 p=0.8678344943097207
 cuantiles=(np.float64(0.14331366118441083), np.float64(5.987565126046928))
+[I_aproximacion_normal]
+alpha=0.05
+potencia_objetivo=0.8
+z_bilateral=1.959963984540054
+z_potencia=0.8416212335729143
+n_media_o_pares=31.395518937396353
+n_por_grupo=24.527749169840895
 [I_potencia_media]
 d=0.5
 n=16
@@ -81,7 +88,10 @@ n=8
 media=0.05625000000000001
 s=0.09179752564359082
 G=2.4374295323462447
-Gcrit=2.22
+Gcrit_tabla_unilateral=2.22
+Gcrit_unilateral_calculado=2.220833451510429
+Gcrit_bilateral_calculado=2.2743651270798946
+alpha=0.01
 Q_Dixon=0.8214285714285715
 Qcrit_Dixon=0.59
 [A_multiplicidad]
@@ -95,12 +105,12 @@ rechazos=[True, False, False]
 media=0.08
 s=0.4
 n=20
-margen=(-0.5, 0.5)
+margen=(-0.3, 0.3)
 se=0.08944271909999159
-t_inferior=6.484597134749389
-p_inferior=1.62928540832986e-06
-t_superior=-4.695742752749558
-p_superior=7.871376905530839e-05
+t_inferior=4.2485291572496005
+p_inferior=0.00021723421903082447
+t_superior=-2.4596747752497685
+p_superior=0.011832047898445403
 IC90=(np.float64(-0.07465834034748443), np.float64(0.23465834034748445))
 equivalente=True
 [A_consistencia]
@@ -111,3 +121,10 @@ gl=3
 critico_95=7.814727903251179
 p=0.5067980782351329
 compatible=True
+[A_comparacion_con_B]
+margen=(-0.3, 0.3)
+IC90_B=(np.float64(-0.3150165576446658), np.float64(0.39001655764466575))
+p_inferior_B=0.056287227621958896
+p_superior_B=0.1005833941345388
+equivalente_B=False
+comprobaciones_M04=OK

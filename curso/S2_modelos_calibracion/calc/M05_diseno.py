@@ -1,5 +1,7 @@
 """Reproduce ejemplos didácticos simulados del capítulo M05."""
 from itertools import product
+from math import sqrt
+from scipy.stats import nct, t as student_t
 
 
 def main():
@@ -20,7 +22,7 @@ def main():
     print("Conteo 12 × 8 × 6 del diseño F-PSMT-01:",
           levels*readings_per_point*days_certificate)
     target_slope_change = 0.005
-    print("Cambio de pendiente objetivo planteado en prop_e:", target_slope_change)
+    print("Cambio de pendiente mencionado como pregunta, no calculado:", target_slope_change)
 
     # Diseño factorial 2^3; respuesta simulada en nmol/mol.
     # Factores codificados: flujo F, acondicionamiento C, temperatura T.
@@ -50,6 +52,16 @@ def main():
         u_mean = (s_between**2 / days_precision
                   + s_r**2 / (days_precision * readings_precision)) ** 0.5
         print(f"  d={days_precision}, n={readings_precision}: {u_mean:.3f}")
+
+    print("\nPotencia simulada t bilateral: media de días, Delta=0.20, alfa=0.05")
+    for d, n in ((6, 8), (6, 16), (12, 8)):
+        sd_day_mean = sqrt(s_between**2 + s_r**2/n)
+        nc = 0.20*sqrt(d)/sd_day_mean
+        critical = student_t.ppf(0.975, d-1)
+        power = nct.sf(critical, d-1, nc) + nct.cdf(-critical, d-1, nc)
+        print(f"d={d}; n={n}; sd_media_diaria={sd_day_mean:.9f}; potencia={power:.9f}")
+    print("Estratos R&R 3x4x2x8, grados de libertad:",
+          3-1, 3*(4-1), 3*4*(2-1), 3*4*2*(8-1))
 
     # Ejemplo simulado de reparto: 3 o 6 analistas, 4 días por analista,
     # 2 ciclos independientes por día y 8 lecturas subordinadas por ciclo.

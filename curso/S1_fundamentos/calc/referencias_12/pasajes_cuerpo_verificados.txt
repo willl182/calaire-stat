@@ -1,0 +1,1132 @@
+=== Hahs_Vaughn_completo.txt / página PDF 53 ===
+34                                                          Statistical Concepts: A First Course
+
+
+
+pie chart is statistically problematic such that Tufte (2001) asserts that the only thing worse
+than a pie chart is a lot of them. The bar graph is the recommended graphic for nominal data.
+
+
+2.2.2 Histogram
+A method somewhat similar to the bar graph that is appropriate for data that are at least
+ordinal in scale (i.e., ordinal, interval, or ratio) is the histogram. Because the data are at
+least theoretically continuous (even though they may be measured in whole numbers), the
+main difference in the histogram (as compared to the bar graph) is that the bars touch one
+another, much like intervals touching one another as real limits. An example of a histo-
+gram for the statistics quiz data is shown in Figure 2.2 (generated in SPSS using the default
+options). As you can see, along the X axis we plot the values of the variable X and along
+the Y axis the frequencies for each interval. The height of the bar again corresponds to the
+frequencies for a particular value of X. This figure represents an ungrouped histogram as
+the interval size is 1. That is, along the X axis the midpoint of each bar is the midpoint of the
+interval; each bar begins on the left at the lower real limit of the interval, the bar ends on
+the right at the upper real limit, and the bar is 1 unit wide. If we wanted to use an interval
+size of 2, for example, using the grouped frequency distribution in Table 2.3, then we could
+construct a grouped histogram in the same way; the differences would be that the bars
+would be 2 units wide, and the height of the bars would obviously change. Try this one on
+your own for practice.
+  One could also plot relative frequencies on the Y axis to reflect the percentage of students
+in the sample whose scores fell into a particular interval. In reality, all that we have to
+
+
+
+                  5                                                              Mean = 15.56
+                                                                                 Std. Dev. = 3.163
+                                                                                 N = 25
+
+
+
+                  4
+
+
+
+
+      Frequency
+                  3
+
+
+
+
+                  2
+
+
+
+
+                  1
+
+
+
+
+                  0
+                      9.00           12.00   15.00       18.00         21.00
+
+                                             quiz
+
+FIGURE 2.2
+Histogram of statistics quiz data.
+
+=== Hahs_Vaughn_completo.txt / página PDF 59 ===
+40                                                           Statistical Concepts: A First Course
+
+
+
+large for this particular percentile. The next smallest interval of 12 takes us from a crf of .16
+up to a crf of .20, and thus is too small. The LRL of 12.5 indicates that P25 is at least 12.5. The
+rest of the equation adds some positive amount to the LRL.
+  Next we have to determine how far into that interval we need to go in order to reach
+the desired percentile. We take i percent of n, or in this case 25% of the sample size of
+25, which is 6.25. So we need to go one-fourth of the way into the distribution, or 6.25
+scores, to reach the 25th percentile. Another way to think about this is that because the
+scores have been rank-ordered from lowest or smallest (top of the frequency distribu-
+tion) to highest or largest (bottom of the frequency distribution), we need to go 25%,
+or 6.25 scores, into the distribution from the top (or smallest value) to reach the 25th
+percentile. We then subtract out all cumulative frequencies smaller than (or below) the
+interval we are looking in, where cf below = 5. Again we just want to determine how
+far into this interval we need to go, and thus we subtract out all of the frequencies
+smaller than this interval, or cf below. The numerator then becomes 6.25 – 5 = 1.25.
+Then we divide by the number of frequencies in the interval containing the percentile
+we are looking for. This forms the ratio of how far into the interval we go. In this case,
+we needed to go 1.25 scores into the interval and the interval contains two scores; thus
+the ratio is 1.25 / 2 = .625. In other words, we need to go .625 units into the interval to
+reach the desired percentile. Now that we know how far into the interval to go, we need
+to weigh this by the width of the interval. Here we need to go 1.25 scores into an inter-
+val containing two scores that is 1 unit wide, and thus we go .625 units into the interval
+[(1.25 / 2) 1 = .625]. If the interval width was instead 10, then 1.25 scores into the interval
+would be equal to 6.25 units.
+  Consider two more worked examples to try on your own, either through statistical soft-
+ware or by hand. The 50th percentile, P50, is
+
+                                  (50%)(25) − 12 
+                                                  (1) = 16.500 + 0.100 = 16.600
+                 P50 = 16.500 +                   
+                                       5
+                                                    
+
+and the 75th percentile, P75, is
+
+                                  (75%)(25) − 17 
+                                                  (1) = 17.500 + 0.583 = 18.083
+                 P75 = 17.500 +                   
+                                       3
+                                                    
+
+We have only examined a few example percentiles of the many possibilities that exist. For
+example, we could also have determined P55.5 or even P99.5. Thus, we could determine any
+percentile, in whole numbers or decimals, between 0 and 100. Next we examine three par-
+ticular percentiles that are often of interest, the quartiles.
+
+
+2.3.2 Quartiles
+One common way of dividing a distribution of scores into equal groups of scores is known
+as quartiles. This is done by dividing a distribution into fourths or quartiles where there
+are four equal groups, each containing 25% of the scores. In the previous examples, we
+determined P25, P50, and P75, which divided the distribution into four equal groups, from
+0 to 25, from 25 to 50, from 50 to 75, and from 75 to 100. Thus the quartiles are special cases
+
+=== Hahs_Vaughn_completo.txt / página PDF 61 ===
+42                                                                 Statistical Concepts: A First Course
+
+
+
+  As an example, consider computing the percentile rank for the score of 17. This would
+correspond to the percentage of the distribution that falls below a score of 17. For the exam-
+ple data again, using the percentile rank equation we compute PR(17) as follows:
+
+                                    5 (17 − 16.5) 
+                                                  
+                              12 +                             12 + 2.5 
+             PR (17 ) =                  1          (100%) = 
+                                                                   25 (
+                                                                               100%) = 58.00%
+                                      25             
+                                                      
+                                                        
+                                                       
+
+Conceptually, let us discuss how the equation works. First we have to determine what
+interval contains the percentile rank of interest. This is easily done because we already
+know the score is 17, and we simply look in the interval containing 17. The cf below the
+17 interval is 12 and n is 25. Thus we know that we need to go at least 12/25, or 48%, of
+the way into the distribution to obtain the desired percentile rank. We know that
+P i = 17 and the LRL of that interval is 16.5. The interval has five frequencies, so we need
+to go 2.5 scores into the interval to obtain the proper percentile rank. In other words,
+because 17 is the midpoint of an interval with width of 1, we need to go halfway, or
+2.5/5, of the way into the interval to obtain the percentile rank. In the end, we need to
+go 14.5/25 (or .58) of the way into the distribution to obtain our percentile rank, which
+translates to 58%.
+   As another example, we have already determined that P50 = 16.6000. Therefore, you
+should be able to determine on your own that PR(16.6000) = 50%. This verifies that percen-
+tiles and percentile ranks are two sides of the same coin. The computation of percentiles
+identifies a specific score, and you start with the score to determine the score’s percen-
+tile rank. You can further verify this by determining that PR(13.1250) = 25.00% and
+PR(18.0833) = 75.00%. Next we consider the box-and-whisker plot, where quartiles and
+percentiles are used graphically to depict a distribution of scores.
+
+
+2.3.4 Box-and-Whisker Plot
+A simplified form of the frequency distribution is the box-and-whisker plot (often
+referred to simply as a box plot), developed by Tukey (1977). This is shown in Figure
+2.7 (generated in SPSS using the default options) for the example data. The box-and-
+whisker plot was originally developed to be constructed on a typewriter using lines in a
+minimal amount of space. The box in the center of the figure displays the middle 50% of
+the distribution of scores with the thick black line representing the median. The bottom
+edge or hinge of the box represents the 25th percentile (or Q1) (i.e., the bottom or lowest
+25% of values). The top edge or hinge of the box represents the 75th percentile (or Q3)
+(i.e., the top or highest 25% of values). The middle thick vertical line in the box represents
+the 50th percentile (also known as Q2 or the median). The lines extending from the box
+are known as the whiskers. The purpose of the whiskers is to display data outside of
+the middle 50%. The bottom whisker can extend down to the lowest score (as is the case
+with SPSS using default options), or to the 5th or the 10th percentile (by other means), to
+display more extreme low scores, and the top whisker correspondingly can extend up to
+the highest score (again, as is the case with SPSS using default options), or to the 95th or
+90th percentile (elsewhere), to display more extreme high scores. The choice of where to
+extend the whiskers is the preference of the researcher and/or the software. Scores that
+fall beyond the end of the whiskers, known as outliers due to their extremeness relative
+
+=== Hahs_Vaughn_completo.txt / página PDF 62 ===
+Data Representation                                                                             43
+
+
+
+  20.00
+
+
+
+
+  18.00
+
+
+
+
+  16.00
+
+
+
+
+  14.00
+
+
+
+
+  12.00
+
+
+
+
+  10.00
+
+
+
+
+   8.00
+
+                                                  quiz
+
+FIGURE 2.7
+Box-and-whisker plot of statistics quiz data.
+
+
+
+to the bulk of the distribution, are often displayed by dots and/or asterisks. Box-and-
+whisker plots can be used to examine such things as skewness (through the quartiles),
+outliers, and where most of the scores tend to fall. If you turn the boxplot clockwise and
+compare to the histogram, you’ll see similar displays of the distribution—simply with fewer
+elements in the boxplot.
+  Let’s talk specifically about some of the elements displayed in Figure 2.7. We see,
+for example, that the bottom 25% of the distribution (i.e., from the bottom of the box
+to the bottom whisker) is more spread out than the top 25% of the distribution (i.e.,
+from the top of the box to the top whisker). This indicates that there is more variation
+in the bottom 25% of values than in the top 25% of values. We can make similar inter-
+pretations about the spread of the data comparing area inside the box. For example,
+there is more variation between Q1 (i.e., the bottom of the box) and the median (i.e.,
+Q2) than between the median and Q3 (i.e., the top of the box). We know this because the
+space between the median and Q1 is much more condensed as compared to the space
+between Q1 and the median.
+  Keep the following point in mind when interpreting boxplots: don’t confuse the variation
+or spread of the data with the percentage of points between the elements of the box. There is always
+25% of the distribution between each quartile (e.g., from Q1 to Q2 or from Q2 to Q3), regard-
+less of how spread out or condensed that area is. Sometimes you may find a quirky box-
+plot. For example, you might find a boxplot with two whiskers but just one line between
+them (i.e., no real “box”). This would indicate that there is no variation in the middle 50%
+of the data; that is, all values, from the 25th to 75th percentile, are the same. As another
+example, you might find a boxplot where the median is setting on the top of the box. This
+would indicate that the median and the 75th percentile, all values between, are the same
+value. In those instances of quirkiness, stay true to what you understand about the boxplot
+and apply accordingly to your interpretations.
+
+=== Hahs_Vaughn_completo.txt / página PDF 109 ===
+90                                                            Statistical Concepts: A First Course
+
+
+
+3.2.2 The Median
+A second measure of central tendency represents a concept that you are already familiar
+with. The median is that score which divides a distribution of scores into two equal parts. In other
+words, one-half of the scores fall below the median and one-half of the scores fall above
+the median. We already know this from Chapter 2 as the 50th percentile or Q2. In other
+words, the 50th percentile, or Q2, represents the median value. The formula for computing
+the median is
+
+                                                50% (n) − cf 
+                                                              (w )
+                               Median = LRL +                 
+                                                    f
+                                                                
+
+   where the notation is the same as previously described in Chapter 2. Just as a reminder,
+LRL is the lower real limit of the interval containing the median, 50% is the percentile
+desired, n is the sample size, cf is the cumulative frequency of all intervals less than but not
+including the interval containing the median (cf below), f is the frequency of the interval
+containing the median, and w is the interval width. For the example quiz data, the median
+is computed as follows:
+
+                                     50% (25) − 12 
+                                                    (1) = 16.5 + 0.10 = 16.60
+                   Median = 16.5 +                  
+                                         5
+                                                      
+
+Occasionally, you will run into simple distributions of scores where the median is easy
+to identify. If you have an odd number of untied scores, then the median is the middle-ranked
+score. For an example, say we have measured individuals on the number of autographed
+jerseys owned and find values of 1, 3, 7, 11, and 21. For this data, the median is 7 (e.g.,
+7 autographed jerseys is the middle-ranked value or score). If you have an even number
+of untied scores, then the median is the average of the two middle-ranked scores. For example,
+a different sample reveals the following number of autographed jerseys owned: 1, 3, 5,
+11, 21, and 32. The two middle scores are 5 and 11, and thus the median is the average
+of 8 autographed jerseys owned; that is, (5 + 11)/2. In most other situations where there
+are tied scores, the median is not as simple to locate and first equation is necessary. Note also
+that the median is computed in precisely the same way whether we are talking about
+the population median (i.e., the population parameter) or the sample median (i.e., the
+sample statistic).
+   The general characteristics of the median are as follows. First, the median is not influenced
+by extreme scores (scores far away from the middle of the distribution are known as outli-
+ers). Because the median is defined conceptually as the middle score, the actual size of an
+extreme score is not relevant. For the example statistics quiz data, imagine that the extreme
+score of 9 was somehow actually 0 (e.g., incorrectly scored). The median would still be 16.6,
+as half of the scores are still above this value and half below. Because the extreme score
+under consideration here still remained below the 50th percentile, the median was not
+altered. This characteristic is an advantage, particularly when extreme scores are observed.
+As another example using salary data, say that all but one of the individual salaries is
+below $100,000 and the median is $50,000. The remaining extreme observation has a salary
+of $5,000,000. The median is not affected by this millionaire—the extreme individual is
+simply treated as every other observation above the median, no more or no less than, say,
+the salary of $65,000.
+
+=== Hahs_Vaughn_completo.txt / página PDF 110 ===
+Univariate Population Parameters & Statistics                                                   91
+
+
+
+   A second characteristic is that the median is not a function of all of the scores. Because we
+already know that the median is not influenced by extreme scores, we know that the
+median does not take such scores into account. Another way to think about this is to exam-
+ine the first equation for the median. The equation only deals with information for the
+interval containing the median. The specific information for the remaining intervals is not
+relevant so long as we are looking in the median-contained interval. We could, for instance,
+take the top 25% of the scores and make them even more extreme (say we add 10 bonus
+points to the top quiz scores). The median would remain unchanged. As you have prob-
+ably surmised, this characteristic is generally thought to be a disadvantage. If you really
+think about the first two characteristics, no measure could possibly possess both. That is,
+if a measure is a function of all of the scores, then extreme scores must also be taken into
+account. If a measure does not take extreme scores into account, like the median, then it
+cannot be a function of all of the scores.
+   A third characteristic is that the median is difficult to deal with mathematically, a disadvan-
+tage as with the mode. The median is somewhat unstable from sample to sample, espe-
+cially with small samples.
+   As a fourth characteristic, the median always has a unique value, another advantage. This is
+unlike the mode, which does not always have a unique value.
+   Finally, the fifth characteristic of the median is that it can be used with all types of measure-
+ment scales except the nominal. Nominal data cannot be ranked, and thus percentiles (includ-
+ing the 50th percentile, i.e., the median) are inappropriate.
+
+
+3.2.3 The Mean
+The final measure of central tendency to be considered is the mean, also known as the arith-
+metic mean or average (although the term “average” is used rather loosely by laypeople).
+Note that there are different types of means; we will generally be concerned only with the
+arithmetic mean. Statistically, we define the mean as the sum of all of the scores divided by the
+number of scores. Thought of in those terms, you may have been computing the mean for
+many years, and may not have even known it.
+  The population mean is denoted by μ (lowercase Greek mu) and computed as follows:
+                                                      N
+
+                                          m=
+                                             ∑ X      i=1
+                                                               i
+
+                                                      N
+
+For sample data, the sample mean is denoted by X (read “X bar”) and computed as follows:
+                                                      n
+
+                                          X=
+                                             ∑ X      i=1
+                                                               i
+
+                                                      n
+For the example quiz data, the sample mean is computed as follows:
+                                           n
+
+                                  X=
+                                     ∑ X = 389 = 15.56
+                                           i =1
+                                                  i
+
+                                           n              25
+
+Here are the general characteristics of the mean. First, the mean is a function of every score,
+which is a definite advantage in terms of a measure of central tendency representing all of
+
+=== Hahs_Vaughn_completo.txt / página PDF 112 ===
+Univariate Population Parameters & Statistics                                                       93
+
+
+
+
+      Measure of
+                                     Advantages                                Disadvantages
+    Central Tendency
+
+         Mean          Function of all scores in the distribution   Influenced by extreme scores
+                       Has a unique value                           Cannot be used with nominal or
+                       Easy to deal with mathematically             ordinal variables
+
+                       Can be used with interval and ratio
+                       measurement scales of variables
+
+
+
+
+   We began our discussion of measures of central tendency by stating that other indices
+exist; however, the most popular ones are the mode, the median, and the mean. You may
+be wondering what those other indices are! While the arithmetic mean is the most common
+mean, and the one with which we are generally concerned, it is not the only mean, and
+it should not be confused with other types of means. Other means that you may encoun-
+ter include the harmonic mean, trimmed mean, winsorized mean, and more. Huck (2016)
+provides a concise discussion on understanding the most common measures of central
+tendency relative to other statistics you may encounter.
+
+
+
+
+3.3 Measures of Dispersion
+In the previous section, we discussed one method for summarizing a collection of scores,
+the measures of central tendency. Central tendency measures are useful for describing a
+collection of scores in terms of a single index or value (with one exception: the mode for
+distributions that are not unimodal). However, what do they tell us about the distribution
+of scores? Consider the following example. If we know that a sample has a mean of 50,
+what do we know about the distribution of scores? Can we infer from the mean what the
+distribution looks like? Are most of the scores fairly close to the mean of 50, or are they
+spread out quite a bit? Perhaps most of the scores are within 2 points of the mean. Perhaps
+most are within 10 points of the mean. Perhaps most are within 50 points of the mean. Do
+we know? The answer, of course, is that the mean provides us with no information about
+what the distribution of scores looks like, and any of the possibilities mentioned, and many
+others, can occur. The same goes if we only know the mode or the median.
+  Another method for summarizing a set of scores is to construct an index or value that can
+be used to describe the amount of spread amongst the collection of scores. In other words,
+we need measures that can be used to determine whether the scores fall fairly close to the
+central tendency measure, are fairly well spread out, or are somewhere in between. In this
+section we consider the four most popular such indices, which are known as measures of
+dispersion (i.e., the extent to which the scores are dispersed or spread out). Although other
+indices exist, the most popular ones are the range (exclusive and inclusive), H spread, vari-
+ance, and standard deviation.
+
+
+3.3.1 The Range
+The simplest measure of dispersion is the range. The term range is one that is in common
+use outside of statistical circles, so you have some familiarity with it already. For instance,
+
+=== Hahs_Vaughn_completo.txt / página PDF 113 ===
+94                                                              Statistical Concepts: A First Course
+
+
+
+say you are at the mall shopping for a new pair of shoes. You find six stores have the same
+pair of shoes that you really like, but the prices vary somewhat. At this point you might
+actually make the statement “the price for these shoes ranges from $59 to $75.” In a way
+you are talking about the range.
+   Let us be more specific as to how the range is measured. In fact, there are actually two dif-
+ferent definitions of the range, exclusive and inclusive, which we consider now. The exclusive
+range is defined as the difference between the largest and smallest scores in a collection of scores. For
+notational purposes, the exclusive range (ER) is shown as ER = Xmax − Xmin, where Xmax is the
+largest or maximum score obtained, and Xmin is the smallest or minimum score obtained. For
+the shoe example then, ER = Xmax − Xmin = 75 – 59 = 16. In other words, the actual exclusive
+range of the scores is 16 because the price varies from 59 to 75 (in dollar units).
+   A limitation of the exclusive range is that it fails to account for the width of the intervals
+being used. For example, if we use an interval width of one dollar, then the 59 interval
+really has 59.5 as the upper real limit and 58.5 as the lower real limit. If the least expensive
+shoe is $58.95, then the exclusive range covering from $59 to $75 actually excludes the least
+expensive shoe. Hence, the term exclusive range means that scores can be excluded from this
+range. The same would go for a shoe priced at $75.95, as it would fall outside of the exclu-
+sive range at the high end of the distribution.
+   Because of this limitation, a second definition of the range was developed, known as the
+inclusive range. As you might surmise, the inclusive range takes into account the interval
+width so that all scores are included in the range. The inclusive range is defined as the differ-
+ence between the upper real limit of the interval containing the largest score and the lower real limit
+of the interval containing the smallest score in a collection of scores. For notational purposes, the
+inclusive range (IR) is shown as IR = URL of Xmax − LRL of Xmin. If you think about it, what
+we are actually doing is extending the range by one-half of an interval at each extreme,
+one-half an interval width at the maximum value and one-half an interval width at the
+minimum value. In notational form IR = ER + w. For the shoe example, using an interval
+width of 1, then IR = URL of Xmax − LRL of Xmin = 75.5 − 58.5 = 17. In other words, the actual
+inclusive range of the scores is 17 (in dollar units). If the interval width was instead 2, then
+we would add 1 unit to each extreme rather than the .5 unit that we previously added to
+each extreme. The inclusive range would instead be 18. For the example quiz data (pre-
+sented in Table 3.2), note that the exclusive range is 11 and the inclusive range is 12 (as
+interval width is 1).
+   Finally, we need to examine the general characteristics of the range (they are the same for
+both definitions of the range). First, the range is simple to compute, which is a definite advan-
+tage. One can look at a collection of data and almost immediately, even without a computer
+or calculator, determine the range.
+   The second characteristic is that the range is influenced by extreme scores, a disadvantage.
+Because the range is computed from the two most extreme scores, this characteristic is
+quite obvious. This might be a problem, for instance, if all of the salary data range from
+$10,000 to $95,000 except for one individual with a salary of $5,000,000. Without this outlier
+the exclusive range is $85,000. With the outlier the exclusive range is $4,990,000. Thus, the
+millionaire’s salary has a drastic impact on the range.
+   Third, the range is only a function of two scores, another disadvantage. Obviously the range
+is computed from the largest and smallest scores, and thus is only a function of those two
+scores. The spread of the distribution of scores between those two extreme scores is not at
+all taken into account. In other words, for the same maximum ($5,000,000) and minimum
+($10,000) salaries, the range is the same whether the salaries are mostly near the maximum
+salary, mostly near the minimum salary, or spread out evenly.
+
+=== Hahs_Vaughn_completo.txt / página PDF 114 ===
+Univariate Population Parameters & Statistics                                                      95
+
+
+
+  The fourth characteristic is that the range is unstable from sample to sample, another dis-
+advantage. Say a second sample of salary data yielded the exact same data except for the
+maximum salary now being a less extreme $100,000. The range is now dramatically differ-
+ent. Also, in statistics we tend to worry about measures that are not stable from sample to
+sample, as this implies that the results are not very reliable.
+  Finally, the range is appropriate for data that are ordinal, interval, or ratio in measurement scale.
+
+
+3.3.2 H Spread
+The next measure of dispersion is H spread, a variation on the range measure with one
+major exception. Although the range relies upon the two extreme scores, resulting in cer-
+tain disadvantages, H spread relies upon the difference between the third and first quar-
+tiles. To be more specific, H spread is defined as Q3 – Q1, the simple difference between the third
+and first quartiles. The term H spread was developed by Tukey (1977), H being short for
+“hinge” from the box-and-whisker plot; it is also known as the interquartile range.
+   For the example statistics quiz data (presented in Table 3.2), we already determined in
+Chapter 2 that Q3 = 18.0833 and Q1 = 13.1250. Therefore, H = Q3 − Q1 = 18.0833 − 13.1250 =
+4.9583. H measures the range of the middle 50% of the distribution. The larger the value, the
+greater the spread in the middle of the distribution. The size or magnitude of any of the range
+measures takes on more meaning when making comparisons across samples. For exam-
+ple, you might find with salary data that the range of salaries for middle management is
+smaller than the range of salaries for upper management. As another example, we might
+expect the salary range to increase over time.
+   What are the characteristics of H spread? The first characteristic is that H is unaffected by
+extreme scores, an advantage. Because we are looking at the difference between the third
+and first quartiles, extreme observations will be outside of this range. Second, H is not a
+function of every score, a disadvantage. The precise placement of where scores fall above Q3,
+below Q1, and between Q3 and Q1 is not relevant. All that matters is that 25% of the scores
+fall above Q3, 25% fall below Q1, and 50% fall between Q3 and Q1. Thus, H is not a function
+of very many of the scores at all, just those around Q3 and Q1. Third, H is not very stable
+from sample to sample, another disadvantage, especially in terms of inferential statistics and
+one’s ability to be confident about a sample estimate of a population parameter. Finally, H
+is appropriate for all scales of measurement except for nominal.
+
+
+
+3.3.3 Deviational Measures
+In this section we examine deviation scores, population variance and standard deviation,
+and sample variance and standard deviation, all methods that deal with deviations from
+the mean.
+
+
+3.3.3.1 Deviation Scores
+In the last category of measures of dispersion are those that utilize deviations from the
+mean. Let us define a deviation score as the difference between a particular raw score and the
+mean of the collection of scores (population or sample, either will work). For population data
+we define a deviation as di = Xi – μ. In other words, we can compute the deviation from the
+mean for each individual or object. Consider the credit card dataset as shown in Table 3.3.
+
+=== Hahs_Vaughn_completo.txt / página PDF 115 ===
+96                                                                Statistical Concepts: A First Course
+
+
+
+                                  TABLE 3.3
+                                  Credit Card Dataset
+                                     X                 X−μ     (X − μ)2
+
+                                      1                –5        25
+                                      5                –1          1
+                                      6                    0       0
+                                      8                    2       4
+                                     10                    4     16
+                                   ∑ = 30              ∑=0     ∑ = 46
+                                    N=5
+                                    μ=6
+
+
+
+To make matters simple, we only have a small population of data, five values to be exact.
+The first column lists the raw scores, which are in this example the number of credit cards
+owned for five individuals and, at the bottom of the first column, indicates the sum (∑ =
+30), population size (N = 5), and population mean (μ = 6.0). The second column provides
+the deviation scores for each observation from the population mean and, at the bottom of
+the second column, indicates the sum of the deviation scores, denoted by
+
+                                                   N
+
+                                              ∑ (X − m )
+                                                i =1
+                                                           i
+
+
+From the second column we see that two of the observations have positive deviation scores
+as their raw score is above the mean, one observation has a zero deviation score as that raw
+score is at the mean, and two other observations have negative deviation scores as their
+raw score is below the mean. However, when we sum the deviation scores, we obtain a
+value of zero. This will always be the case, as follows:
+                                            N
+
+                                            ∑ (X − m ) = 0
+                                            i =1
+                                                       i
+
+
+
+The positive deviation scores will exactly offset the negative deviation scores. Thus, any
+measure involving simple deviation scores will be useless in that the sum of the deviation scores will
+always be zero, regardless of the spread of the scores.
+   What other alternatives are there for developing a deviational measure that will yield a
+sum other than zero? One alternative is to take the absolute value of the deviation scores
+(i.e., where the sign is ignored). Unfortunately, however, this is not very useful mathe-
+matically in terms of deriving other statistics, such as inferential statistics. As a result, this
+deviational measure is rarely used in statistics.
+
+
+3.3.3.2 Population Variance and Standard Deviation
+So far we found the sum of the deviations and the sum of the absolute deviations not to be
+very useful in describing the spread of the scores from the mean. What other alternative
+might be useful? As shown in the third column of Table 3.3, one could square the deviation
+
+=== Hahs_Vaughn_completo.txt / página PDF 116 ===
+Univariate Population Parameters & Statistics                                                                                    97
+
+
+
+scores to remove the sign problem. The sum of the squared deviations is shown at the bot-
+tom of the column as ∑ = 46 and denoted as
+                                                        N
+                                                                                 2
+                                                        ∑ (X − m )
+                                                        i=1
+                                                                   i
+
+
+
+As you might suspect, with more scores, the sum of the squared deviations will increase.
+So we have to weigh the sum by the number of observations in the population. This yields
+a deviational measure known as the population variance, which is denoted as σ2 (sigma
+squared) and computed by the following formula:
+                                                                  N                  2
+
+                                              σ =
+                                                  ∑ (X − m )
+                                                   2              i=1
+                                                                             i
+
+                                                                        N
+
+For the credit card example, σ2 = (46/5) = 9.2. We refer to this particular formula for the
+population variance as the definitional formula, as conceptually that is how we define the
+variance. Conceptually, the variance is a measure of the area of a distribution, and, more specifi-
+cally, the spread of the distribution from the mean. That is, the more spread out the scores, the
+more area or space the distribution takes up and the larger the variance. The variance may
+also be thought of as an average distance from the mean. The variance has nice mathematical
+properties and is useful for deriving other statistics, such as inferential statistics.
+  The computational formula for the population variance is
+
+                                                             N                        N       2
+                                             (N )   ∑     i=1
+                                                                 Xi2  − 
+                                                                                  ∑      Xi 
+                                                                                         i=1 
+                                      σ2 =
+                                                                       N2
+This method is computationally easier to deal with than the definitional formula. Imagine
+if you had a population of 100 scores. Using hand computations, the definitional formula
+would take considerably more time than the computational formula. With the computer
+this is a moot point, obviously. But, if you do have to compute the population variance by
+hand, then the easiest formula to use is the computational one.
+   Exactly how does this formula work? The numerator is three basic terms: (a) the popula-
+tion size (N), (b) the sum of all Xi2 (i.e., square each Xi and then sum those squared values),
+and (c) the squared sum of all Xi (i.e., sum all the Xi and then square that summed value).
+The denominator is simply the squared population size.
+   Let’s look at this again. For the first summation in the numerator, we square each score
+first, then sum all the squared scores. This value is then multiplied by the population size.
+For the second summation in the numerator, we sum all the scores first, then square the
+summed scores. After subtracting the values computed in the numerator, we divide by the
+squared population size.
+
+           For the first summation in the                                                         For the second summation
+           numerator, we square each                                                              in the numerator, we sum
+           score first, then sum across                                                           across the scores first, then
+           the squared scores.                                                                    square the summed scores.
+
+                                                                        2
+                                               2
+                                                       ( )(∑ =1             ) − (∑ =1        )2
+                                                   =                         2
+
+=== Hahs_Vaughn_completo.txt / página PDF 117 ===
+98                                                                           Statistical Concepts: A First Course
+
+
+
+The two quantities derived by the summation operations in the numerator are computed
+in much different ways and generally yield different values.
+   Let us return to the credit card dataset and see if the computational formula actually
+yields the same value for σ2 as the definitional formula did earlier (σ2 = 9.2). The computa-
+tional formula shows σ2 to be:
+
+                              N                   N       2
+           2
+                (N )   ∑   i=1
+                                  Xi2  − 
+                                              ∑      Xi 
+                                                     i=1 
+                                                                                2
+                                                                    (5)(226)−(30) 1130 − 900
+          σ =                                                     =              =           = 9.20
+                                     N2                                   ( 5)
+                                                                              2       25
+
+which is precisely the value we computed previously.
+   A few individuals (none of us, of course) are a bit bothered about the variance for the
+following reason. Say you are measuring the height of children in inches. The raw scores
+are measured in terms of inches, the mean is measured in terms of inches, but the variance
+is measured in terms of inches squared. Squaring the scale is bothersome to some as the scale is
+no longer in the original units of measure, but rather a squared unit of measure—making interpre-
+tation a bit difficult. To generate a deviational measure in the original scale (i.e., inches), we
+can take the square root of the variance. This is known as the standard deviation, and it is
+the final measure of dispersion we discuss. The population standard deviation is defined
+                                                                                                 
+as the positive square root of the population variance and is denoted by sigma, σ i.e., σ = σ2 .
+                                                                                                 
+The standard deviation, then, is measured in the original scale (i.e., in this example, inches).
+For the credit card data, the standard deviation is computed as follows:
+
+                                                 σ = σ2 = 9.2 = 3.0332
+
+What are the major characteristics of the population variance and standard deviation?
+First, the variance and standard deviation are a function of every score, an advantage. An
+examination of either the definitional or computational formula for the variance (and stan-
+dard deviation as well) indicates that all of the scores are taken into account, unlike the
+range or H spread.
+  Second, therefore, the variance and standard deviation are affected by extreme scores, a dis-
+advantage. As we said earlier, if a measure takes all of the scores into account, then it must
+take into account the extreme scores as well. Thus, a child much taller than all of the rest of
+the children will dramatically increase the variance, as the area or size of the distribution
+will be much more spread out. Another way to think about this is the size of the deviation
+score for such an outlier will be large, and then it will be squared, and then summed with
+the rest of the deviation scores. Thus, an outlier can really increase the variance. Also, it
+goes without saying that it is always a good idea when using the computer to verify your
+data. A data entry error can cause an outlier and therefore a larger variance (e.g., that child
+coded as 700 inches tall instead of 70 will surely inflate your variance).
+  Third, the variance and standard deviation are only appropriate for interval and ratio mea-
+surement scales. Like the mean, this is due to the implicit requirement of equal intervals.
+  A fourth and final characteristic of the variance and standard deviation is they are quite
+useful for deriving other statistics, particularly in inferential statistics, another advantage. In
+fact, Chapter 9 is all about making inferences about variances, and many other inferential
+statistics make assumptions about the variance. Thus, the variance is quite important as a
+measure of dispersion.
+
+=== ISO 28037.txt / página PDF 13 ===
+                                                                                                  ISO/TS 28037:2010(E)
+
+
+
+4.9     A vector of dimension m × 1 is denoted thus:
+                                                
+                                             x1
+                                      x =  ... ,       x> =
+                                                                                      
+                                                                    x1       ...    xm ,
+                                                
+
+                                              xm
+and a matrix of dimension m × n is denoted thus:
+                                                                                             
+                                    a11 . . . a1n                a11                 ...    am1
+                                                                 ..                         .. .
+                            A =  ...     ..     .. ,        >
+                                                             A = .                  ..
+                                 
+                                             .    .                                    .     . 
+                                      am1   ...    amn                        a1n    ...    amn
+The dimension of the vector or matrix is always specified to avoid possible confusion.
+
+4.10     > denotes transpose.
+
+4.11     The zero matrix is denoted by 0 and the unit vector is denoted by 1.
+
+4.12     Some symbols have more than one meaning. The context clarifies the usage.
+
+4.13   Numbers displayed in tables to a fixed number of decimal places are correctly rounded representations of
+numbers stored to higher precision, as would be the case in a spreadsheet, for example. Therefore, minor inconsistencies
+may be perceived between displayed column sums and the column sums of the displayed numbers.
+
+4.14    In some tables, a subclause number above a column or columns indicates where the formula is given for
+determining the values below.
+
+4.15     In the examples, while data values are provided to a given precision, the results of calculations are provided
+to a higher precision to allow the user to compare results when undertaking the calculations.
+
+
+5     Principles of straight-line calibration
+
+5.1     General
+
+5.1.1     This clause considers how a relationship Y = A + BX describing the dependent variable Y (also called
+‘response’) as a function of the independent variable X (also called ‘stimulus’) can be determined from measurement
+data. In the context of calibration, the measurement data arise when a measuring instrument specified by (unknown)
+values A∗ and B ∗ of the calibration function parameters is ‘stimulated’ by artefacts with calibrated values of Xi given
+in standard units, of a property of the artefacts, and the corresponding ‘responses’ or indications Yi of the instrument
+are recorded. The relationship provides the response Y of the system given an artefact with calibrated quantity X.
+This process is termed ‘forward evaluation’. More useful in practice, the relationship allows a measured response y
+of Y to be converted to an estimate x, in standard units, of the property X of an artefact. This process is termed
+‘inverse evaluation’ or ‘prediction’.
+
+5.1.2    The calibration of a measuring system should take into account measurement uncertainties, and, if present,
+covariances associated with the measurement data. The output of a calibration procedure is a calibration function to
+be used for prediction (and, if required, forward evaluation). The output also includes the standard uncertainties and
+covariance associated with the estimates a and b of the parameters describing the calibration function, which are used
+to evaluate the standard uncertainties associated with prediction (and forward evaluation).
+
+
+5.2     Inputs to determining the calibration function
+
+5.2.1    Measurement data
+
+The information required to determine the straight-line calibration function are the measurement data and their
+associated standard uncertainties and covariances. In this Technical Specification, the measurement data are denoted
+
+c ISO 2010 — All rights reserved                                                                                      5
+
+=== ISO 28037.txt / página PDF 17 ===
+                                                                                                  ISO/TS 28037:2010(E)
+
+
+
+5.8     Determining the ordinary least squares best-fit straight line to data
+
+5.8.1   The ordinary (unweighted) least squares best-fit straight line to the data is defined by the values a and b of
+the parameters A and B that minimize
+                                              Xm
+                                                 (yi − A − Bxi )2 .                                                (2)
+                                                         i=1
+
+
+These values satisfy the equations given by equating to zero the partial derivatives of first order of expression (2) with
+respect to A and B.
+
+5.8.2      a and b can be calculated in the following steps:
+                    m                 m
+                 1 X               1 X
+ 1    Set x0 =         xi and y0 =       yi ;
+                 m i=1             m i=1
+
+ 2        ei = xi − x0 and yei = yi − y0 , i = 1, . . . , m;
+      Set x
+              Pm
+                     x
+                     ei yei
+ 3    Set b = Pi=1m         and a = y0 − bx0 .
+                      e2i
+                  i=1 x
+
+5.8.3    The values x0 and y0 are such that the best-fit line to the translated data points (e
+                                                                                             xi , yei ) passes through the
+origin and has the same slope as the best-fit line to the original data points (xi , yi ).
+
+NOTE Mathematically, the best-fit parameters are determined by solving a pair of linear equations involving a matrix of
+dimension 2 × 2. For the transformed data points, this matrix is diagonal, allowing the solution parameters to be determined
+easily. Translating the data also has a beneficial effect in terms of numerical accuracy of the computed solution [4, page 33].
+
+5.8.4     The methods described in the Clauses 6 to 10 below constitute extensions of the calculations in 5.8.2 that
+take into account the prescribed uncertainty information.
+
+
+6     Model for uncertainties associated with the yi
+
+6.1     General
+
+6.1.1      This clause considers the case 5.3.2 a), namely when the following information is provided for i = 1, . . . , m:
+
+a)    measurement data (xi , yi ), and
+
+b)    standard uncertainty u(yi ) associated with yi .
+
+Annex D provides guidance on obtaining these uncertainties. All other uncertainties and covariances associated with
+the data are regarded as negligible.
+
+6.1.2      The case 5.3.2 a) corresponds to that described by the statistical model
+                                             yi = A∗ + B ∗ xi + ei ,          i = 1, . . . , m,                            (3)
+where the ei are realizations of independent random variables with expectations zero and variances u2 (yi ) [9, page 1].
+A∗ and B ∗ are the (unknown) values of the calibration function parameters for the measuring system for which a
+calibration is required and which provides the measurement data. This model, having no uncertainty associated with
+the xi , is known as a functional model.
+
+6.1.3      Let wi = 1/u(yi ), i = 1, . . . , m. The estimates a and b are those that minimize the weighted sum of squares
+                                                 m
+                                                 X             m
+                                                               X
+                                                       Ri2 ≡         wi2 (yi − A − Bxi )2                                  (4)
+                                                 i=1           i=1
+
+
+c ISO 2010 — All rights reserved                                                                                             9
+
+=== BIPM.QM-K1_2.protocol.txt / página PDF 3 ===
+the coordinator, which may differ from the proposal depending on the workload of the
+BIPM.
+
+
+4. Measurand, quantities and units
+The measurand is the amount fraction of ozone in dry air, with measurement results being
+expressed in mol mol-1 (or one of its multiples mmol mol-1, μmol mol-1 or nmol mol-1). The
+numerical value of the amount fraction of ozone in air expressed in this unit, is equivalent
+to the numerical value of the volume fraction expressed as ppb (parts per billion, 1 billion
+= 109) or ppbv, which may be encountered but not recommended.
+
+
+1.1 Absorption cross-section for ozone
+Ozone standards based on the UV photometry principle make use of the ozone
+absorption cross section at 253.7 nm, to calculate the measured ozone amount fraction.
+Starting on 1st January 2025, this quantity is expected to take the consensus value named
+CCQM.O3.2019 recommended by the Consultative Committee for Amount of
+Substance: Metrology in Chemistry and Biology (CCQM) 1. The value of CCQM.O3.2019
+is 1.1329(35) × 10−17 cm2 molecule−1. This value is also recommended in the ISO Standard
+13964:1998/Amd 1:2024.
+
+Participants in BIPM.QM-K1 may still be using the previous recommended value of
+1.147×10–17 cm2 reported by Hearn in 1961 and included in the previous version of the ISO
+Standard 13964:1998. Using a different value than CCQM.O3.2019 will result in a
+noticeable difference in the agreement between the participant and the BIPM.
+
+In the comparison of two UV photometers using the same value of the absorption cross-
+section, its uncertainty can be set to zero. However, in the comparison of different
+methods, or of UV photometers with different values, or when considering the complete
+uncertainty budget of the method, the uncertainty of the absorption cross-section should
+be included.
+
+
+5. Terms and definitions
+-   xnom: nominal ozone amount fraction in dry air furnished by the ozone generator
+-   xA,i: ith measurement of the nominal value xnom by the photometer A.
+-   x A : the mean of N measurements of the nominal value xnom measured by the
+                              1 N
+    photometer A : x A =         ∑
+                              N i =1
+                                     x A ,i
+
+
+
+
+1
+ Recommendation 1 (2020): On the recommended value of the ozone absorption cross section per molecule at
+253.65 nm (air) for applications including the measurement of atmospheric ozone amount fractions.
+
+BIPM.QM-K1 protocol v2.1.docx                                09 Oct. 25                   Page 3 of 25
+
+=== The ASQ Metrology Handbook.txt / página PDF 605 ===
+572 Appendix C
+
+
+
+        calibration seal is usually imprinted with a legend similar to “Calibration
+        Void if Broken or Removed” or “Calibration Seal—Do Not Break or Remove.”
+        A calibration seal provides a means of deterring the user from tampering
+        with any adjustment point that can affect the calibration of an instrument and
+        detecting any attempt to access controls that can affect the calibration of an
+        instrument.
+        Note: A calibration seal may also be referred to as a “tamper-evident seal.”
+    certification—third-party attestation related to an object of conformity assessment,
+        with the exception of accreditation (ISO/IEC 17000:2020, 7.6).
+    certified reference material (CRM)—reference material, accompanied by
+        documentation issued by an authoritative body and providing one or more
+        specified property values with associated uncertainties and traceabilities,
+        using valid procedures (VIM, 5.14). See related: reference material.
+        CRM is a reference material characterized by a metrologically valid procedure
+        for one or more specified properties, accompanied by a reference material
+        certificate that provides the value of the specified property, its associated
+        uncertainty, and a statement of metrological traceability (International
+        Organization for Standardization. 2016. ISO 17034:2016 General requirements for
+        competence of reference material producers. Geneva, Switzerland: ISO 17034:2016,
+        3.2).
+        NIST also includes the following about certified reference materials (https://
+        www.nist.gov/srm/srm-definitions):
+         1. The concept of value includes qualitative attributes such as identity
+            or sequence. Uncertainties for such attributes may be expressed as
+            probabilities.
+         2. Metrologically valid procedures for the production and certification
+            of reference materials are given in, among others, ISO 17034 and ISO
+            Guide 35.
+         3. ISO Guide 31 gives guidance on the contents of certificates.
+    characteristic—a distinguishing feature (ISO 9000:2015, 3.10.1). A physical,
+       chemical, visual, functional, or any other identifiable property of a product
+       of material.
+    coefficient of variation—the standard deviation divided by the value of the
+        parameter measured.
+    combined standard uncertainty—standard uncertainty of the result of a
+       measurement when that result is obtained from the values of a number of other
+       quantities, equal to the positive square root of a sum of terms, the terms being
+       the variances or covariances of these other quantities weighted according to
+       how the measurement result varies with changes in those quantities (GUM,
+       2.3.4). See also: expanded uncertainty.
+    competence—for a laboratory, the demonstrated ability to perform the tests
+       or calibrations within the accreditation scope and to meet other criteria
+
+=== metrology_measure_uncer_c03.txt / página PDF 2 ===
+3.1 Signiﬁcant Digits of a Measure                                                65
+
+
+digits. Ambiguity can be avoided by using exponential or “scientiﬁc” standard
+notation.
+   If the number of signiﬁcant digits is three, four, or ﬁve, we could write 50,600
+calories, such as: 5.06 × 104 calories (three signiﬁcant digits)
+5.060 × 104 calories (four signiﬁcant digits)
+5.0600 × 104 calories (ﬁve signiﬁcant digits)
+   When writing a number in scientiﬁc notation, the number of signiﬁcant digits is
+indicated by the number of numerical digits in the term “digits,” as shown in the
+examples.
+
+
+   Important
+   The power of ten is not considered a signiﬁcant digit.
+
+
+3.1.1 Number Rounding
+
+When the measure has more signiﬁcant numerals than you need, we should keep
+only those necessary and abandon the others.
+   For example, measurement 34.527 m has ﬁve signiﬁcant digits. If we have to
+express it with only three, we should write 34.5 m. If we need four, we write
+34.53 m.
+   In the latter case, we observed that the digit of the second decimal house went
+from 2 to 3.
+   Here is the reason. If we had used 34.52 m, we would have made a mistake, for
+lack of it, equal to (34.527 - 34.52) m = 0.007 m.
+   Using 34.53 m, we made a minor error, by excess, of:
+
+                            ð34:53–34:527Þ m = 0:003 m:
+
+   When we round a number, we must keep in mind the following rules:
+(a) The last digit of a number should always be added from a unit if the discarded
+    digit is bigger than ﬁve.
+       Examples of rounding to three signiﬁcant digits:
+
+
+                                     134:7 m = 135 m
+                              0:03432 mm = 0:0343 mm
+
+(b) If the discarded digit is equal to ﬁve, if there are any other numerals different
+    from zero after the discarded ﬁve, the last retained digit will be plus a unit.
+        Examples of rounding to three signiﬁcant digits:
+
+=== metrology_measure_uncer_c03.txt / página PDF 4 ===
+3.1 Signiﬁcant Digits of a Measure                                                  67
+
+
+   Solution: Divide and provide the result with the number of signiﬁcant digits of the
+portion with the smallest number of signiﬁcant digits.
+
+                                89:1 m2
+                                        = 16:29182 m
+                               5:4690 m
+
+   Adopting the rule of multiplication and division, as 89.1 has only three signiﬁcant
+digits, the result of the division will be 16.3 m.
+
+
+3.1.2.3 Square Root
+
+The square root of a number with n signiﬁcant digits can have signiﬁcant digits at
+most n and atpleast n - 1.
+   Example: 25:5 km
+   Since 25.5 km has three signiﬁcant digits, we can represent the result as 5.05 or
+5.0. The amount
+              p of signiﬁcance used will depend on the accuracy of the calculation.
+   Example:     25:5 þ 4:8 km = ð5:0 þ 4:8Þ km = 9:8 km:
+                 p
+                     25:5 þ 4:81     km = ð5:05 þ 4:81Þ km = 9:86 km:
+
+
+3.1.3 Mixed Operations
+
+When using a calculator, if you work all the long calculations without writing the
+intermediate results, you may be unable to tell if an error has been made. In addition,
+even if you realize there were any errors, you may be unable to say where it is. In an
+extensive calculation involving mixed operations, as many digits should be
+performed as possible in the entire set of calculations, and then the result should
+be appropriately rounded.
+   For example: (5.00/1.235) m + 3.000 m + (6.35/4.0) m = (4.04858 + 3.000 + 1.5875)
+m = 8.630829 m.
+   The ﬁrst division should result in three signiﬁcant digits. The last division should
+result in two signiﬁcant digits. The three added numbers should result in a number
+with one digit after the decimal home. Thus, the correct rounded result must be
+8.6 m. The last operation (division) limits this result’s accuracy.
+
+
+   Important
+   In an extensive calculation involving mixed operations, as many digits as
+   possible should be performed in the entire set of calculations, and then the
+   result should be appropriately rounded.
+
+=== metrology_measure_uncer_c03.txt / página PDF 5 ===
+68                                                        3 Statistics Applied to Metrology
+
+
+   Most modern calculators allow you to load the results of intermediate calculations
+on the display by performing complex calculations. In doing so, it is possible to
+maintain the results of each calculation step without inserting the intermediate results
+(a practice that perhaps encourages rounding too early). This way, you can altogether
+avoid truncation errors introduced by intermediate rounding.
+   Using all digits in the result can be critical for many mathematical operations in
+statistics. Rounding intermediate results by calculating squares can seriously com-
+promise their accuracy.
+
+
+
+3.2 Concepts of Statistics Applied to Metrology
+
+Here is a question: Why must we know the statistical tools to work in metrology?
+    It is well known that every measure performed has an associated measurement
+uncertainty, which, depending on the type and quality of the instrument or system
+used, can be small or large compared to the measurement’s result.
+    Thus, we can say that MR = X ± U, where.
+    MR = measurement result.
+    X = measurement value (or the mean measurement) performed and.
+    U = uncertainty of the measurement.
+    In VIM—2.26, we ﬁnd the following deﬁnition for measurement uncertainty:
+“non-negative parameter characterizing the dispersion of the quantity values being
+attributed to a measurand, based on the information used.” The VIM also cites that
+“the parameter may be, for example, a standard deviation called standard mea-
+surement uncertainty (or a speciﬁed multiple of it), or the half-width of an interval,
+having a stated coverage probability.”
+    We realize, then, that measurement uncertainty is an evaluated parameter through
+some statistical tools. As the result of measurement will always have an associated
+doubt (called the uncertainty of measurement), what is sought is to estimate the
+values of measure and uncertainty in the best possible way.
+    Measurement uncertainty will always exist and will never be eliminated, since the
+actual value of greatness is estimated (in practice, the value of the standard is used as
+a reference value). However, it is possible to deﬁne the limits within which the value
+of a measurement is found by considering a speciﬁc probability value using statis-
+tical techniques and analyses.
+    Experimental measurements are carried out based on random experiments, and
+random experiment means that which is inﬂuenced by non-controlled, random
+variables. Thus, measurements are random experiments and can be repeated indef-
+initely, and once repeated, we will probably obtain different results.
+    Random experiments are associated with a sample space or population. Popula-
+tion N is deﬁned as all elements available for evaluation. This population can be a
+ﬁnite number (e.g., the total residents of a building) or inﬁnite (e.g., the set of natural
+numbers). A sample n represents a portion of the population, but it should be chosen
+to present the characteristics and properly represent this origin population.

@@ -1,0 +1,534 @@
+
+FUENTE docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf
+
+BÚSQUEDA 95,45
+                                        (percent)
+                                          68,27                                   1
+                                            90                                  1,645
+                                            95                                  1,960
+                                          95,45                                   2
+                                            99                                  2,576
+                                          99,73                                   3
+
+
+NOTE         By contrast, if z is described by a rectangular probability distribution with expectation µ z and standard deviation
+σ = a 3 , where a is the half-width of the distribution, the level of confidence p is 57,74 percent for kp = 1; 95 percent for
+kp = 1,65; 99 percent for kp = 1,71; and 100 percent for k p W 3 ≈ 1,73 ; the rectangular distribution is “narrower” than the
+normal distribution in the sense that it is of finite extent and has no “tails”.
+99 percent, respectively. Although for veff = 11, k = 2 and k = 3 underestimate t 95(11) and t 99(11) by only about
+10 percent and 4 percent, respectively (see Table G.2), this may not be acceptable in some cases. Further,
+for all values of veff somewhat larger than 13, k = 3 produces an interval having a level of confidence larger
+than 99 percent. (See Table G.2, which also shows that for veff → ∞ the levels of confidence of the intervals
+produced by k = 2 and k = 3 are 95,45 percent and 99,73 percent, respectively). Thus, in practice, the size of
+veff and what is required of the expanded uncertainty will determine whether this approach can be used.
+
+
+
+
+© ISO/IEC 2008 – All rights reserved                                                                            77
+
+ISO/IEC GUIDE 98-3:2008(E)
+
+            Degrees of
+                                                              Fraction p in percent
+             freedom
+                v             68,27 a)           90               95           95,45 a)           99            99,73 a)
+
+                1               1,84            6,31            12,71           13,97           63,66           235,80
+                2               1,32            2,92            4,30             4,53            9,92            19,21
+                3               1,20            2,35            3,18             3,31            5,84             9,22
+                4               1,14            2,13            2,78             2,87            4,60             6,62
+                5               1,11            2,02            2,57             2,65            4,03             5,51
+
+
+               100             1,005           1,660            1,984           2,025           2,626            3,077
+                ∞              1,000           1,645            1,960           2,000           2,576            3,000
+
+       a)    For a quantity z described by a normal distribution with expectation µ z and standard deviation σ, the interval
+       µ z ± k σ encompasses p = 68,27 percent, 95,45 percent and 99,73 percent of the distribution for k = 1, 2 and 3,
+       respectively.
+
+
+
+
+78                                                                                                © ISO/IEC 2008 – All rights reserved
+
+                                                                                      ISO/IEC GUIDE 98-3:2008(E)
+
+BÚSQUEDA F.1.2.3
+comparison in terms of the same 1 000 Ω standard resistor Rs characterized by a standard uncertainty u(Rs) = 100 mΩ as
+given in its calibration certificate. The resistors are connected in series with wires having negligible resistance in order to
+obtain a reference resistance Rref of nominal value 10 kΩ. Thus R ref = f ( Ri ) =                  ∑  10
+                                                                                                        i =1 R i . Since r (xi, xj) = r (Ri, Rj) = +1 for
+each resistor pair (see F.1.2.3, Example 2), the equation of this note applies. Since for each resistor ∂f /∂xi = ∂Rref /∂Ri = 1,
+and u(xi) = u(Ri) = u(Rs) (see F.1.2.3, Example 2), that equation yields for the combined standard uncertainty of Rref,
+                                                                                                      1/2
+               ∑
+ u c ( R ref ) = 10                                                                 ⎡
+                 i =1 u ( R s ) = 10 × (100 mΩ ) = 1 Ω . The result u c ( R ref ) = ⎣∑10 2          ⎤ = 0,32 Ω obtained from Equation (10)
+                                                                                      i =1 u ( R s )⎦
+is incorrect because it does not take into account that all of the calibrated values of the ten resistors are correlated.
+
+given in its calibration certificate. The resistors are connected in series with wires having negligible resistance in order to
+obtain a reference resistance Rref of nominal value 10 kΩ. Thus R ref = f ( Ri ) =                  ∑  10
+                                                                                                        i =1 R i . Since r (xi, xj) = r (Ri, Rj) = +1 for
+each resistor pair (see F.1.2.3, Example 2), the equation of this note applies. Since for each resistor ∂f /∂xi = ∂Rref /∂Ri = 1,
+and u(xi) = u(Ri) = u(Rs) (see F.1.2.3, Example 2), that equation yields for the combined standard uncertainty of Rref,
+                                                                                                      1/2
+               ∑
+ u c ( R ref ) = 10                                                                 ⎡
+                 i =1 u ( R s ) = 10 × (100 mΩ ) = 1 Ω . The result u c ( R ref ) = ⎣∑10 2          ⎤ = 0,32 Ω obtained from Equation (10)
+                                                                                      i =1 u ( R s )⎦
+is incorrect because it does not take into account that all of the calibrated values of the ten resistors are correlated.
+
+NOTE 2      The estimated variances u2(xi) and estimated covariances u(xi, xj) may be considered as the elements of a
+the estimation of the value of input quantity Xi, and the same thermometer is used to determine a similar
+temperature correction required in the estimation of input quantity Xj, the two input quantities could be
+significantly correlated. However, if Xi and Xj in this example are redefined to be the uncorrected quantities
+and the quantities that define the calibration curve for the thermometer are included as additional input
+quantities with independent standard uncertainties, the correlation between Xi and Xj is removed. (See F.1.2.3
+and F.1.2.4 for further discussion.)
+
+
+
+22                                                                                                              © ISO/IEC 2008 – All rights reserved
+
+                                                                               ISO/IEC GUIDE 98-3:2008(E)
+
+NOTE 1     On the other hand, in certain cases, such as the reference-resistance example of Note 1 to 5.2.2, it is
+apparent that the input quantities are fully correlated and that the standard uncertainties of their estimates combine linearly.
+
+NOTE 2       Different experiments may not be independent if, for example, the same instrument is used in each (see
+F.1.2.3).
+
+F.1.2.2      Whether or not two repeatedly and simultaneously observed input quantities are correlated may
+be determined by means of Equation (17) in 5.2.3. For example, if the frequency of an oscillator
+uncompensated or poorly compensated for temperature is an input quantity, if ambient temperature is also an
+input quantity, and if they are observed simultaneously, there may be a significant correlation revealed by the
+calculated covariance of the frequency of the oscillator and the ambient temperature.
+
+F.1.2.3      In practice, input quantities are often correlated because the same physical measurement
+uncompensated or poorly compensated for temperature is an input quantity, if ambient temperature is also an
+input quantity, and if they are observed simultaneously, there may be a significant correlation revealed by the
+calculated covariance of the frequency of the oscillator and the ambient temperature.
+
+F.1.2.3      In practice, input quantities are often correlated because the same physical measurement
+standard, measuring instrument, reference datum, or even measurement method having a significant
+uncertainty is used in the estimation of their values. Without loss of generality, suppose two input quantities
+X1 and X2 estimated by x1 and x2 depend on a set of uncorrelated variables Q1, Q2, ..., QL. Thus
+X1 = F(Q1, Q2, ..., QL) and X2 = G(Q1, Q2, ..., QL), although some of these variables may actually appear only
+in one function and not in the other. If u2(ql) is the estimated variance associated with the estimate ql of Ql,
+then the estimated variance associated with x1 is, from Equation (10) in 5.1.2,
+
+                   L ⎛           2
+ISO/IEC GUIDE 98-3:2008(E)
+
+
+
+EXAMPLE             If, in Example 1 of F.1.2.3, the expressions for I and t in terms of RS are introduced into the expression
+for P, the result is
+                           2
+                      C 0V S
+     P=
+          R 2S ⎡T0 + a β 2 ( t ) R S
+                                   2
+                                     − t0 ⎤
+               ⎣                          ⎦
+
+BÚSQUEDA 6.3.3
+ISO/IEC GUIDE 98-3:2008(E)
+
+
+
+extreme portions), but also because of the uncertainty of uc( y) itself (see Note 2 to 2.3.5, 6.3.2, 6.3.3 and
+Annex G, especially G.6.6).
+
+NOTE          For preferred ways of stating the result of a measurement when the measure of uncertainty is uc(y) and when
+it is U, see 7.2.2 and 7.2.4, respectively.
+
+
+6.3    Choosing a coverage factor
+
+extensive knowledge of the probability distribution characterized by the measurement result y and its
+combined standard uncertainty uc( y). Although these parameters are of critical importance, they are by
+themselves insufficient for the purpose of establishing intervals having exactly known levels of confidence.
+
+6.3.3 Recommendation INC-1 (1980) does not specify how the relation between k and p should be
+established. This problem is discussed in Annex G, and a preferred method for its approximate solution is
+presented in G.4 and summarized in G.6.4. However, a simpler approach, discussed in G.6.6, is often
+adequate in measurement situations where the probability distribution characterized by y and uc( y) is
+approximately normal and the effective degrees of freedom of uc( y) is of significant size. When this is the case,
+which frequently occurs in practice, one can assume that taking k = 2 produces an interval having a level of
+confidence of approximately 95 percent, and that taking k = 3 produces an interval having a level of
+confidence of approximately 99 percent.
+
+NOTE       The variances s av  ( z S ) and s av ( z ) are pooled estimates of variance — see the discussion of
+Equation (H.26b) in H.5.2.2.
+
+
+H.6.3.3 Uncertainty of the correction due to variations in the hardness of the transfer-standard
+block, u(∆ b)
+
+OIML International Recommendation R 12, Verification and calibration of Rockwell C hardness standardized
+blocks, requires that the maximum and minimum depths of indentation obtained from five measurements on
+the transfer-standard block shall not differ by more than a fraction x of the average depth of indentation, where
+x is a function of the hardness level. Let, therefore, the maximum difference in the depths of indentation over
+the entire block be xz′, where z′ is as defined in H.6.3.2 with n = 5. Also let the maximum difference be
+described by a triangular probability distribution about the average value xz′/2 (on the likely assumption that
+                                         confidence level 6.2.2, C.2.29          degrees of freedom 4.2.6, C.2.31,
+                 B                       conventional true value of a              E.4.3, G, G.3, G.3.2, G.3.3,
+                                          quantity B.2.4                           G.6.3, G.6.4
+bias 3.2.3 Note                          convolution see probability             degrees of freedom, effective
+BIPM Preliminary, Foreword, 0.5,          distributions, convolving                6.3.3, G.4, G.4.1, G.5.4, G.6.2 et
+  7.1.1, A.1, A.2                        corrected result B.2.13, D.3.1,           seqq.
+blunders 3.4.7                            D.3.4, D.4                             degrees of freedom, effective, of
+bounds on an input quantity              correction 3.2 3.2.3 3.2.4 Note 2,        Type A components alone 7.2.1,
+  4.3.7, 4.3.8, 4.3.9, 4.4.5, 4.4.6,      B.2.23                                   G.4.1 Note 3
+  F.2.3.3                                correction factor 3.2.3 B.2.24          degrees of freedom, effective, of
+Bureau International des Poids et        correction, ignoring a                    Type B components alone 7.2.1,
+  Mesures see BIPM                        3.2.4 Note 2, 3.4.4, 6.3.1 Note,         G.4.1 Note 3
+                                          F.2.4.5                                degrees of freedom of a pooled
+  3.2, 3.2.1 Note, 3.2.2 Note 2,            B.1                                  level of confidence 0.4,
+                                          IFCC Preliminary, Foreword, B.1          2.2.3 Note 1, 2.3.5 Notes 1 and 2,
+  3.2.3 Note, 3.3.1 Note, 3.3.2,
+  B.2.19, D, D.4, D.6.1, D.6.2,           imported input value or quantity         3.3.7, 4.3.4, 6.2.2, 6.2.3, 6.3.1,
+                                            F.2.3, F.2.3.1                         6.3.2, 6.3.3, G, G.1.1, G.1.2,
+  E.5.1 et seqq.
+error propagation, general law of         independence 5.1, C.3.7                  G.1.3, G.2.3, G.3.2, G.3.4, G.4.1,
+                                          independent repetitions F.1.1.2          G.6.1, G.6.4, G.6.6
+  5.2.2 Note 1, E.3.2
+error, random see random error            influence quantities, random           level of confidence, minimum
+                                            F.1.1.3, F.1.1.4                       F.2.3.2
+error, relative see relative error
+error, systematic see systematic          influence quantity 3.1.5, 3.1.6,       limit, safety see safety limit
+measurement, role of ANOVA in            B.2.1 Note 1                          random variations, correlated
+ H.5.3 et seqq.                         pooled estimate of variance              see correlated random variations
+measurements, spectrum of, to            see variance, pooled estimate of      Recommendation INC-1 (1980)
+ which the principles of the Guide      population C.2.16                        Preliminary, Foreword, 0.5, 0.7,
+ apply 1.1                              precision B.2.14 Note 2                  3.3.3, 6.1.1, 6.1.2, 6.3.3, A.1, A.3,
+method of measurement 3.1.1,            principle of measurement B.2.6           E, E.2.3, E.3.7
+ B.2.7                                  probability 3.3.5, 4.3.7, 4.3.8,       Recommendation 1 (CI-1981), CIPM
+method of measurement,                   4.3.9, C.2.1, E.3.5, E.3.6, F.2.2.3     Preliminary, 0.5, 6.1.1, A.2, A.3
+ uncertainty of the                     probability, coverage                  Recommendation 1 (CI-1986), CIPM
+ see uncertainty of the method of        see coverage probability                0.5, 6.1.1, 6.1.2, A.3
+ measurement                            probability density function 3.3.5,    reference materials, certification of
+method of measurement, unit              4.3.8 Note 2, 4.4.2, 4.4.5, 4.4.6,      H.5, H.5.3.2
+ dependent on the H.6                    C.2.5, F.2.4.4                        relative error B.2.20
+
+FUENTE docs/BIPM.QM-K1_2.protocol.pdf
+
+BÚSQUEDA conventionally
+
+Absorption cross section value and uncertainty
+As introduced in section 1.1, ozone photometers measure ozone amount fractions by the
+absorption of radiation by ozone at 253.7 nm. Consequently, the uncertainty on the
+absorption cross section of ozone at 253.7 nm can be conventionally set to zero if all the
+instruments use the same value for this parameter but must be included if different
+values are used. The value and uncertainty of the ozone absorption cross-section used
+by the participant shall appear clearly in the result form and the uncertainty budgets.
+
+
+7. Linear regression fits
+The sets of the twelve data points (𝑥𝑥̅SRP27 and 𝑥𝑥̅ NS ) will be fitted using the generalised
+least square program OzonE, taking into account the associated uncertainties u(𝑥𝑥̅SRP27 ),
+
+Absorption cross section value and uncertainty
+As introduced in section 1.1, ozone photometers measure ozone amount fractions by the
+absorption of radiation by ozone at 253.7 nm. Consequently, the uncertainty on the
+absorption cross section of ozone at 253.7 nm can be conventionally set to zero if all the
+instruments use the same value for this parameter but must be included if different
+BIPM.QM-K1 protocol v2.1.docx                     09 Oct. 25             Page 17 of 25
+
+values are used. The value and uncertainty of the ozone absorption cross-section used
+by the participant shall appear clearly in the result form and the uncertainty budgets..
+
+
+9. Calculation of the relationship between the national standard
+
+BÚSQUEDA 15)
+
+BÚSQUEDA 21)
+
+FUENTE docs/intro_stats_metro_c05.pdf
+
+BÚSQUEDA unconditional probability
+5.2.1.3 False Accept and False Reject Risks
+
+The overall false accept and false reject risks associated with a manufacturing
+process can be determined by jointly considering the product and measurement
+uncertainty distributions (Smith 1990). The unconditional probability of false
+accept (PFA), sometimes called consumer’s risk, is the probability that the measure-
+ment y is in tolerance (SLL < y < SLU) when the actual value t is out of tolerance
+(t < SLL or t > SLU). This probability can be expressed as:
+
+                       PFA ¼ Pr ðSLL y SLU and t < SLL Þ
+                             þ PrðSLL y SLU and t > SLU Þ:                                      ð5:6Þ
+
+     Assuming normal distributions, this probability can be calculated as:
+
+BÚSQUEDA 5.2.1.3
+
+
+
+
+5.2.1.3 False Accept and False Reject Risks
+
+The overall false accept and false reject risks associated with a manufacturing
+process can be determined by jointly considering the product and measurement
+uncertainty distributions (Smith 1990). The unconditional probability of false
+accept (PFA), sometimes called consumer’s risk, is the probability that the measure-
+ment y is in tolerance (SLL < y < SLU) when the actual value t is out of tolerance
+(t < SLL or t > SLU). This probability can be expressed as:
+
+
+F.1.2.3      In practice, input quantities are often correlated because the same physical measurement
+standard, measuring instrument, reference datum, or even measurement method having a significant
+uncertainty is used in the estimation of their values. Without loss of generality, suppose two input quantities
+X1 and X2 estimated by x1 and x2 depend on a set of uncorrelated variables Q1, Q2, ..., QL. Thus
+X1 = F(Q1, Q2, ..., QL) and X2 = G(Q1, Q2, ..., QL), although some of these variables may actually appear only
+in one function and not in the other. If u2(ql) is the estimated variance associated with the estimate ql of Ql,
+then the estimated variance associated with x1 is, from Equation (10) in 5.1.2,
+
+                   L ⎛           2
+                       ∂F ⎞ 2
+     u ( x1 ) =
+       2
+                 ∑   ⎜      ⎟ u ( ql )
+                       ∂ ql ⎠
+                                                                                                                             (F.1)
+                l =1 ⎝
+
+with a similar expression for u2(x2). The estimated covariance associated with x1 and x2 is given by
+                        L
+                              ∂F ∂ G
+     u ( x1, x 2 ) =   ∑ ∂ ql ∂ ql u 2 ( ql )                                                                                (F.2)
+                       l =1
+
+Because only those terms for which ∂F /∂ql ≠ 0 and ∂G /∂ql ≠ 0 for a given l contribute to the sum, the
+covariance is zero if no variable is common to both F and G.
+
+The estimated correlation coefficient r(x1, x2) associated with the two estimates x1 and x2 is determined from
+u(x1, x2) [Equation (F.2)] and Equation (14) in 5.2.2, with u(x1) calculated from Equation (F.1) and u(x2) from a
+similar expression. [See also Equation (H.9) in H.2.3.] It is also possible for the estimated covariance
+associated with two input estimates to have both a statistical component [see Equation (17) in 5.2.3] and a
+component arising as discussed in this subclause.
+
+EXAMPLE 1                A standard resistor RS is used in the same measurement to determine both a current I and a temperature t.
+The current is determined by measuring, with a digital voltmeter, the potential difference across the terminals of the
+standard; the temperature is determined by measuring, with a resistance bridge and the standard, the resistance R t (t) of a
+
+
+                   L ⎛           2
+                       ∂F ⎞ 2
+     u ( x1 ) =
+       2
+                 ∑   ⎜      ⎟ u ( ql )
+                       ∂ ql ⎠
+                                                                                                                             (F.1)
+                l =1 ⎝
+
+with a similar expression for u2(x2). The estimated covariance associated with x1 and x2 is given by
+                        L
+                              ∂F ∂ G
+     u ( x1, x 2 ) =   ∑ ∂ ql ∂ ql u 2 ( ql )                                                                                (F.2)
+                       l =1
+
+Because only those terms for which ∂F /∂ql ≠ 0 and ∂G /∂ql ≠ 0 for a given l contribute to the sum, the
+covariance is zero if no variable is common to both F and G.
+
+The estimated correlation coefficient r(x1, x2) associated with the two estimates x1 and x2 is determined from
+u(x1, x2) [Equation (F.2)] and Equation (14) in 5.2.2, with u(x1) calculated from Equation (F.1) and u(x2) from a
+similar expression. [See also Equation (H.9) in H.2.3.] It is also possible for the estimated covariance
+associated with two input estimates to have both a statistical component [see Equation (17) in 5.2.3] and a
+component arising as discussed in this subclause.
+
+EXAMPLE 1                A standard resistor RS is used in the same measurement to determine both a current I and a temperature t.
+The current is determined by measuring, with a digital voltmeter, the potential difference across the terminals of the
+standard; the temperature is determined by measuring, with a resistance bridge and the standard, the resistance R t (t) of a
+calibrated resistive temperature sensor whose temperature-resistance relation in the range 15 °C u t u 30 °C is
+ t = aR 2t (t ) − t 0 , where a and t0 are known constants. Thus the current is determined through the relation I = VS / RS and the
+temperature through the relation t = a β 2 (t ) R S   2
+                                                        − t 0 , where β (t) is the measured ratio Rt(t)/ RS provided by the bridge.
+
+
+
+
+similar expression. [See also Equation (H.9) in H.2.3.] It is also possible for the estimated covariance
+associated with two input estimates to have both a statistical component [see Equation (17) in 5.2.3] and a
+component arising as discussed in this subclause.
+
+EXAMPLE 1                A standard resistor RS is used in the same measurement to determine both a current I and a temperature t.
+The current is determined by measuring, with a digital voltmeter, the potential difference across the terminals of the
+standard; the temperature is determined by measuring, with a resistance bridge and the standard, the resistance R t (t) of a
+calibrated resistive temperature sensor whose temperature-resistance relation in the range 15 °C u t u 30 °C is
+ t = aR 2t (t ) − t 0 , where a and t0 are known constants. Thus the current is determined through the relation I = VS / RS and the
+temperature through the relation t = a β 2 (t ) R S   2
+                                                        − t 0 , where β (t) is the measured ratio Rt(t)/ RS provided by the bridge.
+
+
+
+62                                                                                             © ISO/IEC 2008 – All rights reserved
+
+                                                                                                            ISO/IEC GUIDE 98-3:2008(E)
+
+
+
+Since only the quantity RS is common to the expression for I and t, Equation (F.2) yields for the covariance of I and t
+
+                    ∂I ∂ t 2             ⎛ V ⎞                                        2I ( t + t0 ) 2
+     u ( I,t ) =             u ( R S ) = ⎜ − S2 ⎟ ⎡2a β 2 ( t ) R S ⎤ u 2 ( R S ) = −              u (R )
+                   ∂R S ∂R S             ⎜ RS ⎟   ⎣                 ⎦                                  S
+                                         ⎝      ⎠                                         R 2S
+
+(For simplicity of notation, in this example the same symbol is used for both the input quantity and its estimate.)
+
+To obtain the numerical value of the covariance, one substitutes into this expression the numerical values of the measured
+quantities I and t, and the values of RS and u(RS) given in the standard resistor's calibration certificate. The unit of u(I, t) is
+clearly A ·°C since the dimension of the relative variance [u(RS)/ RS]2 is one (that is, the latter is a so-called dimensionless
+quantity).
+
+Further, let a quantity P be related to the input quantities I and t by P = C0 I 2/ (T0 + t), where C0 and T0 are known constants
+
+        P2                I2           I (T0 + t )          (T0 + t ) 2
+The variances u2(I) and u2(t) are obtained by the application of Equation (10) of 5.1.2 to the relations I = VS / RS and
+t = a β 2 (t ) R S
+                 2
+                   − t 0 . The results are
+     u 2 ( I ) I 2 = u 2 (VS ) V S2 + u 2 ( RS ) R S
+                                                   2
+
+
+           u 2 ( t ) = 4 ( t + t 0 ) u 2 ( β ) β 2 + 4 ( t + t 0 ) u 2 ( RS ) R S
+                                       2                                  2     2
+
+
+where for simplicity it is assumed that the uncertainties of the constants t0 and a are also negligible. These expressions
+can be readily evaluated since u2(VS) and u2(β ) may be determined, respectively, from the repeated readings of the
+voltmeter and of the resistance bridge. Of course, any uncertainties inherent in the instruments themselves and in the
+measurement procedures employed must also be taken into account when u2(VS) and u2(β ) are determined.
+
+EXAMPLE 2               In the example of Note 1 to 5.2.2, let the calibration of each resistor be represented by Ri = α i RS, with
+u(α i) the standard uncertainty of the measured ratio α i as obtained from repeated observations. Further, let α i ≈ 1 for each
+resistor, and let u(α i) be essentially the same for each calibration so that u(α i) ≈ u(α ). Then Equations (F.1) and (F.2) yield
+ u 2( R i ) = R S2 u 2(α ) + u 2 ( R S ) and u(Ri, Rj) = u2(RS). This implies through Equation (14) in 5.2.2 that the correlation
+coefficient of any two resistors (i ≠ j) is
+                                                                 −1
+                               ⎧ ⎡                  2⎫
+                                        u (α ) ⎤ ⎪
+       (
+      r R i, R j   )           ⎪
+                       ≡ rij = ⎨1 + ⎢              ⎥ ⎬
+                               ⎪ ⎢⎣ u ( R S ) R S ⎥⎦ ⎪
+                               ⎩                     ⎭
+Since u(RS)/RS = 10−4, if u(α ) = 100 × 10−6, rij ≈ 0,5; if u(α ) = 10 × 10−6, rij ≈ 0,990; and if u(α ) = 1 × 10−6, rij ≈ 1,000. Thus
+as u(α ) → 0, rij → 1, and u(Ri) → u(RS).
+
+NOTE         In general, in comparison calibrations such as this example, the estimated values of the calibrated items are
+
+uncertainty. Substitution of the appropriate values from Table H.2 into Equation (H.8a) then gives
+uc(Z ) = 0,236 Ω.
+
+Because the three measurands or output quantities depend on the same input quantities, they too are
+correlated. The elements of the covariance matrix that describes this correlation may be written in general as
+
+                        N     N
+                                    ∂y ∂y
+     u ( yl , y m ) =   ∑∑ ∂xli ∂xmj u ( xi ) u ( x j ) r ( xi , x j )                                                                   (H.9)
+                        i =1 j =1
+
+
+
+
+86                                                                                                          © ISO/IEC 2008 – All rights reserved
+
+                                                                                                 ISO/IEC GUIDE 98-3:2008(E)
+
+
+
+where yl = fl (x1, x2, ..., xN) and ym = fm (x1, x2, ..., xN). Equation (H.9) is a generalization of Equation (F.2) in
+F.1.2.3 when the ql in that expression are correlated. The estimated correlation coefficients of the output
+quantities are given by r ( yl, ym) = u (yl, ym)/ u ( yl) u ( ym), as indicated in Equation (14) in 5.2.2. It should be
+recognized that the diagonal elements of the covariance matrix, u ( yl, yl) ≡ u2( yl), are the estimated variances
+of the output quantities yl (see 5.2.2, Note 2) and that for m = l, Equation (H.9) is identical to Equation (16) in
+5.2.2.
+
+To apply Equation (H.9) to this example, the following identifications are made:
+
+      y1 = R         x1 = V        u ( xi ) = s ( xi )
+      y2 = X         x2 = I        N =3
+      y3 = Z         x3 = φ
+
+The results of the calculations of R, X, and Z and of their estimated variances and correlation coefficients are
+given in Table H.3.
+
+                                             N   N      2
+             (
+     y = f X 1, X 2 , ..., X N +       ) 21 ∑∑ ∂X∂ ∂fX u ( X i , X j ) + ...                                                              (H.10)
+                                            i =1 j =1   i      j
+
+
+where the second term on the right-hand side is the second-order term in the Taylor series expansion of f
+in terms of the X i (see also 5.1.2, note). In the present case, approach 2 is preferred because it avoids the
+approximation y = f ( X 1, X 2 , ..., X N ) and better reflects the measurement procedure used — the data were in
+fact collected in sets.
+
+On the other hand, approach 2 would be inappropriate if the data of Table H.2 represented n1 = 5
+observations of the potential difference V, followed by n2 = 5 observations of the current I, and then followed
+by n3 = 5 observations of the phase φ, and would be impossible if n1 ≠ n2 ≠ n3. (It is in fact poor measurement
+procedure to carry out the measurements in this way since the potential difference across a fixed impedance
+and the current through it are directly related.)
+
+If the data of Table H.2 are reinterpreted in this manner so that approach 2 is inappropriate, and if correlations
+among the quantities V, I, and φ are assumed to be absent, then the observed correlation coefficients have no
+significance and should be set equal to zero. If this is done in Table H.2, Equation (H.9) reduces to the
+equivalent of Equation (F.2) in F.1.2.3, namely,
+                        N
+                               ∂y ∂y
+     u ( yl , y m ) =   ∑ ∂ xil ∂xmi u 2 ( xi )                                                                                           (H.11)
+                        i =1
+
+and its application to the data of Table H.2 leads to the changes in Table H.3 shown in Table H.5.
+
+
+
+88                                                                                                            © ISO/IEC 2008 – All rights reserved
+
+                                                                                             ISO/IEC GUIDE 98-3:2008(E)
+
+
+
+G.1.1 This annex addresses the general question of obtaining from the estimate y of the measurand Y, and
+from the combined standard uncertainty uc( y) of that estimate, an expanded uncertainty Up = kpuc( y) that
+defines an interval y − Up u Y u y + Up that has a high, specified coverage probability or level of confidence p.
+It thus deals with the issue of determining the coverage factor kp that produces an interval about the
+measurement result y that may be expected to encompass a large, specified fraction p of the distribution of
+values that could reasonably be attributed to the measurand Y (see Clause 6).
+
+G.1.2 In most practical measurement situations, the calculation of intervals having specified levels of
+confidence — indeed, the estimation of most individual uncertainty components in such situations — is at best
+only approximate. Even the experimental standard deviation of the mean of as many as 30 repeated
+observations of a quantity described by a normal distribution has itself an uncertainty of about 13 percent (see
+Table E.1 in Annex E).
+
+In most cases, it does not make sense to try to distinguish between, for example, an interval having a level of
+confidence of 95 percent (one chance in 20 that the value of the measurand Y lies outside the interval) and
+either a 94 percent or 96 percent interval (1 chance in 17 and 25, respectively). Obtaining justifiable intervals
+with levels of confidence of 99 percent (1 chance in 100) and higher is especially difficult, even if it is assumed
+that no systematic effects have been overlooked, because so little information is generally available about the
+most extreme portions or “tails” of the probability distributions of the input quantities.
+
+G.1.3 To obtain the value of the coverage factor kp that produces an interval corresponding to a specified
+level of confidence p requires detailed knowledge of the probability distribution characterized by the
+measurement result and its combined standard uncertainty. For example, for a quantity z described by a
+normal distribution with expectation µ z and standard deviation σ, the value of kp that produces an interval
+µ z ± kpσ that encompasses the fraction p of the distribution, and thus has a coverage probability or level of
+confidence p, can be readily calculated. Some examples are given in Table G.1.
+
+                                    Table G.1 — Value of the coverage factor kp
+                              that produces an interval having level of confidence p
+                                          assuming a normal distribution
+
+                                 Level of confidence p                  Coverage factor kp
+                                        (percent)
+                                          68,27                                   1
+                                            90                                  1,645

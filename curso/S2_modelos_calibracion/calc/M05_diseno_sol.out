@@ -1,0 +1,28 @@
+Media de ocho lecturas dentro de una condición: 0.40 nmol/mol
+Medias simuladas por condición: baja=0.20, alta=0.80 nmol/mol
+Diferencia simulada entre condiciones: 0.60 nmol/mol
+Conteo 12 × 8 × 6 del diseño F-PSMT-01: 576
+Cambio de pendiente objetivo planteado en prop_e: 0.005
+2^3 combinaciones: 8
+Corridas con dos repeticiones independientes por combinación: 16
+Efectos (diferencia de medias nivel + menos nivel -), nmol/mol:
+  flujo: 0.800
+  acondicionamiento: 0.200
+  temperatura: -0.100
+  flujo×acondicionamiento: 0.300
+  flujo×temperatura: 0.040
+  acondicionamiento×temperatura: -0.020
+  flujo×acondicionamiento×temperatura: 0.080
+
+Incertidumbre estándar simulada del promedio de errores (nmol/mol):
+  d=6, n=8: 0.083
+  d=6, n=16: 0.082
+  d=12, n=8: 0.059
+
+Diseño R&R simulado:
+3 analistas: 12 días, 24 ciclos, 192 lecturas;
+  niveles independientes del factor analista: 3
+  lecturas subordinadas por día: 16
+6 analistas: 24 días, 48 ciclos, 384 lecturas;
+  niveles independientes del factor analista: 6
+  lecturas subordinadas por día: 16

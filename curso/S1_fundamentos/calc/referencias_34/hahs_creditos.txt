@@ -1,0 +1,461 @@
+“This edition delivers on many fronts and sets this book apart from the rest. The clear and
+conversational style emphasizes the applied and practical without compromising the theo-
+retical and conceptual underpinnings. The parallel use of SPSS and R that walks the reader
+step-by-step through the procedures coupled with fully annotated interpretation of print-
+outs are very appealing to both novice and more seasoned applied researchers. Rather than
+treating subjects like power and effect size or verification of assumptions in isolation, the
+authors do a fantastic job of blending them with the analyses to make the story behind the
+numbers more compelling and complete. The abundance of visuals and APA style write-
+ups all contribute to simplify and enhance the learning experience.”
+     —Devdass Sunnassee, Assistant Clinical Professor, University of North Carolina, USA
+
+“I have relied on previous versions of this textbook to bring to life statistical concepts in my
+beginning and intermediate level graduate classes. I also share this valuable resource with
+students who ask questions when working on quantitative projects. This fourth edition
+brings enhanced materials, explanations, and examples to aid students in gaining basic pro-
+ficiency in foundational statistical concepts. The detailed and numerous practical examples
+demonstrate the inner workings of basic statistical methods in the social and behavioural
+sciences. I look forward to sharing this enhanced edition with our graduate program.”
+                                       —Brian F. French, Washington State University, USA
+
+“Combining theory and mathematical accessibility with examples in various fields of
+behavioral sciences, SPSS and R applications, APA style write-ups, after-chapter concep-
+tual and practice problems for students, online pedagogical aids, this is a valuable book
+for introductory statistical courses in behavioral sciences. It has a broad coverage of topics,
+and the addition of the new chapter on mediation and moderation adds to its value as a
+classroom text or as a reference for applied researchers.”
+                                                      —Feifei Ye, RAND Corporation, USA
+
+“Anyone familiar with previous editions of Statistical Concepts from Lomax and Hahs-
+Vaughn recognize and appreciate the pedigagogically sound treatment of statistical meth-
+ods comprising introductory and intermediate topics found in many quantitative methods
+graduate programs. In addition to enhancements found in the past versions such as APA-
+style write-ups of statistical results and the numerous screen shots depicting both annotated
+SPSS input commands and output; the fourth edition begins each chapter with a concrete
+research scenario to motivate the particular statistical method. Another new feature that will
+resonate with instructors and graduate students are the insightful Stop and Think boxes that
+offer moments to reflect and to make connections between statistical ideas, data, and the
+software. Clearly, Lomax and Hahs-Vaughn are committed to preparing the next generation
+of researchers and practitioners, and the latest edition of Statistical Concepts is a must-have
+reference for those seeking this type of comprehensive quantitative methods training.”
+                         —Jeffrey R. Harring, University of Maryland, College Park, USA
+
+“I have required this textbook for my introductory and intermediate-level students through-
+out multiple editions, and it has continued to get better and better. This new edition contin-
+ues to emphasize the development of statistical understanding while also providing readers
+with valuable information on how to perform a variety of procedures using SPSS and R. The
+authors have added a terrific new chapter on mediation and moderation that reviews con-
+cepts and procedures that are often not a point of emphasis in traditional (textbook) coverage
+of multiple regression (but that are crucial for more modern data analysis). This is a book that
+not only is a wonderful learning resource for students, but also one they will want to keep in
+their personal libraries to reference when carrying out their own future research.”
+                                —H. Michael Crowson, The University of Oklahoma, USA
+                                    A First Course
+Statistical Concepts—A First Course presents the first 10 chapters from An Introduction to
+Statistical Concepts, Fourth Edition. Designed for first and lower-level statistics courses, this
+book communicates a conceptual, intuitive understanding of statistics that does not assume
+extensive or recent training in mathematics and only requires a rudimentary knowledge
+of algebra.
+  Covering the most basic statistical concepts, this book is designed to help readers really
+understand statistical concepts, in what situations they can be applied, and how to apply
+them to data. Specifically, the text covers basic descriptive statistics, including ways of
+representing data graphically, statistical measures that describe a set of data, the normal
+distribution and other types of standard scores, and an introduction to probability and
+sampling. The remainder of the text covers various inferential tests, including those
+involving tests of means (e.g., t tests), proportions, variances, and correlations.
+  Providing accessible and comprehensive coverage of topics suitable for an undergraduate
+or graduate course in statistics, this book is an invaluable resource for students undertaking
+an introductory course in statistics in any number of social science and behavioral science
+disciplines.
+
+Debbie L. Hahs-Vaughn is Professor of Methodology, Measurement, and Analysis at the
+University of Central Florida, US. Her research primarily relates to methodological issues
+when analyzing, and applied research using, complex sample data.
+
+Richard G. Lomax is Professor Emeritus of Educational and Human Ecology at the Ohio
+State University, US, and former Associate Dean for Research and Administration. His
+research primarily focuses on early literacy and statistics.
+   A First Course
+
+
+
+
+Debbie L. Hahs-Vaughn
+  University of Central Florida
+
+  Richard G. Lomax
+   The Ohio State University
+First published 2020
+by Routledge
+52 Vanderbilt Avenue, New York, NY 10017
+
+and by Routledge
+2 Park Square, Milton Park, Abingdon, Oxon, OX14 4RN
+
+Routledge is an imprint of the Taylor & Francis Group, an informa business
+
+© 2020 Taylor & Francis
+
+The right of Debbie L. Hahs-Vaughn and Richard G. Lomax to be identified as authors of this work has been asserted by
+them in accordance with sections 77 and 78 of the Copyright, Designs and Patents Act 1988.
+
+All rights reserved. No part of this book may be reprinted or reproduced or utilised in any form or by any electronic,
+mechanical, or other means, now known or hereafter invented, including photocopying and recording, or in any
+information storage or retrieval system, without permission in writing from the publishers.
+
+Trademark notice: Product or corporate names may be trademarks or registered trademarks, and are used only for
+identification and explanation without intent to infringe.
+
+Library of Congress Cataloging-in-Publication Data
+Names: Hahs-Vaughn, Debbie L., author. | Lomax, Richard G., author. | Hahs-Vaughn, Debbie L. Introduction to
+  statistical concepts.
+Title: Statistical concepts : a first course / Debbie L. Hahs-Vaughn (University of Central Florida), Richard G. Lomax
+  (The Ohio State University).
+Description: New York, NY : Routledge, 2019.
+Identifiers: LCCN 2019013055 (print) | LCCN 2019017022 (ebook) | ISBN 9780429261268 (Ebook) |
+  ISBN 9780367203962 (hardback) | ISBN 9780367203993 (pbk.)
+Subjects: LCSH: Statistics—Textbooks. | Mathematical statistics—Textbooks.
+Classification: LCC QA276.12 (ebook) | LCC QA276.12 .L65 2019 (print) | DDC 519.5—dc23
+LC record available at https://lccn.loc.gov/2019013055
+
+ISBN: 978-0-367-20396-2 (hbk)
+ISBN: 978-0-367-20399-3 (pbk)
+ISBN: 978-0-429-26126-8 (ebk)
+
+Typeset in Palatino
+by Apex CoVantage, LLC
+
+Visit the companion website: www.routledge.com/cw/hahs-vaughn
+This book is dedicated to our families and to all our former students.
+
+                  You are statistically significant.
+Contents
+
+Preface������������������������������������������������������������������������������������������������������������������������������������������� xiii
+Acknowledgments��������������������������������������������������������������������������������������������������������������������� xvii
+
+  1. Introduction����������������������������������������������������������������������������������������������������������������������������� 1
+     1.1 What Is the Value of Statistics?�����������������������������������������������������������������������������������3
+     1.2 Brief Introduction to the History of Statistics����������������������������������������������������������� 5
+     1.3 General Statistical Definitions������������������������������������������������������������������������������������� 6
+     1.4 Types of Variables��������������������������������������������������������������������������������������������������������� 9
+     1.5 Scales of Measurement����������������������������������������������������������������������������������������������� 10
+     1.6 Additional Resources������������������������������������������������������������������������������������������������� 17
+     Problems���������������������������������������������������������������������������������������������������������������������������������� 17
+
+  2. Data Representation . ........................................................................................................... 25
+     2.1 Tabular Display of Distributions������������������������������������������������������������������������������26
+     2.2 Graphical Display of Distributions��������������������������������������������������������������������������32
+     2.3 Percentiles�������������������������������������������������������������������������������������������������������������������� 39
+     2.4 Recommendations Based on Measurement Scale�������������������������������������������������� 44
+     2.5 Computing Tables, Graphs, and More Using SPSS������������������������������������������������ 44
+     2.6 Computing Tables, Graphs, and More Using R������������������������������������������������������ 57
+     2.7 Research Question Template and Example Write-Up������������������������������������������� 69
+     2.8 Additional Resources������������������������������������������������������������������������������������������������� 70
+     Problems���������������������������������������������������������������������������������������������������������������������������������� 70
+
+  3. Univariate Population Parameters and Sample Statistics............................................. 85
+     3.1 Summation Notation�������������������������������������������������������������������������������������������������� 86
+     3.2 Measures of Central Tendency���������������������������������������������������������������������������������� 88
+     3.3 Measures of Dispersion���������������������������������������������������������������������������������������������� 93
+     3.4 Computing Sample Statistics Using SPSS������������������������������������������������������������� 102
+     3.5 Computing Sample Statistics Using R������������������������������������������������������������������� 107
+     3.6 Research Question Template and Example Write-Up����������������������������������������� 109
+     3.7 Additional Resources����������������������������������������������������������������������������������������������� 110
+     Problems�������������������������������������������������������������������������������������������������������������������������������� 110
+
+  4. The Normal Distribution and Standard Scores............................................................. 119
+     4.1 The Normal Distribution and How It Works�������������������������������������������������������� 120
+     4.2 Standard Scores and How They Work������������������������������������������������������������������� 127
+     4.3 Skewness and Kurtosis Statistics���������������������������������������������������������������������������� 130
+     4.4 Computing Graphs and Standard Scores Using SPSS����������������������������������������� 135
+     4.5 Computing Graphs and Standard Scores Using R����������������������������������������������� 143
+     4.6 Research Question Template and Example Write-Up����������������������������������������� 146
+     4.7 Additional Resources����������������������������������������������������������������������������������������������� 147
+     Problems�������������������������������������������������������������������������������������������������������������������������������� 147
+
+
+
+                                                                                                                                                     ix
+x                                                                                                                                 Contents
+
+
+
+ 5. Introduction to Probability and Sample Statistics������������������������������������������������������� 153
+    5.1 Brief Introduction to Probability����������������������������������������������������������������������������� 154
+    5.2 Sampling and Estimation����������������������������������������������������������������������������������������� 157
+    5.3 Additional Resources����������������������������������������������������������������������������������������������� 165
+    Problems�������������������������������������������������������������������������������������������������������������������������������� 165
+
+ 6. Introduction to Hypothesis Testing: Inferences About a Single Mean�������������������� 171
+    6.1 Inferences About a Single Mean and How They Work��������������������������������������� 172
+    6.2 Computing Inferences About a Single Mean Using SPSS����������������������������������� 200
+    6.3 Computing Inferences About a Single Mean Using R����������������������������������������� 204
+    6.4 Data Screening����������������������������������������������������������������������������������������������������������� 206
+    6.5 Power Using G*Power���������������������������������������������������������������������������������������������� 215
+    6.6 Research Question Template and Example Write-Up����������������������������������������� 220
+    6.7 Additional Resources����������������������������������������������������������������������������������������������� 222
+    Problems�������������������������������������������������������������������������������������������������������������������������������� 222
+
+ 7. Inferences About the Difference Between Two Means����������������������������������������������� 229
+    7.1 Inferences About Two Independent Means and How They Work�������������������� 230
+    7.2 Inferences About Two Dependent Means and How They Work����������������������� 249
+    7.3 Computing Inferences About Two Independent Means Using SPSS���������������� 256
+    7.4 Computing Inferences About Two Dependent Means Using SPSS������������������� 259
+    7.5 Computing Inferences About Two Independent Means Using R���������������������� 262
+    7.6 Computing Inferences About Two Dependent Means Using R������������������������� 266
+    7.7 Data Screening����������������������������������������������������������������������������������������������������������� 268
+    7.8 G*Power���������������������������������������������������������������������������������������������������������������������283
+    7.9 Research Question Template and Example Write-Up����������������������������������������� 286
+    7.10 Additional Resources����������������������������������������������������������������������������������������������� 290
+    Problems�������������������������������������������������������������������������������������������������������������������������������� 290
+
+ 8. Inferences About Proportions������������������������������������������������������������������������������������������ 297
+    8.1 What Inferences About Proportions Involving the Normal
+          Distribution Are and How They Work������������������������������������������������������������������ 299
+    8.2 What Inferences About Proportions Involving the Chi-Square
+          Distribution Are and How They Work������������������������������������������������������������������ 311
+    8.3 Computing Inferences About Proportions Involving the Chi-Square
+          Distribution Using SPSS������������������������������������������������������������������������������������������� 319
+    8.4 Computing Inferences About Proportions Involving the Chi-Square
+          Distribution Using R������������������������������������������������������������������������������������������������� 329
+    8.5 Data Screening����������������������������������������������������������������������������������������������������������� 334
+    8.6 Power Using G*Power���������������������������������������������������������������������������������������������� 334
+    8.7 Recommendations����������������������������������������������������������������������������������������������������� 335
+    8.8 Research Question Template and Example Write-Up����������������������������������������� 336
+    8.9 Additional Resources����������������������������������������������������������������������������������������������� 338
+    Problems�������������������������������������������������������������������������������������������������������������������������������� 338
+
+ 9. Inferences About Variances���������������������������������������������������������������������������������������������� 345
+    9.1 Inferences About Variances and How They Work����������������������������������������������� 346
+    9.2 Assumptions�������������������������������������������������������������������������������������������������������������� 357
+    9.3 Sample Size, Power, and Effect Size����������������������������������������������������������������������� 358
+Contents                                                                                                                                       xi
+
+
+
+      9.4 Computing Inferences About Variances Using SPSS������������������������������������������� 358
+      9.5 Computing Inferences About Variances Using R������������������������������������������������� 358
+      9.6 Research Question Template and Example Write-Up����������������������������������������� 362
+      9.7 Additional Resources����������������������������������������������������������������������������������������������� 363
+      Problems�������������������������������������������������������������������������������������������������������������������������������� 363
+
+10. Bivariate Measures of Association���������������������������������������������������������������������������������� 369
+    10.1 What Bivariate Measures of Association Are and How They Work������������������ 370
+    10.2 Computing Bivariate Measures of Association Using SPSS������������������������������� 388
+    10.3 Computing Bivariate Measures of Association Using R������������������������������������� 397
+    10.4 Data Screening����������������������������������������������������������������������������������������������������������� 398
+    10.5 Power Using G*Power���������������������������������������������������������������������������������������������� 404
+    10.6 Research Question Template and Example Write-Up����������������������������������������� 408
+    10.7 Additional Resources����������������������������������������������������������������������������������������������� 409
+    Problems�������������������������������������������������������������������������������������������������������������������������������� 409
+Appendix������������������������������������������������������������������������������������������������������������������������������������� 417
+References������������������������������������������������������������������������������������������������������������������������������������ 427
+Name Index��������������������������������������������������������������������������������������������������������������������������������� 433
+Subject Index������������������������������������������������������������������������������������������������������������������������������ 437
+Preface
+
+
+
+
+Approach
+Many individuals have an aversion to statistics, which is quite unfortunate. Statistics is a
+tool that unleashes great power to the user—the potential to really make a difference. Being
+able to understand statistics means that you can critically evaluate empirical research con-
+ducted by others and thus better apply what others have found. Being able to do statistics
+means that you contribute to solving problems. We approach the writing of this text with
+the mindset that we want this text to be an instrument that contributes to your success
+as a researcher. With the help of this text, you will gain tools that can be used to make a
+positive contribution in your discipline. Perhaps this is the moment for which you have
+been created (Esther 4:14)! Consider the use of text as moving one step closer to making
+the world a better place.
+   This text is designed for a course in statistics for students in any number of social sci-
+ence and behavioral disciplines—from education to business to communication to exercise
+science to psychology to sociology and more. The text begins with the most basic intro-
+duction to statistics in the first chapter and then proceeds through intermediate statistics.
+The text is designed for you to become a better prepared researcher and a more intelligent
+consumer and producer of research. We do not assume that you have extensive or recent
+training in mathematics. Perhaps you have only had algebra, and perhaps that was some
+time ago. We also do not assume that you have ever had a statistics course. Rest assured;
+you will do fine.
+   We believe that a text should serve as an effective instructional tool. You should find
+this text to be more than a reference book. It is designed to help those who read it really
+understand statistical concepts, in what situations they can be applied, and how to apply
+them to data. With that said, there are several things that this text is not. This text is not
+a theoretical statistics book, nor is it a cookbook on computing statistics, nor a statistical
+software manual. Recipes suggest that there is one effective approach in all situations, and
+following that approach will produce the same results always. Additionally, recipes tend
+to be a crutch—followed without understanding how or why you obtain the desired prod-
+uct. As well, knowing how to run a statistics package without understanding the concepts
+or the output is not particularly useful. Thus, concepts drive the field of statistics, and that
+is the framework within which this text was approached.
+
+
+
+
+Goals and Content Coverage
+Our goals for this text are lofty, but the effort that you put forth in using it and its effects on
+your learning of statistics are more than worthwhile. First, the text provides comprehensive
+
+                                                                                               xiii
+xiv                                                                                     Preface
+
+
+
+coverage of topics that could be included in an undergraduate or graduate one- or two-
+course sequence in statistics. The text is flexible enough so that instructors can select those
+topics that they desire to cover as they deem relevant in their particular discipline. In other
+words, chapters and sections of chapters from this text can be included in a statistics course
+as the instructor sees fit. Most of the popular, as well as many of the lesser-known proce-
+dures and models, are described in the text. A particular feature is a thorough discussion of
+assumptions, the effects of their violation, and how to deal with their violation.
+   This text represents the first 10 chapters of An Introduction to Statistical Concepts. Specif-
+ically, the first five chapters of the text cover basic descriptive statistics, including ways
+of representing data graphically, statistical measures which describe a set of data, the
+normal distribution and other types of standard scores, and an introduction to probabil-
+ity and sampling. The remainder of the text covers different inferential statistics, dealing
+with different inferential tests involving means (e.g., t tests), proportions, variances, and
+correlations.
+   This text also communicates a conceptual, intuitive understanding of statistics, which
+requires only a rudimentary knowledge of basic algebra, and emphasizes the important
+concepts in statistics. The most effective way to learn statistics is through the conceptual
+approach. Statistical concepts tend to be easy to learn because (a) concepts can be simply
+stated, (b) concepts can be made relevant through the use of real‑life examples, (c) the same
+concepts are shared by many procedures, and (d) concepts can be related to one another.
+This is not to say that the text is void of mathematics, as understanding the math behind
+the technique blows apart the “black box” of statistics, particularly in a world where statis-
+tical software is so incredibly powerful. However, understanding the concepts is the first
+step in advancing toward a true understanding of statistics.
+   This text will help you to reach the goal of being a better consumer and producer of
+research. The following indicators may provide some feedback as to how you are doing.
+First, there will be a noticeable change in your attitude toward statistics. Thus, one out-
+come is for you to feel that “Statistics is not half bad” or “This stuff is OK.” Second, you
+will feel comfortable using statistics in your own work. Finally, you will begin to “see the
+light.” You will know when you have reached this highest stage of statistics development
+when suddenly in the middle of the night you wake up from a dream and say, “Now I get
+it!” In other words, you will begin to think statistics rather than think of ways to get out of
+doing statistics.
+
+
+
+
+Pedagogical Tools
+The text contains several important pedagogical features to allow you to attain these goals.
+First, each chapter begins with a list of key concepts, which provide helpful landmarks
+within the chapter. Second, realistic examples from education and the behavioral sciences
+are used to illustrate the concepts and procedures covered in each chapter. Each exam-
+ple includes an initial vignette, an examination of the relevant procedures and necessary
+assumptions, how to run SPSS and R and develop an APA-style write-up, as well as tables,
+figures, and annotated SPSS and R output to assist you. Third, the text is based on the
+conceptual approach; that is, material is presented so that you obtain a good understand-
+ing of statistical concepts. If you know the concepts, then you know statistics. Finally, each
+chapter ends with three sets of problems—computational, conceptual, and interpretive.
+Preface                                                                                      xv
+
+
+
+Pay particular attention to the conceptual problems as they provide the best assessment of
+your understanding of the concepts in the chapter. We strongly suggest using the example
+datasets and the computational and interpretive problems for additional practice through
+available statistical software. This will serve to reinforce the concepts covered. Answers to
+the odd-numbered problems are given at the end of each chapter.
+
+
+
+
+Important Features in This Edition
+As noted previously, this text represents the first 10 chapters of An Introduction to Statistical
+Concepts, which is now in its fourth edition. A number of changes were made to the fourth
+edition text of the text based on the suggestions of reviewers, instructors, teaching assis-
+tants, and students, and these are now reflected in Statistical Concepts: A First Course. These
+improvements have been made in order to better achieve the goals of the text. The changes
+applicable to the chapters in the First Course text include the following:
+
+   1. The content has been updated and numerous additional references have been
+      provided.
+   2. To parallel the generation of statistics using SPSS (version 25), script and anno-
+      tated output using R have been included to assist in the generation and interpre-
+      tation of statistics.
+   3. Coverage of effect sizes has been expanded, including the use of online tools for
+      computing effect sizes and their confidence intervals.
+   4. More organizational features (e.g., boxes, tables, figures) have been included to
+      summarize concepts and/or assist in increasing understanding of the material.
+   5. Additional end-of-chapter problems (conceptual, computational, and interpre-
+      tive) have been included.
+   6. A website for the text provides instructor-only access to a test bank (the website
+      continues to offer the datasets, chapter outline, answers to the even-numbered
+      problems, and PowerPoint slides for each chapter, with students granted access to
+      the appropriate elements).
+Acknowledgments
+
+We have been blessed beyond measure, and are thankful for so many individuals who
+have played an important role in our personal and professional lives and, in some way,
+have shaped this text. Rather than include an admittedly incomplete listing, we just say
+“thank you” to all of you. A special thank you to all of the terrific students that we have
+had the pleasure of teaching at the University of Pittsburgh, the University of Illinois at
+Chicago, Louisiana State University, Boston College, Northern Illinois University, the Uni-
+versity of Alabama, The Ohio State University, and the University of Central Florida. For
+all of your efforts, and the many lights that you have seen and shared with us, this book
+is for you.
+   Thanks also to so many wonderful publishing staff that we’ve had the pleasure of work-
+ing along the way, first at Lawrence Erlbaum Associates and now at Routledge/Taylor &
+Francis. Additionally, we are most appreciative of the insightful suggestions provided by
+the reviewers of this text over the years.
+   For the users of this text, you are the reason we write. Thank you for bringing us along
+in your research and statistical journey. To those that have contacted us with questions,
+comments, and suggestions on previous editions of An Introduction to Statistical Concepts
+(the original text from which Statistical Concepts: A First Course text was spawned), we are
+very appreciative. We hope that you will continue to contact us to offer feedback (good
+and bad).
+   Last but not least, we extend gratitude to our families, in particular, to Lea and Kristen,
+and to Mark and Malani. Your unfailing love, understanding, and tolerance during the
+writing of this text allowed us to cope with such a major project. You are statistically signif-
+icant! Thank you one and all.
+
+                                                                               DLHV & RGL
+
+
+
+
+                                                                                            xvii
+1
+Introduction
+
+
+
+
+Chapter Outline
+1.1 What Is the Value of Statistics?
+    Cigarette Smoking Causes Cancer—Tobacco Industry Denies Charges
+    North Carolina Congressional Districts Gerrymandered—African Americans Slighted
+    Global Warming—Myth According to the President
+1.2 Brief Introduction to the History of Statistics
+1.3 General Statistical Definitions
+    1.3.1 Statistical Notation
+1.4 Types of Variables
+1.5 Scales of Measurement
+    1.5.1 Nominal Measurement Scale
+    1.5.2 Ordinal Measurement Scale
+    1.5.3 Interval Measurement Scale
+    1.5.4 Ratio Measurement Scale
+    1.5.5 Summary of Terms
+1.6 Additional Resources
+
+
+
+
+Key Concepts
+  1. General statistical concepts
+     Population
+     Parameter
+     Sample
+     Statistic
+     Descriptive statistics
+     Inferential statistics
+  2. Variable-related concepts
+     Variable
+     Constant
+     Categorical variables
+     Dichotomous variables
+                                                                                  1
+

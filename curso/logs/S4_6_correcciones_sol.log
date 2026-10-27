@@ -1,0 +1,7 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+Apliqué en M13 y AX los 17 hallazgos de la revisión Opus (O-01 a O-17, 6 mayores y 11 menores), sin rechazar ninguno; los scripts `M13_ejemplos.py`, `AX_08.py`, `AX_11.py`, `AX_12.py` y `AX_13.py` se ejecutan y reproducen las cifras nuevas de los libretos (L₉₀ = 4,137 %, cota del sesgo 2,179 %, ARL ≈ 560 y ≈ 931).
+`claude-sol` había dejado hecho M13 y `AX_12.py` antes de quedarse sin cuota; lo comprobé contra la salida del script y completé AX: unilaterales de AX.11, control de ensayos y validación en AX.13, criterio χ² en AX.8, BIPM-K1, numerales, tabla de consumidores e índice i en AX.4.
+Añadí a `S4_revision_sol.md` la tabla «## Correcciones tras la revisión Opus» y actualicé «## Estado de entrega» y `S4_00_indice.md`; quedan pendientes la bibliografía fuera de `docs/` y la práctica integradora de M13.

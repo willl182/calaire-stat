@@ -1,0 +1,583 @@
+7
+Inferences About the Difference Between
+Two Means
+
+
+
+
+Chapter Outline
+7.1 Inferences About Two Independent Means and How They Work
+     7.1.1 Independent vs. Dependent Samples
+     7.1.2 Hypotheses
+     7.1.3 Characteristics of Tests of Difference Between Two Independent Means
+     7.1.4 Sample Size of the Independent t Test
+     7.1.5 Power of the Independent t Test
+     7.1.6 Effect Size of the Independent t Test
+     7.1.7 Assumptions of the Independent t Test
+7.2 Inferences About Two Dependent Means and How They Work
+     7.2.1 Characteristics of the Dependent t Test
+     7.2.2 Sample Size of the Dependent t Test
+     7.2.3 Power of the Dependent t Test
+     7.2.4 Effect Size of the Dependent t Test
+     7.2.5 Assumptions of the Dependent t Test
+7.3 Computing Inferences About Two Independent Means Using SPSS
+     7.3.1 Interpreting the Output for Inferences About Two Independent Means
+7.4 Computing Inferences About Two Dependent Means Using SPSS
+     7.4.1 Interpreting the Output for Inferences About Two Dependent Means
+7.5 Computing Inferences About Two Independent Means Using R
+     7.5.1 Reading Data into R
+     7.5.3 Generating the Independent t and Welch t′ Tests
+7.6 Computing Inferences About Two Dependent Means Using R
+     7.6.1 Reading Data Into R
+     7.6.2 Generating the Dependent t Test
+7.7 Data Screening
+     7.7.1 Data Screening for the Independent t Test
+     7.7.2 Data Screening for the Dependent t Test
+7.8 G*Power
+     7.8.1 Post Hoc Power for the Independent t Test Using G*Power
+     7.8.2 Post Hoc Power for the Dependent t Test Using G*Power
+7.9 Research Question Template and Example Write-Up
+     7.9.1 Research Question Template and Example Write-Up for the Independent t Test
+     7.9.2 Research Question Template and Example Write-Up for the Dependent t Test
+7.10 Additional Resources
+                                                                                  229
+230                                                         Statistical Concepts: A First Course
+
+
+
+
+Key Concepts
+   1. Independent versus dependent samples
+   2. Sampling distribution of the difference between two means
+   3. Standard error of the difference between two means
+   4. Parametric versus nonparametric tests
+
+In Chapter 6 we introduced hypothesis testing and ultimately considered our rst inferen-
+tial statistic, the one-sample t test. There we examined the following general topics: types
+of hypotheses, types of decision errors, level of signi cance, steps in the decision-making
+process, inferences about a single mean when the population standard deviation is known
+(the z test), power, statistical versus practical signi cance, and inferences about a single
+mean when the population standard deviation is unknown (the t test).
+   In this chapter we consider inferential tests involving the difference between two means. In
+other words, our research question is the extent to which two sample means are statistically
+different and, by inference, the extent to which their respective population means are different.
+Several inferential tests are covered in this chapter, depending on whether the two samples
+are selected in an independent or dependent manner, and on whether the statistical assump-
+tions are met. More speci cally, the topics described include the following inferential tests:
+for two independent samples, the independent t test, the Welch t′ test, and the Mann-Whitney-
+Wilcoxon test; for two dependent samples, the dependent t test and the Wilcoxon signed
+ranks test. We use many of the foundational concepts covered in Chapter 6. New concepts
+to be discussed include the following: independent versus dependent samples; the sampling
+distribution of the difference between two means; and the standard error of the difference
+between two means. Our objectives are that by the end of this chapter, you will be able to:
+(a) understand the basic concepts underlying the inferential tests of two means, (b) select the
+appropriate test, and (c) determine and interpret the results from the appropriate test.
+
+
+
+
+7.1 Inferences About Two Independent Means and How They Work
+Remember our very capable quad of graduate students who work in the stats lab? Let’s see
+what Oso Wyse and Addie Venture have in store now . . .
+
+
+ The stats lab has been humming with research project requests from faculty and the
+ community. The latest request comes from Dr. Nightingale, a local nurse practitioner,
+ who is studying cholesterol levels of adults and how they differ based on sex. Oso
+ Wyse has been assigned to the project and suggests the following research question: Is
+ there a mean difference in cholesterol level between males and females? Oso suggests an inde-
+ pendent samples t test as the test of inference. His task is then to assist Dr. Nightingale
+ in generating the test of inference to answer the research question.
+   Addie Venture has been asked to consult with the institution’s swimming coach,
+ Coach Bryant, who works with the community and various swimming programs that
+ are offered through their local Parks & Recreation Department. Coach Bryant has just
+Inferences: Difference Between Two Means                                                     249
+
+
+
+categories.) It is not a condition of the independent t test that the sample sizes of the two
+groups be the same. An unbalanced design (i.e., unequal sample sizes) is perfectly acceptable. An
+unbalanced design is only a concern in the event that the assumption of homogeneity is
+violated. If you nd yourself in that situation, please refer to the previous discussion on
+measures that can be taken.
+
+
+
+
+7.2 Inferences About Two Dependent Means and How They Work
+In this section, two inferential tests of the difference between two dependent means are
+described, the dependent t test and brie y the Wilcoxon signed ranks test. The section
+concludes with a list of recommendations.
+
+
+7.2.1 Characteristics of the Dependent t Test
+As you may recall, the dependent t test is appropriate to use when there are two samples
+that are dependent; that is, the individuals in sample 1 have some relationship to the indi-
+viduals in sample 2. Although there are several methods for computing the test statistic t,
+the most direct method and the one most closely aligned conceptually with the one-sample
+t test is as follows:
+
+                                                   d
+                                             t=
+                                                   sd
+
+
+where d is the mean difference, and sd is the standard error of the mean difference. Con-
+ceptually, this test statistic looks just like the one-sample t test statistic, except now the
+notation has been changed to denote that we are dealing with difference scores rather than
+raw scores.
+  The standard error of the mean difference is computed by
+
+                                                   sd
+                                            sd =
+                                                        n
+
+where sd is the standard deviation of the difference scores (i.e., like any other standard devi-
+ation, only this one is computed from the difference scores rather than raw scores), and n
+is the total number of pairs. Conceptually, this standard error looks just like the standard
+error for the one-sample t test. If we were doing hand computations, we would compute
+a difference score for each pair of scores (i.e., Y1 – Y2). For example, if sample 1 were wives
+and sample 2 were their husbands, then we calculate a difference score for each couple.
+From this set of difference scores, we then compute the mean of the difference scores d and
+standard deviation of the difference scores, sd. This leads us directly into the computation
+of the t test statistic. Note that although there are n scores in sample 1, n scores in sample 2,
+and thus 2n total scores, there are only n difference scores, which is what the analysis is
+actually based upon.
+256                                                       Statistical Concepts: A First Course
+
+
+
+
+7.3 Computing Inferences About Two Independent Means Using SPSS
+Instructions for determining the independent samples t test using SPSS are presented rst.
+The data-screening section provides additional steps for examining the assumption of nor-
+mality for the independent t test.
+
+Step 1. In order to conduct an independent t test, your dataset needs to include one
+dependent variable Y that is measured on an interval or ratio scale (e.g., “cholesterol”)
+as well as a grouping variable X that is measured on a nominal or ordinal scale (e.g.,
+“gender”). For the grouping variable, if there are more than two categories available,
+only two categories can be selected (or multiple categories must be collapsed so there are
+only two categories) when running the independent t test (the analysis of variance is
+required for examining more than two categories). To conduct the independent t test,
+go to the “Analyze” in the top pulldown menu, select “Compare Means,” and then select
+“Independent-Samples T Test.” Following the steps in the screenshot in Figure 7.5 pro-
+duces the “Independent-Samples T Test” dialog box.
+
+
+                                  A
+                                                                Independent t Test:
+                                                                       Step 1
+                              B
+                                                                                      C
+
+
+
+
+FIGURE 7.5
+Independent t test: Step 1.
+
+
+Step 2. Next, from the main “Independent-Samples T Test” dialog box, click the dependent
+variable (e.g., “cholesterol”) and move it into the “Test Variable” box by clicking the arrow
+button. Next, click the grouping variable (e.g., “gender”) and move it into the “Grouping
+Inferences: Difference Between Two Means                                                                                                                         259
+
+
+
+TABLE 7.5 (continued)
+SPSS Results for Independent t Test
+
+     The F test (and p value) of Levene’s Test
+      for Equality of Variances is reviewed to
+           determine if the equal variances
+     assumption has been met. The result of
+          this test determines which row of
+     statistics to utilize. In this case, we meet                 “Sig.” is the observed p value                            SPSS reports the
+       the assumption and use the statistics                        for the independent t test.                      95% confidence interval of
+                reported in the top row.                        It is interpreted as: there is about a                 the difference. This is
+                                                                  2% probability of a sample mean                    interpreted to mean that
+       Had equal variances not been met, we                            difference of 30 or greater                  95% of the CIs generated
+       would have reported Welch ′ results,                         occurring by chance if the null                 across samples will contain
+       which are provided in the row labeled                     hypothesis is really true (i.e., if the             the true population mean
+           ‘equal variance not assumed.’                          population mean difference is 0).                        difference of 0.
+
+                                                          Independent Samples Test
+                                        Levene's Test                                        t-test for Equality of Means
+                                        for Equality of
+                                          Variances
+                                                                                                                                  95% Confidence
+                                                                                                                                   Interval of the
+                                                                                  Sig. (2-        Mean           Std. Error         Difference
+                                          F       Sig.      t          df         tailed)       Difference      Difference       Lower       Upper
+    Cholesterol       Equal variances    3.201     .090    2.484            18        .023         30.00000        12.07615      4.62896 55.37104
+    Level             assumed
+                      Equal variances                      2.720 17.984               .014         30.00000        11.03051      6.82427 53.17573
+                      not assumed
+
+           “t” is the t test statistic value.                             df are the                    The mean                 The standard error of
+       The t value in the top row is used when the                       degrees of                    difference is            the mean difference is
+     assumption of equal variances has been met and                       freedom.                      simply the                  calculated as:
+                     is calculated as:                                      For the                difference between
+                                                                        independent                 the sample mean
+                      215–185                                          samples t test,             cholesterol values.                             1         1
+             1 2                                                                                                                             
+            =       =         = 2.4844                                     they are                  In other words,             1 − 2 =               +
+                      12.0752                                                                                                                        1       2
+              1 2                                                     calculated as                  215–185=30
+                                                                            1 +    2 − 2,
+     The t value in the bottom row is the Welch t' and                      thus in this
+     is used when the assumption of equal variances                          example
+      has not been met and is calculated as Welch ′ :
+                                                                        12 + 8 − 2.
+            ′    1 2                  215–185
+                =      =
+                  1 2         √45.5357 + 76.1364
+
+                  ′
+                            30
+                      =           = 2.7197
+                          11.0305
+
+
+
+
+the observed probability, p, is less than our nominal alpha of .05, we reject the null hypothesis. There
+is a statistically signi cant difference between groups, and there is evidence to suggest that
+the mean cholesterol level for males is different than the mean cholesterol level for females.
+
+
+
+
+7.4 Computing Inferences About Two Dependent Means Using SPSS
+Next, instructions for determining the dependent samples t test using SPSS are presented.
+The data-screening section provides additional steps for examining the assumptions of
+normality and homogeneity for the dependent t test.
+262                                                                       Statistical Concepts: A First Course
+
+
+
+
+7.5 Computing Inferences About Two Independent Means Using R
+Next we consider R for the dependent t test. The scripts are provided within the blocks
+with additional annotation to assist in understanding how the commands work. Should
+you want to write reminder notes and annotation to yourself as you write the commands
+in R (and we highly encourage doing so), remember that any text that follows a hashtag
+(i.e., #) is annotation only and not part of the R script. Thus, you can write annotations
+directly into R with hashtags. We encourage this practice so that when you call up the
+commands in the future, you’ll understand what the various lines of code are doing. You
+may think you’ll remember what you did. However, trust us. There is a good chance that
+you won’t. Thus, consider it best practice when using R to annotate heavily!
+
+
+7.5.1 Reading Data into R
+
+ getwd()
+
+
+R is always pointed to a directory on your computer. To nd out which directory it is pointed to, run this “get
+working directory” function. We will assume that we need to change the working directory, and will use the
+next line of code to set the working directory to the desired path.
+
+
+ setwd(“E:/Folder”)
+
+
+To set the working directory, use the setwd function and change what is in quotation marks here to your le
+location. Also, if you are copying the directory name, it will copy in slashes. You will need to change the slash
+(i.e., \) to a forward slash (i.e., /). Note that you need your destination name within quotation marks in the
+parentheses.
+
+
+ Ch7_cholesterol <- read.csv(“Ch7_cholesterol.csv”)
+
+
+The read.csv function reads our data into R. What’s to the left of the <- will be what the data will be called in R.
+In this example, we’re calling the R dataframe “Ch7_cholesterol.” What’s to the right of the <- tells R to nd
+this particular .csv le. In this example, our le is called “Ch7_cholesterol.csv.” Make sure the extension (i.e.,
+.csv) is included in your script. Also note that the name of your le should be in quotation marks within the
+parentheses.
+
+
+ names(Ch7_cholesterol)
+
+
+The names function will produce a list of variable names for each dataframe as follows. This is a good check to
+make sure your data have been read in correctly.
+
+[1] “group” “cholesterol”
+
+
+ View(Ch7_cholesterol)
+
+
+The View function will let you view the dataset in spreadsheet format in RStudio.
+
+FIGURE 7.10
+Reading data into R.
+266                                                                       Statistical Concepts: A First Course
+
+
+Odds Ratio ES:
+
+OR [ 95 %CI] = 7.82 [ 1.21 , 50.67 ]
+  p-value(OR) = 0.03
+
+Log OR [ 95 %CI] = 2.06 [ 0.19 , 3.93 ]
+  var(lOR) = 0.79
+  p-value(Log OR) = 0.03
+
+Other:
+
+NNT = 2.41
+Total N = 20
+
+FIGURE 7.11 (continued)
+Generating the independent t and Welch t′ tests.
+
+
+
+
+7.6 Computing Inferences About Two Dependent Means Using R
+Next we consider R for the dependent t test. As noted previously, the scripts are provided
+within the blocks with additional annotation to assist in understanding how the com-
+mands work.
+
+
+7.6.1 Reading Data Into R
+
+ getwd()
+
+
+R is always pointed to a directory on your computer. To nd out which directory it is pointed to, run this “get
+working directory” function. We will assume that we need to change the working directory, and will use the
+next line of code to set the working directory to the desired path.
+
+
+ setwd(“E:/Folder”)
+
+
+To set the working directory, use the setwd function and change what is in quotation marks here to your le
+location. Also, if you are copying the directory name, it will copy in slashes. You will need to change the slash
+(i.e., \) to a forward slash (i.e., /). Note that you need your destination name within quotation marks in the
+parentheses.
+
+
+ Ch7_swim <- read.csv(“Ch7_swim.csv”)
+
+
+The read.csv function reads our data into R. What’s to the left of the <- will be what the data will be called in
+R. In this example, we’re calling the R dataframe “Ch7_swim.” What’s to the right of the <- tells R to nd this
+particular .csv le. In this example, our le is called “Ch7_swim.csv.” Make sure the extension (i.e., .csv) is included
+in your script. Also note that the name of your le should be in quotation marks within the parentheses.
+
+FIGURE 7.12
+Reading data into R for the dependent t test.
+268                                                                    Statistical Concepts: A First Course
+
+
+
+ Ch7_depT
+
+
+
+This script will generate output from the test we just conducted. We see that our test statistic is 7.3193, with 9
+degrees of freedom, and p value of < .001. The 95% con dence interval of the mean difference is 3.45 to 6.54. The
+mean of the differences is 5.
+
+        Paired t-test
+
+data: Ch7_swim$pretest and Ch7_swim$posttest
+
+t = 7.3193, df = 9, p-value = 4.472e-05
+
+alternative hypothesis: true difference in means is not equal to 0
+
+95 percent con�dence interval:
+ 3.454652 6.545348
+
+sample estimates:
+mean of the differences
+                      5
+
+FIGURE 7.13 (continued)
+Generating the dependent t test.
+
+
+
+
+7.7 Data Screening
+We will begin data screening with examining the extent to which the assumptions of the
+independent t test were met. This will be following by data screening for the assumptions
+of the dependent t test.
+
+
+7.7.1 Data Screening for the Independent t Test
+The assumptions for the independent t test that we need to examine via data screening
+include the normality of the distribution of the dependent variable by categories of the
+independent variable and homogeneity of variances. Recall that the assumption of indepen-
+dence is required as well; however, as noted earlier, that is not an assumption with which
+data will be used to assess the extent to which the assumption is met.
+
+
+7.7.1.1 Normality for the Independent t Test
+Let’s rst examine the assumption of normality of the distribution of the dependent vari-
+able by categories of the independent variable. As alluded to earlier in the chapter, under-
+standing the distributional shape, speci cally the extent to which normality is a reasonable
+assumption, is important. For the independent t test, the distributional shape for the dependent
+variable should be normally distributed for each category/group of the independent variable. As
+with our one-sample t test, we can again use Explore to examine the extent to which the
+assumption of normality is met.
+  The general steps for accessing Explore have been presented in previous chapters (e.g.,
+Chapter 4), and they will not be reiterated here. Normality of the dependent variable
+Inferences: Difference Between Two Means                                                           283
+
+
+
+7.7.2.2 Homogeneity of Variance for the Dependent t Test
+We also need to examine evidence for meeting equal variances, or more speci cally homo-
+geneity of variance of the difference scores. Without conducting a formal test of equality
+of variances (as we do in Chapter 9), a rough benchmark for having met the assumption of
+homogeneity of variances when conducting the dependent t test is that the ratio of the small-
+est to largest variance of the paired samples is no greater than 1:4 to decrease the chance of a Type I
+error. Recent research suggests that a variance ratio lower than 1.5 should be used as convention in
+the presence of heterogeneity with unequal sample sizes (Blanca, Alarcón, Arnau, Bono, & Ben-
+dayan, 2018). The variance can be computed easily by any number of procedures in SPSS
+(refer back to Chapter 3, for example), and these steps will not be repeated here. For our
+paired samples, the variance of the pretest score is 17.778 and the variance of the posttest
+score is 13.111—well within the range of 1:4 suggesting that homogeneity of variances is
+reasonable.
+
+
+
+
+7.8 G*Power
+Using the results of the independent samples t test just conducted, let’s use G*Power to
+compute the post hoc power of our test.
+
+
+7.8.1 Post Hoc Power for the Independent t Test Using G*Power
+The rst thing that must be done when using G*Power for computing post hoc power
+is to select the correct test family. In our case, we conducted an independent samples t
+test, therefore the default selection of “t tests” is the correct test family. Next, we need
+to select the appropriate statistical test. We use the arrow to toggle to “Means: Difference
+between two independent means (two groups).” The “Type of power analysis” then needs to
+be selected. To compute post hoc power, we need to select “Post hoc: Compute achieved
+power —given α, sample size, and effect size.”
+   The “Input Parameters” must then be speci ed. The rst parameter is the selection of
+whether the test is one tailed (i.e., directional) or two tailed (i.e., nondirectional). In this
+example, we have a two-tailed test, so we use the arrow to toggle to “Two.” We can input
+our observed effect size, d¸ or we can also use the pop-out calculator to compute the effect
+size d. Using the pop-out calculator, our effect size is 1.19 (note that the pop-out calculator
+does not use the pooled standard deviation as the standardizer). The alpha level we tested
+at was .05, and the sample size for females was 8 and for males, 12. Once the parameters
+are speci ed, simply click “Calculate” to generate the achieved power statistics.
+   The “Output Parameters” provide the relevant statistics given the input just speci ed. In
+this example, we were interested in determining post hoc power given a two-tailed test,
+with an observed effect size of 1.18, an alpha level of .05, and sample sizes of 8 (females)
+and 12 (males). Based on those criteria, the post hoc power was .69. In other words, with
+a sample size of 8 female and 12 males in our study, testing at an alpha level of .05 and
+observing a large effect of 1.19, then the power of our test was .69—the probability of
+rejecting the null hypothesis when it is really false will be 69%, which is only moderate
+power (minimally acceptable power is generally about 80%). Keep in mind that conduct-
+ing power analysis a priori is recommended so that you avoid a situation where, post hoc,
+you nd that the sample size was not suf cient to reach the desired power (given the
+286                                                            Statistical Concepts: A First Course
+
+
+
+  The “Input Parameters” must then be speci ed. The rst parameter is the selection of whether
+your test is one tailed (i.e., directional) or two tailed (i.e., nondirectional). In this example, we
+have a two-tailed test, so we use the arrow to toggle to “Two.” The achieved or observed effect
+size was 2.3146. The alpha level we tested at was .05, and the total sample size was 10. Once
+the parameters are speci ed, simply click “Calculate” to generate the achieved power statistics.
+  The “Output Parameters” provide the relevant statistics given the input speci ed. In this
+example, we were interested in determining post hoc power given a two-tailed test, with
+an observed effect size of 2.3146, an alpha level of .05, and total sample size of 10. Based on
+those criteria, the post hoc power was .99. In other words, with a total sample size of 10,
+testing at an alpha level of .05 and observing a large effect of 2.3146, then the power of our
+test was greater than .99—the probability of rejecting the null hypothesis when it is really
+false will be greater than 99%, about the strongest power that can be achieved. Again, con-
+ducting power analysis a priori is recommended so that you avoid a situation where, post
+hoc, you nd that the sample size was not suf cient to reach the desired power (given the
+observed effect size and alpha level).
+
+
+
+
+7.9 Research Question Template and Example Write-Up
+Next we develop APA-style paragraphs describing the results for both examples. First is
+a paragraph describing the results of the independent t test for the cholesterol example,
+followed by dependent t test for the swimming example.
+
+
+7.9.1 Research Question Template and Example Write-Up
+      for the Independent t Test
+Recall that our graduate research assistant, Oso, was working with Dr. Nightingale, a
+local nurse practitioner, to assist in analyzing cholesterol levels. His task was to assist Dr.
+Nightingale with writing her research question (Is there a mean difference in cholesterol level
+between males and females?) and generating the test of inference to answer her question. Oso
+suggested an independent-samples t test as the test of inference. A template for writing a
+research question for an independent t test follows:
+
+
+  Is there a mean difference in [dependent variable] between [group 1 of the independent
+  variable] and [group 2 of the independent variable]?
+
+
+  It may be helpful to preface the results of the independent-samples t test with infor-
+mation on an examination of the extent to which the assumptions were met (recall there
+are three assumptions: normality, homogeneity of variances, and independence). This
+assists the reader in understanding that you were thorough in data screening prior to
+conducting the test of inference.
+
+
+  An independent samples t test was conducted to determine if the mean cholesterol
+  level of males differed from females. The assumption of normality was tested and met
+290                                                        Statistical Concepts: A First Course
+
+
+
+
+7.10 Additional Resources
+A number of resources are available for learning more about statistics and how to interpret
+statistics. In addition to those already cited, Huck (2000) is an excellent general resource to
+assist in learning more about statistics and how to interpret statistics.
+
+
+
+
+Problems
+Conceptual Problems
+ 1.   When H0 is true, the difference between two independent sample means is a function
+      of which of the following?
+      a. Degrees of freedom
+      b. Standard error
+      c. Sampling distribution
+      d. Sampling error
+ 2.   The denominator of the independent t test is known as the standard error of the dif-
+      ference between two means, and may be de ned as which of the following?
+      a. The difference between the two group means
+      b. The amount by which the difference between the two group means differs from
+         the population mean
+      c. The standard deviation of the sampling distribution of the difference between
+         two means
+      d. All of the above
+      e. None of the above
+ 3.   In the independent t test, what does the homoscedasticity assumption state?
+      a. The two population means are equal
+      b. The two population variances are equal
+      c. The two sample means are equal
+      d. The two sample variances are equal
+ 4.   True or false? Sampling error increases with larger samples.
+ 5.   True or false? At a given level of signi cance, it is possible that the signi cance test
+      and the con dence interval results will differ for the same dataset.
+ 6.   I assert that the critical value of t required for statistical signi cance is smaller (in
+      absolute value) when using a directional rather than a nondirectional test. Am I
+      correct?
+ 7.   If a 95% CI from an independent t test ranges from –.13 to +1.67, I assert that the null
+      hypothesis would not be rejected at the .05 level of signi cance. Am I correct?
+ 8.   The mathematic ability of 10 preschool children was measured when they entered
+      their rst year of preschool and then again in the spring of their kindergarten year.
+      To test for pre to post mean differences, which of the following tests would be used?
+

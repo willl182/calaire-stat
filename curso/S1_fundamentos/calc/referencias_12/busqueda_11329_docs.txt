@@ -1,0 +1,119 @@
+Búsqueda textual amplia de 1,1329 / 1.1329 (espacios permitidos tras separador).
+No sustituye inspección visual de imágenes ni OCR.
+2009 - Deldossi - ISO 5725 vs GUM comparison.pdf: exit=0; coincidencias=0; avisos_stderr=True
+A Practical Handbook on Measurement Uncertainty_.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Air quality_ Determination of ozone in ambient air_ ISO 13964.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Appendix A to Part 58_ Title 40 (up to date as of 10-20-2026).pdf: exit=0; coincidencias=0; avisos_stderr=False
+Appendix A-1 to Part 50_ Title 40 (up to date as of 10-19-2026).pdf: exit=0; coincidencias=0; avisos_stderr=False
+Appendix C to Part 50_ Title 40 (up to date as of 10-19-2026).pdf: exit=0; coincidencias=0; avisos_stderr=False
+Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).pdf: exit=0; coincidencias=0; avisos_stderr=False
+BIPM.QM-K1_2.protocol.pdf: exit=0; coincidencias=1; avisos_stderr=False
+PDF p. 3: nsultative Committee for Amount of
+Substance: Metrology in Chemistry and Biology (CCQM) 1. The value of CCQM.O3.2019
+is 1.1329(35) × 10−17 cm2 molecule−1. This value is also recommended in the ISO Standard
+13964:1998/Amd 1:2024.
+
+Participants in BIPM.QM-K1 may still be using the previous recommended value of
+1.147×10–17 cm2 
+BS EN 14211_2012.pdf: exit=0; coincidencias=0; avisos_stderr=False
+BS EN 14212_2012 .pdf: exit=0; coincidencias=0; avisos_stderr=False
+BS EN 14625_2012.pdf: exit=0; coincidencias=0; avisos_stderr=False
+BS EN 14626_2012 .pdf: exit=0; coincidencias=0; avisos_stderr=False
+BS EN ISO_IEC 17025_2017.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Chemometrics Statistics and Computer Application.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Chemometrics _ data driven extraction for science.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Chemometrics and Data Handling.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Handbook of Metrology and Applications.pdf: exit=0; coincidencias=0; avisos_stderr=True
+Handbook of Uncertainty Quantification.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 28037.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-1_1994_Cor 1_1998 .pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-2_1994.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-2_1994_Cor 1_2002.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-3_1994.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-3_1994_Cor 1_2001.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-4_1994.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-5_1998.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-5_1998_Cor 1_2005.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-6_1994.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 5725-6_1994_Cor 1_2001.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO 6143 2001.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO_IEC Guide 98-3_2008 Suppl.1_2008 - libgen.li.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO_IEC Guide 98-3_2008 Suppl.1_2008_Cor 1_2009 - libgen.li.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO_IEC Guide 98-3_2008 Suppl.2_2011 - libgen.li.pdf: exit=0; coincidencias=0; avisos_stderr=False
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Introduction to Statistics in Metrology.pdf: exit=0; coincidencias=0; avisos_stderr=True
+JCGM_GUM-1.pdf: exit=0; coincidencias=0; avisos_stderr=False
+JCGM_GUM_6_2020.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Metrology and Measurement Uncertainty.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Ozone UV spectroscopy I_ Absorption cross-sections at room.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Ozone UV spectroscopy_ II_ Absorption cross-sections .pdf: exit=0; coincidencias=0; avisos_stderr=False
+SRP6008_spec_cert.pdf: exit=0; coincidencias=0; avisos_stderr=False
+Statistical Concepts – A First Course.pdf: exit=0; coincidencias=0; avisos_stderr=True
+The ASQ Metrology Handbook.pdf: exit=0; coincidencias=0; avisos_stderr=False
+USEPA - 40 CFR Part 50.pdf: exit=0; coincidencias=0; avisos_stderr=False
+USEPA - 40 CFR Part 53.pdf: exit=0; coincidencias=0; avisos_stderr=False
+USEPA - Appendix D Air Quality Handbook.pdf: exit=0; coincidencias=0; avisos_stderr=False
+USEPA - Quality Handbook.pdf: exit=0; coincidencias=0; avisos_stderr=False
+app_d_validation_template_version_03_2017_for_amtic_rev_1.pdf: exit=0; coincidencias=0; avisos_stderr=False
+asq_metrological_handbook_c05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c19.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c20.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c21.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c23.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c27.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c29.pdf: exit=0; coincidencias=0; avisos_stderr=True
+asq_metrological_handbook_c30.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_a01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c02.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c04.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c06.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_c07.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_spectroscopy_s020.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_spectroscopy_s021.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_spectroscopy_s03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_spectroscopy_s05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+chemometrics_spectroscopy_s06.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_a01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_a02.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_a03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_a04.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_a05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c02.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c04.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c06.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c07.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c08.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c09.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c10.pdf: exit=0; coincidencias=0; avisos_stderr=True
+intro_stats_metro_c11.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c02.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c04.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c06.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c07.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c08.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c09.pdf: exit=0; coincidencias=0; avisos_stderr=True
+metrology_measure_uncer_c10.pdf: exit=0; coincidencias=0; avisos_stderr=True
+milton2006.pdf: exit=0; coincidencias=0; avisos_stderr=False
+nistir6963.pdf: exit=0; coincidencias=0; avisos_stderr=False
+o3_tad_508_20230906_final.pdf: exit=0; coincidencias=0; avisos_stderr=False
+srp_qapp.pdf: exit=0; coincidencias=0; avisos_stderr=False
+srp_sop.pdf: exit=0; coincidencias=0; avisos_stderr=False
+statistical_concepts_c01.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c02.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c03.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c04.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c05.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c06.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c07.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c08.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c09.pdf: exit=0; coincidencias=0; avisos_stderr=True
+statistical_concepts_c10.pdf: exit=0; coincidencias=0; avisos_stderr=True

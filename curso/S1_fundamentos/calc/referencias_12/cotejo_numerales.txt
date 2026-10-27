@@ -1,0 +1,502 @@
+JCGM_GUM_6_2020.txt | 5.1 
+PDF p. 11: 
+5.1 A measurand (see JCGM 200:2012, 2.3) is in many cases not measured directly, but
+is indirectly determined from other quantities (see JCGM 200:2012, 1.1) to which it is
+related by a measurement model (see JCGM 200:2012, 2.48) such as formula (1) in 5.2. The
+measurement model is a mathematical expression or a set of such expressions (see JCGM
+PDF p. 12: model involving random variables, subject to the rules of mathematical statistics. The law
+of propagation of uncertainty as described in JCGM 100:2008, 5.1 and 5.2 uses a simple
+property of the transformation of random variables when only expectations and variances
+(and, perhaps, covariances) are used, rather than the whole distributions.
+
+PDF p. 43: 
+10.5.1 In many cases, the same effect acts on two or more input quantities in a measure-
+ment model, thus introducing correlation. Such an effect is due, for instance, to the same
+measuring system, physical measurement standard or reference datum.
+
+PDF p. 51: 
+11.5.1 The preparation of reference materials in batches intended to be subdivided into
+separately packaged items (or units) that are assigned the same value and associated un-
+certainty, typically involves a study of the homogeneity of the batch, based on replicated
+measurements made in different units of the material.
+
+JCGM_GUM_6_2020.txt | 5.2 
+PDF p. 11: 
+5.2 Many measurements are modelled by a real functional relationship f between N real-
+valued input quantities X 1 , . . . , X N and a single real-valued output quantity (or measurand)
+Y in the form
+
+PDF p. 12: model involving random variables, subject to the rules of mathematical statistics. The law
+of propagation of uncertainty as described in JCGM 100:2008, 5.1 and 5.2 uses a simple
+property of the transformation of random variables when only expectations and variances
+(and, perhaps, covariances) are used, rather than the whole distributions.
+
+PDF p. 43: 
+10.5.2 The original set of input quantities X 1 , . . . , X N upon which the measurand Y de-
+pends can sometimes be redefined in such a way as to include as additional independent
+input quantities those quantities Q ` that are common to two or more of the original X i .
+In the case of the example in 10.5.1, the quantities that define the calibration function
+PDF p. 52: 
+11.5.2 ISO Guide 35 [97] provides guidance for characterizing the homogeneity of ref-
+erence materials. This Guide recognizes that homogeneity studies traditionally have in-
+cluded a statistical test to assess whether between-unit differences are significantly larger
+than within-unit differences, or larger than the uncertainty that the producer of the ref-
+
+JCGM_GUM_6_2020.txt | 5.6 
+PDF p. 12: 
+5.6 When building a measurement model that is fit for purpose, all effects known to affect
+the measurement result should be considered. The omission of a contribution can lead to
+an unrealistically small uncertainty associated with a value of the measurand [156], and
+even to a wrong value of the measurand.
+PDF p. 24: 
+     Mass fraction increment x/mg g−1         0          47.8        95.6      142.8       190.7
+         Instrumental response y              1.775       2.676       3.578      4.418       5.316
+
+The measurement model for the mass fraction of bromide in the analyzed water sample is w = a/b,
+
+JCGM_GUM_6_2020.txt | 5.8 
+PDF p. 13: 
+5.8 When developing a measurement model, the ranges of possible values of the input
+quantities and output quantities should be considered. The model should be capable of
+providing credible estimates and associated uncertainties for all output quantities over the
+required ranges of the input quantities, which should be specified as appropriate. The
+PDF p. 69: The use of a measurement model for extrapolation beyond an interval over which it is
+deemed valid is generally inadvisable (also see 5.8 and the example in 10.6.4). It is gen-
+erally unsafe to fit an empirical or hybrid model to data and use the model beyond the
+span of the fitted data. Extrapolation with purely empirical functions such as polynomials
+and polynomial splines is particularly dangerous. Such functions can exhibit spurious be-
+
+JCGM_GUM_6_2020.txt | 6.1 
+PDF p. 13: 
+6.1 The choice of the measurand depends on the purpose of the measurement and may
+take account of the target measurement uncertainty (see JCGM 200, 2.34). Other processes
+and measurands are possible and the appropriate choice depends on the application of the
+measurement result.
+PDF p. 32: 
+8.6.1 Inaccuracy can occur in numerical computation as a result of using formulæ or
+algorithms which, although mathematically correct, are not suitable for the task in hand.
+
+                                                             © JCGM 2020 – All rights reserved
+PDF p. 45: 
+10.6.1 Many measurement standards show drift over time. A measurement standard
+used as a reference is typically not calibrated immediately before use. Whenever the stan-
+dard is used, it is necessary to update its value and standard uncertainty reflecting the
+possible change in the measurement standard since it was last calibrated. A recorded his-
+PDF p. 53: 
+11.6.1 In geodetic and astronomical measurement, as well as in conventional dimen-
+sional metrology and in the calibration of weights, the adjustment of observations consists
+of applying a measurement model and data reduction procedure to produce mutually con-
+sistent estimates of the true values of the angles or distances, or of the masses, that are the
+
+JCGM_GUM_6_2020.txt | sensitivity coefficient
+PDF p. 74: The following principal symbols are used throughout the document:
+ c   sensitivity coefficient (first partial derivative)
+ f   measurement model (explicit form)
+ h   measurement model (implicit form)
+ m   number of output quantities
+PDF p. 81: of determinations can be analyzed statistically and included as a component to the overall uncer-
+tainty in the measurement. Further, approximations to sensitivity coefficients can be determined
+empirically (see JCGM 100:2008, 5.1.4).
+
+
+PDF p. 85: 
+where ci is the sensitivity coefficient for X i .
+NOTE The measurand Y in model (44) depends linearly on the input quantities. A more general
+form is
+
+PDF p. 92: The 2N calculated values of f can be used to approximate its partial derivatives with re-
+spect to the X i at the estimates of the input quantities, and hence the sensitivity coefficients:
+
+
+               f i+ − f i−
+
+nistir6963.txt | 1.147
+PDF p. 21:                 0‘ 19
+      1.147x1           (cnr/molecule)
+
+
+      Transmittance                               0.000017               0.0017            0.057
+
+nistir6963.txt | 308.32
+PDF p. 6: section to be about 1 147 x 10'
+                     .                 cnr/molecule (or equivalently 308.32 atm' cm'       ,   base e), with a standard
+uncertainty of 1 .0 %.   To a lesser extent, the uncertainty of the instrument also depends on the uncertainty
+of the temperature, pressure, and transmittance measurements on the ozone sample. Based upon ozone
+calibration needs of the U.S. EPA, the design specifications called for an instrument with a standard
+PDF p. 10: 
+equivalently 308.32 atm cm
+                                 1   1
+                                 base e) (3), is expressed at STP. The sample temperature and pressure are
+                                         ,
+
+nistir6963.txt | 8.
+PDF p. 5: 
+8.   PHOTOMETRIC MEASUREMENTS WITH THE SRP    9
+
+
+9.   PERFORMANCE                             11
+PDF p. 6: section to be about 1 147 x 10'
+                     .                 cnr/molecule (or equivalently 308.32 atm' cm'       ,   base e), with a standard
+uncertainty of 1 .0 %.   To a lesser extent, the uncertainty of the instrument also depends on the uncertainty
+of the temperature, pressure, and transmittance measurements on the ozone sample. Based upon ozone
+calibration needs of the U.S. EPA, the design specifications called for an instrument with a standard
+PDF p. 9: 
+8.   PHOTOMETRIC MEASUREMENTS WITH THE SRP
+The ozone concentration, c, is calculated from the expression:
+
+
+PDF p. 10: 
+equivalently 308.32 atm cm
+                                 1   1
+                                 base e) (3), is expressed at STP. The sample temperature and pressure are
+                                         ,
+
+Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).txt | 304.39
+PDF p. 1:                 below) with a specified ozone absorption cross-section value. The absorption cross-section value
+                stated in section 4.1 and section 4.5.3.10 of this appendix (304.39 atm−1 cm−1 ± 0.94 atm−1 cm−1)
+                will begin use in all U.S. Standard Reference Photometers (SRPs) on January 1, 2025. It is expected
+                that implementation across all other ozone transfer standards and ozone monitors in the field will be
+                completed by December 31, 2026.
+PDF p. 2: 
+                      α = absorption coefficient of O3 at 254 nm = 304.39 atm−1 cm−1, with an uncertainty of 0.94
+                      atm−1 cm−1 at 0 °C and 1 atm.1, 2, 3, 4, 5, 6, 7, 15
+
+                      c = O3 concentration in atmospheres, and
+PDF p. 6: 
+                            α = absorption coefficient of O3 at 254 nm = 304.39 atm−1 cm−1 at 0 °C and 1 atm
+
+                            l = optical path length, cm
+
+
+Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).txt | 4.5.2.5
+PDF p. 5: 
+                     4.5.2.5 Ozone losses. Some portion of the O3 may be lost upon contact with the photometer cell
+                            walls and gas handling components. The magnitude of this loss must be determined and
+                            used to correct the calculated O3 concentration. This loss must not exceed 5%. Some
+                            guidelines for quantitatively determining this loss are discussed in Reference 13.
+PDF p. 6: 
+                            L = correction factor for O3 losses from 4.5.2.5 = (1−fraction of O3 lost).
+
+                            Note: Some commercial photometers may automatically evaluate all or part of
+                            equation 4. It is the operator's responsibility to verify that all of the information
+
+Appendix D to Part 50_ Title 40 (up to date as of 10-16-2026).txt | 4.5.3.10
+PDF p. 1:                 below) with a specified ozone absorption cross-section value. The absorption cross-section value
+                stated in section 4.1 and section 4.5.3.10 of this appendix (304.39 atm−1 cm−1 ± 0.94 atm−1 cm−1)
+                will begin use in all U.S. Standard Reference Photometers (SRPs) on January 1, 2025. It is expected
+                that implementation across all other ozone transfer standards and ozone monitors in the field will be
+                completed by December 31, 2026.
+PDF p. 6: 
+                     4.5.3.10. Calculate the O3 concentration from equation 4. An average of several determinations
+                            will provide better precision.
+
+
+PDF p. 7:                      4.5.3.11 Obtain additional O3 concentration standards as necessary by repeating steps 4.5.3.6
+                            to 4.5.3.10 or by Option 1.
+
+               4.5.4 Certification of transfer standards. A transfer standard is certified by relating the output of the
+                     transfer standard to one or more O3 calibration standards as determined according to section
+
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt | 5.1.3
+PDF p. 27: 
+5.1.3 The partial derivatives ∂f/∂xi are equal to ∂f/∂Xi evaluated at Xi = xi (see Note 1 below). These
+derivatives, often called sensitivity coefficients, describe how the output estimate y varies with changes in the
+values of the input estimates x1, x2, ..., xN. In particular, the change in y produced by a small change ∆xi in
+input estimate xi is given by (∆y)i = (∂f /∂xi)(∆xi). If this change is generated by the standard uncertainty of the
+PDF p. 29: The combined standard uncertainty uc(y) is thus simply a linear sum of terms representing the variation of the output
+estimate y generated by the standard uncertainty of each input estimate xi (see 5.1.3). [This linear sum should not be
+confused with the general law of error propagation although it has a similar form; standard uncertainties are not errors
+(see E.3.2).]
+
+PDF p. 30: 
+where Zi is given in 5.1.3, Note 2.
+
+NOTE 4           If the Xi of the special form considered in 5.1.6 are correlated, then the terms
+          N −1 N
+PDF p. 59: NOTE       In the column headed “Variance”, the variances are understood to be the variances u i2 ( y ) defined in
+Equation (11a) in 5.1.3; hence they add linearly as shown.
+
+
+
+
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt | 5.2.2
+PDF p. 29: 
+5.2.2 When the input quantities are correlated, the appropriate expression for the combined variance u c2 ( y)
+associated with the result of a measurement is
+
+                      N N                                        N         2              N −1 N
+PDF p. 55: 
+NOTE 3      If the input estimates xi and xj are correlated (see 5.2.2) and if a change δ i in xi produces a change δ j in xj,
+then the correlation coefficient associated with xi and xj is estimated approximately by
+
+       (        )                     ( )
+PDF p. 63: 
+NOTE 2       Equation (13) in 5.2.2 [together with Equation (15)], which is used to calculate combined standard uncertainty,
+is identical to Equation (E.3) except that Equation (13) is expressed in terms of estimates of the variances, standard
+deviations, and correlation coefficients.
+
+PDF p. 70: 
+NOTE 1     On the other hand, in certain cases, such as the reference-resistance example of Note 1 to 5.2.2, it is
+apparent that the input quantities are fully correlated and that the standard uncertainties of their estimates combine linearly.
+
+NOTE 2       Different experiments may not be independent if, for example, the same instrument is used in each (see
+
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt | B.2.19
+PDF p. 13: 
+3.2.1 In general, a measurement has imperfections that give rise to an error (B.2.19) in the measurement
+result. Traditionally, an error is viewed as having two components, namely, a random (B.2.21) component
+and a systematic (B.2.22) component.
+
+PDF p. 44: 
+B.2.19
+error (of measurement)
+result of a measurement minus a true value of the measurand
+
+PDF p. 45: 
+Guide Comment: The error of the result of a measurement (see B.2.19) may often be considered as arising
+from a number of random and systematic effects that contribute individual components of error to the error of
+the result. Also see the Guide Comment to B.2.19 and to B.2.3.
+
+PDF p. 45: from a number of random and systematic effects that contribute individual components of error to the error of
+the result. Also see the Guide Comment to B.2.19 and to B.2.3.
+
+B.2.23
+correction
+
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt | B.2.20
+PDF p. 45: 
+B.2.20
+relative error
+error of measurement divided by a true value of the measurand
+
+PDF p. 126: method of measurement, unit              4.3.8 Note 2, 4.4.2, 4.4.5, 4.4.6,      H.5, H.5.3.2
+ dependent on the H.6                    C.2.5, F.2.4.4                        relative error B.2.20
+metrology, legal see legal              probability distribution 3.3.4,        repeatability conditions 3.1.4,
+ metrology                               4.1.1 Note 1, 4.1.6, 4.2.3 Note 1,      B.2.15 Note 1
+minimum uncertainty                      4.4.1, 4.4.2, 4.4.3, 4.4.4, C.2.3,    repeatability of results of
+
+ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.txt | 4.2.3
+PDF p. 13: 
+NOTE 1      The experimental standard deviation of the arithmetic mean or average of a series of observations (see 4.2.3)
+is not the random error of the mean, although it is so designated in some publications. It is instead a measure of the
+uncertainty of the mean due to random effects. The exact value of the error in the mean arising from these effects cannot
+be known.
+PDF p. 18: 
+4.2.3      The best estimate of σ 2 ( q ) = σ 2 n , the variance of the mean, is given by
+
+                    s 2 ( qk )
+        s2 (q ) =                                                                                                                (5)
+PDF p. 19: 4.2.6 The degrees of freedom (C.2.31) vi of u(xi) (see G.3), equal to n − 1 in the simple case where x i = X i
+and u ( x i ) = s ( X i ) are calculated from n independent observations as in 4.2.1 and 4.2.3, should always be
+given when Type A evaluations of uncertainty components are documented.
+
+4.2.7 If the random variations in the observations of an input quantity are correlated, for example, in time,
+PDF p. 19: 4.2.7 If the random variations in the observations of an input quantity are correlated, for example, in time,
+the mean and experimental standard deviation of the mean as given in 4.2.1 and 4.2.3 may be inappropriate
+estimators (C.2.25) of the desired statistics (C.2.23). In such cases, the observations should be analysed by
+statistical methods specially designed to treat a series of correlated, randomly-varying measurements.
+NOTE       Such specialized methods are used to treat measurements of frequency standards. However, it is possible
+
+statistical_concepts_c02.txt | 2.1
+PDF p. 1: Chapter Outline
+2.1 Tabular Display of Distributions
+    2.1.1 Frequency Distributions
+    2.1.2 Cumulative Frequency Distributions
+    2.1.3 Relative Frequency Distributions
+PDF p. 1: 2.1 Tabular Display of Distributions
+    2.1.1 Frequency Distributions
+    2.1.2 Cumulative Frequency Distributions
+    2.1.3 Relative Frequency Distributions
+    2.1.4 Cumulative Relative Frequency Distributions
+PDF p. 1:     2.1.1 Frequency Distributions
+    2.1.2 Cumulative Frequency Distributions
+    2.1.3 Relative Frequency Distributions
+    2.1.4 Cumulative Relative Frequency Distributions
+2.2 Graphical Display of Distributions
+PDF p. 1:     2.1.2 Cumulative Frequency Distributions
+    2.1.3 Relative Frequency Distributions
+    2.1.4 Cumulative Relative Frequency Distributions
+2.2 Graphical Display of Distributions
+    2.2.1 Bar Graph
+
+statistical_concepts_c02.txt | 2.2
+PDF p. 1:     2.1.4 Cumulative Relative Frequency Distributions
+2.2 Graphical Display of Distributions
+    2.2.1 Bar Graph
+    2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+PDF p. 1: 2.2 Graphical Display of Distributions
+    2.2.1 Bar Graph
+    2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+PDF p. 1:     2.2.1 Bar Graph
+    2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+    2.2.5 Shapes of Frequency Distributions
+PDF p. 1:     2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+    2.2.5 Shapes of Frequency Distributions
+    2.2.6 Stem-and-Leaf Display
+
+statistical_concepts_c02.txt | 2.3
+PDF p. 1:     2.2.2 Histogram
+    2.2.3 Frequency Polygon (Line Graph)
+    2.2.4 Cumulative Frequency Polygon
+    2.2.5 Shapes of Frequency Distributions
+    2.2.6 Stem-and-Leaf Display
+PDF p. 1:     2.2.6 Stem-and-Leaf Display
+2.3 Percentiles
+    2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+PDF p. 1: 2.3 Percentiles
+    2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+PDF p. 1:     2.3.1 Percentiles
+    2.3.2 Quartiles
+    2.3.3 Percentile Ranks
+    2.3.4 Box-and-Whisker Plot
+2.4 Recommendations Based on Measurement Scale
+
+statistical_concepts_c03.txt | 3.2.2
+PDF p. 1:     3.2.1 The Mode
+    3.2.2 The Median
+    3.2.3 The Mean
+    3.2.4 Summary of Measures of Central Tendency
+3.3 Measures of Dispersion
+
+statistical_concepts_c03.txt | 3.2.3
+PDF p. 1:     3.2.2 The Median
+    3.2.3 The Mean
+    3.2.4 Summary of Measures of Central Tendency
+3.3 Measures of Dispersion
+    3.3.1 The Range
+
+statistical_concepts_c03.txt | 3.3
+PDF p. 1:     3.2.4 Summary of Measures of Central Tendency
+3.3 Measures of Dispersion
+    3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+PDF p. 1: 3.3 Measures of Dispersion
+    3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+PDF p. 1:     3.3.1 The Range
+    3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+    3.3.5 Recommendations Based on Measurement Scale
+PDF p. 1:     3.3.2 H Spread
+    3.3.3 Deviational Measures
+    3.3.4 Summary of Measures of Dispersion
+    3.3.5 Recommendations Based on Measurement Scale
+3.4 Computing Sample Statistics Using SPSS
+
+statistical_concepts_c05.txt | 5.2
+PDF p. 1:     5.1.3 Intuition vs. Probability
+5.2 Sampling and Estimation
+    5.2.1 Simple Random Sampling
+    5.2.2 Estimation of Population Parameters and Sampling Distributions
+5.3 Additional Resources
+PDF p. 1: 5.2 Sampling and Estimation
+    5.2.1 Simple Random Sampling
+    5.2.2 Estimation of Population Parameters and Sampling Distributions
+5.3 Additional Resources
+
+PDF p. 1:     5.2.1 Simple Random Sampling
+    5.2.2 Estimation of Population Parameters and Sampling Distributions
+5.3 Additional Resources
+
+
+PDF p. 3: 
+5.2 Sampling and Estimation
+In Chapter 3 we spent some time discussing sample statistics, including the measures of
+central tendency and dispersion. In this section we expand upon that discussion by de n-
+ing inferential statistics, describing different types of sampling, and then moving into the
+
+intro_stats_metro_c04.txt | 4.3
+PDF p. 2:    It is important to identify the variable type as it affects the exploratory data
+analysis (Sect. 4.3) and choice of probability distribution (Sect. 4.4). Note
+that continuous data provide much more information than discrete data, so it is
+advantageous to use continuous measures whenever possible. For example, if
+instead of categorizing temperature using ratings such as “low,” “medium,” and
+PDF p. 2: 
+4.3 Exploratory Data Analysis
+
+Once the data type has been determined, Exploratory Data Analysis (EDA) can
+be used to better understand the overall characteristics of the data. In particular,
+PDF p. 3: 4.3 Exploratory Data Analysis                                                      61
+
+
+• Determining an appropriate probability distribution. The validity of uncertainty
+PDF p. 3: 
+4.3.1 Calculating Summary Statistics
+
+A statistic is simply a measure of some attribute of sampled data. There are many
+summary statistics that can be used to concisely describe features of data. Generally,
+
+metrology_measure_uncer_c03.txt | 3.1.1
+PDF p. 2: 
+3.1.1 Number Rounding
+
+When the measure has more signiﬁcant numerals than you need, we should keep
+only those necessary and abandon the others.
+
+ISO 28037.txt | 5.8 Determining
+PDF p. 3:   5.7 Use of the calibration function . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    8
+  5.8 Determining the ordinary least squares best-fit straight line to data . . . . . . . . . . . . . . . . . . . . . . . . . . .                                    9
+
+6 Model for uncertainties associated with the yi . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+  6.1 General . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+ISO 28037.txt | 5.8   Determining: NO LOCALIZADO
+
+ISO 28037.txt | Y = A
+PDF p. 7:                                                     model
+                                                    Y = A + BX
+
+
+
+PDF p. 9: This Technical Specification is concerned with linear, that is, straight-line, calibration functions that describe the
+relationship between two variables X and Y , namely, functions of the form Y = A + BX. Although many of the
+principles apply to more general types of calibration function, the approaches described exploit the simple form of the
+straight-line calibration function wherever possible.
+
+PDF p. 12: 
+4.2   The quantities A and B are termed the parameters of the straight-line calibration function Y = A + BX. A
+and B are also used to denote (dummy) variables in expressions involving the calibration function parameters.
+
+4.3    The quantities Xi and Yi are used as (dummy) variables to denote the co-ordinates of the ith data point.
+PDF p. 12: 4.4   The constants A∗ and B ∗ are (unknown) values of A and B that specify the straight-line calibration function
+Y = A + B ∗ X for a particular measuring system under consideration.
+     ∗
+
+
+
+The ASQ Metrology Handbook.txt | coefficient of variation
+PDF p. 327:                34.60, 36.43, 59.23, 59.56, 82.03, 111.91, 240.50, and 255.19, respectively
+     the Pearson coefficient of variation, r, value is 0.99998, dimensionless.
+PDF p. 605:        of material.
+    coefficient of variation—the standard deviation divided by the value of the
+        parameter measured.
+    combined standard uncertainty—standard uncertainty of the result of a
+       measurement when that result is obtained from the values of a number of other
+
+Ozone UV spectroscopy I_ Absorption cross-sections at room.txt | 1.1329: NO LOCALIZADO
+
+Ozone UV spectroscopy I_ Absorption cross-sections at room.txt | 1,1329: NO LOCALIZADO
+
+Ozone UV spectroscopy_ II_ Absorption cross-sections .txt | 1.1329: NO LOCALIZADO
+
+Ozone UV spectroscopy_ II_ Absorption cross-sections .txt | 1,1329: NO LOCALIZADO
+
+o3_tad_508_20230906_final.txt | 1.1329: NO LOCALIZADO
+
+o3_tad_508_20230906_final.txt | 1,1329: NO LOCALIZADO

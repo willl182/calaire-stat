@@ -1,0 +1,59 @@
+== M09
+OK  B u(Δ): calculado=0.25; libreto=0.25
+OK  B E_n: calculado=0.7; libreto=0.7
+OK  B cobertura k=2 (%): calculado=95.4499736; libreto=95.45
+OK  I u(Δ) con cov=c1c2u²(R): calculado=0.162788206; libreto=0.1628
+OK  I Δ/U(Δ): calculado=1.07501645; libreto=1.075
+OK  I cov límite u1u2 -> u(Δ): calculado=0.05; libreto=0.05
+OK  I u(D) interpolación: calculado=0.0774596669; libreto=0.07746
+OK  A cuantil chi2 0,95;10: calculado=18.3070381; libreto=18.307
+OK  A GGMR a: calculado=-0.184237121; libreto=-0.184237
+OK  A GGMR b: calculado=0.998350748; libreto=0.998350748
+OK  A GGMR u(a): calculado=0.0311891749; libreto=0.031189
+OK  A GGMR u(b): calculado=0.0041250349; libreto=0.004125035
+OK  A GGMR cov(a,b): calculado=-3.83046159e-06; libreto=-3.83046e-06
+OK  A GGMR chi2: calculado=6.31825955; libreto=6.3183
+OK  A D(80): calculado=-0.316177272; libreto=-0.316177
+OK  A u(D(80)): calculado=0.330547626; libreto=0.330548
+OK  A D(420): calculado=-0.87692291; libreto=-0.876923
+OK  A u(D(420)): calculado=1.73186668; libreto=1.731867
+OK  A sensibilidad u(D420) sin común: calculado=0.0488532763; libreto=0.048853
+OK  A sensibilidad chi2 sin común: calculado=6.31845609; libreto=6.318456
+OK  A GoE u(D) 420: calculado=0.781024968; libreto=0.781025
+== M10
+OK  I P(rechazo|θ=9, g=0): calculado=0.105649774; libreto=0.10564977
+OK  I P(acept|θ=10,5, g=0): calculado=0.265985529; libreto=0.26598553
+OK  I P(acept|θ=10,5, g=1): calculado=0.0303963618; libreto=0.03039636
+OK  A P(conforme|y=9,5): calculado=0.734667609; libreto=0.73466761
+OK  A global FA g=0: calculado=0.0264625429; libreto=0.02646254
+OK  A global FR g=0: calculado=0.026596152; libreto=0.02659615
+OK  A global FA g=1: calculado=0.00337105583; libreto=0.00337106
+OK  A global FR g=1: calculado=0.0867057912; libreto=0.08670579
+OK  A u(media) dep: calculado=0.748331477; libreto=0.74833148
+OK  A P_FA indep: calculado=0.00400497116; libreto=0.00400497
+OK  A P_FA dep: calculado=0.0225104405; libreto=0.02251044
+OK  B x̂ cero/span: calculado=199; libreto=199.0
+== M11
+OK  B LSC I: calculado=0.00129031915; libreto=0.0012905
+OK  B LSC I (2,66): calculado=0.0012905; libreto=0.0012905
+OK  B LSC MR: calculado=0.001388475; libreto=0.0013885
+OK  I pendiente: calculado=0.00302380952; libreto=0.003024
+OK  I se pendiente: calculado=9.22138892e-05; libreto=9.22e-05
+OK  I p: calculado=4.95673469e-07; libreto=4.96e-07
+OK  I IP futuro 120 sup: calculado=0.492994168; libreto=0.493
+OK  I u_uso: calculado=0.0228571429; libreto=0.02286
+   (info) autocorrelación lag-1 de residuos de deriva: r1=-0.5472; Durbin-Watson=2.9095
+OK  A límite EWMA t=2: calculado=0.691537418; libreto=0.6915
+OK  A primera alarma EWMA serie de unos: calculado=11; libreto=11
+OK  A MC EWMA falsa alarma (otra semilla): calculado=0.19867; libreto=0.19909
+OK  A MC CUSUM falsa alarma (otra semilla): calculado=0.09288; libreto=0.09177
+OK  A riesgo 60 d: calculado=0.000394361902; libreto=0.00039456
+== M12
+OK  I L90: calculado=4.13670374; libreto=4.1367
+OK  I L95 AB: calculado=2.17935751; libreto=2.1794
+OK  I IC media: calculado=2.90516272; libreto=2.9052
+OK  I 3s0: calculado=0.474341649; libreto=0.4743
+OK  A SE iid: calculado=0.645497224; libreto=0.6455
+OK  A SE periodos: calculado=1; libreto=1.0
+OK  A u(media) n=8: calculado=0.827647268; libreto=0.8276
+TODOS OK

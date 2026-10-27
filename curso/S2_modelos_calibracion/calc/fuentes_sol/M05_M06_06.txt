@@ -1,0 +1,61 @@
+                                                      INTERNATIONAL STANDARD ISO 5725-3:1994
+                                                      TECHNICAL CORRIGENDUM 1
+
+                                                      Published 2001-10-15
+
+INTERNATIONAL ORGANIZATION FOR STANDARDIZATION • МЕЖДУНАРОДНАЯ ОРГАНИЗАЦИЯ ПО СТАНДАРТИЗАЦИИ • ORGANISATION INTERNATIONALE DE NORMALISATION
+
+
+
+
+Accuracy (trueness and precision) of measurement methods and
+results —
+Part 3:
+Intermediate measures of the precision of a standard measurement
+method
+TECHNICAL CORRIGENDUM 1
+
+
+Exactitude (justesse et fidélité) des résultats et méthodes de mesure —
+Partie 3: Mesures intermédiaires de la fidélité d'une méthode de mesure normalisée
+
+RECTIFICATIF TECHNIQUE 1
+
+
+
+
+Technical Corrigendum 1 to International Standard ISO 5725-3:1994 was prepared by Technical Committee
+ISO/TC 69, Applications of statistical methods, Subcommittee SC 6, Measurement methods and results.
+
+
+
+
+Page 14, 4th and 5th lines below Table B.2
+                    1                           1
+            2
+Replace “ s (1) =     (MS2 − MS1)” with “s (1)
+                                           2
+                                               = (MS1 − MS2 )”.
+                    4                           4
+                    1                            1
+            2
+Replace “ s (2) =     (MS1 − MSe )” with “s (2)
+                                            2
+                                                = (MS2 − MSe )”.
+                    2                            2
+
+
+Page 17, Table C.2, column “Sum of squares” for “Source 0”
+
+              ∑ ( y i(2) ) − 4p ( y ) ” with “4∑ ( y i(3) ) − 4p ( y ) ”.
+                         2          2                       2           2
+Replace “4
+               i                                  i
+
+
+
+ICS 03.120.30                                                                      Ref. No. ISO 5725-3:1994/Cor.1:2001(E)
+© ISO 2001 – All rights reserved
+
+Printed in Switzerland
+

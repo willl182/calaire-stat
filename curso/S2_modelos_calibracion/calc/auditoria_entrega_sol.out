@@ -1,0 +1,48 @@
+M05: tres marcadores, niveles y cierre presentes; 10 escenas.
+  B1. La pregunta estadística determina el diseño
+  B2. Bloques, repeticiones y jerarquía de observaciones
+  B3. El diseño 12 × 8 × 6 del Level 2
+  B4. Diseños publicados como ejemplos de estructura
+  I1. Aleatorizar sin perder el control del proceso
+  I2. Factorial: aprender sobre factores e interacciones
+  I3. Un factor a la vez, robustez y reparto del esfuerzo
+  A1. Diseños anidados y anidados escalonados
+  A2. Planificar un estudio de repetibilidad y reproducibilidad
+  A3. Comparar diseños por componentes identificables
+M06: tres marcadores, niveles y cierre presentes; 9 escenas.
+  B1. Una dispersión no responde todas las preguntas
+  B2. Contribución de precisión al promedio de errores
+  I1. De la variación total a la tabla ANOVA
+  I2. Efectos aleatorios y componentes de varianza
+  I3. Dos factores, interacción y denominadores
+  I4. Residuos, heterogeneidad y Cochran
+  I5. Precisión, repetibilidad y marco ISO 5725
+  A1. Los días no se emparejan por su número
+  A2. Componentes negativas, alternativas y reporte
+M07: tres marcadores, niveles y cierre presentes; 9 escenas.
+  B1. Una correlación alta no certifica una calibración
+  B2. Ajustar una recta por mínimos cuadrados ordinarios
+  B3. Intervalo de uso, predicción inversa y signo de la corrección
+  I1. Parámetros inciertos, covarianza y bandas
+  I2. Intercepto libre o recta forzada al origen
+  I3. Mínimos cuadrados ponderados y elección de los pesos
+  I4. Error puro y falta de ajuste
+  A1. Ambos ejes son inciertos: distinguir WLS de GGMR
+  A2. Residuos ponderados y coherencia del ajuste
+M08: tres marcadores, niveles y cierre presentes; 9 escenas.
+  B1. Primero se define el resultado
+  B2. Convertir la información a incertidumbre estándar
+  B3. Presupuesto tabular y combinación de entradas independientes
+  I1. Sensibilidades analíticas y covarianza
+  I2. Grados de libertad, Student y cobertura
+  I3. Individual, promedio de calibración y resultado futuro
+  I4. Propagación en la cadena SRP 55 → Level 2 → cliente
+  A1. Lo común puede quedarse en el absoluto y cancelarse en la diferencia
+  A2. La linealización tiene dominio y una función se revisa en todo el intervalo
+Extractos heredados: 22 huellas verificadas.
+auditoria_interrupcion_sol_2/cambios_sol.diff: 3 bloques candidatos.
+auditoria_interrupcion_sol_3/cambios.diff: 32 bloques candidatos.
+auditoria_respaldo_20261026_195250/cambios.diff: 40 bloques candidatos.
+auditoria_respaldo_20261026_200841/cambios.diff: 19 bloques candidatos.
+Total: 94 bloques; cotejar decisiones en S2_revision_sol.md.
+ajustes_sol.py: bloqueo anterior a importaciones y escrituras.

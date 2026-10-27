@@ -1,0 +1,530 @@
+Chapter 6
+The Measurement Model and Uncertainty
+
+
+
+
+This chapter introduces the basic terms and models used to quantify the uncertainty
+of both direct and indirect measurements. Basic deﬁnitions such as Type A and Type
+B evaluation of uncertainty are introduced, and the GUM approach to the propaga-
+tion of uncertainties is explained. Case studies are used to illustrate the approaches to
+uncertainty analyses for both types of measurements.
+
+
+
+
+6.1 Introduction
+
+Measurements can be categorized as either direct or indirect, depending on how the
+measurement is taken. The basic deﬁnitions that are used throughout the chapter for
+both types of measurements are given ﬁrst, followed by the two measurement
+models and their respective uncertainty analyses. The direct measurement model
+has received less attention in metrology guidelines, while the indirect measurement
+model has been emphasized in guidelines such as the JCGM 100 (GUM). We
+believe that direct measurement models, however, can involve subtle features that
+warrant separate attention. These subtleties appear in a case study involving direct
+voltage measurements. A second case study involving measurement of neutron yield
+is used to illustrate indirect measurements and their associated uncertainty analyses.
+Much of the terminology and methodologies for indirect measurements parallel the
+presentation in the GUM.
+
+
+
+
+© Springer Nature Switzerland AG 2020                                                103
+S. Crowder et al., Introduction to Statistics in Metrology,
+https://doi.org/10.1007/978-3-030-53329-8_6
+104                                          6 The Measurement Model and Uncertainty
+
+
+6.2 Uncertainty Analysis Framework
+
+This section presents an overlying framework for uncertainty analysis based on the
+development of the appropriate measurement model and analysis for both direct and
+indirect measurements. The key terms are deﬁned followed by presentation of the
+conceptual models and analysis approaches.
+   Sections 6.3 and 6.4 present and illustrate with case studies the estimation
+techniques that can be applied to both types of measurements.
+
+
+
+6.2.1 Standard Uncertainty
+
+Standard uncertainty is deﬁned as the uncertainty of a measurement expressed in
+terms of the standard deviation of an uncertainty distribution. If the uncertainty
+distribution is symmetric and approximately normal, this value can be used in a
+straightforward way to construct uncertainty intervals with speciﬁed conﬁdence
+levels. If the uncertainty distribution is highly non-normal, the standard deviation
+may not be as useful, and other measures of dispersion should be used.
+
+
+
+6.2.2 Type A Uncertainty Evaluation
+
+The Type A uncertainty method of evaluation is deﬁned in the GUM as the “method
+of evaluation of uncertainty by the statistical analysis of series of observations.”
+These data typically come from a series of tests performed as part of a planned
+measurement experiment. Examples include data from Gauge R&R experiments
+performed on the factory ﬂoor, small experiments to conﬁrm the performance of
+secondary standards, or larger controlled experiments used to evaluate high-
+precision equipment in a primary standards laboratory. Sources of uncertainty that
+are not part of a statistical analysis are handled by the Type B evaluation of
+uncertainty.
+
+
+
+6.2.3 Type B Uncertainty Evaluation
+
+The Type B uncertainty method of evaluation is deﬁned in the GUM as the “method
+of evaluation of uncertainty by means other than the statistical analysis of series of
+observations.” Sources of Type B uncertainties may include historical data, calibra-
+tion reports, manufacturer’s speciﬁcations, and reference data from handbooks.
+Type B uncertainty evaluations attempt to account for variation that is not observ-
+able in Type A uncertainty evaluations. For example, long-term tester drift would
+6.2 Uncertainty Analysis Framework                                               105
+
+
+typically not affect the uncertainty observed in a short-term experiment. Systematic
+bias would also not affect the variation observed in a short-term experiment. Type B
+uncertainty evaluations are thus included as part of the overall uncertainty to give
+validity to the reported uncertainty interval over an extended period of time. In
+practice, both Type A and Type B evaluations may involve statistical analysis of
+series of observations. The distinction is that Type A evaluations are based on
+immediate time-of-test data, while Type B evaluations are not. The values reported
+as Type B uncertainties, however, have often been derived from statistical analysis
+of historical data. As such, caution must be used to ensure that Type B uncertainty
+evaluations do not “double count” uncertainties present in Type A uncertainty
+evaluations.
+
+
+
+6.2.4 Combined Standard Uncertainty
+
+The combined standard uncertainty is expressed in terms of the standard deviation of
+an uncertainty distribution obtained by combining the individual variances and
+covariances of each Type A and Type B evaluation that contribute to the overall
+uncertainty. The combined standard uncertainty is determined by the root sum of
+squares (RSS) of those variance and covariance terms.
+
+
+
+6.2.5 Conﬁdence Level and Expanded Uncertainty
+
+The conceptual form of a measurement uncertainty interval for either direct or
+indirect measurements is given by the following:
+
+                  Mean     Measurement Uncertainty, or
+                                                                               ð6:1Þ
+                  Mean     k ðCombined Standard UncertaintyÞ:
+
+   The measurement uncertainty in this expression is referred to as the expanded
+uncertainty, deﬁned in more detail below. In terms of the mean of a measurand,
+coverage factor k, and combined standard uncertainty, this interval can be expressed
+as
+
+                                     y   t p ðυeff Þuc ðyÞ:                    ð6:2Þ
+
+   The remainder of this section will provide additional deﬁnitions and show how to
+calculate the sample mean y, the multiplier tp(υeff), and the combined standard
+uncertainty uc( y). In Eq. (6.2) y is an average of a Type A series of measurements.
+For direct measurements it is usually the simple average of a series of measurements,
+while for indirect measurements it is evaluated using a measurement equation.
+6.3 Direct Measurements and the Basic Measurement Model                           107
+
+
+                           U ¼ tp ðυeff Þ uc ðyÞ
+                                          qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ          ð6:7Þ
+                             ¼ t p ðυeff Þ u2A ðyÞ þ u2B ðyÞ:
+
+   The formulas introduced in Sect. 6.2 apply to both the direct measurement case
+and the indirect measurement case, although the Type A and Type B standard
+uncertainties are computed in different ways. The direct measurement problem, the
+direct measurement model, and the uncertainty analysis of a direct voltage measure-
+ment are demonstrated in Sect. 6.3.
+   For both the direct measurement and indirect measurement uncertainty analyses,
+care must be taken to distinguish between the uncertainty of a single measurement
+and the uncertainty of an average of multiple measurements. Both cases are impor-
+tant, depending on the measurement problem under consideration. To accept or
+reject manufactured parts based on a single measurement, for example, the uncer-
+tainty of that single measurement is of interest. To quantify the uncertainty of a
+device such as a voltage standard, typically multiple measurements of the standard
+are made and the uncertainty of the average measurement will be of interest.
+
+
+
+
+6.3 Direct Measurements and the Basic Measurement
+    Model
+
+A direct measurement is deﬁned as one in which the value of the measurand is read
+directly from the measuring instrument. Examples include measurements of weight,
+length, and time, where the value of the measurand is determined with a simple
+measuring device. In some cases, a direct measurement may be adjusted by envi-
+ronmental or other time-of-test factors, making it an effectively indirect
+measurement.
+   In practice, the two types of measurements are not always easily distinguished
+from one another but will depend on one’s point of view. For example, an ohmmeter
+measures resistance by applying a current, measuring the resulting voltage, and
+dividing the two. From the perspective of the ohmmeter manufacturer, the resistance
+measurement is indirect, but from the perspective of the ohmmeter user, the resis-
+tance measurement is direct.
+   The simple conceptual model proposed for direct measurements is as follows,
+with y representing the measured value of the measurand:
+
+                           y ¼ Actual þ Bias þ εA þ εB :                        ð6:8Þ
+
+   In this expression, the measured value ( y) of the measurand is equal to the actual
+value plus a potential constant bias term, plus εA and εB, the Type A and Type B
+random error terms, respectively.
+6.3 Direct Measurements and the Basic Measurement Model                           109
+
+
+                                               U
+                                    uB ðyÞ ¼     :                             ð6:13Þ
+                                               2
+
+   A more conservative value for the Type B standard uncertainty assumes a
+Rectangular (Uniform) distribution Eq. (4.6) for the Type B source of uncertainty,
+resulting in the standard uncertainty:
+
+                                             U
+                                    uB ðyÞ ¼ pﬃﬃ :                             ð6:14Þ
+                                              3
+
+   This distribution may be appropriate if little is known about the shape of the
+distribution. In this case, pU3ﬃﬃ estimates the standard deviation of the Uniform
+distribution on the interval ( U, U ).
+   A less conservative value for the Type B standard uncertainty assumes an
+underlying Triangular distribution Eq. (4.7) for the Type B source of uncertainty,
+resulting in the standard uncertainty:
+
+                                             U
+                                    uB ðyÞ ¼ pﬃﬃ :                             ð6:15Þ
+                                              6
+
+   The triangular distribution has been used for resolution uncertainty when reading
+an analog gauge or ruler, but in practice the Uniform distribution is most often used
+when no other information is provided because of its conservatism. Fig. 4.12
+compares the normal, uniform, and triangular distributions used for this problem.
+   If the Type B value U is treated as exactly known, then uB( y) can be treated as
+exactly known and its associated degrees of freedom can be set to +1. If this
+assumption cannot be made, a subjective estimate of the relative uncertainty in
+uB( y) can be used to deﬁne the Type B degrees of freedom as
+
+                                                     2
+                                       1 ΔuB ðyÞ
+                                υB ﬃ                     :                     ð6:16Þ
+                                       2 uB ðyÞ
+
+   In this expression, the quantity inside the brackets is the relative uncertainty in
+uB( y). The rationale for this calculation is discussed in the GUM (G.4.2). The use of
+this equation will be discussed further in Sect. 11.5.
+   The methodology recommended for direct measurements is presented next with a
+case study involving the direct measurement of voltage.
+
+
+
+6.3.1 Case Study: Voltage Measurement
+
+A voltage measurement uncertainty study was performed on a National Instruments
+PXI-5124 digitizer (the tester) using a Tektronix TDS 3024 digitizer as the standard.
+The purpose of the study was to quantify the uncertainty of the standard digitizer and
+114                                           6 The Measurement Model and Uncertainty
+
+
+such as this would potentially be used to inform decisions regarding product
+acceptance and product state of health over time.
+
+
+
+6.3.2 Discussion
+
+The case study above illustrates the recommended approach for determining the
+expanded uncertainty associated with direct measurements. A tester digitizer was
+compared to a standard digitizer for 30 shots of an output voltage source set to
+350 V. The standard digitizer uncertainty, tester digitizer uncertainty, and bias
+uncertainty were determined. The resulting expanded uncertainties were used to
+derive the tester digitizer’s bias-adjusted 95% (k ¼ 2) uncertainty interval.
+   Note that the uncertainty interval above Eq. (6.27) is the uncertainty associated
+with a single measurement of voltage using the tester digitizer. The uncertainty
+associated with measuring an average of multiple measurements would use a Type A
+uncertainty adjusted by the sample size. That is, the Type A uncertainty of the tester
+digitizer based on sample size n would be
+
+                                             0:90
+                                    uA ðyÞ ¼ pﬃﬃ :                               ð6:28Þ
+                                                n
+
+   The standard digitizer added uncertainty to the tester digitizer uncertainty only
+through the bias calculation. This is because the Type B uncertainty for the tester
+digitizer was derived from its tabled calibration result which did not involve the
+standard digitizer. The standard’s Type A uncertainty was larger than the tester’s
+Type A uncertainty because the standard available at the time-of-test was an old
+standard that had yet to be updated. Despite this limitation, the standard digitizer did
+provide useful information regarding the bias without signiﬁcantly inﬂating the
+calculated uncertainty of the tester digitizer.
+   As recommended in both the GUM (3.2.4) and in Phillips and Eberhardt (1997),
+the uncertainty in the estimate of bias should be included in the expanded uncertainty
+calculation. Because the estimate of bias was based on 30 paired differences,
+however, it did not contribute much to the total uncertainty.
+
+
+
+6.4 Indirect Measurements and the Indirect Measurement
+    Model
+
+In most measurement studies, the measurand is not measured directly, but is
+determined through a functional relationship. An indirect measurement is a mea-
+surement for which the value of the measurand is obtained by measuring other
+quantities functionally related to the measurand. In the NSE, examples include the
+6.4 Indirect Measurements and the Indirect Measurement Model                       117
+
+                             n          n
+                          1X         1X
+                     y¼         yk ¼       f ðx1,k , x2,k , . . . , xN,k Þ      ð6:37Þ
+                          n k¼1      n k¼1
+
+   if the measurement equation is highly nonlinear. That is, y is taken as the
+   arithmetic mean of the n independent determinations yk.
+6. The next step is to determine the expanded uncertainty, U, which provides an
+   uncertainty interval for the measurand of the form (y - U, y + U ). This interval is
+   expected to contain a large fraction of the values that could reasonably be
+   attributed to the measurand Y. U is determined by multiplying the combined
+   standard uncertainty by a coverage factor k ¼ tp(νeff). The effective degrees of
+   freedom νeff are determined from the W-S approximation Eq. (6.50) with sensi-
+   tivity coefﬁcients included and tp(νeff) is the t-value discussed in Sect. 6.2.
+7. This results in the expanded uncertainty:
+
+
+                                       U ¼ kuc ðyÞ:                             ð6:38Þ
+
+
+8. The ﬁnal step is to report the uncertainty. The interval should be expressed as
+
+                                          y     U:                              ð6:39Þ
+
+   The conﬁdence level p should be reported as well as the value of k used to obtain U.
+   The methodology presented here for indirect measurements is illustrated in Sect.
+6.4.1 with a case study involving the lead probe, a secondary standard used to
+measure neutron yield.
+
+
+
+
+6.4.1 Case Study: Neutron Yield Measurement
+
+Many neutron measurements made within the NSE are referenced to a lead probe
+measurement via calibration. The lead probe is a secondary standard, maintained by
+the Primary Standards Lab (PSL), and is itself referenced to a primary standard lead
+probe, which is referenced to an ion beam neutron source that produces a known
+number of neutrons. The uncertainty of any neutron measurement made using a
+neutron detector is therefore linked to the uncertainty of the lead probe used to
+calibrate that detector. This uncertainty helps to inform decisions regarding charac-
+terization and qualiﬁcation of various neutron sources.
+    The case study in this section illustrates the uncertainty analysis of a lead probe
+measurement of neutron yield following the steps outlined in Sect. 6.4 above for
+indirect measurements. It is adapted from Walsh et al. (2017). The R code used to
+perform the calculations is included in the text.
+6.4 Indirect Measurements and the Indirect Measurement Model                      123
+
+
+$F))
+veff
+## [1] 28.63258
+
+   It should be noted that the W-S approximation for the indirect measurement case
+appears slightly different than for the direct measurement equation Eq. (6.19), as the
+sensitivity coefﬁcients are included here. The expanded uncertainty is calculated
+using the coverage factor determined from the t-distribution for a 95% level of
+conﬁdence (two-sided interval):
+
+                            U 95
+                              η ¼ t 0:975 ð29Þ    u c ð ηÞ
+                                ¼ ð2:05Þ         1:796       106               ð6:51Þ
+                                ¼ 3:672     106
+
+
+# Uncertainty interval
+uEta <- qt(p = .975, df = 29) * uC
+uEta
+## [1] 3672213
+
+   The uncertainty interval (95% conﬁdence) for a single measurement of total
+neutron yield is thus:
+
+                       η   U 95
+                             η ¼ 5:32      107      3:67      106
+                                                                               ð6:52Þ
+                               ¼ 5:32     107      6:9% neutrons:
+
+
+interval <- c(n - uEta, n + uEta)
+interval
+## [1] 49510130 56854555
+
+   The resulting interval Eq. (6.52) provides a range of values that could reasonably
+be expected from a single measurement of neutron yield from a laboratory neutron
+source using the lead probe secondary standard. The uncertainties, not reported here,
+were evaluated over a wide range of neutron source settings. These results were
+used, via a traceability chain, to quantify the uncertainty associated with neutron
+detectors measuring total output of neutron sources. The uncertainties are used both
+in product acceptance and characterization of neutron source performance.
+
+
+
+6.4.2 Discussion
+
+The case study in Sect. 6.3.1 illustrates the recommended approach for determining
+the expanded uncertainty associated with indirect measurements. Neutron yield was
+6.5 Related Reading                                                               125
+
+
+SBoot <- eta(A = A[1], f = f, F = F[1], S = sample, B = B[1])
+varS <- var(SBoot)
+
+# Vary B only
+sample <- rnorm(m, B[1], B[2])
+BBoot <- eta(A = A[1], f = f, F = F[1], S = S[1], B = sample)
+varB <- var(BBoot)
+# Calculate variance
+totalVar <- sum(varA, varF, varS, varB)
+varResults <- t(data.frame(f = 0,
+A = varA/totalVar*100,
+F = varF/totalVar*100,
+S = varS/totalVar*100,
+B = varB/totalVar*100))
+colnames(varResults) <- c('Percent of Standard Uncertainty')
+varResults
+## Percent of Standard Uncertainty
+## f 0.000
+## A 35.09
+## F 55.70
+## S 9.20
+## B 0.012
+
+   Knowledge of the relative “components of variation” can suggest ways to
+improve the measurement. Key results from this analysis were that the measurement
+uncertainty could be reduced by reducing the uncertainty in the attenuation factor
+A and the calibration factor F. Examination of Eqs. (6.44) and (6.47), however,
+shows that signiﬁcant reduction in uncertainty can be realized by increasing the net
+scalar counts per source neutron (i.e., reducing f ). However, this would require a
+new detector technology with improved efﬁciency, requiring substantial design
+effort.
+
+
+
+6.5 Related Reading
+
+The direct measurement model (Eq. 6.8) presented here is typically not covered in
+metrology guidelines such as the JCGM:100 (GUM). This may be because direct
+measurements are less common in practice, and their uncertainty analyses often
+result in intervals of the form
+
+                                     y   kuc ðyÞ,
+
+where y and uc( y) are based on simple summary statistics. The model was included
+in Chap. 6 primarily to introduce the idea of an additive statistical model that could
+be extended to include multiple ﬁxed and random terms in a more complicated
+ANOVA (Sect. 9.3). A metrology guideline that does cover the direct measurement
+model is ISO 5725-1: 1994, which provides guidelines in designing, implementing,
+6.6 Exercises                                                                     127
+
+
+approximation may not work well when there is a signiﬁcant difference in the
+magnitude of uncertainty terms. In particular, adding small uncertainty terms with
+large degrees of freedom to a much larger term with small degrees of freedom results
+in a distribution not well approximated by the W-S approximation.
+   The Monte Carlo method outlined in the GUM Supplement 1 will often be an
+appropriate alternative in these special cases. That is the subject of Chap. 8.
+
+
+
+
+6.6 Exercises
+
+6.1. Scientists in Hawaii want to assess the uncertainty of a direct thermocouple
+     measurement of lava temperature when it ﬁrst ﬂows from a volcano. A sample
+     of ten measurements appears in Table 6.6. Compute the Type A standard
+     uncertainty for this measurement.
+6.2. A calibration report for the thermocouple under investigation reports a tolerance
+     of     75 C over the range 1000–1300 C. Compute the Type B standard
+     uncertainty associated with the calibration of this thermocouple. Assume a
+     uniform distribution (4.4.1.1) over the stated tolerance interval.
+6.3. Compute the combined standard uncertainty and the effective degrees of
+     freedom using the Welch–Satterthwaite approximation. What assumption
+     would you make regarding Type B degrees of freedom?
+6.4. Compute the coverage factor for a conﬁdence level of 95.45%. Report the result
+     of the measurement along with the expanded uncertainty.
+6.5. How could you improve the measurement of volcanic lava temperature?
+6.6. Suppose an indirect measurement is deﬁned by the equation
+     Y ¼ f ðX 1 , X 2 Þ ¼ X 21 þ X 22 , where X1 and X2 are independent with N(0, 1)
+     distributions. Using a ﬁrst-order approximation, estimate the expanded uncer-
+     tainty of the measurand Y. Is this a good approximation? Why or why not?
+
+
+
+Table 6.6 Lava               Reading number                          Temperature ( C)
+temperature data
+                             1                                       1130.60
+                             2                                       1210.64
+                             3                                       1211.25
+                             4                                       1047.01
+                             5                                       1135.67
+                             6                                       1189.19
+                             7                                       1237.59
+                             8                                       1164.33
+                             9                                       1225.51
+                             10                                      1165.79
+                             y                                       1171.76
+128                                                   6 The Measurement Model and Uncertainty
+
+
+Table 6.7 Mean input quantities and standard uncertainties for XRF measurement
+                                      Standard uncertainty        Type A degrees
+Input quantity       Mean (μ)         Type A                      of freedom            Type A PDF
+Yuncorrected         0.4409 μm        0.00360                     19                    Normal
+X1                   0.1820 μm        0.00093                     9                     Normal
+X2                   0.1823 μm        0.00058                     19                    Normal
+
+
+
+6.7. Now assume X1 and X2 are independent with N(1000, 1) distributions. Using a
+     ﬁrst-order approximation, estimate the expanded uncertainty of the measurand
+     Y. Is this a good approximation? Why or why not?
+6.8. What steps should be followed in developing an indirect measurement equa-
+     tion? What is a “hybrid” measurement equation? When might you use one?
+6.9. A corrected X-ray ﬂuorescence (XRF) thickness measurement, Ycorrected, is
+     estimated indirectly from an uncorrected thickness measurement, Yuncorrected,
+     via the relationship
+
+
+                                                 X1
+                                 Y corrected ¼      ∙ Y uncorrected ,
+                                                 X2
+
+      where X1 and X2 are independent correction factors. Table 6.7 above provides
+      the information needed to complete an uncertainty analysis. The Type B
+      uncertainties were negligible and were not part of the analysis.
+      Using the GUM methodology (Sect. 6.4), perform an uncertainty analysis for
+      the measurand Ycorrected.
+6.10. How is a “components of variation” analysis used as part of an uncertainty
+      analysis? Perform this analysis for the measurand Ycorrected.
+
+
+
+References
+
+Agamloh, E. A.: Comparison of direct and indirect measurement of induction motor efﬁciency.
+   https://doi.org/10.1109/IEMDC.2009.5075180 (2009)
+Akdogan, A.: Metrology. Intechopen Limited, London (2018)
+Ballico, M.: Limitations of the Welch-Satterthwaite approximation for measurement uncertainty
+   calculations. Metrologia. 37, 61–64 (2000)
+Becerra, L., Hernandez, I.: Evaluation of the air density uncertainty: the effect of the correlation of
+   input quantities and higher order terms in the Taylor series expansion. Meas. Sci. Technol. 17,
+   2545–2550 (2006)
+Crowder, S.V., Moyer, R.D.: A two-stage Monte Carlo approach to the expression of uncertainty
+   with non-linear measurement equation and small sample size. Metrologia. 43(1), 34–41 (2006)
+ISO 5725-2: Accuracy (trueness and precision) of measurement methods and results - Part 2: Basic
+   method for the determination of repeatability and reproducibility of a standard measurement
+   method. (1994)
+

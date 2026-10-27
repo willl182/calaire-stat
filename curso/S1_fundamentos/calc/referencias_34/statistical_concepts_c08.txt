@@ -1,0 +1,444 @@
+8
+Inferences About Proportions
+
+
+
+
+Chapter Outline
+8.1 What Inferences About Proportions Involving the Normal Distribution Are
+    and How They Work
+    8.1.1 Characteristics
+    8.1.2 Power
+    8.1.3 Effect Size
+    8.1.4 Assumptions
+8.2 What Inferences About Proportions Involving the Chi-Square Distribution Are
+    and How They Work
+    8.2.1 Characteristics
+    8.2.2 Power
+    8.2.3 Effect Size
+    8.2.4 Assumptions
+8.3 Computing Inferences About Proportions Involving the Chi-Square Distribution
+    Using SPSS
+    8.3.1 The Chi-Square Goodness-of-Fit Test
+    8.3.2 The Chi-Square Test of Association
+8.4 Computing Inferences About Proportions Involving the Chi-Square Distribution
+    Using R
+    8.4.1 The Chi-Square Goodness-of-Fit Test
+    8.4.2 The Chi-Square Test of Association
+8.5 Data Screening
+8.6 Power Using G*Power
+    8.6.1 Post Hoc Power for the Chi-Square Test of Association Using G*Power
+8.7 Recommendations
+8.8 Research Question Template and Example Write-Up
+    8.8.1 Chi-Square Goodness-of-Fit Test
+    8.8.2 Chi-Square Test of Association
+8.9 Additional Resources
+
+
+
+
+                                                                                   297
+Inferences About Proportions                                                               299
+
+
+
+   Several inferential tests are covered in this chapter, depending on (a) whether there are
+one or two samples, (b) whether the two samples are selected in an independent or depen-
+dent manner, and (c) whether there are one or more categorical variables. More speci cally,
+the topics described include the following inferential tests: testing whether a single propor-
+tion is different from a hypothesized value; testing whether two independent proportions
+are different; testing whether two dependent proportions are different; and the chi-square
+goodness-of- t test and chi-square test of association. We use many of the foundational
+concepts previously covered in Chapters 6 and 7. New concepts to be discussed include
+the following: proportion; sampling distribution and standard error of a proportion; con-
+tingency table; chi-square distribution; and observed versus expected frequencies. Our
+objectives are that by the end of this chapter, you will be able to (a) understand the basic
+concepts underlying tests of proportions, (b) select the appropriate test, and (c) determine
+and interpret the results from the appropriate test.
+
+
+
+
+8.1 What Inferences About Proportions Involving the Normal
+    Distribution Are and How They Work
+A superbly talented set of four graduate students have been expertly completing research
+projects through their work in the statistics lab. We nd the group, once again, ready for a
+challenge!
+
+
+ The statistics lab has been contracted to work with Dr. Senata, the Director of the
+ Undergraduate Services Of ce at Ivy Covered University, and Dr. Walnut, a lobbyist
+ from a state that is considering legalizing gambling. Challie Lenge will be advising Dr.
+ Senata, and Addie Venture will be working with Dr. Walnut.
+   In conversation with Challie, Dr. Senata shares that she recently read a report that
+ provided national statistics on the proportion of students that major in various disci-
+ plines. Dr. Senata wants to know if there are similar proportions at their institution.
+ Dr. Senata suggests the following research question: Are the sample proportions of under-
+ graduate student college majors at Ivy Covered University in the same proportions of those
+ nationally? Challie suggests a chi-square goodness of t test as the test of inference. Her
+ task is then to assist Dr. Senata in generating the test of inference to answer her research
+ question.
+   Addie is consulting with Dr. Walnut, a lobbyist who is lobbying against legalizing
+ gambling in his state. Dr. Walnut wants to determine if there is a relationship between
+ level of education and stance on a proposed gambling amendment. Addie suspects
+ that the proportions supporting gambling vary as a function of their education level.
+ The following research question is suggested by Addie: Is there an association between
+ level of education and stance on gambling? Addie suggests a chi-square test of association
+ as the test of inference. Her task is then to assist Dr. Walnut in generating the test of
+ inference to answer the research question.
+
+
+This section deals with concepts and procedures for testing inferences about proportions
+that involve the normal distribution. Following a discussion of the concepts related to tests
+Inferences About Proportions                                                                                   311
+
+
+Working in R, we can compute the effect size h using the pwr package.
+
+ install.packages(“pwr”)
+ library(pwr)
+
+With the install.packages function, we install the pwr package. Using the library function, we then load pwr into
+our library.
+
+ h<-ES.h(0.40,.65)
+ h
+
+We use the ES.h function and include our proportions in parentheses, where the rst value represents p1 and the
+second value represents p2 Using the data from the headache example, our proportions are .40 and .65. From the
+results, we create an object named “h.” The second line of script is simply telling R to output the results, which
+we see here. Thus, h = −.51. Using Cohen’s conventions, this represents a moderate effect.
+
+[1] -0.5060506
+
+ pwr.p.test(h=h,n=100,sig.level=0.05,
+ alternative=“two.sided”)
+
+The pwr.p.test function can be used to compute observed power given the observed h, sample size (i.e.,
+“n=100”), alpha level (“sig.level=0.05”), and two-sided test (alternative = “two.sided”). In this example, we nd
+power to be .999, which indicates very high power.
+
+proportion power calculation for binomial distribution (arcsine transformation)
+
+            h = 0.5060506
+            n = 100
+    sig.level = 0.05
+        power = 0.9990342
+  alternative = two.sided
+
+FIGURE 8.1
+Computing effect size h in R.
+
+
+
+8.1.4 Assumptions
+For inferences about proportions assuming the normal distribution, it is assumed that the
+sample (in the case of a single proportion) or samples (in the case of independent and depen-
+dent proportions) have been randomly selected from the population (i.e., the assumption
+of independence) and that the normal distribution is the appropriate sampling distribution.
+
+
+
+
+8.2 What Inferences About Proportions Involving the Chi-Square
+    Distribution Are and How They Work
+This section deals with concepts and procedures for testing inferences about proportions
+that involve the chi-square distribution. Following a discussion of the chi-square distri-
+bution relevant to tests of proportions, inferential tests are presented for the chi-square
+goodness-of- t test and the chi-square test of association.
+Inferences About Proportions                                                               319
+
+
+
+8.2.3.2 Chi-Square Test of Association Effect Size
+Several measures of effect size, such as correlation coef cients and measures of association,
+can be requested in SPSS or computed in R, and are commonly reported effect size indices
+for results from chi-square tests of association. Which effect size value is selected depends
+in part on the measurement scale of the variable. For example, researchers working with
+nominal data can select a contingency coef cient: phi (for 2 × 2 tables), Cramer’s V (for
+tables larger than 2 × 2), lambda, or an uncertainty coef cient. Correlation options avail-
+able for ordinal data include gamma, Somer’s d, Kendall’s tau-b, and Kendall’s tau-c. From
+the contingency coef cient, C, we can compute Cohen’s w as follows:
+
+                                                C2
+                                        w=
+                                               1−C 2
+
+Cohen’s recommended subjective standard for interpreting w (as well as the other cor-
+relation coef cients presented) is as follows: small effect size, w = .10, medium effect size,
+w = .30, large effect size, w = .50. See Cohen (1988) for further details. We will later review
+how to compute con dence intervals for w.
+
+
+8.2.4 Assumptions
+8.2.4.1 Chi-Square Goodness-of-Fit Assumptions
+Two assumptions are made for the chi square goodness-of- t test: (a) observations are inde-
+pendent (which is met when a random sample of the population is selected) and (b) an expected
+frequency of at least ve per cell (and in the case of the chi-square goodness-of- t test, this
+translates to an expected frequency of at least ve per category, as there is only one variable
+included in the analysis). When the expected frequency is less than ve, that particular cell
+(i.e., category) has undue in uence on the chi-square statistic. In other words, the chi-square
+goodness-of- t test becomes too sensitive when the expected values are less than ve.
+
+
+8.2.4.1 Chi-Square Test of Association Assumptions
+The same two assumptions that apply to the chi-square goodness-of- t test also apply to
+the chi-square test of association: (a) observations are independent (which is met when a
+random sample of the population is selected) and (b) an expected frequency of at least ve
+per cell. When the expected frequency is less than ve, that particular cell has undue in u-
+ence on the chi-square statistic. In other words, the chi-square test of association becomes
+too sensitive when the expected values are less than ve.
+
+
+
+
+8.3 Computing Inferences About Proportions Involving
+    the Chi-Square Distribution Using SPSS
+Once again we consider the use of SPSS for the example datasets. Although SPSS does not
+have any of the z procedures described in the rst part of this chapter, it is capable of con-
+ducting both of the chi-square procedures described.
+Inferences About Proportions                                                                                    329
+
+
+
+
+8.4 Computing Inferences About Proportions Involving the Chi-Square
+    Distribution Using R
+We will illustrate computing both the chi-square goodness-of- t and chi-square test of
+association using R.
+
+
+8.4.1 The Chi-Square Goodness-of-Fit Test
+Next we consider R for the chi-square goodness-of- t test. The scripts are provided
+within the blocks with additional annotation to assist in understanding how the com-
+mands work. Should you want to write reminder notes and annotation to yourself as
+you write the commands in R (and we highly encourage doing so), remember that any
+text that follows a hashtag (i.e., #) is annotation only and not part of the R script. Thus,
+you can write annotations directly into R with hashtags. We encourage this practice so
+that when you call up the commands in the future, you’ll understand what the various
+lines of code are doing. You may think you’ll remember what you did. However, trust
+us. There is a good chance that you won’t. Thus, consider it best practice when using R
+to annotate heavily!
+
+
+8.4.1.1 Reading Data Into R
+
+ getwd()
+
+R is always pointed to a directory on your computer. To nd out which directory it is pointed to, run this “get
+working directory” function. We will assume that we need to change the working directory, and will use the
+next line of code to set the working directory to the desired path.
+
+ setwd(“E:/Folder”)
+
+
+To set the working directory, use the setwd function and change what is in quotation marks here to your le
+location. Also, if you are copying the directory name, it will copy in slashes. You will need to change the
+slash (i.e., \) to a backslash (i.e., /). Note that you need your destination name within quotation marks in the
+parentheses.
+
+ Ch8_CollegeMajor <- read.csv(“Ch8_CollegeMajor.csv”)
+
+
+The read.csv function reads our data into R. What’s to the left of the <- will be what the data will be called in R.
+In this example, we’re calling the R dataframe “Ch8_CollegeMajor.” What’s to the right of the <- tells R to nd
+this particular .csv le. In this example, our le is called “Ch8_CollegeMajor.csv.” Make sure the extension (i.e.,
+.csv) is included in your script. Also note that the name of your le should be in quotation marks within the
+parentheses.
+
+ names(Ch8_CollegeMajor)
+
+
+The names function will produce a list of variable names for each dataframe, as follows. This is a good check to
+make sure your data have been read in correctly.
+
+FIGURE 8.11
+Reading data into R.
+334                                                         Statistical Concepts: A First Course
+
+
+
+
+8.5 Data Screening
+Because it is a nonparametric procedure, fewer assumptions are associated with chi-
+square tests, and only one is actually tested when the procedure is generated (that being
+the assumption of expected frequencies). Examination of the assumptions for the exam-
+ples have been provided in previous sections and presented with the statistical software
+computer output.
+
+
+
+
+8.6 Power Using G*Power
+A priori power can be determined using specialized software (e.g., Power and Precision,
+Ex-Sample, G*Power) or power tables (e.g., Cohen, 1988), as previously described. How-
+ever, because standard statistical software does not provide power information for the
+results of the chi-square test of association just conducted, let us use G*Power to compute
+the post hoc power of our test.
+
+
+8.6.1 Post Hoc Power for the Chi-Square Test of Association
+      Using G*Power
+The rst thing that must be done when using G*Power for computing post hoc power is
+to select the correct test family. In our case, we conducted a chi-square test of association;
+therefore, the toggle button must be used to change the test family to χ2 (see the screenshot
+in Figure 8.15). Next, we need to select the appropriate statistical test. We toggle to “Good-
+ness-of-�t tests: Contingency tables.” The “Type of power analysis” then needs to be selected. To
+compute post hoc power, we select “Post hoc: Compute achieved power—given α, sample size,
+and effect size.”
+   The “Input Parameters” must then be speci ed. The rst parameter is speci cation of the
+effect size w (this was computed by hand from the contingency coef cient and w = .408).
+The alpha level we tested at was .05, the sample size was 80, and the degrees of freedom
+were 3. Once the parameters are speci ed, simply click “Calculate” to generate the achieved
+power statistics.
+   The “Output Parameters” provide the relevant statistics given the input just speci ed. In
+this example, we were interested in determining post hoc power given a two-tailed test,
+with an observed effect size of .408, an alpha level of .05, and sample size of 80. Based on
+those criteria, the post hoc power was approximately .88. In other words, with a sample
+size of 80, testing at an alpha level of .05, and observing a moderate to large effect of .408,
+the power of our test was .88; thus, the probability of rejecting the null hypothesis when it
+is really false is 88%, which is very high power. Keep in mind that conducting power anal-
+ysis a priori is recommended so that you avoid a situation where, post hoc, you nd that
+the sample size was not suf cient to reach the desired level of power (given the observed
+effect size and alpha level).
+Inferences About Proportions                                                              335
+
+
+
+
+8.7 Recommendations
+Box 8.1 summarizes the tests reviewed in this chapter and the key points related to each
+(including the distribution involved and recommendations for when to use the test).
+
+
+
+
+                                                                  Chi-square
+                                                                    Test of
+                                                                  Association
+
+
+
+
+                                                    We find observed post hoc
+                                                          power of .879.
+
+
+
+        The ‘INPUT PARAMETERS’ for computing post                       Once the
+           hoc power must be specified including:                    parameters are
+                 1) observed effect size w;                         specified, click on
+                       2) alpha level;                                ‘CALCULATE.’
+                 3) total sample size; and
+                   4) degrees of freedom
+
+
+
+
+FIGURE 8.15
+Chi-square test of association post hoc power.
+336                                                         Statistical Concepts: A First Course
+
+
+
+
+   BOX 8.1 Characteristics and Recommendations for Inferences About Proportions
+             Test               Distribution                         When to Use
+
+   Inferences about a single    Unit normal, z      To determine if the sample proportion differs
+   proportion (akin to a                            from a hypothesized proportion
+   one-sample mean test)                            One variable, nominal or ordinal in scale
+   Inferences about             Unit normal, z      To determine if the population proportion
+   two independent                                  for one group differs from the population
+   proportions (akin to the                         proportion for a second independent group
+   independent t test)                              Two variables, both nominal or ordinal in scale
+   Inferences about two         Unit normal, z      To determine if the population proportion for
+   dependent proportions                            one group is different than the population
+   (akin to the dependent                           proportion for a second dependent group
+   t test)                                          Two variables of the same measure, both
+                                                    nominal or ordinal in scale
+   Chi-square goodness-of-      Chi-square          To determine if observed proportions differ
+    t test                                          from what would be expected a priori
+                                                    One variable, nominal or ordinal in scale
+   Chi-square test of           Chi-square          To determine association/relationship between
+   association                                      two variables based on observed proportions
+                                                    Two variables, both nominal or ordinal in scale
+
+
+
+
+8.8 Research Question Template and Example Write-Up
+We nish the chapter by presenting templates and example write-ups for our examples.
+First we present an example paragraph detailing the results of the chi-square goodness-of-
+ t test and then follow this by the chi-square test of association.
+
+
+8.8.1 Chi-Square Goodness-of-Fit Test
+Recall that our graduate research assistant, Challie Lenge, was working with Dr. Senata,
+the Director of the Undergraduate Services Of ce at Ivy Covered University (ICU), to
+assist in analyzing the proportions of students enrolled in undergraduate majors. Challie’s
+task was to assist Dr. Senata with writing her research question (Are the sample proportions
+of undergraduate student college majors at ICU in the same proportions as those nationally?) and
+generating the statistical test of inference to answer her question. Challie suggested a chi-
+square goodness-of- t test as the test of inference. A template for writing a research ques-
+tion for a chi-square goodness-of- t test follows:
+
+
+ Are the sample proportions of [units in categories] in the same proportions of those
+ [identify the source to which the comparison is being made]?
+
+
+ It may be helpful to include in the results of the chi-square goodness-of- t test infor-
+mation on an examination of the extent to which the assumptions were met (recall there
+338                                                       Statistical Concepts: A First Course
+
+
+
+ A chi-square test of association was conducted to determine if there was a relationship
+ between level of education and stance on gambling. The test was conducted using an
+ alpha of .05. It was hypothesized that there was an association between the two vari-
+ ables. The assumption of an expected frequency of at least ve per cell was met. The
+ assumption of independence was not met because the respondents were not randomly
+ selected; thus, there is an increased probability of a Type I error.
+   From Table 8.6 we can see from the row marginals that 55% of the individuals overall
+ support gambling. However, lower levels of education have a much higher percentage
+ of support, while the highest level of education has a much lower percentage of sup-
+ port. Thus, there appears to be an association or relationship between gambling stance
+ and level of education. This is subsequently supported statistically from the chi-square
+        2
+ test (χ = 13.333, df = 3, p = .004). Thus, the null hypothesis that there is no association
+ between stance on gambling and level of education was rejected at the .05 level of sig-
+ ni cance. Examination of the standardized residuals suggests that respondents who
+ hold a graduate degree are signi cantly more likely not to support gambling (stan-
+ dardized residual = 2.0) as compared to all other respondents. Further examination of
+ column proportions using a Bonferroni-corrected z test suggests that individuals with
+ less than a high school degree are statistically signi cantly different in proportions
+ relative to all other education levels, proportions of those with a high school degree are
+ also statistically different than undergraduate and graduate, and proportions of under-
+ graduate and graduate also differ. The effect size, Cohen’s w, was computed to be .408,
+ which is interpreted to be a moderate to large effect (Cohen, 1988).
+
+
+
+
+8.9 Additional Resources
+In this chapter we described a third inferential testing situation, testing hypotheses about
+proportions. A number of resources have been provided throughout. For additional cover-
+age of tests of proportion and analyzing categorical data, you may wish to consider Agresti
+(2013), among others. If you are interested in deeper coverage of chi-square, in particular,
+you may wish to consider Voinov, Balakrishnan, and Nikulin (2013) (which also includes
+an historical account and many other chi-square tests that are beyond the scope of this text)
+or Greenwood and Nikulin (1996).
+
+
+
+
+Problems
+Conceptual Problems
+ 1.   How many degrees of freedom are there in a 5 × 7 contingency table when the chi-
+      square test of association is used?
+      a. 12
+      b. 24
+      c. 30
+      d. 35
+

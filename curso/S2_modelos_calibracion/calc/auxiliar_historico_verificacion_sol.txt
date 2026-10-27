@@ -1,0 +1,3 @@
+Código de salida esperado: 1
+Auxiliar histórico deshabilitado: consultar S2_revision_sol.md; no se modificó ningún libreto.
+Huellas de libretos idénticas antes/después: True

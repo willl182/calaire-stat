@@ -1,0 +1,893 @@
+Chapter 3
+Statistics Applied to Metrology
+
+
+
+
+3.1 Signiﬁcant Digits of a Measure
+
+The result of a calculation using all the calculator’s display digits implies that it is
+accurate for all digits, a fact that, in practice, is rarely possible (the number of digits
+can be increased considerably using computers).
+   When we use the measurement results from calculations, we must consider that
+the numbers used have only a limited number of signiﬁcant digits, because the
+concepts of uncertainty, accuracy, resolution, and conversion of units are involved.
+   Suppose measurement 13.403 m indicates the most likely value of a quantity, and
+the maximum variation in the measurement series to calculate this value is 0.04 m.
+As this variation can be more or less, we must express the result of the measurement
+as follows:
+
+                                   ð13:403 ± 0:04Þ m
+
+   Analyzing the result, we note that the second decimal digit of the most likely
+value is uncertain. Therefore, it is unnecessary to write the third decimal, since the
+previous one is already uncertain.
+   The measurement result must be expressed as (13.40 ± 0.04) m.
+   Of the considerations made, we can establish the concept of signiﬁcant digits of a
+measure.
+
+
+   Attention!
+   The signiﬁcant digits of a measure are the digits considered correct, from the
+   ﬁrst different from zero, plus the latter, which is regarded as the doubtful
+   signiﬁcant digit.
+
+
+
+
+© The Author(s), under exclusive license to Springer Nature Switzerland AG 2025         63
+P. P. Novellino do Rosario, A. Mendes, Metrology and Measurement Uncertainty,
+https://doi.org/10.1007/978-3-031-82303-9_3
+3.1 Signiﬁcant Digits of a Measure                                                65
+
+
+digits. Ambiguity can be avoided by using exponential or “scientiﬁc” standard
+notation.
+   If the number of signiﬁcant digits is three, four, or ﬁve, we could write 50,600
+calories, such as: 5.06 × 104 calories (three signiﬁcant digits)
+5.060 × 104 calories (four signiﬁcant digits)
+5.0600 × 104 calories (ﬁve signiﬁcant digits)
+   When writing a number in scientiﬁc notation, the number of signiﬁcant digits is
+indicated by the number of numerical digits in the term “digits,” as shown in the
+examples.
+
+
+   Important
+   The power of ten is not considered a signiﬁcant digit.
+
+
+3.1.1 Number Rounding
+
+When the measure has more signiﬁcant numerals than you need, we should keep
+only those necessary and abandon the others.
+   For example, measurement 34.527 m has ﬁve signiﬁcant digits. If we have to
+express it with only three, we should write 34.5 m. If we need four, we write
+34.53 m.
+   In the latter case, we observed that the digit of the second decimal house went
+from 2 to 3.
+   Here is the reason. If we had used 34.52 m, we would have made a mistake, for
+lack of it, equal to (34.527 - 34.52) m = 0.007 m.
+   Using 34.53 m, we made a minor error, by excess, of:
+
+                            ð34:53–34:527Þ m = 0:003 m:
+
+   When we round a number, we must keep in mind the following rules:
+(a) The last digit of a number should always be added from a unit if the discarded
+    digit is bigger than ﬁve.
+       Examples of rounding to three signiﬁcant digits:
+
+
+                                     134:7 m = 135 m
+                              0:03432 mm = 0:0343 mm
+
+(b) If the discarded digit is equal to ﬁve, if there are any other numerals different
+    from zero after the discarded ﬁve, the last retained digit will be plus a unit.
+        Examples of rounding to three signiﬁcant digits:
+66                                                       3 Statistics Applied to Metrology
+
+
+               14:751 ° C = 14:8 ° C 0:0346501 km = 0:0347 km
+
+(c) If the discarded digit is ﬁve, if there are only zero or no other digit after ﬁve, the
+    last retained digit will be added to a unit only if it is odd.
+        Examples of rounding to three signiﬁcant digits:
+
+                                  4:8350 N = 4:84 N
+                                34:25 ° C = 34:2 ° C
+
+
+
+3.1.2 Operations with Signiﬁcant Digits
+
+We must act as follows in mathematical operations for the result of operations
+containing signiﬁcant digits only.
+
+
+3.1.2.1 Addition and Subtraction
+
+We usually add or subtract, and the operation result must have the same number of
+decimal digits in the portion with the smallest number of decimal digits.
+   Example: Give the result of the sum (85.45 m + 5.6 m + 98.523 m) with the
+correct number of signiﬁcant digits.
+   Solution: Add the numbers and provide the result with the decimal digits in the
+portion with the fewest digits.
+
+                                         85:45
+                                          5:6
+                                       þ 98:523
+                                        ‐‐‐‐‐‐‐‐‐‐‐
+                                        189:573
+
+   As the portion with fewer decimal digits is 5.6 (one decimal), adopting the sum
+and subtraction rule present will result in 189.6 m.
+
+
+3.1.2.2 Multiplication and Division
+
+We usually multiply or divide, and the result must have the same number of
+signiﬁcant digits as the portion with the smallest number of signiﬁcant digits.
+   Example: Give the result of the division of 89.1 m2 by 5.4690 m, with the correct
+number of signiﬁcant digits.
+3.1 Signiﬁcant Digits of a Measure                                                  67
+
+
+   Solution: Divide and provide the result with the number of signiﬁcant digits of the
+portion with the smallest number of signiﬁcant digits.
+
+                                89:1 m2
+                                        = 16:29182 m
+                               5:4690 m
+
+   Adopting the rule of multiplication and division, as 89.1 has only three signiﬁcant
+digits, the result of the division will be 16.3 m.
+
+
+3.1.2.3 Square Root
+
+The square root of a number with n signiﬁcant digits can have signiﬁcant digits at
+most n and atpleast n - 1.
+   Example: 25:5 km
+   Since 25.5 km has three signiﬁcant digits, we can represent the result as 5.05 or
+5.0. The amount
+              p of signiﬁcance used will depend on the accuracy of the calculation.
+   Example:     25:5 þ 4:8 km = ð5:0 þ 4:8Þ km = 9:8 km:
+                 p
+                     25:5 þ 4:81     km = ð5:05 þ 4:81Þ km = 9:86 km:
+
+
+3.1.3 Mixed Operations
+
+When using a calculator, if you work all the long calculations without writing the
+intermediate results, you may be unable to tell if an error has been made. In addition,
+even if you realize there were any errors, you may be unable to say where it is. In an
+extensive calculation involving mixed operations, as many digits should be
+performed as possible in the entire set of calculations, and then the result should
+be appropriately rounded.
+   For example: (5.00/1.235) m + 3.000 m + (6.35/4.0) m = (4.04858 + 3.000 + 1.5875)
+m = 8.630829 m.
+   The ﬁrst division should result in three signiﬁcant digits. The last division should
+result in two signiﬁcant digits. The three added numbers should result in a number
+with one digit after the decimal home. Thus, the correct rounded result must be
+8.6 m. The last operation (division) limits this result’s accuracy.
+
+
+   Important
+   In an extensive calculation involving mixed operations, as many digits as
+   possible should be performed in the entire set of calculations, and then the
+   result should be appropriately rounded.
+68                                                        3 Statistics Applied to Metrology
+
+
+   Most modern calculators allow you to load the results of intermediate calculations
+on the display by performing complex calculations. In doing so, it is possible to
+maintain the results of each calculation step without inserting the intermediate results
+(a practice that perhaps encourages rounding too early). This way, you can altogether
+avoid truncation errors introduced by intermediate rounding.
+   Using all digits in the result can be critical for many mathematical operations in
+statistics. Rounding intermediate results by calculating squares can seriously com-
+promise their accuracy.
+
+
+
+3.2 Concepts of Statistics Applied to Metrology
+
+Here is a question: Why must we know the statistical tools to work in metrology?
+    It is well known that every measure performed has an associated measurement
+uncertainty, which, depending on the type and quality of the instrument or system
+used, can be small or large compared to the measurement’s result.
+    Thus, we can say that MR = X ± U, where.
+    MR = measurement result.
+    X = measurement value (or the mean measurement) performed and.
+    U = uncertainty of the measurement.
+    In VIM—2.26, we ﬁnd the following deﬁnition for measurement uncertainty:
+“non-negative parameter characterizing the dispersion of the quantity values being
+attributed to a measurand, based on the information used.” The VIM also cites that
+“the parameter may be, for example, a standard deviation called standard mea-
+surement uncertainty (or a speciﬁed multiple of it), or the half-width of an interval,
+having a stated coverage probability.”
+    We realize, then, that measurement uncertainty is an evaluated parameter through
+some statistical tools. As the result of measurement will always have an associated
+doubt (called the uncertainty of measurement), what is sought is to estimate the
+values of measure and uncertainty in the best possible way.
+    Measurement uncertainty will always exist and will never be eliminated, since the
+actual value of greatness is estimated (in practice, the value of the standard is used as
+a reference value). However, it is possible to deﬁne the limits within which the value
+of a measurement is found by considering a speciﬁc probability value using statis-
+tical techniques and analyses.
+    Experimental measurements are carried out based on random experiments, and
+random experiment means that which is inﬂuenced by non-controlled, random
+variables. Thus, measurements are random experiments and can be repeated indef-
+initely, and once repeated, we will probably obtain different results.
+    Random experiments are associated with a sample space or population. Popula-
+tion N is deﬁned as all elements available for evaluation. This population can be a
+ﬁnite number (e.g., the total residents of a building) or inﬁnite (e.g., the set of natural
+numbers). A sample n represents a portion of the population, but it should be chosen
+to present the characteristics and properly represent this origin population.
+3.2 Concepts of Statistics Applied to Metrology                                   69
+
+
+    After this measurement process is completed, a speciﬁc value will represent an
+estimate of the measurement result. From the result of this sample and by attributing
+a certain degree of conﬁdence, one can analyze the behavior of the measuring
+instrument as a whole. Conclusions obtained based on a sample or amount of data
+streamline the measurement process and reduce costs.
+    Suppose we need to determine the density of a solid (ρ). It is known that the
+density is the relationship between the mass of the body (m) and its volume (V ),
+given by the expression:
+
+                                                  m
+                                          ρ=                                   ð3:1Þ
+                                                  V
+
+   Then, when measuring the mass of the body with the aid of a scale, we have the
+variable mass M as a random component since its value can be affected by the
+position in which we place the body on the scale plate, besides the characteristic of
+the scale itself not to reproduce the measured values repeatedly.
+   The same is valid for measuring the part’s volume. It is affected by the temper-
+ature variation where its measurement is performed and by the instability of the
+measurement instruments.
+   This is why statistical analysis is fundamental to metrology. It enables data
+description from central trend measures, dispersal measures, and probability distri-
+bution, followed by the analysis and interpretation of the obtained results.
+   Before we discuss the concept of uncertainty of measurement and present its
+calculation methodology, it is necessary to introduce some basic statistics founda-
+tions and tools.
+
+
+
+3.2.1 Random Variable, Random Experiment, and Sample
+      Space
+
+When we experiment with a measurement, we are subject to results that can be
+inﬂuenced by variables we do not control. For example, the variation in ambient
+temperature can inﬂuence the length of a metal part (dilation), or the relative
+humidity of the air can affect the mass of a moisture-absorbing substance. Finally,
+random variables in every measurement process can interfere or may interfere with
+the measurement result.
+   Thus, such experiments have random variables, regardless of being careful with
+the experiment, and we cannot avoid these inﬂuence variables. Our goal, then, will
+be to understand, quantify, and model these types of variations that we often ﬁnd in
+measurements.
+   We can deﬁne a random experiment as anyone who provides different results,
+even taking all the precautions to perform the measurement procedure similarly. The
+set of all possible results of a random experiment is called the sample space of the
+experiment.
+   These random variables can be divided into two types: discreet and continuous.
+70                                                   3 Statistics Applied to Metrology
+
+
+3.2.1.1 Discreet Random Variable (Fig. 3.2)
+
+One dice has x values (1, 2, 3, 4, 5, 6). The variable is discreet; it cannot assume
+intermediate values. When we launch a dice, we will not ﬁnd, for example, values
+between 1 and 2 or between 4 and 5. A discreet random variable is a variable with a
+ﬁnite number of values. Other examples are the number of wrinkles in a car, the
+number of oranges in a basket, and the number of parts manufactured in one day.
+
+
+3.2.1.2 Continuous Random Variable
+
+For example, the room temperature of a laboratory (T ) measured over a week is
+considered a continuous random variable, because it can take any value throughout
+the day and week. Therefore, a continuous random variable assumes inﬁnite values.
+Examples include temperature measurement, pressure measurement, and electric
+current measurement.
+   Note that the typical variables of interest in metrology are continuous. The most
+commonly used continuous probability distributions in metrology are:
+•    Uniform or rectangular distribution.
+•    Triangular distribution.
+•    Normal or Gaussian distribution.
+•    Student’s t distribution.
+   This chapter will study these probability distributions and their main
+characteristics.
+
+
+
+
+Fig. 3.2 A dice
+3.2 Concepts of Statistics Applied to Metrology                                       71
+
+
+3.2.2 Distribution of Measured Data
+
+3.2.2.1 Not Grouped Data
+
+For example, the CEN-EN 837–1 standard states that the type Bourdon manometer’s
+calibration temperature should be between (20 ± 2) °C. Here, we have 80 measure-
+ments performed over one day, and the results are found in Table 3.1.
+   Question: Are all measurements within the tolerance range established by the
+standard?
+   Answer: Yes! After analyzing all 80 data points, it is clear that the lowest value
+was 18 °C, and the largest was 22 ° C.
+   Let us ask other questions:
+•   What was the value that prevailed in the measurement set?
+•   Did measurements vary a lot or little?
+•   Have you ever thought that instead of 80 measurements, we had 8000?
+•   Do you agree that there should be a more appropriate way to dispose of this data
+    to facilitate answers?
+
+
+3.2.2.2 Grouped Data
+
+The immediate way is to group the data in a list. The list consists of grouping this
+data increasingly or decreasingly. For the temperature example, we will put it in
+ascending order of values (Table 3.2).
+   The list makes it easy to answer if the results are within tolerance. Just look at the
+ﬁrst (18 °C) and the last (22 °C), but it is not so immediate to answer the other
+questions!
+
+
+Table 3.1 Temperature measurements
+3.2 Concepts of Statistics Applied to Metrology                                     73
+
+
+Table 3.4 Accumulated          Value °C                          fa                 Fa
+absolute frequency (Fa)
+                               18                                15                 15
+                               19                                18                 33
+                               20                                12                 45
+                               21                                22                 67
+                               22                                13                 80
+
+
+Table 3.5 Simple relative      Value °C                     fa                 fr
+frequency ( fr)
+                               18                           15                 18.75%
+                               19                           18                 22.5%
+                               20                           12                 15%
+                               21                           22                 27.5%
+                               22                           13                 16.25%
+                               Σ                            80                 100%
+
+
+Table 3.6 Accumulated rela-    Value °C                fa         fr           Fr
+tive frequency (Fr)
+                               18                      15         18.75%       18.75%
+                               19                      18         22.5%        41.25%
+                               20                      12         15%          56.25%
+                               21                      22         27.5%        83.75%
+                               22                      13         16.25%       100%
+
+
+                                                  fa
+                                          fr =
+                                                  n
+
+   Table 3.5 shows that the values of 19 and 21 °C together represent 50% of the
+values. The remaining 50% are distributed by 18, 20, and 22 °C.
+• Accumulated relative frequency (Fr)—corresponds to the sum of the relative
+  frequencies of the current class with the sum of the immediately preceding
+  relative frequencies (Table 3.6).
+   More than half of the data (56.25%) is between 18 and 20 °C!
+
+
+3.2.2.3 Histogram
+
+A histogram is a bar graph that shows a frequency distribution, that is, the table
+where we present the data collected due to the frequency of its occurrence. The base
+of a rectangle represents a class of the frequency table. The height of the bar is
+proportional to the frequency value contained in the class. The horizontal scale of the
+graph is quantitative. The vertical scale indicates the absolute or relative frequency.
+   This data must be divided into class intervals. An efﬁcient method for determin-
+ing the number of class intervals consists of obtaining the square root of the number
+76                                                          3 Statistics Applied to Metrology
+
+
+Table 3.8 Class interval and   Class interval                                     Frequency
+the frequency
+                               49.58 °C ≤ x < 49.60 °C                             4
+                               49.60 °C ≤ x < 49.62 °C                             8
+                               49.62 °C ≤ x < 49.64 °C                            11
+                               49.64 °C ≤ x < 49.66 °C                            11
+                               49.66 °C ≤ x < 49.68 °C                            15
+                               49.68 °C ≤ x < 49.70 °C                             8
+                               49.70 °C ≤ x < 49.71 °C                             3
+
+
+
+
+                                        Histogram
+
+
+
+ Frequency
+
+
+
+
+                                        Temperature intervals (°C)
+
+Graph 3.1 Stabilized oven temperature distribution histogram
+
+
+
+    The same Excel also automatically makes the histogram by selecting the data and
+clicking on the histogram in the data tab within the data analysis icon (Graph 3.1).
+    Note that the mean oven temperature is worth 49.64 °C and is in the middle of the
+frequency distribution in the histogram.
+    This is a feature of most statistical distributions, as we will see later in this
+chapter.
+
+
+
+3.2.3 Probability Density Function (PDF)
+
+One probability density function f(x) describes the distribution of a random variable
+x. If a value x is very likely to occur within an interval [a, b], its PDF f(x) will be
+signiﬁcant in this interval. The PDF f(x) then describes the probabilities associated
+with a random variable.
+    The PDF f(x) may be discreet or continuous, depending on whether the variable
+x is discrete or continuous.
+3.2 Concepts of Statistics Applied to Metrology                                    77
+
+
+Fig. 3.3 Standard caliber.
+(https://www.calibratools.
+com.br)
+
+
+
+
+3.2.3.1 Discrete Density Function
+
+A discrete PDF describes the behavior of the variables that provide integer and ﬁnite
+values.
+   Example 1: It is very common to use measurement devices called calibers, which
+inform whether one piece conforms or not. Variable X then has only two values:
+pass/do not pass or go/do not go (Fig. 3.3).
+   The discrete PDF that characterizes the example well is the Binomial
+Distribution.
+   A binomial distribution is adequate when the results of a random variable are
+grouped into only two classes or categories. These categories must be mutually
+exclusive. For example, a manufactured product may be perfect or defective, an
+answer may be correct or wrong, and a telephone call is local or long distance.
+   Even continuous variables can be divided into two categories. For example, a
+car’s speed may be below or above the legal limit on a road. These categories are
+usually called success or failure.
+   Application conditions:
+• They are made in independent repetitions of the experiment, that is, the result of
+  repetition is not inﬂuenced by others.
+• The probability of success p and failure (1 - p) remain constant in all repetitions.
+   The following expression gives the binomial model:
+
+                                  n!
+                     PðxÞ =              px ð1 - pÞn -x   x = 0, 1, …, n        ð3:5Þ
+                              x!ðn - xÞ!
+                                      Mean → μ = np                             ð3:6Þ
+
+                       Standard deviation → σ =            npð1 - pÞ            ð3:7Þ
+
+   The binomial model is usually used in quality control when sampling a large
+population. In these applications, x represents the number of defective observations
+in a n-sample.
+3.2 Concepts of Statistics Applied to Metrology                                                      79
+
+
+Graph 3.2 Discreet
+uniform PDF
+
+
+
+
+3.2.3.2 Continuous Density Function
+
+For a continuous random variable x, a PDF f(x) is such a function that:
+
+                                           f ðxÞ ≥ 0
+                                            þ∞
+                                 f ðxÞ =          f ðxÞ dx = 1
+                                           -∞
+                                                           b
+                                Pða ≤ X ≤ bÞ =                 f ðxÞdx
+                                                       a
+
+
+   In Graph 3.3, the area under f(x) represents the probability of x assuming a value
+between a and b (Graph 3.3).
+
+               k                            k           2                k             2
+               1 xi                         1 ð xi - μ Þ                 1 ðxi - 3, 5Þ
+       μ=             = 3, 5     σ=                             =                          = 1, 71
+               k                                k                             6
+
+   For a discrete random variable X, the sum of the discrete distribution P(x) values
+between the boundaries -∞ and +∞ always results in one.
+   Remembering the example of the dice, the sum of P(x) will be:
+
+                                                               1 1 1 1 1 1
+        Pð- ∞ ≤ X ≤ þ ∞ Þ = Pð1 ≤ X ≤ 6Þ =                      þ þ þ þ þ =1
+                                                               6 6 6 6 6 6
+
+
+
+
+3.2.4 Mean and Standard Deviation of a Probability
+      Distribution
+
+Probability distributions are characterized by their mean value and their standard
+deviation. When the mean in question is the population’s mean, we designate the
+Greek letter μ. When it comes to the mean of a sample, we designate by x.
+80                                                    3 Statistics Applied to Metrology
+
+
+
+
+Graph 3.3 Probability P (a ≤ X ≤ b)
+
+
+
+    The mean (μ), or expected value E(X), is the best estimate of a measurement and
+is deﬁned by the equation:
+
+
+                                μ = EðX Þ =   x:f ðxÞdx                        ð3:13Þ
+
+
+where X is a random variable, and f(x) is a PDF.
+    Although the mean sample or the mean population is valid, it is important to
+know how dispersed the data around the mean is. The variable that measures the
+dispersion of these data around the mean is called standard deviation, and its square
+is known as variance.
+    The variance of X is denoted by σ 2 or V(X) and deﬁned by the expression:
+
+
+                 σ 2 = V ðX Þ = E ððx - E ðxÞÞ2 =    ðμ - xÞ2 f ðxÞdx          ð3:14Þ
+
+
+
+
+3.2.5 Distributions of Probabilities More Adopted
+      in Metrology
+
+We mention, in Sect. 3.2.1, that the most commonly used probability distributions in
+metrology are uniform or rectangular, triangular, normal or Gaussian, and
+Student’s t.
+3.2 Concepts of Statistics Applied to Metrology                                      81
+
+
+  Now, let us study the main features of these distributions and their applications in
+metrology.
+
+
+3.2.5.1 Rectangular or Uniform Distribution
+
+We will face a uniform or rectangular distribution when the probability distribution
+is constant in a deﬁned interval (Graph 3.4).
+
+                                         1
+                             f ðxÞ =        ;          a≤x≤b                     ð3:15Þ
+                                        b-a
+                         f ðxÞ = 0                 x < a ou x > b:
+
+   The mean of a uniform continuous random variable x is deﬁned by Eq. (3.13):
+μ = E(X) = x. f(x)dx.
+   Integrating within the limits between a and b and adopting f ðxÞ = ðb -1 aÞ, we have:
+
+                                    b                           b
+                                                       2
+                                         x          x
+                                            dx =
+                                        b-a      2ðb - aÞ
+                                a                               a
+
+                                                  aþb
+                                         μ=x=                                    ð3:16Þ
+                                                   2
+
+   Using the variance deﬁnition by Eq. (3.14), we have:
+
+
+                                 σ2 =        ðμ - xÞ2 f ðxÞdx
+
+
+
+
+Graph 3.4 Uniform or rectangular distribution
+84                                                        3 Statistics Applied to Metrology
+
+
+3.2.5.2 Symmetrical Triangular Distribution
+
+When the probability distribution is more prominent in the central part, at a deﬁned
+interval, and decays linearly at the ends, we will face a triangular distribution.
+   In many cases, it is more realistic to expect values near the boundaries to be less
+likely than those near the midpoint. Replacing the rectangular distribution with a
+symmetrical triangular distribution is reasonable (Graph 3.7).
+
+                                    0                  para x < a
+                                    4 ðx - aÞ                aþb
+                                                para a ≤ x ≤
+                                    ðb - aÞ2                  2
+                          f ðxÞ =                                                  ð3:19Þ
+                                    4 ðb - xÞ        aþb
+                                                para     ≤x≤b
+                                    ðb - aÞ2          2
+                                    0                 para x > b
+
+     For triangular distribution with the mean x at the center of interval a, b, we have:
+
+                                                aþb
+                                       μ=x=                                        ð3:20Þ
+                                                 2
+
+and the standard deviation is:
+
+                                               b-a b-a
+                                σ ðxÞ = sðxÞ = p = p                               ð3:21Þ
+                                                24 2 6
+
+   We adopted the expression s(x) for the sample standard deviation and the
+expression σ(x) for the population standard deviation. The same equation gives the
+standard deviation in a triangular distribution.
+Solved Exercise 3.4
+Suppose we calibrate a pressure gauge with a measurement interval (0 to 40) bar and
+a resolution of 1 bar using a comparative pump and ﬁx the calibration points on the
+object gauge at 10 bar, 20 bar, 30 bar, and 40 bar (Fig. 3.4).
+
+
+
+Graph 3.7 Symmetrical
+triangular distribution
+3.2 Concepts of Statistics Applied to Metrology                                    87
+
+
+3.2.5.3 Asymmetrical Triangular Distribution
+
+In an asymmetrical triangular distribution, the value with the highest probability is
+the mode of the dataset, which is not equal to the average. So, when the probability
+distribution is higher in mode, in a deﬁned interval, and decays linearly at the ends,
+we will be facing an asymmetrical triangular distribution (Graph 3.9).
+
+                                    2ðx - aÞ
+                                                       a≤x<c
+                                 ðb - aÞ ðc - aÞ
+                                   2
+                                                   x = c = ðmodeÞ
+                      f ðxÞ =    b-a                                           ð3:22Þ
+                                    2ðb - xÞ
+                                                      c<x≤b
+                                 ðb - aÞ ðb - cÞ
+                                 0                  x<a e x>b
+
+   The mean and standard deviation expressions for this distribution are:
+
+                                           aþbþc
+                                      μ=                                       ð3:23Þ
+                                             3
+
+
+                                  a2 þ b2 þ c2 - ab - ac - bc
+                          σ=                                                   ð3:24Þ
+                                              18
+
+   The probabilities accumulated for this distribution are:
+
+
+
+
+Graph 3.9 Asymmetrical triangular distribution
+88                                                    3 Statistics Applied to Metrology
+
+
+Graph 3.10 Asymmetrical
+triangular distribution of
+Solved Exercise 3.6.
+a = 10 °C. b = 30 °C.
+c = 25 °C
+
+
+
+
+                                  ðx - aÞ2
+                                                       a≤x<c
+                               ðb - cÞ ðc - aÞ
+                               c-a
+                      PðxÞ =                              x=c                  ð3:25Þ
+                               b-a
+                                       ðb - xÞ2
+                               1-                      c<x≤b
+                                   ðb - aÞ ðb - cÞ
+
+
+Solved Exercise 3.6
+Consider that in a set of measurements, the lowest value found was 10 °C, the largest
+was 30 °C, and the mode was 25 °C. What is the probability that a new measurement
+is less than 20 °C? What is the probability of being greater than 26 °C?
+Solution (Graph 3.10)
+
+
+                          ðx - aÞ2        ð20 - 10Þ2
+         Pðx < 20Þ =                 =                   = 0:33 → 33%
+                       ðb - aÞðc - aÞ ð30 - 10Þð25 - 10Þ
+
+
+                          ðb - xÞ2            ð30 - 26Þ2
+     Pðx > 26Þ = 1 -                  =1-                    = 0:84 → 84%
+                       ðb - aÞðb - cÞ     ð30 - 10Þð30 - 25Þ
+
+
+
+3.2.5.4 Normal or Gaussian Distribution
+
+Normal or Gaussian distribution is undoubtedly the most important PDF. Several
+variables behave according to a Gaussian distribution.
+3.2 Concepts of Statistics Applied to Metrology                                  97
+
+
+3.2.5.5    Student’s T Distribution
+
+When we perform a small number of measurements, less than 30, we realize that
+even when the sample belongs to a normal distribution, its histogram does not take
+the shape of a bell, typical of this distribution.
+   To visualize this feature, we randomly generate in Excel 1000 values belonging to
+a normal distribution of population average μ = 2.00 and standard deviation of the
+population σ = 0.40.
+   From this population (let us consider that the data generated are large enough to
+be viewed as the population), we remove sample sizes n = 5, n = 20, n = 100, and
+n = 1000. Our goal is to build histograms of different samples and observe their
+behavior.
+
+
+3.2.5.6 Sample Analysis with N = 5 (Graph 3.17)
+
+The result found was x = 2:09 and s = 0:43
+
+Interval                                                                  Frequency
+1.5                                                                       1
+1.8                                                                       0
+2.1                                                                       1
+2.4                                                                       1
+More                                                                      2
+
+   Note that although the values are removed from a normal distribution with a mean
+of 2.00 and a standard deviation of 0.40, the mean of the ﬁve values is worth 2.09
+and a standard deviation of 0.43. This is because we only get a mean of 2.00 and a
+deviation of 0.40, when we have all the values that generated the normal curve
+(inﬁnite values).
+
+
+
+Graph 3.17 Data and
+histogram to n = 5
+98                                                    3 Statistics Applied to Metrology
+
+
+Graph 3.18 Data and
+histogram to n = 20
+
+
+
+
+   Another essential feature is that the histogram containing the ﬁve values does not
+look like a normal distribution (bell form). This will only happen as the sample
+number approaches the population number.
+
+
+3.2.5.7 Sample Analysis with N = 20 (Graph 3.18)
+
+The result found was x = 1:97 and s = 0:44
+
+Interval                                                                    Frequency
+1.1                                                                         1
+1.4                                                                         0
+1.7                                                                         5
+2.0                                                                         3
+2.3                                                                         7
+2.7                                                                         2
+More                                                                        2
+
+
+
+
+3.2.5.8 Sample Analysis with N = 100 (Graph 3.19)
+
+The result found was x = 2:05 and s = 0:36
+
+Interval                                                                    Frequency
+1.1                                                                          1
+1.4                                                                          2
+1.6                                                                          8
+1.8                                                                         13
+2.1                                                                         32
+2.3                                                                         17
+                                                                            (continued)
+3.2 Concepts of Statistics Applied to Metrology                   99
+
+
+Graph 3.19 Data and
+histogram to n = 100
+
+
+
+
+Graph 3.20 Data and
+histogram to n = 1000
+
+
+
+
+Interval                                                  Frequency
+2.5                                                       16
+2.7                                                        8
+More                                                       3
+
+
+
+
+3.2.5.9 Sample Analysis with N = 1000 (Graph 3.20)
+
+The result found was x = 2:00 and s = 0:40
+
+Interval                                      Frequency
+0.6                                             1
+0.9                                             5
+1.2                                            23
+1.5                                            90
+1.8                                           200
+2.1                                           277
+                                                          (continued)
+106                                                    3 Statistics Applied to Metrology
+
+
+3.3 Proposed Exercises
+
+3.3.1 Round correctly to one decimal digit.
+   (a) 34.450 m
+   (b) 23.852 m
+   (c) 8.351 m
+   (d) 19.7489 m
+   (e) 43.4501 m
+    (f) 43.852 m
+   (g) 52.3511 m
+   (h) 66.7205 m.
+
+
+3.3.2 Check the number of signiﬁcant digits in the following measurements:
+   (a) 1.320 m
+   (b) 0.050 kg
+   (c) 0.0001 km
+   (d) 9642 m2.
+
+
+3.3.3 Round correctly to three signiﬁcant digits.
+   (a) 478.9 m
+   (b) 642.5 kg
+   (c) 123.4 L
+   (d) 56.150 cm.
+
+
+3.3.4 Perform the following operations and present the result with the number of
+   correct signiﬁcant digits:
+   (a) 52.69 m + 36.8 m
+   (b) 68.487 m × 0.12 m
+                                p
+                                    47:8 m2 - 1:36 m
+
+
+
+3.3.5 Round for one signiﬁcant digit.
+   (a) 3682
+   (b) 0.00245
+   (c) 0.00058763
+   (d) 0.000030456.
+

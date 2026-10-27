@@ -23,7 +23,19 @@ def case_b_data():
 
 def ggmr(x, y, ux, uy):
     """Fit y=a+b*x with V_xy=0; x and y each may have within-axis covariance."""
+    x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)
+    ux, uy = np.asarray(ux, dtype=float), np.asarray(uy, dtype=float)
+    if x.ndim != 1 or y.shape != x.shape or x.size < 3:
+        raise ValueError("GGMR requiere al menos tres pares de vectores unidimensionales")
     n = len(x)
+    if not np.all(np.isfinite(x)) or not np.all(np.isfinite(y)) or np.ptp(x) == 0:
+        raise ValueError("GGMR requiere datos finitos y referencias no constantes")
+    for label, matrix in (("U_x", ux), ("U_y", uy)):
+        if matrix.shape != (n, n) or not np.all(np.isfinite(matrix)):
+            raise ValueError(f"{label} debe ser una matriz finita de dimensión n por n")
+        # Cholesky utiliza un solo triángulo: por sí sola no verifica simetría.
+        if not np.allclose(matrix, matrix.T, rtol=1e-12, atol=0):
+            raise ValueError(f"{label} debe ser simétrica")
     covariance = np.block(
         [[ux, np.zeros((n, n))], [np.zeros((n, n)), uy]]
     )
@@ -36,6 +48,8 @@ def ggmr(x, y, ux, uy):
         return np.linalg.solve(chol, raw)
 
     result = least_squares(residuals, initial, xtol=1e-13, ftol=1e-13, gtol=1e-13, max_nfev=10000)
+    if not result.success or not np.all(np.isfinite(result.x)):
+        raise RuntimeError(f"GGMR no converge: {result.message}")
     latent_x, a, b = result.x[:n], result.x[n], result.x[n + 1]
     jac = np.zeros((2 * n, n + 2))
     jac[:n, :n] = -np.eye(n)
@@ -101,6 +115,15 @@ def main():
     u_delta_max = math.sqrt(u_1**2 + u_2**2 - 2 * covariance_max)
     print(f"covarianza positiva maxima admisible={covariance_max:.6f} (nmol/mol)^2; u(Delta)={u_delta_max:.6f} nmol/mol")
 
+    # Construcción de la covarianza desde una entrada común R, no desde rho supuesto.
+    u_R, c1, c2 = 0.15, 1.0, 0.8
+    v1 = u_1**2 - (c1*u_R)**2
+    v2 = u_2**2 - (c2*u_R)**2
+    cov_from_R = c1*c2*u_R**2
+    assert np.isclose(cov_from_R, covariance) and min(v1, v2) >= 0
+    print(f"I: R compartido u_R={u_R}; c1={c1}; c2={c2}; var_ind1={v1:.6f}; var_ind2={v2:.6f}; cov={cov_from_R:.6f}")
+    print(f"I: Delta=0.35; Delta/U(Delta)={0.35/(k_delta*u_delta):.9f}")
+
     print("\nI — interpolacion con parametros simulados")
     a, b = 0.12, 1.001
     u_a, u_b, cov_ab, x0 = 0.10, 0.0005, -0.000035, 200.0
@@ -134,8 +157,23 @@ def main():
         D = a + (b - 1) * x0
         variance_D = covariance_beta[0, 0] + x0**2 * covariance_beta[1, 1] + 2 * x0 * covariance_beta[0, 1]
         if variance_D < 0:
-            raise ValueError("La varianza del grado de equivalencia no puede ser negativa")
+            raise ValueError("La varianza de la diferencia interpolada no puede ser negativa")
         print(f"x0={x0:.1f}; D={D:.9f} nmol/mol; u(D)={math.sqrt(variance_D):.9f} nmol/mol")
+
+    print("\nA — sensibilidad intraje, manteniendo V_xy=0")
+    beta0, cov0, chi0 = ggmr(x, y, np.diag(u_rand_x**2), np.diag(u_rand_y**2))
+    z = np.array([1.0, 420.0])
+    print(f"sin componente comun: D420={beta0[0]+(beta0[1]-1)*420:.9f}; uD420={math.sqrt(z@cov0@z):.9f}; chi2={chi0:.9f}")
+
+    print("\nA — grado de equivalencia SIMULADO frente a referencia comun BIPM-SRP27")
+    for nominal, participant, reference, up, ur in (
+        (80., 80.30, 80., .20, .15),
+        (420., 420.80, 420., .60, .50),
+    ):
+        # Medias de campañas independientes; incertidumbres estándar totales dadas.
+        degree = participant-reference
+        ud = math.hypot(up, ur)
+        print(f"nominal={nominal}; D={degree:.9f}; uD={ud:.9f}; U_D_k2={2*ud:.9f}")
 
 
 if __name__ == "__main__":

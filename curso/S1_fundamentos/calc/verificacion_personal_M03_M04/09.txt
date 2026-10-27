@@ -1,0 +1,619 @@
+Home   Search    Collections   Journals   About   Contact us    My IOPscience
+
+
+
+
+       Implementation of a generalized least-squares method for determining calibration curves from
+
+       data with general uncertainty structures
+
+
+
+       This article has been downloaded from IOPscience. Please scroll down to see the full text article.
+
+       2006 Metrologia 43 S291
+
+       (http://iopscience.iop.org/0026-1394/43/4/S17)
+
+       View the table of contents for this issue, or go to the journal homepage for more
+
+
+
+
+       Download details:
+       IP Address: 192.133.28.4
+       The article was downloaded on 29/08/2013 at 09:44
+
+
+
+       Please note that terms and conditions apply.
+INSTITUTE OF PHYSICS PUBLISHING                                                                                            METROLOGIA
+Metrologia 43 (2006) S291–S298                                                                           doi:10.1088/0026-1394/43/4/S17
+
+
+
+
+Implementation of a generalized
+least-squares method for determining
+calibration curves from data with general
+uncertainty structures
+M J T Milton, P M Harris, I M Smith, A S Brown and B A Goody
+National Physical Laboratory, Hampton Road, Teddington, TW11 0LW UK
+
+Received 6 February 2006
+Published 4 August 2006
+Online at stacks.iop.org/Met/43/S291
+
+Abstract
+The determination of a best-fit calibration curve that describes the response
+of a measuring system to the value of a standard is one of the most widely
+used procedures in metrology. The mathematical basis for a generalized
+least-squares solution to this problem is reviewed. Examples of the
+application of a software implementation of the method are presented to
+illustrate the treatment of calibration problems with different uncertainty
+structures for the calibration data, including correlated data. The examples
+concern the calibration of analysers to measure the composition of natural
+gas and the calibration of a gas flow dilutor.
+
+
+
+1. Introduction                                                          This paper reviews the generalized least-squares approach
+                                                                   to the calibration problem, which accounts properly for the
+Calibration is one of the most widely employed procedures in       uncertainty structure of the data used to establish the calibration
+metrology. Although there are important differences between        curve [2–4]. Unlike ordinary least-squares regression, the
+the procedures used for the calibration of different types of      method permits a valid treatment of calibration problems
+measuring systems, there are many steps that are common.           for which there are uncertainties associated with measured
+One such step is the computational method used to establish        values both of the stimulus and the corresponding response
+the mathematical function (the calibration curve) that relates     of the measuring system, as well as correlations associated
+the response or indication of the measuring system to the value    with pairs of such values. The approach, and special cases
+realized by a standard. A further step is the subsequent use of    of it, is referred to in various ways in the mathematical,
+the calibration curve, for example, to estimate the stimulus       statistical and measurement literature, including ‘orthogonal
+corresponding to a measured value of the response (inverse         distance regression’ [5, 6], ‘generalized distance regression’
+evaluation). A specific challenge is to undertake these steps in   [7], ‘errors in variables’ [8,9] and ‘generalized Gauss–Markov
+such a way as to give valid uncertainties associated with these
+                                                                   regression’ [3].
+estimates following internationally accepted guidelines [1].
+                                                                         The paper is organized as follows. The generalized least-
+     A method commonly used for determining a calibration
+                                                                   squares problem is reviewed together with some of its special
+curve is ordinary least-squares regression. The method has
+the advantage that there are many software implementations         cases (section 2). The validation (section 3) and use (section 4)
+available. However, implicit in its use is the assumption          of a calibration curve established by generalized least-squares
+that the values realized by the standards in the calibration       regression are discussed, and a software implementation of
+have negligible associated uncertainties relative to those of      the method is described (section 5). The performance of
+the measured responses of the system. In many applications,        the method is illustrated using two examples from analytical
+such as those given here, this assumption is inappropriate.        chemistry, for which the calibration data have different
+Ignoring the uncertainties associated with the values realized     uncertainty structures. The first concerns the analysis of
+by the standards can yield biased results and unreliable           natural gas (section 6) and the second the calibration of
+uncertainties associated with estimates of quantities derived      a gas flow dilutor (section 7).           A summary is given
+from the calibration curve.                                        (section 8).
+
+0026-1394/06/040291+08$30.00      © 2006 BIPM and IOP Publishing Ltd   Printed in the UK                                         S291
+M J T Milton et al
+
+2. Determination of a calibration curve                                     the minimization (3) and the constraints (4) may be combined
+                                                                            to give
+2.1. Calibration data                                                                          min e(s, a)T U−1
+                                                                                                             x e(s, a).               (6)
+                                                                                                   s,a
+Calibration involves determining the response v of a measuring              Furthermore, writing
+instrument or system as a function of a stimulus t, where t
+is often associated with values realized by standards. Model                                         Lf(s, a) = e(s, a),                          (7)
+building involves establishing the functional relationship v =              where L is the lower triangular matrix of order 2m in the
+h(t, a) between v and t. The model parameters a =                           Cholesky factorization Ux = LLT of Ux [11], problem (6)
+(a1 , . . . , an )T in this relationship parametrize the possible           becomes
+response behaviour over the stimulus interval of concern, and
+                                                                                                                            
+                                                                                                                            2m
+the actual behaviour is approximated in terms of estimates of                          min f T (s, a) f (s, a) ≡ min              fi2 (s, a),     (8)
+the parameters determined from the measurement data.                                      s,a                         s,a
+                                                                                                                            i=1
+      Suppose measurement data
+                                                                            which is in the form of a standard non-linear least-squares
+                                    
+                                     v                                      problem. The uncertainty matrix Uy associated with a solution
+                               x=       ,                     (1)
+                                     t                                      y = (ŝT , âT )T to problem (8) is given, formally, by
+                                                                                                                
+comprising measured values v = (v1 , . . . , vm )T of the                                              Uŝ Uŝâ
+                                                                                               Uy =                = (JT J)−1 ,       (9)
+response corresponding to values t = (t1 , . . . , tm )T of the                                        Uâŝ Uâ
+stimulus are gathered. The uncertainty matrix (covariance                   where J is the Jacobian matrix of order 2m×(m+n) containing
+matrix)                                                                   the derivatives of f(s, a) with respect to s and a evaluated at
+                           Uv Uvt                                           the solution.
+                    Ux =                                    (2)
+                           Utv Ut                                                The solution to problem (8) may be obtained by the
+of order 2m containing information about the uncertainties                  application of a standard numerical algorithm, for example, the
+associated with x is assumed to be available. The sub-matrix                Gauss–Newton algorithm [12]. The Gauss–Newton algorithm
+Uv of order m contains the covariance (mutual uncertainty)                  in general converges linearly at a rate that depends on the
+u(vi , vj ) associated with the measured values vi and vj , with            condition of the least-squares problem, the size of the weighted
+u(vi , vi ) = u2 (vi ), the variance (squared standard uncertainty)         residual deviations f near the solution and the curvature of
+associated with vi . Similarly, Ut and Uvt = Utv contain,                   the deviations. If the problem is well conditioned, the
+respectively, the uncertainty information u(ti , tj ) and u(vi , tj ).      weighted residual deviations are small and nearly linear in
+                                                                            the parameters, then the convergence can be expected to
+                                                                            be fast [13]. If Ux is poorly conditioned, for example,
+2.2. Generalized least-squares regression
+                                                                            as a consequence of strong correlation effects, the above
+Let r = (r1 , . . . , rm )T and s = (s1 , . . . , sm )T , defining points   approach may be numerically unstable. A stable approach
+(si , ri ) on a calibration curve defined by model parameters               to implementing the Gauss–Newton algorithm in this case is
+a, denote, respectively, the quantities of which v and t are                to use the generalized QR-factorization [14, 15].
+realizations. In generalized least-squares regression, estimates                 The above description of generalized least-squares
+â, r̂ and ŝ are sought such that r̂ and ŝ are ‘close to’ the measured    regression for solving a calibration problem is completely
+values v and t (in a sense defined below) and are constrained               general in terms of the nature of the uncertainties associated
+to lie on a calibration curve defined by â.                                with the calibration data and the form of the calibration
+        Formally, the generalized least-squares problem is to               curve. In the following sections, some particular instances
+solve [2–4]                                                                 of generalized least-squares regression that arise in practice
+                                    T                                   are described.
+                               r−v         −1 r − v
+                    minr,s,a            Ux                            (3)
+                               s−t                s−t                       2.3. Weighted least-squares regression
+subject to the constraints                                                  Suppose the measured values ti are assumed to have negligible
+                                                                            associated uncertainty and the vi are realizations of mutually
+                ri = h(si , a),        i = 1, . . . , m,             (4)
+                                                                            independent quantities. In this case, x is replaced by v and Ux
+in which it is assumed that Ux has full rank.              The              by Uv = diag(u2 (v1 ), . . . , u2 (vm )). With s = t and writing
+importance of generalized least-squares regression comes from                               1
+the fact that it represents maximum likelihood estimation                      fi (a) =          (h(ti , a) − vi ),          i = 1, . . . , m,   (10)
+                                                                                          u(vi )
+for measured values constituting realizations of normally
+distributed quantities. The Gauss–Markov theorem [10] states                the generalized least-squares problem reduces to the (familiar)
+that, with some mild qualifications, the generalized least-                 weighted least-squares problem
+squares approach makes the ‘best’ use of the available data                                                m                
+                                                                                                                h(ti , a) − vi 2
+x and Ux .                                                                        mina f T (a) f (a) ≡ min                       .    (11)
+                                                                                                        a           u(vi )
+     Denoting by h(s, a) the m-vector of elements h(si , a) and                                            i=1
+defining                                                                  In this way, weighted least-squares regression may be regarded
+                              h(s, a) − v                                   as an instance of generalized least-squares regression in which
+                  e(s, a) =                 ,                (5)
+                                 s−t                                        only the measured data v are subject to uncertainty.
+
+S292                                                                                                                  Metrologia, 43 (2006) S291–S298
+                                                                                                              Implementation of a generalized least-squares method
+
+2.4. Distance regression                                                             4. Use of a calibration curve
+Suppose the measured data ti and vi are realizations of mutually
+                                                                                     A calibration curve is typically used for the purpose of inverse
+independent quantities, i.e. Ut = diag(u2 (t1 ), . . . , u2 (tm )),
+                                                                                     evaluation, in which a measured value v0 of the response of
+Uv = diag(u2 (v1 ), . . . , u2 (vm )) and Utv = 0. Then,
+                                                                                     the measuring system, with an associated uncertainty u(v0 ),
+                                 1                                                   is used to determine an estimate t0 of the corresponding
+              fi (s, a) =             (h(si , a) − vi ),                             stimulus and the associated uncertainty u(t0 ). The estimate
+                               u(vi )
+                                                                              (12)   t0 is calculated by solving the equation
+                   1
+    fi+m (s, a) =        (si − ti ),                 i = 1, . . . , m,
+                  u(ti )                                                                                                h(t0 , â) = v0 .                   (15)
+and the generalized least-squares problem reduces to                                 Since this is typically a non-linear equation (the exception is
+                                                           
+                                                           m                         when h defines a straight-line model), a numerical technique,
+               min f T (s, a) f (s, a) ≡ min                      di2 ,              such as bisection, is used to calculate t0 [17]. The uncertainty
+                s,a                                 s,a
+                                                            i=1                      associated with t0 is evaluated by applying the law of
+                                                                              (13)
+                                          2                       2              propagation of uncertainty [1, 18] to obtain
+                          h(si , a) − vi                  si − t i
+            di2 =                               +                         ,                                      −2
+                              u(vi )                       u(ti )                                            ∂h
+                                                                                            u2 (t0 ) =                  (u2 (v0 ) + (∇a h)Uâ (∇a h)T ),    (16)
+in which, at the solution, di corresponds to the ‘generalized’                                               ∂t
+distance between the point (ti , vi ) and the calibration curve.
+                                                                                     where ∇a h is the gradient vector of order 1 × n containing
+Furthermore, in the case u(vi ) = u(ti ), di corresponds to the
+                                                                                     the derivatives of h(t, a) with respect to a, with all derivatives
+orthogonal distance.
+                                                                                     evaluated at t = t0 and a = â.
+
+3. Validation of a calibration curve
+                                                                                     5. Software implementation
+In order to derive valid information from a calibration curve,
+established in the manner described above, the calibration                           XGENLINE1 is a (stand-alone) software package for ordinary
+curve must be shown to be consistent with the data (the                              and generalized least-squares regression to measurement
+measured values and the associated variances and covariances).                       data using polynomial calibration curves. The software
+     If the measured values are subject to additive effects                          uses a Gauss–Newton algorithm with line search [12, 13]
+characterized by a (joint) probability distribution D, and the                       implemented in terms of high quality modules for numerical
+calibration curve and data are consistent, the vector e of                           linear algebra. It uses the solution to the ordinary least-
+residual deviations (equation (5)) evaluated at the solution                         squares regression problem to provide starting estimates for
+can be expected to be a sample from D. If it is plausible                            the generalized least-squares problem. The software provides
+that e is a sample from D then there is no reason to doubt                           information to assist with the validation of the determined
+consistency. A subjective approach to undertaking this test is to                    curve, such as plots of weighted residual deviations, as
+examine the ‘randomness’ of the weighted residual deviations                         well as the ability to undertake inverse evaluation using that
+f (equation (7)) evaluated at the solution. This can be done                         curve. Currently the software supports generalized distance
+most simply by visual inspection. For a small number of                              regression in which for each data point (ti , vi ) the associated
+measured values it is often quite difficult to show that non-                        uncertainties u(ti ) and u(vi ) and covariance u(ti , vi ) may be
+random behaviour is present. For a large number of measured                          specified, with all other covariances assumed to be zero. A
+values non-random behaviour is often apparent.                                       version of the software that permits more general uncertainty
+     In the case that D is a multivariate normal distribution                        structures is under development, as is a version of the software
+with covariance matrix Ux , the chi-squared test provides an                         that takes the form of an ‘add-in’ to Microsoft Excel.
+objective approach to testing consistency. Under the normal                               Polynomials provide an important class of calibration
+assumption, the (observed) chi-squared value                                         curves. They include models that may often be appropriate
+                                                                                     for a measuring system with simple non-linear behaviour.
+                           2
+                          χobs = f T (ŝ, â) f(ŝ, â)                       (14)   Although a representation of polynomials as a power series
+                                                                                     (in terms of monomial basis functions t j , j = 0, 1, 2, . . .) is
+is a realization of a random variable that is distributed as χ 2 (p)                 natural, such a representation can lead to an ill-conditioned
+with p = m − n degrees of freedom. In the chi-squared test,                          formulation of the calibration problem [13]. For this reason,
+                2
+the value of χobs  is compared with the expectation of a random                      XGENLINE uses a representation in terms of Chebsyhev
+                                       2
+variable distributed as χ 2 (p). If χobs   is significantly larger                   polynomials that has much better numerical properties [19].
+than p it is unlikely that the normality assumption holds, i.e.                           Other software implementations of generalized least-
+that one or more of the measured values are discrepant. A                            squares regression are available, such as B LEAST [20] and
+plot of the normalized residual deviations ei /u(ei ) may help                       AMC Software [21], although the latter only treats the case of
+to identify discrepant measured values, for example, as those                        a straight-line calibration curve.
+measured values for which the normalized residual deviation
+                                                                                     1
+exceeds two in absolute value [16].                                                      Available from http://www.eurometros.org/.
+
+Metrologia, 43 (2006) S291–S298                                                                                                                            S293
+M J T Milton et al
+
+6. Analysis of natural gas
+
+6.1. Description
+The price (per unit volume) at which natural gas is traded
+depends on its calorific value, a measure of the quantity of
+energy released when the gas is burned. The calorific value
+is calculated from measured values of the composition of the
+gas. Since the amount of natural gas traded is extremely large,
+it is essential that the composition is determined as well as
+possible with soundly evaluated uncertainties. State-of-the-
+art analysis uses a gas chromatograph (GC) to determine the
+amount fraction of each component species of the gas [22,23].
+A feature of natural gas analysis is that all components2
+are analysed in the same sample simultaneously but usually
+with different chromatographic columns and detectors. The
+composition of the complete mixture is then established by
+combining the results for each component.
+                                                                               Figure 1. The weighted residual deviations associated with the
+      The example considered here concerns the calibration and
+                                                                               measured values of GC peak area in the calibration of a GC for
+use of a single GC for measuring the amount fraction of a                      measuring the amount fraction of n-hexane in natural gas. The
+particular component of natural gas. The GC is calibrated                      calibration curve is a straight-line model determined using ordinary
+with respect to a suite of gravimetrically prepared primary                    least-squares regression.
+standard gas mixtures (PSMs) containing different amount
+fractions of the component. For each PSM an estimate of
+the amount fraction is reported together with the associated
+standard uncertainty. A typical value for the relative standard
+uncertainty is 0.5%, but larger values may be quoted. The
+amount fractions for the different PSMs are assumed to be
+mutually independent.
+      During a calibration, the response (peak area) of the GC
+to each PSM was measured. A typical value for the relative
+standard uncertainty associated with an indication of the GC
+is 0.5%. The response of the GC is assumed to be a linear
+function of amount fraction.
+
+6.2. Results
+In the example considered here, six PSMs, with amount
+fractions in the range 0.1 mmol mol−1 to 1.7 mmol mol−1 , were
+used to calibrate a GC for the measurement of the amount
+fraction of n-hexane in natural gas. Figures 1 and 2 show the                  Figure 2. As figure 1, but the calibration curve is determined using
+weighted residual deviations associated with, respectively, the                generalized least-squares regression, and the weighted residual
+                                                                               deviations associated with the measured values of both GC peak
+ordinary and generalized least-squares straight-line fits to the
+                                                                               area and amount fraction are shown.
+calibration data (table 1). For the evaluation of the former, no
+account is taken of the uncertainties associated with the PSMs,                Table 1. Data for the calibration of a GC for the measurement of the
+whereas for the latter all the available information is used.                  amount fraction of n-hexane in natural gas.
+      The values of the chi-squared statistic associated with the
+fits are, respectively, 7.1 and 2.1. The former is large compared                       Amount fraction                  GC peak area
+                                                                               Estimate/    100 × relative       Estimate 100 × relative
+with the expectation of a random variable distributed as χ 2 (p)               mmol mol  −1
+                                                                                            standard uncertainty /counts  standard uncertainty
+with p = 4 degrees of freedom and, consequently, there is
+evidence to reject the hypothesis that a straight-line model                   0.09          0.5                      87 888 0.7
+                                                                               0.33          3.8                     310 270 0.5
+is consistent with that part of the data used to establish the                 0.52          1.2                     480 730 0.7
+ordinary least-squares fit. On the other hand, the value of 2.1 is             0.94          0.4                     878 372 0.5
+small compared with the expectation and, although consistency                  1.24          0.5                   1 163 126 0.4
+of the model with the calibration data is indicated, it is possible            1.66          0.5                   1 544 971 0.5
+that the uncertainties associated with the data are smaller than
+those given. Due to the paucity of data, it is difficult to make
+                                                                               strong judgements about the fits on the basis of the weighted
+2  The component species typically measured in natural gas analysis are        residual deviations presented in figures 1 and 2.
+methane, carbon dioxide, nitrogen, ethane, propane, i-butane, n-butane, neo-        The indication of the GC for a sample of natural gas
+pentane, i-pentane, n-pentane and n-hexane.                                    with an unknown amount fraction of n-hexane was 284 088
+
+S294                                                                                                                 Metrologia, 43 (2006) S291–S298
+                                                                                          Implementation of a generalized least-squares method
+
+Calibration        MFC A 1 UNIT
+gas
+                    MFC B 1 UNIT
+
+                    MFC C 2 UNITS
+                                                      Vent
+                    MFC D 4 UNITS
+                                          Mass flow
+                                                             123
+                    MFC E 8 UNITS          meter
+
+                    MFC F 16 UNITS
+
+                    MFC G 32 UNITS
+
+                    MFC H 63 UNITS
+
+
+              Complementary
+              gas
+
+
+                                                                                                     Dilution × 100
+Figure 3. The configuration of binary-weighted gas flow dilutor
+comprising eight MFCs A to H.                                         Figure 4. The weighted residual deviations associated with the
+                                                                      calibration of an analyser using a binary-weighted gas flow dilutor.
+                                                                      The calibration curve is a straight-line model, and the dilutions of
+counts with an associated relative standard uncertainty of 0.5%.      the standard gas mixtures used in the calibration are assumed to be
+On the basis of the generalized least-squares straight-line fit       obtained independently with relative standard uncertainties of
+to the calibration data, the estimate of the amount fraction          0.25%.
+is 0.30 mmol mol −1 with an associated relative standard
+uncertainty of 0.6%. This uncertainty is appreciably smaller          7.2. Results
+than that for the PSM having an amount fraction of n-hexane
+                                                                      In the example considered here, a binary-weighted gas flow
+closest to the estimate (3.8% relative) and better (by a factor
+                                                                      dilutor was used to generate 20 gas mixtures with dilutions
+of two, the square root of the degrees of freedom p) than the
+                                                                      of the calibration gas between 4.5% and 95.5%. During the
+‘average’ uncertainty for all the PSMs (about 1% relative).
+                                                                      calibration the response of the analyser to each mixture was
+                                                                      measured. The relative standard uncertainty associated with an
+7. Calibration of a gas flow dilutor                                  indication of the analyser was evaluated by averaging data over
+                                                                      varying time intervals and was found to be 0.1% of full-scale
+7.1. Description                                                      for a two-minute average.
+                                                                           A simple uncertainty structure is often assumed for the
+Gas flow dilutors are used to generate adjustable dilutions of
+                                                                      dilutions of the calibration gas in the mixtures, namely
+a calibration gas by mixing a flow of pure complementary gas
+                                                                      the dilutions are independent and the relative standard
+(often known as diluent) with a flow of the calibration gas taken
+                                                                      uncertainties associated with their estimates are equal.
+from a standard gas mixture at a known dilution (figure 3). In        Figure 4 shows the weighted residual deviations associated
+this way, they permit the range of traceable dilutions that can       with a generalized least-squares straight-line fit to the
+be generated from a single standard gas mixture to be extended.       calibration data established on the basis of this uncertainty
+However, it is essential that dilutors are calibrated periodically.   structure and relative standard uncertainties associated with
+This example concerns the calibration of a gas flow dilutor           the estimates of the dilutions of 0.25%. There is considerable
+with respect to a reference dilutor, where the latter is a binary-    structure present in the weighted residual deviations. The
+weighted gas flow dilutor [24] and the dilutor being calibrated       structure remains in the case that the calibration curve is chosen
+is based on a series of capillaries.                                  to be a quadratic polynomial function. For both straight-line
+     A characteristic of gas flow dilutors is that they may only      and quadratic fits, there is no strong evidence on the basis of
+be used to generate certain dilutions, and it is generally not        the chi-squared test to reject the hypotheses that the fits are
+possible to match the dilutions generated by one dilutor to those     consistent with the data.
+of another. Consequently, the calibration strategy adopted is              In the appendix it is indicated how knowledge of the
+to use the reference dilutor to calibrate the response of a stable    configuration of the reference dilutor, as well as the procedure
+analyser and then to compare the response of the same analyser        employed to set up and use the dilutor, provides the basis for
+to the dilutor undergoing calibration. The focus here is with         obtaining the standard uncertainties associated with estimates
+that part of the process concerned with the calibration of the        of the dilutions as well as the covariances for the dilutions. A
+analyser using the reference dilutor.                                 consequence is that the dilutions obtained from the same mode
+     A feature of the binary-weighted gas flow dilutor used           of operation of the dilutor are positively correlated, whereas
+as the reference is that it can be self-calibrated by means of        those from different modes are negatively correlated. A further
+a sequence of internal flow comparisons [24]. This process            consequence is that the relative standard uncertainty associated
+results in an unusual uncertainty structure associated with           with the dilution varies essentially in inverse proportion to the
+the generated dilutions with correlations between pairs of            dilution. Figure 5 shows the same information as in figure 4 but
+dilutions. The derivation of the uncertainty structure is             for a generalized least-squares straight-fit line fit established on
+described in the appendix.                                            the basis of this more complete uncertainty structure. Taking
+
+Metrologia, 43 (2006) S291–S298                                                                                                        S295
+M J T Milton et al
+
+                                                                        Table 2. The sequence of operations to set up the binary-weighted
+                                                                        network with configuration shown in figure 3.
+                                                                                  Operation
+                                                                              1   Activate B; set to give 1 unit flow on the
+                                                                                   flow meter; close
+                                                                              2   Activate A; set to give an equal 1 unit flow on the
+                                                                                   flow meter; close
+                                                                              3   Activate A + B; read 2 units flow on the
+                                                                                   flow meter; close
+                                                                              4   Activate C; set to an equal 2 units flow on the
+                                                                                   flow meter; close
+                                                                              5   Activate A + B + C; read 4 units flow on the
+                                                                                   flow meter; close
+                                                                              6   Activate D; set to an equal 4 units flow on the
+                                                                                   flow meter; close
+                                                                              7   Activate A + B + C + D; read 8 units flow on the
+                                                                                   flow meter; close
+                               Dilution × 100                                 8   Activate E; set to an equal 8 units flow on the
+                                                                                   flow meter
+Figure 5. As figure 4, but using an uncertainty structure for the                 Etc
+dilutions derived from models that describe the procedure for setting
+up and using the dilutor (see appendix).
+                                                                        Appendix A. Statistical model for binary-weighted
+account of correlation effects is beneficial in that the structure      gas flow dilutor
+of the weighted residual deviations observed in figure 4 is now
+less evident. Although overall the model is now consistent              The configuration of the binary-weighted gas flow dilutor
+with the data, further work will be carried out to refine the           used as the reference dilutor is illustrated in figure 3.
+                                                                        The dilutor comprises seven mass flow controllers (MFCs),
+model in an attempt to accommodate the remaining structure
+                                                                        labelled A to H, which may be connected to cylinders of
+visible in figure 5.
+                                                                        the calibration and complementary gases. The procedure by
+                                                                        which the dilutor is used to generate mixtures at different
+                                                                        dilutions (concentrations) of the calibration gas comprises
+8. Summary                                                              two parts. Firstly, setting up the MFCs to generate specific
+                                                                        flows of gas (appendix A.1) and, secondly, combining the
+The use of generalized least-squares to establish a calibration         outputs of the MFCs to generate mixtures at specific dilutions
+curve on the basis of all available information has been                (appendix A.2). Statistical models for the two parts are
+reviewed. Consideration has been given to the validation                presented and form the basis for the uncertainty structure
+and subsequent use of the calibration curve. Two examples               associated with the generated dilutions.
+from the area of analytical chemistry have been presented to
+illustrate calibration problems. They have different uncertainty        Appendix A.1. Setting up the MFCs
+structures for the calibration data, and from a previously
+                                                                        The sequence of operations followed to set up the MFCs to
+published example [25]. The first example is concerned with             generate specific flows of gas is given in table 2.
+the calibration of an instrument to measure the composition                 Let fB be the flow provided by MFC B, which is set to
+of natural gas. The second example is concerned with the                give a reading on the flow meter of 1 unit of flow, i.e.
+calibration of a gas flow dilutor and illustrates a calibration
+problem in which knowledge of the way it operates is used to                                      fB = 1 + eB ,                         (A1)
+establish the uncertainty structure for the calibration data. The
+calibration curve established on the basis of this uncertainty          where eB is a sample of a random variable with expectation zero
+                                                                        and standard deviation σ that characterizes the repeatability of
+structure has been shown to be more satisfactory than that
+                                                                        the flow provided by MFC B when it is activated.
+established on the basis of simpler assumptions.
+                                                                             Let fA be the flow provided by MFC A, which is set to
+                                                                        give a reading on the flow meter equal to that obtained when
+                                                                        MFC B is activated, i.e.
+Acknowledgments
+                                                                                    fA = fB + eA = (1 + eB,1 ) + eA,1 + eA ,            (A2)
+The National Measurement System Directorate of the UK
+                                                                        where eA,1 and eB,1 are samples of independent random
+Department of Trade and Industry supported this work as
+                                                                        variables with expectations zero and standard deviations σ .
+part of its Valid Analytical Measurement (VAM) and Software             They are used to denote ‘instances’ of the random variables
+Support for Metrology (SSf M) programmes. Our colleagues                associated with the activation of MFCs A and B. They
+Maurice Cox commented on a draft of the paper, Gergely                  correspond to effects that will be common to all (subsequent)
+Vargha acquired the GC data and Nick Martin acquired the                activations of MFCs A and B. In contrast, eA and eB will be
+gas flow dilutor data.                                                  different for each such activation.
+
+S296                                                                                                         Metrologia, 43 (2006) S291–S298
+                                                                                                           Implementation of a generalized least-squares method
+
+    Let fC be the flow provided by MFC C, which is set to                       Table 3. Estimates of flow and associated standard uncertainties
+give a reading on the flow meter equal to that obtained when                    generated by the MFCs B to H of the reference gas flow dilutor
+                                                                                (figure 3). The result for MFC A is not shown because it is only used
+MFCs A and B are activated together, i.e.                                       in the set-up procedure and not in the subsequent use of the dilutora .
+
+            fC = fA + fB + eC                                                    MFC         Flow f /units of flow         u(f )/units of flow      u(f )/f/1
+                  = (1 + eB,1 + eA,1 + eA,2 ) + (1 + eB,2 ) + eC                 B           1                             σ√                       σ
+                                                                                 C           2                             σ √8                     1.41σ
+                  = (2 + eA,1 + eA,2 + eB,1 + eB,2 ) + eC ,            (A3)      D           4                             σ √32                    1.41σ
+                                                                                 E           8                             σ √132                   1.44σ
+where eA,2 and eB,2 are further instances of the random                          F           16                            σ √548                   1.46σ
+variables associated with the activation of MFCs A and B,                        G           32                            σ √2376                  1.49σ
+                                                                                 H           63                            σ 9444                   1.52σ
+and eC is a sample of a random variable with expectation zero
+and standard deviation proportional to the flow provided by                      a
+                                                                                     The data given here correct errors in table 2 of [18].
+MFC C, i.e. 2σ . Since the random variables are independent,
+it follows from model (A3) that the standard uncertainty u(fC )                 Appendix A.2. Generating mixtures with different dilutions
+associated with the flow provided by MFC C is given by
+                                                                                In its first mode of operation, a cylinder of the calibration gas is
+u (fC ) = u (eA,1 )+u (eA,2 )+u (eB,1 )+u (eB,2 )+u (eC )
+    2             2          2         2           2           2                connected to MFCs B to G and a cylinder of the complementary
+                                                                                gas to MFC H (figure 3). By either activating or not the
+            = σ 2 + σ 2 + σ 2 + σ 2 + (2σ )2 = 8σ 2 .                  (A4)
+                                                                                different MFCs (B to G) a flow of calibration gas is produced,
+                                                                                given by
+Let fD be the flow provided by MFC D, which is set to give a
+reading on the flow meter equal to that obtained when MFCs                                           gas
+                                                                                                    f1     = bG f G + b F f F + · · · + b B f B ,            (A8)
+A, B and C are activated together, i.e.
+                                                                                where each element of the row vector b = (bG , . . . , bB ) takes
+fD = fA + fB + fC + eD                                                          a value zero (not activated) or one (activated). The flow of
+        = (4 + 2eA,1 + eA,2 + 2eB,1 +eB,2 + eA,3 + eB,3 +eC,1 ) + eD ,          complementary gas is that provided by MFC H which is always
+                                                                       (A5)     activated, i.e.
+                                                                                                          f1dil = fH .                       (A9)
+where eD is a sample of a random variable with expectation
+                                                                                The dilution x1 of the calibration gas in the mixture is given
+zero and standard deviation proportional to the flow provided
+                                                                                by the flow of the calibration gas as a proportion of the total
+by MFC D, i.e. 4σ . It follows from model (A5) that the stan-
+                                                                                flow, i.e.
+dard uncertainty u(f D ) associated with the flow provided by
+MFC D is given by                                                                                   f1
+                                                                                                         gas
+                                                                                                                 bG fG + · · · + b B fB
+                                                                                          x1 =    gas      =                                .               (A10)
+u2 (fD ) = (2σ )2 + σ 2 + (2σ )2 + σ 2 + σ 2 + σ 2 + (2σ )2 + (4σ )2
+                                                                                                       dil
+                                                                                                 f1 + f1     b G f G + · · · + b B fB + f H
+           = 32σ 2 .                                                   (A6)     For example, setting b = (0, 0, 0, 0, 0, 1) gives a dilution of
+                                                                                1/(1 + 63) ≈ 1.6%, and setting b = (1, 1, 1, 1, 1, 1) gives a
+Furthermore, since there are effects common to the flows
+                                                                                dilution of 63/(63 + 63) = 50%.
+provided by MFC C and MFC D (represented by the terms
+                                                                                     In its second mode of operation, the cylinders of
+eA,1 , eA,2 , eB,1 and eB,2 ), it follows that the flows are correlated,
+                                                                                calibration and complementary gas are interchanged in the
+with covariance given by                                                        configuration shown in figure 3. Then, the flows of the
+u(fC , fD ) = u(eA,1 , 2eA,1 ) + u(eA,2 , eA,2 )                                calibration and complementary gases are given by
+        +u(eB,1 , 2eB,1 ) + u(eB,2 , eB,2 )                                           gas
+                                                                                     f2     = fH,              f2dil = bG fG + bF fF + · · · + bB fB , (A11)
+        = 2σ + σ + 2σ + σ = 6σ
+              2       2      2     2          2
+                                                                       (A7)
+                                                                                where (again) b is a vector of zeros and ones, and the dilution
+The flows provided by MFC E (8 units), MFC F (16 units) and                     x2 by
+MFC G (32 units) and MFC H (63 units) are set similarly3 .                                               gas
+The standard uncertainties associated with the flows generated                                      f2                     fH
+                                                                                          x2 =    gas       =                                .              (A12)
+when the MFCs are activated, as well as the covariances for                                      f2 + f2dil   f H + b G f G + · · · + b B fB
+pairs of flows, are evaluated by applying the law of propagation
+of uncertainty [1, 18] to the models (A1), (A3) and (A5)                        This time, setting b = (0, 0, 0, 0, 0, 1) gives a dilution of
+                                                                                63/(63 + 1) ≈ 98.4%, and setting b = (1, 1, 1, 1, 1, 1) gives
+together with models for the flows provided by MFCs E to
+                                                                                a dilution of 63/(63 + 63) = 50%.
+H. The standard uncertainties are listed in table 3. The results
+                                                                                     By combining the two modes of operation, mixtures with a
+indicate that the sequence of relative standard uncertainties is
+                                                                                range of dilutions between about 1.6% and 98.4% may be pro-
+close to the series 7, 28, 112, 448 and 1792 required for them
+                                                                                duced. Pairs of dilutions are correlated because they depend
+to be completely constant and independent of the flow.
+                                                                                on the flows provided by MFCs that are in common. The stan-
+3  The flow provided by MFC H is set to 63 units, not to the next flow in the
+                                                                                dard uncertainties associated with the dilutions, as well as the
+binary sequence (64 units). This is achieved by calibrating against the flows   covariances for pairs of dilutions, are evaluated by applying the
+of MFCs B to G activated together (i.e. excluding MFC A).                       law of propagation of uncertainty [1, 18] to the models (A10)
+
+Metrologia, 43 (2006) S291–S298                                                                                                                             S297
+M J T Milton et al
+
+and (A12) combined with those for the flows provided by the            [12] Gill P E, Murray W and Wright M H 1981 Practical
+individual MFCs ((A1), (A3), (A5), etc). A consequence is                      Optimization (London: Academic)
+                                                                       [13] Barker R M, Cox M G, Forbes A B and Harris P M 2004
+that dilutions obtained from the same mode of operation of the
+                                                                               Software Support for Metrology Best Practice Guide No. 4:
+dilutor are positively correlated, whereas those from different                Discrete Modelling and Experimental Data analysis
+modes are negatively correlated. A further consequence is that                 National Physical Laboratory, Teddington, UK. Available
+the relative standard uncertainty associated with the dilution                 from http://www.npl.co.uk/ssfm/download/bpg.html.
+varies essentially in inverse proportion to the dilution.              [14] Paige C C 1979 Fast numerically stable computations for
+                                                                               generalized least squares problems SIAM J. Numer. Anal. 16
+                                                                               165–71
+References                                                             [15] Björck A 1996 Numerical Methods for Least Squares
+                                                                               Problems (Philadelphia: SIAM)
+ [1] BIPM, IEC, IFCC, ISO, IUPAC, IUPAP and OIML 1995                  [16] Nielsen L 2002 Evaluation of measurements by the method of
+        Guide to the Expression of Uncertainty in Measurement 2nd              least squares Algorithms for Approximation IV
+        edn (Geneva: International Organisation for                            ed J Leversley et al (Huddersfield: University of
+        Standardisation)                                                       Huddersfield) pp 170–86
+ [2] Forbes A B 1993 Generalised regression problems in                [17] Press W H, Flannery B P, Teukolsky S A and Vettering W T
+        metrology Numer. Algorithms 5 523–34                                   1989 Numerical Recipes: The Art of Scientific Computing
+ [3] Forbes A B, Harris A B and Smith I M 2002 Generalised                     (Cambridge: Cambridge University Press)
+        Gauss–Markov regression Algorithms for Approximation IV        [18] Cox M G and Harris P M 2004 Software Support for Metrology
+        ed J Leversley et al (Huddersfield: University of                      Best Practice Guide No. 6: Uncertainty evaluation National
+        Huddersfield) pp 270–7                                                 Physical Laboratory, Teddington, UK. Available from
+ [4] Cox M G, Forbes A B, Harris P M and Smith I M 2003 The                    http://www.npl.co.uk/ssfm/download/bpg.html.
+        classification and solution of regression problems for         [19] Clenshaw C W and Hayes J G 1965 Curve and surface fitting
+        calibration NPL Report CMSC 24/03, National Physical                   J. Inst. Math. Appl. 1 164–83
+        Laboratory, Teddington, UK. Available from                     [20] ISO 2000 International Standard 6143:2000, Gas
+        http://www.npl.co.uk/ssfm/ download/nplreports.html.                   analysis—comparison methods for determining and
+ [5] Boggs P T, Byrd R H and Schnabel R B 1987 A stable and                    checking the composition of calibration gas mixtures
+        efficient algorithm for nonlinear orthogonal distance                  (Geneva: International Organisation for Standardisation)
+        regression SIAM J. Sci. Stat. Comput. 8 1052–78                [21] Royal Society of Chemistry 2002 Fitting a linear
+ [6] Zwick D 1997 Applications of orthogonal distance regression               functional relationship to data with error on both
+        in metrology Proc. 2nd Int. Workshop on Recent Advances                variables Analytical Methods Committee (AMC) Technical
+        in Total Least Squares and Errors-in-variables Techniques              Brief No. 10
+        (Leuven, Belgium) (Philadelphia: SIAM) pp 265–72               [22] Brown A S, Milton M J T, Cowper C J, Squire G D, Bremser
+ [7] Bartholomew-Biggs M, Butler B P and Forbes A B 2000                       W and Branch R W 2004 Analysis of natural gas by gas
+        Optimisation algorithms for generalised distance regression            chromatography reduction of correlated uncertainties by
+        in metrology Advanced Mathematical and Computational                   normalisation J. Chromatogr. A 1040 215–25
+        Tools for Metrology IV (Series on Advances in Mathematics      [23] Vargha G, Milton M J T, Cox M G and Kamvissis S 2005
+        for Applied Sciences) vol 53 ed P Ciarlini et al (Singapore:           Harmonisation of coupled calibration curves to reduce
+        World Scientific) pp 21–31                                             correlated effects in the analysis of natural gas by gas
+ [8] Isobe T, Feigelson E D, Akritas M G and Babu G J 1990                     chromatography J. Chromatogr. A 1062 239–45
+        Linear regression in astronomy I Astrophys. J. 364 104–13      [24] Goody B A and Milton M J T 2002 High-accuracy gas flow
+ [9] Balsamo A, Mana G and Pennecchi F 2005 On the best fit of a               dilutor using mass flow controllers with binary weighted
+        line to uncertain observation pairs Metrologia 42 376–82               flows Meas. Sci. Technol. 13 1138–45
+[10] Mardia K V, Kent J T and Bibby J M 1979 Multivariate              [25] Milton M J T, Guenther F and Brown A S 2006 Validation of
+        Analysis (London: Academic)                                            the gravimetric values and uncertainties of independently
+[11] Golub G H and Van Loan C F 1996 Matrix Computations 3rd                   prepared primary standard gas mixtures Metrologia 43
+        edn (Baltimore: Johns Hopkins University Press)                        L7–10
+
+
+
+
+S298                                                                                                       Metrologia, 43 (2006) S291–S298
+

@@ -1,0 +1,58 @@
+B. Precisión del promedio (valores de entrada simulados/ilustrativos)
+s_r=0.240000; s_entre=0.300000; n=8; d=6; k=2.0
+u2_prec=0.016200000; u_prec=0.127279221; U_prec=0.254558441
+u_without_between=0.034641016
+s_medias=0.311769145; u_from_daily_means=0.127279221
+
+I. ANOVA un factor aleatorio (datos simulados, tres días y cuatro lecturas/día)
+means=[0.  0.5 0.1]
+grand=0.20000000000000004
+ss_between=0.5599999999999999
+ss_within=0.18000000000000002
+ss_total=0.74
+df_between=2
+df_within=9
+ms_between=0.27999999999999997
+ms_within=0.020000000000000004
+f=13.999999999999996
+f_crit_05=4.256494729093747
+sigma2=0.020000000000000004
+tau2=0.06499999999999999
+sr=0.14142135623730953
+s_between=0.2549509756796392
+sigma2_95pct_CI=(np.float64(0.009462345432868785), np.float64(0.06665705077038304))
+tau2_approx_se=0.070039671; s_entre_delta_approx_se=0.137359096
+
+A. Componente entre días negativa (datos simulados)
+MS_between=0.006533333; MS_within=0.016666667; raw_tau2=-0.002533333
+REML_restringido_sigma2=0.014824242; tau2=0.000000000
+u_media_truncamiento=0.037267800; u_media_REML=0.035147596
+
+I. ANOVA cruzado con interacción (datos simulados; A=2, P=3, r=2)
+grand=0.3500000000000001
+ss_a=0.08333333333333334
+ss_b=0.56
+ss_ab=0.10666666666666669
+ss_e=0.12000000000000002
+df_a=1
+df_b=2
+df_ab=2
+df_e=6
+ms_a=0.08333333333333334
+ms_b=0.28
+ms_ab=0.053333333333333344
+ms_e=0.020000000000000004
+f_a=1.5624999999999998
+f_b=5.249999999999999
+f_ab=2.6666666666666665
+
+A. Analista x campaña, dos medias diarias firmadas por celda (simulado)
+datos_firmados= [[[-0.4, -0.2], [-0.30000000000000004, -0.10000000000000003], [0.0, 0.19999999999999996]], [[-0.10000000000000003, 0.09999999999999998], [-0.4, -0.2], [0.29999999999999993, 0.5]]]
+componentes_A_B_AB_dia= 0.005 0.05666666666666667 0.01666666666666667 0.020000000000000004
+F_A_B_AB= 1.5624999999999998 5.249999999999999 2.6666666666666665
+
+A. Sesgo simulado de un laboratorio, ocho resultados de una jornada
+sesgo=0.300000000; u_media=0.070710678; u_sesgo=0.086602540
+
+I. Cochran C ilustrativo: cuatro grupos normales, n=5 cada uno
+variances=[0.01, 0.012, 0.011, 0.027]; C=0.450000000; Ccrit_05_n5_p4=0.628724461; senal=False

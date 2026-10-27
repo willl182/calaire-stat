@@ -1,0 +1,21 @@
+diff --git c/curso/S2_modelos_calibracion/calc/M08_ejemplos.py w/curso/S2_modelos_calibracion/calc/M08_ejemplos.py
+index a3482f0..581f97b 100644
+--- c/curso/S2_modelos_calibracion/calc/M08_ejemplos.py
++++ w/curso/S2_modelos_calibracion/calc/M08_ejemplos.py
+@@ -98,6 +98,16 @@ def main():
+         u = u_function(x)
+         U = k_a * u
+         print(f"  {x:.8f} {u:.10f} {U:.10f} {cmc(x):.10f} {max(U, cmc(x)):.10f}")
++    # Verificación en todo el intervalo 0-500: cruces de U(x)^2 - CMC(x)^2 = 0.
++    # (k u)^2 - CMC^2 = (k^2*0.006^2 - 0.004^2) x^2 - 2*0.80*0.004 x + (k^2*0.28^2 - 0.80^2)
++    import numpy as np
++    coef = [k_a**2 * 0.006**2 - 0.004**2, -2 * 0.80 * 0.004, k_a**2 * 0.28**2 - 0.80**2]
++    roots = [r.real for r in np.roots(coef) if abs(r.imag) < 1e-12 and 0.0 <= r.real <= 500.0]
++    grid = np.linspace(0.0, 500.0, 5001)
++    dominant = ["CMC" if cmc(x) >= k_a * u_function(x) else "U" for x in grid]
++    changes = [grid[i] for i in range(1, len(grid)) if dominant[i] != dominant[i-1]]
++    print(f"A interval check: coef={[round(c, 6) for c in coef]}; roots in [0,500]={[round(r, 4) for r in roots]}; "
++          f"grid(0.1) changes near={[round(c, 1) for c in changes]}; CMC dominates below, U above")
+ 
+ 
+ 

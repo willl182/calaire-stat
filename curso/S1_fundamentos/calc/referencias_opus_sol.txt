@@ -1,0 +1,254 @@
+Verificación Sol tras Opus, 2026-10-26. Extracción con pdftotext.
+
+GUM: docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf; búsqueda 'B.2.9\n'
+B.2.9
+measurand
+particular quantity subject to measurement
+EXAMPLE
+NOTE
+pressure.
+
+Vapour pressure of a given sample of water at 20 °C.
+The specification of a measurand may require statements about quantities such as time, temperature and
+
+[VIM:1993, definition 2.6]
+B.2.10
+influence quantity
+quantity that is not the measurand but that affects the result of the measurement
+EXAMPLE 1
+
+Temperature of a micrometer used to measure length.
+
+EXAMPLE 2
+
+Frequency in the measurement of the amplitude of an alternating electric potential difference.
+
+EXAMPLE 3
+plasma.
+
+Bilirubin concentration in the measurement of haemoglobin concentration in a sample of human blood
+
+[VIM:1993, definition 2.7]
+Guide Comment: The definition of influence quantity is understood to include values associated with
+measurement standards, reference materials, and reference data upon which the result of a measurement
+may depend, as well as phenomena such as short-term measuring instrument fluctuations and quantities such
+as ambient temperature, barometric pressure and humidity.
+B.2.11
+result of a measurement
+value attributed to a measurand, obtained by measurement
+NOTE 1
+
+When a result is given, it should be made clear whether it refers to:
+
+—
+
+the indication
+
+—
+
+the uncorrected result
+
+—
+
+the corrected result
+
+and whether several values are averaged.
+NOTE 2
+A complete statement of the result of a measurement includes information about the uncertainty of
+measurement.
+
+[VIM:1993, definition 3.1]
+B.2.12
+uncorrected result
+result of a measurement before correction for systematic error
+
+[VIM:1993, definition 3.3]
+B.2.13
+corrected result
+result of a measurement after correction for systematic error
+
+[VIM:1993, definition 3.4]
+
+34
+
+© ISO/IEC 2008 – All rights reserved
+
+ISO/IEC GUIDE 98-3:2008(E)
+
+B.2.14
+accurac
+
+GUM: docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf; búsqueda 'B.2.19\n'
+B.2.19
+error (of measurement)
+result of a measurement minus a true value of the measurand
+NOTE 1
+Since a true value cannot be determined, in practice a conventional true value is used [see VIM:1993,
+definitions 1.19 (B.2.3) and 1.20 (B.2.4)].
+NOTE 2
+When it is necessary to distinguish “error” from “relative error”, the former is sometimes called absolute error
+of measurement. This should not be confused with absolute value of error, which is the modulus of the error.
+
+[VIM:1993, definition 3.10]
+
+36
+
+© ISO/IEC 2008 – All rights reserved
+
+ISO/IEC GUIDE 98-3:2008(E)
+
+Guide Comment: If the result of a measurement depends on the values of quantities other than the
+measurand, the errors of the measured values of these quantities contribute to the error of the result of the
+measurement. Also see the Guide Comment to B.2.22 and to B.2.3.
+B.2.20
+relative error
+error of measurement divided by a true value of the measurand
+NOTE
+Since a true value cannot be determined, in practice a conventional true value is used [see VIM:1993,
+definitions 1.19 (B.2.3) and 1.20 (B.2.4)].
+
+[VIM:1993, definition 3.12]
+Guide Comment: See the Guide Comment to B.2.3.
+B.2.21
+random error
+result of a measurement minus the mean that would result from an infinite number of measurements of the
+same measurand carried out under repeatability conditions
+NOTE 1
+
+Random error is equal to error minus systematic error.
+
+NOTE 2
+Because only a finite number of measurements can be made, it is possible to determine only an estimate of
+random error.
+
+[VIM:1993, definition 3.13]
+Guide Comment: See the Guide Comment to B.2.22.
+B.2.22
+systematic error
+mean that would result from an infinite number of measurements of the same measurand carried out under
+repeatability conditions minus a true value of the measurand
+NOTE 1
+
+
+GUM: docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf; búsqueda 'B.2.23\n'
+B.2.23
+correction
+value added algebraically to the uncorrected result of a measurement to compensate for systematic error
+NOTE 1
+
+The correction is equal to the negative of the estimated systematic error.
+
+NOTE 2
+
+Since the systematic error cannot be known perfectly. the compensation cannot be complete.
+
+[VIM:1993, definition 3.15]
+
+© ISO/IEC 2008 – All rights reserved
+
+37
+
+ISO/IEC GUIDE 98-3:2008(E)
+
+B.2.24
+correction factor
+numerical factor by which the uncorrected result of a measurement is multiplied to compensate for systematic
+error
+NOTE
+
+Since the systematic error cannot be known perfectly, the compensation cannot be complete.
+
+[VIM:1993, definition 3.16]
+
+38
+
+© ISO/IEC 2008 – All rights reserved
+
+ISO/IEC GUIDE 98-3:2008(E)
+
+Annex C
+Basic statistical terms and concepts
+
+C.1 Source of definitions
+The definitions of the basic statistical terms given in this annex are taken from International Standard
+ISO 3534-1:1993* [7]. This should be the first source consulted for the definitions of terms not included here.
+Some of these terms and their underlying concepts are elaborated upon in C.3 following the presentation of
+their formal definitions in C.2 in order to facilitate further the use of this Guide. However, C.3, which also
+includes the definitions of some related terms, is not based directly on ISO 3534-1:1993.
+
+C.2 Definitions
+As in Clause 0 and Annex B, the use of parentheses around certain words of some terms means that the
+words may be omitted if this is unlikely to cause confusion.
+Terms C.2.1 to C.2.14 are defined in terms of the properties of populations. The definitions of terms C.2.15 to
+C.2.31 are related to a set of observations (see Reference [7]).
+C.2.1
+probability
+a real number in the scale 0 to 1 attached to a random event
+NOTE
+It can be related t
+
+GUM: docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf; extracción -layout, numeral 5.2.2 (no H.5.2.2).
+5.2.2 When the input quantities are correlated, the appropriate expression for the combined variance u c2 ( y)
+associated with the result of a measurement is
+
+                      N N                                        N         2              N −1 N
+                              ∂f ∂f                     ⎛ ∂f ⎞ 2                        ∂f ∂f
+      u c2    ( y) = ∑∑       ∂x ∂x j
+                                              (
+                                      u xi , x j =      ⎜  ) ∑
+                                                          ∂x
+                                                             ⎟ u ( xi ) + 2                ∑∑
+                                                                                        ∂x ∂x j
+                                                                                                       (
+                                                                                                u xi , x j     )                 (13)
+                     i =1 j =1 i                   i =1 ⎝ i ⎠               i =1 j =i +1 i
+
+where xi and xj are the estimates of Xi and Xj and u(xi, xj) = u(xj, xi) is the estimated covariance associated
+with xi and xj. The degree of correlation between xi and xj is characterized by the estimated correlation
+coefficient (C.3.6)
+
+                       u(x , x )
+          (
+      r xi , x j =  ) u ( x )i u xj                                                                                              (14)
+                           i    ( j)
+where r(xi, xj) = r(xj, xi), and −1 u r(xi, xj) u +1. If the estimates xi and xj are independent, r(xi, xj) = 0, and a
+change in one does not imply an expected change in the other. (See C.2.8, C.3.6, and C.3.7 for further
+discussion.)
+
+In terms of correlation coefficients, which are more readily interpreted than covariances, the covariance term
+of Equation (13) may be written as
+          N −1 N
+                         ∂f ∂f
+      2   ∑ ∑ ∂xi ∂x j u ( xi ) u ( x j ) r ( xi , x j )                                                                         (15)
+          i =1 j =i +1
+
+
+Equation (13) then becomes, with the aid of Equation (11b),
+               
+
+GUM-6: docs/JCGM_GUM_6_2020.pdf; búsqueda '5.1 A measurand'
+5.1 A measurand (see JCGM 200:2012, 2.3) is in many cases not measured directly, but
+is indirectly determined from other quantities (see JCGM 200:2012, 1.1) to which it is
+related by a measurement model (see JCGM 200:2012, 2.48) such as formula (1) in 5.2. The
+measurement model is a mathematical expression or a set of such expressions (see JCGM
+100:2008, 4.1.2), comprising all the quantities known to be involved in a measurement.
+It enables a value (see JCGM 200:2012, 1.19) of the measurand to be provided and an
+associated standard uncertainty to be evaluated. The measurement model may be specified
+wholly or partly in the form of an algorithm. The quantities to which the measurand is
+related constitute the input quantities (see JCGM 200:2012, 2.50) in the measurement
+model. The measurand constitutes the output quantity (see JCGM 200:2012, 2.51).
+
+5.2 Many measurements are modelled by a real functional relationship f between N realvalued input quantities X 1 , . . . , X N and a single real-valued output quantity (or measurand)
+Y in the form
+Y = f (X 1 , . . . , X N ).
+
+(1)
+
+This simple form is called a real explicit univariate measurement model; real since all
+quantities involved take real (rather than complex) values, explicit because a value for Y
+can be computed directly given values of X 1 , . . . , X N , and univariate since Y is a single,
+scalar quantity. However, it does not apply for all measurements. A measurement model
+can be complex, involving complex-valued quantities (see JCGM 102:2011, 3.2). It can
+be implicit where a value for Y cannot be determined directly given values of X 1 , . . . , X N
+(see 13.5). The measurement model can be multivariate where there is more than one
+measurand, denoted by Y1 , . . . , Ym ; for further information, see 13.4 and JCGM 1

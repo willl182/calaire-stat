@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"sdk"}
+API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+1. Corregí en los libretos los 17 hallazgos de la revisión Opus (O-01 a O-17) y no rechacé ninguno. El hallazgo mayor O-01 queda resuelto: M11-A ahora enseña paso a paso cómo estimar la falsa alarma contando trayectorias simuladas, e informa el error estándar y los denominadores.
+2. Revisé uno por uno los bloques que dejó el intento interrumpido: P01–P24 (respaldo de las 20:08) y Q01–Q07 (respaldo de las 20:15). Quedan registrados en `S3_revision_sol.md`. Ajusté dos: quité un espacio sobrante en M09 y un «>» vacío que rompía la acotación en M12 A2. Los scripts `M09_ejemplos`, `M10_ejemplos`, `M11_ejemplos`, `M12_indicadores` y `S3_verificar_entrega` terminan sin errores.
+3. Actualicé «## Estado de entrega» y `S3_00_indice.md`. Queda pendiente para S4 (O-02): ajustar AX.12, que dice que M11 usa ARL y su ejemplo tiene parámetros distintos de los de M11.

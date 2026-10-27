@@ -1,34 +1,44 @@
+"""ARL bajo N(0,1), inicio cero y límites constantes; refinamiento de malla."""
 import numpy as np
 from scipy.stats import norm
 from math import sqrt
-lam, sigma = .20, 1.
-factor = lam/(2-lam)
-print(f'factor_varianza={factor:.9g}; sd_ewma={sigma*sqrt(factor):.9g}; ARL_geom_p001={1/.01:g}')
 
-# Finite-state Markov approximation of a two-sided EWMA run length.
-h = 3*sigma*sqrt(factor)
-n = 240
-edges = np.linspace(-h, h, n+1)
-centers = (edges[:-1]+edges[1:])/2
-P = np.empty((n,n))
-for i,z in enumerate(centers):
-    mu, sd = (1-lam)*z, lam*sigma
-    P[i,:] = norm.cdf((edges[1:]-mu)/sd)-norm.cdf((edges[:-1]-mu)/sd)
-arl = np.linalg.solve(np.eye(n)-P, np.ones(n))
-start = np.argmin(np.abs(centers))
-print(f'EWMA_grid_states={n}; threshold={h:.9g}; approximate_ARL0={arl[start]:.6g}')
 
-# Finite-state Markov approximation of one-sided CUSUM under N(0,1).
-k, threshold, n = .5, 5., 240
-edges = np.linspace(0., threshold, n+1)
-centers = (edges[:-1]+edges[1:])/2
-P = np.empty((n,n))
-for i,state in enumerate(centers):
-    mu = state-k
-    # The zero atom from max(0, state + X - k) is assigned to the first cell.
-    P[i,0] = norm.cdf((edges[1]-mu))
-    if n > 1:
-        P[i,1:] = norm.cdf(edges[2:]-mu)-norm.cdf(edges[1:-1]-mu)
-arl = np.linalg.solve(np.eye(n)-P, np.ones(n))
-start = 0
-print(f'CUSUM_grid_states={n}; k={k:g}; threshold={threshold:g}; approximate_ARL0={arl[start]:.6g}')
+def ewma_arl(n, lam=.2, limit=1.):
+    edges = np.linspace(-limit, limit, n + 1)
+    states = (edges[:-1] + edges[1:]) / 2
+    mu = (1 - lam) * states[:, None]
+    p = np.diff(norm.cdf((edges[None, :] - mu) / lam), axis=1)
+    arl = np.linalg.solve(np.eye(n) - p, np.ones(n))
+    # Exact start at zero, including when zero is not a cell center.
+    initial = np.diff(norm.cdf(edges / lam))
+    return 1 + initial @ arl
+
+
+def cusum_arl(n, k=.5, limit=5.):
+    # n positive cells, plus a separate state for the probability atom at zero.
+    edges = np.linspace(0., limit, n + 1)
+    states = np.r_[0., (edges[:-1] + edges[1:]) / 2]
+    mu = states[:, None] - k
+    p = np.empty((n + 1, n + 1))
+    p[:, 0] = norm.cdf(k - states)  # P(S_next=0 | S=state), not first cell.
+    p[:, 1:] = np.diff(norm.cdf(edges[None, :] - mu), axis=1)
+    assert np.all(p >= 0) and np.all(p.sum(axis=1) <= 1)
+    arl = np.linalg.solve(np.eye(n + 1) - p, np.ones(n + 1))
+    assert np.max(np.abs(arl - 1 - p @ arl)) < 1e-8
+    return arl[0]
+
+
+if __name__ == '__main__':
+    lam, sigma = .20, 1.
+    factor = lam / (2 - lam)
+    print(f'factor_varianza={factor:.9g}; sd_ewma={sigma*sqrt(factor):.9g}; ARL_geom_p001={1/.01:g}')
+    results = []
+    for n in (240, 480, 960, 1201):
+        e, c = ewma_arl(n), cusum_arl(n)
+        results.append((e, c))
+        print(f'celdas={n}; EWMA_ARL0={e:.6f}; CUSUM_ARL0_atomo_cero={c:.6f}')
+    change = np.abs(np.array(results[-1]) - results[-2])
+    print(f'cambio_960_a_1201={change}; tolerancia_refinamiento=0.1')
+    assert np.all(change < .1), 'Refinamiento insuficiente para el redondeo docente'
+    assert tuple(round(v) for v in results[-1]) == (560, 931)

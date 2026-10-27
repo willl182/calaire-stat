@@ -1,0 +1,6 @@
+# SHA-256 de fuentes de la ficha común verificadas el 26-10-2026
+8e7a270ebcaa4d5fecd5cc0773669e852d49557600aec7ecc06df11eece653b5  docs/srp_sop.pdf
+2961ba763ab352fdb8232417c36832e002349c5210edd8d887b7071d1f814dc1  docs/srp_qapp.pdf
+eeba74ebb65d021e91c1e758ebf30408b56d2b7cbf7c374749fb779a4b8ca3f4  docs/o3_tad_508_20230906_final.pdf
+17d66380637affbd5eea1f369dcb9fd40cad9f02d91a40d44589d4e15d6369ad  docs/Appendix A to Part 58_ Title 40 (up to date as of 10-20-2026).pdf
+d0a8c7080db5e80814ab446f4b722e3d4cf22155646ed12dd95f8b48e1cf3506  docs/BS EN 14625_2012.pdf

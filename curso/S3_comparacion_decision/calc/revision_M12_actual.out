@@ -1,0 +1,14 @@
+A3 — intervalo individual=(np.float64(1.5), np.float64(2.5)) nmol/mol; tolerancia=+/-3.00; acepta=True
+A3 — limite agregado 90%=4.136704%; umbral docente=4.00%; satisface=False
+Origen: ejemplos simulados; no son datos ni desempeño de CALAIRE.
+parejas B: audit=[100.0, 100.0, 100.0, 100.0]; meas=[98.0, 101.0, 99.0, 102.0]; errores=[-2.0, 1.0, -1.0, 2.0] nmol/mol
+cerca de cero: e=0.300000 nmol/mol; d=150.000000%; denominador cero: indefinido
+modelo común: u(media), n=2: 0.905539; n=8: 0.827647 puntos porcentuales
+d (%)=[-2.0, 1.0, -1.0, 2.0]; media(d)=0.000000%; media(|d|)=1.500000%; |media(d)|=0.000000%
+s(d)=1.825742%; SE media=0.912871%; IC bilateral 95% media=[-2.905163%, 2.905163%]; t_0.975,3=3.182446
+chi2_0.10,3=0.584374; CV/limite superior unilateral 90%=4.136704%
+AB=media(|d|)=1.500000%; AS=s(|d|)=0.577350%; t_0.95,3=2.353363; limite superior 95% sesgo absoluto=2.179358%
+escala monitor 1.010: d antes=1.000000%; d despues=2.010000%
+cero=[-0.2, -0.1, 0.0, 0.1, 0.2] nmol/mol; media=-0.000000; s0=0.158114 nmol/mol; 3*s0=0.474342 nmol/mol
+verificaciones agrupadas=[0.5, 1.5, 2.5, 3.5]%; medias de periodo=[1.0, 3.0]%; SE iid=0.645497%; SE de dos periodos=1.000000%
+componente común=0.800000%; promedio de dos=0.800000%; promedio de ocho=0.800000%

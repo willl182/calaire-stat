@@ -1,0 +1,22 @@
+B: U, k, u = 1.2 2.0 0.6
+B: y=100.0; intervalo=(98.8, 101.2); decisión=aceptar
+B: y=102.2; intervalo=(101.0, 103.4); decisión=zona de incertidumbre: retener/escalar
+B: y=106.0; intervalo=(104.8, 107.2); decisión=rechazar
+B: valor corregido x_hat=199.00 nmol/mol
+B: corrección aditiva x_hat-y=-6.00 nmol/mol
+I: lectura individual; sigma=1.5; U=k*sigma=3.0 nmol/mol
+I: TUR=6.250; g=0.0; acceptance=[-10.0,10.0]
+I: theta=0.0; P_accept=1.00000000; P_reject=0.00000000
+I: theta=9.0; P_accept=0.89435023; P_reject=0.10564977
+I: theta=10.5; P_accept=0.26598553; P_reject=0.73401447
+I: TUR=6.250; g=1.0; acceptance=[-9.0,9.0]
+I: theta=0.0; P_accept=1.00000000; P_reject=0.00000000
+I: theta=9.0; P_accept=0.50000000; P_reject=0.50000000
+I: theta=10.5; P_accept=0.03039636; P_reject=0.96960364
+A: observado=9.5; P(theta conforme|y)=0.73466761; P(theta no conforme|y)=0.26533239
+A: prior=Uniform[-12,12], g=0.0; global_FA=0.02646254; global_FR=0.02659615
+A: prior=Uniform[-12,12], g=1.0; global_FA=0.00337106; global_FR=0.08670579
+A: two-sided spec=[-10.0,10.0], guard=1.0, theta=10.5
+A: mean_u_ind=0.56568542; mean_u_dep=0.74833148; cov=0.48000000
+A: independencia; P_FA_at_theta=0.00400497; P_reject_nonconforming_at_theta=0.99599503
+A: dependencia; P_FA_at_theta=0.02251044; P_reject_nonconforming_at_theta=0.97748956

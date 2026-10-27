@@ -1,0 +1,91 @@
+ M curso/S1_fundamentos/M00_libreto.md
+ M curso/S1_fundamentos/M01_libreto.md
+ M curso/S1_fundamentos/M02_libreto.md
+ M curso/S1_fundamentos/M03_libreto.md
+ M curso/S1_fundamentos/M04_libreto.md
+ M curso/S1_fundamentos/S1_revision_sol.md
+ M curso/S1_fundamentos/calc/M00_ejemplos.py
+ M curso/S1_fundamentos/calc/M00_ejemplos_salida_sol.txt
+ M curso/S1_fundamentos/calc/M01_modelo_variables.py
+ M curso/S1_fundamentos/calc/M02_examples.py
+ M curso/S1_fundamentos/calc/M03_ejemplos.py
+ M curso/S1_fundamentos/calc/M04_ejemplos.py
+ M curso/S2_modelos_calibracion/M05_libreto.md
+ M curso/S2_modelos_calibracion/M06_libreto.md
+ M curso/S2_modelos_calibracion/M07_libreto.md
+ M curso/S2_modelos_calibracion/M08_libreto.md
+ M curso/S2_modelos_calibracion/calc/M06_RR_CALAIRE.py
+ M curso/S2_modelos_calibracion/calc/M06_ejemplos.py
+ M curso/S2_modelos_calibracion/calc/M07_ejemplos.py
+ M curso/S2_modelos_calibracion/calc/M08_ejemplos.py
+ M curso/S3_comparacion_decision/M09_libreto.md
+ M curso/S3_comparacion_decision/M10_libreto.md
+ M curso/S3_comparacion_decision/M11_libreto.md
+ M curso/S3_comparacion_decision/M12_libreto.md
+ M curso/S3_comparacion_decision/S3_revision_sol.md
+ M curso/S3_comparacion_decision/calc/M09_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M10_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M11_ejemplos.py
+ M curso/S3_comparacion_decision/calc/M12_indicadores.py
+ M curso/S4_numericos_integracion/AX_bitacora_luna.md
+ M curso/S4_numericos_integracion/AX_libreto.md
+ M curso/S4_numericos_integracion/M13_libreto.md
+ M curso/logs/ESTADO_DETENCION.md
+ M curso/logs/S1_4_revision_sol.log
+ M curso/logs/S2_4_revision_sol.log
+ M curso/logs/S3_4_revision_sol.log
+ M curso/logs/S4_4_revision_sol.log
+ M curso/logs/estado.log
+ M curso/scripts/common.sh
+ M curso/scripts/run_section.sh
+?? curso/S1_fundamentos/S1_00_indice.md
+?? curso/S1_fundamentos/auditoria_interrupcion_sol_2/
+?? curso/S1_fundamentos/calc/entorno_sol.txt
+?? curso/S1_fundamentos/calc/fuentes_00_sha256.txt
+?? curso/S1_fundamentos/calc/informe_00.md
+?? curso/S1_fundamentos/calc/referencias_00/
+?? curso/S1_fundamentos/calc/referencias_12/
+?? curso/S1_fundamentos/calc/referencias_34/
+?? curso/S1_fundamentos/calc/verificar_M00_salida_sol.txt
+?? curso/S1_fundamentos/calc/verificar_M00_sol.py
+?? curso/S1_fundamentos/calc/verificar_entrega_sol.py
+?? curso/S1_fundamentos/versiones/
+?? curso/S2_modelos_calibracion/S2_revision_sol.md
+?? curso/S2_modelos_calibracion/auditoria_interrupcion_sol_2/
+?? curso/S2_modelos_calibracion/auditoria_interrupcion_sol_3/
+?? curso/S2_modelos_calibracion/calc/M05_diseno_sol.out
+?? curso/S2_modelos_calibracion/calc/M06_RR_CALAIRE_sol.out
+?? curso/S2_modelos_calibracion/calc/M06_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/M07_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/M08_ejemplos_sol.out
+?? curso/S2_modelos_calibracion/calc/ajustes_sol.py
+?? curso/S2_modelos_calibracion/calc/fuentes_sol/
+?? curso/S2_modelos_calibracion/calc/m07m08_estado_inicial.txt
+?? curso/S2_modelos_calibracion/versiones/
+?? curso/S3_comparacion_decision/S3_01_ficha_criterios.md
+?? curso/S3_comparacion_decision/auditoria_interrupcion_sol_2/
+?? curso/S3_comparacion_decision/calc/M09_M10_verificacion.py
+?? curso/S3_comparacion_decision/calc/M11_verificacion_sol.out
+?? curso/S3_comparacion_decision/calc/M12_evidencias_fuentes.md
+?? curso/S3_comparacion_decision/calc/S3_verificar_entrega.py
+?? curso/S3_comparacion_decision/calc/auditoria_M09_M10/
+?? curso/S3_comparacion_decision/calc/estado_inicial_20261026.txt
+?? curso/S3_comparacion_decision/calc/fuentes_M11/
+?? curso/S3_comparacion_decision/versiones/
+?? curso/S4_numericos_integracion/AX_revision_haiku.md
+?? curso/S4_numericos_integracion/S4_00_indice.md
+?? curso/S4_numericos_integracion/S4_revision_sol.md
+?? curso/S4_numericos_integracion/versiones/
+?? curso/logs/AX_2_revision_haiku.log
+?? curso/logs/AX_3_ajustes_luna.log
+?? curso/logs/S4_5_revision_opus.log
+?? curso/logs/guardian.out
+?? curso/logs/pausa_20261025_220040.tsv
+?? curso/logs/pausa_20261026_052610.tsv
+?? curso/logs/reanudar2.out
+?? curso/logs/reanudar_pausa.out
+?? curso/logs/reanudar_pausa3.out
+?? curso/scripts/cierre.sh
+?? curso/scripts/cierre_guardian.sh
+?? curso/scripts/reanudar2.sh
+?? curso/scripts/reanudar_pausa.sh

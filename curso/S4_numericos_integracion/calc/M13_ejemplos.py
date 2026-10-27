@@ -6,6 +6,9 @@ from __future__ import annotations
 
 import numpy as np
 from scipy.optimize import least_squares
+from scipy.stats import norm
+import statsmodels.api as sm
+from math import comb
 
 SEED = 13024
 N_MC = 400_000
@@ -20,21 +23,9 @@ def linear_fit(x: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     return beta, covariance
 
 
-def cluster_fit(x: np.ndarray, y: np.ndarray, groups: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    design = np.column_stack((np.ones_like(x), x))
-    beta = np.linalg.lstsq(design, y, rcond=None)[0]
-    residuals = y - design @ beta
-    bread = np.linalg.inv(design.T @ design)
-    meat = np.zeros((2, 2))
-    for group in np.unique(groups):
-        group_design = design[groups == group]
-        group_residuals = residuals[groups == group]
-        score = group_design.T @ group_residuals
-        meat += np.outer(score, score)
-    n_groups = len(np.unique(groups))
-    correction = n_groups / (n_groups - 1) * (len(y) - 1) / (len(y) - 2)
-    covariance = correction * bread @ meat @ bread
-    return beta, covariance
+def daily_fit(x: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    daily_beta = np.array([linear_fit(xi, yi)[0] for xi, yi in zip(x, y)])
+    return daily_beta.mean(axis=0), np.cov(daily_beta, rowvar=False, ddof=1) / len(daily_beta)
 
 
 def huber_fit(x: np.ndarray, y: np.ndarray, scale: float) -> np.ndarray:
@@ -75,6 +66,12 @@ def main() -> None:
     print(f"MC trials={N_MC}; mean={inverse_mean:.6f}; sd={inverse_sd:.6f}; 95% interval={inverse_interval}")
     print(f"linear value={linear_value:.6f}; linear u={linear_sd:.6f}; MC-linear u difference={inverse_sd-linear_sd:.6f}")
 
+    linear_interval = linear_value + np.array([-1, 1]) * norm.ppf(0.975) * linear_sd
+    differences = np.abs(linear_interval - inverse_interval)
+    delta = 0.05  # u = 1.0 to two significant digits, GUM-S1 7.9.2.
+    print(f"linear 95% interval={linear_interval}; endpoint differences={differences}; delta={delta}; favourable={np.all(differences <= delta)}")
+    print(f"MC standard errors: mean={inverse_sd/np.sqrt(N_MC):.6f}; sd (normal approximation)={inverse_sd/np.sqrt(2*(N_MC-1)):.6f}")
+
     # A2/A3: six-level calibration, six complete day blocks; shared day offsets.
     levels = np.array([40.0, 100.0, 180.0, 260.0, 340.0, 440.0])
     day_offsets = np.array([-0.38, -0.19, -0.08, 0.11, 0.23, 0.31])
@@ -88,8 +85,8 @@ def main() -> None:
     ).reshape(6, 6)
     x_grid = np.tile(levels, (6, 1))
     y_grid = 0.65 + 1.0015 * x_grid + day_offsets[:, None] + point_noise
-    day_ids = np.repeat(np.arange(len(day_offsets)), len(levels))
-    beta, cov_beta = cluster_fit(x_grid.ravel(), y_grid.ravel(), day_ids)
+    beta, cov_beta = daily_fit(x_grid, y_grid)
+    _, cov_classical = linear_fit(x_grid.ravel(), y_grid.ravel())
     outputs_y = np.array([80.0, 250.0, 420.0])
     inverse_values = (outputs_y - beta[0]) / beta[1]
     corrections = inverse_values - outputs_y
@@ -102,6 +99,8 @@ def main() -> None:
     sd_outputs = np.sqrt(np.diag(covariance_outputs))
     corr_outputs = covariance_outputs / np.outer(sd_outputs, sd_outputs)
     print("\nA2 joint outputs")
+    print(f"daily mean: df={len(day_offsets)-1}; u(a),u(b)={np.sqrt(np.diag(cov_beta))}")
+    print(f"classical OLS corr(a,b)={cov_classical[0,1]/np.sqrt(np.prod(np.diag(cov_classical))):.6f}; u(c250)={np.sqrt(jacobian[3] @ cov_classical @ jacobian[3]):.6f}")
     print(f"observations={x_grid.size}; days={x_grid.shape[0]}; levels={levels}")
     print(f"a={beta[0]:.8f}; b={beta[1]:.8f}; cov(a,b)={cov_beta[0,1]:.10f}")
     print(f"cov(a,b) matrix=\n{cov_beta}")
@@ -122,6 +121,8 @@ def main() -> None:
     print(f"slope percentile interval={boot_interval[:,0]}")
     print(f"correction at y=250 percentile interval={boot_interval[:,1]}")
 
+    print(f"distinct unordered day multisets={comb(11,6)}; percentile halfwidth/1.96={np.diff(boot_interval,axis=0)[0]/(2*1.96)}")
+
     # A4: simulated influence point; Huber is defined by SciPy's standard Huber loss.
     x_robust = np.array([20., 70., 120., 170., 220., 270., 320., 370.])
     noise = np.array([0.10, -0.18, 0.14, -0.09, 0.06, -0.13, 0.16, -0.04])
@@ -129,13 +130,18 @@ def main() -> None:
     y_influential = y_clean.copy()
     y_influential[-1] += 8.0
     beta_ols_clean, _ = linear_fit(x_robust, y_clean)
-    beta_ols, _ = linear_fit(x_robust, y_influential)
-    beta_huber = huber_fit(x_robust, y_influential, scale=0.35)
+    beta_ols, covariance_ols = linear_fit(x_robust, y_influential)
+    robust = sm.RLM(y_influential, sm.add_constant(x_robust), M=sm.robust.norms.HuberT(t=1.345)).fit(scale_est="mad", cov="H1", maxiter=1000, tol=1e-12)
+    assert robust.fit_history["iteration"] < 1000
+    beta_huber = robust.params
     print("\nA4 OLS versus Huber")
     print(f"influence point x={x_robust[-1]:.1f}; ordinary simulated y={y_clean[-1]:.6f}; altered y={y_influential[-1]:.6f}; alteration=8.0")
     print(f"OLS without alteration: a={beta_ols_clean[0]:.8f}; b={beta_ols_clean[1]:.8f}")
     print(f"OLS with alteration: a={beta_ols[0]:.8f}; b={beta_ols[1]:.8f}")
-    print(f"Huber with alteration (scale=0.35): a={beta_huber[0]:.8f}; b={beta_huber[1]:.8f}")
+    print(f"Huber with alteration (k=1.345, MAD scale): a={beta_huber[0]:.8f}; b={beta_huber[1]:.8f}")
+    print(f"MAD scale={robust.scale:.9f}; c={1.345*robust.scale:.9f}; H1 standard errors={robust.bse}; altered point weight={robust.weights[-1]:.9f}; OLS standard errors={np.sqrt(np.diag(covariance_ols))}")
+    for c in (0.2, 0.35, 1.0, 2.0, 5.0):
+        print(f"sensitivity fixed c={c}: slope={huber_fit(x_robust,y_influential,c)[1]:.8f}")
     print(f"prediction at x=200: OLS={beta_ols[0]+beta_ols[1]*200:.6f}; Huber={beta_huber[0]+beta_huber[1]*200:.6f}")
     print(f"OLS residual at influence point={y_influential[-1]-(beta_ols[0]+beta_ols[1]*x_robust[-1]):.6f}; Huber residual={y_influential[-1]-(beta_huber[0]+beta_huber[1]*x_robust[-1]):.6f}")
 

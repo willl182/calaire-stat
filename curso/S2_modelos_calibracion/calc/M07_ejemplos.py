@@ -1,4 +1,4 @@
-"""Reproduce los ejemplos numéricos simulados de M07."""
+"""Reproduce ejemplos simulados de M07 y el contraste publicado ISO 28037."""
 import numpy as np
 from scipy import stats
 from scipy.optimize import least_squares
@@ -16,6 +16,25 @@ def ols(x, y):
     return beta, residuals, s2, cov_beta
 
 
+def ggmr(x, y, vx, vy):
+    """Ajuste docente con Vxy=0; covarianzas absolutas, sin reescalar por Q."""
+    x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)
+    for matrix in (vx, vy):
+        if matrix.shape != (len(x), len(x)) or not np.allclose(matrix, matrix.T):
+            raise ValueError("Covarianza de dimensión incorrecta o no simétrica")
+    lx, ly = np.linalg.cholesky(vx), np.linalg.cholesky(vy)
+    def residual(theta):
+        a, b = theta[:2]
+        xt = theta[2:]
+        return np.r_[np.linalg.solve(lx, x-xt),
+                     np.linalg.solve(ly, y-a-b*xt)]
+    fit = least_squares(residual, np.r_[0., 1., x])
+    if not fit.success:
+        raise RuntimeError(fit.message)
+    covariance = np.linalg.inv(fit.jac.T @ fit.jac)[:2, :2]
+    return fit, covariance
+
+
 def main():
     # Ejemplo OLS simulado: seis niveles de referencia, error con signo.
     x = np.array([0, 100, 200, 300, 400, 500], dtype=float)
@@ -23,17 +42,12 @@ def main():
     beta, resid, s2, covb = ols(x, y)
     a, b = beta
     s_res = np.sqrt(s2)
-    r = np.corrcoef(x, y)[0, 1]
-    t_slope = (b - 1.0) / np.sqrt(covb[1, 1])
-    p_slope = 2 * stats.t.sf(abs(t_slope), len(x)-2)
     r2 = 1 - np.sum(resid**2) / np.sum((y-y.mean())**2)
     print("OLS simulado: x=", x.tolist(), "y=", y.tolist())
-    t_r = r*np.sqrt((len(x)-2)/(1-r**2))
-    p_r = 2*stats.t.sf(abs(t_r),len(x)-2)
-    print(f"Pearson r={r:.8f}; prueba rho=0: t={t_r:.8f}, g.l.={len(x)-2}, p={p_r:.8g}; R2={r2:.8f}; a={a:.8f}; b={b:.10f}")
+    # M7 no incluye pruebas de correlación ni de pendiente (fuera del alcance de prop_e M7).
+    print(f"R2={r2:.8f}; a={a:.8f}; b={b:.10f}")
     print("residuos=", np.round(resid, 8).tolist())
     print(f"s_res={s_res:.8f}; SE(a)={np.sqrt(covb[0,0]):.8f}; SE(b)={np.sqrt(covb[1,1]):.10f}; cov(a,b)={covb[0,1]:.10f}")
-    print(f"prueba de pendiente b=1: t={t_slope:.8f}; g.l.={len(x)-2}; p={p_slope:.8f}")
     print("R2 no es criterio autónomo de aceptación; cifras arriba son solo ajuste a datos simulados.")
 
     # Uso inverso: respuesta nueva simulada y corrección aditiva.
@@ -41,10 +55,16 @@ def main():
     xhat = (y_new-a)/b
     correction = xhat-y_new
     print(f"uso inverso para y={y_new:.2f}: xhat={xhat:.8f}; xhat-y={correction:.8f} nmol/mol")
+    # u(y nueva) ya representa toda la dispersión de esa indicación.
+    # ISO/TS 28037 11.1.3: no añadir de nuevo s_res como fuente independiente.
     u_y_new=0.20
-    u2_xhat=(u_y_new**2+s_res**2+covb[0,0]+xhat**2*covb[1,1]+2*xhat*covb[0,1])/b**2
+    parameter_variance=covb[0,0]+xhat**2*covb[1,1]+2*xhat*covb[0,1]
+    u2_xhat=(u_y_new**2+parameter_variance)/b**2
     u_xhat=np.sqrt(u2_xhat)
-    print(f"incertidumbre inversa linealizada (u(y)={u_y_new:.2f}, covarianza de parámetros): u(xhat)={u_xhat:.8f} nmol/mol; k_t95={stats.t.ppf(.975,len(x)-2):.8f}; U={stats.t.ppf(.975,len(x)-2)*u_xhat:.8f}")
+    # El bloque completo de parámetros comparte la estimación residual (4 g.l.).
+    nu_eff=(u_y_new**2+parameter_variance)**2/(parameter_variance**2/(len(x)-2))
+    k_inverse=stats.t.ppf(.975,nu_eff)
+    print(f"incertidumbre inversa linealizada (u(y) total={u_y_new:.2f}): u(xhat)={u_xhat:.8f} nmol/mol; nu_eff={nu_eff:.8f}; k95={k_inverse:.8f}; U={k_inverse*u_xhat:.8f}")
     # Intervalo de confianza de la media de respuesta y predicción de nueva lectura.
     x0 = 250.0
     X0 = np.array([1.0, x0])
@@ -95,6 +115,8 @@ def main():
     F_lof = (ss_lof/(m-2))/(ss_pe/(N-m))
     p_lof = stats.f.sf(F_lof,m-2,N-m)
     print(f"falta de ajuste simulada: a={br[0]:.8f}, b={br[1]:.10f}; SS_LOF={ss_lof:.8f}; SS_PE={ss_pe:.8f}; F({m-2},{N-m})={F_lof:.8f}; p={p_lof:.8f}")
+    print("medias por nivel=", means.tolist())
+    print("residuos absolutos de medias por nivel=", (means-(br[0]+br[1]*np.unique(xr))).tolist())
     print("residuos relativos por nivel (%)=",np.round(100*(means-(br[0]+br[1]*np.unique(xr)))/np.maximum(np.abs(means),1e-12),6).tolist())
 
     # GGMR demostrativo, con incertidumbre correlacionada entre x, Vxy=0.
@@ -104,14 +126,7 @@ def main():
     ux=np.array([0.25]*6); uy=np.array([0.40]*6)
     Vx=np.diag(ux**2)+(0.12**2)*np.ones((6,6))
     Vy=np.diag(uy**2)
-    Lx=np.linalg.cholesky(Vx); Ly=np.linalg.cholesky(Vy)
-    def objective(theta):
-        aa,bb=theta[:2]; xt=theta[2:]
-        rx=np.linalg.solve(Lx,xobs-xt)
-        ry=np.linalg.solve(Ly,yobs-(aa+bb*xt))
-        return np.r_[rx,ry]
-    init=np.r_[0.,1.,xobs]
-    fit=least_squares(objective,init)
+    fit, covg = ggmr(xobs, yobs, Vx, Vy)
     ag,bg=fit.x[:2]; xadj=fit.x[2:]
     chi2=float(fit.fun@fit.fun)
     dof=len(xobs)-2
@@ -120,22 +135,44 @@ def main():
     print(f"a={ag:.8f}; b={bg:.10f}; x ajustadas={np.round(xadj,8).tolist()}")
     print(f"chi2 ponderado={chi2:.8f}; g.l. declarados para el ejemplo={dof}; cola superior p={pchi:.8f}")
     print("Vx diagonal más componente común 0.12^2; Vy diagonal 0.40^2; Vxy=0")
+    print("GGMR discrepancias blanqueadas zx=", np.round(fit.fun[:len(xobs)], 8).tolist())
+    print("GGMR discrepancias blanqueadas zy=", np.round(fit.fun[len(xobs):], 8).tolist())
+    assert np.isclose(np.sum(fit.fun**2), chi2)
+    print("Son componentes del objetivo Q, no pruebas independientes por punto tras ajustar.")
     y_exact=0.3+1.001*xobs
-    def objective_exact(theta):
-        aa,bb=theta[:2]; xt=theta[2:]
-        return np.r_[np.linalg.solve(Lx,xobs-xt),
-                     np.linalg.solve(Ly,y_exact-(aa+bb*xt))]
-    exact=least_squares(objective_exact,np.r_[0.,1.,xobs])
+    exact, _ = ggmr(xobs, y_exact, Vx, Vy)
     chi2_low=float(exact.fun@exact.fun)
     print(f"GGMR simulado con datos casi perfectamente lineales: chi2 ponderado={chi2_low:.12g}; mismo modelo y covarianzas")
     y_high=yobs.copy(); y_high[3]+=5.0
-    def objective_high(theta):
-        aa,bb=theta[:2]; xt=theta[2:]
-        return np.r_[np.linalg.solve(Lx,xobs-xt),
-                     np.linalg.solve(Ly,y_high-(aa+bb*xt))]
-    high=least_squares(objective_high,np.r_[0.,1.,xobs])
+    high, _ = ggmr(xobs, y_high, Vx, Vy)
     chi2_high=float(high.fun@high.fun)
     print(f"GGMR simulado con discrepancia introducida en un punto: chi2 ponderado={chi2_high:.8f}; mismo modelo y covarianzas")
+    # Misma orientación y mismos datos para los tres métodos.
+    Xg = np.column_stack((np.ones(len(xobs)), xobs))
+    bo = np.linalg.lstsq(Xg, yobs, rcond=None)[0]
+    bw = np.linalg.lstsq(Xg / uy[:, None], yobs / uy, rcond=None)[0]
+    _, cov_no_common = ggmr(xobs, yobs, np.diag(ux**2), Vy)
+    print(f"Mismo conjunto: OLS={bo}; WLS={bw}; GGMR={fit.x[:2]}")
+    print(f"Componente común: u(a) con={np.sqrt(covg[0,0]):.8f}, sin={np.sqrt(cov_no_common[0,0]):.8f}; u(b)={np.sqrt(covg[1,1]):.10f}")
+    print(f"GGMR colas: inferior={stats.chi2.cdf(chi2,dof):.8f}; superior con discrepancia={stats.chi2.sf(chi2_high,dof):.8g}")
+
+    # Publicado: ISO/TS 28037:2010, 10.3, tablas 25-26, pp. 35-36.
+    xp = np.array([50.4, 99., 149.9, 200.4, 248.5, 299.7, 349.1])
+    yp = np.array([52.3, 97.8, 149.7, 200.1, 250.4, 300.9, 349.2])
+    vxp = np.array([[.50,0,.25,0,.25,0,.25], [0,1.25,1,0,0,1,1],
+                    [.25,1,1.50,0,.25,1,1.25], [0,0,0,1.25,1,1,1],
+                    [.25,0,.25,1,1.50,1,1.25], [0,1,1,1,1,2.25,2],
+                    [.25,1,1.25,1,1.25,2,2.50]])
+    vyp = 4*np.eye(7) + np.ones((7,7))
+    fp, cp = ggmr(xp, yp, vxp, vyp)
+    qp = float(fp.fun @ fp.fun)
+    print(f"ISO publicado: a={fp.x[0]:.8f}; b={fp.x[1]:.8f}; Q={qp:.8f}; u(a)={np.sqrt(cp[0,0]):.8f}; u(b)={np.sqrt(cp[1,1]):.8f}; cov={cp[0,1]:.8f}")
+    assert np.allclose(fp.x[:2], [.3424, 1.0012], atol=5e-5, rtol=0)
+    assert abs(qp-1.772) < .0005
+    assert np.allclose(np.sqrt(np.diag(cp)), [2.0569, .0090], atol=5e-5, rtol=0)
+    assert abs(cp[0,1] - (-.0129)) < 5e-5
+    assert np.allclose(fp.x[2:], [50.5727,98.5682,149.6080,200.4286,248.7393,299.4759,348.8921], atol=5e-5, rtol=0)
+    print("Contraste ISO: parámetros, abscisas y Q concuerdan con el redondeo publicado; no valida todos los casos Vxy=0.")
 
 
 if __name__ == '__main__':
