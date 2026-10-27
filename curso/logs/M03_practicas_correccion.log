@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué y registré decisiones para los nueve hallazgos **H-01 a H-09** en `curso/logs/M03_practicas_luna.md`. Ocho se aplicaron; H-07, que inicialmente había rechazado, también quedó aplicado: la práctica B ahora incluye una entrada triangular y el uso de \(t(0,975;15)\), sin invadir la inferencia de M4.
+
+Corregí el cálculo de la razón sin covarianza a **u(R) = 0,53125**, limité la práctica I al alcance de M3 y añadí los pares de Blom verificables, la salida gráfica accesible y el cálculo de autocorrelación pedido para A. La figura se genera con el script y contiene seis puntos, ejes con unidades y una tabla equivalente.
+
+La ejecución final de `curso/.venv/bin/python curso/S1_fundamentos/calc/M03_practicas_luna.py` terminó con **rc=0** y `comprobaciones_M03_practicas=OK`. Las paletas clara y oscura pasaron la validación; `git diff --check` no reportó errores. No pude inspeccionar la figura en un navegador porque no hay Playwright ni Puppeteer instalados.
+
+No hice commits. Los cambios propios se limitaron a los bloques de práctica de `M03_libreto.md`, el script, la figura generada y la bitácora. No alteré referencias, claves ni citas existentes.

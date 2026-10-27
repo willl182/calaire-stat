@@ -1,0 +1,3 @@
+# S-M03-03 — entradas y serie de autocorrelación
+
+Supervisor leyó prácticas y script. A pide Pearson de y0..y11 y y1..y12 de la serie con deriva de 16 observaciones, pero script calcula 0,5 para otra serie de escena A2 [1,.5,-.5,-1,...]. No son los mismos datos. Elegir explícitamente en enunciado la serie A2 (enumerarla y diferenciarla de la serie con deriva usada en bloques), o calcular para la serie con deriva y corregir solución/script/bitácora. No intercambiar ambas series silenciosamente. Además, enunciado de canales no entrega A=1 y B=0,8, necesarios para razón y sensibilidades: añadir valores como entradas, no solo en solución. Mantener tareas aplicadas y bibliografía intacta.

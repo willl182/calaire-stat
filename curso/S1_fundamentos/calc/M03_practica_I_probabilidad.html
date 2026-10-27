@@ -1,0 +1,26 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gráfico de probabilidad normal — práctica I de M03</title>
+<style>
+:root { color-scheme: light; --surface:#fcfcfb; --ink:#0b0b0b; --muted:#52514e; --series:#2a78d6; --grid:#e1e0d9; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme:dark; --surface:#1a1a19; --ink:#f0efec; --muted:#c3c2b7; --series:#3987e5; --grid:#2c2c2a; } }
+:root[data-theme="dark"] { color-scheme:dark; --surface:#1a1a19; --ink:#f0efec; --muted:#c3c2b7; --series:#3987e5; --grid:#2c2c2a; }
+body { margin:2rem auto; max-width:850px; padding:0 1rem; background:var(--surface); color:var(--ink); font:16px system-ui,sans-serif; }
+svg { width:100%; height:auto; overflow:visible; } svg text { fill:var(--muted); font:14px system-ui,sans-serif; }
+.grid { stroke:var(--grid); stroke-width:1; } .axis { stroke:var(--muted); stroke-width:1.2; } .point { fill:var(--series); stroke:var(--surface); stroke-width:2; }
+table { border-collapse:collapse; margin-top:1rem; } th,td { padding:.4rem .8rem; border-bottom:1px solid var(--grid); text-align:right; }
+</style><body><main><h1>Gráfico de probabilidad normal</h1><p>Práctica I de M03 · datos fijados para el ejercicio · errores (nmol/mol)</p>
+<svg viewBox="0 0 760 500" role="img" aria-labelledby="title desc"><title id="title">Gráfico de probabilidad normal de seis errores simulados</title><desc id="desc">Cuantiles normales teóricos de Blom frente a errores ordenados. Los seis puntos muestran empates en menos 0,10, cero y 0,10 nmol/mol; no certifican normalidad.</desc>
+<line x1="90" y1="328.33" x2="680" y2="328.33" stroke="#e1e0d9"/> <text x="78" y="333.33" text-anchor="end">-0,1</text>
+<line x1="90" y1="225.00" x2="680" y2="225.00" stroke="#e1e0d9"/> <text x="78" y="230.00" text-anchor="end">0,0</text>
+<line x1="90" y1="121.67" x2="680" y2="121.67" stroke="#e1e0d9"/> <text x="78" y="126.67" text-anchor="end">0,1</text>
+<line x1="188.33" y1="70" x2="188.33" y2="380" stroke="#e1e0d9"/> <text x="188.33" y="404" text-anchor="middle">-1</text>
+<line x1="385.00" y1="70" x2="385.00" y2="380" stroke="#e1e0d9"/> <text x="385.00" y="404" text-anchor="middle">0</text>
+<line x1="581.67" y1="70" x2="581.67" y2="380" stroke="#e1e0d9"/> <text x="581.67" y="404" text-anchor="middle">1</text><line class="axis" x1="90" y1="380" x2="680" y2="380"/><line class="axis" x1="90" y1="70" x2="90" y2="380"/><circle cx="132.96" cy="328.33" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil -1,28; error -0,10 nmol/mol</title></circle>
+<circle cx="258.48" cy="328.33" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil -0,64; error -0,10 nmol/mol</title></circle>
+<circle cx="345.29" cy="225.00" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil -0,20; error 0,00 nmol/mol</title></circle>
+<circle cx="424.71" cy="225.00" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil 0,20; error 0,00 nmol/mol</title></circle>
+<circle cx="511.52" cy="121.67" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil 0,64; error 0,10 nmol/mol</title></circle>
+<circle cx="637.04" cy="121.67" r="6" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Cuantil 1,28; error 0,10 nmol/mol</title></circle>
+<text x="385.0" y="480" text-anchor="middle">Cuantil normal teórico</text><text transform="translate(24 225.0) rotate(-90)" text-anchor="middle">Error observado (nmol/mol)</text></svg>
+<h2>Tabla accesible de los puntos</h2><table><caption>Posiciones de Blom, cuantiles y errores ordenados</caption><thead><tr><th>Cuantil normal teórico</th><th>Error observado (nmol/mol)</th></tr></thead><tbody><tr><td>-1,28</td><td>-0,10</td></tr><tr><td>-0,64</td><td>-0,10</td></tr><tr><td>-0,20</td><td>0,00</td></tr><tr><td>0,20</td><td>0,00</td></tr><tr><td>0,64</td><td>0,10</td></tr><tr><td>1,28</td><td>0,10</td></tr></tbody></table>
+<p>Serie única: el título identifica la serie; las marcas azules tienen forma circular y contorno de superficie. Pase el puntero sobre cada punto para consultar sus valores. La figura no constituye una prueba de normalidad.</p></main></body></html>

@@ -1,0 +1,15 @@
+Escribí `curso/citas/S4_revision_final_haiku.md`. No edité otros archivos ni hice commits.
+
+**Veredicto:** el cierre de citas S4 es aceptable con defectos residuales menores. Ninguno bloquea, pero F01 y F02 conviene corregirlos antes de declarar el lote cerrado.
+
+- **Cobertura:** completa. Hay 69 ocurrencias (M13 22, AX 47) y coinciden con el inventario y con las 69 filas del cotejo.
+- **H01–H10:** los cambios están aplicados en M13 y AX (H01, H02, H03, H04, H06, H08). H05 se aplicó con la categoría «no verificable». H07 y H09 se mantienen por decisión de lote. H10 quedó parcial.
+- **Residuales:**
+  - **F01:** `AX_libreto.md:233` anida corchetes en `[BIPM-K1 §8, ec. [2]–[3]]`.
+  - **F02:** el cotejo cita líneas de evidencia erróneas. GUM 5.2.2 aparece como 1692 y debería ser 1664; la línea 2275 de GUM-S1 es un encabezado y el pasaje está en 2239. El contenido es correcto.
+  - **F03:** `AX_libreto.md:287` atribuye una deducción a Hahs-Vaughn §§6.1, 9.1, que siguen no verificadas.
+  - **F04:** el cotejo dice «se comprobó cada localizador» y «confirma 2013» para Montgomery, cuando el libreto dice «consta» y varias filas no se comprobaron.
+  - **F05:** la notación de localizadores sigue mezclada.
+- **Límites:** las evidencias del cotejo viven en `/tmp/`, fuera del repo. Reabrí unas pocas líneas y coinciden con lo declarado, excepto F02. La fórmula CFR58-A y las fuentes externas (Huber, Efron–Tibshirani, Montgomery, JCGM 106, ILAC-G8) siguen sin verificar, y la guía §5 no lista algunas claves.
+
+No revisé ejercicios ni prácticas, y no se citan páginas como evidencia.

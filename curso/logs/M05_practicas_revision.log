@@ -1,0 +1,17 @@
+La revisión está escrita en `curso/logs/M05_practicas_revision_haiku.md`. Encontré 14 hallazgos: 2 de severidad alta, 6 medias y 6 bajas. No edité libretos ni scripts, y no audité referencias.
+
+**Hallazgos principales**
+
+- **H-01 (alta):** la solución de I cita un máximo de 1,23 que no aparece en la tabla. El valor correcto del contraste es 1,22.
+- **H-02 (alta):** la regla simulada de I es determinista. Las dos réplicas por combinación darían el mismo valor, pero el enunciado dice que cada fila es una corrida independiente y la tabla tiene ocho filas, no dieciséis.
+- **H-04 (media):** la interacción F×C vale 0,30 en I2 y 0,60 en la práctica. Son convenciones distintas sin aclarar, y 0,60 no lo imprime ningún script.
+- **H-05 (media):** el plan alternativo de A con una lectura por ciclo no se resuelve. Con esa estructura, el estrato de lectura dentro de ciclo tiene 0 grados de libertad y el componente de ciclo no es separable.
+- **H-06 y H-07 (media):** prop_e exige escalonados en A y potencia con reparto del esfuerzo en I. La enseñanza está, pero los bloques de práctica no los evalúan.
+- **H-08 (media):** ninguna práctica declara la escala temporal, que prop_e exige.
+- **H-09 (media):** el conteo 12 × 8 × 6 coincide con la nota del certificado (hoja `Fotometro`, E17), pero los datos de `Dia1`–`Dia6` no lo reproducen. Hay 117 filas por día, nueve etiquetas de repetición por bloque y `Cycle = 1` en todas las filas. Lo propongo como hallazgo de archivo para el responsable, no como ejercicio.
+
+**Verificado sin hallazgos:** ejecuté los dos scripts (código 0) y todas las cifras del libreto coinciden, salvo H-01 y H-04. Los datos de B son propios, los de I y A son simulados y rotulados, y no hay atribuciones a CALAIRE. La diferencia del libreto respecto a HEAD se limita a los tres marcadores de práctica.
+
+**Ubicación de la bitácora:** la pedida, `curso/logs/M05_practicas_luna.md`, no existe. La real está en `curso/S2_modelos_calibracion/M05_practicas_luna.md`, y lo registro en H-10.
+
+No hice commits.

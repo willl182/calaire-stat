@@ -1,0 +1,11 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Ronda final M00 completada.
+
+- **F-H06:** declarado en la bitácora como aplicado. El script compara los metadatos de entrada `x`/`y` con la unidad esperada y la prueba negativa confirma que rechaza `y="ng/m3"`. No requiere librería de unidades ni cambios en los ejercicios.
+- **F-H05b:** anotado en el script y en decisiones como **solución exclusivamente docente**, no plantilla para el alumnado. Se conservó su salida numérica.
+- Se mantuvieron los bloques autorizados y los encabezados `[PRÁCTICA]` sin cambios.
+- Ejecuté `./curso/.venv/bin/python -I curso/S1_fundamentos/calc/M00_practicas_luna.py`: terminó correctamente y reprodujo las cifras; la prueba negativa reportó `True`.
+
+Registré ambas decisiones en `curso/S1_fundamentos/M00_bitacora_luna.md` y `curso/logs/reanudacion_AB_M00_decisiones_luna.md`.

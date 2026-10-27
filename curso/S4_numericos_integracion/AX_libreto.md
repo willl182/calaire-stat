@@ -9,7 +9,7 @@
 | Contenido | AX.1–AX.13 según `guia_libreto.md` §7; incluye deducciones y desarrollos enumerados allí, sin crear prácticas ni evaluaciones. Los anexos no se evalúan (prop_e §9). |
 | Datos de ejemplos | Simulados con parámetros explícitos para ilustrar las deducciones; no son datos de CALAIRE ni resultados del SRP o del Level 2. |
 | Remisiones | M01–M13, identificadas en cada anexo («Se usa desde…») y en la lista de remisiones de la bitácora. |
-| Referencias clave | GUM; GUM-S1; ISO/TS 28037; Crowder 2020; Hahs-Vaughn y Lomax; Montgomery. |
+| Referencias clave | GUM; GUM-S1; ISO/TS 28037; Crowder2020; Hahs-Vaughn; Montgomery 2013. |
 
 | Anexo | Nivel de primer uso | Consumidores |
 |---|---|---|
@@ -34,7 +34,7 @@ Este capítulo no agrega un nivel de evaluación ni una práctica. Las secciones
 
 ### Escena AX.1. La media estimada consume un grado de libertad
 
-Vamos a seguir por qué la dispersión de una muestra se estima con el divisor `n − 1` cuando antes calculamos la media a partir de esos mismos datos. No es una corrección arbitraria: al ajustar la media, los desvíos quedan sujetos a una restricción. Para una muestra aleatoria independiente $X_1,\ldots,X_n$ de una población con media $\mu$ y varianza $\sigma^2$, cada desviación respecto de la media muestral no puede elegirse libremente, porque su suma es cero. La demostración usa el modelo de observaciones independientes con varianza común; no convierte cualquier grupo de lecturas dependientes en una muestra independiente. [Hahs-Vaughn §2.3; Crowder 2020 §4.3]
+Vamos a seguir por qué la dispersión de una muestra se estima con el divisor `n − 1` cuando antes calculamos la media a partir de esos mismos datos. No es una corrección arbitraria: al ajustar la media, los desvíos quedan sujetos a una restricción. Para una muestra aleatoria independiente $X_1,\ldots,X_n$ de una población con media $\mu$ y varianza $\sigma^2$, cada desviación respecto de la media muestral no puede elegirse libremente, porque su suma es cero. La demostración usa el modelo de observaciones independientes con varianza común; no convierte cualquier grupo de lecturas dependientes en una muestra independiente. [Hahs-Vaughn §3.3.3.3]
 
 > **[PIZARRA]** $\sum_{i=1}^{n}(X_i-\bar X)=0$ y $\sum_{i=1}^{n}(X_i-\bar X)^2=\sum_{i=1}^{n}(X_i-\mu)^2-n(\bar X-\mu)^2$.
 
@@ -46,7 +46,7 @@ En palabras: calculamos las distancias a la media de la muestra, elevamos al cua
 
 > **[ERROR CRÍTICO]** No interpreten `n − 1` como regla automática para cualquier conjunto de lecturas. La unidad independiente y el modelo determinan los grados de libertad. Si hay dependencia temporal, bloques, parámetros adicionales estimados o una estructura de varios días, detengan el cálculo y consulten el modelo del capítulo correspondiente.
 
-Este resultado se usa en M2 para describir dispersión muestral y en M4 para comprender los grados de libertad de la t de una media. La deducción se consulta aquí; en el capítulo M02/M04 se aplica sin desarrollarla. [Hahs-Vaughn y Lomax]
+Este resultado se usa en M2 para describir dispersión muestral y en M4 para comprender los grados de libertad de la t de una media. La deducción se consulta aquí; en el capítulo M02/M04 se aplica sin desarrollarla. [Hahs-Vaughn §3.3.3.3]
 
 ## AX.2. Varianza de combinaciones lineales y propagación con covarianza
 
@@ -104,7 +104,7 @@ M03-B convierte especificaciones a incertidumbres estándar; M08 reutiliza las v
 
 ### Escena AX.4. Separar el día de la lectura
 
-Vamos a deducir el resultado del modelo equilibrado de un factor aleatorio que usa M6. Para cada día $i$ y lectura $j$, escribimos el error como una media general, un efecto aleatorio de día y un error de lectura. Los efectos diarios son independientes con varianza $\tau^2$; las lecturas son independientes con varianza $\sigma^2$, e independientes de los días. Hay el mismo número $n$ de lecturas en cada uno de los $d$ días: $i=1,\ldots,d$ y $j=1,\ldots,n$. [GUM H.5; Crowder 2020 §9.3.1]
+Vamos a deducir el resultado del modelo equilibrado de un factor aleatorio que usa M6. Para cada día $i$ y lectura $j$, escribimos el error como una media general, un efecto aleatorio de día y un error de lectura. Los efectos diarios son independientes con varianza $\tau^2$; las lecturas son independientes con varianza $\sigma^2$, e independientes de los días. Hay el mismo número $n$ de lecturas en cada uno de los $d$ días: $i=1,\ldots,d$ y $j=1,\ldots,n$. [GUM H.5; Crowder2020 §9.3.1]
 
 > **[PIZARRA]** $e_{ij}=\mu+D_i+\varepsilon_{ij}$; $E(D_i)=E(\varepsilon_{ij})=0$, $\operatorname{var}(D_i)=\tau^2$, $\operatorname{var}(\varepsilon_{ij})=\sigma^2$.
 
@@ -130,13 +130,13 @@ En M6-B el operador recibe las componentes y calcula su contribución de precisi
 
 ### Escena AX.5. De minimizar residuos a la incertidumbre de la recta
 
-Escribimos la recta como $y=a+bx$. En forma matricial, cada fila de la matriz de diseño contiene uno y el valor de referencia. OLS elige los parámetros que minimizan la suma de residuos cuadrados. Derivamos respecto del vector de parámetros, igualamos a cero y obtenemos las ecuaciones normales. Si la matriz de diseño tiene rango completo, la solución es única. [Crowder 2020 §10.2.1–10.2.2; ISO 28037 5.8.1]
+Escribimos la recta como $y=a+bx$. En forma matricial, cada fila de la matriz de diseño contiene uno y el valor de referencia. OLS elige los parámetros que minimizan la suma de residuos cuadrados. Derivamos respecto del vector de parámetros, igualamos a cero y obtenemos las ecuaciones normales. Si la matriz de diseño tiene rango completo, la solución es única. [Crowder2020 §10.2.1; ISO 28037 5.8.1]
 
 > **[PIZARRA]** $\boldsymbol y=X\boldsymbol\beta+\boldsymbol\varepsilon$, $Q=(\boldsymbol y-X\boldsymbol\beta)^T(\boldsymbol y-X\boldsymbol\beta)$; $X^T X\hat{\boldsymbol\beta}=X^T\boldsymbol y$; $\hat{\boldsymbol\beta}=(X^TX)^{-1}X^T\boldsymbol y$.
 
 Leamos: invertimos la matriz de productos cruzados del diseño y la multiplicamos por los productos entre diseño y observaciones. Si los errores tienen media cero y matriz de covarianza $\sigma^2I$, la covarianza del estimador resulta $\sigma^2(X^TX)^{-1}$. En la práctica se sustituye $\sigma^2$ por una estimación residual.
 
-WLS minimiza una suma de residuos ponderados y reemplaza el producto ordinario por uno con matriz de pesos $W$. Si W es la inversa de la matriz de covarianza conocida salvo un factor de escala, el estimador es GLS para ese modelo. Con pesos diagonales, se trata cada punto como independiente con varianzas distintas; no resuelve por sí solo incertidumbre relevante en x ni dependencia entre puntos. [ISO 28037 6.1.3, 6.2; Crowder 2020 §10.2.1]
+WLS minimiza una suma de residuos ponderados y reemplaza el producto ordinario por uno con matriz de pesos $W$. Si W es la inversa de la matriz de covarianza conocida salvo un factor de escala, el estimador es GLS para ese modelo. Con pesos diagonales, se trata cada punto como independiente con varianzas distintas; no resuelve por sí solo incertidumbre relevante en x ni dependencia entre puntos. [ISO 28037 6.1.3; Crowder2020 §10.2.3]
 
 > **[PIZARRA]** $\hat{\boldsymbol\beta}_{W}=(X^TWX)^{-1}X^TW\boldsymbol y$; $\operatorname{cov}(\hat{\boldsymbol\beta}_{W})=\hat\sigma^2(X^TWX)^{-1}$ bajo el modelo de pesos relativos correctos.
 
@@ -196,11 +196,11 @@ M04-I usa aproximaciones de grados de libertad para pruebas de Welch; M08-I la u
 
 ### Escena AX.8. Ajustar parámetros y abscisas verdaderas
 
-En OLS las abscisas se tratan como fijas. En la regresión generalizada de Gauss–Markov, los valores observados de x e y tienen incertidumbres y covarianzas. Introducimos para cada punto una abscisa ajustada $\xi_i$, además de los parámetros a y b. Minimizar una distancia cuadrática ponderada por la covarianza cuantifica cuánto hay que corregir las mediciones para que satisfagan $y_i=a+b\xi_i$. ISO/TS 28037 desarrolla el caso general; aquí restringimos a `V_xy=0`, tal como el alcance validado del curso. [ISO 28037, cláusula 10.1]
+En OLS las abscisas se tratan como fijas. En la regresión generalizada de Gauss–Markov, los valores observados de x e y tienen incertidumbres y covarianzas. Introducimos para cada punto una abscisa ajustada $\xi_i$, además de los parámetros a y b. Minimizar una distancia cuadrática ponderada por la covarianza cuantifica cuánto hay que corregir las mediciones para que satisfagan $y_i=a+b\xi_i$. ISO/TS 28037 desarrolla el caso general; aquí restringimos a `V_xy=0`, tal como el alcance validado del curso. [ISO 28037 10.1]
 
 > **[PIZARRA]** $\boldsymbol r(\boldsymbol\theta)=\begin{pmatrix}\boldsymbol x-\boldsymbol\xi\\\boldsymbol y-a\boldsymbol 1-b\boldsymbol\xi\end{pmatrix},\quad V=\begin{pmatrix}V_x&0\\0&V_y\end{pmatrix},\quad Q=\boldsymbol r^TV^{-1}\boldsymbol r.$
 
-La minimización no lineal se resuelve iterativamente, por ejemplo con Gauss–Newton. En cada iteración se linealizan los residuos respecto de parámetros y abscisas ajustadas, se resuelve el sistema ponderado y se actualiza la estimación. La matriz de covarianza conjunta describe también dependencias entre puntos dentro de cada eje. Matrices diagonales representan independencia; una causa común puede producir elementos fuera de la diagonal. El cero en los bloques cruzados no autoriza a eliminar covarianzas entre puntos de x o entre puntos de y. [ISO 28037, cláusula 10]
+La minimización no lineal se resuelve iterativamente, por ejemplo con Gauss–Newton. En cada iteración se linealizan los residuos respecto de parámetros y abscisas ajustadas, se resuelve el sistema ponderado y se actualiza la estimación. La matriz de covarianza conjunta describe también dependencias entre puntos dentro de cada eje. Matrices diagonales representan independencia; una causa común puede producir elementos fuera de la diagonal. El cero en los bloques cruzados no autoriza a eliminar covarianzas entre puntos de x o entre puntos de y. [ISO 28037 10]
 
 Después del ajuste, la suma cuadrática ponderada se compara con una distribución chi-cuadrado con grados de libertad coherentes con el diseño y el número de restricciones. En el modelo lineal regular, contamos observaciones independientes y restamos restricciones ajustadas. Con $n$ puntos hay $2n$ observaciones (abscisas y ordenadas) y $n+2$ parámetros (las $n$ abscisas ajustadas, $a$ y $b$). Quedan $2n-(n+2)=n-2$ grados de libertad. Con seis puntos, quedan cuatro. Si la matriz de covarianza tiene estructura o hay restricciones adicionales, el conteo se debe justificar en la formulación y no asumir por analogía. El criterio de la norma compara la distancia observada con el cuantil del 95 % de la chi-cuadrado con $\nu$ grados: si $\chi^2_{obs}\le\chi^2_{0,95;\nu}$, no hay evidencia de inconsistencia entre datos, incertidumbres y modelo. El cociente $Q/\nu$ es solo un resumen auxiliar. Un valor excesivamente alto puede indicar inconsistencias o incertidumbres subestimadas; uno anormalmente bajo puede indicar incertidumbres sobrestimadas, correlaciones mal modeladas o grados de libertad incorrectos. El diagnóstico no es una prueba automática de que el modelo sea verdadero. [ISO 28037 5.6.2, notas 1 y 2; 5.6.4]
 
@@ -212,7 +212,7 @@ Ejemplo didáctico **simulado**: para un ajuste con seis puntos, quedan cuatro g
 >
 > **[ESCALAMIENTO]** Si la matriz no es simétrica, no es admisible, resulta singular, o las incertidumbres cruzadas entre ejes no son nulas, no continúen con esta formulación reducida: remitan el caso a una implementación avanzada validada.
 
-M7-A y M9-A usan la formulación para ajustar con incertidumbre en ambos ejes y revisar consistencia. [ISO 28037, cláusula 10]
+M7-A y M9-A usan la formulación para ajustar con incertidumbre en ambos ejes y revisar consistencia. [ISO 28037 10]
 
 ## AX.9. Diferencia con patrón compartido y grado de equivalencia
 
@@ -230,7 +230,7 @@ Ejemplo **simulado**: incertidumbre común 0,30 y dos contribuciones independien
 
 > **[PIZARRA]** $D_i=x_i-x_{ref};\quad \operatorname{cov}(D_i,D_j)=\operatorname{cov}(x_i,x_j)-\operatorname{cov}(x_i,x_{ref})-\operatorname{cov}(x_{ref},x_j)+u^2(x_{ref}).$
 
-El grado de equivalencia frente a una referencia común describe la diferencia y su incertidumbre: se informa $D_i$ con $u(D_i)$ o con incertidumbre expandida declarada. Un indicador normalizado puede complementar, pero no sustituye la diferencia ni convierte el resultado en verificación independiente. El alcance aquí es una referencia común definida, no un KCRV combinado al que contribuya quien se evalúa. La definición de $D$ y $u(D)$ procede del protocolo de comparación de ozono [BIPM-K1 §8, ec. 2–3]; su ec. 3 supone independencia entre los dos resultados, y aquí la generalizamos con la covarianza. Citamos la definición, no enseñamos el protocolo. [GUM 5.2.2]
+El grado de equivalencia frente a una referencia común describe la diferencia y su incertidumbre: se informa $D_i$ con $u(D_i)$ o con incertidumbre expandida declarada. Un indicador normalizado puede complementar, pero no sustituye la diferencia ni convierte el resultado en verificación independiente. El alcance aquí es una referencia común definida, no un KCRV combinado al que contribuya quien se evalúa. La definición de $D$ y $u(D)$ procede del protocolo de comparación de ozono [BIPM-K1 §8, ecs. 2 y 3]; su ec. 3 supone independencia entre los dos resultados, y aquí la generalizamos con la covarianza. Citamos la definición, no enseñamos el protocolo. [GUM 5.2.2]
 
 > **[ERROR CRÍTICO]** No calculen la incertidumbre de una diferencia como cuadratura simple cuando comparten patrón sin justificar la independencia. Y no describan una compatibilidad estadística bajo el modelo de dependencia como prueba independiente del instrumento.
 
@@ -284,7 +284,7 @@ Para la media, el mismo razonamiento con t da $P\left[\mu\le\bar x+t_{1-\alpha;n
 
 > **[PIZARRA]** $L_{95}(\mathrm{AB})=\mathrm{AB}+t_{0,95;n-1}\dfrac{\mathrm{AS}}{\sqrt n}$.
 
-Con $\mathrm{AB}=1,5$ %, $\mathrm{AS}=0,5774$ %, $n=4$ y $t_{0,95;3}=2,3534$, la cota es $1,5+2,3534\cdot0,5774/2=2,179$ %. Cuidado: los $|d_i|$ no son normales, aunque las $d_i$ lo sean; con pocos datos, el 95 % es nominal. La fórmula es la regulatoria [CFR58-A §§4.1.2–4.1.3]; su deducción es la de la cota t unilateral para una media, con ese supuesto aproximado. [Hahs-Vaughn §§6.1, 9.1]
+Con $\mathrm{AB}=1,5$ %, $\mathrm{AS}=0,5774$ %, $n=4$ y $t_{0,95;3}=2,3534$, la cota es $1,5+2,3534\cdot0,5774/2=2,179$ %. Cuidado: los $|d_i|$ no son normales, aunque las $d_i$ lo sean; con pocos datos, el 95 % es nominal. La fórmula es la regulatoria [CFR58-A §§4.1.2–4.1.3]; aquí la deducimos como cota t unilateral para una media, con ese supuesto aproximado.
 
 > **[ERROR CRÍTICO]** No se intercambian límites de precisión y sesgo: uno usa chi-cuadrado para la varianza normal, el otro t para una media. El intervalo de una desviación no es una incertidumbre de calibración ni sustituye el presupuesto de incertidumbre.
 
@@ -296,7 +296,7 @@ M12-I usa los límites unilaterales para los indicadores de precisión y sesgo; 
 
 ### Escena AX.12. Memoria exponencial y tiempo hasta la señal
 
-Un EWMA actualiza su estadístico mezclando la observación presente con el valor previo. Para lecturas independientes de varianza $\sigma^2$ y el estadístico centrado en la media bajo control, desplegamos la recurrencia. Cada observación histórica recibe un peso geométrico; al calcular la varianza, las observaciones independientes no tienen términos cruzados. La suma geométrica lleva a la varianza del EWMA en el instante t. [Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]
+Un EWMA actualiza su estadístico mezclando la observación presente con el valor previo. Para lecturas independientes de varianza $\sigma^2$ y el estadístico centrado en la media bajo control, desplegamos la recurrencia. Cada observación histórica recibe un peso geométrico; al calcular la varianza, las observaciones independientes no tienen términos cruzados. La suma geométrica lleva a la varianza del EWMA en el instante t. [Montgomery 2013, no disponible en docs/]
 
 > **[PIZARRA]** $Z_t=\lambda X_t+(1-\lambda)Z_{t-1}$; $\operatorname{var}(Z_t)=\sigma^2\frac{\lambda}{2-\lambda}\left[1-(1-\lambda)^{2t}\right]$; en régimen, $\sigma_Z^2=\sigma^2\frac{\lambda}{2-\lambda}$.
 
@@ -306,13 +306,13 @@ La longitud media de corrida, ARL, es el número esperado de observaciones hasta
 
 En forma matricial, $(I-P)\boldsymbol m=\boldsymbol 1$, de donde $\boldsymbol m=(I-P)^{-1}\boldsymbol 1$. La discretización aproxima la transición continua; hay que refinar la malla para comprobar estabilidad.
 
-Para CUSUM se construye la matriz con la transición del acumulador $S_t=\max(0,S_{t-1}+X_t-k)$ y el umbral $h_C$: las transiciones que lo superan son absorbentes y se excluyen de P. [Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]
+Para CUSUM se construye la matriz con la transición del acumulador $S_t=\max(0,S_{t-1}+X_t-k)$ y el umbral $h_C$: las transiciones que lo superan son absorbentes y se excluyen de P. [Montgomery 2013, no disponible en docs/]
 
 Ejemplo **simulado**: para $\lambda=0,20$ y $\sigma=1$, el factor de régimen es $0,20/1,80=0,1111$ y la desviación del estadístico es 0,3333. Suponiendo observaciones independientes $N(0,1)$, con límites EWMA de tres desviaciones estándar, umbral aproximado 1, el script estima un ARL bajo control de aproximadamente 560; la cifra cambia menos de una décima al pasar de 240 a 1201 estados. Para CUSUM unilateral con holgura $k=0,5$ y umbral 5, bajo la misma distribución, estima aproximadamente 931. Para llegar ahí, el valor cero del acumulador se trata como un estado propio, porque $\max(0,\cdot)$ concentra probabilidad exactamente en cero; si se mezcla con la primera celda, la cifra converge despacio y con 240 estados da unos 921. Son aproximaciones numéricas para esos parámetros y discretización, no recomendaciones universales; refinar la malla y variar los parámetros permite estudiar estabilidad y sensibilidad. Como referencia matemática, si hubiera señal independiente con probabilidad 0,01 por lectura, la longitud geométrica esperada sería 100; eso no describe el ARL dependiente de EWMA/CUSUM.
 
 > **[ERROR CRÍTICO]** No confundan límites de control con tolerancias y no presenten el ARL bajo control como el tiempo garantizado hasta una alarma. Falsas alarmas, sensibilidad y cambios deben compararse bajo el modelo temporal especificado.
 
-En M11-A usamos la varianza del EWMA para definir sus límites de arranque. Comparamos EWMA con $L=2,7$ y CUSUM bilateral con $k=0,5$ y $h=5$, mediante probabilidades de alarma en un horizonte fijo y demoras condicionadas a detectar; esas demoras no son ARL. El ejemplo de este anexo usa EWMA con $L=3$ y límites estacionarios, y CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior. Sirve para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A. [Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/]
+En M11-A usamos la varianza del EWMA para definir sus límites de arranque. Comparamos EWMA con $L=2,7$ y CUSUM bilateral con $k=0,5$ y $h=5$, mediante probabilidades de alarma en un horizonte fijo y demoras condicionadas a detectar; esas demoras no son ARL. El ejemplo de este anexo usa EWMA con $L=3$ y límites estacionarios, y CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior. Sirve para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A. [Montgomery 2013, no disponible en docs/]
 
 ## AX.13. Fundamento de Monte Carlo y control del número de ensayos
 
@@ -324,7 +324,7 @@ La idea de Monte Carlo es directa: representamos las entradas del modelo mediant
 
 > **[PIZARRA]** Para $r=1,\ldots,M$: generar $\boldsymbol X^{(r)}\sim p_X$; calcular $Y^{(r)}=f(\boldsymbol X^{(r)})$; estimar $y$ y $u(y)$ con la media y desviación estándar de las salidas.
 
-La media de M resultados aleatorios tiene error estándar aproximadamente $s_Y/\sqrt M$. La razón se ve al sumar M realizaciones independientes: cada una tiene varianza $\sigma_Y^2$, la varianza de su suma es $M\sigma_Y^2$, y al dividir la suma por M la varianza de la media queda $\sigma_Y^2/M$. Como $\sigma_Y$ no se conoce, la estimamos con la desviación muestral de las salidas. Por eso aumentar M mejora la estabilidad a ritmo de raíz cuadrada: para reducir a la mitad el error de Monte Carlo, se necesitan aproximadamente cuatro veces más ensayos. Esta relación trata el error numérico de muestreo; no reduce la incertidumbre física de la medición ni corrige un modelo equivocado. El número de ensayos se elige atendiendo a la estabilidad de los resúmenes de interés y a la precisión requerida. [GUM-S1 7.9.4 g)]
+La media de M resultados aleatorios tiene error estándar aproximadamente $s_Y/\sqrt M$. La razón se ve al sumar M realizaciones independientes: cada una tiene varianza $\sigma_Y^2$, la varianza de su suma es $M\sigma_Y^2$, y al dividir la suma por M la varianza de la media queda $\sigma_Y^2/M$. Como $\sigma_Y$ no se conoce, la estimamos con la desviación muestral de las salidas. Por eso aumentar M mejora la estabilidad a ritmo de raíz cuadrada: para reducir a la mitad el error de Monte Carlo, se necesitan aproximadamente cuatro veces más ensayos. Esta relación trata el error numérico de muestreo; no reduce la incertidumbre física de la medición ni corrige un modelo equivocado. El número de ensayos se elige atendiendo a la estabilidad de los resúmenes de interés y a la precisión requerida. [GUM 4.2.3; AX.13]
 
 Ejemplo **simulado**: si las salidas tienen desviación 2,0 unidades y se usan $M=10\,000$ ensayos, el error estándar de la media simulada es aproximadamente 0,02 unidades. Para obtener aproximadamente 0,01, se requieren unos 40 000 ensayos. Una incertidumbre estándar estimada, un cuantil de cobertura y un extremo de cola pueden estabilizarse a velocidades diferentes; verificar solo la media no garantiza que los cuantiles estén precisos.
 
@@ -356,14 +356,14 @@ Hemos seguido trece deducciones que explican por qué los métodos de los módul
 
 ## Referencias del capítulo
 
-- **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. Archivo: `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`.
+- **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. Archivo: `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`; solo los pasajes de numerales cotejados en `S4_cotejo.md` se consideran verificados.
 - **GUM-S1.** JCGM 101:2008, *Evaluation of measurement data — Supplement 1: Propagation of distributions using a Monte Carlo method*. Archivo: `docs/ISO_IEC Guide 98-3_2008 Suppl.1_2008 - libgen.li.pdf`.
 - **ISO 28037.** ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*. Archivo: `docs/ISO 28037.pdf`.
-- **BIPM-K1.** BIPM, *Protocol for BIPM.QM-K1, On-demand Key Comparison of Ozone at Ambient Level*, versión 2.1, 9 de octubre de 2025. Archivo: `docs/BIPM.QM-K1_2.protocol.pdf`; §8, ec. 2–3, verificado con `pdftotext`. Se cita solo la definición de $D$ y $u(D)$.
+- **BIPM-K1.** BIPM, *Protocol for BIPM.QM-K1, On-demand Key Comparison of Ozone at Ambient Level*, versión 2.1, 9 de octubre de 2025. Archivo: `docs/BIPM.QM-K1_2.protocol.pdf`; §8, ecs. [2]–[3], cotejadas directamente en `docs/BIPM.QM-K1_2.protocol.txt` (líneas 378–387); la ecuación [3] presenta la combinación sin covarianza. Se cita solo la definición de $D$ y $u(D)$.
 - **CFR58-A.** U.S. Environmental Protection Agency, 40 CFR Part 58, Appendix A, §§4.1.2–4.1.3, tal como la cita M12. Fuente de las fórmulas regulatorias, no de su deducción.
-- **Statistical Concepts.** Hahs-Vaughn, D. L. y Lomax, R. G., *Statistical Concepts — A First Course*. Archivo: `docs/Statistical Concepts – A First Course.pdf` y capítulos separados en `docs/statistical_concepts_c*.pdf`.
-- **Crowder.** *Introduction to Statistics in Metrology*. Archivo: `docs/Introduction to Statistics in Metrology.pdf` y capítulos `docs/intro_stats_metro_c*.pdf`.
-- **Montgomery.** Montgomery, D. C., *Introduction to Statistical Quality Control*. No disponible en `docs/`; fuente externa para EWMA/CUSUM. Numeral y edición pendientes de verificación.
+- **Hahs-Vaughn.** Hahs-Vaughn, D. L. y Lomax, R. G., *Statistical Concepts—A First Course* (presenta los primeros diez capítulos de *Statistical Concepts*, 4.ª ed.), Routledge, 2020. Archivo: `docs/Statistical Concepts – A First Course.pdf` y capítulos separados en `docs/statistical_concepts_c*.pdf`. Claves originales normalizadas: `Statistical Concepts`, `Hahs-Vaughn y Lomax`.
+- **Crowder2020.** Crowder, S., Delker, C., Forrest, E. y Martin, N., *Introduction to Statistics in Metrology*, Springer Nature Switzerland AG, 2020. Archivo: `docs/Introduction to Statistics in Metrology.pdf` y capítulos `docs/intro_stats_metro_c*.pdf`. Clave original normalizada: `Crowder 2020`.
+- **Montgomery 2013.** Montgomery, D. C., *Introduction to Statistical Quality Control*, 7.ª ed., Wiley, 2013, ISBN 978-1-118-14681-1. No disponible en `docs/`; fuente externa para EWMA/CUSUM. El título, la 7.ª edición y el ISBN se identificaron en el catálogo editorial de Wiley; el año 2013 consta en un resultado indexado de Wiley Online Library, no en un ejemplar primario consultado. Estos datos bibliográficos no verifican el contenido técnico. No se consignan numerales ni páginas sin cotejo primario.
 - **JCGM 106.** JCGM 106:2012, *The role of measurement uncertainty in conformity assessment*. No disponible en `docs/`.
 - **ILAC-G8.** ILAC-G8:09/2019, *Guidelines on Decision Rules and Statements of Conformity*. No disponible en `docs/`.
 - **Prop_e.** *Propuesta E: curso de estadística aplicada a la fotometría de ozono*, 24 de octubre de 2026, §§6 y 9. Referencia de alcance curricular, no técnica.

@@ -1,0 +1,10 @@
+# Hitos A y B — correcciones del supervisor
+
+Fecha: 2026-10-27. Se aplican hallazgos S-01/S-02 y decisión S-03 de `curso/logs/pendientes_revision_supervisor.md`. Son hallazgos del supervisor, no de Haiku.
+
+- **S-01 / A — QAPP:** corregida la transcripción visual en `curso/S3_comparacion_decision/M10_libreto.md`. La extracción entrega `<+`; la ampliación del supervisor muestra `<±` (signo más con raya inferior). Corrección tipográfica únicamente: no se atribuye significado operativo, valor absoluto ni desigualdad autorizada. Evidencia/decisión en `curso/logs/A_qapp_luna.md`.
+- **S-03 / B — diagnóstico:** se ejecutó inventario reproducible y solo lectura del libro, detallado con comando y resultados en `curso/logs/B_RR_luna.md`. 10 hojas por nivel, 36 valores numéricos cada una (360 total), todos no negativos, de 0,001857 a 0,948727; la base declara «VALORES ABSOLUTOS». No se convierten en errores firmados. La validación histórica sigue bloqueada por signo y diseño faltantes. Se ejecutó también `M06_RR_CALAIRE.py` con rc=0; sus estadísticos son exploratorios condicionales.
+- **S-02 / M00-B:** se corrigieron datos, claves, solución, faltante y evidencia condicional en libreto y script propio. P99=50,8 queda sin asignación; solo claves concordantes generan errores. P04 conserva faltante. La asignación de P99 requiere registro autorizado docente explícito; nunca se resuelve por magnitud u orden. Script actualizado ejecutado con rc=0; salida y detalle en `curso/logs/M00_practicas_luna.md`.
+- **Bloqueo Haiku:** `AB_revision_haiku.log` y `M00_practicas_revision.log` registran `API Error: 400 unknown provider for model claude-haiku-5-5`. No hubo revisión Haiku, hallazgos H-xx ni aprobación. No se sustituyó proveedor ni modelo. Pipeline detenido antes de M01; no desarrollar M01–M13.
+
+No se modificó bibliografía/citas ni otros capítulos. No se hicieron commits.

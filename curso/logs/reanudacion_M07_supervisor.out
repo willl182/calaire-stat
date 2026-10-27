@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/w421/w421/calaire-stat/curso/S2_modelos_calibracion/calc/M07_practicas_luna.py", line 5, in <module>
+    from M07_ejemplos import ols, ggmr
+ModuleNotFoundError: No module named 'M07_ejemplos'

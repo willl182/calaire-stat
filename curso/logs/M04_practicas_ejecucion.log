@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé las tres prácticas de M04 en `curso/S1_fundamentos/M04_libreto.md`: una por nivel B, I y A, con enunciados, datos simulados reproducibles, tareas, soluciones numéricas, interpretación, acciones de escalamiento y criterios de logro. No añadí un taller integrador ni modifiqué otros capítulos, la guía o la revisión final.
+
+Creé `curso/S1_fundamentos/calc/M04_practicas_luna.py` y ejecuté sus cálculos con el entorno del proyecto. La ejecución final terminó con `comprobaciones_practicas_M04=OK`. La bitácora del plan, la ejecución y las comprobaciones está en `curso/logs/M04_practicas_luna.md`.
+
+`git diff --check` no reportó problemas de formato. No hice commits. La carga de la habilidad dataviz disponible se completó; no se requerían gráficos para estas prácticas.

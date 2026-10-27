@@ -21,7 +21,7 @@ En este nivel vamos a fijar qué resultado queremos describir antes de hacer una
 
 > **[DIAPOSITIVA]** Presentar una fila preparada con dos columnas: «valor de referencia $x$» e «indicación $y$». Añadir, debajo, «error con signo $e=y-x$».
 
-Voy a empezar con una pregunta concreta: si el SRP 55 da un valor de referencia para un gas y el Level 2 indica otro valor, ¿qué número queremos analizar? No respondemos «la lectura» de forma automática. Primero decimos cuál es el mensurando: la magnitud que pretendemos determinar mediante la medición. En este curso, cuando comparemos concentraciones de ozono, el mensurando de interés se expresa como fracción molar en nanomoles por mol, nmol/mol. La definición y la elección del mensurando dependen del propósito de la medición; no son simplemente el nombre de una columna del archivo. [GUM B.2.9; VIM 2.3; GUM-6 5.1 y 6.1]
+Voy a empezar con una pregunta concreta: si el SRP 55 da un valor de referencia para un gas y el Level 2 indica otro valor, ¿qué número queremos analizar? No respondemos «la lectura» de forma automática. Primero decimos cuál es el mensurando: la magnitud que pretendemos determinar mediante la medición. En este curso, cuando comparemos concentraciones de ozono, el mensurando de interés se expresa como fracción molar en nanomoles por mol, nmol/mol. La definición y la elección del mensurando dependen del propósito de la medición; no son simplemente el nombre de una columna del archivo. [GUM B.2.9; GUM-6 6.1; VIM 2.3, remitido por GUM-6 §5.1; VIM no disponible en docs/]
 
 Ahora fijemos la notación que usaremos en los capítulos siguientes. Llamaremos $x$ al valor de referencia y $y$ a la indicación. El error con signo es $e=y-x$. Lo digo en palabras: al valor indicado le restamos el valor de referencia. Si el resultado es positivo, la indicación queda por encima de la referencia; si es negativo, queda por debajo. Esta definición con signo evita perder la dirección de la diferencia. [GUM B.2.19; prop_e §3, convención curricular]
 
@@ -101,7 +101,33 @@ Interpreten esa pendiente junto con el tamaño de paso y la unidad de la entrada
 
 > **[TRANSICIÓN]** Ya sabemos definir el resultado, escribir sus entradas y comparar numéricamente dos salidas. En I usaremos la misma idea para pensar en cambios de escala y definiremos con cuidado el denominador de un error relativo.
 
-> **[PRÁCTICA — fase de ejercicios]** Recalcular tres concentraciones con dos valores de sección eficaz declarados e indicar el signo y la magnitud relativa del cambio.
+### [PRÁCTICA] B — Sensibilidad de tres concentraciones al coeficiente de absorción
+
+**Enunciado narrado.** Vamos a recalcular tres concentraciones con las mismas entradas ópticas y dos coeficientes declarados. Estos datos son simulados para enseñanza mediante una regla reproducible: fijamos $\alpha_1=308,32\ \mathrm{atm^{-1}cm^{-1}}$, $L=90,0\ \mathrm{cm}$, $p_0=1\ \mathrm{atm}$ y concentraciones objetivo de 100,0, 250,0 y 500,0 nmol/mol; generamos cada transmitancia como $T=\exp[-\alpha_1 L(c/10^9)p_0]$. No son datos ni resultados de CALAIRE. Para el ejercicio, tomen como valores de referencia las tres transmitancias tabuladas; la regla de generación queda aquí documentada para reproducibilidad, no es una tarea de inversión. La respuesta de interés es la concentración calculada $Y$ en cada punto. Usen el modelo simplificado del capítulo, mantengan cada $T$ y $L$ fijos y sustituyan solamente $\alpha_2=304,39\ \mathrm{atm^{-1}cm^{-1}}$.
+
+| Punto | $T$ simulado | $\alpha_1$ ($\mathrm{atm^{-1}cm^{-1}}$) | $\alpha_2$ ($\mathrm{atm^{-1}cm^{-1}}$) |
+|---|---:|---:|---:|
+| 1 | 0,997228966421 | 308,32 | 304,39 |
+| 2 | 0,993086806826 | 308,32 | 304,39 |
+| 3 | 0,986221405893 | 308,32 | 304,39 |
+
+En esta simplificación, el coeficiente de absorción se relaciona con la sección eficaz $\sigma$ mediante un factor de número molecular constante; trabajamos directamente con $\alpha$, tal como aparece en la ecuación del capítulo.
+
+Calculen $Y_1$ y $Y_2$ en nmol/mol, el cambio $\Delta Y=Y_2-Y_1$ con signo y el cambio relativo $100\Delta Y/Y_1$, declarando que el denominador es el resultado con $\alpha_1$. Comprueben que el signo concuerda con la posición de $\alpha$ en el denominador y expliquen si el porcentaje es constante entre los puntos. Para el primer punto, indiquen también el error con signo $e=Y_2-Y_1$ y la corrección aditiva que llevaría $Y_2$ a $Y_1$; expliquen cómo se convierte la salida intermedia en atmósferas a nmol/mol.
+
+**Solución docente.** Aplicamos $Y=-\ln(T)/(\alpha Lp_0)\times10^9$. Con $\alpha_1$ recuperamos 100,000; 250,000 y 500,000 nmol/mol; es una comprobación del conjunto simulado, no una tarea adicional para el operador. Al cambiar a $\alpha_2$, obtenemos:
+
+| Punto | $Y_1$ (nmol/mol) | $Y_2$ (nmol/mol) | $\Delta Y$ (nmol/mol) | $100\Delta Y/Y_1$ |
+|---|---:|---:|---:|---:|
+| 1 | 100,000 | 101,291 | +1,291 | +1,291 % |
+| 2 | 250,000 | 253,228 | +3,228 | +1,291 % |
+| 3 | 500,000 | 506,456 | +6,456 | +1,291 % |
+
+Para el punto 1, la presión parcial es $p_{O_3}=-\ln(T)/(\alpha L)=1,00000\times10^{-7}\ \mathrm{atm}$. La fracción molar es $p_{O_3}/p_0=1,00000\times10^{-7}$, adimensional; al multiplicarla por $10^9\ \mathrm{nmol/mol}$ se obtiene $100,000\ \mathrm{nmol/mol}$. Así se hace explícita cada etapa sin volver a dividir por $p_0$ en la fórmula de $Y$. Para la tarea de error y corrección en ese punto, $e=Y_2-Y_1=+1,291\ \mathrm{nmol/mol}$ y la corrección aditiva sobre $Y_2$ es $Y_1-Y_2=-1,291\ \mathrm{nmol/mol}$, con signo opuesto. Logro: además de las tres salidas, el operador conserva el signo de $e$, da la corrección opuesta y muestra la conversión atm a nmol/mol sin confundir escalas.
+
+La comprobación algebraica es $Y_2/Y_1=\alpha_1/\alpha_2=1,012911068$, por lo que el incremento relativo es +1,2911068 % en los tres puntos; el cambio absoluto crece con la concentración. La transmisión no cambió y el coeficiente menor está en el denominador, así que la salida aumenta. Esto cuantifica sensibilidad del modelo, no incertidumbre ni corrección instrumental. **Decisión operativa:** si el procedimiento vigente no identifica cuál coeficiente corresponde al cálculo, detener el reporte y consultar al responsable técnico; no elegir una escala por producir un valor preferido. **Escalamiento:** diferencias de unidades, entradas no declaradas o un factor no constante con concentración requieren revisión del modelo, no extrapolación.
+
+**Comprobación docente y criterio de logro.** Los números se reproducen con `calc/M01_practicas_luna.py`; se verifica además que $Y_1$ recupera los objetivos simulados y que la razón de salidas coincide con la razón inversa de coeficientes. Logro: tres pares calculados en nmol/mol, conversión intermedia explicada, error con signo y corrección de signo opuesto en el primer punto, y porcentaje con denominador explícito, sin llamar incertidumbre o ajuste al cambio de escala.
 
 ### Señales de escalamiento
 
@@ -127,7 +153,7 @@ La elección del denominador no es una decisión cosmética. Expresa qué escala
 
 > **[EJEMPLO]** Escala simulada $s=1,0129$, con $e/x$ definido: para $x=100 \mathrm{nmol/mol}$, $e=+1,29 \mathrm{nmol/mol}$; para $x=500 \mathrm{nmol/mol}$, $e=+6,45 \mathrm{nmol/mol}$; en ambos casos, $e/x=+1,29\ \%$.
 
-Comparemos los dos pares numéricos que prop_e prescribe para mostrar que el incremento depende de los valores realmente implementados. NISTIR 6963 §8 relaciona la sección eficaz $1,147\times10^{-17}\ \mathrm{cm^2/molécula}$ con el coeficiente $308,32\ \mathrm{atm^{-1}cm^{-1}}$. El documento BIPM-K1, en «Absorption cross-section for ozone», p. 3, da el valor central $1,1329\times10^{-17}\ \mathrm{cm^2/molécula}$ para CCQM.O3.2019. Ambas secciones eficaces tienen la misma unidad y el factor $10^{-17}$ se cancela al dividir. Solo tomamos de esa fuente el valor documentado; no estudiamos aquí la organización ni el protocolo de la comparación. 1,147 dividido por 1,1329 da aproximadamente 1,012446: el incremento respecto del denominador 1,1329 es 1,2446 %. En el segundo par, el cociente de coeficientes $308,32\ \mathrm{atm^{-1}cm^{-1}}$ y $304,39\ \mathrm{atm^{-1}cm^{-1}}$ da aproximadamente 1,012911, es decir, un incremento de 1,2911 % respecto de 304,39. Los cocientes no son idénticos. [prop_e §5, M1-I; NISTIR 6963 §8; BIPM-K1, «Absorption cross-section for ozone», p. 3; cálculos: `calc/M01_modelo_variables.py`]
+Comparemos los dos pares numéricos que prop_e prescribe para mostrar que el incremento depende de los valores realmente implementados. NISTIR 6963 §8 relaciona la sección eficaz $1,147\times10^{-17}\ \mathrm{cm^2/molécula}$ con el coeficiente $308,32\ \mathrm{atm^{-1}cm^{-1}}$. El documento BIPM-K1, en «Absorption cross-section for ozone», p. 3, da el valor central $1,1329\times10^{-17}\ \mathrm{cm^2/molécula}$ para CCQM.O3.2019. Ambas secciones eficaces tienen la misma unidad y el factor $10^{-17}$ se cancela al dividir. Solo tomamos de esa fuente el valor documentado; no estudiamos aquí la organización ni el protocolo de la comparación. 1,147 dividido por 1,1329 da aproximadamente 1,012446: el incremento respecto del denominador 1,1329 es 1,2446 %. En el segundo par, el cociente de coeficientes $308,32\ \mathrm{atm^{-1}cm^{-1}}$ y $304,39\ \mathrm{atm^{-1}cm^{-1}}$ da aproximadamente 1,012911, es decir, un incremento de 1,2911 % respecto de 304,39. Los pares numéricos publicados producen cocientes distintos. En este cotejo no se determina la causa: el cociente implícito entre coeficiente y sección eficaz es aproximadamente 268,81 para el primer par y 268,68 para el segundo, una diferencia cercana a 0,05 %. No es una corrección del instrumento. [prop_e §5, M1-I; NISTIR 6963 §8; BIPM-K1, «Absorption cross-section for ozone», p. 3; cálculos: `calc/M01_modelo_variables.py`]
 
 > **[DIAPOSITIVA]** Mostrar $1,147/1,1329$ con ambos valores en $10^{-17}\ \mathrm{cm^2/molécula}$; mostrar aparte $308,32/304,39$ con unidades $\mathrm{atm^{-1}\,cm^{-1}}$ en ambos coeficientes. Anotar que cada incremento se calcula respecto del denominador mostrado y que los pares se conservan como valores declarados: no se fuerza una equivalencia numérica entre sus cocientes.
 
@@ -143,7 +169,17 @@ Hasta aquí usamos una referencia fija y una indicación idealizada $y=sx$. No c
 
 > **[ESCALAMIENTO]** Si no está claro cuál coeficiente fue realmente implementado, si hay factores de conversión distintos en los sistemas comparados, o si una escala cambia con la concentración, no resuman la diferencia con un único porcentaje. Conserven la identificación de cada escala y consulten antes de comparar o corregir resultados. [prop_e §2]
 
-> **[PRÁCTICA — fase de ejercicios]** Comparar dos mediciones en escalas distintas usando el cociente de los valores realmente implementados, con el par declarado.
+### [PRÁCTICA] I — Comparación de mediciones en dos escalas declaradas
+
+**Enunciado narrado.** En nivel I añadimos la interpretación del cambio de escala y el error relativo con denominador especificado. Trabajaremos con dos pares numéricos publicados para ilustrar escalas alternativas (ver ficha): secciones eficaces $1,147$ y $1,1329$, ambas multiplicadas por $10^{-17}\ \mathrm{cm^2/molécula}$; y coeficientes de absorción $308,32$ y $304,39\ \mathrm{atm^{-1}cm^{-1}}$. No son dos mediciones nuevas ni datos de CALAIRE. Para el par implementado en esta comparación, tomen $\alpha=308,32\ \mathrm{atm^{-1}cm^{-1}}$ como el valor usado para obtener la salida de referencia $x=400,0\ \mathrm{nmol/mol}$ y $\alpha=304,39\ \mathrm{atm^{-1}cm^{-1}}$ como el usado para obtener la salida reescalada $y$. El valor de 400,0 nmol/mol es simulado; los dos coeficientes son publicados, no representan una segunda lectura medida. Para comparar salida de concentración en el modelo simplificado, el coeficiente aparece en el denominador: calculen primero el cociente que corresponde a las salidas y no intercambien su orden. Definan el error $e=y-x$ y el error relativo como $e/x$.
+
+Realicen estas tareas: (1) calculen cada cociente de pares en el orden escrito y su incremento porcentual respecto del denominador; (2) para el par de coeficientes, calculen $y$, $e$ y $100e/x$ para $x=400,0\ \mathrm{nmol/mol}$; (3) expliquen por qué el factor multiplicativo no equivale por sí mismo a una corrección aditiva ni a un ajuste físico del fotómetro; (4) indiquen qué harían si no se sabe qué valor fue implementado.
+
+**Solución docente.** Para las secciones eficaces, $1,147/1,1329=1,012445935$; el incremento relativo al denominador 1,1329 es $(1,012445935-1)\times100=1,2445935\ \%$. Para los coeficientes, $308,32/304,39=1,012911068$; el incremento respecto de 304,39 es $1,2911068\ \%$. Como la concentración es inversamente proporcional a $\alpha$, pasar de $\alpha=308,32$ a $304,39$ escala la salida por el cociente $308,32/304,39$, no por su inverso. Con el valor base simulado 400,0 nmol/mol, $y=400,0\times1,012911068=405,164\ \mathrm{nmol/mol}$; por tanto $e=+5,164\ \mathrm{nmol/mol}$ y $100e/x=+1,2911\ \%$. La comprobación es $e/x=1,012911068-1$.
+
+El porcentaje depende del denominador declarado y los pares numéricos publicados producen cocientes distintos; en este cotejo no se determina la causa. Un cambio de parámetro modifica la función usada para calcular la salida; no prueba que se haya intervenido físicamente el instrumento ni define una corrección individual. **Decisión operativa:** si falta trazabilidad sobre el parámetro efectivamente implementado, retener la comparación o el certificado y verificar la versión autorizada antes de informar; no promediar escalas ni seleccionar la cifra más conveniente. **Escalamiento:** si los factores difieren entre sistemas o varían con la concentración, solicitar evaluación técnica del modelo.
+
+**Comprobación docente y criterio de logro.** `calc/M01_practicas_luna.py` reproduce ambos cocientes y porcentajes; la multiplicación por 400,0 verifica el resultado aplicado. Logro: conserva el orden de cada cociente, declara el denominador del porcentaje, obtiene el signo correcto y distingue cambio de escala de corrección instrumental.
 
 ## Nivel A — entradas comunes y diferencias entre resultados
 
@@ -179,7 +215,17 @@ La misma distinción importa para comunicar resultados. Una incertidumbre asocia
 
 > **[ESCALAMIENTO]** Si el presupuesto no identifica las entradas compartidas, si se desconoce si el patrón o la escala son comunes, o si hay que combinar varias fuentes correlacionadas, no construyan la incertidumbre de la diferencia por cuadratura independiente sin justificación. Escalen el caso para formular el modelo conjunto y documentar las covarianzas. [prop_e §2; AX.2]
 
-> **[PRÁCTICA — fase de ejercicios]** Identificar qué contribuciones se cancelan en una diferencia entre dos fotómetros y cuáles permanecen en el resultado declarado.
+### [PRÁCTICA] A — Entradas comunes en resultados absolutos y diferencias
+
+**Enunciado narrado.** Como responsables de una comparación, deben distinguir qué permanece en cada resultado absoluto y qué efecto deja en la diferencia. Usen un caso totalmente simulado, construido con una contribución común $S=2,0\ \mathrm{nmol/mol}$ y términos particulares $C_1=+0,3\ \mathrm{nmol/mol}$ y $C_2=-0,1\ \mathrm{nmol/mol}$. El modelo declarado es $Y_1=S+C_1$ y $Y_2=S+C_2$, con la misma sensibilidad aditiva de uno a $S$. No representa datos ni incertidumbres de instrumentos de CALAIRE. La respuesta de interés es tanto cada resultado absoluto como $\Delta=Y_1-Y_2$.
+
+Calculen los dos resultados absolutos y su diferencia; identifiquen en palabras qué contribución es común y cuál es específica. Después comprueben la condición de cancelación parcial cambiando el segundo modelo a $Y_2=0,8S+C_2$, sin cambiar $S$ ni los términos particulares. Concluyan qué se puede y qué no se puede afirmar sin un modelo conjunto de incertidumbre.
+
+**Solución docente.** En el modelo de igual sensibilidad, $Y_1=2,0+0,3=2,3\ \mathrm{nmol/mol}$ y $Y_2=2,0-0,1=1,9\ \mathrm{nmol/mol}$. La diferencia es $\Delta=2,3-1,9=+0,4\ \mathrm{nmol/mol}$; algebraicamente, $(S+C_1)-(S+C_2)=C_1-C_2$, de modo que los $2,0\ \mathrm{nmol/mol}$ comunes permanecen en cada valor absoluto, pero no en esta diferencia idealizada. Las contribuciones particulares sí permanecen en $\Delta$: $0,3-(-0,1)=+0,4\ \mathrm{nmol/mol}$. Comprobación: $Y_1-Y_2$ coincide con $C_1-C_2$. Bajo este modelo se puede afirmar que el efecto común se cancela en $\Delta$ y que su valor es $+0,4\ \mathrm{nmol/mol}$. No se puede afirmar que $u(\Delta)$ sea menor que la incertidumbre de cada resultado absoluto ni cuantificarla sin un modelo conjunto de covarianzas.
+
+Con sensibilidades distintas, $Y_2=0,8(2,0)-0,1=1,5\ \mathrm{nmol/mol}$ y $\Delta=2,3-1,5=+0,8\ \mathrm{nmol/mol}$. Aquí queda una parte de $S$: $(1-0,8)S=0,4\ \mathrm{nmol/mol}$; sumada a $C_1-C_2=0,4$, da 0,8 nmol/mol. La cuenta trata valores del modelo, no incertidumbres. **Decisión operativa:** documentar los resultados absolutos y la diferencia por separado, incluyendo qué entradas se comparten y cómo aparecen en cada modelo. No reducir por intuición la incertidumbre de un resultado absoluto porque una parte común se cancele en una resta. **Escalamiento:** si se necesita cuantificar incertidumbre de la diferencia, si el patrón no es exactamente compartido o si no se conocen las sensibilidades, detener la cuadratura independiente y pedir un modelo conjunto con covarianzas; la deducción se remite a AX.2.
+
+**Comprobación docente y criterio de logro.** `calc/M01_practicas_luna.py` reproduce $Y_1$, $Y_2$, $\Delta$ y el caso de sensibilidad desigual; las aserciones verifican ambas restas. Logro: distingue términos comunes de particulares en absolutos y diferencia, reconoce cancelación completa solo bajo igual efecto y escala el cálculo de incertidumbre correlacionada.
 
 ## Cierre del capítulo
 

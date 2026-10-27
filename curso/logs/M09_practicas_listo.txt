@@ -1,0 +1,3 @@
+curso/S3_comparacion_decision/M09_libreto.md
+curso/logs/M09_practicas_revision_haiku.md
+curso/logs/M09_practicas_luna.md

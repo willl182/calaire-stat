@@ -1,0 +1,13 @@
+La revisión está escrita en `curso/logs/M04_practicas_revision_haiku.md`. No edité libretos ni scripts, no toqué referencias y no hice commits.
+
+Las cifras son correctas y el script corre sin error (código 0, `comprobaciones_practicas_M04=OK`). Los críticos de Grubbs (2,22 unilateral; 2,2744 bilateral) y Dixon (0,59) coinciden con Otto. El alcance B/I/A cumple prop_e y no hacen falta gráficos.
+
+Hallazgos principales, que conviene resolver antes de cerrar M04:
+
+- **H-01 (alta):** las tres prácticas reutilizan exactamente los datos de los ejemplos previos, y sus soluciones repiten las mismas cifras. Un operador puede copiar la solución sin calcular. Propuesta: dejar los ejemplos como demostración y generar vectores nuevos declarados en el script.
+- **H-02 (alta):** la solución del apartado 4 de I y la bitácora dicen que se verifica la potencia con `scipy.stats.nct`, que pareada y Welch se contrastan con SciPy y que la χ² conjunta se comprueba en forma matricial. El script no hace nada de eso. Propuesta: añadir esas comprobaciones o quitar las frases.
+- **H-03 (media):** prop_e pide una rúbrica por apartado en I, y el libreto solo tiene un criterio global.
+- **H-04 (media):** el Dixon de n = 8 usa la variante de rango completo tomada de Otto. Según la práctica habitual de las normas de Dixon, esa variante se reserva a n de 3 a 7. El resultado no cambia, pero conviene declarar la variante o cotejarla con una segunda fuente. Esto último no lo pude hacer desde aquí.
+- **H-05 a H-08 (bajas):** el script evalúa el margen con IC90 mientras la solución habla de IC95; hay una frase obsoleta («fase de ejercicios»); la explicación de u(s) mezcla la desviación del promedio con la de la serie; y se menciona G*Power sin ilustrarlo.
+
+Fuera de mi alcance: el diff de M04 también cambia citas en los párrafos de Welch (líneas 106–114), fuera de los bloques de práctica. Eso corresponde al supervisor de referencias; lo dejé anotado.

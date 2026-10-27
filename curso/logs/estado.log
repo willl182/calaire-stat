@@ -353,3 +353,21 @@
 2026-10-27 01:14:52  FIN    sol -> S2_6_correcciones_sol.log OK
 2026-10-27 01:14:52  SECCION S2 COMPLETA
 2026-10-27 01:16:28  REVISIÓN FINAL del orquestador -> curso/revision_final.md (fase de contenido aprobada)
+2026-10-27 13:36:12  INICIO pendientes_finales (2 supervisores sol)
+2026-10-27 13:36:12  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 13:36:12  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 13:56:39  FIN    sol -> sup_pendientes_sol.log OK
+2026-10-27 13:59:10  INICIO pendientes_finales (2 supervisores sol)
+2026-10-27 13:59:10  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 13:59:10  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 14:34:25  M13 práctica Luna: carga M13_ejemplos mediante importlib.util.spec_from_file_location y ruta Path(__file__).with_name; sin modificar sys.path/cwd. Verificación aislada: python -I curso/S4_numericos_integracion/calc/M13_ejemplos.py OK; M13_practicas_luna.py OK. Decisión S-M13-01: mantener importación explícita segura para ejecución aislada.
+2026-10-27 14:38:19  LÍMITE cuota sol (sup_pendientes_sol.log): espera 30 min (espera 1)
+2026-10-27 14:38:50  LÍMITE cuota sol (sup_citas_sol.log): espera 30 min (espera 1)
+2026-10-27 16:33:07  INICIO pendientes_finales (2 supervisores sol)
+2026-10-27 16:33:07  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 16:33:07  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 16:33:09  LÍMITE cuota sol (sup_citas_sol.log): espera 30 min (espera 1)
+2026-10-27 16:33:09  LÍMITE cuota sol (sup_pendientes_sol.log): espera 30 min (espera 1)
+2026-10-27 16:36:35  INICIO pendientes_finales (2 supervisores sol)
+2026-10-27 16:36:36  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-27 16:36:36  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]

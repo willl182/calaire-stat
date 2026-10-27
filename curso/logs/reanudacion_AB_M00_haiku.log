@@ -1,0 +1,16 @@
+He escrito el informe en `curso/logs/reanudacion_AB_M00_revision_haiku.md`. Encontré 7 hallazgos (H-01 a H-07): 2 mayores en M10/QAPP, 1 mayor en B, 1 mayor en la práctica B de M00 y 3 menores. No edité libretos, scripts ni bibliografía.
+
+**Comprobaciones:**
+- `M00_practicas_luna.py` ejecutado con rc=0. Sus cifras de B, I y A coinciden con el libreto.
+- `M06_RR_CALAIRE.py` ejecutado con rc=0. Lee el libro real de `docs/` (no genera datos) y reproduce F máx. 1,238163 y las interacciones 135 y 405 tras Bonferroni.
+- La página 23 del QAPP renderizada confirma «<±». La corrección S-01 de luna es correcta.
+- La página 18 del QAPP (§6.2.1) dice «intercept must be ± 1ppb», sin «<». El párrafo de M10 no lo menciona (H-01).
+
+**Hallazgos principales:**
+- **H-01 (mayor, M10):** §6.2.1 y la Tabla 7-1 del mismo QAPP no coinciden en el «<». El párrafo cita ambas fuentes sin señalarlo.
+- **H-03 (mayor, B):** el informe de R&R omite la lista de interacciones sin corregir (135, 360, 405, 455) y el umbral Bonferroni.
+- **H-05 (mayor, M00-B):** el MATERIAL incluye el cotejo R03 literal, que resuelve la práctica. El enunciado deja de pedir detección.
+
+**Suficiencia de datos históricos:** el cálculo es exploratorio y está bien etiquetado como tal. Los datos del libro del R&R son valores absolutos sin signo, sin trazabilidad de bloques y sin réplicas intradía. Eso basta para explorar, no para validar. La lista de siete datos pedidos es completa.
+
+**Límites:** no revisé citas bibliográficas. No abrí en detalle el xlsm de calibración ni `datos_caso_C1.csv`. H-04 señala una cifra de ese CSV que no verifiqué.

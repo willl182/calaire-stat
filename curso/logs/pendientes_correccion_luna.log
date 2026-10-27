@@ -1,0 +1,21 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué **S-01 y S-02** y apliqué **S-03** como diagnóstico reproducible de solo lectura, documentado y ejecutado. No cambié bibliografía ni citas, no desarrollé M01–M13 y no hice commits.
+
+### Cambios
+
+- `curso/S3_comparacion_decision/M10_libreto.md`: distingue la extracción «<+» de la grafía visible «<±». La corrección es tipográfica; no fija el significado operativo ni autoriza una desigualdad.
+- `curso/S1_fundamentos/M00_libreto.md`: alinea datos, claves y solución de B. P99 queda sin asignación; P04 conserva un faltante. Una clave solo puede corregirse con un registro autorizado docente explícito, nunca por magnitud u orden.
+- `curso/S1_fundamentos/calc/M00_practicas_luna.py`: actualizado para reproducir los emparejamientos por clave y contemplar la corrección solo si se proporciona autorización explícita.
+- Bitácoras: `curso/logs/A_qapp_luna.md`, `curso/logs/B_RR_luna.md` y `curso/logs/M00_practicas_luna.md`.
+- Reportes de ejecución: `curso/logs/AB_ejecucion_luna.log` y `curso/logs/M00_practicas_ejecucion.log`.
+
+### Resultados y estado
+
+El script M00 terminó con **rc=0**: en B reproduce P01 = −0,2, P02 = 0,4 y P03 = 50,2 nmol/mol; deja P99 sin asignación y P04 faltante. I y A también se ejecutaron correctamente. El diagnóstico B confirmó 10 hojas por nivel, 36 valores numéricos por hoja —360 en total—, sin valores negativos, y el rótulo «VALORES ABSOLUTOS». No convertí esas magnitudes en errores firmados. `M06_RR_CALAIRE.py` terminó con **rc=0**, pero sus resultados siguen siendo exploratorios, no una validación histórica.
+
+`git diff --check` pasó. La revisión Haiku sigue bloqueada por `API Error: 400 unknown provider for model claude-haiku-5-5`: no hubo revisión Haiku, H-xx ni aprobación; el pipeline queda detenido antes de M01. M00 permanece como borrador corregido, no aprobado.
+
+En el estado de trabajo aparece además `curso/S1_fundamentos/M04_libreto.md` modificado; no lo toqué como parte de esta tarea.

@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé las tres prácticas B, I y A en `curso/S3_comparacion_decision/M10_libreto.md`, respetando el alcance de cada nivel y sin añadir un taller integrador. Incluyen enunciados narrados, datos simulados, tareas, soluciones numéricas verificables, interpretación, acción operativa y criterios de logro.
+
+Creé `curso/S3_comparacion_decision/calc/M10_practicas_luna.py` y ejecuté los cálculos con `curso/.venv/bin/python`; terminó correctamente. `git diff --check` no reportó errores. Registré el plan, la ejecución y las comprobaciones en `curso/logs/M10_practicas_luna.md`.
+
+No cambié otros capítulos, las referencias existentes ni `curso/revision_final.md`; no hice commits. La ruta exacta solicitada para la habilidad dataviz no estaba disponible, así que usé la copia instalada y dejé constancia en la bitácora. No se requerían gráficos para estas prácticas.

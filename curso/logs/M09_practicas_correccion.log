@@ -1,0 +1,14 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué o rechacé explícitamente los siete hallazgos en `curso/logs/M09_practicas_luna.md`, sección **Correcciones — ronda Haiku M09**. Seis se aplicaron directamente; en H-04 conservé el punto de 80 nmol/mol para mantener el vínculo con la referencia común y cambié el conjunto de 420 nmol/mol para que la práctica A no repita la de B.
+
+**Cambios realizados**
+- En `M09_libreto.md`, acorté las soluciones B e I e hice explícito en I que la conclusión cambia de 0,70 sin covarianza a 1,0750 con covarianza; al quedar cerca del límite, se escala.
+- En A añadí el análisis de sensibilidad a una covarianza positiva hipotética, junto con la advertencia de que no reemplaza la evidencia del presupuesto. La solución identifica el script como contraste.
+- En `calc/M09_practicas_luna.py`, añadí Δ y los cocientes normalizados de I, más `assert` para residuales, admisibilidad de covarianza y varianza no negativa. A incluye los dos supuestos de covarianza y sus comprobaciones.
+
+**Verificación**
+Ejecuté `curso/.venv/bin/python -I curso/S3_comparacion_decision/calc/M09_practicas_luna.py`; terminó con rc=0 y pasaron las comprobaciones. Los resultados finales están en la bitácora, incluida la tabla de sensibilidad de A. `git diff --check` no reportó errores de whitespace. No reejecuté `M09_ejemplos.py`, porque sus cálculos no cambiaron.
+
+No modifiqué referencias ni citas, otros capítulos, la guía o la revisión final. No hice commits.

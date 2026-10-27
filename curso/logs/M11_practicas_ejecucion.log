@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé las tres prácticas de M11 —B, I y A— en `curso/S3_comparacion_decision/M11_libreto.md`, sustituyendo los marcadores sin añadir taller. Dejé el plan, resultados y comprobaciones en `curso/logs/M11_practicas_luna.md`.
+
+También creé `curso/S3_comparacion_decision/calc/M11_practicas_luna.py` y el gráfico reproducible `curso/S3_comparacion_decision/M11_practica_B_grafico.html`, que incluye carta I-MR y tabla accesible. Los datos son docentes simulados; no se atribuyen a CALAIRE.
+
+**Verificación:** ejecuté el script con `curso/.venv/bin/python`; terminaron correctamente sus cálculos y aserciones. `git diff --check` y el análisis del HTML también pasaron. El gráfico no se inspeccionó en un navegador. No hice commits ni edité las referencias bibliográficas.

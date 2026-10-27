@@ -78,6 +78,9 @@
 - La cita ISO 17025 respalda trazabilidad de registros y verificación de cálculos/sistemas; la tabla larga se presenta como convención pedagógica del capítulo, no como mandato de la norma.
 - No se remite a AX.1–AX.13: M00 no contiene deducciones asignadas a esos anexos.
 - No quedan referencias con numeral pendientes de verificación. Pendiente documental no bloqueante: el VIM no está disponible en `docs/`, por lo que se evitó citarlo y no se formularon definiciones formales atribuibles a él.
+- Decisión S-M03-01: `M03_practica_I_probabilidad.svg` era HTML con `<!doctype html>`, por lo que se corrigieron el generador y las referencias de la práctica I de M03 para usar `.html`. Se conserva la figura interactiva y la tabla accesible; el `.svg` se elimina solo después de inspeccionar su contenido y confirmar que era el artefacto generado incorrectamente.
+- Decisión S-M03-02: tras la inspección del HTML generado con Chromium (geometría correcta), se cambió únicamente el formato de los valores visibles en ejes, tabla y tooltips a coma decimal; los datos numéricos internos y las coordenadas del SVG permanecen intactos.
+- Decisión S-M03-03: la autocorrelación de A2 usa una lista simulada explícita de 13 valores normalizados y Pearson entre sus dos listas desplazadas de 12; se distingue de la serie diferente de 16 lecturas con deriva empleada para los bloques. El enunciado A declara $A=1,0000$ y $B=0,8000$ como entradas para razón y sensibilidades. El script nombra y verifica por separado ambas series; se preservan comas decimales HTML y referencias del capítulo.
 
 ## Correcciones (revisión Haiku)
 
@@ -96,6 +99,8 @@
 | R11 | aplicado | Se aclaró que Calc recalcula la hoja y se normalizaron las enumeraciones sin punto y coma antes de «y». | `M00_libreto.md`, escena A2 | La redacción evita la ambigüedad de «hoja abierta» y usa puntuación estándar en enumeraciones. |
 | R12 | aplicado con cambios | Se precisó que ISO 17025 §7.5.2 trata de enmiendas; el registro de exclusiones se identifica explícitamente como convención del curso. | `M00_libreto.md`, escena I1 | La cláusula no regula específicamente exclusiones analíticas; la redacción separa el requisito normativo de la práctica pedagógica. |
 | R13 | aplicado | Se incorporó un ejemplo simulado de dos filas anchas, tres valores presentes y tres registros largos; el script ahora genera y comprueba esa transformación. | `M00_libreto.md`, escena I2; `calc/M00_ejemplos.py`, bloque I2 | Guía §3 requiere ejemplo numérico para temas cuantitativos. La comprobación ejecutada confirma 3 valores no faltantes = 3 registros largos. |
+| F-H06 | aplicado | Las unidades de entrada se declaran en un diccionario `x`/`y` y ambas se comparan con la unidad esperada (`nmol/mol`); una prueba negativa verifica que `y=ng/m3` se rechaza. No se incorpora librería de unidades ni se cambian los ejercicios. | `calc/M00_practicas_luna.py`, bloque A | La validación usa metadatos explícitos y confirma rechazo de una unidad no compatible. |
+| F-H05b | aplicado | Se anota en la cabecera que el script es exclusivamente solución docente, no plantilla para entregar al alumnado. Se conserva la salida numérica reproducible, incluida la explicación de R03. | `calc/M00_practicas_luna.py`, cabecera y salida B | El material no se presenta como enunciado/plantilla para estudiantes y sigue reproduciendo las cifras del libreto. |
 
 Correcciones adicionales por iniciativa propia:
 

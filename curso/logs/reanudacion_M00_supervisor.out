@@ -1,0 +1,11 @@
+B antes de R03: parejas completas=2; indicaciones huérfanas=1; referencias no emparejadas=2
+B cotejo R03: El registro de adquisición R03 vincula la indicación con la pareja de referencia P03; P04 no fue adquirido
+B corrección trazable: id_original=P99; y_original=50.8; id_corregido=P03; motivo=el registro de adquisición R03 vincula esta lectura con P03; fuente=registro de adquisición R03
+B después de R03: parejas completas=3; referencia P04 sin indicación adquirida=1; indicaciones huérfanas=0
+B: errores {'P01': -0.2, 'P02': 0.4, 'P03': 0.8}
+I: claves únicas campaña-analista-día-ciclo=8 (campaña C1)
+I: n, media y, media e por analista-día {('A1', 1): (2, 50.3, 0.3), ('A1', 2): (2, 50.1, 0.1), ('A2', 1): (1, 49.8, -0.2), ('A2', 2): (2, 50.2, 0.2)}
+I: completos=7; faltantes=1
+A: controles claves_unicas=6; faltantes=0; unidades_compatibles= True prueba_negativa_ng/m3_rechazada= True
+A: errores recalculados [-0.1, 0.2, 0.5, 0.8, 0.6, 1.0]
+A: diferencias [0.0, 0.0, 0.0, 0.0, 0.0, 0.1] máxima= 0.1 tolerancia= 1e-06 acuerdo= False

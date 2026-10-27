@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé `curso/citas/S3_cotejo.md` y `curso/citas/S3_decisiones_luna.md` para M09–M12, conservando el inventario y las decisiones previas. El cotejo registra las ocurrencias por fuente y localizador, con estado y evidencia de pasajes consultados; donde no pude confirmar el soporte concreto, dejé el motivo y el estado correspondiente.
+
+También dejé documentado el alcance real de Montgomery 2013 —edición 7.ª, Wiley 2013, ISBN 978-1-118-14681-1— sin tratar la consulta del índice como verificación del contenido. No cambié ejercicios, cifras ni la grafía QAPP; tampoco edité `curso/citas/inventario.md`. `git diff --check` no reportó problemas. No hice commits ni atendí otros pendientes.

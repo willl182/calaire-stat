@@ -1,0 +1,7 @@
+B x=80.00 y=80.30 delta=0.300000 u_delta=0.250000 U1=0.400000 U2=0.300000 En=0.600000 clasifica=True
+B x=420.00 y=419.60 delta=-0.400000 u_delta=0.781025 U1=1.200000 U2=1.000000 En=-0.256074 clasifica=True
+I delta=0.350000 var_residuales=(0.017500,0.008100) cov=0.018000 var_delta=0.026500 u_delta=0.162788206 U_k2=0.325576412 delta_over_U=1.075016454 sin_cov=0.700000000
+A nominal=80 hipotesis=nula D=0.300000 cov=0.000000 uD=0.250000000 U_k2=0.500000000 D_over_U=0.600000000
+A nominal=80 hipotesis=media_admisible D=0.300000 cov=0.015000 uD=0.180277564 U_k2=0.360555128 D_over_U=0.832050294
+A nominal=420 hipotesis=nula D=0.900000 cov=0.000000 uD=0.806225775 U_k2=1.612451550 D_over_U=0.558156306
+A nominal=420 hipotesis=media_admisible D=0.900000 cov=0.140000 uD=0.608276253 U_k2=1.216552506 D_over_U=0.739795443

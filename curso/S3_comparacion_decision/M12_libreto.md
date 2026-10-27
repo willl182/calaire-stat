@@ -67,7 +67,30 @@ En este nivel no decidimos si un monitor cumple una especificación. Primero ide
 
 > **[ERROR CRÍTICO]** No presentar $\operatorname{media}(\lvert d_i\rvert )$ como sesgo firmado ni $\lvert\operatorname{media}(d_i)\rvert $ como dispersión. No reportar un porcentaje sin identificar la referencia y el denominador. No interpretar un porcentaje enorme cerca de cero como evidencia automática de una desviación absoluta grande.
 
-> **[PRÁCTICA — fase de ejercicios]** Indicadores con diferencias de ambos signos
+### [PRÁCTICA] Indicadores con diferencias de ambos signos
+
+**Enunciado narrado.** «La hoja de verificaciones simuladas de un analizador de ozono de una red, contrastado frente al SRP, presenta seis parejas de indicación y auditoría de referencia, todas de 100 nmol/mol. Son datos didácticos, generados determinísticamente al sumar los errores de la tabla a la referencia; no son mediciones de CALAIRE. Antes de resumir, confirmemos la convención: indicación menos auditoría, dividido por auditoría. Entreguen las seis diferencias $d_i$ y los tres resúmenes pedidos abajo; el orden de filas no representa una escala temporal ni afirma independencia entre verificaciones».
+
+| Verificación | Auditoría (nmol/mol) | Indicación (nmol/mol) | $d_i$ (%) |
+|---:|---:|---:|---:|
+| 1 | 100,0 | 98,0 | −2,0 |
+| 2 | 100,0 | 101,0 | +1,0 |
+| 3 | 100,0 | 99,0 | −1,0 |
+| 4 | 100,0 | 102,0 | +2,0 |
+| 5 | 100,0 | 97,0 | −3,0 |
+| 6 | 100,0 | 103,0 | +3,0 |
+
+> **[MATERIAL]** Entregar la tabla y pedir que conserven tanto las diferencias firmadas como las magnitudes absolutas. Los datos son simulados de forma determinista: auditoría fija de 100 nmol/mol e indicaciones construidas sumando los errores enumerados.
+
+«Calculen los seis $d_i$ con la convención escrita; luego obtengan la media firmada, la media de valores absolutos y el valor absoluto de la media. Expresen además las diferencias absolutas en nmol/mol. Expliquen qué resume cada indicador, si el porcentaje es interpretable cerca de cero y por qué esto no es la incertidumbre de calibración de un certificado».
+
+**Solución docente verificable.** Los errores absolutos con signo son −2, +1, −1, +2, −3 y +3 nmol/mol. Como el denominador es 100, los valores numéricos de las diferencias porcentuales coinciden con esos errores: $d=[−2;+1;−1;+2;−3;+3]\%$. Su suma es cero, por lo que $\bar d=0,00\%$ y $|\bar d|=0,00\%$. La suma de magnitudes es 12 puntos porcentuales, así que $\operatorname{media}(|d_i|)=2,00\%$. La desviación estándar muestral es $s_d=2,3664\%$ (divisor 5). En escala absoluta, la media de magnitudes es 2,00 nmol/mol y el error firmado medio es 0,00 nmol/mol, solo porque cada auditoría vale exactamente 100.
+
+Comprobación: ninguna de las seis diferencias es cero, aunque su media firmada sea cero; los signos se cancelan. Si la auditoría fuese cero, el porcentaje no estaría definido; cerca de cero reportarían la diferencia absoluta con su unidad y escalarían la elección del indicador. La media de magnitudes describe tamaño observado sin dirección; la media firmada describe dirección neta. Ninguna calcula la incertidumbre de una calibración: para eso haría falta el modelo y presupuesto de esa calibración.
+
+**Decisión operativa.** Registrar ambos resúmenes con referencia, denominador, convención de signo, muestra y periodo. No declarar conformidad: no se ha suministrado criterio para esta serie. Consultar si el denominador no está definido o si la interpretación depende de porcentaje frente a diferencia absoluta.
+
+**Criterio de logro.** Calcula correctamente los seis signos y ambos indicadores, conserva las unidades y explica por qué cero firmado no equivale a coincidencia individual.
 
 ### Señales de escalamiento
 
@@ -163,7 +186,30 @@ En el método de EN 14625, el límite de detección especificado se calcula como
 
 > **[ERROR CRÍTICO]** No llamar límite de detección a $3s₀$ sin establecer población, distribución, independencia, estabilidad, referencia y objetivo de decisión. No omitir la pendiente cuando se usa la definición de EN 14625. No calcular porcentaje relativo con cero como denominador.
 
-> **[PRÁCTICA — fase de ejercicios]** Indicadores, límites y cambio de escala
+### [PRÁCTICA] Indicadores, límites y cambio de escala
+
+**Enunciado narrado.** «En I ya elegimos la referencia y conservamos el signo. Ahora aplicaremos límites de confianza y examinaremos una ganancia nueva y una serie de cero en verificaciones simuladas de un analizador de ozono de la red contrastado frente al SRP: auditoría de 100 nmol/mol en todas, e indicaciones 98, 101, 99, 102, 97 y 103 nmol/mol. Para el umbral del cero, recibimos además cinco respuestas simuladas. Son datos didácticos deterministas, construidos con esos valores, no mediciones de CALAIRE. La respuesta de interés son los indicadores de esta campaña simulada, no una lectura futura».
+
+«Calculen la media y desviación muestral de $d$, el límite superior unilateral del 90 % para la desviación con chi-cuadrado, el límite superior unilateral del 95 % para la media de $|d|$ con la fórmula del capítulo y el intervalo bilateral del 95 % para la media firmada. Después multipliquen las indicaciones por una ganancia de 1,01 sin alterar la auditoría y repitan la media de magnitudes. Por último, calculen $s_0$ y $3s_0$ para las respuestas al cero; indiquen bajo qué hipótesis es solo un umbral didáctico y qué no permite concluir».
+
+| Verificación | Auditoría (nmol/mol) | Indicación (nmol/mol) | $d_i$ (%) |
+|---:|---:|---:|---:|
+| 1 | 100,0 | 98,0 | −2,0 |
+| 2 | 100,0 | 101,0 | +1,0 |
+| 3 | 100,0 | 99,0 | −1,0 |
+| 4 | 100,0 | 102,0 | +2,0 |
+| 5 | 100,0 | 97,0 | −3,0 |
+| 6 | 100,0 | 103,0 | +3,0 |
+
+Respuestas simuladas al cero: $[−0,2;−0,1;0;+0,1;+0,2]$ nmol/mol.
+
+**Solución docente verificable.** De la práctica B se obtiene $\bar d=0,0000\%$ y $s_d=2,3664\%$, con $n=6$ y 5 grados de libertad. El cuantil $\chi^2_{0,10;5}=1,6103$, así que $L_{90}(s_d)=2,3664\sqrt{5/1,6103}=4,1699\%$. Para los valores absolutos $[2;1;1;2;3;3]\%$, $AB=2,0000\%$ y $AS=0,8944\%$; con $t_{0,95;5}=2,0150$, $L_{95}(AB)=2+2,0150(0,8944/\sqrt6)=2,7358\%$. El intervalo bilateral de la media firmada usa $t_{0,975;5}=2,5706$ y queda $[−2,4834;+2,4834]\%$. Es distinto del límite unilateral de $AB$; ninguno prueba equivalencia ni establece una tolerancia.
+
+Tras multiplicar cada indicación por 1,01, las diferencias relativas son aproximadamente $[−1,02;+2,01;−0,01;+3,02;−2,03;+4,03]\%$ y la media de magnitudes es 2,0200 %. La transformación de escala del equipo no es una conversión de unidades: referencia fija y respuesta modificada producen valores nuevos. En cero, $s_0=0,1581$ nmol/mol y $3s_0=0,4743$ nmol/mol. Solo se puede llamar umbral didáctico si se declaran independencia, normalidad, estabilidad y la interpretación de la media; con cinco observaciones la dispersión poblacional no es conocida. No se define universalmente un límite de detección, y la definición aplicable de EN 14625 incorpora repetibilidad y pendiente.
+
+**Decisión operativa.** Informar los límites con su cola, nivel, grados de libertad, fórmula y supuestos. La serie corta y simulada no califica un monitor ni reemplaza el criterio del procedimiento. Si las verificaciones no son independientes, la muestra es insuficiente para la inferencia pretendida o el resultado está cerca de un criterio, detener la clasificación y escalar el modelo/cobertura. Para auditoría cero usar una diferencia absoluta, no un porcentaje indefinido.
+
+**Criterio de logro.** Elige los cuantiles y colas correctos, diferencia el intervalo de la media del límite de magnitudes y describe correctamente qué cambió con la ganancia y qué hipótesis limitan $3s_0$.
 
 ## Nivel A — conservar la dependencia y separar los periodos
 
@@ -185,7 +231,7 @@ Construyamos una serie **simulada** por dos periodos, con dos verificaciones en 
 >
 > **[PIZARRA]** «Antes de resumir: ¿cuál es la unidad independiente: la verificación, el periodo, la campaña o el bloque definido por el modelo?»
 
-En un caso real, primero graficaríamos las diferencias por orden temporal y periodo, revisaríamos cómo se planificaron las verificaciones y consultaríamos si hay cambios de procedimiento, mantenimiento, condiciones o patrón. Si la dependencia temporal es relevante, la distribución de la media y sus límites no se obtienen aplicando mecánicamente la fórmula independiente. Habría que modelar la estructura o construir el resumen con la unidad de repetición apropiada. El detalle de métodos de series temporales queda fuera del contenido que asigna este módulo; la señal que sí debe reconocer quien trabaja en A es que un indicador calculado con supuestos de independencia no queda validado por una salida numérica reproducible. [GUM 5.2.1–5.2.2; NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/]
+En un caso real, primero graficaríamos las diferencias por orden temporal y periodo, revisaríamos cómo se planificaron las verificaciones y consultaríamos si hay cambios de procedimiento, mantenimiento, condiciones o patrón. Si la dependencia temporal es relevante, la distribución de la media y sus límites no se obtienen aplicando mecánicamente la fórmula independiente. Habría que modelar la estructura o construir el resumen con la unidad de repetición apropiada. El detalle de métodos de series temporales queda fuera del contenido que asigna este módulo; la señal que sí debe reconocer quien trabaja en A es que un indicador calculado con supuestos de independencia no queda validado por una salida numérica reproducible. [GUM 5.2.1–5.2.2]
 
 > **[ERROR CRÍTICO]** No contar verificaciones dependientes como réplicas independientes. No convertir una serie agrupada en una muestra iid mediante el simple acto de concatenar sus filas. No usar el resultado del script como evidencia de que el modelo de dependencia sea correcto.
 
@@ -223,7 +269,30 @@ Ahora consultemos la ficha común `S3_01_ficha_criterios.md`, compartida con M10
 
 > **[PREGUNTA AL GRUPO]** Si un monitor individual cumple su tolerancia, ¿eso garantiza que la red tenga un indicador agregado aceptable? — *Respuesta esperada:* no. Son preguntas distintas y requieren evidencia y criterios distintos.
 
-> **[PRÁCTICA — fase de ejercicios]** Discrepancia entre conformidad individual y desempeño agregado
+### [PRÁCTICA] Discrepancia entre conformidad individual y desempeño agregado
+
+**Enunciado narrado.** «Una red de analizadores de ozono contrastados frente al SRP presenta dos señales que parecen discrepar. Las tres verificaciones posteriores son del mismo monitor, el monitor X, y forman parte de las seis verificaciones cronológicas completas de una campaña docente simulada de ese único equipo; la campaña no cubre otros monitores ni pretende representar una red. Todas usan una referencia de 100 nmol/mol cuya trazabilidad aporta una incertidumbre estándar común. Los datos son simulados de forma determinista, sumando las diferencias de la tabla a la referencia; no proceden de CALAIRE. Para este ejercicio fijamos tres criterios distintos: tolerancia individual $|e|\leq2,0$ nmol/mol para cada una de las tres comprobaciones posteriores; umbral de desempeño agregado $\operatorname{media}(|d_i|)\leq2,5\%$ para esas tres verificaciones posteriores; y límites de control de la carta histórica, ya calculados como $−1,0$ y $+1,0\%$. Son criterios docentes, no límites regulatorios ni decisiones reales».
+
+| Periodo | Verificación | Auditoría (nmol/mol) | Indicación (nmol/mol) | $d_i$ (%) |
+|---|---:|---:|---:|---:|
+| Antes | 1 | 100,0 | 100,5 | +0,5 |
+| Antes | 2 | 100,0 | 101,0 | +1,0 |
+| Antes | 3 | 100,0 | 101,5 | +1,5 |
+| Después | 4 | 100,0 | 102,5 | +2,5 |
+| Después | 5 | 100,0 | 103,0 | +3,0 |
+| Después | 6 | 100,0 | 103,5 | +3,5 |
+
+«Calculen media firmada y media de magnitudes por periodo y en el conjunto. Evalúen por separado las tres comprobaciones individuales posteriores, el umbral agregado posterior y la señal frente a los límites de control en toda la secuencia cronológica. Expliquen por qué no deben combinarse los periodos automáticamente ni usar una de esas decisiones como sustituto de otra. La incertidumbre estándar común de trazabilidad es 0,80 puntos porcentuales y la independiente por verificación es 0,60 puntos porcentuales: calculen la incertidumbre estándar de la media posterior con tres verificaciones bajo el modelo común más independiente. Finalmente, indiquen qué evidencia se necesita para resolver la discrepancia sin atribuir causalidad al mantenimiento».
+
+**Solución docente verificable.** Antes del mantenimiento, las diferencias son $[0,5;1,0;1,5]\%$: media firmada y media de magnitudes, ambas 1,00 %. Después son $[2,5;3,0;3,5]\%$: ambas medias son 3,00 %. Juntas, las seis tienen media firmada y media de magnitudes 2,00 %. El agregado de 2,00 % no describe ninguno de los dos periodos por separado y, además, no es el estadístico especificado para evaluar el periodo posterior.
+
+Cada una de las tres comprobaciones posteriores del monitor X excede la tolerancia: $e_4=+2,5$, $e_5=+3,0$ y $e_6=+3,5$ nmol/mol, todos mayores que 2,0 nmol/mol; cada resultado es no conforme bajo la regla suministrada. Para el periodo posterior, la media de magnitudes 3,00 % supera el umbral agregado de 2,5 %. En la carta, la verificación 3 anterior al mantenimiento ya supera el límite superior de control (+1,5 % frente a +1,0 %), al igual que las tres verificaciones posteriores (+2,5; +3,0; +3,5 %); la señal no empieza exactamente después del mantenimiento. Son señales para investigar la secuencia completa, no pruebas de incumplimiento de la tolerancia ni reglas de aceptación del agregado. Los criterios contestan preguntas diferentes.
+
+Bajo el modelo declarado de componente común de media cero y desviación estándar 0,80 puntos porcentuales, más componente independiente de 0,60 por verificación, $u(\bar d)=\sqrt{0,80^2+0,60^2/3}=0,8718$ puntos porcentuales. La contribución común no se divide por tres. Esta incertidumbre del promedio firmado no convierte automáticamente el umbral basado en media de magnitudes en prueba inferencial; el ejercicio suministra ese criterio como regla descriptiva.
+
+**Decisión operativa.** Mantener estratos por periodo, etiquetar las decisiones individuales, agregada y de control por separado, y retener/investigar el monitor según el procedimiento aplicable; la carta muestra una señal antes y después, por lo que se revisa la secuencia completa y sus fechas, no se atribuye al mantenimiento ni se recalibra automáticamente solo por la carta. Antes de extender una conclusión a una red, solicitar datos de otros monitores y campañas, referencias y trazabilidad, fechas y definición de periodo, cambios de escala/procedimiento, serie temporal y dependencia, incertidumbres comunes e independientes, definición y cobertura del agregado, regla individual y límites de control documentados. Escalar si falta cualquiera de esos elementos o si se pretende inferencia que el modelo no respalda.
+
+**Criterio de logro.** Separa correctamente conformidad individual, indicador agregado y señal de control; conserva los periodos y cuantifica la parte común sin promediarla como ruido independiente.
 
 ## Cierre del capítulo
 
@@ -238,4 +307,4 @@ El resultado de un indicador no es, por sí solo, una calificación de calibraci
 - **CFR58-A.** U.S. Environmental Protection Agency, *Code of Federal Regulations, Title 40, Part 58, Appendix A — Quality Assurance Requirements for Monitors used in Evaluations of National Ambient Air Quality Standards*, versión vigente al 20 de octubre de 2026. `docs/Appendix A to Part 58_ Title 40 (up to date as of 10-20-2026).pdf`. Numerales usados: §§2.3.1.2, 3.1.1, 4.1.1–4.1.3.2.
 - **GUM.** JCGM 100:2008 (ISO/IEC Guide 98-3:2008), *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`. Numerales usados: §§4.2.2–4.2.3, 5.2.1–5.2.2 y G.3.2.
 - **EN 14625.** BS EN 14625:2012, *Ambient air — Standard method for the measurement of the concentration of ozone by ultraviolet photometry*. `docs/BS EN 14625_2012.pdf`. Numerales usados: §3.12, §8.4.5, fórmula 5 y Tabla 1.
-- **NIST/SEMATECH.** *e-Handbook of Statistical Methods*. National Institute of Standards and Technology / SEMATECH, recurso en línea (no disponible en `docs/`). Apartado 1.3.5.8, *Chi-Square Test for the Variance*, https://www.itl.nist.gov/div898/handbook/eda/section3/eda358.htm, consultado el 25 de octubre de 2026: límites de confianza de varianza y desviación estándar con chi-cuadrado. La mención general a dependencia se cita sin numeral; las fórmulas de covarianza se respaldan con GUM 5.2.2. El intervalo t y las desviaciones muestrales se respaldan con GUM 4.2.2–4.2.3 y G.3.2.
+- **NIST/SEMATECH.** *e-Handbook of Statistical Methods*. National Institute of Standards and Technology / SEMATECH, recurso en línea (no disponible en `docs/`). Apartado 1.3.5.8, *Chi-Square Test for the Variance*, https://www.itl.nist.gov/div898/handbook/eda/section3/eda358.htm, consultado el 25 de octubre de 2026: límites de confianza de varianza y desviación estándar con chi-cuadrado. La afirmación general sobre dependencia temporal no se atribuye a NIST; las fórmulas de covarianza se respaldan con GUM 5.2.2. El intervalo t y las desviaciones muestrales se respaldan con GUM 4.2.2–4.2.3 y G.3.2.

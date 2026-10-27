@@ -1,0 +1,9 @@
+Revisión escrita en `curso/logs/M09_practicas_revision_haiku.md`. No edité libretos ni scripts, y no toqué referencias ni citas.
+
+Hay siete hallazgos. El más importante:
+
+- **H-01 (mayor):** La práctica A no incluye el análisis de sensibilidad a la covarianza que exige `prop_e.md` §5 para M9. Propongo añadirlo con valores ya verificados (por ejemplo, u(D) pasa de 0,2500 a 0,1803 nmol/mol en 80 si cov=0,015).
+- **H-03 (menor):** El script no imprime Δ/U(Δ)=1,0750 del bloque I, y la bitácora dice que todas las cifras se cotejaron. Tampoco hay aserciones de admisibilidad.
+- **H-07 (bajo):** El bloque I no dice explícitamente que la misma diferencia pasa de 0,70 a 1,075 al incluir la covarianza. Propongo matizar «señala incompatibilidad», porque el valor está cerca del límite.
+
+Las demás cifras de B, I y A son correctas: recalculé cada una con `curso/.venv/bin/python` y el script corre con rc=0. El alcance por nivel, los rótulos de origen simulado y el formato en nmol/mol y coma decimal también están bien. Los hallazgos restantes (H-02, H-04, H-05, H-06) son de trazabilidad, de reutilización de datos y de redacción oral.

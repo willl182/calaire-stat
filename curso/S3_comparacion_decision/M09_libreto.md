@@ -73,7 +73,28 @@ Por lo tanto, al comunicar una comparación básica, digan: «La diferencia se e
 
 > **[ERROR CRÍTICO]** No llamar independiente a una pareja de resultados solo porque sus incertidumbres se reporten en certificados distintos. No ocultar una fuente compartida dentro de la incertidumbre de cada resultado y luego sumar en cuadratura como si la información fuera independiente.
 
-> **[PRÁCTICA — fase de ejercicios]** Diferencia y $E_n$ en dos puntos independientes y reconocimiento de la dependencia Level 2–SRP 55
+### [PRÁCTICA] Dos puntos independientes y una comparación que exige detenerse
+
+**Enunciado narrado.** Para el control estadístico de dos resultados de ozono, comparen cada indicación con su referencia en dos concentraciones. En cada pareja, $x$ es referencia y $y$ indicación; calculen $\Delta=y-x$, $u(\Delta)$, las incertidumbres expandidas con $k=2$ y $E_n=\Delta/\sqrt{U_1^2+U_2^2}$. El criterio suministrado es $|E_n|\leq1$. Estos datos son **simulados**: se generan con la regla reproducible «usar los valores fijados en `calc/M09_practicas_luna.py`, sin aleatoriedad», y no describen CALAIRE.
+
+| Nivel nominal (nmol/mol) | $x$ referencia | $y$ indicación | $u_1$ | $u_2$ |
+|---:|---:|---:|---:|---:|
+| 80 | 80,00 | 80,30 | 0,20 | 0,15 |
+| 420 | 420,00 | 419,60 | 0,60 | 0,50 |
+
+En ambos puntos se declara independencia justificada: no hay patrón, corrección, dato ni otra entrada común. Informen signo, resultado, supuesto y clasificación. Después consideren una segunda situación: el Level 2 se calibró contra el SRP 55 y ahora se compara con ese mismo patrón. Sin inventar valores, indiquen por qué no procede aplicar automáticamente la cuadratura independiente y qué información se necesita.
+
+**Solución docente.** En 80 nmol/mol, la diferencia es $0,30$ nmol/mol. Por independencia, $u(\Delta)=0,25$ nmol/mol. Con $k=2$, $U_1=0,40$ y $U_2=0,30$ nmol/mol. El denominador de $E_n$ es $0,50$ nmol/mol, así que $E_n=0,60$. Cumple el criterio docente.
+
+En 420 nmol/mol, la diferencia es $-0,40$ nmol/mol y $u(\Delta)=0,7810$ nmol/mol. Se obtiene $U_1=1,20$, $U_2=1,00$ y denominador $1,5620$ nmol/mol. Entonces $E_n=-0,2561$; también cumple. El signo negativo indica que la indicación quedó por debajo de la referencia.
+
+En ambos puntos, numerador y denominador están en nmol/mol, por lo que $E_n$ no tiene unidades. Esto no prueba equivalencia ni conformidad.
+
+En el escenario Level 2–SRP 55 puede haber una contribución compartida. Se recupera el presupuesto desglosado y se identifican las entradas comunes y sus sensibilidades para estimar la covarianza. Si esos datos no están disponibles, se detiene la clasificación cuantitativa y se escala. Compartir patrón no invalida todo $E_n$, pero no justifica la cuadratura simple.
+
+**Decisión operativa.** Registrar los dos resultados como compatibles únicamente bajo el modelo independiente declarado; mantener separada cualquier decisión de conformidad. En la comparación con patrón compartido, retener la conclusión hasta documentar dependencia y presupuesto.
+
+**Criterio de logro.** Cálculos, signos, unidades y clasificación correctos en ambos puntos; identifica el supuesto y la información faltante del caso compartido, sin afirmar conformidad ni fabricar una covarianza.
 
 ### Señales de escalamiento
 
@@ -147,7 +168,17 @@ Ahora separemos dos palabras que suelen mezclarse. La **compatibilidad** pregunt
 
 > **[PREGUNTA AL GRUPO]** Si $D(x_{0})$ es pequeño frente a su $U(D)$, ¿eso demuestra que el instrumento cumple su tolerancia? — *Respuesta esperada:* no; compara la diferencia bajo el modelo estadístico. La conformidad requiere una tolerancia y una regla de decisión definidas.
 >
-> **[PRÁCTICA — fase de ejercicios]** Diferencia con covarianza del SRP 55 compartido
+### [PRÁCTICA] Diferencia con una entrada común del SRP 55
+
+**Enunciado narrado.** El presupuesto docente de dos resultados muestra una contribución común del SRP 55, $R$, con $u(R)=0,15$ nmol/mol. El resultado 1 tiene sensibilidad $c_1=1,0$ y el resultado 2 $c_2=0,8$ a esa entrada. Las incertidumbres estándar totales son $u_1=0,20$ y $u_2=0,15$ nmol/mol; las contribuciones restantes son independientes entre sí y de $R$. La diferencia observada es $\Delta=y_2-y_1=0,35$ nmol/mol. Calculen la covarianza inducida por $R$, las varianzas residuales, $u(\Delta)$ y $U(\Delta)$ con $k_\Delta=2$. Normalicen como $\Delta/U(\Delta)$, identificándolo expresamente como extensión docente de $E_n$, y apliquen el criterio didáctico $|\Delta/U(\Delta)|\leq1$. Los valores son **simulados**, fijados sin aleatoriedad en `calc/M09_practicas_luna.py`; no representan el presupuesto de CALAIRE.
+
+**Solución docente.** Primero, la entrada común produce $\operatorname{cov}(1,2)=1,0×0,8×0,15^2=0,0180\ (\mathrm{nmol/mol})^2$. Las varianzas residuales son $0,0175$ y $0,0081\ (\mathrm{nmol/mol})^2$; ambas son no negativas. La covarianza es admisible porque $|0,018|\leq u_1u_2=0,030$.
+
+Segundo, $u^2(\Delta)=0,0265\ (\mathrm{nmol/mol})^2$ y $u(\Delta)=0,16279$ nmol/mol. Sin covarianza, la extensión daría $0,70$ y pasaría el criterio. Con la covarianza, $U(\Delta)=0,32558$ nmol/mol y $\Delta/U(\Delta)=1,0750$, que queda fuera del criterio didáctico. La misma diferencia cambia de lado solo por el modelo de dependencia. Por estar cerca del límite, se escala; esto no es verificación independiente del Level 2 ni identifica qué instrumento falla.
+
+**Decisión operativa.** Informar $\Delta$, $u(\Delta)$ y $U(\Delta)$ junto con el factor y la dependencia modelada; escalar a revisión técnica del presupuesto antes de cualquier acción sobre equipo o decisión de conformidad. No trasladar estas cifras simuladas a la calibración real.
+
+**Criterio de logro.** Construye la covarianza desde la entrada compartida, verifica residuos y admisibilidad, obtiene la incertidumbre con unidades y no confunde compatibilidad con conformidad.
 
 > **[TRANSICIÓN]** En A dejaremos de trabajar solo con una diferencia de parámetros ya estimados. Representaremos todos los puntos y sus incertidumbres en matrices, ajustaremos la relación generalizada y examinaremos su consistencia.
 
@@ -237,7 +268,21 @@ En el ejemplo A, la condición de referencia común es importante. No calculamos
 
 La comparación produce una evidencia sobre la relación estadística entre un resultado y su referencia bajo un modelo. El hecho de que el ajuste sea consistente no prueba por sí solo que los instrumentos sean conformes ni que exista equivalencia absoluta. La conformidad requiere criterios y reglas de decisión; la evaluación de una CMC requiere un juicio técnico más amplio que un único indicador. Por eso mantenemos separados estos productos: los parámetros de la recta, la prueba de consistencia del ajuste, el grado de equivalencia y cualquier decisión posterior.
 
-> **[PRÁCTICA — fase de ejercicios]** Comparación con referencia común y grado de equivalencia
+### [PRÁCTICA] Grado de equivalencia frente a una referencia común
+
+**Enunciado narrado.** Un ejercicio docente compara medias de campaña de un participante simulado, SRP 55, con la referencia común BIPM-SRP27. En 80 nmol/mol se entregan participante $80,30$, referencia $80,00$, e incertidumbres estándar $0,20$ y $0,15$ nmol/mol. En 420 nmol/mol se entregan $421,10$, $420,20$, $0,70$ y $0,40$ nmol/mol, respectivamente. El mensurando es la diferencia participante menos referencia, $D$. Las incertidumbres son estándar totales y, por hipótesis del escenario, no incluyen contribuciones comunes; se declara covarianza restante nula y campañas independientes, sin otras fuentes relevantes compartidas. Calculen $D$, $u(D)$ y $U(D)$ con $k=2$ por separado en cada punto. En cada punto, evalúen también la sensibilidad a una covarianza positiva hipotética de la mitad del máximo admisible, $\operatorname{cov}=0,5u_Pu_R$, recalculando $u(D)$ y $U(D)$. Comparen qué cambia y qué información de presupuesto sería necesaria para elegir entre hipótesis; no escojan una covarianza solo porque convenga. Comuniquen el grado de equivalencia separado de cualquier indicador normalizado; no se proporciona criterio de aceptación, por lo que no clasifiquen conformidad. Datos **simulados**, definidos sin aleatoriedad en `calc/M09_practicas_luna.py`, y no resultados de CALAIRE.
+
+**Solución docente.** Primero se calcula bajo covarianza nula. A 80 nmol/mol, $D=0,30$ nmol/mol, $u(D)=0,2500$ y $U(D)=0,5000$ nmol/mol. A 420 nmol/mol, $D=0,90$ nmol/mol, $u(D)=\sqrt{0,70^2+0,40^2}=0,806226$ y $U(D)=1,612452$ nmol/mol.
+
+Ahora probamos la hipótesis positiva alternativa, sin adoptarla como si fuera un dato. A 80, el máximo admisible es $u_Pu_R=0,030$; la mitad es $0,015$. Así, $u(D)=\sqrt{0,0625-2(0,015)}=0,180278$ y $U(D)=0,360555$ nmol/mol. A 420, el máximo es $0,70×0,40=0,280$ y la mitad es $0,140$. Resultan $u(D)=\sqrt{0,65-0,280}=0,608276$ y $U(D)=1,216553$ nmol/mol. La diferencia $D$ no cambia, pero sus incertidumbres sí: la conclusión sobre su tamaño relativo a la incertidumbre depende de la covarianza. Para elegir el modelo hacen falta entradas compartidas identificadas, sensibilidades y sus incertidumbres; el análisis de sensibilidad no sustituye esa evidencia.
+
+En todos los casos, las unidades de $D$, $u(D)$ y $U(D)$ son nmol/mol. No hay criterio de aceptación: informamos el grado de equivalencia como diferencia con incertidumbre, sin clasificar conformidad.
+
+**Decisión operativa.** Reportar por nivel $D$ y $u(D)$ (o $U(D)$ junto con $k=2$), identificación de la referencia común y supuestos de covarianza. La comparación constituye evidencia estadística frente a esa referencia; la conformidad o evaluación de CMC requiere criterios y juicio técnico separados. Si no se sostiene la covarianza nula, detener la cuadratura y rehacer el modelo.
+
+La solución se contrasta por dos vías: el cálculo manual aplica la fórmula de varianza y `calc/M09_practicas_luna.py` reproduce los resultados y comprueba la admisibilidad de ambas hipótesis. Coinciden dentro del redondeo.
+
+**Criterio de logro.** Obtiene las diferencias e incertidumbres con unidades, calcula sensibilidad admisible y explica qué evidencia de covarianza haría falta; no confunde el grado de equivalencia con un indicador normalizado ni emite conformidad.
 
 ## Cierre del capítulo
 

@@ -1,0 +1,21 @@
+He escrito `curso/citas/S1_revision_haiku.md`, el único archivo que he creado. No edité libretos ni cotejos y no he hecho commits.
+
+**Lo más importante**
+
+- **H-01 (crítica):** M00 desarrolla las tres prácticas (B, I y A) con enunciado, solución y criterio de logro. La guía exige solo el marcador «[PRÁCTICA — fase de ejercicios]». La práctica B además se apoya en un «cotejo docente autorizado R03» que no tiene base en el material.
+- **Correcciones declaradas y no aplicadas:** M02 Ficha («numerales localizados en los PDF»), atribuciones a Crowder en M02 (líneas 106, 110, 140), NIST en M02 (150, 164), citas de M01 línea 24 (B.2.9, GUM-6 §6.1), y una nota interna de proceso en M03 línea 170.
+- **Afirmaciones sin soporte:** M04 línea 138 promete una ilustración con G\*Power que no existe. La fórmula `min(mp,1)` de Bonferroni (M04 línea 190) se atribuye a NIST, pero la página NIST no la contiene.
+- **Lista de referencias incompleta:** M03 cita AX.2 y AX.3 y no las lista, contra la guía §5.
+
+**Lo que sí cuadra**
+
+Recalculé las cifras de M02–M04 (Welch, F, chi-cuadrado, TOST, potencia, Grubbs, Dixon, matrices, regresión) y coinciden con los libretos. Grubbs 2,22 es unilateral y 2,2744 bilateral, como afirma el libreto. Dixon 0,59 viene de la Tabla 2.10 de Otto.
+
+**Cotejos desactualizados o con errores**
+
+- GUM-6 Anexo A, GUM 4.3.3, GUM G.3.2, GUM E.4.3 (E.7) y GUM-S2 3.20/3.21 sí están en los PDF y respaldan el libreto. El cotejo los dejó como no verificados.
+- La justificación de D-10 (Welch «con sección incorrecta») es falsa: HV §7.1.3.2 es precisamente «The Welch t′ Test».
+- El año 2020 de Hahs-Vaughn está confirmado por el PDF; el inventario de M04 dice que no.
+- La página de ASQ no es 572/605: la definición cae en la página impresa 573.
+
+**Limitaciones que no cuento como error:** VIM no está en `docs/`. Crowder, NIST (MAD y Bonferroni) y Lakens dependen de fuentes externas o de lo que dicen los cotejos. Solo MAD y Bonferroni los recontrasté en línea. Esas limitaciones están separadas en la sección 6 del informe.

@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Corregí únicamente el párrafo de conversión de la solución de la práctica B en `curso/S1_fundamentos/M01_libreto.md`: ahora distingue la presión parcial \(p_{O_3}\), la fracción molar adimensional \(p_{O_3}/p_0\) y la conversión a \(100,000\ \mathrm{nmol/mol}\), sin duplicar la división por \(p_0\).
+
+Registré S-M01-01 en `curso/logs/M01_practicas_luna.md`. El script `M01_practicas_luna.py` terminó correctamente y `git diff --check` no reportó errores. No modifiqué el script ni otros capítulos, escenas, citas, bibliografía o hitos.

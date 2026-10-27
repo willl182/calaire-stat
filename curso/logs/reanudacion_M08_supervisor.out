@@ -1,0 +1,19 @@
+B simulated; target: calibration-point mean error; nmol/mol
+u_precision=0.12727922; u_total=0.29359837; U(k=2)=0.58719673
+u_without_between_day=0.26683328; naive sr/sqrt(576)=0.01000000
+rectangular u_h=0.17320508; unit-sensitivity perturbation=0.17320508
+I simulated; units nmol/mol
+u_individual=0.49759421; u_calibration_mean=0.34088121; u_future=0.45945620
+mean coverage: nu_eff=299.825783; k95=1.96790764; U95=0.67082274
+chain: u_Level2=0.44821870; u_client=0.61424751; U(k=2)=1.22849501
+inverse sensitivities: c_y=0.99800399; c_a=-0.99800399; c_b=-99.80039920
+shared covariance=0.09180000; u_difference=0.32021243; independent=0.53491682
+Limit: Student/Welch-Satterthwaite is conditional on independent blocks and adequate output distribution.
+A simulated functions; x, U, CMC, max(U,CMC); nmol/mol
+   0.0 0.56000000 0.80000000 0.80000000
+  80.0 1.11139552 1.12000000 1.12000000
+ 250.0 3.05181913 1.80000000 3.05181913
+ 500.0 6.02607667 2.80000000 6.02607667
+crossings on [0,500] by grid step 0.1: 1; analytic roots=[81.34713834792323]
+U^2-CMC^2 coefficients: [0.000128, -0.0064, -0.3264000000000001]
+linearization: local changes=±20.00000000; exact +u_b=-16.66666667; exact -u_b=25.00000000

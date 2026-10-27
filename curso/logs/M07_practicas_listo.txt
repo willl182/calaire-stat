@@ -1,0 +1,3 @@
+curso/S2_modelos_calibracion/M07_libreto.md
+curso/logs/M07_practicas_revision_haiku.md
+curso/logs/M07_practicas_luna.md

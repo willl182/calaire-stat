@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé las tres prácticas de M12 en `curso/S3_comparacion_decision/M12_libreto.md`, respetando el alcance de B, I y A y sustituyendo únicamente los marcadores. Incluyen datos simulados, tareas, solución docente con comprobaciones numéricas, interpretación, decisión operativa y criterios de logro. La práctica A distingue conformidad individual, desempeño agregado y señal de control, y pide la evidencia necesaria para resolver la discrepancia.
+
+Añadí el script reproducible `curso/S3_comparacion_decision/calc/M12_practicas_luna.py` y la bitácora `curso/logs/M12_practicas_luna.md`. Ejecuté los cálculos con `curso/.venv/bin/python` y pasaron; `git diff --check` no reportó errores. No creé gráficos porque las prácticas definidas para M12 no los exigen. No cambié referencias ni otros capítulos y no hice commits.

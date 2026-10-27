@@ -1,0 +1,13 @@
+La revisión está escrita en `curso/logs/M11_practicas_revision_haiku.md` con 9 hallazgos: 2 altos, 4 medios y 3 bajos. No edité libretos ni scripts.
+
+Los números de B, I y A coinciden con la ejecución del script, que dio código 0 y un HTML idéntico al previo. Hay dos excepciones: la cifra de riesgo a 60 días y un formato de decimales.
+
+- **H-01 (alta):** la entrada «Montgomery 2013» de las referencias de M11 cambió frente a HEAD, y la bitácora de luna no lo menciona. Antes de corregirla hay que confirmar si la cambió luna o el supervisor de referencias.
+- **H-02 (alta):** el gráfico B marca como señal la ocasión 7 en individuales y la ocasión 8 en MR, que no lo son. El código usa índices fijos (`i not in (5, 6)`) en lugar de las señales calculadas.
+- **H-03 (media):** el HTML usa punto decimal (`-1.20`, `0.4000`), y el libreto exige coma.
+- **H-04 (media):** el riesgo a 60 días es 0,000394 (0,0394 %), no 0,000395 como dice la práctica A. La narración de A3 dice 0,039 %, así que las dos cifras del libreto tampoco coinciden.
+- **H-05 (media):** la comprobación de A no es independiente. El script llama a la misma rutina de `M11_ejemplos.py` que dice validar, y no contiene pruebas de recurrencia.
+- **H-06 (media):** el logro de I pide distinguir la predicción media de la observación futura, pero la solución no calcula el intervalo de la observación futura. Calculado, es [0,675017; 0,773554] nmol/mol, frente al [0,692483; 0,756088] de la media.
+- **H-07 a H-09 (bajas):** falta «recalibrar» en las tareas de B; falta declarar que β se trata como distribución; y la validación visual del gráfico sigue pendiente.
+
+Corrige H-01 y H-02 antes de cerrar M11. Los demás hallazgos tienen corrección propuesta en el informe.

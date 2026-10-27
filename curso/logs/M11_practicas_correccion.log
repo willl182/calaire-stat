@@ -1,0 +1,20 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Ronda de correcciones M11 completada; **sin commits**. Revisé y registré una decisión para cada hallazgo H-01–H-09 en `curso/logs/M11_practicas_luna.md`.
+
+| Hallazgo | Decisión | Resultado |
+|---|---|---|
+| H-01 | No modificar: fuera del alcance autorizado | La referencia existente queda intacta para que la revise el supervisor bibliográfico. |
+| H-02 | Aplicado | El gráfico marca solo I en ocasión 6 y MR en ocasión 7. |
+| H-03 | Aplicado | Etiquetas y tabla del gráfico usan coma decimal. |
+| H-04 | Aplicado en la práctica | Se actualizó a 0,000394362 (0,0394362 %); la escena A3 conserva su redondeo más breve porque está fuera del bloque autorizado. |
+| H-05 | Aplicado | Se aclara que el script de ejemplos reproduce los conteos; se añadieron comprobaciones independientes de las recurrencias EWMA/CUSUM. |
+| H-06 | Aplicado | La solución I incluye error estándar e intervalo predictivo para una observación futura, y los distingue del intervalo de la media. |
+| H-07 | Aplicado | La tarea B incluye recalibrar, sujeto a autorización. |
+| H-08 | Aplicado | La solución A explicita el supuesto probabilístico de β y la interpretación condicional del riesgo. |
+| H-09 | Aplicado | Gráfico regenerado y renderizado en Chromium; se inspeccionó visualmente y se validó la paleta. |
+
+La ejecución final de `curso/.venv/bin/python curso/S3_comparacion_decision/calc/M11_practicas_luna.py` terminó con **rc=0** y aprobó las aserciones. Entre los resultados reproducidos: señales I=[6] y MR=[7]; para I, el intervalo predictivo del 95 % de una observación futura es [0,675017179; 0,773554249] nmol/mol; para A, falsa alarma EWMA/CUSUM de 19 909/100 000 y 9 177/100 000, y riesgo a 60 días de 0,000394361902 bajo el modelo declarado. `git diff --check` no reportó problemas.
+
+Solo edité las prácticas M11, su script y la bitácora; regeneré el gráfico. No cambié otros capítulos, la guía, `revision_final.md` ni bibliografía.

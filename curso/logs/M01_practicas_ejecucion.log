@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé las tres prácticas de M01 —B, I y A— y sustituí los tres marcadores por bloques `[PRÁCTICA]` con datos, tareas, solución numérica, interpretación, decisión operativa, escalamiento y criterio de logro.
+
+Los datos simulados están identificados y llevan una regla reproducible. Guardé los cálculos en `curso/S1_fundamentos/calc/M01_practicas_luna.py` y el plan, ejecución y comprobaciones en `curso/logs/M01_practicas_luna.md`.
+
+Verifiqué los cálculos con `curso/.venv/bin/python`: el nuevo script y el de ejemplos existente terminaron con código 0. `git diff --check` no encontró errores y no quedan marcadores de práctica en M01. Solo edité los tres bloques de práctica de `M01_libreto.md` y creé los dos archivos indicados; no cambié referencias, citas ni otros capítulos. No hice commit.

@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Corregí `curso/S4_numericos_integracion/calc/M13_practicas_luna.py` para cargar `M13_ejemplos.py` desde el directorio del propio script mediante `importlib.util.spec_from_file_location` y `Path(__file__).with_name(...)`, sin añadir el cwd a `sys.path`.
+
+Ejecuté ambos scripts con `curso/.venv/bin/python -I`; los dos finalizaron correctamente. Registré el resultado y la decisión de conservar esta carga explícita y compatible con el modo aislado en `curso/logs/estado.log`.

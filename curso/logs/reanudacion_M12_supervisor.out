@@ -1,0 +1,12 @@
+B/I {'n': 6, 'mean': 0.0, 'mean_abs': 2.0, 'abs_mean': 0.0, 'sd': 2.3664319132398464}
+B abs errors nmol/mol [2.0, 1.0, 1.0, 2.0, 3.0, 3.0]
+I limits {'chi2_10': np.float64(1.6103079869623227), 'L90_sd': np.float64(4.1698894581060255), 'AB': np.float64(2.0), 'AS': np.float64(0.8944271909999159), 't95_one': np.float64(2.0150483733330233), 'L95_AB': np.float64(2.7357916323590588), 'CI95_mean': [np.float64(-2.4834179891411368), np.float64(2.4834179891411368)]}
+I scale {'before': [-2.0, 1.0, -1.0, 2.0, -3.0, 3.0], 'after': [-1.019999999999996, 2.010000000000005, -0.010000000000005116, 3.019999999999996, -2.030000000000001, 4.030000000000001], 'after_mean_abs': np.float64(2.020000000000001)}
+I zero {'mean': np.float64(-5.551115123125783e-18), 's0': np.float64(0.15811388300841897), '3s0': np.float64(0.4743416490252569)}
+I scene examples {'L90_four': np.float64(4.136703735091946), 'L95_AB_four': np.float64(2.1793575062919275), 'CI95_mean_four': [np.float64(-2.905162715754765), np.float64(2.905162715754765)], 'scaled_single_d': 2.010000000000005, 's0_five': np.float64(0.15811388300841897), '3s0_five': np.float64(0.4743416490252569)}
+A periods {'antes': {'n': 3, 'mean': 1.0, 'mean_abs': 1.0, 'abs_mean': 1.0, 'sd': 0.5}, 'despues': {'n': 3, 'mean': 3.0, 'mean_abs': 3.0, 'abs_mean': 3.0, 'sd': 0.5}}
+A pooled {'n': 6, 'mean': 2.0, 'mean_abs': 2.0, 'abs_mean': 2.0, 'sd': 1.1832159566199232}
+A individual errors after [2.5, 3.0, 3.5] nmol/mol
+A control signals {'before': [False, False, True], 'after': [True, True, True]}
+A common {2: 0.9055385138137417, 3: 0.8717797887081348, 8: 0.8276472678623426}
+A common covariance 0.6400000000000001

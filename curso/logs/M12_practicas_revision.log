@@ -1,0 +1,13 @@
+Revisión escrita en `curso/logs/M12_practicas_revision_haiku.md`. Hay seis hallazgos (H-01 a H-06), ninguno crítico. No edité libretos ni scripts, no hice commits y no audité referencias.
+
+**Lo verificado:** ejecuté `curso/.venv/bin/python -I` sobre `M12_practicas_luna.py` (rc=0) y recalculé en Python los valores que no imprime. Las soluciones numéricas de B, I y A son correctas. Los límites chi-cuadrado y t, el cambio de escala 1,01 y $3s_0$ coinciden con el texto de CFR58-A §§2.3.1.2 y 4.1.1–4.1.3.2 y con EN 14625 fórmula (5), según los PDF de `docs/`.
+
+**Hallazgos principales:**
+- **H-01 (media):** en la práctica A, el enunciado habla de «la comprobación individual posterior», pero la tabla tiene tres verificaciones posteriores. La solución evalúa solo la fila 5. Las filas 4 y 6 (+2,5 y +3,5 nmol/mol) también superan la tolerancia de 2,0 nmol/mol.
+- **H-02 (media):** la verificación 3, antes del mantenimiento (+1,5 %), también supera el límite de control de +1,0 %. La solución no lo menciona, y eso debilita la narrativa de que la señal coincide con el periodo posterior.
+- **H-03 (media):** `prop_e.md` pide que el escenario de M12-A defina muestra y cobertura. El enunciado no las define; la solución las pide después como evidencia que falta.
+- **H-04 (baja-media):** la bitácora dice que el script reproduce «todos» los valores declarados, y no es cierto. Faltan el $u(\bar d)=0{,}8718$ para n = 3 (el script solo imprime n = 2 y n = 8) y los ejemplos de escena.
+- **H-05 (baja):** los enunciados prácticos no nombran la aplicación ozono/SRP; solo aparece en las escenas.
+- **H-06 (baja):** frase ambigua en el enunciado de la práctica B («La respuesta es el conjunto…» y la referencia a una «escala temporal» que la tabla no tiene).
+
+Antes de cerrar M12, conviene corregir H-01, H-02 y H-03 en el libreto. H-04 es de la bitácora o del script, y H-05 y H-06 son de redacción.

@@ -1,0 +1,3 @@
+curso/S1_fundamentos/M02_libreto.md
+curso/logs/M02_practicas_revision_haiku.md
+curso/logs/M02_practicas_luna.md

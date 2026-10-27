@@ -1,0 +1,13 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué los ocho hallazgos **H-01–H-08** y registré cada decisión, ubicación y resultado en `curso/logs/M07_practicas_luna.md`. No rechacé ninguno.
+
+- **Gráfico B:** añadí marcas y rejilla en ambos ejes, distinguí los colores de los temas claro y oscuro y validé la paleta en ambos modos. Rendericé el HTML con Chromium para inspección.
+- **Práctica I:** incluí el cálculo de las bandas de confianza y predicción, y la justificación reproducible de los grados de libertad efectivos.
+- **Práctica A:** añadí el cálculo e interpretación de los residuos ponderados y la cola superior chi-cuadrado.
+- Aclaré la regla de los datos fijados, añadí contexto de fotometría de ozono a las tres prácticas y simplifiqué el código auxiliar y el formato numérico.
+
+La ejecución final de `curso/.venv/bin/python curso/S2_modelos_calibracion/calc/M07_practicas_luna.py` terminó con **rc=0**; la comprobación ISO imprimió **PASS**. Las bandas en I resultaron ±0,447278 nmol/mol para la media y ±1,183387 nmol/mol para una respuesta futura. En A, \(Q=0{,}40890065\), con 4 grados de libertad y cola superior \(p=0{,}98174172\).
+
+`git diff --check` no señaló errores de formato. No hice commits.

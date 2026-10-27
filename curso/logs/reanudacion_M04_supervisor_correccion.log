@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Corregí únicamente las prácticas de M04 y registré las decisiones S-M04-01..03 en `curso/logs/M04_practicas_luna.md`.
+
+- **S-M04-01:** cambié la diferencia del apartado 4 de dos grupos de **0,45 a 0,30 nmol/mol**, conservando \(d_C=0,5\) y los resultados ya verificados.
+- **S-M04-02:** aclaré que el \(Q\) matricial es el estadístico de consistencia chi-cuadrado de A y no el \(Q\) de Dixon.
+- **S-M04-03:** el enunciado ahora pide calcular el crítico unilateral de Grubbs para \(n=8\) y \(\alpha=0,01\). Para Dixon, mantuve \(Q_{crit}=0,59\) como valor didáctico suministrado para la variante hueco superior/rango completo, sin atribuirle nivel nominal ni garantía de error. Actualicé el script para identificarlo como suministrado.
+
+Ejecuté `curso/.venv/bin/python -I curso/S1_fundamentos/calc/M04_practicas_luna.py`: terminó con código 0 y `comprobaciones_practicas_M04=OK`. SciPy dio el crítico de Grubbs **2,2208334515**, registrado en la solución como **2,2208**.

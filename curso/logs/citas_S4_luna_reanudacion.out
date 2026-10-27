@@ -1,0 +1,13 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+**Cotejo bibliográfico del lote S4 ejecutado.** Leí `curso/guia_libreto.md` y `curso/revision_final.md`; cotejé 69 ocurrencias: 22 en M13 y 47 en AX. Cada ocurrencia está registrada por capítulo, línea, clave y localizador.
+
+- [Inventario exhaustivo](curso/citas/S4_inventario.md)
+- [Cotejo por ocurrencia y evidencia](curso/citas/S4_cotejo.md) — 41 verificadas, 3 corregidas y 25 no verificables. Las no verificables incluyen referencias locales para las que solo se localizó un índice o encabezado, o fuentes ausentes de `docs/` sin un pasaje abierto suficiente.
+- [Decisiones del lote](curso/citas/S4_decisiones_luna.md)
+- [Script separado para regenerar los registros](curso/citas/scripts_s4/build_s4.py), ejecutado con `python -I`.
+
+**H-02 de O-02:** normalicé solo las tres citas de Montgomery en AX.12 a `Montgomery 2013` y actualicé su referencia bibliográfica a la 7.ª edición, Wiley, 2013, ISBN 978-1-118-14681-1. No añadí numerales ni páginas que no pude verificar en un pasaje primario. Consulté el [sitio compañero de Wiley para la 7.ª edición](https://bcs.wiley.com/he-bcs/Books?action=index&bcsId=7328&itemId=1118146816) y el [registro de capítulo de Wiley Online Library](https://onlinelibrary.wiley.com/doi/10.1002/9781119528425.ch7). **M11 no fue editado.**
+
+No edité `curso/citas/inventario.md`, M13 ni otros capítulos; no cambié contenido docente, cálculos o prácticas. La comprobación de diff confirmó que M13, M11 y el catálogo quedaron sin cambios. No hice commits.

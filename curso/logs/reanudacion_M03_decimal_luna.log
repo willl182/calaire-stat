@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé únicamente los formatos visibles en `curso/S1_fundamentos/calc/M03_practicas_luna.py`: ejes, tabla y tooltips ahora usan coma decimal. Los datos numéricos internos y las coordenadas del gráfico no cambiaron. Registré la decisión S-M03-02 en `curso/S1_fundamentos/M00_bitacora_luna.md`.
+
+Ejecuté el generador con `curso/.venv/bin/python -I`; las comprobaciones terminaron en `comprobaciones_M03_practicas=OK`. Verifiqué también que las etiquetas, la tabla y los tooltips generados muestran comas decimales. La primera prueba con el Python del sistema no pudo importar `scipy`; el entorno virtual del proyecto sí tenía las dependencias necesarias.

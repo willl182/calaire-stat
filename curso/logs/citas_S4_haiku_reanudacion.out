@@ -1,0 +1,18 @@
+He escrito la revisión en `curso/citas/S4_revision_haiku.md`. No he editado libretos, inventarios ni cotejos, ni hecho commits. Las prácticas no se revisaron.
+
+**Cobertura:** completa. Conté 22 ocurrencias en M13 y 47 en AX, total 69, igual que el inventario, con las mismas líneas. No hay referencias fuera del inventario.
+
+**Hallazgos principales:**
+- **H-01 (alta), AX:37:** «Crowder 2020 §4.3» es *Exploratory Data Analysis* y «Hahs-Vaughn §2.3» es *Percentiles*. Ninguno respalda el divisor `n−1`. El cotejo marca la fila como «verificada» contra su propia evidencia. AX:49 no tiene localizador.
+- **H-02 (alta), AX:139:** WLS se cita en Crowder §10.2.1, que es *Linear Least Squares*. La ponderación está en §10.2.3.
+- **H-03 (alta):** el cotejo BIPM dice «no verificable», pero el protocolo §8 tiene las ecuaciones [2] y [3]. Eso confirma AX:233 y contradice la referencia de AX:362.
+- **H-04 (media-alta), AX:327:** GUM-S1 7.9.4 g) es el paso de corridas adaptativas, no la fórmula de error de la media de M ensayos.
+- **H-05 (media):** varias filas «verificada» solo tienen evidencia de índice o título: GUM H.5, ISO cláusula 10, GUM-S1 5.9–5.10, entre otras. AX:209 (ISO 5.6.2) usa como evidencia el título de §6.2.
+- **H-06 (media):** M13:73 cita ISO 28037 §11.1, que es *Prediction*, para covarianza de parámetros.
+- **H-07 (media):** CFR58-A §4.1.3 sí confirma la fórmula `AB + t·AS/√n` de AX.11, pero el cotejo la marca «no verificable».
+
+**Montgomery (H-02 de O-02):** la unificación a «Montgomery 2013» es correcta y coincide con M11. La ficha editorial (7.ª ed., Wiley, ISBN 978-1-118-14681-1) viene de un catálogo, no de un colofón. El año 2013 se apoya en un resultado indexado y, en parte, en la bibliografía de M11, lo que es circular. Las fórmulas de EWMA/CUSUM de AX.12 no se han comprobado en texto. Propongo marcar las filas 60–62 como «clave unificada; ficha por catálogo; contenido no verificado».
+
+**Limitaciones aceptables:** Efron–Tibshirani, Huber, JCGM 106 e ILAC-G8 no están en `docs/`, y su «no verificable» es honesto. Los títulos de Hahs-Vaughn §6.1 y §9.1 encajan con el uso, pero no se ha leído el pasaje.
+
+**Pendiente de decisión tuya:** H-09 propone añadir a `guia_libreto.md` §5 las claves que faltan (Huber, Efron–Tibshirani, Montgomery). No lo he hecho porque no edito fuera del archivo de revisión.

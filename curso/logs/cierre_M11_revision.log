@@ -1,0 +1,10 @@
+Revisión escrita en `curso/logs/M11_practicas_revision_cierre_haiku.md`. Las cifras de B, I y A coinciden entre enunciado, solución y script, pero hay cinco hallazgos, ninguno de ellos numérico. No edité libretos ni scripts y no hice commits.
+
+- **Script:** `M11_practicas_luna.py` se ejecutó completo con `curso/.venv/bin/python -I`. Recalculé a mano los rangos móviles, los límites de B, la regresión de I y el riesgo de A (0,000394 a 60 días), y todo coincide.
+- **H-01 (medio):** En el gráfico I-MR, el panel MR desplaza sus ocasiones respecto al panel I. Por ejemplo, la ocasión 7 queda en x=618 en I y en x=603 en MR, así que la comparación vertical que pide la práctica B no es limpia. Corrección sugerida en `calc/M11_practicas_luna.py:134`.
+- **H-02 (medio):** El diff del libreto frente a HEAD cambia las entradas de Hahs-Vaughn y Montgomery en las referencias, y la prosa de A1 y A2. La bitácora dice que no tocó referencias ni nada fuera de los tres marcadores. Puede venir de otro trabajo en curso, pero el registro no lo distingue; conviene que el supervisor de referencias lo confirme.
+- **H-03 (bajo):** La bitácora cita una "escena A3" que no existe; la cifra 0,00039 está en A2.
+- **H-04 (bajo):** Al quitar el día 90 la pendiente no cambia, porque 90 es la media de las fechas. Solo cambian el intercepto y la predicción. La práctica no lo explica.
+- **H-05 (bajo):** El PNG de `/tmp` que cita la bitácora para H-09 ya no existe, así que esa inspección visual no se puede repetir desde el registro. No rendericé el HTML.
+
+Como no pude confirmar la salida del script aislada (la pasé por `head`), lo dejo anotado en el informe; la última impresión del script se produjo, así que no hubo excepción.

@@ -1,0 +1,3 @@
+curso/S4_numericos_integracion/M13_libreto.md
+curso/logs/M13_practicas_revision_haiku.md
+curso/logs/M13_practicas_luna.md

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/w421/w421/calaire-stat/curso/scripts/desarrollar_practicas_pendientes.py", line 30, in <module>
+    run(luna, BASE + f'\nRonda de correcciones {name}. Lee {review}; aplica o rechaza CADA hallazgo con justificación explícita en {record}. Corrige únicamente prácticas nuevas de {rel} y sus scripts. Ejecuta cálculos y registra resultados finales. No basta prometer cambios. Si no hay hallazgos registra decisión sin cambios. Incluye tabla H-xx -> decisión -> ubicación y resultado.', LOG/f'{name}_practicas_correccion.log')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w421/w421/calaire-stat/curso/scripts/desarrollar_practicas_pendientes.py", line 15, in run
+    raise RuntimeError(f'{logfile}: rc={p.returncode}')
+RuntimeError: /home/w421/w421/calaire-stat/curso/logs/M06_practicas_correccion.log: rc=1

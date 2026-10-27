@@ -1,0 +1,11 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Desarrollé la práctica de M13 en un único bloque `[PRÁCTICA]` de nivel A, sin añadir un taller integrador. Incluye los cuatro apartados de prop_e, datos simulados reproducibles, soluciones docentes con comprobaciones, interpretación operativa y señales de escalamiento.
+
+Archivos tocados:
+- `curso/S4_numericos_integracion/M13_libreto.md`
+- `curso/S4_numericos_integracion/calc/M13_practicas_luna.py`
+- `curso/logs/M13_practicas_luna.md`
+
+**Verificación:** el script de la práctica y el de ejemplos existentes terminaron con código 0; `git diff --check` no reportó errores. La bitácora registra el plan, las ejecuciones y las comprobaciones. No hice commits ni modifiqué referencias bibliográficas, citas existentes, otros capítulos, la guía o la revisión final.

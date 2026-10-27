@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué la ronda de correcciones y ejecuté los cálculos con `curso/.venv/bin/python -I curso/S1_fundamentos/calc/M04_practicas_luna.py`. El script terminó con `comprobaciones_practicas_M04=OK`; también pasó `git diff --check`.
+
+La bitácora actualizada, `curso/logs/M04_practicas_luna.md`, incluye la tabla **H-01…H-08 → decisión → ubicación → resultado** y los resultados numéricos finales. Entre los cambios: datos de práctica distintos de varios ejemplos, verificación independiente de las pruebas pareada y Welch, comparación de potencia con la t no central, comprobación matricial del estadístico conjunto y rúbrica del nivel I desglosada por apartado.
+
+**H-04 se atendió con alcance limitado:** se declara el crítico de Dixon como didáctico y se limita la conclusión a esa convención; no se presenta como criterio normativo, porque la revisión no cotejó la fuente alternativa y no estaba autorizado modificar referencias. **H-07 y H-08 se aplicaron** en sus escenas, y **H-06** en el párrafo inmediatamente anterior a la práctica B. No edité el índice mencionado en una observación fuera de alcance.
+
+No hice commits.

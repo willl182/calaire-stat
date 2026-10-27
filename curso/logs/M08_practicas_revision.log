@@ -1,0 +1,11 @@
+La revisión de M08 está escrita en `curso/logs/M08_practicas_revision_haiku.md`. Encontré siete hallazgos: tres de severidad media y cuatro bajas. No hay errores numéricos.
+
+**Verificación:** ejecuté `M08_practicas_luna.py` con `curso/.venv/bin/python` (rc=0, aserciones pasan) y recalculé de forma independiente, en `/tmp/m08rev/` fuera del repositorio, todas las cifras narradas de B, I y A. Coinciden, incluidos `ν_eff≈658`, `U≈0,518` y `U≈0,527`, el cruce `81,35` y las cadenas. `M08_ejemplos.py` también las reproduce. Los valores de M06 y M07 que cita M08 coinciden con esos capítulos. Solo cambió el libreto en los tres marcadores de práctica.
+
+**Hallazgos principales:**
+- **H-01 (medio):** el Nivel I no tiene «Señales de escalamiento» y su práctica tampoco las indica. B y A sí las tienen, y M07-I también.
+- **H-02 (medio):** prop_e exige una evidencia o una agrupación justificada por cada contenido. Varios contenidos enseñados no tienen práctica: resolución y tolerancias y Kragten en B; componentes comunes y linealización en A; sensibilidades, covarianzas y doble conteo residual–precisión en I.
+- **H-03 (medio):** los dos modelos de cadena dan totales distintos con las mismas entradas (0,6142 frente a 0,5291 para el cliente). El texto no explica que el segundo modelo reemplaza la componente 0,35 por los parámetros, lo que invita a doble conteo.
+- **H-04 a H-07 (bajos):** la ficha omite AX.4 y el script de prácticas, hay una tabla de B3 con unidades y signos inconsistentes, la diapositiva de A2 pide una curva sin datos de trazado, y una frase de B1 es confusa.
+
+No revisé referencias ni citas, como pediste. No edité libretos ni scripts, y no hice commits.

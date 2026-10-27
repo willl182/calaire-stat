@@ -1,0 +1,12 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Restituí las tres prácticas completas en `curso/S1_fundamentos/M00_libreto.md`, limitando los cambios a sus bloques:
+
+- **B:** referencias P01–P04, indicaciones originales con P99, y registro de adquisición R03 como evidencia para asociar la lectura con P03. La solución conserva P99/50,8 como originales y deja P04 como no adquirido; no usa el orden ni la magnitud para emparejar.
+- **I:** tabla C1 de ocho filas, siete completas, una faltante y los resúmenes solicitados.
+- **A:** seis parejas, controles del contrato y discrepancia Q06 de 0,1 nmol/mol frente a la tolerancia de 1e-6.
+
+Cada bloque incluye tareas, solución, decisión y rúbrica. También actualicé H-05–H-07 en `curso/logs/reanudacion_AB_M00_decisiones_luna.md` y la bitácora `curso/logs/M00_practicas_luna.md` con el estado final.
+
+Ejecuté `./curso/.venv/bin/python -I curso/S1_fundamentos/calc/M00_practicas_luna.py`: **rc=0**. La salida confirma B con 3 parejas completas, P04 faltante y 0 huérfanas; I con 7 completas y 1 faltante; y A sin acuerdo por el desacuerdo en Q06. `git diff --check` no reportó problemas. No modifiqué citas, otros capítulos ni `hitos_pendientes`.

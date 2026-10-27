@@ -13,6 +13,22 @@ from math import comb
 SEED = 13024
 N_MC = 400_000
 N_BOOT = 20_000
+LEVELS = np.array([40.0, 100.0, 180.0, 260.0, 340.0, 440.0])
+DAY_OFFSETS = np.array([-0.38, -0.19, -0.08, 0.11, 0.23, 0.31])
+POINT_NOISE = np.array(
+    [0.11, -0.07, 0.04, -0.12, 0.09, -0.03,
+     -0.06, 0.13, -0.10, 0.05, -0.02, 0.08,
+     0.04, -0.09, 0.12, -0.01, -0.11, 0.06,
+     -0.13, 0.02, 0.07, -0.04, 0.10, -0.05,
+     0.08, -0.03, -0.12, 0.11, -0.06, 0.01,
+     -0.02, 0.09, -0.05, 0.12, -0.08, 0.03]
+).reshape(6, 6)
+X_ROBUST = np.array([20., 70., 120., 170., 220., 270., 320., 370.])
+Y_CLEAN = np.array([20.64, 70.46, 120.88, 170.75, 221.00, 270.91, 321.30, 371.20])
+
+
+def daily_observations(x_grid: np.ndarray) -> np.ndarray:
+    return 0.65 + 1.0015 * x_grid + DAY_OFFSETS[:, None] + POINT_NOISE
 
 
 def linear_fit(x: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -73,18 +89,10 @@ def main() -> None:
     print(f"MC standard errors: mean={inverse_sd/np.sqrt(N_MC):.6f}; sd (normal approximation)={inverse_sd/np.sqrt(2*(N_MC-1)):.6f}")
 
     # A2/A3: six-level calibration, six complete day blocks; shared day offsets.
-    levels = np.array([40.0, 100.0, 180.0, 260.0, 340.0, 440.0])
-    day_offsets = np.array([-0.38, -0.19, -0.08, 0.11, 0.23, 0.31])
-    point_noise = np.array(
-        [0.11, -0.07, 0.04, -0.12, 0.09, -0.03,
-         -0.06, 0.13, -0.10, 0.05, -0.02, 0.08,
-         0.04, -0.09, 0.12, -0.01, -0.11, 0.06,
-         -0.13, 0.02, 0.07, -0.04, 0.10, -0.05,
-         0.08, -0.03, -0.12, 0.11, -0.06, 0.01,
-         -0.02, 0.09, -0.05, 0.12, -0.08, 0.03]
-    ).reshape(6, 6)
+    levels = LEVELS
+    day_offsets = DAY_OFFSETS
     x_grid = np.tile(levels, (6, 1))
-    y_grid = 0.65 + 1.0015 * x_grid + day_offsets[:, None] + point_noise
+    y_grid = daily_observations(x_grid)
     beta, cov_beta = daily_fit(x_grid, y_grid)
     _, cov_classical = linear_fit(x_grid.ravel(), y_grid.ravel())
     outputs_y = np.array([80.0, 250.0, 420.0])
@@ -124,9 +132,8 @@ def main() -> None:
     print(f"distinct unordered day multisets={comb(11,6)}; percentile halfwidth/1.96={np.diff(boot_interval,axis=0)[0]/(2*1.96)}")
 
     # A4: simulated influence point; Huber is defined by SciPy's standard Huber loss.
-    x_robust = np.array([20., 70., 120., 170., 220., 270., 320., 370.])
-    noise = np.array([0.10, -0.18, 0.14, -0.09, 0.06, -0.13, 0.16, -0.04])
-    y_clean = 0.50 + 1.002 * x_robust + noise
+    x_robust = X_ROBUST
+    y_clean = Y_CLEAN
     y_influential = y_clean.copy()
     y_influential[-1] += 8.0
     beta_ols_clean, _ = linear_fit(x_robust, y_clean)

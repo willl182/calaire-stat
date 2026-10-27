@@ -1,0 +1,10 @@
+B target=100.000; T=0.997228966421; old=100.000000000; new=101.291106804; delta=1.291106804 nmol/mol; relative=1.291106804 %
+B target=250.000; T=0.993086806826; old=250.000000000; new=253.227767009; delta=3.227767009 nmol/mol; relative=1.291106804 %
+B target=500.000; T=0.986221405893; old=500.000000000; new=506.455534019; delta=6.455534019 nmol/mol; relative=1.291106804 %
+B point 1: intermediate=1e-07 atm; converted=100.000 nmol/mol; error=+1.291106804 nmol/mol; correction=-1.291106804 nmol/mol
+I applied: ratio=1.012911068038; y=405.164427215 nmol/mol; e=+5.164427215 nmol/mol; relative=+1.291106804 %
+I implicit alpha/sigma: 268.805580; 268.682143; relative difference=+0.045941 %
+I pair=1.1470/1.1329; ratio=1.012445935211; relative increment=1.244593521 %
+I pair=308.3200/304.3900; ratio=1.012911068038; relative increment=1.291106804 %
+A shared S=2.000; Y1=2.300; Y2=1.900; delta=0.400 nmol/mol; residual specific=0.400 nmol/mol
+A unequal sensitivities: Y1=2.300; Y2=1.500; delta=0.800 nmol/mol

@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué y registré las decisiones para los 11 hallazgos de Haiku en `curso/logs/M02_practicas_luna.md`, con la tabla **H-xx → decisión → ubicación y resultado**. El único rechazo fue H-06: pedía cambiar la escena A1, fuera del alcance de la ronda; la práctica A y sus resultados reproducibles se conservaron.
+
+Se corrigieron los gráficos obligatorios de B e I, se ajustaron sus soluciones docentes y se atendieron los demás hallazgos aplicables. Los datos siguen identificados como simulados, con reglas reproducibles y sin atribución a CALAIRE.
+
+**Verificación:** el script compiló y se ejecutó con `curso/.venv/bin/python`, terminó con código 0 y regeneró los tres HTML y la salida numérica. La paleta pasó las comprobaciones disponibles del validador en modo claro y oscuro; `git diff --check` no reportó errores. No pude inspeccionar las gráficas en un navegador, así que no afirmo haber verificado visualmente posibles colisiones. No hice commits.

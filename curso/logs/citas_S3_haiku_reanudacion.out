@@ -1,0 +1,13 @@
+He escrito la revisión en `curso/citas/S3_revision_haiku.md`. No he editado libretos, cotejos, inventario ni ejercicios, y no he hecho commits. Los libretos M09–M12 y AX cambiaron entre 14:19 y 14:22 por trabajo de otro lote, así que las líneas citadas son del estado de las 14:22.
+
+**Hallazgos principales** (de más a menos grave):
+
+- **H-01 Alta:** M11 atribuye a Montgomery unas 16 afirmaciones (alarmas, deriva, dependencia, ARL, límites) que el propio cotejo dice no haber verificado. El estado «corregida» describe la clave, no el soporte. Propongo quitar la cita donde ya hay soporte en NIST o Crowder, o marcarla como «solo índice».
+- **H-02 Media:** el año 2013 se justifica en el cotejo y en el catálogo con M11 (circular), con «copyright» sin haber visto portada, y con una cita a Wiley. Hay una fuente independiente local: la bibliografía de Crowder 2020 (`docs/Introduction to Statistics in Metrology.pdf`, págs. PDF 96 y 145) lista «Montgomery… (2013)». La 7.ª edición y el ISBN solo tienen respaldo secundario de catálogos web, y la variante «2012» queda sin resolver.
+- **H-03 y H-04 Media:** las sub-claves NIST-I/R/EWMA/CUSUM no están en el catálogo. En M12 (línea 234), NIST se cita para una afirmación que el propio cotejo marca «no verificable», y la página NIST §1.3.5.8 no trata dependencia temporal.
+- **H-05 Media:** M10 atribuye a ISO 17025 §§7.8.2 y 7.8.4 un «k» y un «intervalo de uso» que esas cláusulas no exigen. El cotejo marca eso como verificado.
+- **H-06 a H-09 Baja:** el «2,66» es 3/1,128 y no lo da Crowder; el cotejo de NIST-CUSUM se queda corto; la grafía del QAPP se puede precisar con la imagen de las páginas 18 y 23 (el signo es ±, y solo la Tabla 7-1 lleva «<»); y Hahs-Vaughn queda confirmado en 2020 (4.ª ed.) por la copia local, con la clave que debe normalizarse.
+
+**Verificado sin defecto:** GUM (5.2.2, 6.3.3, G.1.3, G.3.2), ISO 6143 §6.1, ISO 28037 §§5.7 y 10.3, BIPM Protocolo A §§6–8 y Apéndice 1 (2,89 y 2,92), SRP-SOP §§9.1.1 y 9.1.3, EPA-TAD §4.4 y ecuaciones 8–9, ISO 17025 §7.7.1 d) y §7.8.6, Crowder caps. 5, 10 y 11, MMU cap. 8, ASQ cap. 30, JCGM 106, CFR58-A §§2.3.1.2 y 4.1, EN 14625, NISTIR 6963 Tabla 4 y la copia NIST de EWMA (la corrección de M11 es correcta).
+
+**Límites de la revisión:** no leí cada una de las ~300 ocurrencias; verifiqué todas las claves, sus cláusulas y las afirmaciones de mayor riesgo. Crowder §10.9 solo se confirmó por título. Los registros de catálogo de Montgomery no se pudieron abrir (403).

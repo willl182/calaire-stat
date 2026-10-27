@@ -1,0 +1,18 @@
+La revisión está escrita en `curso/logs/M02_practicas_revision_haiku.md`. Hay 11 hallazgos y no pasa como cerrada: faltan tres gráficos obligatorios.
+
+**Lo que sí está bien:** reproduje el script en una copia temporal fuera del repositorio. La salida numérica y los tres HTML coinciden con los del curso. Comprobé una a una las cifras de las soluciones B, I y A y todas coinciden. Los datos están declarados como simulados y no se atribuyen a CALAIRE.
+
+**Hallazgos principales (severidad alta):**
+- **H-01 (B):** faltan el histograma de *e* con intervalos declarados y el diagrama de caja por día. El enunciado y `prop_e.md` los exigen, pero el script solo genera la serie temporal. La bitácora los menciona en el plan y no declara la omisión.
+- **H-02 (I):** la figura pide tres paneles, uno por día, con escala común. El script dibuja un solo panel con los tres días superpuestos.
+- **H-03 (I):** faltan la recta de ajuste sobre el gráfico frente a referencia y el gráfico de medias diarias contra el tiempo. Comprobado: el HTML de I no contiene ninguna polilínea.
+
+**Hallazgos de severidad media:**
+- **H-04:** los HTML usan punto decimal en tablas y ejes (`99.8`, `-0.2`), pero el curso pide coma.
+- **H-05:** el verde `#1baf7a` tiene 2,74:1 sobre el fondo claro (verificado). Está por debajo de 3:1 y la bitácora lo deja en WARN.
+- **H-06:** la escena A1 usa +1,8 y (−0,4; −0,4), mientras la práctica usa +1,6 y (−0,3; −0,4). Los dos ejemplos chocan. La decisión es del autor del capítulo.
+- **H-07:** la escena I1 describe los datos de B con dos errores por día, pero B tiene cuatro. No es bloque de práctica; conviene confirmar si es texto previo.
+
+Los cuatro de severidad baja (H-08 a H-11) cubren leyendas ambiguas, la bitácora, una dependencia global en la función de trazado y la poca presencia del caso ozono/SRP en los enunciados.
+
+No edité ningún libreto ni script, no hice commits y no audituí referencias.

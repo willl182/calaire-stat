@@ -1,0 +1,17 @@
+B simulación fijada en script: límites=(98.0, 103.0); U=1.2; k=2; resultados=(100.0, 102.2, 106.0)
+B y=100.0: [98.8,101.2] -> aceptar
+B y=102.2: [101.0,103.4] -> retener/escalar
+B y=106.0: [104.8,107.2] -> rechazar
+B zona aceptación central=[99.2,101.8]
+B zona rechazo central: y<96.8 o y>104.2
+I g=0, aceptación=[-10,10], theta=9: P(rechazo conforme)=0.10564977
+I g=0, theta=10.5: P(aceptación falsa)=0.26598553
+I g=1, aceptación=[-9,9], theta=9: P(rechazo conforme)=0.50000000
+I g=1, theta=10.5: P(aceptación falsa)=0.03039636
+I u=0.8; k=2; U=1.6; TUR=10/1.6=6.25
+A g=0: riesgo global falsa aceptación=0.02646254; falso rechazo=0.02659615
+A g=1: riesgo global falsa aceptación=0.00337106; falso rechazo=0.08670579
+A cov=0.48 (nmol/mol)^2; u_media independiente=0.56568542; dependiente=0.74833148
+A theta=10.5, zona bilateral [-9,9], independencia: P(aceptación falsa)=0.00400497
+A theta=10.5, zona bilateral [-9,9], covarianza incluida: P(aceptación falsa)=0.02251044
+A específico y=0,u=6: acepta sin guarda; cola inferior=0.02623387; superior=0.02623387; riesgo falsa aceptación=0.05246774; conforme=0.94753226; suma=1.00000000

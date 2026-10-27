@@ -1,0 +1,11 @@
+Revisé las prácticas B, I y A de M06 y escribí el informe en `curso/logs/M06_practicas_revision_haiku.md`. Hay 8 hallazgos: ninguno alto, cuatro medios y cuatro bajos. No edité libretos ni scripts, no hice commits y no audité referencias.
+
+**Números:** todas las cifras de las tres prácticas coinciden con la ejecución de los scripts (`M06_practicas_luna.py`, `M06_ejemplos.py`, `M06_RR_CALAIRE.py`). Incluye u_prec y U_prec, ANOVA de un factor, Cochran (C=0,45 frente a 0,6287), F de la práctica A, componentes negativas, REML, chi-cuadrado, aproximación delta y el caso R&R de CALAIRE. Las cifras usan coma decimal y nmol/mol.
+
+**Hallazgos medios:**
+- **H-01:** la práctica I usa datos simulados, pero prop_e pide ANOVA «en un nivel del Level 2». Hay que usar un subconjunto propio del F-PSMT-01 o documentar la decisión y escalarla.
+- **H-02:** la práctica A no analiza el caso R&R con signo, como pide prop_e, y no trabaja la multiplicidad. Propongo una tarea de multiplicidad sobre los datos simulados y una tarea condicional sobre el R&R.
+- **H-03:** falta evidencia de la incertidumbre de las componentes en la práctica I. Los valores ya están en el script; solo falta la tarea.
+- **H-04:** en la escena A1 (línea 210) se cambió la cita de Bonferroni de Hahs-Vaughn §8.2.1 a una URL de NIST. La bitácora no lo registra, la tarea prohíbe cambiar citas y la fuente no está en `docs/`. Conviene restaurar la cita original o pedir al supervisor de referencias que la valide.
+
+**Hallazgos bajos:** H-05 (la matriz cruda de I3 no aparece en el libreto), H-06 (el script de prácticas no calcula REML, aunque el comentario lo sugiere), H-07 (dos frases poco claras) y H-08 (la bitácora afirma una validación de paleta sin ningún gráfico).

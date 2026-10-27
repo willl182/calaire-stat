@@ -1,0 +1,14 @@
+La revisión está escrita en `curso/logs/M10_practicas_revision_haiku.md`. Encontré 9 hallazgos: 2 mayores, 3 medios y 4 menores. No edité libretos ni scripts, no hice commits y no revisé referencias.
+
+Las cifras están bien: el script se ejecuta sin error, y coinciden con la solución y con mi recálculo independiente. Los problemas son de definición y de trazabilidad.
+
+**Mayores**
+- **H-01 (A):** el enunciado dice que la regla acepta *una* estimación, pero la parte de dependencia calcula la aceptación sobre el promedio de las dos. Las cifras de falsa aceptación en θ=10,5 con g=1 (0,0304, 0,0040 y 0,0225) no son comparables entre sí. Propongo fijar que la regla se aplica a Ȳ, o separar los dos casos sin compararlos.
+- **H-02 (A):** la solución afirma que el riesgo específico (0,05246774) se reproduce con el script, pero `a_risks()` no lo calcula. El valor es correcto según mi cálculo independiente, así que el defecto es de trazabilidad.
+
+**Medios**
+- **H-03 (A):** falta decir que y=0 queda aceptado con g=1, de modo que ese riesgo es una falsa aceptación dado el resultado.
+- **H-04 (I):** el resultado y=9 se introduce y nunca se decide. Cae justo en el borde de [-9;9], y el texto no fija si el límite es inclusivo.
+- **H-05:** la bitácora dice que se comprobaron sumas de colas y simetría, y el script no lo hace.
+
+Los menores (H-06 a H-09) son: falta una recomendación verificable en I, el origen de los datos de B no es reproducible desde el script, la bitácora menciona una validación de paleta sin artefacto, y hay una etiqueta duplicada y una comprobación no ejecutada.

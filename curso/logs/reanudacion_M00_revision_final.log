@@ -1,0 +1,14 @@
+Revisión final escrita en `curso/logs/M00_practicas_revision_final_haiku.md`. No edité el libreto ni el script. Ejecuté `calc/M00_practicas_luna.py` con `-I`: rc=0 y la salida coincide con las cifras del libreto.
+
+**Estado de H-05 a H-07**
+- **H-05 (cotejo R03 que resolvía la práctica B): resuelto.** El enunciado ya solo da el extracto de adquisición y la frase de resolución aparece únicamente en la solución docente.
+- **H-07 (campaña C1 fuera del script de I): resuelto.** El script incluye C1 en las tuplas y en la clave única.
+- **H-06 (unicidad, faltantes y unidades de A): parcialmente resuelto.** Unicidad y faltantes sí se comprueban; las unidades no.
+
+**Hallazgos**
+- **F-H06 (menor):** en `M00_practicas_luna.py`, líneas 84–86, las unidades están hardcodeadas (`unit_x = unit_y = "nmol/mol"`) y el `assert` compara la variable consigo misma. Nunca puede fallar, así que el script imprime «unidades_compatibles= True» sin verificar nada. La decisión documentada en `reanudacion_AB_M00_decisiones_luna.md` marca H-06 como aplicado; debería decir «parcialmente».
+- **F-H05b (baja):** el script imprime la resolución literal del cotejo R03 (línea 46). Si el script llega a alumnos, revela la solución de B. Es opcional según su destino.
+
+**Conteos y números:** verificados sin discrepancias. Incluyen las medias de I, los errores y la diferencia de 0,1 en Q06 frente a la tolerancia 10⁻⁶ de A, las 16 filas de Escena I1 y el 0,425 de la Escena B1. Las rúbricas suman 10 en cada práctica. Las referencias a `calc/M00_ejemplos.py` existen.
+
+**Alcance:** no hay desbordes a M1 o M2 en tareas ni rúbricas. No revisé citas bibliográficas.

@@ -1,0 +1,10 @@
+Revisión escrita en `curso/logs/M01_practicas_revision_haiku.md`. No edité el libreto ni los scripts, y no hice commits.
+
+Las cifras de las tres prácticas son correctas: las recalculé y el script `M01_practicas_luna.py` termina con rc=0. El `git diff` de M01 solo sustituye los tres marcadores por los bloques B, I y A. Hay nueve hallazgos (ninguno afecta a los números presentados):
+
+**Medios**
+- **H-01 (I):** el enunciado no declara qué par está implementado, aunque prop_e pide que el ejercicio lo declare. La solución supone en silencio que x=400 corresponde a α=308,32 y que la salida reescalada usa 304,39. Propongo una frase explícita en el enunciado.
+- **H-02 (I):** las cifras 405,164, +5,164 y +1,2911 % no las calcula el script, aunque el libreto y la bitácora dicen que sí. El script solo imprime cocientes. Propongo añadir ese cálculo al script o corregir la frase.
+- **H-03 (B):** prop_e §8 exige evidencia para error con signo, sesgo, corrección y conversión a nmol/mol, y la práctica solo evidencia la sensibilidad. Propongo una tarea (4) con e = Y2 − Y1 y la corrección aditiva.
+
+**Bajos:** título de B que dice «sección eficaz» cuando los datos son α; origen «publicado» sin rótulo en I; explicación que falta de por qué los dos incrementos (1,2446 % y 1,2911 %) difieren (el α/σ implícito difiere un 0,05 %); conclusión de A no escrita en la solución; `__import__` en el script; y la regla de generación de T en el enunciado de B, que hace circular la comprobación inversa.

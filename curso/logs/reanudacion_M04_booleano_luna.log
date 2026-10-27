@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué S-M04-04 en `curso/S1_fundamentos/calc/M04_practicas_luna.py`: el booleano ahora usa `and` y añadí una aserción para verificar que con ese IC95 y margen `0.30` el resultado sea `False`.
+
+Registré la corrección y el intento de ejecución en `curso/logs/M04_correccion_S-M04-04_luna.md`. **La ejecución con `python -I` no se completó**: el entorno no tiene `scipy` (`ModuleNotFoundError`). No instalé dependencias. No toqué el libreto, otras escenas, citas, referencias ni otros capítulos o hitos.

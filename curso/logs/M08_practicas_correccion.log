@@ -1,0 +1,12 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Ronda de correcciones M08 completada. **Decidí los siete hallazgos** y registré cada decisión, ubicación y resultado en `curso/logs/M08_practicas_luna.md`. Se aplicaron H-01 a H-05 y H-07; para H-06 rechacé crear un gráfico y sustituí la acotación por una tabla, ya que no era necesario para resolver la práctica. No modifiqué bibliografía, citas ni otros capítulos.
+
+Ejecuté `curso/.venv/bin/python -I curso/S2_modelos_calibracion/calc/M08_practicas_luna.py`: terminó con **rc=0** y todas las aserciones pasaron. Resultados finales destacados:
+
+- **B:** \(u_{\mathrm{prec}}=0,12727922\), \(u_c=0,29359837\), \(U(k=2)=0,58719673\) nmol/mol; sin componente entre días, \(u_c=0,26683328\) nmol/mol.
+- **I:** \(u_{\mathrm{individual}}=0,49759421\), \(u_{\mathrm{cal}}=0,34088121\), \(u_{\mathrm{fut}}=0,45945620\) nmol/mol; \(\nu_{\mathrm{eff}}=299,825783\), \(U_{95}=0,67082274\) nmol/mol. La cadena da \(u_{\mathrm{Level2}}=0,44821870\) y \(u_{\mathrm{cliente}}=0,61424751\) nmol/mol.
+- **A:** único cruce en el intervalo: \(81,34713835\) nmol/mol; la malla de paso \(0,1\) confirma un cambio de dominancia.
+
+`git diff --check` no reportó errores. Los cambios se limitaron al libreto M08, su script de prácticas y su bitácora. No hice commit.

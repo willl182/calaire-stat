@@ -106,6 +106,7 @@ O-08: ASQ, apéndice C, p. 572 respalda exclusivamente la definición del CV. La
 | R13 | aplicado | Se fusionaron las dos explicaciones del CV en un párrafo, manteniendo la pregunta sobre el denominador y la recomendación de reportar dispersión absoluta cerca de cero. | `M02_libreto.md`, B4, CV | Elimina la repetición de la inestabilidad del CV cerca de cero y conserva la regla operativa. |
 | R14 | aplicado | Se normalizaron las citas narrativas a las claves de referencia: Hahs-Vaughn, Crowder 2020 y MMU. | `M02_libreto.md`, citas del capítulo | La guía §5 exige clave y ubicación; los nombres completos quedan en la lista bibliográfica. |
 | R15 | aplicado | Se incorporó la lectura oral de $s/\sqrt n$ y de $\hat e(x)=\hat a+(\hat b-1)x$. | `M02_libreto.md`, B3 e I2 | La guía §4 requiere que las fórmulas se escriban y también se digan en palabras. |
+| S-M02-01 | aplicado | Se añadió un resumen explícito de la desviación estándar muestral dentro de cada celda día×nivel: $s=0,0516398$ nmol/mol para las cuatro lecturas $r=−0,06;−0,02;0,02;0,06$. Se mantuvo $0,23664$ nmol/mol, ahora identificado como desviación agrupada por día sobre los cinco niveles, que incorpora la pendiente y no representa repetibilidad a nivel fijo. Se ajustaron tareas, solución, interpretación y criterio. | `M02_libreto.md`, práctica I; `calc/M02_practicas_luna.py` | La práctica pide precisión dentro de día y nivel; mezclar niveles incluye el cambio de centro por pendiente y no responde a esa pregunta. |
 
 ### Correcciones adicionales por iniciativa propia
 

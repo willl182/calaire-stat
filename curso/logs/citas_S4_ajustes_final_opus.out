@@ -1,0 +1,18 @@
+Apliqué F01–F05 y L05 en el lote S4. El cotejo y la decisión quedan actualizados, sin commits, y no toqué `inventario.md`, M11, cifras ni ejercicios.
+
+**Aplicados**
+- **F01:** `AX_libreto.md:233` ahora dice `[BIPM-K1 §8, ecs. 2 y 3]`. La bibliografía de AX (`ecs. [2]–[3]`) no se cambió, porque ahí no hay una cita dentro de corchetes.
+- **F02:** corregí las anclas contra extractos regenerados. GUM 5.2.2 está en la línea 1664 (no 1692), GUM-S1 7.2.2 en 2239 (no 2275), ISO 28037 §5.8.1 en 892 (no 908) y §6.1.3 en 949 (no 965). Al regenerar encontré otras anclas mal puestas que F02 no listaba: GUM 4.3.9 y 4.4.6 (filas 29–30), GUM-S1 5.9.1 y 7.9.2, y la fila 68, que apuntaba a una nota sobre δ/5 en vez de §8.1.3.
+- **F03:** en `AX_libreto.md:287` quité la atribución a Hahs-Vaughn §§6.1, 9.1. La frase ahora dice «aquí la deducimos como cota t unilateral». La fila 58 queda como retirada y no se renumeran las filas. El cálculo no cambia.
+- **F04:** reescribí la cabecera del cotejo: «se intentó comprobar». Donde decía que Wiley «confirma» el año 2013, ahora dice «consta».
+- **F05 (parcial):** normalicé `[ISO 28037, cláusula N]` a `[ISO 28037 N]` en AX:199, :203 y :215, y en las filas 43, 44 y 47. Rechacé cambiar las listas tipo `GUM-S1 5.4, 5.10–5.11`, porque la guía no lo prohíbe y no hay ambigüedad.
+- **L05:** generé los extractos con `pdftotext -layout` desde `docs/` en `curso/citas/extractos/`: `gum.txt`, `s1.txt`, `gums2_s1.txt`, `hvS4.txt`, `crowder10S4.txt` y `cfrS4.txt`. El cotejo ya no tiene rutas a `/tmp`. ISO 28037 y BIPM se citan desde los `.txt` que ya estaban en `docs/`.
+
+Añadí la sección `## Ajustes F01–F05` al final de `curso/citas/S4_decisiones_luna.md`.
+
+**Puntos a revisar**
+- Los números de línea dependen de `pdftotext -layout`. Lo dejé escrito en el cotejo y en la decisión.
+- Ninguna fila cambió de estado de verificación; solo se retiró la ocurrencia de AX:287.
+- `AX_libreto.md:291` sigue citando Hahs-Vaughn §§6.1, 9.1 y sigue «no verificable». F03 no lo tocaba.
+- `M13_libreto.md` y `calc/M13_ejemplos.py` aparecen modificados en git, pero no los toqué; son del otro supervisor.
+exit 0

@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué y documenté los hallazgos H-01 a H-10 en `curso/citas/S4_decisiones_luna.md`; no edité la revisión, `M11_libreto.md` ni `curso/citas/inventario.md`. Tampoco cambié contenido docente ni ejercicios, y no hice commit.
+
+Corregí los localizadores de varianza, WLS y error estándar; retiré ISO 28037 §11.1 de la afirmación de covarianzas en M13; y normalicé las claves de Hahs-Vaughn y Crowder, conservando los alias y completando sus fichas. Para Montgomery separé la identificación editorial de la evidencia técnica: las fórmulas y localizadores siguen como no verificables, sin usar M11, Crowder ni snippets como respaldo. En CFR mantuve el estado no verificable porque las ecuaciones son imágenes que no inspeccioné.
+
+Actualicé `S4_inventario.md` y `S4_cotejo.md` con 69 ocurrencias —22 de M13 y 47 de AX— y evidencia por componente cuando la cita es múltiple. El cotejo quedó con estados exclusivamente `verificada`, `corregida` o `no verificable`. `git diff --check` pasó.

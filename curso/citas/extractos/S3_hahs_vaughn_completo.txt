@@ -1,0 +1,50 @@
+“This edition delivers on many fronts and sets this book apart from the rest. The clear and
+conversational style emphasizes the applied and practical without compromising the theo-
+retical and conceptual underpinnings. The parallel use of SPSS and R that walks the reader
+step-by-step through the procedures coupled with fully annotated interpretation of print-
+outs are very appealing to both novice and more seasoned applied researchers. Rather than
+treating subjects like power and effect size or verification of assumptions in isolation, the
+authors do a fantastic job of blending them with the analyses to make the story behind the
+numbers more compelling and complete. The abundance of visuals and APA style write-
+ups all contribute to simplify and enhance the learning experience.”
+     —Devdass Sunnassee, Assistant Clinical Professor, University of North Carolina, USA
+
+“I have relied on previous versions of this textbook to bring to life statistical concepts in my
+beginning and intermediate level graduate classes. I also share this valuable resource with
+students who ask questions when working on quantitative projects. This fourth edition
+brings enhanced materials, explanations, and examples to aid students in gaining basic pro-
+ficiency in foundational statistical concepts. The detailed and numerous practical examples
+demonstrate the inner workings of basic statistical methods in the social and behavioural
+sciences. I look forward to sharing this enhanced edition with our graduate program.”
+                                       —Brian F. French, Washington State University, USA
+
+“Combining theory and mathematical accessibility with examples in various fields of
+behavioral sciences, SPSS and R applications, APA style write-ups, after-chapter concep-
+tual and practice problems for students, online pedagogical aids, this is a valuable book
+for introductory statistical courses in behavioral sciences. It has a broad coverage of topics,
+and the addition of the new chapter on mediation and moderation adds to its value as a
+classroom text or as a reference for applied researchers.”
+                                                      —Feifei Ye, RAND Corporation, USA
+
+“Anyone familiar with previous editions of Statistical Concepts from Lomax and Hahs-
+Vaughn recognize and appreciate the pedigagogically sound treatment of statistical meth-
+ods comprising introductory and intermediate topics found in many quantitative methods
+graduate programs. In addition to enhancements found in the past versions such as APA-
+style write-ups of statistical results and the numerous screen shots depicting both annotated
+SPSS input commands and output; the fourth edition begins each chapter with a concrete
+research scenario to motivate the particular statistical method. Another new feature that will
+resonate with instructors and graduate students are the insightful Stop and Think boxes that
+offer moments to reflect and to make connections between statistical ideas, data, and the
+software. Clearly, Lomax and Hahs-Vaughn are committed to preparing the next generation
+of researchers and practitioners, and the latest edition of Statistical Concepts is a must-have
+reference for those seeking this type of comprehensive quantitative methods training.”
+                         —Jeffrey R. Harring, University of Maryland, College Park, USA
+
+“I have required this textbook for my introductory and intermediate-level students through-
+out multiple editions, and it has continued to get better and better. This new edition contin-
+ues to emphasize the development of statistical understanding while also providing readers
+with valuable information on how to perform a variety of procedures using SPSS and R. The
+authors have added a terrific new chapter on mediation and moderation that reviews con-
+cepts and procedures that are often not a point of emphasis in traditional (textbook) coverage
+of multiple regression (but that are crucial for more modern data analysis). This is a book that
+not only is a wonderful learning resource for students

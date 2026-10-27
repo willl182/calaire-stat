@@ -85,7 +85,45 @@ La reproducibilidad empieza por guardar qué datos recibió el cálculo y cómo 
 
 > **[PREGUNTA AL GRUPO]** Si las referencias se conservan en cinco filas y solo hay cuatro indicaciones, ¿qué hacemos con la quinta referencia? — *Respuesta esperada:* la mantenemos, señalamos que falta su indicación y no calculamos el error de esa pareja hasta tener un dato válido y correctamente identificado.
 
-> **[PRÁCTICA — fase de ejercicios]** Organizar un conjunto corto del Level 2, calcular $e=y-x$, detectar una pareja desplazada y un faltante, y documentar la corrección sin borrar el original.
+### [PRÁCTICA] B — Organizar observaciones y conservar sus parejas
+
+**Propósito.** Organizar referencias e indicaciones simuladas en una tabla larga, detectar una asociación desplazada y un faltante, calcular errores con signo y documentar una corrección sin borrar el registro original. Datos ficticios para docencia; unidades en nmol/mol.
+
+**Datos entregados.** Registro de referencias:
+
+| ID de pareja | Nivel | Referencia original `x` |
+|---|---|---:|
+| P01 | L0 | 0,0 |
+| P02 | L1 | 50,0 |
+| P03 | L1 | 50,0 |
+| P04 | L2 | 100,0 |
+
+Registro original de indicaciones:
+
+| ID transcrito | ID de adquisición | Indicación original `y` |
+|---|---|---:|
+| P01 | R01 | −0,2 |
+| P02 | R02 | 50,4 |
+| P99 | R03 | 50,8 |
+
+Extracto del registro original de adquisición: «R03 — asociación de referencia registrada: P03». El registro no contiene una adquisición para P04. Este extracto es evidencia primaria simulada; no se proporciona un cotejo docente ni una asociación inferida por orden o magnitud.
+
+**Tareas.** 1) Antes de aplicar el registro de adquisición, cuenta las parejas completas, las indicaciones huérfanas y las referencias sin indicación. 2) Usa la asociación documentada de R03 para decidir si la clave transcrita requiere enmienda; conserva ID y valor originales y registra ID corregido, motivo y fuente. 3) Construye la tabla final por pareja, mostrando `x`, `y` y `e = y − x`; marca explícitamente el faltante y no calcules su error. 4) Indica qué evidencia sostiene la decisión y por qué no sería válido emparejar por fila o proximidad numérica.
+
+**Solución docente.** Antes de consultar R03: dos parejas completas (P01 y P02), una indicación huérfana (P99) y dos referencias no emparejadas (P03 y P04). El registro original R03 vincula la indicación transcrita como P99 con P03; se corrige la clave de análisis a P03 sin alterar el original: `id_original=P99`, `y_original=50,8`, `id_corregido=P03`, motivo «el registro de adquisición R03 vincula esta lectura con P03», fuente «registro de adquisición R03». P04 queda sin indicación porque no fue adquirido. Resultado:
+
+| ID de pareja | `x` original | `y` original | `e = y − x` |
+|---|---:|---:|---:|
+| P01 | 0,0 | −0,2 | −0,2 |
+| P02 | 50,0 | 50,4 | 0,4 |
+| P03 | 50,0 | 50,8 | 0,8 |
+| P04 | 100,0 | — no adquirido — | no calculable |
+
+Después de la asociación documentada hay tres parejas completas, P04 permanece faltante y no quedan indicaciones huérfanas. La evidencia es el campo de asociación del registro original R03; no el orden de las filas ni la cercanía de 50,8 a una referencia. La asociación errónea por desplazamiento produciría una resta sin pareja válida. No se elimina P99 ni se sobrescribe el dato fuente.
+
+**Decisión.** Se acepta la asociación corregida solo para el conjunto de análisis, conservando la transcripción original y la trazabilidad. No se inventa una indicación para P04 ni se calcula su error.
+
+**Rúbrica (10 puntos).** Conteos previos correctos (2); identifica R03 como evidencia y no usa orden/magnitud (2); conserva P99/50,8 y documenta la corrección (2); errores y signos correctos (2); mantiene P04 como faltante y explica la decisión (2).
 
 ### Señales de escalamiento
 
@@ -162,7 +200,39 @@ Las tablas resumen también se pueden convertir de nuevo a datos largos para com
 
 > **[TRANSICIÓN]** Ya podemos describir los grupos de manera rastreable. En la práctica del nivel intermedio reconstruiremos los resúmenes diarios a partir de las parejas originales.
 
-> **[PRÁCTICA — fase de ejercicios]** Reconstruir los resúmenes diarios de una campaña desde las parejas originales
+### [PRÁCTICA] I — Reconstruir resúmenes diarios desde las parejas
+
+**Propósito.** Verificar la estructura de una campaña y reconstruir resúmenes diarios desde observaciones originales emparejadas. Datos simulados, nmol/mol; `e = y − x`.
+
+**Datos.** Cada fila identifica campaña, analista, día, ciclo, referencia `x` e indicación `y`:
+
+| Campaña | Analista | Día | Ciclo | `x` | `y` |
+|---|---|---:|---:|---:|---:|
+| C1 | A1 | 1 | 1 | 50,0 | 50,2 |
+| C1 | A1 | 1 | 2 | 50,0 | 50,4 |
+| C1 | A1 | 2 | 1 | 50,0 | 50,0 |
+| C1 | A1 | 2 | 2 | 50,0 | 50,2 |
+| C1 | A2 | 1 | 1 | 50,0 | 49,8 |
+| C1 | A2 | 1 | 2 | 50,0 | faltante |
+| C1 | A2 | 2 | 1 | 50,0 | 50,1 |
+| C1 | A2 | 2 | 2 | 50,0 | 50,3 |
+
+**Tareas.** 1) Comprueba las ocho claves campaña–analista–día–ciclo y conserva el faltante sin convertirlo en cero. 2) Para cada analista y día, cuenta las indicaciones disponibles y calcula la media de `y` y la media de `e` solo con parejas completas. 3) Informa cuántas filas están completas y cuántas faltan. 4) Explica qué representa el resumen y qué información no debe perderse al reportarlo.
+
+**Solución docente.** Las ocho claves son únicas en campaña C1. Hay siete parejas completas y un faltante (C1, A2, día 1, ciclo 2). Medias reconstruidas:
+
+| Analista | Día | `n` completo | Media `y` | Media `e` |
+|---|---:|---:|---:|---:|
+| A1 | 1 | 2 | 50,3 | 0,3 |
+| A1 | 2 | 2 | 50,1 | 0,1 |
+| A2 | 1 | 1 | 49,8 | −0,2 |
+| A2 | 2 | 2 | 50,2 | 0,2 |
+
+El resumen conserva el tamaño muestral y el faltante; la media de indicaciones no sustituye a las observaciones originales ni permite ocultar que A2/día 1 tiene una sola lectura.
+
+**Decisión.** Se calculan resúmenes descriptivos por analista y día con las parejas disponibles, se informa el faltante y no se imputa ni se completa artificialmente.
+
+**Rúbrica (10 puntos).** Claves/campaña y faltante correctamente verificados (2); conteos por grupo (2); cuatro medias de `y` correctas (2); cuatro medias de `e` correctas con signo (2); decisión y comunicación transparente del faltante (2).
 
 ### Señales de escalamiento
 
@@ -208,7 +278,28 @@ La misma disciplina aplica a cambios de código o de plantilla. Si se cambia una
 
 > **[TRANSICIÓN]** La tabla preserva quién, cuándo y qué se comparó; el contrato del cálculo deja explícitas las entradas, las salidas y las pruebas. Ahora practicaremos el contraste con una segunda herramienta y explicaremos sus discrepancias.
 
-> **[PRÁCTICA — fase de ejercicios]** Reproducir un resultado con una segunda herramienta y explicar las discrepancias
+### [PRÁCTICA] A — Contrastar dos implementaciones reproducibles
+
+**Propósito.** Auditar un contrato de cálculo por pareja y contrastar dos salidas independientes. Datos simulados; `x`, `y` y errores en nmol/mol; tolerancia predeclarada `10⁻⁶` nmol/mol.
+
+**Datos y contrato.** Cada fila contiene clave, referencia `x`, indicación `y` y salida de la segunda herramienta `e₂`. La primera herramienta calcula `e₁ = y − x`.
+
+| Clave | `x` | `y` | `e₂` |
+|---|---:|---:|---:|
+| Q01 | 0,0 | −0,1 | −0,1 |
+| Q02 | 25,0 | 25,2 | 0,2 |
+| Q03 | 50,0 | 50,5 | 0,5 |
+| Q04 | 100,0 | 100,8 | 0,8 |
+| Q05 | 150,0 | 150,6 | 0,6 |
+| Q06 | 200,0 | 201,0 | 0,9 |
+
+**Tareas.** 1) Comprueba unicidad de las seis claves, ausencia de valores faltantes, que `x` e `y` sean numéricos y que sus unidades declaradas sean compatibles. 2) Recalcula `e₁` y obtiene por fila `d = |e₁ − e₂|`. 3) Contrasta el máximo de `d` con la tolerancia acordada sin modificarla después de ver los resultados. 4) Localiza y explica cualquier desacuerdo, y decide si las herramientas concuerdan bajo el contrato. 5) Señala qué evidencia conservarías para reproducir la comparación.
+
+**Solución docente.** Las seis claves Q01–Q06 son únicas; no hay faltantes; `x` e `y` son numéricos y ambas magnitudes están declaradas en nmol/mol. Los errores recalculados son `[−0,1; 0,2; 0,5; 0,8; 0,6; 1,0]`; las diferencias absolutas son `[0; 0; 0; 0; 0; 0,1]` nmol/mol. La diferencia máxima ocurre en Q06 y es 0,1 nmol/mol, superior a `10⁻⁶`; por tanto no hay acuerdo dentro de la tolerancia. La discrepancia no se corrige alterando datos ni tolerancia: se detiene la aceptación y se investiga fórmula, entradas, claves y transferencia. Para reproducir, se conservan identificación de entradas, unidades, regla de cálculo, tolerancia, salidas de ambas herramientas y registro de ejecución.
+
+**Decisión.** El contrato estructural pasa sus controles, pero la comparación numérica falla en Q06; no declarar equivalencia ni liberar el cálculo hasta explicar el desacuerdo.
+
+**Rúbrica (10 puntos).** Controles de estructura y unidades (2); errores recalculados (2); diferencias absolutas (2); identifica Q06 y compara con la tolerancia sin cambiarla (2); decisión y evidencia de reproducibilidad (2).
 
 ### Señales de escalamiento
 

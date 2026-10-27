@@ -1,0 +1,14 @@
+La revisión está escrita en `curso/logs/M03_practicas_revision_haiku.md`. Hay 9 hallazgos: 0 críticos, 5 mayores y 4 menores. No edité libretos, scripts ni referencias.
+
+**Lo que cuadra:** las conversiones B (h/√3, δ/√12, U/k), los promedios y la deriva de B, la diferencia con covarianza de I (0,529), los intervalos χ² y F, y las matrices de A con sus autovalores. El script corre con rc=0.
+
+**Mayores:**
+- **H-01:** el script no genera los datos del gráfico de probabilidad del libreto. Usa siete valores en lugar de seis y cuantiles de Monte Carlo en lugar de Blom exacto.
+- **H-02:** en la solución de A, u(R) sin covarianza es **0,53125**, no 0,50583. La conclusión cualitativa se mantiene, pero la cifra es errónea y el script no la comprueba.
+- **H-03:** la práctica I contrasta una varianza con χ² y calcula intervalos de varianza y de F. Eso es M4-I según prop_e y según la propia línea 188 del libreto, que lo dice expresamente.
+- **H-04:** la solución de I no da los seis pares de Blom, así que el criterio de logro no se puede verificar.
+- **H-05:** la bitácora decide no producir figura, pero la práctica pide construir un gráfico de probabilidad. Hay que producir la salida gráfica o declarar que no es evaluable.
+
+**Menores:** H-06 (el script calcula una autocorrelación de otra serie y la bitácora dice que reproduce todo), H-07 (B no evalúa t ni la triangular que prop_e lista), H-08 (A no evalúa autocorrelación) y H-09 (la afirmación de población normal no tiene regla de generación).
+
+H-03 y H-05 necesitan una decisión tuya sobre el alcance: retirar la inferencia de varianzas de M3 o cambiar prop_e, y producir la figura o no. Las correcciones numéricas (H-02, H-04) son exactas y se pueden aplicar directamente.

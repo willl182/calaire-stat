@@ -1,0 +1,29 @@
+# M03 — bitácora de prácticas y ronda de correcciones
+
+Fecha: 2026-10-27. Autor: luna. Sin commits. Esta bitácora registra la ronda Haiku de `curso/logs/M03_practicas_revision_haiku.md`; solo se ajustaron bloques de práctica de M03 y su script. Se conservaron bibliografía, claves, citas y referencias como estaban.
+
+## Decisiones por hallazgo
+
+| Hallazgo | Decisión | Ubicación | Resultado |
+|---|---|---|---|
+| H-01 | Aplicar. Se sustituyó el vector ajeno al enunciado por los seis errores ordenados declarados y cuantiles normales calculados con `norm.ppf` en posiciones de Blom. Se añadieron aserciones para cuantiles y pares. | `curso/S1_fundamentos/calc/M03_practicas_luna.py`; práctica I en `M03_libreto.md` | Los seis pares se reproducen; salida comprobada en ejecución final. |
+| H-02 | Aplicar. Se corrigió la suma de varianzas sin covarianza a 0,282227 (redondeada) y u(R)=0,53125; se añadieron comprobaciones para varianza y desviación estándar. | Práctica A en `M03_libreto.md`; script M03 | La ejecución obtiene `A_u_razon_sin_cov=0.53125`. |
+| H-03 | Aplicar. El alcance de `prop_e.md` M3-I gobierna: se retiraron el contraste e intervalo chi-cuadrado y el estadístico/intervalo F de la tarea aplicada. Se conserva solo la varianza muestral descriptiva y se explicita que chi-cuadrado/F se reconocen como distribuciones; la inferencia queda en M4-I. No se cambió prop_e. | Práctica I y cierre de M03 en `M03_libreto.md`; script M03 | La solución no ejecuta inferencia de varianzas ni reporta intervalos; script solo calcula la varianza descriptiva. |
+| H-04 | Aplicar. La solución incluye todos los seis pares (cuantil normal teórico; error observado), redondeados a dos decimales. | Práctica I en `M03_libreto.md` | Pares: (−1,28; −0,10), (−0,64; −0,10), (−0,20; 0,00), (0,20; 0,00), (0,64; 0,10), (1,28; 0,10). |
+| H-05 | Aplicar la opción de gráfico. Se genera salida HTML/SVG reproducible con ejes y unidades, marcas circulares con contorno, título/leyenda textual de serie única, tooltips SVG, tabla accesible y colores claro/oscuro. Se leyó la habilidad dataviz antes de implementarlo y se validaron las variantes de color. | Generador y `curso/S1_fundamentos/calc/M03_practica_I_probabilidad.svg`; referencia desde práctica I en `M03_libreto.md` | Archivo generado por la ejecución; paletas #2a78d6 en superficie clara y #3987e5 en superficie oscura pasan las comprobaciones de la habilidad. |
+| H-06 | Aplicar. Se eliminó la secuencia de ocho valores no utilizada y se calcula en su lugar la correlación de Pearson entre las dos listas desplazadas de doce valores del ejemplo A2; se comprueba 0,5. | Script `M03_practicas_luna.py`; solución de práctica A en `M03_libreto.md` | `I_corr_ejemplo_A2_lag1=0.5`; la bitácora describe explícitamente el estimador. |
+| H-07 | Aplicar. Se añadió una entrada triangular con semiamplitud declarada y una tarea con el cuantil t(0,975;15), coherente con distribuciones y promedio de lecturas del alcance B de prop_e; no se hicieron contrastes ni pruebas inferenciales de M4. | Práctica B de `M03_libreto.md`; script M03 | u triangular=0,122474; t crítico=2,131450 y semiancho=0,426290 nmol/mol; valores comprobados en ejecución final. |
+| H-08 | Aplicar. La práctica A ahora exige calcular el estimador declarado de autocorrelación de retardo uno para la serie de 13 valores de la escena A2, interpretar la señal y decidir si la serie de B3 respalda independencia. Se añadió a la solución y al criterio. | Práctica A en `M03_libreto.md`; script M03 | Pearson de listas desplazadas calculado y verificado: 0,5. |
+| H-09 | Aplicar. Se reemplazó la afirmación de procedencia de una población normal por datos fijados para el ejercicio y un supuesto normal de trabajo del gráfico, sin atribuirlos a observaciones poblacionales. | Enunciado I en `M03_libreto.md` | Origen y supuesto quedan diferenciados explícitamente. |
+
+## Ejecución y resultados finales
+
+Comando ejecutado: `curso/.venv/bin/python curso/S1_fundamentos/calc/M03_practicas_luna.py`. Resultado: rc=0 y `comprobaciones_M03_practicas=OK`. El generador emitió `curso/S1_fundamentos/calc/M03_practica_I_probabilidad.svg`.
+
+Resultados reproducidos (nmol/mol salvo unidades indicadas): B, u rectangular 0,1732050808; u de resolución 0,02886751346; u=U/k 0,300; u triangular 0,1224744871; t(0,975;15)=2,1314495 y semiancho de referencia 0,4262899; u del promedio independiente 0,200; u con componente común 0,3605551275; media de la serie con deriva 420,375; diferencia entre mitades 0,400; medias de bloques 420,075, 420,275, 420,475 y 420,675. I: covarianza 0,36 (nmol/mol)²; u de la diferencia independiente 1,000 y con covarianza 0,5291502622; varianza muestral descriptiva 0,008 (nmol/mol)²; correlación del ejemplo A2 0,5; pares de Blom reproducidos por el script. A: u de razón con covarianza 0,40625 y sin covarianza 0,53125; u de diferencia de puntos 3,000 y sin covarianza 4,123105626 nmol/mol; autovalores de Vcan 0,02594875 y 0,10405125, de Vpt 0 y 17, y de la matriz inválida −0,2 y 2,2; medias corregidas al minuto cero 420,000 en los cuatro bloques.
+
+La paleta de serie única se validó con la herramienta del skill dataviz: claro #2a78d6 frente a #fcfcfb, oscuro #3987e5 frente a #1a1a19; ambas pasan banda de luminosidad, croma y contraste. La visualización cuenta con tabla equivalente accesible y etiquetas de ejes con unidades. No se pudo abrirla en un navegador ni inspeccionar captura porque en el entorno no están instalados Playwright/Puppeteer; el SVG/HTML generado se inspeccionó como texto y se comprobó existencia mediante ejecución del generador.
+
+## Alcance de archivos
+
+Se modificaron únicamente los bloques de práctica de `curso/S1_fundamentos/M03_libreto.md` y `curso/S1_fundamentos/calc/M03_practicas_luna.py`; esta bitácora es propia, y la figura es salida reproducible del script. No se tocaron otros capítulos, guía, revisión final, referencias, claves ni citas. No se hicieron commits.

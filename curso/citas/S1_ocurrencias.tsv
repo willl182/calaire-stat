@@ -1,0 +1,184 @@
+curso/S1_fundamentos/M00_libreto.md	8	prop_e §3
+curso/S1_fundamentos/M00_libreto.md	9	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	10	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	11	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	30	GUM B.2.19; prop_e §3, convención curricular
+curso/S1_fundamentos/M00_libreto.md	34	prop_e §§3, 5, M0
+curso/S1_fundamentos/M00_libreto.md	36	EN 14625 §8.2, tabla 1, nota
+curso/S1_fundamentos/M00_libreto.md	58	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	60	GUM C.2.19; cálculo reproducible en `calc/M00_ejemplos.py`
+curso/S1_fundamentos/M00_libreto.md	76	ISO 17025 §7.5.1–7.5.2
+curso/S1_fundamentos/M00_libreto.md	82	ISO 17025 §7.5.2; prop_e §8
+curso/S1_fundamentos/M00_libreto.md	130	prop_e §2
+curso/S1_fundamentos/M00_libreto.md	136	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	162	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	166	ISO 17025 §7.5.2; prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	199	ISO 17025 §7.5.1–7.5.2; prop_e §8
+curso/S1_fundamentos/M00_libreto.md	243	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	255	ISO 17025 §7.11.2, §7.11.6
+curso/S1_fundamentos/M00_libreto.md	275	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	277	ISO 17025 §7.11.2, §7.11.6
+curso/S1_fundamentos/M01_libreto.md	18	VIM, sin numeral; GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	24	GUM B.2.9; GUM-6 6.1; VIM 2.3, remitido por GUM-6 §5.1; VIM no disponible en docs/
+curso/S1_fundamentos/M01_libreto.md	26	GUM B.2.19; prop_e §3, convención curricular
+curso/S1_fundamentos/M01_libreto.md	34	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	36	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	38	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	40	GUM B.2.23; prop_e §3, convención curricular
+curso/S1_fundamentos/M01_libreto.md	44	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	54	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	56	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	58	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	60	NISTIR 6963 §8
+curso/S1_fundamentos/M01_libreto.md	64	CFR50-D §§4.1, 4.5.2.5 y 4.5.3.10
+curso/S1_fundamentos/M01_libreto.md	66	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	72	GUM-6 5.6, 5.8; NISTIR 6963 §8; CFR50-D §4.5.2.5
+curso/S1_fundamentos/M01_libreto.md	78	prop_e §5, M1-B; GUM §5.1.3; GUM-6 Anexo A, símbolo $c$
+curso/S1_fundamentos/M01_libreto.md	82	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	92	GUM §5.1.3; GUM-6 Anexo A, símbolo $c$; cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	96	GUM §5.1.3; GUM-6 Anexo A, símbolo $c$
+curso/S1_fundamentos/M01_libreto.md	100	GUM §5.1.3; GUM-6 5.8
+curso/S1_fundamentos/M01_libreto.md	134	prop_e §2
+curso/S1_fundamentos/M01_libreto.md	136	prop_e §2 y §8
+curso/S1_fundamentos/M01_libreto.md	140	GUM B.2.19–B.2.20; prop_e §5, M1-I, alcance curricular
+curso/S1_fundamentos/M01_libreto.md	146	prop_e §3; GUM-6 5.2
+curso/S1_fundamentos/M01_libreto.md	150	GUM B.2.19–B.2.20; prop_e §5, M1-I, alcance curricular
+curso/S1_fundamentos/M01_libreto.md	156	prop_e §5, M1-I; NISTIR 6963 §8; BIPM-K1, «Absorption cross-section for ozone», p. 3; cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	160	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	162	VIM, sin numeral; prop_e §5, M1-I
+curso/S1_fundamentos/M01_libreto.md	164	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	166	GUM B.2.19–B.2.20; cálculo algebraico del modelo declarado
+curso/S1_fundamentos/M01_libreto.md	170	prop_e §2
+curso/S1_fundamentos/M01_libreto.md	186	prop_e §5, M1-A; remisión: AX.2
+curso/S1_fundamentos/M01_libreto.md	192	prop_e §5, M1-A; GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	198	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	202	GUM §5.2.2; ejemplo algebraico simulado
+curso/S1_fundamentos/M01_libreto.md	204	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	206	prop_e §5, M1-A; GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	210	prop_e §5, M1-A; AX.2
+curso/S1_fundamentos/M01_libreto.md	214	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	216	prop_e §2; AX.2
+curso/S1_fundamentos/M01_libreto.md	232	VIM, sin numeral; GUM-6 5.1–5.2; GUM §5.1.3
+curso/S1_fundamentos/M01_libreto.md	234	prop_e §5, M1
+curso/S1_fundamentos/M01_libreto.md	236	AX.2; prop_e §4
+curso/S1_fundamentos/M02_libreto.md	18	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	24	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	32	Hahs-Vaughn §§2.1–2.2
+curso/S1_fundamentos/M02_libreto.md	40	Hahs-Vaughn §2.3
+curso/S1_fundamentos/M02_libreto.md	42	Hahs-Vaughn §2.3.4; cálculo: `calc/M02_examples.py`
+curso/S1_fundamentos/M02_libreto.md	44	Hahs-Vaughn §2.3; Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	50	Hahs-Vaughn §§3.2.2–3.2.3
+curso/S1_fundamentos/M02_libreto.md	52	Hahs-Vaughn §3.3
+curso/S1_fundamentos/M02_libreto.md	54	AX.1
+curso/S1_fundamentos/M02_libreto.md	56	GUM 4.2.3, ec. (5); Hahs-Vaughn §5.2
+curso/S1_fundamentos/M02_libreto.md	64	Hahs-Vaughn §3.3
+curso/S1_fundamentos/M02_libreto.md	66	GUM §5.2.2, combinación lineal; cálculo en `calc/M02_examples.py`
+curso/S1_fundamentos/M02_libreto.md	74	ASQ, apéndice C, entrada «coefficient of variation», p. impresa 572 (PDF p. 605)
+curso/S1_fundamentos/M02_libreto.md	82	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	84	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	86	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	90	MMU §§3.1.1 y 3.1.3
+curso/S1_fundamentos/M02_libreto.md	116	prop_e §2
+curso/S1_fundamentos/M02_libreto.md	122	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	126	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	134	NIST/SEMATECH, sin numeral; definición general no contrastada con pasaje externo
+curso/S1_fundamentos/M02_libreto.md	144	ISO 28037 §5; prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	148	ISO 28037 §5.8
+curso/S1_fundamentos/M02_libreto.md	156	Crowder 2020 §4.3; apoyo limitado a análisis exploratorio, no a esta atribución específica
+curso/S1_fundamentos/M02_libreto.md	172	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	176	GUM B.2.19
+curso/S1_fundamentos/M02_libreto.md	176	NIST/SEMATECH, sin numeral; definición general no contrastada con pasaje externo
+curso/S1_fundamentos/M02_libreto.md	190	NIST/SEMATECH, sin numeral; definición general no contrastada con pasaje externo
+curso/S1_fundamentos/M02_libreto.md	194	prop_e §5, M2 y M12-B
+curso/S1_fundamentos/M03_libreto.md	18	Hahs-Vaughn §5.1; MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	26	MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	30	MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	34	MMU §3.2.1; comprobación: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	36	MMU §3.2.3
+curso/S1_fundamentos/M03_libreto.md	42	MMU §3.2.4
+curso/S1_fundamentos/M03_libreto.md	50	Hahs-Vaughn §4.1
+curso/S1_fundamentos/M03_libreto.md	60	MMU §§3.2.5.1–3.2.5.2
+curso/S1_fundamentos/M03_libreto.md	68	MMU §§3.2.5.1–3.2.5.2; `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	70	MMU §3.2.5.2
+curso/S1_fundamentos/M03_libreto.md	76	GUM §4.3.3; §6.2.1
+curso/S1_fundamentos/M03_libreto.md	86	GUM §4.2.3; §5.2
+curso/S1_fundamentos/M03_libreto.md	92	GUM §4.2.3, ecuación (5), y §4.2.7
+curso/S1_fundamentos/M03_libreto.md	98	Cálculo: `calc/M03_ejemplos.py`; fórmula de la varianza con dependencia, ver AX.2
+curso/S1_fundamentos/M03_libreto.md	106	GUM F.1.1.3; cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	108	GUM §4.2.3 y F.1.1.3
+curso/S1_fundamentos/M03_libreto.md	110	GUM §§G.3.2–G.3.4; Hahs-Vaughn §6.1
+curso/S1_fundamentos/M03_libreto.md	158	Crowder 2020 §7.4.1
+curso/S1_fundamentos/M03_libreto.md	160	Crowder 2020 §7.4.1
+curso/S1_fundamentos/M03_libreto.md	166	Crowder 2020 §7.2
+curso/S1_fundamentos/M03_libreto.md	174	Cálculo: `calc/M03_ejemplos.py`; deducción en AX.2
+curso/S1_fundamentos/M03_libreto.md	200	Crowder 2020 §4.4.3
+curso/S1_fundamentos/M03_libreto.md	230	NIST/SEMATECH, Autocorrelation, no disponible en docs/
+curso/S1_fundamentos/M03_libreto.md	270	Cálculo: `calc/M03_ejemplos.py`; aplicación general de la varianza con covarianza, AX.2
+curso/S1_fundamentos/M03_libreto.md	276	Cálculo: `calc/M03_ejemplos.py`; AX.2
+curso/S1_fundamentos/M03_libreto.md	280	GUM §5.2.2; Crowder 2020 §§7.2 y 7.4
+curso/S1_fundamentos/M03_libreto.md	286	NIST/SEMATECH, Autocorrelation, no disponible en docs/
+curso/S1_fundamentos/M03_libreto.md	294	Crowder 2020 §7.4.1, correlación; NIST/SEMATECH, no disponible en docs/; cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	300	Cálculo: `calc/M03_ejemplos.py`; GUM F.1.1.3, comparación de subperiodos
+curso/S1_fundamentos/M03_libreto.md	306	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M03_libreto.md	310	GUM-S2 §3.20 y notas 3–5; §3.21, nota 4
+curso/S1_fundamentos/M03_libreto.md	322	Crowder 2020 §7.4.1; cálculo matricial: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	326	prop_e §6
+curso/S1_fundamentos/M04_libreto.md	20	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	26	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	28	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	32	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	34	Hahs-Vaughn §5.2; Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	36	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	38	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	42	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	46	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	48	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	52	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	56	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	60	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	60	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	62	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	64	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	66	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	70	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	88	Hahs-Vaughn §6.1; §6.4
+curso/S1_fundamentos/M04_libreto.md	90	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	96	Hahs-Vaughn §§6.1, 7.1–7.2, 9.1–9.3; Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	100	Hahs-Vaughn §7.2
+curso/S1_fundamentos/M04_libreto.md	104	Hahs-Vaughn §7.2
+curso/S1_fundamentos/M04_libreto.md	106	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	110	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	112	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	114	Hahs-Vaughn §§7.1–7.2
+curso/S1_fundamentos/M04_libreto.md	120	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	122	Hahs-Vaughn §9.1
+curso/S1_fundamentos/M04_libreto.md	124	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	126	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	128	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	130	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	136	Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3; §9.3
+curso/S1_fundamentos/M04_libreto.md	138	Hahs-Vaughn §§6.1.2–6.1.5, 7.1.4–7.1.7 y 7.2.2–7.2.4
+curso/S1_fundamentos/M04_libreto.md	140	Hahs-Vaughn §§6.1.4, 7.1.6 y 7.2.4
+curso/S1_fundamentos/M04_libreto.md	144	Hahs-Vaughn §§6.1.1–6.1.3, 7.1.3–7.1.5 y 7.2.1–7.2.3
+curso/S1_fundamentos/M04_libreto.md	150	Hahs-Vaughn §§6.5, 7.8; statsmodels, documentación de `TTestPower` y `TTestIndPower`
+curso/S1_fundamentos/M04_libreto.md	166	Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3
+curso/S1_fundamentos/M04_libreto.md	168	Hahs-Vaughn §§6.1.2–6.1.5, 7.1.4–7.1.7, 7.2.2–7.2.3
+curso/S1_fundamentos/M04_libreto.md	172	GUM §4.3.2, nota, y §E.4.3, ecuación (E.7)
+curso/S1_fundamentos/M04_libreto.md	176	GUM §4.3.2, nota, y §E.4.3, ecuación (E.7)
+curso/S1_fundamentos/M04_libreto.md	180	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	182	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	184	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	186	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	222	NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/; Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	226	NIST/SEMATECH e-Handbook of Statistical Methods: intervalos simultáneos y cobertura conjunta; regla de p ajustada e independencia, deducción explícita
+curso/S1_fundamentos/M04_libreto.md	230	Regla Bonferroni: $p_{ajustado}=\min(mp,1)$, deducida de la cota de la unión; cf. documentación de statsmodels `multipletests`, método `bonferroni`, para el p ajustado.
+curso/S1_fundamentos/M04_libreto.md	232	La documentación de statsmodels `multipletests` enumera el método Bonferroni; la aplicación y sus consecuencias aquí se describen con la deducción indicada.
+curso/S1_fundamentos/M04_libreto.md	236	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	238	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	242	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	244	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	250	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	254	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	256	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	278	Hahs-Vaughn §§5.2, 6.1, 7.1–7.2, 9.1–9.3; Otto §2.2; Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	280	Hahs-Vaughn §6.1; §7.1

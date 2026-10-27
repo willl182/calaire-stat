@@ -1,0 +1,17 @@
+La revisión de M07 está escrita en `curso/logs/M07_practicas_revision_haiku.md`. Encontré 8 hallazgos (H-01 a H-08), ninguno crítico. No edité libretos ni scripts, y no audité referencias.
+
+Los números de B, I y A coinciden con la ejecución del script (`curso/.venv/bin/python`, rc=0, comprobación ISO en PASS). Revisé también a mano la inversión de B y la fórmula de ν_eff de I. Abrí el HTML del gráfico con Chromium headless y lo revisé visualmente.
+
+Hallazgos de severidad media:
+- **H-01:** el gráfico de residuos solo tiene marcas «0» y «500» en x y un «0» en y, así que no se pueden leer las magnitudes. Propongo añadir marcas y rejilla.
+- **H-03:** la práctica A no pide el diagnóstico chi-cuadrado que la ficha de nivel A declara. El script ya lo calcula (Q=0,408901, gl=4, p=0,98174).
+- **H-04:** la ficha de I incluye bandas de confianza y predicción, pero la práctica no las pide. El script ya las calcula para x=250 (±0,447 y ±1,183 nmol/mol).
+
+Hallazgos de severidad baja:
+- **H-02:** la bitácora dice que el modo oscuro usa `#3987e5`, pero el HTML solo usa `#2a78d6`. Además, el validador de paleta no está en el repositorio.
+- **H-05:** el enunciado dice «se generaron» los datos, pero se escribieron a mano; no hay regla de generación.
+- **H-06:** el contexto SRP/ozono es escaso en las tres prácticas.
+- **H-07:** la solución de I no explica la fórmula de Welch–Satterthwaite.
+- **H-08:** hay un import sin uso y un formateo frágil en el script.
+
+Una salvedad: la revisión no verifica los valores de la tabla de ISO/TS 28037 contra la norma, porque no tengo acceso a ella. Solo comprueba que el script reproduce los valores publicados que figuran en el libreto.

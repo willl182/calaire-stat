@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Aplicados los nueve hallazgos de Haiku (H-01 a H-09); la tabla **hallazgo → decisión → ubicación y resultado** quedó registrada en `curso/logs/M10_practicas_luna.md`.
+
+Entre las correcciones, precisé que en A la decisión del caso de dependencia se aplica al promedio de las dos estimaciones; añadí al script el cálculo reproducible del riesgo específico y sus comprobaciones; aclaré las decisiones inclusivas para el resultado I, y cuantifiqué la recomendación de I. También corregí la descripción del origen simulado de B y eliminé la afirmación no verificable sobre validación de paleta.
+
+Volví a ejecutar `curso/.venv/bin/python curso/S3_comparacion_decision/calc/M10_practicas_luna.py`: terminó con código 0 y reproduce los resultados registrados, incluido el riesgo específico de falsa aceptación de **0,05246774** y la suma posterior **1,00000000**. `git diff --check` terminó sin errores.
+
+No modifiqué referencias ni secciones bibliográficas, otros capítulos, `curso/guia_libreto.md` o `curso/revision_final.md`. No hice commits.

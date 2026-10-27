@@ -1,0 +1,13 @@
+Revisión escrita en `curso/logs/M13_practicas_revision_haiku.md`. Encontré 7 hallazgos: 1 de severidad alta, 3 medias y 3 bajas. Las cifras numéricas de la práctica se reproducen; el problema principal es de criterio, no de cálculo.
+
+**Hallazgos principales**
+
+- **H-01 (alta):** la escena A1 dice que la incertidumbre se toma como 1,0 nmol/mol, pero las diferencias de extremos (0,0117 y 0,0006) se calculan con 1,041437. Con u = 1,0 las diferencias son 0,0695 y 0,0806, que superan δ = 0,05, así que la conclusión «linealización favorable» se invierte. Hay que fijar qué valor se compara y escribirlo.
+- **H-02 (media):** el enunciado pide comparar una salida con un cálculo independiente, pero el script solo verifica forma, simetría y autovalores. El contraste de u(c₂₅₀) = 0,0440 usa covarianza OLS clásica, que ignora los bloques y no es una verificación de la matriz.
+- **H-03 (media):** el límite superior del bootstrap de la pendiente que aparece en la solución (1,00159362) no lo reproduce el script de práctica, que da 1,00159360. La causa es que el bootstrap reinicia el generador en vez de continuar el de la simulación. Verificado: con el flujo continuo se obtiene 1,00159362.
+- **H-04 (media):** el enunciado pide una señal de escalamiento por apartado, pero solo los apartados 3 y 4 la tienen.
+- **H-05 a H-07 (bajas):** falta el criterio por apartado que exige `prop_e.md`; los 36 datos del apartado 2 no se imprimen, así que el estudiante tendría que leer el código; y los literales de datos están duplicados entre el script de práctica y `M13_ejemplos.py`.
+
+**Verificado sin hallazgos:** la ejecución de `M13_practicas_luna.py` terminó con rc=0; las cifras de Monte Carlo, la matriz de covarianza conjunta, el bootstrap por días, la comparación OLS/Huber y la tabla de sensibilidad coinciden con el texto. El alcance es solo A, el origen de los datos está declarado y no hay coma decimal incorrecta.
+
+**Alcance de esta revisión:** no edité libretos ni scripts, no hice commit y no audité referencias. Tomé la parte de «Eres revisor» como la tarea operativa de este turno; no ejecuté las instrucciones de desarrollo de la primera parte del mensaje (editar bloques de práctica, crear bitácoras propias, etc.). Si esa parte también era para mí, dímelo y la hago.

@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+He aplicado las correcciones de M05 y registré una decisión explícita para cada hallazgo H-01–H-14 en `curso/logs/M05_practicas_luna.md`.
+
+La solución de I ahora aclara que la tabla determinista contiene ocho valores esperados, diferencia la interacción F×C según la convención de I2 (0,30 nmol/mol) de la diferencia entre efectos simples (0,60) y corrige el contraste simple a 1,22. La práctica A incluye los conteos y grados de libertad de la alternativa con una lectura por ciclo, y compara el patrón escalonado publicado con el anidado. En B se distingue el conteo de la nota del certificado de las filas del archivo; la discrepancia se señala para investigación fuera de la práctica.
+
+**H-07 se rechazó como tarea nueva**, y la bitácora deja constancia de que la potencia se explica en I3 pero carece de una pregunta evaluable específica en la práctica. No se presenta esa cobertura como resuelta.
+
+La ejecución final de `curso/.venv/bin/python -I curso/S2_modelos_calibracion/calc/M05_practicas_luna.py` terminó con código 0 y reprodujo los resultados registrados. `git diff --check` no reportó errores. No hice commits.

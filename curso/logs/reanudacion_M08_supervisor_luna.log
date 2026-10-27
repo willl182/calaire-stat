@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Corregí el desajuste **S-M08-01**: el script ahora reproduce y verifica con aserciones las subtareas omitidas de B, I y A. Al cotejar los números, detecté que las cifras exactas de \(u(\Delta)\) son **0,32021243** con covarianza y **0,53491682** bajo independencia; las aserciones y la bitácora reflejan esos valores, que redondean a los del libreto.
+
+La ejecución con `python -I` terminó con **rc=0** y todas las aserciones pasaron. `git diff --check` no reportó errores. No modifiqué el libreto ni las citas.

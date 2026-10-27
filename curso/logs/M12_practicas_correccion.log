@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué y registré decisiones para los seis hallazgos Haiku en `curso/logs/M12_practicas_luna.md`, con la tabla H-01 a H-06, ubicación y resultado de cada corrección.
+
+Corregí únicamente las prácticas de M12 y `calc/M12_practicas_luna.py`: ahora se aclara que los analizadores de ozono se contrastan frente al SRP; la práctica A define la muestra y su cobertura, evalúa las tres comprobaciones posteriores y señala que la carta ya tenía una señal antes del mantenimiento. El script reproduce también los ejemplos de escena y esas decisiones.
+
+Ejecuté `curso/.venv/bin/python -I curso/S3_comparacion_decision/calc/M12_practicas_luna.py`: terminó con **rc=0**. Los resultados finales quedaron registrados en la bitácora. `git diff --check` no reportó problemas. No hice commits; no cambié bibliografía ni los archivos excluidos. No generé gráficos porque las prácticas M12 no los requieren.

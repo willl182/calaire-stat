@@ -1,0 +1,651 @@
+archivo	sha256	linea	corchete_literal
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	8	prop_e §3
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	9	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	10	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	11	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	30	GUM B.2.19; prop_e §3, convención curricular
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	34	prop_e §§3, 5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	36	EN 14625 §8.2, tabla 1, nota
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	58	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	60	GUM C.2.19; cálculo reproducible en `calc/M00_ejemplos.py`
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	76	ISO 17025 §7.5.1–7.5.2
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	82	ISO 17025 §7.5.2; prop_e §8
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	88	PRÁCTICA
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	121	prop_e §2
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	127	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	153	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	157	ISO 17025 §7.5.2; prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	190	ISO 17025 §7.5.1–7.5.2; prop_e §8
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	194	PRÁCTICA
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	223	prop_e §5, M0
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	235	ISO 17025 §7.11.2, §7.11.6
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	247	0,4; 0,8; 0,7
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	247	0,4; 0,8; 0,7
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	247	cálculo reproducible en `calc/M00_ejemplos.py`
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	255	prop_e §8
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	257	ISO 17025 §7.11.2, §7.11.6
+curso/S1_fundamentos/M00_libreto.md	2d22b4d6994ebddd0dacfd2ffbdb6a88d0709371509f6b07ac348c7f938a7c93	261	PRÁCTICA
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	18	VIM, sin numeral; GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	24	GUM B.2.9; VIM 2.3; GUM-6 5.1 y 6.1
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	26	GUM B.2.19; prop_e §3, convención curricular
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	34	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	36	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	38	VIM, sin numeral
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	40	GUM B.2.23; prop_e §3, convención curricular
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	44	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	54	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	56	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	58	GUM-6 5.1–5.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	60	NISTIR 6963 §8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	64	CFR50-D §§4.1, 4.5.2.5 y 4.5.3.10
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	66	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	72	GUM-6 5.6, 5.8; NISTIR 6963 §8; CFR50-D §4.5.2.5
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	78	prop_e §5, M1-B; GUM §5.1.3; GUM-6 Anexo A, símbolo $c$
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	82	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	92	GUM §5.1.3; GUM-6 Anexo A, símbolo $c$; cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	96	GUM §5.1.3; GUM-6 Anexo A, símbolo $c$
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	100	GUM §5.1.3; GUM-6 5.8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	104	PRÁCTICA
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	106	-\alpha_1 L(c/10^9)p_0
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	130	prop_e §2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	132	prop_e §2 y §8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	136	GUM B.2.19–B.2.20; prop_e §5, M1-I, alcance curricular
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	142	prop_e §3; GUM-6 5.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	144	cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	146	GUM B.2.19–B.2.20; prop_e §5, M1-I, alcance curricular
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	152	prop_e §5, M1-I; NISTIR 6963 §8; BIPM-K1, «Absorption cross-section for ozone», p. 3; cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	156	NISTIR 6963 §8; CFR50-D §4.1
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	158	VIM, sin numeral; prop_e §5, M1-I
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	160	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	162	GUM B.2.19–B.2.20; cálculo algebraico del modelo declarado
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	166	prop_e §2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	168	PRÁCTICA
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	182	prop_e §5, M1-A; remisión: AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	188	prop_e §5, M1-A; GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	190	cálculos: `calc/M01_modelo_variables.py`
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	194	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	198	GUM §5.2.2; ejemplo algebraico simulado
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	200	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	202	prop_e §5, M1-A; GUM §5.2.2; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	206	prop_e §5, M1-A; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	210	prop_e §8
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	212	prop_e §2; AX.2
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	214	PRÁCTICA
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	228	VIM, sin numeral; GUM-6 5.1–5.2; GUM §5.1.3
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	230	prop_e §5, M1
+curso/S1_fundamentos/M01_libreto.md	6b3d5b9c2dbeb177ee393033f03c2d0c8f3189201c6c79c1ae2faed1d8fffef5	232	AX.2; prop_e §4
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	18	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	24	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	32	Hahs-Vaughn §§2.1–2.2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	40	Hahs-Vaughn §2.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	42	Hahs-Vaughn §2.3.4; cálculo: `calc/M02_examples.py`
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	44	Hahs-Vaughn §2.3; Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	50	Hahs-Vaughn §§3.2.2–3.2.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	52	Hahs-Vaughn §3.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	54	AX.1
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	56	GUM 4.2.3, ec. (5); Hahs-Vaughn §5.2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	64	Hahs-Vaughn §3.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	66	GUM §5.2.2, combinación lineal; cálculo en `calc/M02_examples.py`
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	74	ASQ, apéndice C, entrada «coefficient of variation», p. 572
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	82	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	84	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	86	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	90	MMU §§3.1.1 y 3.1.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	100	prop_e §2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	106	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	110	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	118	NIST/SEMATECH, sin numeral; no disponible en docs/
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	128	ISO 28037 §5; prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	132	ISO 28037 §5.8
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	140	Crowder 2020 §4.3
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	146	prop_e §5, M2
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	150	GUM B.2.19
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	150	NIST/SEMATECH, sin numeral; no disponible en docs/
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	164	NIST/SEMATECH, sin numeral; no disponible en docs/
+curso/S1_fundamentos/M02_libreto.md	eb3487100c215a3d14636a749e1ffcb2e5b287c4b8e3bfe113c7b830c9880672	168	prop_e §5, M2 y M12-B
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	18	Hahs-Vaughn §5.1; MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	26	MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	30	MMU §3.2.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	34	MMU §3.2.1; comprobación: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	36	MMU §3.2.3
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	42	MMU §3.2.4
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	50	Hahs-Vaughn §4.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	60	MMU §§3.2.5.1–3.2.5.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	68	MMU §§3.2.5.1–3.2.5.2; `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	70	MMU §3.2.5.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	74	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	76	GUM §4.3.3; §6.2.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	82	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	86	GUM §4.2.3; §5.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	92	GUM §4.2.3, ecuación (5), y §4.2.7
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	96	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	98	Cálculo: `calc/M03_ejemplos.py`; fórmula de la varianza con dependencia, ver AX.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	104	-0,8;\ 0,8;\ 0,8;\ -0,8
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	106	GUM F.1.1.3; cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	108	GUM §4.2.3 y F.1.1.3
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	110	GUM §§G.3.2–G.3.4; Hahs-Vaughn §6.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	118	Cálculo de cuantiles: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	140	Crowder 2020 §7.4.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	142	Crowder 2020 §7.4.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	144	(X-E[X
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	144	Y
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	148	Crowder 2020 §7.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	150	aX+bY
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	150	X
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	150	Y
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	156	Cálculo: `calc/M03_ejemplos.py`; deducción en AX.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	170	Chi-cuadrado: fuente de la construcción pendiente de verificar, registrada en la bitácora; F: Hahs-Vaughn §9.1.1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	180	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	182	Crowder 2020 §4.4.3
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	186	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	196	NIST/SEMATECH, Autocorrelation, no disponible en docs/
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	206	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	236	Cálculo: `calc/M03_ejemplos.py`; aplicación general de la varianza con covarianza, AX.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	242	Cálculo: `calc/M03_ejemplos.py`; AX.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	246	GUM §5.2.2; Crowder 2020 §§7.2 y 7.4
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	252	NIST/SEMATECH, Autocorrelation, no disponible en docs/
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	258	1;\ 0,5;\ -0,5;\ -1;\ -0,5;\ 0,5;\ 1;\ 0,5;\ -0,5;\ -1;\ -0,5;\ 0,5;\ 1
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	260	Crowder 2020 §7.4.1, correlación; NIST/SEMATECH, no disponible en docs/; cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	266	Cálculo: `calc/M03_ejemplos.py`; GUM F.1.1.3, comparación de subperiodos
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	270	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	272	GUM §5.2.2; AX.2
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	276	GUM-S2 §3.20 y notas 3–5; §3.21, nota 4
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	284	Cálculo: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	288	Crowder 2020 §7.4.1; cálculo matricial: `calc/M03_ejemplos.py`
+curso/S1_fundamentos/M03_libreto.md	ea9dd6a838ba24065944706fbc3d619b58b7341e490d263634258b72d489cb01	292	prop_e §6
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	20	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	26	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	28	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	32	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	34	Hahs-Vaughn §5.2; Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	36	-0,8;\ 0,1;\ 0,4;\ -0,2;\ 0,7;\ 0,0;\ -0,5;\ 0,6
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	36	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	38	Hahs-Vaughn §5.2; §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	42	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	46	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	48	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	52	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	56	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	60	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	60	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	62	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	64	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	66	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	70	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	76	Hahs-Vaughn §6.1; §6.4
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	78	Hahs-Vaughn §6.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	84	Hahs-Vaughn §§6.1, 7.1–7.2, 9.1–9.3; Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	88	Hahs-Vaughn §7.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	92	Hahs-Vaughn §7.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	94	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	98	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	100	Hahs-Vaughn §§7.3.1 y 7.5.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	102	Hahs-Vaughn §§7.1–7.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	108	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	110	\nu s^2/\chi^2_{0,975;\nu};\ \nu s^2/\chi^2_{0,025;\nu}
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	110	Hahs-Vaughn §9.1
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	112	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	114	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	116	R/F_{0,975;\nu_1,\nu_2};\ R/F_{0,025;\nu_1,\nu_2}
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	116	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	118	Hahs-Vaughn §§9.1–9.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	124	Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3; §9.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	126	Hahs-Vaughn §§6.1.2–6.1.5, 7.1.4–7.1.7 y 7.2.2–7.2.4
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	128	Hahs-Vaughn §§6.1.4, 7.1.6 y 7.2.4
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	132	Hahs-Vaughn §§6.1.1–6.1.3, 7.1.3–7.1.5 y 7.2.1–7.2.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	134	(z_{1-\alpha/2}+z_{1-\beta})\sigma/\delta
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	134	(z_{1-\alpha/2}+z_{1-\beta})/d_C
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	134	(z_{1-\alpha/2}+z_{1-\beta})\sigma_\Delta/\delta
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	134	(z_{1-\alpha/2}+z_{1-\beta})/d_C
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	134	(z_{1-\alpha/2}+z_{1-\beta})/d_C
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	138	Hahs-Vaughn §§6.5, 7.8; statsmodels, documentación de `TTestPower` y `TTestIndPower`
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	154	Hahs-Vaughn §6.1.2–6.1.5; §§7.1.4–7.1.7; §7.2.2–7.2.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	156	Hahs-Vaughn §§6.1.2–6.1.5, 7.1.4–7.1.7, 7.2.2–7.2.3
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	160	GUM §4.3.2, nota, y §E.4.3, ecuación (E.7)
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	164	GUM §4.3.2, nota, y §E.4.3, ecuación (E.7)
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	168	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	170	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	172	0,02;\ 0,04;\ 0,01;\ 0,03;\ 0,00;\ 0,05;\ 0,02;\ 0,28
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	172	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	174	Otto §2.2
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	184	NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/; Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	188	NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	192	NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	194	NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	198	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	200	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	204	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	206	Lakens 2017, no disponible en docs/
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	212	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	216	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	218	Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	226	Hahs-Vaughn §§5.2, 6.1, 7.1–7.2, 9.1–9.3; Otto §2.2; Milton et al. 2006
+curso/S1_fundamentos/M04_libreto.md	b8dab65e31babbd91fc7f23a78b0695fb8079cbf11625864ec039b92ca3e4c0b	228	Hahs-Vaughn §6.1; §7.1
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	26	VIM, JCGM 200:2012 (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	26	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	30	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	32	Brereton, cap. 2; Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	44	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	44	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	50	ISO 5725-3 §§9.3–9.5
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	52	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	58	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	64	F-PSMT-01, archivo del certificado
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	84	SRP QAPP §6.2.1
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	84	SRP SOP §§9.7.19–9.7.20
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	86	EN 14625 §§8.4.7–8.4.8
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	86	ISO 13964:1998 §6.2.2
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	86	EPA TAD §4.4.1
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	90	ISO/IEC 17025 §7.2.2
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	110	Brereton, cap. 2
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	116	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	120	Crowder 2020 §9.2
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	126	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	126	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	150	EN 14625 §§8.4.7–8.4.8
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	152	ISO/IEC 17025 §7.2.2; Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	156	Hahs-Vaughn y Lomax, *Statistical Concepts — A First Course* §§6.1.2–6.1.4; Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	158	GUM H.5; AX.4, deducción
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	160	GUM H.5; Hahs-Vaughn §§6.1.2–6.1.4
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	162	Hahs-Vaughn, cap. 6; distribución t no central: Johnson, Kotz y Balakrishnan, *Continuous Univariate Distributions*, vol. 2 (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	180	ISO 5725-3 §§9.4–9.5 y 9.8
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	184	ISO 5725-3 §9.5, figura 2; §9.8
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	196	VIM (no disponible en docs/); ISO 5725-3 §§5–6
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	196	ISO 5725-3 §§9.3–9.5
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	198	ISO 5725-3 §§9.3–9.5
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	198	VIM, JCGM 200:2012 (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	210	Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	212	ISO 5725-3, anexo B
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	212	Crowder 2020 §9.3.1, tabla 9.9
+curso/S2_modelos_calibracion/M05_libreto.md	6488cd204f1304808cd5b585fe9ba7da83fbd9236ae4c7681317a56fe970c66a	230	SRP QAPP §6.2.1; SRP SOP §§9.7.19–9.7.20
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	24	VIM; ISO 5725-3 §§5–6
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	24	VIM (no disponible en docs/); ISO 5725-3 §§5–6; MMU §4.4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	28	ISO 5725-3 §6.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	32	Crowder 2020 §9.3.1; ISO 5725-3 §6.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	34	GUM H.5; ISO 5725-3 §6.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	46	GUM G.4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	48	GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	54	Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	66	Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	78	GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	80	GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	84	GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	88	Crowder 2020 §9.3.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	92	Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	98	Crowder 2020 §9.3.1; ISO 5725-3 §§5–6
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	100	GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	106	Hahs-Vaughn §9.1; GUM H.5; AX.11
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	108	2MS_{\mathrm{entre}}^2/(d-1)+2MS_{\mathrm{dentro}}^2/(N-d)
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	108	Hahs-Vaughn §8.2.1; GUM 5.1.2
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	108	GUM 5.1.2–5.1.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	120	Crowder 2020 §9.3.1; ISO 5725-3 §§5–6
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	122	Crowder 2020 §9.3.1–9.3.2
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	124	Crowder 2020 §9.3.1; ISO 5725-3 §§9.3–9.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	128	Crowder 2020 §9.3.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	132	Crowder 2020 §§9.3.1–9.3.2; ISO 5725-3, anexos B y C
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	138	Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	140	Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	142	ISO 5725-2; Crowder 2020 §9.3.3
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	144	ISO 5725-2 §7.3.3 y §8.1, tabla 4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	148	Crowder 2020 §9.3.3; ISO 5725-3 §8
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	152	VIM (no disponible en docs/); ISO 5725-3 §§5–6; MMU §4.4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	154	ISO 5725-1 (no disponible en docs/); ISO 5725-3 §8; ISO 5725-6
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	156	ISO 5725-2; ISO 5725-3 §8; ISO 5725-4; ISO 5725-6; GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	158	ISO 5725-3 §8
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	174	Crowder 2020 §9.3.1, tabla 9.9
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	176	Crowder 2020 §9.3.1; ISO 5725-3, anexo B
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	178	CALAIRE R&R
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	180	ISO 5725-3 §§8–9.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	184	Crowder 2020 §9.3.1–9.3.2; GUM H.5; AX.4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	188	Crowder 2020 §9.3.4
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	192	Hahs-Vaughn §8.2.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	192	`calc/M06_RR_CALAIRE.py`
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	194	CALAIRE R&R
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	208	Searle, Casella y McCulloch, *Variance Components* (no disponible en docs/)
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	208	Crowder 2020 §9.3.1–9.3.2; GUM H.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	210	Searle, Casella y McCulloch, *Variance Components* (no disponible en docs/)
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	212	GUM H.5; ISO 5725-3 §§8–9.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	214	ISO 5725-3 §§8–9.5
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	218	ISO 5725-3 §8; ISO 5725-2; ISO 5725-4; ISO 5725-6
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	220	ISO 5725-4 §5.5.2
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	220	GUM 5.1.2
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	222	GUM H.5; ISO 5725-3 §6.1
+curso/S2_modelos_calibracion/M06_libreto.md	fb4763f4f7088c18c8da7d13c0aea14cd596eb983bec9b9d197cb48521a89c20	232	Crowder 2020 §9.3.3–9.3.6; GUM G.4; ISO 5725-3 §8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	18	prop_e §3; Crowder 2020 §10.1, PDF pp. 2–3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	31	Hahs-Vaughn §10.1, PDF pp. 1–2; Crowder 2020 §10.1, PDF pp. 2–3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	39	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	41	Otto §6.1, ec. (6.17)
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	41	Hahs-Vaughn §10.1.1.5.2, restricción del intervalo
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	41	Crowder 2020 §10.4.1
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	49	Crowder 2020 §10.2.1, PDF p. 5; ISO 28037 §5.8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	53	Crowder 2020 §10.2.1, PDF p. 5; AX.5
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	59	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	61	Crowder 2020 §10.2.1, PDF p. 5; Crowder 2020 §10.3, PDF pp. 7–8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	65	Crowder 2020 §10.1, PDF pp. 2–3; ISO 28037 §5.2.2
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	71	Crowder 2020 §10.1.2, PDF p. 3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	73	ISO 28037 §§5.7, 11.1
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	73	prop_e §3, convención del curso; VIM, definición de corrección (no disponible en docs/)
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	75	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	77	ISO 28037 §11.1; AX.6
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	87	prop_e §2, §5 M7-B; Crowder 2020 §10.4, PDF pp. 9–10
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	93	prop_e §5, M7-I
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	99	Crowder 2020 §10.3.1, PDF pp. 7–8; AX.5
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	101	Crowder 2020 §§10.3–10.4
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	103	script `calc/M07_ejemplos.py`; Crowder 2020 §10.3.1, PDF pp. 7–8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	109	Crowder 2020 §10.3.2, PDF p. 8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	111	Crowder 2020 §10.3.3, PDF p. 8; script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	115	ISO 28037 §§11.1.1–11.1.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	119	ISO 28037 §11.1.3; GUM 5.2
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	121	GUM G.4.1; AX.7
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	123	prop_e §3; Crowder 2020 §10.3, PDF pp. 7–8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	131	ISO 28037 §5.8; Crowder 2020 §10.2.1, PDF p. 5
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	133	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	135	prop_e §5, M7; Crowder 2020 §10.4, PDF pp. 9–10
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	141	y_i-(a+bx_i)
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	143	Crowder 2020 §10.2.3, PDF p. 6; ISO 28037 §§6.1–6.2
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	147	ISO 28037 §§5.8, 6.2; Crowder 2020 §10.2.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	160	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	162	Crowder 2020 §10.2.3, PDF p. 6
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	166	prop_e §5, M7-I; ISO 28037 §§7–10
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	174	Crowder 2020 §10.4.1, PDF pp. 9–10; ISO 28037 §6.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	176	Crowder 2020 §10.4.1, PDF pp. 9–10; Otto §6.1, tabla 6.1, p. 217
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	178	Otto §6.1, tabla 6.1, p. 217; prueba F de falta de ajuste, ecuación (6.20), p. 222
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	191	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	193	Otto §6.1, tabla 6.1, p. 217; F-PSMT-01, fuente propia del diseño
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	197	Crowder 2020 §10.4.1, PDF pp. 9–10; script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	203	prop_e §2, §5 M7-I; ISO 28037 §§5.2.2, 6.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	209	prop_e §5, M7-A
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	215	ISO 28037 §§10.1–10.3; prop_e §5, M7-A
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	217	ISO 28037 §§5.2.2, 10.1–10.3; AX.8
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	223	ISO 28037 §§9–10; prop_e §5, M7-A
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	227	script `calc/M07_ejemplos.py`; datos simulados
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	229	script `calc/M07_ejemplos.py`; ISO 28037 §10.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	231	ISO 28037 §§10.1–10.2; script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	233	ISO 28037 §10.3, tablas 25–26
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	239	y-a-bx^*
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	239	ISO 28037 §10.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	258	script `calc/M07_ejemplos.py`; ISO 6143 §5.2.2
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	260	ISO 28037 §§5.2.2, 10.3; prop_e §5, M7-A
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	262	script `calc/M07_ejemplos.py`
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	268	prop_e §5, M7-A; ISO 28037 §§5.2.2, 10.1–10.3
+curso/S2_modelos_calibracion/M07_libreto.md	88860fcc60a2415864b9d6bb1380c59d4866e2632294e41e21a20dc8fe2931d2	278	prop_e §5, M7–M8
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	11	CIPM MRA-G-13
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	18	GUM 4.1; GUM-6 11.2–11.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	24	GUM 4.1; GUM-6 11.2–11.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	26	ISO 28037 §§11.1.1–11.1.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	32	GUM 3.3.4–3.3.5; Crowder 2020 §6.2.2–6.2.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	36	GUM 4.2; Crowder 2020 §6.2.2–6.2.4; MMU §5.3.1; AX.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	50	GUM 4.3; Crowder 2020 §6.2.1–6.2.3; MMU §§5.2.2–5.3.1; AX.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	52	-h,h
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	56	Crowder 2020 §6.2.3–6.2.5; MMU §§5.2.2–5.3.1; AX.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	58	GUM 4.2; Crowder 2020 §6.2.2 y §6.2.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	70	GUM-6 F.2, ecuación (47) y nota 3; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	72	f(x_i+u(x_i))-f(x_i)
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	87	GUM 6.2–6.3; Crowder 2020 §6.2.5
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	95	GUM 4.2.3; GUM H.5; F-PSMT-01, fuente propia del diseño
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	103	prop_e §2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	111	prop_e §5, M8
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	117	GUM 5.1–5.2; MMU §6.1; Crowder 2020 §7.2–7.3; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	123	GUM 5.1–5.2; Crowder 2020 §7.4.1
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	127	GUM 5.1; Crowder 2020 §7.2–7.3; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	129	MMU §6.1; Crowder 2020 §7.2–7.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	135	Crowder 2020 §7.4.1; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	143	GUM 6.2–6.3, G.3–G.4; Crowder 2020 §6.2.5; Crowder 2020 §7.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	145	GUM G.4; Crowder 2020 §7.3; AX.7; prop_e §5, M8
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	151	GUM G.4; Crowder 2020 §6.2.5; AX.7
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	157	GUM G.6.5
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	161	GUM G.3–G.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	169	GUM 4.1–4.2; GUM-6 11.4; Crowder 2020 §6.2.2–6.2.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	171	GUM H.5 y 5.1.2; AX.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	175	GUM 4.1–4.2 y 5.1.2; GUM-6 11.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	177	GUM H.5; M06-B; AX.4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	179	GUM 4.3.10; ISO 28037 §11.1.3; M07-I1
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	189	GUM-6 8.4, 11.4; GUM 4.1; prop_e §5, M8
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	191	GUM 5.1; GUM-6 8.4; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	193	GUM-6 8.4; ISO 28037 §11.1.3
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	195	GUM 5.1–5.2; AX.2; M07-I
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	207	CIPM MRA-G-13, sin numeral; no disponible en docs/
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	207	prop_e §5, M8; prop_e §4
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	213	GUM 5.2; Crowder 2020 §7.4.1; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	219	Crowder 2020 §7.4.1; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	225	GUM 5.2; Crowder 2020 §7.4.1; AX.2
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	231	GUM-6 F.1–F.2; ISO 28037 §11.1.3, notas 1 y 3; script `calc/M08_ejemplos.py`
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	235	GUM-6 F.1–F.2; Crowder 2020 §7.7; prop_e §5, M8; M13
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	239	GUM 6.2–6.3; CIPM MRA-G-13
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	241	calc/M08_ejemplos.py, construcción simulada
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	254	calc/M08_ejemplos.py, álgebra del ejemplo simulado
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	256	ILAC-P14, sin numeral, no disponible en docs/; CIPM MRA-G-13, sin numeral, no disponible en docs/
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	260	Crowder 2020 §7.5–7.7
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	266	prop_e §2; prop_e §5, M8
+curso/S2_modelos_calibracion/M08_libreto.md	7edfe98bc69efb815cfd6cbf5e039f51f6414a177b5e868e3692c43593c12b5e	274	GUM 4.1–4.3, 5.1–5.2, 6.2–6.3; prop_e §4, secuencia M9
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	18	GUM 5.2.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	30	GUM 5.2.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	36	GUM 5.2.2; AX.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	42	GUM 6.3.3; G.1.3, Tabla G.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	42	GUM 6.2.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	50	ISO 6143 §6.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	94	GUM 5.2.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	108	GUM 5.2.4; F.1.2.3, ec. (F.2)
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	116	GUM 6.2.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	118	u_1^2+u_2^2-2\,\operatorname{cov}(1,2)
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	122	GUM 6.3.3; G.1.3, Tabla G.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	130	GUM 5.2.2; ISO 28037 §5.7
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	130	GUM 5.2.2; AX.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	132	D(x_0)
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	146	GUM 5.2.2; ISO 6143 §6.1
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	146	ISO 17025 §7.8.6
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	156	prop_e §6
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	162	ISO 28037 §10.1–10.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	168	ISO 28037 §10.1–10.3; Tablas 25–26
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	170	BIPM-K1, Apéndice 1 §3, ec. 21
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	178	SRP-QAPP, Element 14.2, Figura 14.2
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	180	GUM F.1.2.3, ec. (F.2); BIPM-K1, Protocolo A §7, ec. 1; Apéndice 1 §3, ecs. 15–21
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	192	ISO 28037 §10.3
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	206	BIPM-K1, Protocolo A §8, ecs. 2–3
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	208	BIPM-K1, Protocolo A §7, ec. 1; §8, ecs. 2–3
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	210	BIPM-K1, Protocolo A §§7–8
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	210	GUM 5.2.2; AX.9
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	218	GUM 5.2.2; ISO 28037 §10
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	226	BIPM-K1, Protocolo A §6
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	226	BIPM-K1, Protocolo A §8, ecs. 2–3
+curso/S3_comparacion_decision/M09_libreto.md	bb586c00b49612e01ad08846c5dbfef076f92c83bfd5eac3cb53dc943b3c9090	226	GUM 5.2.2; AX.9
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	18	MMU, cap. 8, §8.1; ISO/IEC 17025:2017, §§7.6 y 7.8.6.1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	26	GUM, §3.3.7
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	26	y-U,y+U
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	28	GUM §6.3 y Anexo G; M8-I
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	30	y-U,\,y+U
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	34	ISO 28037, §5.7.1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	39	y-U,y+U
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	39	L_I,L_S
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	41	ISO/IEC 17025:2017, §7.1.3
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	41	ISO/IEC 17025:2017, §§7.8.6.1–7.8.6.2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	43	98,8;101,2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	43	101,0;103,4
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	43	104,8;107,2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	45	L_I+U,L_S-U
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	45	99,2;101,8
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	45	MMU, cap. 8, §§8.4–8.5
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	59	Crowder 2020, cap. 5; MMU, cap. 8
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	63	-T,T
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	63	-T+g,T-g
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	69	Crowder 2020, §5.2.1.3, ecs. 5.6–5.7
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	69	MMU, cap. 8, §8.4
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	71	GUM §6.3 y Anexo G
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	71	Crowder 2020, §5.2.1.1, ec. (5.1)
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	71	Crowder 2020, §5.2.1.1; ASQ, cap. 30
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	83	ficha común de criterios
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	83	Crowder 2020, cap. 5, §5.2.1.1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	85	SRP-QAPP, §6.2.1 y Tabla 7-1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	87	SRP-SOP, §9.1.1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	87	SRP-SOP, §9.1.3
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	89	EPA-TAD §4.4.1 y Apéndice A, ecs. 1–2, 8–9
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	91	EPA-TAD §4.4.2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	92	ISO/IEC 17025:2017, §7.6
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	92	GUM §§5.1.2 y 6.2.1
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	94	ISO/IEC 17025:2017, §7.8.6.1–7.8.6.2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	94	ISO/IEC 17025:2017, §§7.8.2 y 7.8.4
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	96	GUM §5.2.2; ISO/IEC 17025 §7.8.6
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	98	ASQ, cap. 30
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	106	JCGM 106 §§3.3.13–3.3.16, 9.3.2 y 9.5
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	110	-T,T
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	110	JCGM 106 §9.3.2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	112	JCGM 106 §§6.2, 7.1 y 9.3.2; AX.10
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	114	-10,10
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	114	-12,12
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	114	-12,12
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	114	JCGM 106 §9.3.2
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	118	JCGM 106 §§9.4–9.5, ecs. 17–18; Crowder 2020 §5.2.1.3, ecs. 5.6–5.7
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	126	-T,T
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	126	u_1^2+u_2^2+2\operatorname{cov}(Y_1,Y_2)
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	126	GUM, §5.2.2, ec. (13)
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	130	-10,10
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	130	-12,12
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	130	-12,12
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	130	-10,10
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	130	JCGM 106 §9.3.2; AX.10
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	132	JCGM 106 §9.4; GUM §6.3
+curso/S3_comparacion_decision/M10_libreto.md	fdcd0118975a4cffc084906496fb536b9e850f1a402adeaeea60f3de105fa8a0	132	GUM, §5.2.2, ec. (13)
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	14	S3_01_ficha_criterios.md
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	19	Crowder 2020 §11.2
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	27	Crowder 2020 §11.2
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	31	Crowder 2020 §11.2; Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	43	Crowder 2020 §11.2.2
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	45	NIST-R
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	45	Crowder 2020 §11.2.1
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	49	Crowder 2020 §11.2
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	57	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	59	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	79	Crowder 2020 §§10.8–10.9
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	85	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	89	Crowder 2020 §11.2.1; NIST-I; NIST-R
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	95	NISTIR 6963 Tabla 4, p. 20
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	103	Crowder 2020 §10.8; Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	105	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	109	Crowder 2020 §10.8
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	121	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	135	Crowder 2020 §10.8.1
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	137	GUM 5.2.2
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	141	GUM 3.2.3, 5.2.2; Crowder 2020 §10.8
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	153	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	157	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	161	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	163	1-(1-\lambda)^{2t}
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	163	NIST-EWMA; Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	167	Hahs-Vaughn 2020 §8.1.1
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	167	Montgomery 2013, evaluación de cartas; no disponible en `docs/`; Hahs-Vaughn 2020 §8.1.1
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	179	NIST-CUSUM; Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	181	NIST-CUSUM
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	185	Montgomery 2013, no disponible en `docs/`
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	189	Hahs-Vaughn 2020 §8.1.1; modelo de simulación explícito
+curso/S3_comparacion_decision/M11_libreto.md	08406c7c184a8670fdb3c559097960f9a9a3cfe4b2c47534fc349f20d38ee0e5	205	Crowder 2020 §10.9; modelo docente explícito
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	24	CFR58-A §4.1.1
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	30	CFR58-A §§3.1.1 y 4.1.1
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	34	100, 100, 100, 100
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	34	98, 101, 99, 102
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	34	-2, +1, -1, +2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	34	-2, +1, -1, +2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	54	CFR58-A §§4.1.3–4.1.3.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	66	CFR58-A §§2.3.1.2 y 4.1.1–4.1.3
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	88	NIST/SEMATECH, intervalo de confianza para la desviación estándar; no disponible en docs/
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	88	CFR58-A §4.1.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	96	-2, +1, -1, +2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	100	CFR58-A §2.3.1.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	108	GUM G.3.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	108	CFR58-A §4.1.3
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	120	CFR58-A §§4.1.3.1–4.1.3.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	126	GUM 4.2.2–4.2.3 y G.3.2; AX.1; AX.11
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	128	-2,9052 \%, +2,9052 \%
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	130	GUM 4.2.2–4.2.3 y G.3.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	130	CFR58-A §§4.1.2–4.1.3
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	154	EN 14625 §3.12, §8.4.5 y fórmula 5
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	156	GUM G.3.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	158	−0,2; −0,1; 0; +0,1; +0,2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	162	EN 14625 §§3.12 y 8.4.5, fórmula 5 y Tabla 1
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	176	GUM 5.2.1–5.2.2; AX.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	178	\sum_i\operatorname{Var}(d_i)+2\sum_{i<j}\operatorname{Cov}(d_i,d_j)\right
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	184	0,5; 1,5
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	184	2,5; 3,5
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	188	GUM 5.2.1–5.2.2; NIST/SEMATECH e-Handbook of Statistical Methods, no disponible en docs/
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	196	GUM 5.2.1–5.2.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	202	GUM 5.2.2; AX.2
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	206	GUM 5.2.1–5.2.2; CFR58-A §§2.3.1.2 y 4.1.1–4.1.3
+curso/S3_comparacion_decision/M12_libreto.md	12016af8589a9150f1aefbbac290f53558d6e1c5a9c6df82aba72e609c61fba1	222	CFR58-A §§2.3.1.2 y 4.1.1–4.1.3; M10
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	37	Hahs-Vaughn §2.3; Crowder 2020 §4.3
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	49	Hahs-Vaughn y Lomax
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	63	GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	67	GUM 5.1.2; GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	75	GUM 5.1.2; GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	83	GUM 4.3.7, 4.4.5–4.4.6
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	91	GUM 4.3.9; GUM 4.4.6
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	99	GUM 4.3.7; GUM 4.3.9; GUM 4.4.5–4.4.6
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	107	GUM H.5; Crowder 2020 §9.3.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	113	GUM H.5
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	121	GUM H.5
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	125	GUM H.5
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	133	Crowder 2020 §10.2.1–10.2.2; ISO 28037 5.8.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	139	ISO 28037 6.1.3, 6.2; Crowder 2020 §10.2.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	147	ISO 28037 5.5
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	155	GUM 5.1.2, 5.2.2; ISO 28037 11.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	171	GUM 5.1.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	179	GUM G.4, ecuación G.2b
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	185	GUM G.4
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	191	GUM G.4
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	199	ISO 28037, cláusula 10.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	203	ISO 28037, cláusula 10
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	205	ISO 28037 5.6.2, notas 1 y 2; 5.6.4
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	209	ISO 28037 5.6.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	215	ISO 28037, cláusula 10
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	223	GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	233	BIPM-K1 §8, ec. 2–3
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	233	GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	237	GUM 5.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	245	JCGM 106:2012, no disponible en docs/; ILAC-G8:09/2019, no disponible en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	251	L_i,L_s
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	251	JCGM 106:2012, no disponible en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	257	JCGM 106:2012; ILAC-G8:09/2019; ambas no disponibles en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	265	Hahs-Vaughn §9.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	271	Hahs-Vaughn §6.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	273	\bar d-t_{1-\alpha/2,n-1}\frac{s}{\sqrt n},\;\bar d+t_{1-\alpha/2,n-1}\frac{s}{\sqrt n}\right
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	277	(n-1)s^2/\sigma^2\ge\chi^2_{\alpha;n-1}\right
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	279	\sigma\le s\sqrt{\dfrac{n-1}{\chi^2_{\alpha;n-1}}}\right
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	283	\mu\le\bar x+t_{1-\alpha;n-1}\,s/\sqrt n\right
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	287	CFR58-A §§4.1.2–4.1.3
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	287	Hahs-Vaughn §§6.1, 9.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	291	Hahs-Vaughn §§6.1, 9.1
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	299	Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	301	1-(1-\lambda)^{2t}\right
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	303	1-(1-\lambda)^{2t}
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	303	1-(1-\lambda)^2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	309	Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	315	Montgomery, *Introduction to Statistical Quality Control*, no disponible en docs/
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	323	GUM-S1 5.9–5.10
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	327	GUM-S1 7.9.4 g)
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	333	GUM-S1 7.2.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	337	GUM-S1 7.9.2
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	341	GUM-S1 7.9.4
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	345	GUM-S1 8.1.3
+curso/S4_numericos_integracion/AX_libreto.md	e0a518d41fe5e0bf747e679bf1f4a4613a7518b837b2a576c198315bcf9943f3	351	GUM-S1 5.9–5.10; 7.2.2; 7.9.2–7.9.4; 8.1.3
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	27	GUM-S1 5.4, 5.10–5.11
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	31	GUM 5.2.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	33	GUM 5.2.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	35	GUM-S1 5.9, 6.4.8, 7.3
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	37	GUM-S1 6.4.8.4
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	41	GUM 5.1.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	43	GUM-S1 7.6–7.7
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	49	GUM-S1 7.9.4; AX.13
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	51	416,7213;420,8037
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	51	GUM-S1 7.9.2, 8.1.3
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	57	GUM-S1 5.10–5.11, 7.5–7.8
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	69	GUM-S1 7.2.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	69	GUM-S1 7.9.2–7.9.4
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	73	GUM-S2 5.2–5.3, 6.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	73	ISO 28037 5.5; 11.1
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	77	\operatorname{cov}(q_i,q_j)\right
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	85	GUM 5.2.2; GUM-S2 6.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	101	GUM-S2 6.2
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	116	Efron y Tibshirani 1993, no disponible en docs/
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	130	Efron y Tibshirani 1993, no disponible en docs/
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	150	ISO 28037 5.8.1
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	150	Huber 1981, no disponible en docs/
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	158	Huber 1981, no disponible en docs/
+curso/S4_numericos_integracion/M13_libreto.md	531691d05bf0916064a49eb03057099aed3083b8bb248df7ea710f93f229f29b	180	Huber 1981, no disponible en docs/; implementación `statsmodels.RLM.fit`, covarianza H1

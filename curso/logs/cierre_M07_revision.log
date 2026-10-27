@@ -1,0 +1,23 @@
+Revisión de cierre de las prácticas B, I y A de M07 terminada. Escribí `curso/logs/M07_practicas_revision_cierre_haiku.md` con 7 hallazgos (H-01 a H-07), todos de severidad baja. No hay errores numéricos ni de fórmula.
+
+**Verificación por ejecución**
+- `M07_practicas_luna.py` (con `-I`): rc=0, y la comprobación ISO imprime `PASS`.
+- `M07_ejemplos.py`: rc=0. Las cifras narradas fuera de las prácticas (χ², bandas, covarianza, colas) también coinciden con la salida.
+- Las cifras de B, I y A del libreto coinciden con la salida del script. Comprobé a mano la solución de B, las réplicas de falta de ajuste (`a=0,01`, `b=1,0026`, `F=48,3`) y la invariancia de `u(b)` ante la componente común.
+- El HTML del gráfico tiene las marcas de ambos ejes y la paleta oscura declarada.
+- Las decisiones de `M07_practicas_luna.md` (H-03 a H-08 y S-M07-01) están en el libreto o en el script. La única que no se puede reproducir desde el repositorio es la validación de color, que usa un validador en `/tmp` (H-04).
+
+**Hallazgos**
+- **H-01:** en la práctica I, «cada columna» debe decir «cada fila»: las réplicas están en la misma fila de `x`.
+- **H-02:** «declarando grande la contribución externa de u(y)» debe decir que `u(y)` tiene grados de libertad infinitos.
+- **H-03:** la etiqueta `[PRÁCTICA]` no está en la lista de `guia_libreto.md` §1. Es una decisión para el responsable de la guía; no la cambié.
+- **H-04:** la ruta del validador de color no es reproducible desde el repositorio.
+- **H-05:** `u_c²` de la solución de I está en unidades de `y`, no de `x̂`. El número es correcto, pero el texto no lo aclara.
+- **H-06:** en B, la referencia no se identifica como patrón SRP, así que la aplicación al SRP queda genérica.
+- **H-07:** «Generación:» en el material de A2 reintroduce la palabra que la decisión H-05 retiró de B.
+
+**Notas**
+- Ejecutar el script regeneró `curso/logs/M07_B_residuos.html`; el contenido es determinista.
+- Según la guía, las prácticas aparecen en esta fase del libreto. Lo señalo porque la guía solo menciona los marcadores de fase de ejercicios.
+- No toqué libretos, scripts, referencias ni citas, y no hice commits.
+- No audité las referencias ni las citas (por ejemplo, ISO 6143 §5.2.2 o las páginas de ISO/TS 28037), porque no eran parte del encargo.

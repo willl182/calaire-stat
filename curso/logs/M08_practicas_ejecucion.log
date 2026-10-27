@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Desarrollé las tres prácticas de M08 en `curso/S2_modelos_calibracion/M08_libreto.md`, sustituyendo únicamente sus marcadores. Cada una incluye datos simulados, tareas, solución docente con números y comprobaciones, interpretación y criterio de logro. No añadí un taller integrador ni gráficos.
+
+Creé `curso/S2_modelos_calibracion/calc/M08_practicas_luna.py` y registré el plan, la ejecución y las comprobaciones en `curso/logs/M08_practicas_luna.md`. El script se ejecutó correctamente con `curso/.venv/bin/python`; las aserciones pasaron y `git diff --check` no reportó problemas. No hice commit.
+
+La primera ejecución del cálculo falló al evaluar una función con un arreglo de NumPy; corregí esa operación y la siguiente ejecución terminó con rc=0.

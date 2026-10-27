@@ -1,0 +1,18 @@
+B: MR= [0.4, 0.6000000000000001, 0.30000000000000004, 0.4, 1.3, 1.6, 0.30000000000000004] centro= 0.16 MRmedio= 0.42500000000000004
+B: LIC/LSC= (np.float64(-0.9705000000000003), np.float64(1.2905000000000002)) LSC_MR= 1.3884750000000001 señales I= [6] señales MR= [7]
+Gráfico accesible: /home/w421/w421/calaire-stat/curso/S3_comparacion_decision/M11_practica_B_grafico.html
+I: a=0.089285714; b=0.003023810 nmol/mol/d; SE_b=0.000092214
+I: IC95 b= (np.float64(0.0027867661752504144), np.float64(0.0032608528723686338)) predicción media 210d= 0.7242857142857143 IC95= (np.float64(0.6924830118261731), np.float64(0.7560884167452555)) SE media= 0.012371791482634842
+I: s_res= 0.014638501094228004 SE observación futura= 0.019166296949998204 IP95= (np.float64(0.6750171794896372), np.float64(0.7735542490817914))
+I: sin día 90 (sensibilidad, no exclusión autorizada): b=0.003023810; pred210=0.722857143
+A — conteo EWMA: 19909/100000; p=0.199090; error estándar=0.001262748 (0.1263 puntos porcentuales)
+A — conteo CUSUM bilateral: 9177/100000; p=0.091770; error estándar=0.000912953 (0.0913 puntos porcentuales)
+A — alternativa EWMA: previas=10653; elegibles=89347; detectadas=88270; censuradas=1077; p_cond=0.987945874; error estándar condicional=0.000365085
+A — alternativa CUSUM bilateral: previas=3941; elegibles=96059; detectadas=94441; censuradas=1618; p_cond=0.983156185; error estándar condicional=0.000415205
+A: riesgos exceder +0,20 nmol/mol: {30: np.float64(0.0), 60: np.float64(0.0003943619018459685), 90: np.float64(1.0)}
+A: recurrencia serie +1, lambda=0,2, L=2,7, k=0,5, h=5
+  ocasión 1: Z=0.200000, LSC_EWMA=0.540000, C+=0.500000, C-=0.000000
+  ocasión 2: Z=0.360000, LSC_EWMA=0.691537, C+=1.000000, C-=0.000000
+  primera señal EWMA=11; CUSUM=11
+Gráfico: marcadores señal=2; coma decimal; tabla accesible: OK
+A: detección condicional EWMA/CUSUM= 0.9879458739521193 0.9831561852611416 demoras= 8.323926588875043 9.305577026926864

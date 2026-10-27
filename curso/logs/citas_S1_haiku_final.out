@@ -1,0 +1,17 @@
+Escribí `curso/citas/S1_revision_final_haiku.md`. No edité libretos, ejercicios, inventarios ni cotejos, y no hice commits. Hay tres problemas que bloquean declarar S1 cerrado.
+
+**Lo que está bien**
+- **TSV:** regenerado con `python3 -I curso/citas/_extrae_s1.py` desde la raíz del repo, es idéntico al `S1_ocurrencias.tsv` (184 filas). El enlace del inventario existe.
+- **S-01 (M01 líneas 156 y 180):** la causa no comprobada ya no aparece. Cifras, fórmulas y ejercicios se conservan y recalculé los cocientes.
+- **Páginas directas:** ASQ PDF 605 contiene «coefficient of variation» con pie «572 Appendix C»; PDF 598 no la contiene. EN 14625 PDF 20 tiene «NOTE nmol/mol = ppb» con pie impreso 18.
+- **H-01 rechazado:** coherente con M00, que conserva las prácticas.
+- **Aplicados en texto:** H-02, H-03, H-05 (nota interna retirada), H-09, H-10, H-11, H-15, H-16, H-17, H-18.
+
+**Problemas**
+- **F-01 (alta):** la tabla literal de `S1_inventario.md` no es copia del TSV. De 35 filas, 30 no coinciden; además solo cubre M00 y M01. La nota que dice lo contrario es falsa.
+- **F-02 (alta):** H-06 (G\*Power) y H-07 (statsmodels 0.15.0 y `scipy.stats.nct`) figuran como aplicados, pero M04 no contiene ninguna de esas frases. Las filas de cotejo que las verifican describen texto inexistente. La cita a Hahs-Vaughn §9.1.1 de H-05 tampoco aparece como corchete en M03. Hay que decidir si reaplicar o retirar.
+- **F-03 (alta):** las huellas SHA-256 coinciden solo para M01. M00, M02, M03 y M04 han cambiado sin que el registro lo refleje. Hay que recalcular huellas y líneas tras congelar el texto.
+
+**Incoherencias de estado (medias y bajas):** Lakens es «no verificable» en el cotejo y «verificada» en el inventario. M01 línea 24 y 156 tienen estados distintos en inventario y cotejo. M03 GUM G.3.2–G.3.4 figura como verificada aunque solo se comprobó G.3.2. Las prácticas de M00 están como «verificada» en el cotejo, aunque no son citas. El inventario usa estados fuera del vocabulario permitido.
+
+**Pendiente de alcance:** MMU §§3.2.1 y 3.2.3–3.2.4, G.3.3–G.3.4, Otto (tablas no tabulares), Autocorrelación y Lakens no quedaron reverificados en este paso. El archivo `S1_revision_haiku.md` queda superado y no debe usarse como autoridad.

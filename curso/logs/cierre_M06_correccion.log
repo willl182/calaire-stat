@@ -1,0 +1,25 @@
+Ronda M06 cerrada. Los ocho hallazgos tienen decisión y ubicación en `curso/logs/M06_practicas_luna.md`. El script de prácticas corre con rc=0 y todas sus cifras coinciden con las soluciones de B, I y A.
+
+**Decisiones**
+
+| Hallazgo | Decisión |
+|---|---|
+| H-01 (Práctica I con datos propios del Level 2) | Aplicado; ya estaba en el árbol de trabajo y lo verifiqué. Los 48 valores de `BD_DIAS` coinciden con la tabla del enunciado. |
+| H-02 (multiplicidad y R&R en Práctica A) | Aplicado parcialmente. Contrastes con Bonferroni usando `F(1,6)`, no `F(2,6)`, porque son contrastes de 1 g.l. El R&R queda condicionado a la confirmación de signo, bloques y fechas. Añadí una frase: el denominador `MS_D` es didáctico y el cociente es aproximado. |
+| H-03 (incertidumbre de componentes en I) | Aplicado; ya estaba y lo verifiqué. |
+| H-04 (cita de Bonferroni) | Rechazado por alcance. La cita original en HEAD es `[Hahs-Vaughn §8.2.1]`; la NIST ya estaba en el árbol de trabajo antes de esta ronda. No la toqué. |
+| H-05 (trazabilidad de la matriz A) | Aplicado; los seis pares coinciden con la matriz del script. |
+| H-06 (REML en el script) | Aplicado en el script y en la solución de A. |
+| H-07 (redacción en narración) | Rechazado por alcance; ver pendientes. |
+| H-08 (validación de paleta en la bitácora) | Aplicado con reserva: el gráfico existe, pero la validación de paleta no se reejecutó en esta ronda. |
+
+**Cambios**
+- `M06_libreto.md`: solo la solución docente de la Práctica A (una frase sobre el denominador aproximado). Ninguna cifra cambió.
+- `calc/M06_practicas_luna.py`: sin cambios en esta ronda.
+- Sin commits; referencias y citas intactas.
+
+**Pendientes fuera de alcance, que necesitan tu decisión**
+- Escena A1, línea 219: la cita NIST/SEMATECH (§7.4.7.3, URL) no está en `docs/`. Conviene restaurar `[Hahs-Vaughn §8.2.1]` o validar la fuente.
+- Escena A2, línea 237: la frase «El script contrasta la solución de frontera con la optimización…» atribuye al script de prácticas lo que hace `M06_ejemplos.py`.
+- Escena I4, línea 152: «las cuatro colas son disjuntas» es confuso.
+- Escena A1, línea 219: «esperaríamos en promedio medio falso positivo» está mal construido.

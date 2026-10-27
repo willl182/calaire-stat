@@ -1,0 +1,8 @@
+Revisión escrita en `curso/logs/M05_practicas_revision_cierre_haiku.md`. Hallazgos: 7 (2 de severidad media, 5 de baja). No edité libretos ni scripts, no toqué citas y no hice commits.
+
+**Verificado sin hallazgos:** el script corre con rc=0 y sus cifras coinciden con mi recálculo: tabla factorial, efectos marginales (F = 0,80; C = 0,20; T = −0,10), interacción F×C (0,30 con convención I2), contraste 1,22, conteos B (576 = 480 + 96), conteos A (192 lecturas; gl 2, 9, 12, 168) y las potencias 0,284 y 0,495.
+
+**Hallazgos principales:**
+- **H-01 (media):** el criterio de escalamiento de I (umbral 0,50 para efectos principales y contrastes simples de F, C y T) no se aplica completo. Hay contrastes simples por encima de 0,50 que la solución no reporta: C con F = +1 y T = +1 (0,56), F con C = −1 y T = −1 (0,54) y F con C = +1 y T = −1 (0,98). La decisión de escalar no cambia, pero la práctica dice que el criterio cubre esos contrastes sin calcularlos.
+- **H-02 (media):** `curso/logs/M05_practicas_luna.md` marca H-07 como rechazado, mientras que el libreto ya incluye la subtarea de potencia (S-M05-01). La bitácora de `curso/logs/` no tiene esa entrada y sus resultados de potencia. Hay dos bitácoras divergentes y la de `logs/` es la que se pidió revisar.
+- **H-03 a H-07 (baja):** "casi duplica la potencia" debería ser ×1,74; el escalonado en el script es texto fijo y no un cálculo; una frase sobre la revisión interna aparece en el texto de la práctica B; `guia_libreto.md` sigue diciendo "fase actual: solo contenido"; y el certificado F-PSMT-01 (celda E17) y el patrón ISO 5725-3 no se pudieron verificar desde el repositorio.

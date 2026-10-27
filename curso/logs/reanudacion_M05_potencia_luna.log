@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé la práctica I con una subtarea breve que compara dos repartos de **48 lecturas**: 4 días × 12 lecturas y 6 días × 8. Declara los supuestos simulados, calcula la potencia para un efecto prefijado, identifica el día como unidad independiente y da un criterio para elegir el plan. La tabla determinista del factorial sigue separada del modelo de planificación; no se le asignó error residual.
+
+También registré **H-07 como revisado y aplicado** y **S-M05-01** en la bitácora de prácticas M05. La reproducción en el script dio potencias de **0,284** y **0,495**, respectivamente. El comando `curso/.venv/bin/python -I curso/S2_modelos_calibracion/calc/M05_practicas_luna.py` terminó correctamente. Los cambios de esta tarea se limitaron al libreto de prácticas M05, su script y su bitácora; no modifiqué referencias.

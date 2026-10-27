@@ -1,0 +1,44 @@
+Diseño B: registros totales=12*8*6= 576
+Diseño B: concentración=10*8*6= 480
+Diseño B: cero=2*8*6= 96
+Diseño A base: 3 analistas; 12 días; 24 ciclos; 192 lecturas
+gl por estrato: 2 9 12 168
+Diseño A seis analistas: 6 24 48 384 gl analista: 5
+Diseño A seis analistas, una lectura/ciclo: 6 24 48 48 gl por estrato: 5 18 24 0
+Estrato lectura dentro de ciclo: 0 gl; ciclo y lectura no se separan
+Diseño escalonado ISO 5725-3: 4 resultados vs 8 totalmente anidados; ahorro=4 (50%)
+Secuencia escalonada (publicada): 2 repetibilidad; 1 otro día/mismo analista; 1 otro día/otro analista
+Tabla factorial simulada (F,C,T,e nmol/mol):
+-1 -1 -1 −0,13
+-1 -1 1 −0,17
+-1 1 -1 −0,13
+-1 1 1 −0,37
+1 -1 -1 0,41
+1 -1 1 0,29
+1 1 -1 0,85
+1 1 1 0,85
+Efecto marginal F, alto−bajo: 0,80 nmol/mol
+Efecto marginal C, alto−bajo: 0,20 nmol/mol
+Efecto marginal T, alto−bajo: −0,10 nmol/mol
+Efecto F con C=−1: 0,50 nmol/mol
+Efecto F con C=+1: 1,10 nmol/mol
+Interacción F×C (convención I2): 0,30 nmol/mol
+Diferencia de efectos simples F×C: 0,60 nmol/mol
+Contraste simple F con C alto y T alto: 1,22 nmol/mol
+Orden aleatorio reproducible (semilla 20261027):
+1 (1, 1, 1, 2)
+2 (1, 1, -1, 2)
+3 (1, -1, -1, 1)
+4 (1, -1, 1, 1)
+5 (-1, 1, -1, 2)
+6 (1, 1, 1, 1)
+7 (-1, 1, 1, 2)
+8 (-1, -1, -1, 2)
+9 (-1, 1, 1, 1)
+10 (1, -1, 1, 2)
+11 (1, -1, -1, 2)
+12 (-1, -1, 1, 2)
+13 (-1, -1, 1, 1)
+14 (1, 1, -1, 1)
+15 (-1, -1, -1, 1)
+16 (-1, 1, -1, 1)

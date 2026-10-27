@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Apliqué y registré los nueve hallazgos de Haiku en `curso/logs/M01_practicas_luna.md`, con la tabla H-xx → decisión → ubicación y el resultado de cada cambio.
+
+Actualicé únicamente los bloques de práctica B, I y A de `curso/S1_fundamentos/M01_libreto.md` y el script `curso/S1_fundamentos/calc/M01_practicas_luna.py`. El libreto ahora incluye la evidencia de error y corrección con signo en B, identifica los valores publicados y el valor simulado en I, y explicita qué se puede concluir sobre la diferencia en A. El script reproduce también los resultados de I que antes no calculaba.
+
+La ejecución final con `curso/.venv/bin/python` terminó con **rc=0** y las aserciones pasaron. `git diff --check` no reportó errores. Detecté un cambio concurrente en una cita de una escena anterior del capítulo; lo preservé y no lo edité. No hice commits.

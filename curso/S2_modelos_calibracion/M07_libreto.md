@@ -38,7 +38,7 @@ En fotometría, `x` e `y` suelen crecer juntos porque ambos describen la misma c
 
 Para que vean la diferencia, usaré datos enteramente simulados, no resultados del Level 2. Fijé seis referencias, desde cero hasta quinientos nmol/mol, y seis indicaciones con pequeñas desviaciones en torno a una recta. El script `calc/M07_ejemplos.py` calcula cada cantidad que voy a decir. El coeficiente de determinación, que aquí llamaremos R², resulta casi uno (más de 0,99999), extraordinariamente próximo a uno. Sin embargo, la pendiente ajustada es `1,00143`, el intercepto es `0,243 nmol/mol` y el mayor residuo en valor absoluto es aproximadamente `0,429 nmol/mol`. Son números del ejemplo simulado; no son límites de aceptación ni mediciones de CALAIRE [script `calc/M07_ejemplos.py`].
 
-¿Qué aprendemos? Primero, R² es un resumen relativo a la variabilidad vertical de los datos: en una regresión lineal con intercepto, expresa qué fracción de esa variabilidad queda asociada al ajuste lineal en el conjunto considerado [Otto §6.1, ec. (6.17)]. No informa si la escala del eje es correcta ni si el error residual es aceptable para el uso. Segundo, R² puede aumentar simplemente porque se amplía el intervalo de `x`, aunque el tamaño de los residuos en nmol/mol no cambie [Hahs-Vaughn §10.1.1.5.2, restricción del intervalo]. Tercero, un solo R² no revela patrón temporal, curvatura, heterogeneidad de varianza ni un punto que determine excesivamente la pendiente. Por eso R² acompaña al diagnóstico de residuos; no lo sustituye [Crowder 2020 §10.4.1].
+¿Qué aprendemos? Primero, R² es un resumen relativo a la variabilidad vertical de los datos: en una regresión lineal con intercepto, expresa qué fracción de esa variabilidad queda asociada al ajuste lineal en el conjunto considerado [Otto §6.1, ec. (6.17)]. No informa si la escala del eje es correcta ni si el error residual es aceptable para el uso. Segundo, cuando se restringe el rango de una variable la correlación tiende a bajar [Hahs-Vaughn §10.1.1.5.2, restricción del rango]; por eso un R² calculado en un intervalo estrecho de `x` puede ser menor que en uno amplio, aunque el tamaño de los residuos en nmol/mol no cambie. Tercero, un solo R² no revela patrón temporal, curvatura, heterogeneidad de varianza ni un punto que determine excesivamente la pendiente. Por eso R² acompaña al diagnóstico de residuos; no lo sustituye [Crowder 2020 §10.4.1].
 
 > **[ERROR CRÍTICO]** Una correlación o un R² cercanos a uno no constituyen por sí solos evidencia de que la calibración sea válida. No se declara aceptación sin revisar la recta, los residuos, el intervalo de uso y los criterios aplicables.
 
@@ -80,7 +80,28 @@ La inversión algebraica de una recta ajustada de `y` sobre `x` ofrece una estim
 
 > **[PREGUNTA AL GRUPO]** Si la recta se ajustó entre cero y quinientos, ¿qué evidencia permite aplicar su inversión a una indicación por encima de ese intervalo? — *Respuesta esperada:* ninguna por el mero hecho de tener una fórmula; hace falta justificar el modelo y validar ese uso fuera del intervalo observado.
 
-> **[PRÁCTICA — fase de ejercicios]** Ajustar la recta de un conjunto del Level 2, revisar residuos y comprobar el signo de la corrección
+### Práctica B — Ajustar la recta, revisar residuos y comprobar la corrección
+
+> **[PRÁCTICA]** Ustedes reciben seis parejas de referencia e indicación de una serie docente de puntos de calibración de un fotómetro de ozono. La indicación inversa de $250{,}50$ nmol/mol representa una respuesta dentro del intervalo de trabajo; el resultado estadístico alimenta una decisión de uso, no una aceptación del instrumento. Los números son **simulados**, no proceden del Level 2 ni describen a CALAIRE. Los valores están fijados en el enunciado y en `calc/M07_practicas_luna.py`; no proceden de un generador aleatorio. Fijé $x=0;100;200;300;400;500$ nmol/mol y $y=0{,}2;100{,}7;200{,}1;301{,}0;400{,}4;501{,}2$ nmol/mol. El interés es estimar la recta para describir estos datos y aplicar su inversa a una indicación. En esta práctica el enunciado declara que OLS con intercepto es el método apropiado y que las observaciones son independientes, la referencia puede tratarse como fija para el ajuste, la varianza es aproximadamente constante y no hay dependencia no modelada.
+>
+> | Pareja | $x$ referencia (nmol/mol) | $y$ indicación (nmol/mol) |
+> |---:|---:|---:|
+> | 1 | 0 | 0,2 |
+> | 2 | 100 | 100,7 |
+> | 3 | 200 | 200,1 |
+> | 4 | 300 | 301,0 |
+> | 5 | 400 | 400,4 |
+> | 6 | 500 | 501,2 |
+>
+> Trabajen con la orientación $y=a+bx$. Calculen intercepto, pendiente, predicciones y residuos $r=y-\hat y$; tracen un gráfico de residuos frente a $x$, con línea de cero, unidades y marcas distinguibles, y describan el patrón sin borrar puntos. Comparen su trazado con la salida reproducible accesible `curso/logs/M07_B_residuos.html`. Interpreten R² sin usarlo como criterio de aceptación. Para $y=250{,}50$ nmol/mol, calculen $\hat x=(y-a)/b$ y la corrección $\hat x-y$, conservando su signo. Registren unidades e indiquen si ese uso queda dentro del intervalo observado.
+>
+> **Solución docente.** El script `calc/M07_practicas_luna.py` resuelve las ecuaciones OLS y comprueba los resultados; reproduce $a=0{,}242857$ nmol/mol y $b=1{,}001428571$. Por ejemplo, en $x=200$, $\hat y=0{,}242857+1{,}001428571(200)=200{,}528571$ nmol/mol, así que $r=200{,}1-200{,}528571=-0{,}428571$ nmol/mol. Los seis residuos, en orden, son $-0{,}042857;0{,}314286;-0{,}428571;0{,}328571;-0{,}414286;0{,}242857$ nmol/mol; suman cero salvo redondeo, y el máximo absoluto es $0{,}428571$ nmol/mol. $s_{res}=0{,}394606$ nmol/mol y $R²=0{,}99999645$. Ese R² resume el ajuste relativo a la variación vertical, pero no prueba escala correcta ni aceptación. La gráfica reproducible y su tabla accesible están en `curso/logs/M07_B_residuos.html`.
+>
+> Para $y=250{,}50$, $\hat x=(250{,}50-0{,}242857)/1{,}001428571=249{,}900143$ nmol/mol. La corrección es $\hat x-y=-0{,}599857$ nmol/mol: el signo negativo se comprueba directamente al restar. El valor está entre 0 y 500 nmol/mol, dentro del intervalo de referencias usado. Se informa como resultado didáctico, no como corrección autorizada de un fotómetro real.
+>
+> **Interpretación operativa.** El ajuste describe una relación casi lineal en este conjunto sintético; R² no es un umbral y los residuos alternan de signo sin base aquí para excluir observaciones. La inversa se usa solo dentro del intervalo y con las condiciones declaradas. Si en datos de operación aparecen curvatura, secuencia, varianza desigual, dependencia, referencia incierta o un punto inusual sin causa, se conserva la serie y se escala; no se fuerza el origen ni se elimina un dato para mejorar el ajuste.
+>
+> **Criterio de logro.** Presenta la recta con unidades y ejes correctos, obtiene los residuos sin confundirlos con $e=y-x$, limita la interpretación de R² y reporta $\hat x$ y la corrección aditiva con signo y unidad correctos.
 
 ### Señales de escalamiento
 
@@ -196,7 +217,43 @@ La aplicación mecánica de esa prueba a las 48 lecturas de cada punto del F-PSM
 
 El residuo relativo por nivel puede ayudar a ver la escala del desajuste en relación con la respuesta de ese nivel, pero cerca de cero el denominador hace inestable el porcentaje. En el ejemplo anterior el nivel cero arroja un porcentaje grande porque su media está próxima a cero; esa cifra no se debe leer como una discrepancia absoluta gigantesca. En la zona de cero se conserva y examina el residuo en unidades absolutas. El código presenta tanto la estimación de la media de nivel como su residuo para que la proporción no oculte la escala [Crowder 2020 §10.4.1, PDF pp. 9–10; script `calc/M07_ejemplos.py`].
 
-> **[PRÁCTICA — fase de ejercicios]** Comparar OLS y WLS, calcular incertidumbre de uso y decidir si procede la falta de ajuste
+### Práctica I — Elegir ponderación, cuantificar un uso y comprobar falta de ajuste
+
+> **[PRÁCTICA]** Ahora ustedes preparan y justifican el modelo para un fotómetro de ozono: la indicación de $250{,}50$ nmol/mol que invertirán es una respuesta dentro del intervalo de trabajo y el resultado alimenta una decisión de uso, no una aceptación del instrumento. Todos los valores de este ejercicio son **simulados** mediante los datos fijados en `calc/M07_practicas_luna.py`; no son resultados de CALAIRE. La primera tabla representa seis niveles con incertidumbres estándar distintas en la indicación. El resultado de interés es la recta para describir los niveles; el enunciado establece independencia, `x` fijo y que $u(y_i)$ caracteriza las varianzas de las respuestas. No hay componentes compartidas. Comparen OLS, que da igual peso, con WLS usando $w_i=1/u^2(y_i)$.
+>
+> | $x$ (nmol/mol) | $y$ (nmol/mol) | $u(y)$ (nmol/mol) |
+> |---:|---:|---:|
+> | 0 | 0,4 | 0,25 |
+> | 100 | 100,5 | 0,30 |
+> | 200 | 200,8 | 0,40 |
+> | 300 | 300,2 | 0,60 |
+> | 400 | 401,4 | 0,90 |
+> | 500 | 500,5 | 1,20 |
+>
+> Calculen ambas rectas y los pesos relativos. Después, para usar la recta B ya estimada en la práctica anterior en un fotómetro de ozono, tomen una indicación independiente $y=250{,}50$ nmol/mol, respuesta dentro del intervalo de trabajo, con incertidumbre estándar total $u(y)=0{,}20$ nmol/mol. El resultado alimenta una decisión de uso, no una aceptación del instrumento. Calculen $\hat x$, $u(\hat x)$ y $U$ para cobertura bilateral del 95 %, agrupando la incertidumbre conjunta de parámetros como un bloque con cuatro grados de libertad y declarando grande la contribución externa de $u(y)$. Para reproducir $\nu_{eff}$, traten $u(y)$ como de grados de libertad infinitos y el bloque de parámetros como de cuatro: $u_c^2=0{,}04+u_{param}^2$ y $\nu_{eff}=u_c^4/(u_{param}^4/4)$. No sumen otra vez $s_{res}$: la incertidumbre de la nueva indicación ya representa toda su variación.
+>
+> Calculen además las semiamplitudes de los intervalos puntuales del 95 % de confianza de la media y de predicción de una nueva respuesta en $x_0=250$ nmol/mol con la recta B. Comparen sus valores e indiquen qué variación adicional contiene la predicción. Los resultados de referencia son, aproximadamente, $0{,}447$ y $1{,}183$ nmol/mol.
+>
+> Por último, decidan si procede la prueba convencional de falta de ajuste para los siguientes datos. Cada columna contiene tres réplicas independientes al **mismo valor de referencia**, con errores normales independientes y varianza común según el modelo del ejercicio. Calculen error puro, falta de ajuste, estadístico F y decisión al 5 %.
+>
+> | $x$ (nmol/mol) | $y_1$ | $y_2$ | $y_3$ |
+> |---:|---:|---:|---:|
+> | 0 | 0,1 | 0,2 | 0,3 |
+> | 100 | 100,2 | 100,1 | 100,3 |
+> | 200 | 200,0 | 200,1 | 200,2 |
+> | 300 | 301,0 | 301,1 | 301,2 |
+>
+> **Solución docente.** En la primera tabla, OLS resulta $a=0{,}447619$ nmol/mol, $b=1{,}000742857$; WLS da $a=0{,}416852$ nmol/mol, $b=1{,}000921340$. Los pesos $1/u²$ son $16;11{,}111111;6{,}25;2{,}777778;1{,}234568;0{,}694444$ (inversos de nmol/mol al cuadrado; son relativos para estimar la recta). La menor incertidumbre recibe mayor peso. La diferencia entre pendientes es pequeña y su dirección no es una regla general; manda el modelo de varianza justificado.
+>
+> Para la inversión, la práctica B entrega $\hat x=249{,}900143$ nmol/mol y corrección $-0{,}599857$ nmol/mol. La propagación lineal de la nueva indicación y de los parámetros da $u(\hat x)=0{,}256446$ nmol/mol; con el agrupamiento y cobertura declarados, $u_c^2=0{,}04+u_{param}^2$, tratando $u(y)$ con grados de libertad infinitos y el bloque de parámetros con cuatro; así, $\nu_{eff}=u_c^4/(u_{param}^4/4)=25{,}8325$, $k=t(0{,}975;\nu_{eff})=2{,}05618$ y $U=0{,}527298$ nmol/mol. Comprobación: $U=k u=2{,}05618\times0{,}256446$. Es una incertidumbre de uso bajo el modelo y los supuestos expresos, no un presupuesto universal ni una segunda suma del residual.
+>
+> Para $x_0=250$ nmol/mol, la banda puntual de confianza de la media tiene semiamplitud $0{,}4473$ nmol/mol y la de predicción de una nueva respuesta $1{,}183$ nmol/mol. La segunda incorpora la dispersión de una nueva observación, por eso es más ancha; no es una banda simultánea en todo el intervalo.
+>
+> En las réplicas al mismo $x$, el ajuste OLS da $a=0{,}01$ nmol/mol y $b=1{,}0026$. La suma de cuadrados de falta de ajuste es $SS_{LOF}=0{,}966$, con 2 grados de libertad; la de error puro $SS_{PE}=0{,}080$, con 8 grados de libertad. Por tanto $F=(0{,}966/2)/(0{,}080/8)=48{,}3$ y $p=0{,}0000342$. Se rechaza la adecuación de la recta bajo el modelo de prueba al 5 %; esto señala discrepancia de forma relativa al error puro, no identifica la causa ni autoriza a descartar un punto.
+>
+> **Interpretación y escalamiento.** La prueba solo es válida aquí porque se especifican réplicas verdaderas al mismo valor de referencia. No se trasladaría mecánicamente a ocho lecturas repartidas en días si la referencia cambia entre días: en ese diseño la variación de referencia no es error puro del fotómetro. Si $u(x)$ es relevante, si hay dependencia/covarianzas omitidas, pesos no sustentados o estructura residual, I detiene el ajuste con `x` fijo y eleva a A; no intenta resolverlo retocando pesos.
+>
+> **Criterio de logro.** Justifica OLS/WLS a partir de la estructura dada, calcula la incertidumbre de uso sin doble conteo y concluye sobre falta de ajuste solo tras verificar réplicas y grados de libertad.
 
 ### Señales de escalamiento en I
 
@@ -267,7 +324,30 @@ El ejemplo GGMR anterior arroja $\chi^2 = 0{,}4089$ con cuatro grados de liberta
 
 La matriz conjunta debe cumplir las propiedades numéricas y metrológicas que el modelo requiere. Antes de confiar en una salida, el responsable técnico verifica simetría, unidades, componentes compartidas, método numérico y comportamiento frente a ejemplos de referencia dentro del alcance validado. El cálculo docente de este capítulo trabaja con $V_{xy} = 0$. Lo contrastamos con el ejemplo publicado que acabamos de resolver, pero ese contraste no valida todas las matrices posibles ni autoriza uso de producción. Cualquier necesidad de covarianza cruzada no nula, estructura que el programa no admita o resultado sensible a una hipótesis no comprobada se escala. No se sustituye ese análisis por la selección del ajuste que produzca una recta más cercana a la identidad [prop_e §5, M7-A; ISO 28037 §§5.2.2, 10.1–10.3].
 
-> **[PRÁCTICA — fase de ejercicios]** Comparar OLS, WLS y GGMR; interpretar la componente común y validar la implementación con ISO/TS 28037 dentro del alcance $V_{xy} = 0$
+### Práctica A — Contrastar OLS, WLS y GGMR y validar el cálculo
+
+> **[PRÁCTICA]** Ustedes reciben el mismo conjunto sintético para los tres métodos, con la orientación común $x$ referencia y $y$ indicación en un punto de calibración de un fotómetro de ozono; el ajuste informa una decisión estadística sobre el uso, no una aceptación del instrumento. Los seis pares son **simulados**, con regla reproducible: se fijaron las referencias indicadas y las respuestas, y se declararon incertidumbres estándar independientes de $0{,}25$ nmol/mol por punto en $x$ y $0{,}40$ nmol/mol por punto en $y$. A $x$ se añade una componente común de $0{,}12$ nmol/mol para todos los puntos, por lo que $V_x=0{,}25²I+0{,}12²11^T$; $V_y=0{,}40²I$ y $V_{xy}=0$. La respuesta de interés es la recta con referencias ajustadas bajo GGMR; se asumen matrices conocidas y definidas positivas, errores conjuntos normales y alcance validado de la herramienta con covarianza cruzada nula. Estos datos no describen SRP 55, Level 2 ni CALAIRE.
+>
+> | Punto | $x$ referencia (nmol/mol) | $y$ indicación (nmol/mol) |
+> |---:|---:|---:|
+> | 1 | 0 | 0,3 |
+> | 2 | 100 | 100,4 |
+> | 3 | 200 | 200,7 |
+> | 4 | 300 | 300,5 |
+> | 5 | 400 | 401,0 |
+> | 6 | 500 | 500,9 |
+>
+> Ajusten el mismo conjunto por OLS, WLS con los errores verticales indicados y GGMR con $V_x,V_y,V_{xy}$ declaradas. No cambien los ejes entre métodos. Informen pendiente e intercepto, y para GGMR las seis abscisas ajustadas, el objetivo cuadrático $Q$ y los grados de libertad del ejemplo. Comparen el efecto de incluir la componente común en $u(a)$ y expliquen por qué añadir puntos no promedia esa fuente compartida. Calculen los residuos ponderados blanqueados $z_x$ y $z_y$ definidos en la Escena A2, comprueben que la suma de sus cuadrados es $Q$, comparen $Q$ con la distribución de chi-cuadrado de cuatro grados de libertad e informen la cola superior; expliquen por qué ese p-valor no prueba por sí solo la validez del modelo. Como comprobación independiente de implementación, ejecuten `calc/M07_practicas_luna.py`, que contrasta el ajuste con los datos y matrices **publicados sin modificar** de ISO/TS 28037:2010 §10.3, tablas 25–26. No presenten el contraste como validación universal ni como aprobación para producción.
+>
+> **Solución docente.** En los seis pares sintéticos, OLS y WLS coinciden porque todos los $u(y_i)$ son iguales: $a=0{,}304762$ nmol/mol y $b=1{,}00131429$. GGMR da $a=0{,}304725$ nmol/mol y $b=1{,}00131443$, con abscisas ajustadas $-0{,}00133;99{,}98983;200{,}03721;299{,}94405;400{,}04764;499{,}98259$ nmol/mol. El objetivo es $Q=0{,}408901$. Los residuos blanqueados son $z_x=(0{,}004789;0{,}036405;-0{,}145066;0{,}223088;-0{,}193772;0{,}073270)$ y $z_y=(-0{,}008489;-0{,}064974;0{,}237826;-0{,}357587;0{,}304498;-0{,}111273)$, redondeados; la suma de sus cuadrados reproduce $Q$. Para las doce coordenadas observadas, el ejemplo declara ocho parámetros ajustados (seis abscisas, intercepto y pendiente), de modo que quedan cuatro grados de libertad. La cola superior es $p=0{,}98174$: no hay señal de discrepancia grande bajo el modelo, pero este p-valor no demuestra que la estructura, las covarianzas o los supuestos sean verdaderos. La cifra pequeña no certifica bondad por sí sola: se interpreta con las matrices, el modelo y la validación.
+>
+> Al omitir la componente común, el error estándar calculado de $a$ es $0{,}341517$ nmol/mol; al incluirla sube a $0{,}362038$ nmol/mol, mientras que $u(b)=0{,}001128$. La componente común desplaza conjuntamente las referencias y no se reduce como si fueran seis fuentes independientes. La simetría de cada matriz, sus unidades cuadradas de nmol/mol y la forma de componente común deben comprobarse antes de ajustar; las matrices declaradas son simétricas y definidas positivas. GGMR estima referencias ajustadas y considera ambos ejes; no equivale a WLS vertical.
+>
+> En el contraste publicado, el script obtiene $a=0{,}3424009$, $b=1{,}0012308$ y $Q=1{,}771847$, frente a los valores publicados $0{,}3424$, $1{,}0012$ y $1{,}772$. También comprueba $u(a)=2{,}0569$, $u(b)=0{,}0090$, $cov(a,b)=-0{,}0129$ y las abscisas ajustadas contra tablas 25–26; las aserciones del script terminan en PASS al redondeo publicado. Los datos y covarianzas de esa verificación se mantienen tal como aparecen en la norma. El resultado ofrece una comprobación reproducible de este caso, no demuestra que cualquier estructura de covarianza o cualquier código sea correcto.
+>
+> **Interpretación operativa y escalamiento.** Los métodos OLS/WLS dejan $x$ fijo y coinciden en este conjunto por pesos verticales iguales; GGMR cambia el planteamiento al incorporar $u(x)$ y la dependencia común. Si $V_{xy}$ no es cero, no se fuerza la matriz a este procedimiento: se detiene y se consulta al responsable técnico. También se escala ante matrices no reconstruibles desde sus fuentes, unidades incompatibles, falta de simetría/definición positiva, resultado sensible a hipótesis no verificadas o discrepancia con el ejemplo publicado. Nada de esta práctica autoriza un uso de producción.
+>
+> **Criterio de logro.** Mantiene la misma orientación para los tres métodos, configura y comprueba las matrices declaradas, interpreta la componente común y reproduce los valores de referencia ISO dentro del redondeo publicado sin atribuirlos a CALAIRE.
 
 > **[ESCALAMIENTO]** Si la covarianza cruzada entre `x` e `y` puede ser distinta de cero, si no se puede reconstruir la matriz de incertidumbre desde sus causas o si la herramienta no ha sido contrastada para la estructura del caso, se detiene el ajuste y se solicita revisión técnica. El alcance de esta formación no cubre GGMR con $V_{xy} \ne  0$.
 

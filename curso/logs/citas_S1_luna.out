@@ -1,0 +1,15 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé el cotejo del lote S1 y creé:
+
+- [Índice acumulativo y catálogo de claves](curso/citas/inventario.md)
+- [Inventario de citas S1](curso/citas/S1_inventario.md)
+- [Cotejo detallado S1](curso/citas/S1_cotejo.md)
+- [Registro de decisiones](curso/citas/S1_decisiones_luna.md)
+
+**Único cambio en un libreto:** corregí en M04 las referencias de Welch a Hahs‑Vaughn §§7.3.1 y 7.5.3, incluidas las citas del texto y la entrada bibliográfica. No cambié contenido docente, no edité AX ni M11 y no hice commits. Registré H‑02 de O‑02 como fuera de S1 y pendiente de verificación primaria; la página oficial de Wiley consultada identifica la 8.ª edición de 2019, no verifica la edición de 2013 citada en M11.
+
+El cotejo distingue evidencia local de `docs/`, fuentes externas y citas no verificables; no da por verificado un respaldo solo por la existencia o el título de una obra. No descargué fuentes ni escribí scripts. `git diff --check` no reportó errores. Dejé intactos los demás cambios y logs fuera del alcance que aparecían en el árbol de trabajo.
+
+**Fuentes web consultadas:** NIST sobre [MAD](https://itl.nist.gov/div898/handbook/eda/section3/eda356.htm) y [autocorrelación](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm); Wiley sobre [Montgomery, 8.ª edición](https://www.wiley.com/en-us/Introduction%2Bto%2BStatistical%2BQuality%2BControl%2C%2B8th%2BEdition-p-9781119399308). También consulté el [NIST/SEMATECH sobre CUSUM](https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc323.htm) y [EWMA](https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc324.htm); no los usé para cotejar afirmaciones de S1.
