@@ -1,0 +1,21 @@
+Las siete correcciones de la revisión de cierre están aplicadas o rechazadas, y el script de M07 se ejecutó con rc=0 y `PASS` en la comprobación ISO.
+
+**Decisiones (H-xx de la revisión de cierre):**
+
+| H-xx | decisión | resultado |
+|---|---|---|
+| H-01 | aplicado | En la práctica I, «Cada columna» → «Cada fila» para las réplicas. |
+| H-02 | aplicado | En la práctica I, «declarando grande…» → «tratando u(y) con grados de libertad infinitos». |
+| H-03 | rechazado | Se mantiene `[PRÁCTICA]`, que es la convención aceptada de la fase de ejercicios. `guia_libreto.md` no se tocó. |
+| H-04 | aplicado (bitácora) | El validador de paleta es externo al repositorio; la bitácora lo dice y conserva el PASS. |
+| H-05 | aplicado | En la práctica I se añade que `u_c²` está en (nmol/mol)² antes de dividir por b². Ninguna cifra cambia. |
+| H-06 | aplicado con cambios | En la práctica B, `x` es la concentración asignada al patrón (p. ej., el SRP en un caso real; aquí es simulada) e `y` la indicación del fotómetro. Los datos no cambian. |
+| H-07 | aplicado | En el material de A2, «Generación:» → «Valores fijados como:». |
+
+**Unificación de bitácoras:** `S2_modelos_calibracion/M07_bitacora_luna.md` daba las prácticas por pendientes. Su línea de pendientes ahora remite a `curso/logs/M07_practicas_luna.md`, que es la única bitácora de B, I y A.
+
+**Verificación:** `curso/.venv/bin/python -I S2_modelos_calibracion/calc/M07_practicas_luna.py` ejecutado desde `curso/` dio **rc=0**, con `A comprobación publicada: PASS`. Las cifras del libreto coinciden con la salida en B, I y A.
+
+**Ronda de cierre:** añadida al final de `curso/logs/M07_practicas_luna.md`. Como los H-xx de la revisión de cierre coinciden en nombre con los H-01 a H-08 de la tabla anterior de la bitácora, la sección los cita como «H-xx (cierre)».
+
+Al final del trabajo, `git status` mostraba también `curso/S2_modelos_calibracion/calc/M05_practicas_luna.py` modificado. No lo toqué y no lo revisé. No hice commits.

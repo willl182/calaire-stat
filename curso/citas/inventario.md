@@ -21,13 +21,17 @@ Actualizado: 2026-10-27. Este índice enlaza inventarios detallados por lote. La
 | GUM | JCGM 100:2008 / ISO/IEC Guide 98-3:2008 | *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*. PDF local en `docs/`. |
 | GUM-6 | JCGM GUM-6:2020 | *Guide to the expression of uncertainty in measurement — Part 6: Developing and using measurement models*. `docs/JCGM_GUM_6_2020.pdf`. |
 | GUM-S2 | JCGM 102:2011 | *Supplement 2 — Extension to any number of output quantities*. PDF local en `docs/`. |
-| Hahs-Vaughn | Statistical Concepts | Hahs-Vaughn, D. L. y Lomax, R. G., *Statistical Concepts: A First Course*, 4.ª ed., Routledge (año debe confirmarse en portada/créditos antes de normalizarlo como dato verificado). PDFs completos y `statistical_concepts_*` en `docs/`. |
+| Hahs-Vaughn | Statistical Concepts | Hahs-Vaughn, D. L. y Lomax, R. G., *Statistical Concepts: A First Course*, 4.ª ed., Routledge (verificado en portada/créditos: «First published 2020», PDF p. 7, extracto `curso/citas/extractos/S3_hahs_vaughn_p7_creditos.txt`). PDFs completos y `statistical_concepts_*` en `docs/`. |
 | ISO 17025 | ISO/IEC 17025 | BS EN ISO/IEC 17025:2017, *General requirements for the competence of testing and calibration laboratories*, `docs/BS EN ISO_IEC 17025_2017.pdf`. |
 | ISO 28037 | ISO/TS 28037 | ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*, `docs/ISO 28037.pdf`. |
 | Lakens 2017 | Lakens | Lakens, D., “Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses,” *Social Psychological and Personality Science* 8(4), 355–362 (2017). No disponible en `docs/`. |
 | MMU | Metrology and Measurement Uncertainty | Novellino do Rosario y Mendes, *Metrology and Measurement Uncertainty*, Springer Nature (2025; comprobar nombres completos en portada). PDF y capítulos en `docs/`. |
 | Milton et al. 2006 | Milton 2006 | “Implementation of a generalized least-squares method for determining calibration curves from data with general uncertainty structures,” *Metrologia* 43 (2006), S291–S298. `docs/milton2006.pdf`. |
 | NIST/SEMATECH | NIST/SEMATECH e-Handbook | *e-Handbook of Statistical Methods*, recurso web; no disponible como documento en `docs/`. Citar URL/pasaje y no asignar numeral no cotejado. |
+| NIST-I | NIST/SEMATECH §6.3.2.2 | *Individuals Control Charts*. https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc322.htm. Copia: `curso/citas/extractos/S3_NIST_IMR.html`. |
+| NIST-R | NIST/SEMATECH §6.3.2.1 | *Shewhart X-bar and R and S Control Charts* (tabla de factores, n = 2). https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm. Copia: `curso/citas/extractos/S3_NIST_constants.html`. |
+| NIST-EWMA | NIST/SEMATECH §6.3.2.4 | *EWMA Control Charts*. https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc324.htm. Copia: `curso/citas/extractos/S3_NIST_EWMA.html`. |
+| NIST-CUSUM | NIST/SEMATECH §6.3.2.3 | *CUSUM Control Charts*. https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc323.htm. Copia: `curso/citas/extractos/S3_NIST_CUSUM.html`. |
 | NISTIR 6963 | NIST IR 6963 | Paur et al., *Standard Reference Photometer for the Assay of Ozone in Calibration Atmospheres*, NISTIR 6963 (2003), `docs/nistir6963.pdf`. |
 | Otto | Otto, M. | *Chemometrics: Statistics and Computer Application in Analytical Chemistry*, 3.ª ed., Wiley-VCH (2017), `docs/Chemometrics Statistics and Computer Application.pdf`. |
 | prop_e | Propuesta E | Documento curricular local `prop_e.md`; sirve para alcance del curso, no como fuente técnica. |
@@ -49,11 +53,14 @@ Actualizado: 2026-10-27. Este índice enlaza inventarios detallados por lote. La
 | Mark-Workman | Mark & Workman | *Chemometrics in Spectroscopy*. PDFs `chemometrics_spectroscopy_*` en `docs/`. |
 | PHMU | Practical Handbook on Measurement Uncertainty | *A Practical Handbook on Measurement Uncertainty*; autor pendiente de confirmar en `docs/`. |
 | Daumont 1992 / Malicet 1995 | Ozone UV spectroscopy I / II | Artículos «Ozone UV spectroscopy I / II», PDFs locales en `docs/`. |
-| Montgomery 2013 | Montgomery / Montgomery 2013 | Montgomery, D. C., *Introduction to Statistical Quality Control*, Wiley (2013, año/editorial según bibliografía de M11; edición y numerales no verificados). Fuera del alcance S1; no unificar con una edición distinta sin cotejo primario. |
+| Montgomery 2013 | Montgomery / Montgomery 2013 | Montgomery, D. C., *Introduction to Statistical Quality Control*, Wiley, 2013. Clave unificada (`S3_decisiones_luna.md`, punto 7). Edición e ISBN no verificados y no consignados; título y año según Crowder 2020 (PDF pp. 96 y 145). Sin ejemplar en `docs/`; contenido no cotejado. |
+| Montgomery DAE | Montgomery DAE / Montgomery, *Design and Analysis of Experiments* | Montgomery, D. C., *Design and Analysis of Experiments*, 9.ª ed., Wiley, 2017 (edición y año según la bibliografía de Crowder 2020, `docs/Introduction to Statistics in Metrology.pdf`, sin página verificada; localizar en el PDF antes de citar, extracto `curso/citas/extractos/S3_crowder2020_completo.txt`, bibliografía). Sin ejemplar en `docs/`; contenido no cotejado. No confundir con Montgomery 2013. Los libretos M05 la citan sin numeral. |
+| Searle–Casella–McCulloch | Searle, Casella y McCulloch | Searle, S. R.; Casella, G.; McCulloch, C. E., *Variance Components*. No disponible en `docs/`; edición, editorial y numerales pendientes de cotejo documental. Citada en M06 sin numeral. |
+| Efron–Tibshirani 1993 | Efron y Tibshirani 1993 | Efron, B. y Tibshirani, R. J., *An Introduction to the Bootstrap*. No disponible en `docs/`; editorial y año pendientes de verificación; se cita sin numeral (M13). |
 
 ### Reglas para incorporar lotes posteriores
 
 1. Agregar enlace al inventario y cotejo detallados del lote sin sustituir los anteriores.
 2. Unificar alias solo cuando se confirme que refieren a la misma obra/edición. No unificar documentos distintos (p. ej. CFR50-D vs CFR58-A).
-3. Mantener Montgomery como clave diferenciada por año/edición cuando la fuente realmente corresponda. H-02 de O-02 (Montgomery vs Montgomery 2013) es fuera del alcance S1 y queda pendiente de cotejo primario en AX/M11.
+3. Montgomery tiene dos obras y dos claves: «Montgomery 2013» (*Introduction to Statistical Quality Control*) y «Montgomery DAE» (*Design and Analysis of Experiments*). No unificarlas. Sin edición ni ISBN no verificados en la clave 2013 (unificación de `curso/citas/S3_decisiones_luna.md`, punto 7). Cualquier distinción por edición requiere cotejo primario del ejemplar.
 4. En cada cotejo distinguir expresamente: documento presente en `docs/`, documento ausente en `docs/` con evidencia externa consultada, y cita sin evidencia suficiente (no verificable).

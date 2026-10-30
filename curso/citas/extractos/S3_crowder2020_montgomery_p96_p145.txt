@@ -1,0 +1,4 @@
+=== Crowder PDF p96 ===
+5:Montgomery, D.: Introduction to Statistical Quality Control. John Wiley & Sons, New York (2013)
+=== Crowder PDF p145 ===
+7:Montgomery, D.: Introduction to Statistical Quality Control. Wiley, New York (2013)

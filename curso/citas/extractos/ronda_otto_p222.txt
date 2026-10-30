@@ -1,0 +1,68 @@
+                                                                                        6.1   Univariate Linear Regression   217
+
+
+
+Table 6.1 Computation of the sums of squares (SS) for a complete
+ANOVA in linear regression.
+
+Sum of squares                 Matrix operation        Calculation             Degrees of
+                                                                                freedom
+
+                                                       ∑
+                                                       n
+SST , total                    yT y                          y2i               n
+                                                       i=1
+                                T                        2
+SSM , mean                     y y                     ny                      1
+                                                       ∑n
+SScorr , corrected for         (y − y)T (y − y)              (yi − y)2         n−1
+the mean                                               i=1
+                                                       ∑n
+SSfact , factors                y − y)T (̂
+                               (̂        y − y)               yi − y)2
+                                                             (̂                p−1
+                                                       i=1
+                                                       ∑n
+SSR , residuals                     ̂)T (y − y
+                               (y − y        ̂)              (yi − ̂
+                                                                   yi )2       n−p
+                                                       i=1
+                                                       ∑n
+SSlof , lack-of-ﬁt                  ̂)T (j − y
+                               (j − y        ̂)              (yi − ̂
+                                                                   yi )2       f −p
+                                                       i=1
+                                                       ∑n
+SSpe , pure                    (y − j)T (y − j)              (yi − yi )2       n−f
+experimental error                                     i=1
+
+
+j − This vector contains y values averaged at each observation point i,
+f − number of diﬀerent realizations of the independent variables (independent
+factor combinations), n − number of measurements, and p − number of
+                   ∑n
+parameters, y = n1    yi total mean.
+                     i=1
+
+
+
+
+                       SST = 29.93
+
+                            n=4
+
+    SSM = 22.56                       SScorr = 7.37
+
+              1                           n–1 = 3
+
+                     SSfact = 6.80                       SSR= 0.57
+
+                           p–1 = 1                      n–p = 2
+
+                                        SSlof = 0.07                       SSpe = 0.5
+
+                                         f– p = 1                           n–f = 1
+
+Figure 6.1 Illustration of analysis of variance (ANOVA) for linear regression
+on the data in Table 6.2. See Table 6.2 for abbreviations.
+

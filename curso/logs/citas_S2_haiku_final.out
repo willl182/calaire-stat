@@ -1,0 +1,14 @@
+Escribí la revisión en `curso/citas/S2_revision_final_haiku.md`. No toqué libretos ni otros archivos, y no hice commit.
+
+**Resultado: no cerrar S2 todavía.** Hay un bloqueante de consistencia.
+
+- **F-01 (alta):** `S2_decisiones_luna.md:9` y `:11` (decisiones 2 y 3) siguen afirmando lo que H-01 y H-02 refutaron: «el capítulo 6 no trata potencia» y «TAD §4.4.1 no aporta respaldo». El libreto y el cotejo ya están corregidos, pero las decisiones no. Propuesta: reescribir las decisiones 2–3.
+- **F-02 (media):** la frase entrecomillada de Hahs-Vaughn («will usually be reduced») no aparece en `docs/` ni en `extractos/`. El texto real dice «the strength of the relationship … is reduced».
+- **F-03 (media):** la frase de §9.3 está en PDF p. 377, no en p. 364 como dice el cotejo.
+- **F-04 y F-05 (media):** las páginas de Otto (tabla 6.1, ec. 6.20) y de ISO 13964 §6.2.2 no coinciden con el PDF. ISO 13964 §6.2.2 está en PDF p. 14, no en p. 6.
+- **F-06 (media):** la propia revisión H-01…H-08 se apoya en extracciones en `/tmp`, que no son reproducibles desde el repositorio.
+- **F-07 a F-09 (baja):** el cotejo sigue anclado por líneas obsoletas (H-07 no aplicado). La retirada de NIST debe confirmarse frente a Bonferroni. El manifiesto apunta a rutas `/home/w182/…`.
+
+**Estado de H-01…H-08:** cinco aplicados (H-02, H-04, H-06, H-08, y H-05 parcialmente). H-01 está aplicado en libreto y cotejo, pero no en decisiones (F-01). H-03 se resolvió retirando la cita NIST, no añadiendo la entrada; es coherente. H-07 no se aplicó.
+
+**Localizadores:** reabrí diez con `pdftotext` sobre `docs/`. Ocho coinciden con el texto. Los dos fallos son los de F-02/F-03. No encontré páginas inventadas: los problemas son de paginación y de citas literales mal situadas.

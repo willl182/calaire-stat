@@ -1,0 +1,19 @@
+Ronda de cierre de M06 terminada: 5 hallazgos aplicados, 3 rechazados. El script se reejecutó con `curso/.venv/bin/python -I` y terminó con rc=0; ninguna cifra cambió.
+
+| H-xx | Decisión | Ubicación | rc |
+|---|---|---|---|
+| H-01 | Aplicado: 90 → 94 nmol/mol. La columna AL de `BD_DIAS`, filas 31–38, marca 94 y las lecturas rondan 94,4. | `M06_libreto.md` Práctica I; `calc/M06_practicas_luna.py` líneas 21 y 79 | 0 |
+| H-02 | Rechazado. La línea 35 de la bitácora todavía afirma que la paleta pasa el validador y que se renderizó con Chromium, y eso no se reejecutó. La bitácora no está entre los archivos que autorizaste tocar. | `logs/M06_practicas_luna.md` línea 35 (sin cambio) | 0 |
+| H-03 | Aplicado: «El script» pasa a ser `calc/M06_ejemplos.py`. | `M06_libreto.md` línea 237 | 0 |
+| H-04 | Aplicado: «esperaríamos, en promedio, medio falso positivo: diez pruebas por cinco centésimas». La cita NIST de esa frase no se tocó. | `M06_libreto.md` línea 219 | 0 |
+| H-05 | Aplicado: se explica por qué los cuatro sucesos son disjuntos con C > 0,5 y por qué el cuantil beta de α/4 es exacto. La cita ISO 5725-2 se conserva. | `M06_libreto.md` línea 152 | 0 |
+| H-06 | Aplicado: se quita la referencia a una «tabla simulada de I3» que no existe en el libreto y se remite a la matriz del enunciado de A. También se corrigió el comentario del script. | `M06_libreto.md` línea 201; `calc/M06_practicas_luna.py` línea 47 | 0 |
+| H-07 | Rechazado, decisión pendiente para ti. La petición que autoriza las prácticas consta en la bitácora, y no puedo tocar la guía. Hay que decidir si se actualiza `guia_libreto.md` §1 o si los bloques se reducen al marcador permitido. | Bloques B, I y A (sin cambio) | 0 |
+| H-08 | Rechazado: es una cita (NIST §7.4.7.3 frente a Hahs-Vaughn §8.2.1), y eso lo lleva otro supervisor. | Línea 219 y bitácora línea 48 (sin cambio) | 0 |
+
+Quedan tres cosas para ti:
+- **H-02:** corregir la línea 35 de la bitácora.
+- **H-07:** decidir entre cambiar la guía o reducir los bloques a marcador.
+- **H-08:** la bitácora (línea 48) dice que el cambio NIST está solo en el árbol de trabajo, pero `git diff` indica que ya está en HEAD. Esto lo debe revisar el supervisor de referencias.
+
+Al editar el libreto encontré cambios de otra persona que no estaban en mi contexto; los conservé, y mis ediciones aplicaron limpias. La tabla de la ronda de cierre está añadida al final de `curso/logs/M06_practicas_luna.md`. No hay commits.

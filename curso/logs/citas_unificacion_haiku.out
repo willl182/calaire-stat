@@ -1,0 +1,12 @@
+Revisión escrita en `curso/citas/unificacion_revision_haiku.md`. No edité ningún otro archivo.
+
+**Resultado: no aprobado con observaciones.** La unificación de claves está bien aplicada en lo esencial, pero hay dos hallazgos que impiden darla por cerrada.
+
+- **U-01 (alta), M06:219:** en HEAD la frase de multiplicidad citaba NIST/SEMATECH §7.4.7.3 (Bonferroni). Ahora cita Hahs-Vaughn §8.2.1, p. 332, y la referencia NIST desaparece del libreto. El registro de unificación lo describe como un simple cambio de «Hahs-Vaughn y Lomax» a «Hahs-Vaughn», lo cual no es lo ocurrido. Propuesta: restaurar la cita NIST o citar ambas, y registrar el cambio de fuente.
+- **U-02 (alta), cifras cambiadas:** el diff contra HEAD contiene tres cambios numéricos que no están en el registro de unificación: M02:186 y :188 (+1,8 → +1,6, con medias recalculadas), M06:172 (nivel 90 → 94 nmol/mol) y M10:195 (numerales de la referencia ISO 17025). No hay copia previa para confirmar cuándo se introdujeron. Propuesta: confirmarlos con su autor y revertir los que no estén verificados.
+- **U-03 (media), recuento:** contado por ocurrencia, «no disponible en docs/» suma 69, no 60. Las diferencias están en M01, M04, M10, M13 y AX.
+- **U-04 (media):** hay claves en corchetes sin entrada en `inventario.md` (Searle, Efron, Huber, CIPM MRA-G-13, ILAC-P14, CALAIRE R&R, F-PSMT-01, Johnson-Kotz).
+- **U-05 (media):** variantes sin unificar: `EPA TAD` frente a `EPA-TAD`, `SRP QAPP` frente a `SRP-QAPP`, `Milton et al. 2006` frente a `Milton 2006`, y algunas otras de menor peso.
+- **U-06 (baja):** `guia_libreto.md` §5 no recoge Montgomery 2013 ni DAE.
+
+Verificado sin incidencias: no quedan «Crowder2020» ni «Hahs-Vaughn y Lomax» en corchetes, no hay mezcla de Montgomery DAE con 2013, y M05:309 (DAE 9.ª ed., 2017) coincide con la bibliografía de Crowder.

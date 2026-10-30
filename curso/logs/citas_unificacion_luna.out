@@ -1,0 +1,15 @@
+Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.
+Unificación de claves hecha, sin commits. Los cambios están en los libretos vigentes, en `inventario.md` y en el nuevo `curso/citas/unificacion_claves.md`.
+
+**Cambios**
+- **Montgomery DAE:** las 13 variantes «Montgomery, *Design and Analysis of Experiments* (no disponible en docs/)» pasan a «Montgomery DAE (no disponible en docs/; contenido no cotejado)» (M05). Nueva fila en `inventario.md`.
+- **Montgomery 2013:** en AX (299, 309, 315) pasa a «[Montgomery 2013, clave bibliográfica; contenido no cotejado]». En M11 (31, 122), donde acompaña otra cita, pasa a «; Montgomery 2013 (contenido no cotejado)».
+- **Hahs-Vaughn:** «Hahs-Vaughn y Lomax» dentro de corchetes pasa a «Hahs-Vaughn» (M05:168, M06:219).
+- **Crowder:** «Crowder2020» pasa a «Crowder 2020» en AX.
+- **GUM-S1 / GUM-S2:** no hubo variantes en corchetes; `JCGM 101/102` aparece solo en las entradas de referencias. No cambié nada.
+
+**Decisión que conviene revisar:** M05:309 decía «Montgomery, *Design and Analysis of Experiments*. 10.ª ed., Wiley, 2020», que no consta en `docs/`. La bibliografía de Crowder 2020 (que sí está en `docs/`) cita la 9th edn., Wiley, 2017. Lo sustituí por esa edición y año, marcado como pendiente de cotejo del ejemplar. Si prefieres dejarlo sin año ni edición, dímelo y lo quito.
+
+**Recuento de «no disponible en docs/»:** el total pasa de 64 a 60. Los cambios que lo reducen son el M05:309 (−1) y las tres marcas de Montgomery 2013 en AX (−3). Por libreto: M05 19, M04 7, AX 4, M06 8, M08 6, M03 3, M13 5, M12 2, M07 2, M01 1, M02 1, M10 1, M11 1, M00/M09 0.
+
+**Sin tocar:** las menciones de «Hahs-Vaughn y Lomax» en las entradas de referencias y la prosa de M11:196 con «Montgomery 2013 queda solo como clave…». No añadí páginas ni numerales.

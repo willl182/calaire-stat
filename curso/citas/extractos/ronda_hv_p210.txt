@@ -1,0 +1,53 @@
+Introduction to Hypothesis Testing                                                            191
+
+
+
+6.1.2 Sample Size
+We will start our discussion of sufficient sample size for the one-sample t test by noting
+that there is a difference in having a sample size that produces sufficiently powered results
+as compared to a sample size that will produce robust results. Robust results mean that the
+results are still relatively accurate even if there are some violations of assumptions. Having
+robust results does not equate, necessarily, to having a sufficiently powered test (i.e., being
+able to detect a statistically significant difference if it exists). It is possible to have robust
+results for an underpowered test (i.e., assumptions are met, but the sample size is not large
+enough for detecting a difference if it is there). And it is also possible to have a sufficiently
+powered test that does not produce robust results (i.e., sample size is sufficient for detect-
+ing a difference if it is there, but assumptions have been violated). It is a common myth that
+a sample size of 30 is sufficient for conducting a one-sample t test (or generally any of the
+three t tests). We have also seen researchers say that a sample size of 20 is sufficient. Other
+researchers say that as long as the normality assumption is met, regardless of the sample
+size, the results will be robust. We do not condone going by any of these suggested guidelines
+for determining sample size. There are no conventions that we recommend for sample size.
+Rather, we encourage researchers to conduct a power analysis to determine the sample size
+needed for sufficient power.
+
+
+6.1.3 Power
+In this section we complete our discussion of Type II error (β) and power (1 − β). First,
+we return to our rain example and discuss the entire decision-making context. Then we
+describe the factors that determine power.
+
+
+6.1.3.1 The Full Decision-Making Context
+Previously, we defined Type II error as the probability of failing to reject H0 when H0 is
+really false. In other words, in reality H0 is false, yet we made a decision error and did not
+reject H0. The probability associated with a Type II error is denoted by β . Power is a related
+concept and is defined as the probability of rejecting H0 when H0 is really false. In other words,
+in reality H0 is false, and we made the correct decision to reject H0. The probability associ-
+ated with power is denoted by (1 − β). Let us return to our “rain” example to describe Type
+I and Type II errors and power more completely.
+   The full decision-making context for the rain example is given in Figure 6.5. The dis-
+tribution on the left-hand side of the figure is the sampling distribution when H0 is true,
+meaning in reality it does not rain. The vertical line represents the critical value for decid-
+ing whether to carry an umbrella or not. To the left of the vertical line we do not carry an
+umbrella, and to the right side of the vertical line we do carry an umbrella. For the no-rain
+sampling distribution on the left, there are two possibilities. First, we do not carry an umbrella
+and it does not rain. This is the unshaded portion under the no-rain sampling distribution to
+the left of the vertical line. This is a correct decision, and the probability associated with this
+decision is 1 − α. Second, we do carry an umbrella and it does not rain. This is the shaded portion
+under the no-rain sampling distribution to the right of the vertical line. This is an incorrect
+decision, a Type I error, and the probability associated with this decision is α/2 in either the
+upper or lower tail, and α collectively.
+   The distribution on the right-hand side of the figure is the sampling distribution when
+H0 is false, meaning in reality it does rain. For the rain sampling distribution, there are two
+

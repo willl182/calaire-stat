@@ -116,6 +116,10 @@ Toda definición, fórmula, criterio, valor tabulado o afirmación técnica no t
 | Mark-Workman | Mark, H. y Workman, J., *Chemometrics in Spectroscopy* | `chemometrics_spectroscopy_s*.pdf` |
 | PHMU | *A Practical Handbook on Measurement Uncertainty* — verificar autor | `A Practical Handbook on Measurement Uncertainty_.pdf` |
 | Daumont 1992 / Malicet 1995 | Artículos «Ozone UV spectroscopy I / II» | `Ozone UV spectroscopy …pdf` |
+| Montgomery 2013 | Montgomery, D. C., *Introduction to Statistical Quality Control*, Wiley, 2013 (edición no verificada; título y año según Crowder 2020, PDF pp. 96 y 145). Contenido no cotejado. | no disponible |
+| Montgomery DAE | Montgomery, D. C., *Design and Analysis of Experiments*, 9.ª ed., Wiley, 2017 (según la bibliografía de Crowder 2020; sin página verificada). Contenido no cotejado; no confundir con Montgomery 2013. | no disponible |
+| Searle–Casella–McCulloch | Searle, S. R.; Casella, G.; McCulloch, C. E., *Variance Components*. Edición y editorial pendientes de cotejo. | no disponible |
+| Efron–Tibshirani 1993 | Efron, B. y Tibshirani, R. J., *An Introduction to the Bootstrap*. Editorial y año pendientes de verificación; sin numeral. | no disponible |
 
 Para control estadístico (EWMA, CUSUM, cartas I-MR) y riesgo de decisión pueden citarse fuentes externas reconocidas (por ejemplo, Montgomery, *Introduction to Statistical Quality Control*; NIST/SEMATECH *e-Handbook of Statistical Methods*), marcadas «(no disponible en docs/)», sin numerales no verificados.
 

@@ -1,0 +1,11 @@
+Escribí el informe en `curso/logs/M06_practicas_revision_cierre_haiku.md`. No edité libretos, scripts ni bitácora, no toqué referencias y no hice commits.
+
+Las cifras de B, I y A coinciden con la ejecución de `M06_practicas_luna.py`, y los 48 valores de la práctica I coinciden con `BD_DIAS` (filas 31–38, columnas F/L/R/X/AD/AJ, signo invertido). Los hallazgos previos H-01 a H-03 están resueltos, mientras que H-04 a H-08 siguen abiertos o solo parcialmente resueltos. Quedan 8 hallazgos (3 medios, 5 bajos):
+
+- **H-01 (medio):** el libreto, el script y la bitácora dicen «nivel nominal de 90 nmol/mol», pero la columna AL de `BD_DIAS` indica 94 para esas filas. Los datos están bien; la etiqueta no.
+- **H-08 (medio):** la cita NIST de la línea 219 ya está en HEAD, y `git diff HEAD` del libreto está vacío. La bitácora describe lo contrario, así que su registro está desfasado. La decisión de restaurar Hahs-Vaughn o validar NIST corresponde al usuario y al supervisor de referencias.
+- **H-07 (medio, decisión tuya):** el marcador `[PRÁCTICA]` no está en la lista de etiquetas de `guia_libreto.md`, y la guía sigue diciendo que la fase es solo de contenido.
+- **H-02 (bajo):** la bitácora dice haber retirado la validación de la paleta, pero su línea 35 todavía afirma que «pasa el validador».
+- **H-03 a H-06 (bajo):** las tres frases pendientes que me pediste (línea 152 «cuatro colas», 219 «medio falso positivo», 237 atribución) siguen sin corregir. Añadí H-05 y H-06, ambas de redacción y trazabilidad.
+
+Lo que no pude comprobar: el validador de paleta de la skill dataviz. Solo verifiqué que el HTML contiene los dos colores citados.

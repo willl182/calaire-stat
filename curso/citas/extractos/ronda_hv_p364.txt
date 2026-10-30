@@ -1,0 +1,44 @@
+9
+Inferences About Variances
+
+
+
+
+Chapter Outline
+9.1 Inferences About Variances and How They Work
+    9.1.1 Characteristics of the F Distribution
+9.2 Assumptions
+    9.2.1 Assumptions for Inferences About a Single Variance
+    9.2.2 Assumptions for Inferences About Two Dependent Variances
+9.3 Sample Size, Power, and Effect Size
+9.4 Computing Inferences About Variances Using SPSS
+9.5 Computing Inferences About Variances Using R
+    9.5.1 Reading Data Into R for the Test of Inference About a Single Variance
+    9.5.2 Generating the Test of Inference About a Single Variance
+    9.5.3 Reading Data Into R for the Test of Inference About Two Dependent Variances
+    9.5.4 Generating the Test of Inference About Two Dependent Variances
+9.6 Research Question Template and Example Write-Up
+9.7 Additional Resources
+
+
+
+
+Key Concepts
+   1. Sampling distributions of the variance
+   2. The F distribution
+   3. Homogeneity of variance tests
+
+In the previous three chapters we looked at testing inferences about means (Chapters 6
+and 7) and about proportions (Chapter 8). In this chapter we examine inferential tests
+involving variances. Tests of variances are useful in two applications: (a) as an inferential
+test by itself and (b) as a test of the homogeneity of variance assumption for another pro-
+cedure (e.g., t test, analysis of variance).
+  First, a researcher may want to perform inferential tests on variances for their own sake,
+in the same fashion that we described for the one- and two-sample t tests on means. For
+example, we may want to assess whether the variance of undergraduates at Ivy-Covered
+University on an intelligence measure is the same as the theoretically derived variance of
+225 (from when the test was developed and normed). In other words, is the variance at a
+particular university greater than or less than 225? As another example, we may want to
+
+                                                                                         345
+

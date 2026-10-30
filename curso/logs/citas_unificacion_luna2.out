@@ -1,0 +1,10 @@
+Respondí U-01 a U-06 en la sección «Respuesta a la revisión» de `curso/citas/unificacion_claves.md`. No hice commits ni cambié cifras ni ejercicios.
+
+- **U-01 (hecho):** M06:219 vuelve a citar NIST/SEMATECH §7.4.7.3 con el texto y la URL de HEAD, seguido de Hahs-Vaughn §8.2.1, PDF p. 332, separados por «;». Corregí la descripción en la tabla de variantes. No reverifiqué la página 332 del PDF.
+- **U-02 (fuera de alcance):** no toqué M02:186/188, M06:172 ni M10:195.
+- **U-03 (hecho):** con `grep -ci` hay 63 líneas con la marca y 69 ocurrencias. Sustituí la tabla y el total de 60. Las cifras «antes» no se pueden comprobar sin copia previa.
+- **U-04 (parcial):** añadí Searle–Casella–McCulloch y Efron–Tibshirani 1993 a `inventario.md`, marcadas «no disponible en docs/» y sin edición ni editorial no verificadas. Quedan pendientes Huber 1981, CIPM MRA-G-13, ILAC-P14, CALAIRE R&R, F-PSMT-01 y Johnson et al., que no estaban en tu lista.
+- **U-05 (parcial):** en los corchetes de M05:84, :86 y :271 cambié a `EPA-TAD`, `SRP-QAPP` y `SRP-SOP`. No toqué tablas ni prosa de esas líneas. Quedan pendientes Milton 2006, ISO/IEC 17025 §7.2.2, JCGM 106, ILAC-G8 y el calificador de Montgomery 2013.
+- **U-06 (hecho):** añadí a `guia_libreto.md` §5 filas para Montgomery 2013, Montgomery DAE (9.ª ed., Wiley, 2017), Searle–Casella–McCulloch y Efron–Tibshirani 1993.
+
+Notas: el extracto de Crowder cita «Searle and Gruber (2016), *Linear Models*», que es otra obra. El diff de M05 incluye cambios de sesiones anteriores, no solo los míos.

@@ -13,3 +13,14 @@ API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are c
 Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
 [claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
 API Error: Request rejected (429) · All credentials for model gpt-6.1-sol are cooling down via provider codex (last error: usage_limit_reached: The usage limit has been reached)
+Esperando a las revisiones de Haiku de S2/S3.
+
+Ejecutor aplicando las rondas finales de S2/S3; espero la notificación.
+
+Unificación de claves en curso.
+
+Unificación de claves hecha (Montgomery 2013 frente a Montgomery DAE, 9.ª ed. 2017, que consta en docs/). Ahora Haiku la está revisando.
+
+El ejecutor está aplicando las respuestas U-01 a U-06 de la revisión.
+
+hecho

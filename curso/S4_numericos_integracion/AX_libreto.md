@@ -9,7 +9,7 @@
 | Contenido | AX.1–AX.13 según `guia_libreto.md` §7; incluye deducciones y desarrollos enumerados allí, sin crear prácticas ni evaluaciones. Los anexos no se evalúan (prop_e §9). |
 | Datos de ejemplos | Simulados con parámetros explícitos para ilustrar las deducciones; no son datos de CALAIRE ni resultados del SRP o del Level 2. |
 | Remisiones | M01–M13, identificadas en cada anexo («Se usa desde…») y en la lista de remisiones de la bitácora. |
-| Referencias clave | GUM; GUM-S1; ISO/TS 28037; Crowder2020; Hahs-Vaughn; Montgomery 2013. |
+| Referencias clave | GUM; GUM-S1; ISO/TS 28037; Crowder 2020; Hahs-Vaughn; Montgomery 2013. |
 
 | Anexo | Nivel de primer uso | Consumidores |
 |---|---|---|
@@ -104,7 +104,7 @@ M03-B convierte especificaciones a incertidumbres estándar; M08 reutiliza las v
 
 ### Escena AX.4. Separar el día de la lectura
 
-Vamos a deducir el resultado del modelo equilibrado de un factor aleatorio que usa M6. Para cada día $i$ y lectura $j$, escribimos el error como una media general, un efecto aleatorio de día y un error de lectura. Los efectos diarios son independientes con varianza $\tau^2$; las lecturas son independientes con varianza $\sigma^2$, e independientes de los días. Hay el mismo número $n$ de lecturas en cada uno de los $d$ días: $i=1,\ldots,d$ y $j=1,\ldots,n$. [GUM H.5; Crowder2020 §9.3.1]
+Vamos a deducir el resultado del modelo equilibrado de un factor aleatorio que usa M6. Para cada día $i$ y lectura $j$, escribimos el error como una media general, un efecto aleatorio de día y un error de lectura. Los efectos diarios son independientes con varianza $\tau^2$; las lecturas son independientes con varianza $\sigma^2$, e independientes de los días. Hay el mismo número $n$ de lecturas en cada uno de los $d$ días: $i=1,\ldots,d$ y $j=1,\ldots,n$. [GUM H.5; Crowder 2020 §9.3.1]
 
 > **[PIZARRA]** $e_{ij}=\mu+D_i+\varepsilon_{ij}$; $E(D_i)=E(\varepsilon_{ij})=0$, $\operatorname{var}(D_i)=\tau^2$, $\operatorname{var}(\varepsilon_{ij})=\sigma^2$.
 
@@ -130,13 +130,13 @@ En M6-B el operador recibe las componentes y calcula su contribución de precisi
 
 ### Escena AX.5. De minimizar residuos a la incertidumbre de la recta
 
-Escribimos la recta como $y=a+bx$. En forma matricial, cada fila de la matriz de diseño contiene uno y el valor de referencia. OLS elige los parámetros que minimizan la suma de residuos cuadrados. Derivamos respecto del vector de parámetros, igualamos a cero y obtenemos las ecuaciones normales. Si la matriz de diseño tiene rango completo, la solución es única. [Crowder2020 §10.2.1; ISO 28037 5.8.1]
+Escribimos la recta como $y=a+bx$. En forma matricial, cada fila de la matriz de diseño contiene uno y el valor de referencia. OLS elige los parámetros que minimizan la suma de residuos cuadrados. Derivamos respecto del vector de parámetros, igualamos a cero y obtenemos las ecuaciones normales. Si la matriz de diseño tiene rango completo, la solución es única. [Crowder 2020 §10.2.1; ISO 28037 5.8.1]
 
 > **[PIZARRA]** $\boldsymbol y=X\boldsymbol\beta+\boldsymbol\varepsilon$, $Q=(\boldsymbol y-X\boldsymbol\beta)^T(\boldsymbol y-X\boldsymbol\beta)$; $X^T X\hat{\boldsymbol\beta}=X^T\boldsymbol y$; $\hat{\boldsymbol\beta}=(X^TX)^{-1}X^T\boldsymbol y$.
 
 Leamos: invertimos la matriz de productos cruzados del diseño y la multiplicamos por los productos entre diseño y observaciones. Si los errores tienen media cero y matriz de covarianza $\sigma^2I$, la covarianza del estimador resulta $\sigma^2(X^TX)^{-1}$. En la práctica se sustituye $\sigma^2$ por una estimación residual.
 
-WLS minimiza una suma de residuos ponderados y reemplaza el producto ordinario por uno con matriz de pesos $W$. Si W es la inversa de la matriz de covarianza conocida salvo un factor de escala, el estimador es GLS para ese modelo. Con pesos diagonales, se trata cada punto como independiente con varianzas distintas; no resuelve por sí solo incertidumbre relevante en x ni dependencia entre puntos. [ISO 28037 6.1.3; Crowder2020 §10.2.3]
+WLS minimiza una suma de residuos ponderados y reemplaza el producto ordinario por uno con matriz de pesos $W$. Si W es la inversa de la matriz de covarianza conocida salvo un factor de escala, el estimador es GLS para ese modelo. Con pesos diagonales, se trata cada punto como independiente con varianzas distintas; no resuelve por sí solo incertidumbre relevante en x ni dependencia entre puntos. [ISO 28037 6.1.3; Crowder 2020 §10.2.3]
 
 > **[PIZARRA]** $\hat{\boldsymbol\beta}_{W}=(X^TWX)^{-1}X^TW\boldsymbol y$; $\operatorname{cov}(\hat{\boldsymbol\beta}_{W})=\hat\sigma^2(X^TWX)^{-1}$ bajo el modelo de pesos relativos correctos.
 
@@ -296,7 +296,7 @@ M12-I usa los límites unilaterales para los indicadores de precisión y sesgo; 
 
 ### Escena AX.12. Memoria exponencial y tiempo hasta la señal
 
-Un EWMA actualiza su estadístico mezclando la observación presente con el valor previo. Para lecturas independientes de varianza $\sigma^2$ y el estadístico centrado en la media bajo control, desplegamos la recurrencia. Cada observación histórica recibe un peso geométrico; al calcular la varianza, las observaciones independientes no tienen términos cruzados. La suma geométrica lleva a la varianza del EWMA en el instante t. [Montgomery 2013, no disponible en docs/]
+Un EWMA actualiza su estadístico mezclando la observación presente con el valor previo. Para lecturas independientes de varianza $\sigma^2$ y el estadístico centrado en la media bajo control, desplegamos la recurrencia. Cada observación histórica recibe un peso geométrico; al calcular la varianza, las observaciones independientes no tienen términos cruzados. La suma geométrica lleva a la varianza del EWMA en el instante t. [Montgomery 2013, clave bibliográfica; contenido no cotejado]
 
 > **[PIZARRA]** $Z_t=\lambda X_t+(1-\lambda)Z_{t-1}$; $\operatorname{var}(Z_t)=\sigma^2\frac{\lambda}{2-\lambda}\left[1-(1-\lambda)^{2t}\right]$; en régimen, $\sigma_Z^2=\sigma^2\frac{\lambda}{2-\lambda}$.
 
@@ -306,13 +306,13 @@ La longitud media de corrida, ARL, es el número esperado de observaciones hasta
 
 En forma matricial, $(I-P)\boldsymbol m=\boldsymbol 1$, de donde $\boldsymbol m=(I-P)^{-1}\boldsymbol 1$. La discretización aproxima la transición continua; hay que refinar la malla para comprobar estabilidad.
 
-Para CUSUM se construye la matriz con la transición del acumulador $S_t=\max(0,S_{t-1}+X_t-k)$ y el umbral $h_C$: las transiciones que lo superan son absorbentes y se excluyen de P. [Montgomery 2013, no disponible en docs/]
+Para CUSUM se construye la matriz con la transición del acumulador $S_t=\max(0,S_{t-1}+X_t-k)$ y el umbral $h_C$: las transiciones que lo superan son absorbentes y se excluyen de P. [Montgomery 2013, clave bibliográfica; contenido no cotejado]
 
 Ejemplo **simulado**: para $\lambda=0,20$ y $\sigma=1$, el factor de régimen es $0,20/1,80=0,1111$ y la desviación del estadístico es 0,3333. Suponiendo observaciones independientes $N(0,1)$, con límites EWMA de tres desviaciones estándar, umbral aproximado 1, el script estima un ARL bajo control de aproximadamente 560; la cifra cambia menos de una décima al pasar de 240 a 1201 estados. Para CUSUM unilateral con holgura $k=0,5$ y umbral 5, bajo la misma distribución, estima aproximadamente 931. Para llegar ahí, el valor cero del acumulador se trata como un estado propio, porque $\max(0,\cdot)$ concentra probabilidad exactamente en cero; si se mezcla con la primera celda, la cifra converge despacio y con 240 estados da unos 921. Son aproximaciones numéricas para esos parámetros y discretización, no recomendaciones universales; refinar la malla y variar los parámetros permite estudiar estabilidad y sensibilidad. Como referencia matemática, si hubiera señal independiente con probabilidad 0,01 por lectura, la longitud geométrica esperada sería 100; eso no describe el ARL dependiente de EWMA/CUSUM.
 
 > **[ERROR CRÍTICO]** No confundan límites de control con tolerancias y no presenten el ARL bajo control como el tiempo garantizado hasta una alarma. Falsas alarmas, sensibilidad y cambios deben compararse bajo el modelo temporal especificado.
 
-En M11-A usamos la varianza del EWMA para definir sus límites de arranque. Comparamos EWMA con $L=2,7$ y CUSUM bilateral con $k=0,5$ y $h=5$, mediante probabilidades de alarma en un horizonte fijo y demoras condicionadas a detectar; esas demoras no son ARL. El ejemplo de este anexo usa EWMA con $L=3$ y límites estacionarios, y CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior. Sirve para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A. [Montgomery 2013, no disponible en docs/]
+En M11-A usamos la varianza del EWMA para definir sus límites de arranque. Comparamos EWMA con $L=2,7$ y CUSUM bilateral con $k=0,5$ y $h=5$, mediante probabilidades de alarma en un horizonte fijo y demoras condicionadas a detectar; esas demoras no son ARL. El ejemplo de este anexo usa EWMA con $L=3$ y límites estacionarios, y CUSUM con los mismos $k=0,5$ y $h=5$, pero solo la suma superior. Sirve para ilustrar el cálculo complementario de ARL, no para describir el análisis de M11-A. [Montgomery 2013, clave bibliográfica; contenido no cotejado]
 
 ## AX.13. Fundamento de Monte Carlo y control del número de ensayos
 
@@ -362,8 +362,8 @@ Hemos seguido trece deducciones que explican por qué los métodos de los módul
 - **BIPM-K1.** BIPM, *Protocol for BIPM.QM-K1, On-demand Key Comparison of Ozone at Ambient Level*, versión 2.1, 9 de octubre de 2025. Archivo: `docs/BIPM.QM-K1_2.protocol.pdf`; §8, ecs. [2]–[3], cotejadas directamente en `docs/BIPM.QM-K1_2.protocol.txt` (líneas 378–387); la ecuación [3] presenta la combinación sin covarianza. Se cita solo la definición de $D$ y $u(D)$.
 - **CFR58-A.** U.S. Environmental Protection Agency, 40 CFR Part 58, Appendix A, §§4.1.2–4.1.3, tal como la cita M12. Fuente de las fórmulas regulatorias, no de su deducción.
 - **Hahs-Vaughn.** Hahs-Vaughn, D. L. y Lomax, R. G., *Statistical Concepts—A First Course* (presenta los primeros diez capítulos de *Statistical Concepts*, 4.ª ed.), Routledge, 2020. Archivo: `docs/Statistical Concepts – A First Course.pdf` y capítulos separados en `docs/statistical_concepts_c*.pdf`. Claves originales normalizadas: `Statistical Concepts`, `Hahs-Vaughn y Lomax`.
-- **Crowder2020.** Crowder, S., Delker, C., Forrest, E. y Martin, N., *Introduction to Statistics in Metrology*, Springer Nature Switzerland AG, 2020. Archivo: `docs/Introduction to Statistics in Metrology.pdf` y capítulos `docs/intro_stats_metro_c*.pdf`. Clave original normalizada: `Crowder 2020`.
-- **Montgomery 2013.** Montgomery, D. C., *Introduction to Statistical Quality Control*, 7.ª ed., Wiley, 2013, ISBN 978-1-118-14681-1. No disponible en `docs/`; fuente externa para EWMA/CUSUM. El título, la 7.ª edición y el ISBN se identificaron en el catálogo editorial de Wiley; el año 2013 consta en un resultado indexado de Wiley Online Library, no en un ejemplar primario consultado. Estos datos bibliográficos no verifican el contenido técnico. No se consignan numerales ni páginas sin cotejo primario.
+- **Crowder 2020.** Crowder, S., Delker, C., Forrest, E. y Martin, N., *Introduction to Statistics in Metrology*, Springer Nature Switzerland AG, 2020. Archivo: `docs/Introduction to Statistics in Metrology.pdf` y capítulos `docs/intro_stats_metro_c*.pdf`. Clave original normalizada: `Crowder 2020`.
+- **Montgomery 2013.** Montgomery, D. C., *Introduction to Statistical Quality Control*, Wiley, 2013. No disponible en `docs/`; fuente externa para EWMA/CUSUM. El título y el año 2013 constan en la bibliografía independiente de Crowder 2020 (PDF pp. 96 y 145; extracto `curso/citas/extractos/S3_crowder2020_montgomery_p96_p145.txt`). La edición y el ISBN no están verificados y no se consignan. Estos datos bibliográficos no verifican el contenido técnico. No se consignan numerales ni páginas sin cotejo primario.
 - **JCGM 106.** JCGM 106:2012, *The role of measurement uncertainty in conformity assessment*. No disponible en `docs/`.
 - **ILAC-G8.** ILAC-G8:09/2019, *Guidelines on Decision Rules and Statements of Conformity*. No disponible en `docs/`.
 - **Prop_e.** *Propuesta E: curso de estadística aplicada a la fotometría de ozono*, 24 de octubre de 2026, §§6 y 9. Referencia de alcance curricular, no técnica.

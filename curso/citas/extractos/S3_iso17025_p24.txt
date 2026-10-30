@@ -1,0 +1,56 @@
+BS EN ISO/IEC 17025:2017
+ISO 17025:2017(E)
+﻿
+
+
+d) where appropriate, opinions and interpretations (see 7.8.7);
+e)    additional information that may be required by specific methods, authorities, customers or groups
+      of customers.
+
+7.8.3.2 Where the laboratory is responsible for the sampling activity, test reports shall meet the
+requirements listed in 7.8.5 where necessary for the interpretation of test results.
+
+7.8.4     Specific requirements for calibration certificates
+
+7.8.4.1    In addition to the requirements listed in 7.8.2, calibration certificates shall include the following:
+
+a)    the measurement uncertainty of the measurement result presented in the same unit as that of the
+      measurand or in a term relative to the measurand (e.g. percent);
+      NOTE       According to ISO/IEC Guide 99, a measurement result is generally expressed as a single measured
+      quantity value including unit of measurement and a measurement uncertainty.
+
+b) the conditions (e.g. environmental) under which the calibrations were made that have an influence
+   on the measurement results;
+c)    a statement identifying how the measurements are metrologically traceable (see Annex A);
+d) the results before and after any adjustment or repair, if available;
+e)    where relevant, a statement of conformity with requirements or specifications (see 7.8.6);
+f)    where appropriate, opinions and interpretations (see 7.8.7).
+
+7.8.4.2 Where the laboratory is responsible for the sampling activity, calibration certificates shall meet
+the requirements listed in 7.8.5 where necessary for the interpretation of calibration results.
+
+7.8.4.3 A calibration certificate or calibration label shall not contain any recommendation on the
+calibration interval, except where this has been agreed with the customer.
+
+7.8.5     Reporting sampling — specific requirements
+
+Where the laboratory is responsible for the sampling activity, in addition to the requirements listed in
+7.8.2, reports shall include the following, where necessary for the interpretation of results:
+a)    the date of sampling;
+b) unique identification of the item or material sampled (including the name of the manufacturer, the
+   model or type of designation and serial numbers, as appropriate);
+c)    the location of sampling, including any diagrams, sketches or photographs;
+d) a reference to the sampling plan and sampling method;
+e)    details of any environmental conditions during sampling that affect the interpretation of the results;
+f)    information required to evaluate measurement uncertainty for subsequent testing or calibration.
+
+7.8.6     Reporting statements of conformity
+
+7.8.6.1 When a statement of conformity to a specification or standard is provided, the laboratory
+shall document the decision rule employed, taking into account the level of risk (such as false accept
+and false reject and statistical assumptions) associated with the decision rule employed, and apply the
+decision rule.
+
+
+16                                                     ﻿                       © ISO/IEC 2017 – All rights reserved
+

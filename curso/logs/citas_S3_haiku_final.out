@@ -1,0 +1,15 @@
+Escribí la revisión final en `curso/citas/S3_revision_final_haiku.md`. No toqué libretos, cotejo ni inventario, y no hice commits.
+
+**Resultado: parcial.** La mayoría de los hallazgos previos H-01…H-09 se aplicaron con justificación coherente con el texto. Quedan pendientes:
+
+- **F-01** (media): M11:31 y :122 usan «no disponible en docs/» en vez de la etiqueta «contenido no cotejado» del resto de Montgomery.
+- **F-02** (media, fuera de lote): AX_libreto.md:366 sigue con la 7.ª ed. e ISBN que M11 retira; inventario.md:52 y :58 siguen justificando la edición por M11.
+- **F-03** (baja): inventario.md:24 sigue con «año debe confirmarse», aunque el PDF confirma 2020.
+- **F-04** (media): las sub-claves NIST-I/R/EWMA/CUSUM no están en el catálogo (H-03 sin aplicar).
+- **F-05** (media): M10:195 sigue listando §§7.8.2 y 7.8.4 como numerales usados.
+- **F-06** (media): el cotejo localiza §7.8.4.1 en «PDF p. 19»; en el PDF está en la **p. 24**.
+- **F-07** (media): las filas NIST verificadas se apoyan en `calc/` y en consulta web, no en `docs/` ni `curso/citas/extractos/`. Además, la ruta de `M12_evidencias_fuentes.md` en el cotejo está rota; el archivo existe en `calc/`.
+- **F-08** (baja): «p. 366» de ASQ no aparece en el extracto local (encabezados 367–368).
+- **F-09** (baja): el cotejo cita M12:188 para la frase NIST, que ahora está en M12:234.
+
+Reabrí doce localizadores con `pdftotext` sobre `docs/` y los ocho que pude comprobar cuadran (GUM §5.2.2, ISO 6143 §6.1, ISO 28037 §10.3, Crowder §11.2.1, SRP-SOP §9.1.1, EPA-TAD §4.4.1, CFR §4.1.2, Hahs-Vaughn 2020). No encontré páginas inventadas; las discrepancias son de número o de ruta. No pude reabrir Crowder §§10.8 y 10.9 porque el PDF da errores de xref.

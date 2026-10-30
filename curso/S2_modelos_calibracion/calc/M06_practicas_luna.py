@@ -18,7 +18,7 @@ u2 = se**2/d + sr**2/(d*n)
 u = sqrt(u2)
 u_solo = sr/sqrt(d*n)
 
-# I: Level 2 propio; diferencias con signo en 90 nmol/mol nominal.
+# I: Level 2 propio; diferencias con signo en 94 nmol/mol nominal (columna AL de BD_DIAS).
 wb = openpyxl.load_workbook(BOOK, data_only=True, read_only=True)
 ws = wb["BD_DIAS"]
 cols = [6, 12, 18, 24, 30, 36]
@@ -44,7 +44,7 @@ C = vars_.max()/vars_.sum()
 Ccrit = beta.ppf(1-.05/4, 4/2, 3*4/2)
 
 # A: 2 analistas x 3 campañas x 2 días anidados; cada celda contiene
-# dos medias diarias firmadas (simuladas), siguiendo la matriz de I3 desplazada.
+# dos medias diarias firmadas (simuladas); la matriz de partida menos 0,4 se fija aquí.
 x = np.array([[[0,.2],[.1,.3],[.4,.6]], [[.3,.5],[0,.2],[.7,.9]]]) - .4
 na, nb, r = x.shape
 mu = x.mean(); ma=x.mean(axis=(1,2)); mb=x.mean(axis=(0,2)); mc=x.mean(axis=2)
@@ -76,7 +76,7 @@ sigma2_reml=sst/11
 
 print('B simulated inputs: s_r=0.24, s_entre=0.30, d=6, n=8, k=2')
 print(f'B u2={u2:.9f}; u={u:.9f}; U={k*u:.9f}; u_without_between={u_solo:.9f}')
-print('I own Level 2 signed errors, 90 nmol/mol nominal, from BD_DIAS rows 31:38:', groups.tolist())
+print('I own Level 2 signed errors, 94 nmol/mol nominal, from BD_DIAS rows 31:38:', groups.tolist())
 print(f'I means={means.tolist()}, grand={grand:.9f}; SS_between={ssb:.9f}; SS_within={ssw:.9f}; SS_total={ssb+ssw:.9f}')
 print(f'I df=(5,42); MS=({msb:.9f},{msw:.9f}); F={Fday:.9f}; Fcrit05={crit_day:.9f}; tau2={tau2:.9f}; s_entre={se_i:.9f}; s_r={sr_i:.9f}')
 print(f'I sigma2 95% CI={variance_ci}; SE(tau2) approx={tau2_se:.9f}; SE(s_entre) delta approx={se_day_se_delta:.9f}')

@@ -1,0 +1,53 @@
+222   6 Modeling
+
+                                The lack-of-ﬁt test is based on the comparison of the MSS due
+                              to the model and the experimental error:
+                                                       SS ∕(f − p) MSSlof
+                                     F(f − p, n − f ) = lof            =                (6.20)
+                                                        SSpe ∕(n − f )   MSSpe
+ In regression analysis,         Note that this test is only applicable if the number of indepen-
+ the term multiple
+                              dent factor combinations, f, is greater than the number of model
+ realizations of an x value
+ is common instead of         parameters, p. In addition, at least one replicate measurement
+ factor combinations.         is required at the same factor combination to guarantee that n
+                              becomes greater than f and the sum of squares due to the pure
+                              experimental error can be estimated.
+                                 The lack-of-ﬁt may not be signiﬁcant if an appropriate model
+                              has been found.
+
+
+                               Example 6.3 Tests for Model Adequacy
+
+                               The straight-line model in Example 6.1 is to be tested for its
+                               adequacy. First, the F test for goodness-of-ﬁt is carried out
+                               according to Eq. (6.19):
+                                                           MSSfact   6.80
+                                      F(p − 1, n − p) =            =       = 24.0
+                                                           MSSR      0.283
+                                  The critical F value at the signiﬁcance level of 0.05 is F(0.95;
+                               1, 2) = 18.51 (cf. Table A.4). As a consequence, the calculated
+                               F value is greater than the critical one and the goodness-of-ﬁt
+                               test is derived to be statistically signiﬁcant.
+ For very small                   This result can also be derived from the ANOVA Table 6.3.
+ experimental error, the F
+ value in the lack-of-ﬁt
+                               There the p value is given with 0.0391. This value is lower than
+ test might be                 the signiﬁcance level of 0.05 (1 − 0.95) considered here, and
+ extraordinarily large and     therefore, the test is signiﬁcant. In other words, the risk that
+ the test becomes              all of the factors are diﬀerent from zero is 3.91%. Since in our
+ signiﬁcant. It is to be       model, we only have a single factor, x, we can assume with
+ decided then whether
+ this result is also
+                               (100 − 3.91) = 96.09% probability that the eﬀect of x is realistic.
+ practically signiﬁcant.         In the second step, the F test for lack-of-ﬁt (Eq. (6.20)) is
+                               applied:
+                                                           MSSlof   0.07
+                                      F(f − p, n − f ) =          =      = 0.14
+                                                           MSSpe    0.50
+                                 For the tabulated critical F value, we obtain F(0.95; 1, 1) =
+                               161 (cf. Table A.4). The F test for lack-of-ﬁt is not signiﬁcant,
+                               since the calculated F value is smaller than the critical value.
+                               The signiﬁcance level is only 0.779, as the p value shows in
+                               Table 6.3.
+

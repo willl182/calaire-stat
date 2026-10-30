@@ -1,0 +1,22 @@
+Ronda de cierre de M02 completada. Las ocho decisiones están en la nueva sección «Ronda de cierre» de `curso/logs/M02_practicas_luna.md`, con rc=0 en la reejecución del script.
+
+| H-xx | Decisión | Ubicación |
+|---|---|---|
+| H-01 | Aplicado: el enunciado de B nombra el nivel de ozono medido con el SRP | `M02_libreto.md`, práctica B |
+| H-02 | Aplicado: el fondo del gráfico A es ahora f-string; el HTML tiene `#fcfcfb` | `calc/M02_practicas_luna.py`, `save_a_chart()` |
+| H-03 | Aplicado: corregida la frase falsa sobre que los gráficos no se regeneraron | `logs/M02_practicas_luna.md`, «Reejecución final» |
+| H-04 | Aplicado: la escena A1 usa +1,6 y sus cifras coinciden con la práctica A | `M02_libreto.md`, escena A1 y diapositiva |
+| H-05 | Aplicado en la narración: la escena I2 declara que es un ejemplo propio | `M02_libreto.md`, escena I2 |
+| H-06 | Aplicado: `scatter_panel()` recibe `pred_x` en lugar de leer `levels` global | `calc/M02_practicas_luna.py` |
+| H-07 | Rechazado: es de M06 (fuera de alcance) y propone citas nuevas | `S2_modelos_calibracion/M06_libreto.md` ~152, sin editar |
+| H-08 | Rechazado: es de M06 (fuera de alcance); las cifras de F no están verificadas | `S2_modelos_calibracion/M06_libreto.md` ~219, sin editar |
+
+Verificación:
+- **Script:** rc=0. Su salida estándar es idéntica a la anterior y a `M02_practicas_luna_ejecucion.txt`, que no cambia.
+- **HTML:** los de B e I tienen el mismo SHA-256 que antes. El de A cambió solo por el fondo.
+- **Cifras:** las de la escena A1 (+1,6) y de la práctica A coinciden con el script. Las de la escena I2 (a=0,080; pendiente 0,002075) se reproducen con `calc/M02_examples.py`.
+
+Puntos a tener en cuenta:
+- **Navegador:** no abrí los HTML en un navegador. La comprobación del fondo es por marcado, no visual.
+- **Bitácora modificada por otro proceso:** `logs/M02_practicas_luna.md` cambió en disco mientras trabajaba. Mis ediciones y la sección nueva siguen presentes, y no revertí el cambio ajeno. No sé qué contenía; conviene revisarlo.
+- **Commits:** no hice ninguno. Tampoco toqué referencias, citas ni `guia_libreto.md`.

@@ -1,0 +1,15 @@
+Ronda de cierre terminada. Los siete hallazgos tienen decisión, el script corre con **rc=0** y las cifras del libreto coinciden con su salida.
+
+| H-xx | Decisión | Ubicación |
+|---|---|---|
+| H-01 | Aplicado. Se calculan los doce contrastes simples; cuatro superan 0,50 (0,54; 0,98; 1,22; 0,56) y se citan en la solución | `M05_libreto.md` práctica I; `calc/M05_practicas_luna.py` `factorial()` |
+| H-02 | Aplicado. Una sola bitácora en `curso/logs/`; la divergente de la sección queda como historial sin tocar | `curso/logs/M05_practicas_luna.md` |
+| H-03 | Aplicado. «casi duplica» pasa a «eleva la potencia de 0,284 a 0,495» | `M05_libreto.md` práctica I, reparto de esfuerzo |
+| H-04 | Aplicado. El escalonado y la secuencia se calculan desde sus parámetros, no como texto fijo | `calc/M05_practicas_luna.py` `design_counts()` |
+| H-05 | Aplicado. La frase sobre la revisión sale de la solución y pasa a `[NOTA AL INSTRUCTOR]` | `M05_libreto.md` práctica B |
+| H-06 | Rechazado. `guia_libreto.md` no se modifica; es decisión del orquestador | — |
+| H-07 | Aplicado en parte. La celda `Fotometro!E17` existe, pero declara 10 + 2 puntos y 8 repeticiones, sin días. Los «seis días» pasan a supuesto de la práctica. El patrón ISO 5725-3 queda verificado en §9.5 y §9.8 | `M05_libreto.md` práctica B |
+
+Un punto que conviene revisar: la guía y el libreto atribuían «seis días» a la nota del certificado, y la celda no los declara. Ahora figuran como supuesto. Si el número real de días sale de otra hoja, hay que confirmarlo; no lo verifiqué más allá de la celda.
+
+Las citas y referencias no se tocaron. No hice commits. El script se modificó en `factorial()` y `design_counts()`. La sección «## Ronda de cierre» está al final de `curso/logs/M05_practicas_luna.md`, que reescribí como bitácora unificada.

@@ -1,0 +1,18 @@
+Escribí el informe en `curso/logs/M02_practicas_revision_cierre_haiku.md`. Tiene ocho hallazgos (H-01 a H-08). No toqué libretos, scripts, referencias ni citas, y no hice commits.
+
+**Lo que sí cuadra**
+- Ejecuté el script M02 en una copia temporal con `-I` y salió con código 0. Los tres HTML salen idénticos byte a byte a los del curso.
+- Todas las cifras de B, I y A del libreto coinciden con la ejecución.
+- Los hallazgos previos H-01 a H-05, H-07 y H-08 están bien resueltos. En particular, la paleta `#199e70` da 3,32:1 sobre el fondo claro.
+- En M06, la atribución de la línea ~237 es correcta: el script hace la optimización REML y los valores coinciden.
+
+**Hallazgos principales**
+- **H-02 (alta, a confirmar en navegador):** en `save_a_chart()` falta la `f` en el `<rect>` de fondo. El HTML de A contiene `fill="{surface}"` literal, así que el fondo puede salir negro y tapar el gráfico. Es el defecto más serio.
+- **H-01 (media):** la bitácora dice que el enunciado de B identifica el ozono del SRP, pero el bloque B no menciona ni «ozono» ni «SRP». El H-11 previo no está resuelto.
+- **H-04 (media):** la escena A1 y la práctica A siguen con cifras distintas (+1,8 frente a +1,6). Es el H-06 previo, que se rechazó sin cambios.
+- **H-03 (baja):** la bitácora dice que los gráficos no se regeneraron, pero el script los reescribe. El contenido es idéntico.
+- **H-05 a H-08 (baja):** una recta distinta en la escena I2, una dependencia global residual en `scatter_panel`, y dos frases de M06. En la línea ~152 hay que decir por qué los sucesos son disjuntos, no hablar de «colas». En la línea ~219, «medio falso positivo» debe ser «0,5 falsos positivos».
+
+**No verificado:** las cifras de F de la línea ~219 («135 y 405… 360 y 455») dependen de `M06_RR_CALAIRE.py`, que no ejecuté. Tampoco volví a correr el validador de paleta de la habilidad; sólo comprobé el contraste.
+
+Antes de dar M02 por cerrado conviene corregir H-02 y H-01.

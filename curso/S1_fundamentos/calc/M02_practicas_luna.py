@@ -247,7 +247,7 @@ print("B accessible charts", output)
 # SVG/HTML helpers for I (three shared-scale panels plus temporal means)
 # and A (signed errors by condition); all values also appear in tables.
 def scatter_panel(title, x_values, y_values, groups, groups_for_plot, group_names,
-                  xlim, ylim, fit=None, xlabel="Referencia x (nmol/mol)"):
+                  xlim, ylim, fit=None, pred_x=None, xlabel="Referencia x (nmol/mol)"):
     w, h, l, r, t, b = 840, 400, 85, 790, 55, 320
     px = lambda value: l + (value - xlim[0]) / (xlim[1] - xlim[0]) * (r - l)
     py = lambda value: b - (value - ylim[0]) / (ylim[1] - ylim[0]) * (b - t)
@@ -271,7 +271,7 @@ def scatter_panel(title, x_values, y_values, groups, groups_for_plot, group_name
         ly = 52 + groups.index(group) * 22
         parts.append(mark(group, 650, ly, 4) + f'<text x="662" y="{ly+4}" class="chart-secondary" fill="{secondary}" font-size="12">{label}</text>')
     if fit:
-        for x, y in zip(levels, np.polyval([fit[1], fit[0]], levels)):
+        for x, y in zip(pred_x, np.polyval([fit[1], fit[0]], pred_x)):
             parts.append(f'<path d="M {px(x):.1f} {py(y)-6:.1f} L {px(x)+6:.1f} {py(y):.1f} L {px(x):.1f} {py(y)+6:.1f} L {px(x)-6:.1f} {py(y):.1f} Z" class="chart-ink" fill="{ink}"><title>Predicción en x={decimal(x,0)}: {decimal(y,2)} nmol/mol</title></path>')
         parts.append(f'<line x1="650" y1="{52+len(groups)*22}" x2="672" y2="{52+len(groups)*22}" class="chart-fit" stroke="{ink}" stroke-width="2"/><text x="680" y="{56+len(groups)*22}" class="chart-secondary" fill="{secondary}" font-size="12">Ajuste descriptivo</text>')
     parts.extend([f'<text x="{(l+r)/2}" y="{h-18}" text-anchor="middle" class="chart-ink" fill="{ink}" font-size="14">{escape(xlabel)}</text>',
@@ -285,7 +285,7 @@ def save_i_chart():
     group_names = {1: "Día 1", 2: "Día 2", 3: "Día 3"}
     for day in (1, 2, 3):
         subset = arr_i[arr_i[:, 0] == day]
-        markup = scatter_panel(f"Día {day} · datos simulados", subset[:, 1], subset[:, 3], [day], [day] * len(subset), group_names, (60, 420), (-0.2, 1.2), fit=(coef[1], coef[0]))
+        markup = scatter_panel(f"Día {day} · datos simulados", subset[:, 1], subset[:, 3], [day], [day] * len(subset), group_names, (60, 420), (-0.2, 1.2), fit=(coef[1], coef[0]), pred_x=levels)
         panel_markup.append(f'<g transform="translate(0 {(day-1)*400})">' + ''.join(markup) + '</g>')
     daily_means = [np.mean(arr_i[arr_i[:, 0] == day, 3]) for day in (1, 2, 3)]
     tx = lambda value: 125 + (value - 1) / 2 * 620
@@ -326,7 +326,7 @@ def save_a_chart():
         yy=py(tick)
         parts.extend([f'<line x1="100" y1="{yy:.1f}" x2="780" y2="{yy:.1f}" class="chart-grid" stroke="{grid}"/>',f'<text x="90" y="{yy+4:.1f}" text-anchor="end" class="chart-secondary" fill="{secondary}" font-size="11">{decimal(tick,1)}</text>'])
     parts.extend([f'<text x="440" y="390" text-anchor="middle" class="chart-ink" fill="{ink}" font-size="14">Observación dentro de cada grupo</text>',f'<text transform="translate(25 200) rotate(-90)" text-anchor="middle" class="chart-ink" fill="{ink}" font-size="14">Error e (nmol/mol)</text>'])
-    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Errores firmados por grupo" viewBox="0 0 {w} {h}">','<rect width="100%" height="100%" fill="{surface}"/>',''.join(parts),'</svg>']
+    svg=[f'<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Errores firmados por grupo" viewBox="0 0 {w} {h}">',f'<rect width="100%" height="100%" fill="{surface}"/>',''.join(parts),'</svg>']
     rows=''.join(f'<tr><td>{names[group]}</td><td>{i}</td><td>{decimal(value,1)}</td></tr>' for group,values in ((1,g1),(2,g2)) for i,value in enumerate(values,1))
     table='<h2>Tabla accesible</h2><table><caption>Errores firmados simulados, nmol/mol</caption><thead><tr><th>Grupo</th><th>Observación</th><th>Error</th></tr></thead><tbody>'+rows+'</tbody></table>'
     dest=Path(__file__).resolve().parents[1]/"M02_practica_A_grafico.html"

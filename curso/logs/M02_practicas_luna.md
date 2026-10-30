@@ -57,9 +57,32 @@ Se precisó que la desviación estándar $0,23664$ nmol/mol se calcula agrupando
 
 ### Reejecución final
 
-`curso/.venv/bin/python -I -m py_compile curso/S1_fundamentos/calc/M02_practicas_luna.py` terminó correctamente. `curso/.venv/bin/python -I curso/S1_fundamentos/calc/M02_practicas_luna.py` terminó con código 0 y actualizó `M02_practicas_luna_ejecucion.txt`. Los gráficos no se regeneraron y se conservaron intactos.
+`curso/.venv/bin/python -I -m py_compile curso/S1_fundamentos/calc/M02_practicas_luna.py` terminó correctamente. `curso/.venv/bin/python -I curso/S1_fundamentos/calc/M02_practicas_luna.py` terminó con código 0 y actualizó `M02_practicas_luna_ejecucion.txt`. Los tres HTML se regeneraron en cada ejecución: B e I coinciden byte a byte con la versión anterior; A cambió solo por el relleno de fondo corregido en la ronda de cierre (ver abajo).
 
 Resultados verificados: B, $s(y)=0,28123$, $s(e)=0,14460$ nmol/mol; errores medios diarios −0,05; 0,05; 0,15; cero firmado 0 frente a 0,06 truncado. Histograma B: seis conteos 1; 2; 3; 3; 2; 1. Cuartiles por día B: (−0,125; −0,05; 0,025), (−0,025; 0,05; 0,125), (0,075; 0,15; 0,225) para Q1, mediana y Q3; bigotes mínimo–máximo según práctica. I: medias diarias 0,50; 0,58; 0,66; MAD=0,20; ajuste con intercepto 0,100 y pendiente 0,002; predicciones 0,26; 0,42; 0,58; 0,74; 0,90; residuos de −0,14 a 0,14. A: resultados anteriores reproducidos, incluido promedio firmado 0,00 frente a media absoluta 0,40 y s con punto +1,6 de 0,67041 nmol/mol.
 
 Validación adicional: el HTML de B contiene 3 SVG y 3 tablas; I contiene 1 SVG compuesto de tres paneles de escala común más panel temporal y 3 tablas; A contiene 1 SVG y 1 tabla. Los tres tienen idioma español, rótulos/leyendas, unidades, tooltips SVG y ninguna referencia ARIA sin resolver; los números visibles usan coma decimal. No se pudo abrir/renderizar en navegador en este entorno, por lo que la comprobación visual de colisiones no se afirma. La ruta literal de habilidad citada por el usuario no existía; se aplicaron las instrucciones cargadas de dataviz y sus referencias disponibles, incluido el validador ejecutable.
 
+
+## Ronda de cierre
+
+Fecha: 2026-10-28. Ejecutor: Haiku 5.5. Entrada: `logs/M02_practicas_revision_cierre_haiku.md`, hallazgos H-01 a H-08. No se tocaron referencias ni citas, ni `guia_libreto.md`; no se hicieron commits.
+
+| H-xx | decisión | ubicación | rc |
+|---|---|---|---|
+| H-01 | Aplicado: el enunciado de B nombra el nivel de ozono medido con el SRP (nmol/mol). La fila H-11 de la ronda anterior queda así cumplida. | `S1_fundamentos/M02_libreto.md`, enunciado de la práctica B | 0 |
+| H-02 | Aplicado: la línea `<rect … fill="{surface}"/>` de `save_a_chart()` es ahora f-string. `M02_practica_A_grafico.html` ya no contiene el literal `fill="{surface}"` y su fondo es `#fcfcfb`. | `S1_fundamentos/calc/M02_practicas_luna.py`, `save_a_chart()` | 0 |
+| H-03 | Aplicado: la frase de «Reejecución final» describe ahora la regeneración real de los tres HTML. | `logs/M02_practicas_luna.md`, sección «Reejecución final» | 0 |
+| H-04 | Aplicado: la escena A1 usa el punto de sensibilidad +1,6, igual que la práctica A. Cifras: media firmada 0,178; media absoluta 0,533; s 0,670; mediana 0,3; MAD 0,6 nmol/mol. Coinciden con el script (0,17778; 0,53333; 0,67041; 0,3; 0,6). Se corrigió también la diapositiva. Esto cierra el H-06 de la ronda anterior. | `S1_fundamentos/M02_libreto.md`, escena A1 y su diapositiva | 0 |
+| H-05 | Aplicado en la narración: la escena I2 declara que sus cinco pares son un ejemplo propio, distinto de los 60 pares de la práctica I. Sus cifras (a = 0,080; pendiente 0,002075) se reproducen con `calc/M02_examples.py` (rc=0). | `S1_fundamentos/M02_libreto.md`, escena I2 | 0 |
+| H-06 | Aplicado: `scatter_panel()` recibe `pred_x` y ya no lee la variable global `levels`. La llamada de `save_i_chart()` pasa `pred_x=levels`. Cierra el H-10 de la ronda anterior en lo pendiente. | `S1_fundamentos/calc/M02_practicas_luna.py`, `scatter_panel()` y `save_i_chart()` | 0 |
+| H-07 | Rechazado: el hallazgo es de `M06_libreto.md`, fuera del alcance de M02. Además, la corrección propuesta añade numerales nuevos en un corchete de cita (ISO 5725-2 §7.3.3, §8.1, tabla 4), y las citas no se tocan. Se traslada al supervisor de S2. | `S2_modelos_calibracion/M06_libreto.md`, línea ~152 (no editado) | 0 (sin cambio en M02) |
+| H-08 | Rechazado: el hallazgo es de `M06_libreto.md`, fuera del alcance de M02. Las cifras de F no están verificadas (requiere ejecutar `calc/M06_RR_CALAIRE.py`). Se traslada al supervisor de S2. | `S2_modelos_calibracion/M06_libreto.md`, línea ~219 (no editado) | 0 (sin cambio en M02) |
+
+**Verificación tras los cambios** (`curso/.venv/bin/python -I S1_fundamentos/calc/M02_practicas_luna.py`):
+
+- rc = 0. La salida estándar es idéntica a la de la ejecución anterior y coincide con `logs/M02_practicas_luna_ejecucion.txt`, así que ese archivo no cambia.
+- `M02_practica_B_grafico.html` e `M02_practica_I_grafico.html` tienen el mismo SHA-256 que antes del cambio. `M02_practica_A_grafico.html` cambió solo por el fondo (H-02).
+- Cifras de las escenas y prácticas revisadas (B, I, A y escenas I2 y A1): todas coinciden con la salida del script.
+
+**Pendiente, fuera de M02:** H-07 y H-08 quedan para el supervisor de S2 (M06). Si se decide aplicarlos, la verificación de F requiere ejecutar `calc/M06_RR_CALAIRE.py`.

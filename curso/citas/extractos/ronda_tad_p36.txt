@@ -1,0 +1,45 @@
+           Transfer Standards for the Calibration of Air Monitoring Analyzers for Ozone,
+                                           January 2023
+
+4.4     Level 2 and 3 Verification and Reverification Requirements
+
+Verification and reverification procedures must be developed consistent with the specifications
+outlined in this TAD. All Level 2 and Level 3 transfer standards require a verification against a
+Level 1 SRP or a Level 2 bench standard, respectively. The transfer standard of higher authority
+must have a current verification and all verifications and reverifications must be conducted by a
+qualified technician. Adjustments to the candidate transfer standards’ internal calibration factors
+must be made prior to verification. Internal calibration factors must be tracked. No adjustments
+are allowed prior to a reverification.
+Each testing cycle which consititutes either a verification or reverification of a Level 2 or Level 3
+transfer standard will be accomplished by generating and simultaneously assaying varying
+concentrations of O3 in the range that the device will be used. A linear regression analysis is
+performed on each testing cycle using the indicated concentrations of the candidate transfer
+standard and the standard concentrations of the transfer standard of higher authority. Care must
+be taken when reviewing candidate transfer standard verification and reverification data to
+ensure that active and excessive drift is not occurring.
+An example verification dataset and calculations can be found in Appendix A.
+         4.4.1   Verification Requirements
+Verifications must be conducted at the frequency stated in Table 4-1. The following is a list of
+the verification requirements for Levels 2 and 3 transfer standards.
+      1. A verification consists of a minimum of three (3) stable testing cycles, each cycle
+         consisting of a zero and at least six (6) upscale concentration points. Concentration
+         points must be chosen according to Section 6.3. The following must hold within and
+         across these testing cycles (equation numbers refer to Appendix A):
+             a. Each point difference must be < ±3.1% (Equation 1) or ±1.5 ppb for concentration
+                 points below 50 ppb (Equation 2).
+             b. All 3 regression slopes must be 1.00 ± 0.03 (Equation 4).
+             c. All 3 regression intercepts must be 0 ± 3 ppb (Equation 4).
+             d. Standard deviation of the 3 slopes must be < 0.0075 (Equation 8).
+             e. Standard deviation of the 3 intercepts must be < 1.00 ppb (Equation 9).
+         4.4.2   Reverification Requirements
+Reverifications must be conducted at the frequency stated inTable 4-1. The following is a list of
+the reverification requirements for Levels 2 and 3 transfer standards.
+      1. A reverification consists of a minimum of one (1) stable testing cycle consisting of a
+         zero and at least six (6) upscale concentration points. Concentration points must be
+         chosen according to Section 6.3. The following must hold for this testing cycle (equation
+         numbers refer to Appendix A):
+             a. Each point difference must be < ±3.1% (Equation 1) or ±1.5 ppb for concentration
+                points below 50 ppb (Equation 2).
+
+                                                 22
+

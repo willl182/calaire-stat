@@ -1,0 +1,42 @@
+Introduction to Hypothesis Testing                                                                       215
+
+
+
+
+6.5 Power Using G*Power
+In our discussion of power presented earlier in this chapter, we indicated that the sample
+size to achieve a desired level of power can be determined a priori (before the study is con-
+ducted) as well as post hoc (after the study is conducted) using statistical software or power
+tables. One freeware program for calculating power is G*Power (www.psycho.uni-duesseldorf.
+de/abteilungen/aap/gpower3/) which can be used to compute both a priori sample size
+and post hoc power analyses (among other things). Using the results of the one-sample t
+test just conducted, let us utilize G*Power to first determine the required sample size given
+various estimated parameters and then compute the post hoc power of our test.
+
+
+6.5.1 A Priori Power
+Step 1. As shown in the screenshot for Step 1 in Figure 6.18, several decisions need to be
+made from the initial G*Power screen. First, the correct test family needs to be selected. In
+our case, we conducted a one-sample t test; therefore, the default selection of “t tests” is the
+correct test family. Next, we need to select the appropriate statistical test. We use the arrow
+to toggle to “Means: Difference from constant (one sample case).”
+
+
+                                                                                                 Step 1
+
+
+
+                              The default                    The default selection for
+                          selection for ‘TEST                 ‘STATISTICAL TEST’ is
+                          FAMILY’ is ‘t tests.’         ‘Correlation: Point biserial model.’
+                                                      Use the arrow to toggle to the desired
+                           This is the test                        statistical test.
+                          needed for a one        For the one sample t test, we need ‘Means:
+                           sample t test.         Difference from constant (one sample case).’
+
+
+
+
+FIGURE 6.18
+A priori power: Step 1.
+

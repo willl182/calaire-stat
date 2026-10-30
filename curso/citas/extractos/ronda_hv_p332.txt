@@ -1,0 +1,58 @@
+Inferences About Proportions313
+
+
+
+in whether the current undergraduate student body at Ivy-Covered University (ICU) is
+majoring in disciplines according to an a priori or expected set of proportions. Based on
+research at the national level, the expected proportions of undergraduate college majors
+are as follows: .20 Education; .40 Arts and Sciences; .10 Communications; and .30 Business.
+In a random sample of 100 undergraduates at ICU, the observed proportions are as fol-
+lows: .25 Education, .50 Arts and Sciences, .10 Communications, and .15 Business. Thus,
+the researcher would like to know whether the sample proportions observed at ICU fit the
+expected national proportions. In essence, the chi-square goodness-of-fit test is used to test
+proportions for a single categorical variable (i.e., nominal or ordinal measurement scale)
+and in this way is akin to a one-sample t test.
+  The observed proportions are denoted by pj, where p represents a sample proportion
+and j represents a particular category (e.g., Education majors), where j = 1, . . . , J categories.
+The expected proportions are denoted by πj, where π represents an expected proportion
+and j represents a particular category. The null and alternative hypotheses are denoted
+as follows, where the null hypothesis states that the difference between the observed and
+expected proportions is zero for all categories.
+
+
+
+                                           (           )
+                                       H0 : p j − π j = 0 f o r all j
+
+                                       H1: ( p j − π j ) ≠ 0 f o r all j
+
+
+The test statistic is a chi-square and is computed by
+
+                                                                   2
+                                                    J
+                                                         (pj − π j )
+                                            2
+                                          χ =n    ∑j=1
+                                                             πj
+
+
+where n is the size of the sample. The test statistic is compared to a critical value from the
+chi-square table (Table A.3 in the Appendix) α χv2 , where ν = J – 1. The degrees of freedom
+are one less than the total number of categories J, because the proportions must total to
+1.00; thus, only J – 1 are free to vary.
+  If the test statistic is larger than the critical value, then the null hypothesis is rejected in favor of
+the alternative. This would indicate that the observed and expected proportions were not
+equal for all categories. The larger the differences are between one or more observed and
+expected proportions, the larger the value of the test statistic, and the more likely it is to
+reject the null hypothesis. Otherwise, we would fail to reject the null hypothesis (i.e., the
+test statistic is smaller than the critical value), indicating that the observed and expected
+proportions were approximately equal for all categories.
+  If the null hypothesis is rejected, one may wish to determine which sample proportions
+are different from their respective expected proportions, and one option is to conduct tests
+of a single proportion as described in the preceding section. If you would like to control the
+experiment-wise Type I error rate across a set of such tests, then the Bonferroni method is
+recommended where the alpha level is divided up among the number of tests conducted.
+For example, with an overall α = .05 and five categories, one would conduct five tests of a
+single proportion, each at the .01 level of alpha.
+

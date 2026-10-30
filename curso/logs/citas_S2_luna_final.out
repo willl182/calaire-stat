@@ -1,0 +1,17 @@
+Ronda final de S2 aplicada. No hay commits y no cambié cifras, cálculos ni ejercicios.
+
+**Decisiones por hallazgo** (detalle en la sección «Ronda final — respuesta a F-xx» de `curso/citas/S2_decisiones_luna.md`):
+
+- **F-01 (alta), aceptada:** reescribí decisiones 2 y 3. TAD §4.4.1 sí respalda tres ciclos y seis puntos (PDF p. 36). Potencia de una media está en Hahs-Vaughn §6.1.3 y §6.5 (PDF pp. 210 y 234), no en §9.3.
+- **F-02, rechazada:** la frase de Hahs-Vaughn sí existe en PDF p. 399. El extracto `hv_s2.txt` la parte en dos líneas, por eso la búsqueda falló. Añadí esa nota al cotejo.
+- **F-03, aceptada:** el encabezado §9.3 está en PDF p. 364, pero la frase citada está en PDF p. 377. Corregido en el cotejo.
+- **F-04, aceptada como aclaración:** las páginas 217 y 222 de Otto son impresas. En PDF son 222 y 227. Ambas formas quedan anotadas.
+- **F-05, aceptada como aclaración:** «p. impresa 6» es correcto, y corresponde a PDF p. 14. Quedó anotado.
+- **F-06, parcial:** las evidencias ya están en `curso/citas/extractos/ronda_*.txt`, generadas por `s2_ronda_final.sh`. No edité `S2_revision_haiku.md` porque queda fuera de los archivos permitidos.
+- **F-07, diferida:** regenerar las anclas de línea exige rehacer el inventario, fuera de alcance.
+- **F-08, aceptada, y el problema es mayor de lo que decía la revisión:** la cita NIST/SEMATECH seguía en `M06_libreto.md:219`, aunque el cotejo la daba por retirada. La sustituí por `[Hahs-Vaughn y Lomax §8.2.1, PDF p. 332]`, que sí trata Bonferroni. La cifra 6,35 no cambió.
+- **F-09, no aplicada:** `calc/fuentes_M05_M06_final_sol/manifest.json` queda fuera de los archivos permitidos. Propongo registrar rutas relativas `docs/…`.
+
+**Archivos editados:** `curso/S2_modelos_calibracion/M06_libreto.md` (solo la cita de la línea 219), `curso/citas/S2_cotejo.md` y `curso/citas/S2_decisiones_luna.md`. Creé los extractos `ronda_*.txt` y el script `s2_ronda_final.sh` en `curso/citas/extractos/`.
+
+**Observación fuera de alcance:** `M06_libreto.md:219` contiene la frase redundante «esperaríamos en promedio medio falso positivo». No la modifiqué porque es prosa del libreto y no una cita.

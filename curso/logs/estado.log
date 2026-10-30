@@ -371,3 +371,7 @@
 2026-10-27 16:36:35  INICIO pendientes_finales (2 supervisores sol)
 2026-10-27 16:36:36  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
 2026-10-27 16:36:36  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-28 16:06:11  INICIO pendientes_finales (2 supervisores sol)
+2026-10-28 16:06:11  INICIO sol -> sup_citas_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-28 16:06:11  INICIO sol -> sup_pendientes_sol.log (intento 1) [claude-sol (gpt-6.1-sol), esfuerzo bajo]
+2026-10-28 16:12:53  FIN    sol -> sup_pendientes_sol.log OK

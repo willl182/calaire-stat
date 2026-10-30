@@ -1,0 +1,51 @@
+358                                                       Statistical Concepts: A First Course
+
+
+
+9.2.2 Assumptions for Inferences About Two Dependent Variances
+It is assumed that the two samples are dependently and randomly drawn from their
+respective populations, that both populations are normal in shape, and that the t distribu-
+tion is the appropriate sampling distribution. It is thought that this test is not particularly
+robust to nonnormality (Wilcox, 1987). As a result, other procedures have been developed
+that are thought to be more robust. However, little in the way of empirical results is known
+at this time.
+   While not an assumption, because we are testing a variance, a condition of the test is that
+the variable must be interval or ratio in scale. Recall that variances can only be computed
+with data that are interval or ratio in scale.
+
+
+
+
+9.3 Sample Size, Power, and Effect Size
+There is really not much we can report on that is available in published in the literature on
+sample size, power, and effect sizes for tests of variances.
+
+
+
+
+9.4 Computing Inferences About Variances Using SPSS
+Unfortunately, there is not much to report on tests of variances for SPSS. There are no
+unique (i.e., standalone) tests available for inferences about a single variance or for
+inferences about two dependent variances. For inferences about independent vari-
+ances, SPSS does provide Levene’s test as part of the “Independent t Test” proce-
+dure (discussed in Chapter 7) and as part of the “One Way ANOVA” and “Univariate
+ANOVA” procedures. While it is commonly reported as evidence for meeting the
+assumption of equal variances, given our previous concerns with Levene’s test, use it
+with caution.
+
+
+
+
+9.5 Computing Inferences About Variances Using R
+Next we consider R for computing inferences about variances. We will examine both infer-
+ences about a single variance and inferences about two dependent variances.
+  Note that the scripts are provided within the blocks with additional annotation to assist
+in understanding how the command works. Should you want to write reminder notes and
+annotation to yourself as you write the commands in R (and we highly encourage doing
+so), remember that any text that follows a hashtag (i.e., #) is annotation only and not part of
+the R script. Thus, you can write annotations directly into R with hashtags. We encourage
+this practice so that when you call up the commands in the future, you’ll understand what
+the various lines of code are doing. You may think you’ll remember what you did. How-
+ever, trust us. There is a good chance that you won’t. Thus, consider it best practice when
+using R to annotate heavily!
+

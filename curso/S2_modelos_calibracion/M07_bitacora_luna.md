@@ -90,7 +90,8 @@ La verificación fue una extracción con `pdftotext` y búsqueda del numeral/tex
 - ISO 6143 se incorporó para el criterio de validación punto a punto, con §5.2.2 verificado en `pdftotext`; GUM H.3 y SRP QAPP se consideraron en el plan, pero no se usaron en el libreto ni se les atribuye contenido.
 - La inversión y su incertidumbre se presentan en ejemplos simulados; las contribuciones de cobertura son ilustrativas y se remite a AX.6. La incertidumbre inversa numérica declara la independencia asumida y no se ofrece como presupuesto completo.
 - En GGMR se explica y ejemplifica el alcance `V_xy=0`; no se enseña GGMR con covarianza cruzada no nula ni se afirma validación operativa de la implementación numérica del ejemplo.
-- Pendientes de la fase posterior: revisiones de sección; desarrollo de prácticas y material evaluativo, fuera de esta fase de solo contenido. La revisión Haiku se atendió en la sección de correcciones.
+- Prácticas B, I y A: desarrolladas en la fase de ejercicios. Su bitácora autorizada es `curso/logs/M07_practicas_luna.md` (plan, ejecución, correcciones y ronda de cierre); esta bitácora no las recoge.
+- Pendientes: revisiones de sección y material evaluativo (rúbricas, evidencias, taller), fuera de esta sección. La revisión Haiku se atendió en la sección de correcciones.
 
 ## Correcciones (revisión Haiku)
 

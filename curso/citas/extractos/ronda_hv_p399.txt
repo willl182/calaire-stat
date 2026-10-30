@@ -1,0 +1,43 @@
+380                                                      Statistical Concepts: A First Course
+
+
+
+10.1.1.5.1 Correlation and Causality
+An important matter to consider is an often-made misinterpretation of a correlation. Many
+individuals (e.g., researchers, the public, and the media) often infer a causal relationship
+from a strong correlation. However, a correlation by itself should never be used to infer
+causation. In particular, a high correlation among variables X and Y does not imply that
+one variable is causing the other; it simply means that these two variables are related in
+some fashion. Variables X and Y may be highly correlated for a number of different rea-
+sons. A high correlation could be the result of (a) X causing Y, or (b) Y causing X, or (c) a
+third variable Z causing both X and Y, or (d) even more variables being involved in creat-
+ing the relationship between X and Y. The only methods that can strictly be used to infer
+cause are experimental methods that employ random assignment where one variable is
+manipulated by the researcher (the cause), a second variable is subsequently observed (the
+effect), and all other variables are controlled. Note, however, that there are some excellent
+quasi-experimental methods—propensity score analysis and regression discontinuity—
+that can be used in some situations and that mimic random assignment and increase the
+likelihood of speaking to causal inference (Shadish, Cook, & Campbell, 2002).
+
+
+10.1.1.5.2 Restriction of Range
+A final issue to consider is the effect of restriction of the range of scores on one or both
+variables. For example, suppose that we are interested in the relationship among GRE
+scores and graduate grade point average (GGPA). In the entire population of students,
+the relationship might be depicted by the scatterplot shown in Figure 10.3. Say the Pear-
+son correlation is found to be .60 as depicted by the entire sample in the full scatterplot.
+Now we take a more restricted population of students, those students at highly selective
+Ivy-Covered University (ICU). ICU only admits students whose GRE scores are above the
+cutoff score shown in Figure 10.3. Because of restriction of range in the scores of the GRE
+variable, the strength of the relationship among GRE and GGPA at ICU is reduced to a
+Pearson correlation of .20, where only the subsample portion of the plot to the right of the
+cutoff score is involved. Thus, when scores on one or both variables are restricted due to
+the nature of the sample or population, then the magnitude of the correlation will usually
+be reduced [although see an exception in Figure 6.3 from Wilcox (2003)].
+
+
+
+
+FIGURE 10.3
+Restriction of range example.
+

@@ -23,3 +23,21 @@ Fecha: 2026-10-27. Alcance: M09–M12. Se leyeron `curso/citas/S3_inventario.md`
 - `curso/S3_comparacion_decision/M11_libreto.md` — Montgomery figura como Montgomery 2013 (Wiley), sin edición ni ISBN, y advierte que no se consultó texto íntegro.
 
 No se editó `curso/citas/inventario.md`; no se cambiaron cifras, ejercicios, cálculos ni grafía QAPP. No se hicieron commits ni se atendieron pendientes ajenos a S3.
+
+## Ronda final — respuesta a F-xx
+
+Fecha: 2026-10-28. Fuente: `curso/citas/S3_revision_final_haiku.md`. Cada hallazgo se comprobó contra `docs/` (`pdftotext -f N -l N`); las copias usadas están en `curso/citas/extractos/`. Sin cambios de cifras, cálculos ni ejercicios. Sin commits.
+
+| F | decisión | evidencia |
+|---|---|---|
+| F-01 | Aplicado. M11:31 y :122 usaban «no disponible en `docs/`»; ahora «clave bibliográfica; contenido no cotejado», igual que el resto de M11. | Verificado en `M11_libreto.md` (8 ocurrencias uniformes). |
+| F-02 | Aplicado. AX:366 retira 7.ª ed. e ISBN y deja «Wiley, 2013»; `inventario.md` (Montgomery y regla 3) unifica la clave según el punto 7. | Crowder 2020 PDF pp. 96 y 145: «Montgomery … Wiley, New York (2013)» (`extractos/S3_crowder2020_montgomery_p96_p145.txt`). |
+| F-03 | Aplicado. `inventario.md` Hahs-Vaughn: «verificado en portada/créditos, PDF p. 7». | `docs/Statistical Concepts – A First Course.pdf` p. 7: «First published 2020» (`extractos/S3_hahs_vaughn_p7_creditos.txt`). |
+| F-04 | Aplicado en el catálogo: cuatro filas NIST-I, NIST-R, NIST-EWMA, NIST-CUSUM con sección, URL y copia local. M11 no cambia. | Secciones 6.3.2.2, 6.3.2.1, 6.3.2.4, 6.3.2.3 en las copias `extractos/S3_NIST_*.html`. |
+| F-05 | Aplicado. M10:195 lista §§7.1.3, 7.6, 7.8.4.1 a)–c) y e), 7.8.6.1–.2; §7.8.2 se retira de la referencia. | ISO/IEC 17025 PDF p. 24: §7.8.4.1 a) (incertidumbre), §7.8.2 sin «intervalo de uso» ni «k» (`extractos/S3_iso17025_p24.txt`). |
+| F-06 | Aplicado. Página corregida a PDF p. 24 (impreso 16); la p. 19 es impreso 11 y no contiene §7.8.4. Apunta al extracto. | `extractos/S3_iso17025_p24.txt`: 7.8.4.1 a) en PDF p. 24; pie «16». |
+| F-07 | Aplicado en parte. (a) Ruta corregida a `calc/M12_evidencias_fuentes.md`. (b) Copias NIST de §§6.3.2.x en `extractos/`. §1.3.5.8 pasa a «no verificable (copia local pendiente)»: la herramienta de consulta solo devuelve resúmenes y no permite guardar la página íntegra. | Copias `extractos/S3_NIST_{IMR,constants,EWMA,CUSUM}.html`; §1.3.5.8 sin copia local. |
+| F-08 | Aplicado. Localizador ASQ: «Calculation of Test Uncertainty Ratio» en PDF p. 2 (encabezado 360); p. 3 = 367; p. 4 = 368 (tabla TUR). El «366» no aparece en el extracto. | `docs/asq_metrological_handbook_c30.pdf` p. 2–4; `extractos/S3_asq_c30_pdf1-4.txt`. |
+| F-09 | Aplicado. Dependencia NIST: «234; referencia 310» (antes 188, 241). Chi-cuadrado: «14, 88; referencia 310». | `M12_libreto.md` :234 (dependencia temporal) y :310 (referencia NIST). |
+
+Pendientes tras esta ronda: §1.3.5.8 de NIST sin copia local (F-07b); la revisión de Haiku citaba «p. 366» en `S3_revision_haiku.md`, que no se editó por estar fuera del alcance.

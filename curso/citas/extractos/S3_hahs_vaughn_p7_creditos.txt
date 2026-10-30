@@ -1,0 +1,42 @@
+First published 2020
+by Routledge
+52 Vanderbilt Avenue, New York, NY 10017
+
+and by Routledge
+2 Park Square, Milton Park, Abingdon, Oxon, OX14 4RN
+
+Routledge is an imprint of the Taylor & Francis Group, an informa business
+
+© 2020 Taylor & Francis
+
+The right of Debbie L. Hahs-Vaughn and Richard G. Lomax to be identified as authors of this work has been asserted by
+them in accordance with sections 77 and 78 of the Copyright, Designs and Patents Act 1988.
+
+All rights reserved. No part of this book may be reprinted or reproduced or utilised in any form or by any electronic,
+mechanical, or other means, now known or hereafter invented, including photocopying and recording, or in any
+information storage or retrieval system, without permission in writing from the publishers.
+
+Trademark notice: Product or corporate names may be trademarks or registered trademarks, and are used only for
+identification and explanation without intent to infringe.
+
+Library of Congress Cataloging-in-Publication Data
+Names: Hahs-Vaughn, Debbie L., author. | Lomax, Richard G., author. | Hahs-Vaughn, Debbie L. Introduction to
+  statistical concepts.
+Title: Statistical concepts : a first course / Debbie L. Hahs-Vaughn (University of Central Florida), Richard G. Lomax
+  (The Ohio State University).
+Description: New York, NY : Routledge, 2019.
+Identifiers: LCCN 2019013055 (print) | LCCN 2019017022 (ebook) | ISBN 9780429261268 (Ebook) |
+  ISBN 9780367203962 (hardback) | ISBN 9780367203993 (pbk.)
+Subjects: LCSH: Statistics—Textbooks. | Mathematical statistics—Textbooks.
+Classification: LCC QA276.12 (ebook) | LCC QA276.12 .L65 2019 (print) | DDC 519.5—dc23
+LC record available at https://lccn.loc.gov/2019013055
+
+ISBN: 978-0-367-20396-2 (hbk)
+ISBN: 978-0-367-20399-3 (pbk)
+ISBN: 978-0-429-26126-8 (ebk)
+
+Typeset in Palatino
+by Apex CoVantage, LLC
+
+Visit the companion website: www.routledge.com/cw/hahs-vaughn
+

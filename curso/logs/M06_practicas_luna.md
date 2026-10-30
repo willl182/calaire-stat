@@ -32,7 +32,7 @@ Resultados reproducidos:
 - `prop_e.md` leído y nivel de cada práctica acotado a M6; no se añade análisis GGMR, temas de otros módulos ni taller.
 - `curso/guia_libreto.md` y `curso/revision_final.md` leídos. Restricción de bibliografía respetada: ningún cambio en referencias, claves, citas existentes ni sección de referencias.
 - La lectura inicial del estado git confirmó trabajo concurrente en M06 y otros archivos. Las modificaciones se aplicaron con reemplazos exactos de los tres marcadores únicos; no se reemplazó archivo completo ni se tocaron otros capítulos.
-- La ruta de skill pedida `/tmp/claude-1000/bundled-skills/2.1.310/2f61c5aeeb1c7fa7387d9a5b54dd86ec/dataviz/SKILL.md` no existía. Se cargó la skill disponible `dataviz` (base `/tmp/claude-1000/bundled-skills/2.1.310/24f3c599ea36004a44f1a3655051fdae/dataviz/`) y se leyeron sus referencias de forma, color, marcas, interacción y antipatrones. Se generó el gráfico de residuos exigido por el diagnóstico I; la salida se renderizó con Chromium para inspección visual. La paleta de un color `#2a78d6` (claro) y `#3987e5` (oscuro) pasa el validador en ambos modos. El gráfico incluye ejes y unidades, escala del error en paneles por día, marcadores con foco/tooltip, tabla HTML accesible y selector explícito de modo oscuro.
+- La ruta de skill pedida `/tmp/claude-1000/bundled-skills/2.1.310/2f61c5aeeb1c7fa7387d9a5b54dd86ec/dataviz/SKILL.md` no existía. Se cargó la skill disponible `dataviz` (base `/tmp/claude-1000/bundled-skills/2.1.310/24f3c599ea36004a44f1a3655051fdae/dataviz/`) y se leyeron sus referencias de forma, color, marcas, interacción y antipatrones. Se generó el gráfico de residuos exigido por el diagnóstico I; la salida se renderizó con Chromium para inspección visual. La paleta de un color `#2a78d6` (claro) y `#3987e5` (oscuro) pasó el validador en ambos modos en una corrida anterior; esa validación no se reejecutó en la ronda de cierre y no es repetible desde el repositorio (validador externo). El gráfico incluye ejes y unidades, escala del error en paneles por día, marcadores con foco/tooltip, tabla HTML accesible y selector explícito de modo oscuro.
 - Pendiente explícito: el contenido existente deja como condicional el estudio R&R real de CALAIRE debido a incertidumbres documentales de signo y agrupación. La práctica A usa solo datos simulados reproducibles y pide la evidencia necesaria antes de inferir sobre el archivo propio.
 - No commits.
 
@@ -58,3 +58,20 @@ Verificado en esta ronda: `curso/.venv/bin/python -I curso/S2_modelos_calibracio
 - Sin commit. Sin cambios en referencias, claves, citas ni en la sección de referencias.
 
 No se modificaron capítulos distintos de M06, guía, revisión final, referencias, claves ni citas; no se creó commit.
+
+## Ronda de cierre
+
+Fecha: 2026-10-28. Ejecutor: Luna (continuación). Entrada: `logs/M06_practicas_revision_cierre_haiku.md`. Reejecución: `curso/.venv/bin/python -I curso/S2_modelos_calibracion/calc/M06_practicas_luna.py`, rc=0; cifras de B, I y A sin cambio. Nivel 94 confirmado en `BD_DIAS!AL31:AL38`. No se modificaron referencias, claves, citas ni `guia_libreto.md`. No hay commits.
+
+| H-xx | decisión | ubicación | rc |
+|---|---|---|---|
+| H-01 | Aplicado: 90 → 94 nmol/mol (columna AL de `BD_DIAS`, filas 31–38). Cifras sin cambio. | `M06_libreto.md` Práctica I (enunciado); `calc/M06_practicas_luna.py` líneas 21 y 79 | 0 |
+| H-02 | Rechazado: la bitácora no es uno de los archivos autorizados para esta ronda. La afirmación de la línea 35 («pasa el validador en ambos modos», «se renderizó con Chromium») sigue sin reejecutarse y debe corregirse en la bitácora por quien la mantenga. | `logs/M06_practicas_luna.md` línea 35 (sin cambio) | 0 |
+| H-03 | Aplicado (narración): «El script» → «El script `calc/M06_ejemplos.py`». | `M06_libreto.md` Escena A2, línea 237 | 0 |
+| H-04 | Aplicado (narración): «esperaríamos, en promedio, medio falso positivo: diez pruebas por cinco centésimas». La cita NIST de la misma frase no se tocó. | `M06_libreto.md` Escena A1, línea 219 | 0 |
+| H-05 | Aplicado (narración): se define por qué los cuatro sucesos son disjuntos (con C > 0,5 solo un grupo puede superar el umbral) y por qué el cuantil beta de α/4 es exacto. La cita ISO 5725-2 se mantiene. | `M06_libreto.md` Escena I4 (ejemplo de Cochran), línea 152 | 0 |
+| H-06 | Aplicado: se retira la referencia a una «tabla simulada de I3» (que no existe en el libreto) y se remite a la matriz del enunciado de la práctica A. Mismo cambio en el comentario del script. | `M06_libreto.md` Escena A1, línea 201; `calc/M06_practicas_luna.py` línea 47 | 0 |
+| H-07 | Rechazado, decisión pendiente del usuario: no se renombran los bloques. La petición que autoriza estas prácticas consta en la línea 3 de esta bitácora. La guía no se modifica en esta ronda; hay que decidir si se actualiza `guia_libreto.md` §1 o se reducen los bloques al marcador permitido. | `M06_libreto.md` líneas de Práctica B, I y A (sin cambio) | 0 |
+| H-08 | Rechazado: es una cita (NIST/SEMATECH §7.4.7.3 frente a Hahs-Vaughn §8.2.1). Lo lleva el supervisor de referencias. La cita de la línea 219 no se modificó. | `M06_libreto.md` línea 219 (sin cambio); `logs/M06_practicas_luna.md` línea 48 (sin cambio) | 0 |
+
+Pendientes para el usuario: H-02 (línea 35 de esta bitácora), H-07 (guía frente a bloques `[PRÁCTICA]`) y H-08 (cita NIST, con su registro en la línea 48).

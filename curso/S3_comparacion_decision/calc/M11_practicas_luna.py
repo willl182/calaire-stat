@@ -131,7 +131,10 @@ def write_chart(x, mr, center, i_limits, mr_ucl, i_signal_idx, mr_signal_idx):
             line_class = "center-line" if "Centro" in name else "limit-line"
             svg.append(f'<line class="{line_class}" x1="{left}" y1="{yy:.1f}" x2="{left+width}" y2="{yy:.1f}" stroke="{color}" stroke-width="1.5" stroke-dasharray="{dash}"/>')
             svg.append(f'<text x="{left+width-58}" y="{yy-4:.1f}" fill="#52514e">{name}</text>')
-        coords = [(left + i * width / (len(vals)-1), py(float(v))) for i, v in enumerate(vals)]
+        # Ambos paneles usan la rejilla de ocasiones 1..8; el MR de la ocasión k+1 cae en la columna k+1.
+        offset = 0 if title.startswith("Individuales") else 1
+        step = width / (len(labels) - 1)
+        coords = [(left + (i + offset) * step, py(float(v))) for i, v in enumerate(vals)]
         svg.append('<polyline class="series-line" fill="none" stroke="#2a78d6" stroke-width="2" points="' +
                    ' '.join(f'{a:.1f},{b:.1f}' for a,b in coords) + '"/>')
         for i, (xx, yy) in enumerate(coords):
@@ -143,8 +146,8 @@ def write_chart(x, mr, center, i_limits, mr_ucl, i_signal_idx, mr_signal_idx):
                 svg.append(f'<rect tabindex="0" x="{xx-5:.1f}" y="{yy-5:.1f}" width="10" height="10" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Señal en ocasión {occasion}, valor {fmt(vals[i], 4)} nmol/mol</title></rect>')
         svg.append(f'<text x="{left}" y="{top+height+18}" fill="#52514e">Ocasión</text>')
         for i in range(len(vals)):
-            xx = left + i*width/(len(vals)-1)
-            lab = labels[i] if title.startswith("Individuales") else labels[i+1]
+            xx = left + (i + offset) * step
+            lab = labels[i + offset]
             svg.append(f'<text x="{xx:.1f}" y="{top+height+35}" text-anchor="middle" fill="#52514e">{lab}</text>')
     svg.append('</svg>')
     table_rows = ''.join(f'<tr><th scope="row">{i}</th><td>{fmt(v, 4)}</td><td>{"—" if i == 1 else fmt(mr[i-2], 4)}</td></tr>' for i,v in enumerate(x,1))

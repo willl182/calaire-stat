@@ -195,3 +195,50 @@ Para reanudar: restablecer disponibilidad del modelo exacto `claude-haiku-5-5` e
 **Hallazgos Haiku y decisión.** H-01–H-07 aplicados: precisión sin redondeo, comprobación por jacobiana finita con alcance limitado, secuencia RNG bootstrap coherente, escalamiento y criterio por apartado, 36 datos accesibles y datos centralizados. Supervisor S-M13-01 detectó fallo de importación con -I; luna reemplazó import implícito por carga explícita del archivo hermano mediante importlib y ruta relativa a __file__. Supervisor leyó el cambio y ejecutó satisfactoriamente en aislamiento.
 
 **Estado: cerrado.** Una práctica A de cuatro apartados, no un taller adicional; reproducibilidad y criterios individuales comprobados, sin validación de resultados reales atribuida al laboratorio.
+
+## Hito 15 — C/M02: ronda de cierre — 2026-10-28 16:20
+
+**Qué se hizo.** Reanudación con Opus 5.5 como supervisor y Haiku como ejecutor (continúa a luna) y revisor en corridas separadas. Haiku hizo la revisión de cierre, que había quedado vacía; el ejecutor aplicó o rechazó cada hallazgo; el supervisor reejecutó `calc/M02_practicas_luna.py` con `-I`, rc=0, y leyó la tabla de decisiones.
+**Archivos.** `S1_fundamentos/M02_libreto.md` (enunciado B, escena A1 y su diapositiva, escena I2), `calc/M02_practicas_luna.py` (fondo con f-string, `scatter_panel` sin variable global), HTML regenerados, `logs/M02_practicas_luna.md`, `logs/M02_practicas_revision_cierre_haiku.md`, `logs/cierre_M02_*.log`.
+**Hallazgos Haiku y decisión.** Se aplicaron H-01–H-06. Se rechazaron H-07 y H-08: son del capítulo M06 y de citas, y se trataron en el Hito 17 o quedan para el otro supervisor.
+**Estado: cerrado.**
+
+## Hito 16 — C/M05: ronda de cierre — 2026-10-28 16:20
+
+**Qué se hizo.** El ejecutor resolvió los hallazgos de la revisión de cierre de Haiku (`logs/M05_practicas_revision_cierre_haiku.md`), que no tenían decisión. El supervisor reejecutó el script, rc=0.
+**Archivos.** `S2_modelos_calibracion/M05_libreto.md` (prácticas B e I), `calc/M05_practicas_luna.py` (`factorial`, `design_counts`) y la bitácora unificada `logs/M05_practicas_luna.md`.
+**Hallazgos Haiku y decisión.** Se aplicaron H-01–H-05: doce contrastes simples, de los que cuatro superan 0,50; bitácora unificada; potencia de 0,284 a 0,495; escalonado calculado; nota al instructor. Se rechazó H-06 porque `guia_libreto.md` no se modifica. H-07 se aplicó en parte: la celda E17 no declara seis días y el dato pasa a supuesto de la práctica.
+**Estado: cerrado.**
+
+## Hito 17 — C/M06: ronda de cierre — 2026-10-28 16:20
+
+**Qué se hizo.** Haiku hizo la revisión de cierre, que estaba vacía, y comprobó las tres frases de narración pendientes. El ejecutor corrigió. El supervisor reejecutó el script (rc=0), leyó las líneas 152 y 219 y corrigió él mismo la línea 35 de la bitácora, una corrección trivial: la afirmación de validación de paleta queda como corrida anterior no repetible.
+**Archivos.** `S2_modelos_calibracion/M06_libreto.md` (enunciado I 90→94 según BD_DIAS, escenas I4, A1 y A2), `calc/M06_practicas_luna.py`, `logs/M06_practicas_luna.md`.
+**Hallazgos Haiku y decisión.** Se aplicaron H-01 y H-03–H-06. H-02 lo rechazó el ejecutor y lo aplicó el supervisor. Se rechazó H-07, sobre la etiqueta `[PRÁCTICA]` frente a la guía: el orquestador lo deja como decisión del usuario. Se rechazó H-08 (cita NIST frente a Hahs-Vaughn) y se pasa al supervisor de citas.
+**Estado: cerrado.**
+
+## Hito 18 — C/M07: ronda de cierre — 2026-10-28 16:20
+
+**Qué se hizo.** El ejecutor decidió los H-01–H-07 de la revisión de cierre de Haiku. El supervisor reejecutó el script, rc=0.
+**Archivos.** `S2_modelos_calibracion/M07_libreto.md` (prácticas B e I, material A2), `logs/M07_practicas_luna.md`.
+**Hallazgos Haiku y decisión.** Se aplicaron H-01, H-02 y H-04–H-07. Se rechazó H-03 (etiqueta `[PRÁCTICA]`, la convención de la fase de ejercicios).
+**Estado: cerrado.**
+
+## Hito 19 — C/M11: ronda de cierre — 2026-10-28 16:20
+
+**Qué se hizo.** El ejecutor decidió los H-01–H-05 de la revisión de cierre de Haiku, regeneró el gráfico B y lo renderizó en Chromium. El supervisor reejecutó el script, rc=0.
+**Archivos.** `S3_comparacion_decision/M11_libreto.md` (solución I), `calc/M11_practicas_luna.py` (rejilla I/MR), `M11_practica_B_grafico.html`, `logs/M11_practicas_luna.md`.
+**Hallazgos Haiku y decisión.** Se aplicaron H-01 y H-03–H-05. Se rechazó H-02 porque toca referencias y citas.
+**Estado: cerrado.**
+
+## Cierre — 2026-10-28 16:20
+
+| Pendiente | Estado |
+|---|---|
+| 3 — grafía QAPP | Cerrado (Hitos 1 y 4): `<±` visible frente a `<+` extraído. El significado operativo queda a confirmar por el responsable. |
+| 2 — R&R histórico | **Bloqueado** (Hitos 2 y 5): hay datos reales, pero son insuficientes. La lista exacta de los siete datos requeridos está en el Hito 2. El cálculo exploratorio se reproduce con `M06_RR_CALAIRE.py`. |
+| 4 — prácticas | Cerrado: M00–M12 con 3 prácticas cada uno y M13 con 1, todas aplicadas al caso ozono/SRP y revisadas por Haiku. Los 14 scripts de prácticas terminan con rc=0. Ya no queda ningún marcador `[PRÁCTICA — fase de ejercicios]`. |
+| 1 — citas | Fuera de alcance. Se trasladan M06 H-08 y M11 H-02. |
+| 5 — git | Sin commits. |
+
+**Decisión abierta para el usuario.** `guia_libreto.md` §1 todavía dice «fase actual: solo contenido» y solo permite el marcador de práctica. Hay que actualizar la guía a la fase de ejercicios; no se cambió sin autorización.

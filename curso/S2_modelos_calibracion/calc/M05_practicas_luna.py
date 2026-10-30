@@ -50,6 +50,17 @@ def factorial():
                          ("Diferencia de efectos simples F×C", difference_fc),
                          ("Contraste simple F con C alto y T alto", simple_f)):
         print(f"{label}: {value:.2f}".replace(".", ","), "nmol/mol")
+    names = {0: "F", 1: "C", 2: "T"}
+    print("Todos los contrastes simples (alto−bajo, condicionados a los otros dos factores):")
+    for idx in (0, 1, 2):
+        others = [i for i in range(3) if i != idx]
+        for fixed in product((-1, 1), repeat=2):
+            low = next(r[3] for r in rows if r[idx] == -1 and (r[others[0]], r[others[1]]) == fixed)
+            high = next(r[3] for r in rows if r[idx] == 1 and (r[others[0]], r[others[1]]) == fixed)
+            value = high - low
+            flag = " (supera 0,50)" if abs(value) > 0.50 + 1e-9 else ""
+            print(f"  {names[idx]} | {names[others[0]]}={fixed[0]:+d}, {names[others[1]]}={fixed[1]:+d}: "
+                  f"{f'{value:.2f}'.replace('.', ',').replace('-', '−')} nmol/mol{flag}")
     treatments = [(f, c, t, rep) for f, c, t in product((-1, 1), repeat=3)
                   for rep in (1, 2)]
     random.Random(20261027).shuffle(treatments)
@@ -79,8 +90,16 @@ def design_counts():
     print("Diseño A seis analistas, una lectura/ciclo:", 6, alt_days,
           alt_cycles, alt_readings, "gl por estrato:", *alt_df)
     print("Estrato lectura dentro de ciclo: 0 gl; ciclo y lectura no se separan")
-    print("Diseño escalonado ISO 5725-3: 4 resultados vs 8 totalmente anidados; ahorro=4 (50%)")
-    print("Secuencia escalonada (publicada): 2 repetibilidad; 1 otro día/mismo analista; 1 otro día/otro analista")
+    operators, days_per_operator, results_per_day = 2, 2, 2
+    nested = operators * days_per_operator * results_per_day
+    stages = (("repetibilidad", 2), ("otro día, mismo analista", 1),
+              ("otro día y otro analista", 1))
+    stepwise = sum(n for _, n in stages)
+    print(f"Diseño escalonado ISO 5725-3: {stepwise} resultados vs {nested} "
+          f"totalmente anidados; ahorro={nested - stepwise} "
+          f"({(nested - stepwise) / nested:.0%})")
+    print("Secuencia escalonada (publicada):",
+          "; ".join(f"{n} {label}" for label, n in stages))
 
 
 if __name__ == "__main__":

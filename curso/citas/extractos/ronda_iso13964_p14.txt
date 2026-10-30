@@ -1,0 +1,61 @@
+BS ISO 13964:1998
+
+
+
+
+6 Procedure
+6.1 Operation of the ambient ozone analyser
+Install the instrument in a suitable location and, if necessary, provide temperature control of the
+measurement room to minimize any temperature dependence of the instrument. Follow the manufacturer’s
+operating instructions for the analyser to set the various operating parameters correctly, including the
+UV source lamp intensity, the sample flowrate and, if applicable, activation of the electronic temperature
+and pressure compensation. Also, follow the diagnostic procedure as outlined in the manufacturer’s
+operations manual for verifying that the important instrument functions are within their performance
+specifications. Introduce sample air into the instrument and record the ozone concentration by means of a
+suitable recording device (for example, chart recorder, electronic data acquisition system, etc.).
+During continuous operation of the instrument, checks on the instrument zero, span and operational
+parameters shall be made at least once per week. This is necessary to reveal any change in instrument
+stability or ozone scrubber efficiency. It is further recommended that a multipoint calibration be carried
+out every 3 to 4 months.
+6.2 Calibration of the ambient ozone analyser
+6.2.1 Principle
+A schematic diagram of a calibration system is shown in Figure 2. Various ozone concentrations (in air) are
+generated and accurately measured with the primary UV calibration photometer. These ozone calibration
+atmospheres are simultaneously sampled by the ambient ozone analyser via a common manifold. The
+analyser responses are plotted against the ozone concentrations as measured by the primary
+UV calibration photometer. Alternatively, a secondary reference procedure (often called transfer standard)
+can be calibrated against the primary UV calibration photometer and then used to calibrate the ambient
+analyser at the sampling location.
+NOTE   See [4] for details on the principles of operation of a UV photometer.
+6.2.2 Calibration procedure using the primary UV calibration photometer
+Follow the steps below for the detailed calibration procedure. During this procedure, operate the ambient
+ozone analyser at its normal flowrate and temperature. The calibration includes measurements using zero
+air (see 4.3) and at least five ozone concentrations [using the ozone generator as described in 5.2 b)] which
+shall be reasonably spaced to cover the ambient range. For all calibrations, the input flow to the manifold
+shall exceed, by at least 20 %, the total flow required by the instruments attached to the manifold, with the
+excess appropriately vented at atmospheric pressure.
+Carry out the following steps in the calibration procedure:
+   a) assemble the apparatus as shown in Figure 2; for ozone analysers with the automated electronic
+   temperature and pressure compensation, ensure that this circuit has been activated so as to yield
+   corrected output values;
+   b) introduce zero air into the manifold; if necessary, change the zero control setting of the ambient ozone
+   analyser to indicate an output reading close or equal to zero; this will become the zero offset of the
+   instrument;
+   c) record the output values of the ozone analyser and the primary UV photometer; for ozone photometers
+   and analysers without the automated electronic temperature and pressure compensation, measure and
+   record the temperature of the absorption cell and its internal pressure (usually measured at the UV
+   absorption cell outlet);
+   d) adjust the ozone generator to produce the highest ozone concentration required; record all values as
+   in step c) above; calculate the corresponding ozone concentration according to equation (3) of 7.1; if so
+   desired, change the span control setting of the ambient ozone analyser to indicate an output reading
+   close to or equal to the ozone concentration found from equation (3) above, and if the span and zero
+   settings are not independent, then also repeat the foregoing sequence of steps b) to d);
+   e) generate and measure, according to step d) above, at least four other ozone concentrations over the
+   range of interest; or else, the ozone generator may be kept constant at its highest intensity and the zero
+   air flow may be varied to accomplish the same purpose;
+
+
+
+
+6                                                                                                 © BSI 05-1999
+

@@ -192,7 +192,7 @@ Una regla de decisión no elimina incertidumbre; define cómo actuar frente a el
 - **ASQ.** Heather A. Wade (ed.), *The ASQ Metrology Handbook*, 3.ª ed., 2022, cap. 30, “Measurement Risk and Decision Rules”. `docs/asq_metrological_handbook_c30.pdf`.
 - **GUM.** JCGM 100:2008, *Evaluation of measurement data — Guide to the expression of uncertainty in measurement*, §§3.3.7, 5.1.2, 5.2.2 (ec. 13), 6.2.1 y 6.3; Anexo G. `docs/ISO_IEC Guide 98-3_2008 Uncertainty of measurement -- Part 3_ Guide to the expression of uncertainty in measurement (GUM_1995) - libgen.li.pdf`.
 - **ISO 28037.** ISO/TS 28037:2010, *Determination and use of straight-line calibration functions*, §§5.7 y 5.7.1. `docs/ISO 28037.pdf`.
-- **ISO 17025.** BS EN ISO/IEC 17025:2017, *General requirements for the competence of testing and calibration laboratories*, §§7.1.3, 7.6, 7.8.2, 7.8.4 y 7.8.6.1–7.8.6.2. `docs/BS EN ISO_IEC 17025_2017.pdf`.
+- **ISO 17025.** BS EN ISO/IEC 17025:2017, *General requirements for the competence of testing and calibration laboratories*, §§7.1.3, 7.6, 7.8.4.1 a)–c) y e), y 7.8.6.1–7.8.6.2. `docs/BS EN ISO_IEC 17025_2017.pdf` (PDF p. 24 para §7.8.4.1).
 - **SRP-QAPP.** US EPA, *Quality Assurance Project Plan for the Standard Reference Photometer Program*, 2017, §6.2.1 y Tabla 7-1. `docs/srp_qapp.pdf`.
 - **SRP-SOP.** US EPA, *SOP for the Verification and Re-Verification of EPA’s Ozone Standard Reference Photometers*, rev. 1, 2015, §§9.1.1 y 9.1.3. `docs/srp_sop.pdf`.
 - **EPA-TAD.** US EPA, *Transfer Standards for Calibration of Air Monitoring Analyzers for Ozone*, EPA-454/B-22-003, 2023, Tabla 4-1 y §§4.4.1–4.4.2. `docs/o3_tad_508_20230906_final.pdf`.

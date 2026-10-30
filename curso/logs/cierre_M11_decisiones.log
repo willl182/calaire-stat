@@ -1,0 +1,15 @@
+## Ronda de cierre M11: hecha, rc=0
+
+Apliqué H-01, H-03, H-04 y H-05, y rechacé H-02. La ejecución final del script dio rc=0 y las cifras del libreto coinciden con su salida. No hice commits, no toqué `guia_libreto.md` ni ninguna referencia.
+
+| H-xx | Decisión | Ubicación |
+|---|---|---|
+| H-01 | Aplicado. El MR de la ocasión k+1 ahora cae en la misma columna que la I de esa ocasión. Verificado en el HTML (ocasión 2 en x=168, ocasión 7 en x=618) y en un render con Chromium. | `calc/M11_practicas_luna.py` (`write_chart`); `M11_practica_B_grafico.html` regenerado |
+| H-02 | Rechazado. No toco referencias. Antes de esta ronda, el diff de `M11_libreto.md` contra HEAD estaba vacío, así que lo señalado no existe en el árbol. | `M11_libreto.md`, Referencias (sin cambios) |
+| H-03 | Aplicado en la bitácora: «escena A3» pasa a «Escena A2», donde está la cifra 0,00039. | `logs/M11_practicas_luna.md`, fila H-04 |
+| H-04 | Aplicado. La solución de I explica que la pendiente no cambia al retirar el día 90 porque es el centro de las fechas; cambian el intercepto y la predicción. | `M11_libreto.md`, práctica I, solución |
+| H-05 | Aplicado por re-verificación. El PNG de `/tmp` ya no existía; re-rendericé el HTML con Chromium y lo revisé: dos paneles, leyenda, dos cuadrados (I6, MR7) y tabla accesible, sin recortes. El PNG es temporal y no se guarda en el repo. | `M11_practica_B_grafico.html` |
+
+- **Bitácoras:** no encontré divergencia de contenido de prácticas. `S3_comparacion_decision/M11_bitacora_luna.md` no describe las prácticas, así que todo queda en `curso/logs/M11_practicas_luna.md`.
+- **Sección añadida:** «## Ronda de cierre» al final de `curso/logs/M11_practicas_luna.md`, con la tabla y el rc.
+- **Aviso:** `curso/logs/M11_practicas_luna.md` cambió en disco mientras trabajaba. Comprobé que mi sección está y que no hay duplicados; no revertí nada. En `git status` también aparecen cambios en `M07_practicas_luna.md`, `cierre_M07_decisiones.log` y `estado.log`, que no son míos.
