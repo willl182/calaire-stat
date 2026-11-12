@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+M06 está editado dentro del alcance indicado. Añadí la revisión de la tarea de M05, dividí la práctica I entre clase y tarea, retiré el contenido del nivel A y sus cálculos exclusivos, incorporé la escena I6 con la advertencia de análisis exploratorio y condicional, y agregué el cierre del curso de M2 a M6.
+
+Los tres scripts modificados o requeridos se ejecutaron con el Python indicado y terminaron correctamente. Los resultados de R&R reproducen lo narrado. El HTML de residuos se conserva porque corresponde a la práctica I; no había un HTML independiente de práctica A en M06. La fuente original de `Curso_COMPLETO` no se modificó.
+
+Dejé el detalle y los conteos en `logs_etapa2/cambios_M06.md`. I6 quedó en **1 624 palabras** (≈ **12,5 min** a 130 palabras/min), por debajo del objetivo aproximado de 1 950 palabras; esa diferencia está consignada en el log.

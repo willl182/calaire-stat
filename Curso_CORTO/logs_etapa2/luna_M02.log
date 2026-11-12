@@ -1,0 +1,11 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Terminé los cambios de M02 dentro del alcance indicado:
+
+- Añadí al libreto la agenda de **Sesión 1 (120 min)** y una **Apertura del curso (10 min)**.
+- Retiré la sección y la práctica de nivel A; eliminé `M02_practica_A_grafico.html` y la parte exclusiva de A en `calc/M02_practicas_luna.py`.
+- Dividí la práctica I en actividad en clase (15 min) y tarea, con enunciados y soluciones docentes.
+- Dejé el registro en `logs_etapa2/cambios_M02.md`, con cambios por archivo, archivos retirados y estimaciones de palabras y minutos narrados.
+
+Ejecuté `calc/M02_examples.py` y `calc/M02_practicas_luna.py` con el intérprete indicado y `-I`; ambos terminaron sin error y el segundo regeneró los HTML B e I. El conteo aproximado de narración es: **B, 3 187 palabras (24,5 min)**; **I, 1 214 palabras (9,3 min)**, a 130 palabras/min.

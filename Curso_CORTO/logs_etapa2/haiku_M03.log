@@ -1,0 +1,19 @@
+**Veredicto: CON OBSERVACIONES.** Escrito en `logs_etapa2/verif_M03.md`. No edité nada.
+
+**Lo que pasa:**
+- El nivel A no tiene menciones residuales en `M03_libreto.md`.
+- La agenda suma 120 min (15 + 49 + 25 + 15 + 16).
+- La práctica I está partida en clase y tarea, y la solución de la tarea está presente.
+- La revisión de la práctica I de M02 está en `M03_libreto.md:15-17` y coincide con M02 (60 pares, 3 días, 5 niveles, 4 lecturas).
+- Ejecuté ambos scripts en copia temporal con `python -I`. Terminan con código 0. `M03_ejemplos.py` imprime `comprobaciones_M03=OK`. Todas las cifras coinciden con el libreto. El HTML regenerado es idéntico al de `calc/`.
+
+**Hallazgos:**
+1. `logs_etapa2/cambios_M03.md` (sección Verificación) dice que `calc/M03_practicas_luna.py` imprime `comprobaciones_M03_practicas=OK`. El archivo no tiene ese `print`. Sus `assert` sí pasan. Hay que corregir el log o añadir la impresión.
+2. `M03_libreto.md:139`: el encabezado de la práctica B no dice «(en clase, 25 min)», a diferencia de la I y de M02.
+3. `calc/M03_ejemplos.py:24`: el comentario «Deriva B3/A2» cita la escena A2, que ya no existe.
+4. Cobertura del PDF en M3:
+   - Se perdió «Covarianza en acción: razón entre canales» (`temario_curso.md:111-135`). Estaba en la antigua escena A1 y no aparece ahora en B ni en I. Hay que reubicarlo en I1 o anotarlo como excepción.
+   - «Ruido de conteo» (0,5/√3) y «propagación u(x)/x» no aparecen en M03. Ya faltaban antes de la etapa 2. Propagación podría corresponder a M8.
+   - Modelos de variabilidad: cubiertos. Ruido del SRP: solo con ejemplos simulados.
+
+No recontré las palabras (3065 B / 2781 I), así que doy por buenos los datos del log.

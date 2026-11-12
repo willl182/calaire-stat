@@ -1,0 +1,14 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+Informe escrito en `logs_etapa1/ronda2/verif_sol_r3.md`.
+
+**Veredicto: ETAPA 1 NO CERRADA.**
+
+- **Pendiente de F07:** `calc/M03_practicas_luna.py:138` sigue anunciando el HTML sin `calc/`, aunque lo genera dentro de esa carpeta (`:94`).
+- Las cuatro cabeceras de M06 están corregidas y las delimitaciones de 5.6 están resueltas.
+- Errata menor no bloqueante en `M06_libreto.md:211`: falta un punto entre «distinto» y «La deducción».
+- **12/12 scripts:** código 0, `stderr` vacío, ejecutados con el intérprete indicado y `-I` en copia temporal.
+- **5/5 HTML:** regenerados idénticos.
+
+Los 57 archivos preexistentes quedaron intactos; solo se añadió el informe.

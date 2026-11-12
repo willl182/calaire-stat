@@ -1,0 +1,6 @@
+**Veredicto: CON OBSERVACIONES.** Informe en `logs_etapa1/ronda2/verif_r1.md`. No edité ningún archivo del curso.
+
+- **Resueltos sin romper el texto vecino:** F01 (`M03_libreto.md:18`, ya no menciona M1), F02 (`M03_libreto.md:326`, `:354`; `M05_libreto.md:78`; `M06_libreto.md:283`) y F05 (`M02_libreto.md:18`, con unidades y condición del modelo). También la observación 5.4 (`M02_libreto.md:22`).
+- **Parcial:** observación 5.6. `M02_libreto.md:128` y `M06_libreto.md:46` siguen repitiendo la delimitación de exclusiones dentro del mismo párrafo, aunque `cambios_r1.md` dice que se corrigió.
+- **Calc:** `cambios_r1.md` no registra cambios en `calc/`. Tres scripts tienen mtime posterior al informe (`M02_examples.py`, `M05_diseno.py`, `M06_practica_I_grafico.py`). Los ejecuté con el intérprete indicado y `-I` en una copia temporal, y los tres salieron con código 0 y sin stderr. Los traté como ajenos a r1.
+- **Registro desfasado:** `M02_libreto.md` tiene mtime posterior a `cambios_r1.md`. Verifiqué el estado actual, pero no sé qué edición posterior contiene.

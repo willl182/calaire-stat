@@ -1,0 +1,18 @@
+**Veredicto: RECHAZADO.** El informe está en `logs_etapa2/verif_M04.md`. No edité ningún archivo del curso.
+
+El motivo principal es que la práctica I no está en el libreto. La agenda la marca «en clase» (`M04_libreto.md:10`), pero no hay tramo de clase, ni tarea, ni enunciado ni solución. `cambios_M04.md:9` dice que sí está, y es falso.
+
+Hallazgos principales:
+
+1. **Práctica I ausente** (`M04_libreto.md:10`). Falta todo el bloque de práctica I, con su tramo de clase, su tarea y su solución docente.
+2. **Recorte de I mayor que el planeado.** La sección I tiene unas 550 palabras, frente a unas 4 250 en el original. La narración de B+I ronda las 2 900 palabras (unos 22 min), no los 45 min reservados en la agenda.
+3. **Valor crítico de Dixon dudoso.** `calc/M04_ejemplos.py` y `calc/M04_practicas_luna.py` usan 0,59 para n=8 y 99 %. Las tablas habituales dan unos 0,63. La conclusión no cambia, porque Q = 0,8214 supera ambos valores. Además, `M04_libreto.md:138` cita un «valor tabulado» sin indicarlo.
+4. **Cifras de palabras** (`M04_libreto.md:14`, `cambios_M04.md:22-26`) no se corresponden con el texto ni con un criterio de conteo explicado.
+
+Lo que sí cumple:
+- No hay residuos del nivel A en el libreto ni en `calc/`.
+- La agenda suma 120 min.
+- La revisión de la tarea de M03 está presente.
+- La práctica B está en clase con su solución.
+- Los dos scripts terminan con código 0 y sus comprobaciones dan OK. Sus cifras coinciden con el libreto: B, pareada, Welch, varianzas, potencia, u(s), Grubbs y la solución de la práctica B.
+- El tema del PDF para M4 (intervalos y pruebas) sigue cubierto.

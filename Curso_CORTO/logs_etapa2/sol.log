@@ -1,0 +1,14 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+Informe escrito en [`logs_etapa2/verif_sol_e2.md`](logs_etapa2/verif_sol_e2.md), con una tabla por sesión y hallazgos referenciados por archivo y línea.
+
+**Veredicto: ETAPA 2 NO CERRADA.**
+
+- **Cobertura del PDF M2–M6:** cumplida, cotejada contra el PDF original.
+- **Continuidad, revisiones de tareas, apertura, R&R en I6 y cierre:** coherentes.
+- **Scripts:** 12/12 terminaron con código 0 y sin errores, usando el intérprete solicitado con `-I` en copia temporal.
+- **Pendiente principal:** las agendas suman 120 min, pero falta distribuir explícitamente el margen entre la prosa medida a 130 palabras/min y los bloques llamados «narración». Esto no demuestra que las clases sean inviables; impide certificar su duración con el criterio solicitado.
+- **Ajustes menores:** la fila de M06 en el plan suma 119 min —el libreto sí incorpora el minuto restante— y la ficha de M02 conserva la descripción de «sesgos opuestos», cuyo ejemplo de A ya fue retirado.
+
+No modifiqué el material del curso; solo creé el informe.

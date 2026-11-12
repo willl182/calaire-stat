@@ -1,0 +1,19 @@
+Veredicto: **ETAPA 2 NO CERRADA**. Los pendientes anteriores (H1–H3 y la tarea final) quedaron resueltos, pero la corrección de H1 dejó texto vecino que contradice la agenda nueva. El informe está en `logs_etapa2/verif_opus_e2.md`. No edité el curso.
+
+**Pendientes resueltos:**
+- **H1 (temporización):** las cinco agendas suman 120 min y coinciden con la tabla «Temporización verificada» del plan. Las cifras de `contar_narracion.py` coinciden exactamente con el plan: 4 225, 4 175, 3 229, 4 461 y 5 160 palabras.
+- **H2:** la sesión 5 del plan ya suma 120.
+- **H3:** ya no aparece «sesgos opuestos».
+- **Tarea final:** se entrega por escrito después de la sesión 5 y la retroalimentación queda fuera de las 10 h.
+
+**Hallazgos nuevos:**
+- **H-O1 (bloquea el cierre):** `M03_libreto.md:14` conserva la nota antigua: «3065 palabras en B… 2781 en I… El total de 49 minutos». La agenda de justo encima dice 32 min de narración y 17 de discusión guiada.
+- **H-O2 (bloquea el cierre):** la tabla «Estructura final» de `00_plan_corto.md:78–84` sigue llamando «Narración» a 47, 49, 45, 45 y 44+15 min. No indica que la tabla de `:95` la reemplaza. Los minutos son compatibles (por ejemplo, 47 = 33 + 14), pero el rótulo ya no corresponde.
+- **H-O3 (menor):** las agendas de M03 y M04 no tienen fila de Total; las demás sí.
+
+**Lo demás está bien:**
+- No quedan restos del nivel A en libretos ni en `calc/`.
+- La cobertura de M2–M6 frente al PDF se mantiene.
+- Los 12 scripts corren con código 0 y sin errores en una copia temporal, y los 4 HTML regenerados son idénticos a los originales.
+
+Para cerrar la etapa basta con arreglar H-O1 y H-O2; no hace falta volver a verificar el contenido ni los scripts.

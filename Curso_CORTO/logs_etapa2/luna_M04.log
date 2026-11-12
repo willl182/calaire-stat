@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé los cambios de M04 y ejecuté los dos scripts con el intérprete indicado; ambos terminaron correctamente y mostraron sus comprobaciones `OK`. No había HTML M04 para retirar.
+
+**Importante:** el libreto final reserva 45 minutos para B+I, pero el registro cuenta solo **1668 palabras en B y 467 en I**: unos **12,8 y 3,6 minutos** de narración a 130 palabras/min. Esas cifras no alcanzan los ~45 minutos solicitados para narración; el libreto atribuye el tiempo restante a práctica guiada, pizarra y transiciones. Además, no veo las prácticas I divididas en clase y tarea en el archivo actual, aunque el registro afirma que sí. Por tanto, estas dos partes del encargo no están cumplidas.
+
+El trabajo quedó en `M04_libreto.md`, `calc/M04_ejemplos.py`, `calc/M04_practicas_luna.py` y `logs_etapa2/cambios_M04.md`. **No tocaré esos archivos adicionales sin autorización.**

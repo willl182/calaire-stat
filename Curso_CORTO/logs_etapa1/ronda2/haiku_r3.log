@@ -1,0 +1,8 @@
+**Veredicto: CON OBSERVACIONES.** Escrito en `logs_etapa1/ronda2/verif_r3.md`.
+
+- **Falta el registro de r3.** `logs_etapa1/ronda2/cambios_r3.md` no existe. El log de r3 (`luna_r3.log`) dice que la tarea quedó incompleta y que no lo creó. Por eso no puedo confirmar qué cambió r3 ni dar APROBADO.
+- **Los hallazgos de r3 están resueltos en el texto.** Las rutas de F07 en `M04_libreto.md:152`, `M06_libreto.md:189` y `M03_libreto.md:220` están corregidas. No quedan referencias `curso/logs/` en M02. El comentario AX.4 de `calc/M05_diseno.py:48` ya no existe. No hay identificadores M7–M13 ni AX.x en los libretos.
+- **`calc/` sí cambió** (el comentario de `M05_diseno.py`). Ejecuté los 12 scripts con `/home/w421/w421/calaire-stat/Curso_COMPLETO/curso/.venv/bin/python -I` sobre una copia en `/tmp`: todos salieron con código 0 y sin stderr.
+- **Pendiente de confirmar:** `calc/` tiene 13 entradas pero solo 12 son `.py`. Conviene identificar la decimotercera antes de cerrar el inventario.
+
+Para pasar a APROBADO hace falta crear `cambios_r3.md` con los cambios reales y confirmar ese inventario. No edité ningún archivo del curso.

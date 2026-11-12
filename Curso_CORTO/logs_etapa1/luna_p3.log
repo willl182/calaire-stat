@@ -1,0 +1,10 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Completé el punto 3:
+
+- `M02_libreto.md:88` — Añadí la escena B6 en el nivel B, junto a los gráficos. Incluye señales visuales, la regla descriptiva de cuartiles/IQR y la distancia respecto de la mediana/MAD; recalca investigar causas, conservar y documentar los datos, y enlaza con las pruebas formales de M4.
+- `M04_libreto.md:180` — Ajusté la entrada de I5 para retomar explícitamente M2 y aclarar que las pruebas no autorizan por sí solas a borrar observaciones.
+- `logs_etapa1/cambios_p3.md` — Registré el resumen solicitado.
+
+No añadí un ejemplo numérico, así que no modifiqué ni ejecuté `calc/M02_examples.py`.

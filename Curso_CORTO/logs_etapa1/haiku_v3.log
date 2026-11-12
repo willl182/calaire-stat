@@ -1,0 +1,12 @@
+**Veredicto: CON OBSERVACIONES.** Escrito en `Curso_CORTO/logs_etapa1/verif_p3.md`.
+
+El punto 3 está resuelto en lo esencial: se añadió en M02 una escena B6 (`M02_libreto.md:92–100`) con tratamiento descriptivo de atípicos y un puente a M4, y en M4 se ajustó la entrada de I5 (`M04_libreto.md:180`). Los números de I5 no cambiaron y no hay cambios en `calc/`, así que no hacía falta reejecutar scripts. No edité ningún libreto.
+
+Hallazgos principales:
+1. **MAD usado antes de definirse** (`M02_libreto.md:96`). B6 la menciona en el nivel B, pero se define en la escena I1 (`:146`) y la tabla de niveles la ubica en el nivel I (`:10`). Es el único punto que impide aprobar.
+2. **Cita a Otto sin entrada bibliográfica en M02** (`:98`). La bibliografía de M02 solo lista Crowder (`:233`).
+3. La tabla de niveles (`:9`) no recoge la regla IQR de B6.
+4. El log `cambios_p3.md` cita `M02_libreto.md:80–92`, pero la escena está en `92–100` tras los cambios del punto 1.
+5. B6 cita Crowder §4.3 sin el matiz de cautela que sí tiene B5.
+
+Para pasar a APROBADO hacen falta solo los puntos 1 y 2.

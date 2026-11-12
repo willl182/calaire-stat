@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+He terminado los cambios de M05. Añadí la agenda de la sesión 4 y la revisión de la tarea I de M04; retiré la sección y práctica A; organicé la práctica I en trabajo en clase y tarea, ambas con solución docente, y condensé I3. También quité de los dos scripts los cálculos que solo correspondían a A.
+
+**Verificación:** ejecuté `calc/M05_diseno.py` y `calc/M05_practicas_luna.py` con el Python indicado y `-I`. Ambos terminaron correctamente y sus resultados coinciden con las cifras del libreto. No había archivos HTML `M05_*` ni scripts separados de A para retirar.
+
+El conteo de narración —incluye enunciados, excluye soluciones docentes y tablas— quedó en **B: 3 565 palabras (27,4 min)** e **I: 2 631 (20,2 min)**; total **6 196 palabras (47,7 min)** a 130 palabras/min, algo por encima del objetivo aproximado de 5 850. Dejé los cambios, los archivos retirados y el conteo en `logs_etapa2/cambios_M05.md`.

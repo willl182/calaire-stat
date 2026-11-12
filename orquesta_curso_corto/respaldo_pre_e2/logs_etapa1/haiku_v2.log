@@ -1,0 +1,13 @@
+**Veredicto: APROBADO CON OBSERVACIONES.** Sin defectos bloqueantes. El informe está en `Curso_CORTO/logs_etapa1/verif_p2.md`.
+
+- **Cumplimiento:** `grep` sobre M02–M06 no encuentra AX, M7–M13 como referencias a módulos ni S1–S4. La única coincidencia es `GUM-S2` en M03, que es bibliografía y se conserva bien. Las entradas `AX.x` de la bibliografía también se eliminaron.
+- **Coherencia:** las frases nuevas encajan con su escena. M05:112 remite a «evaluación técnica específica, fuera del alcance» y mantiene la remisión válida a M2.
+- **Números:** comparé los tokens numéricos de cada bloque modificado contra el original en `Curso_COMPLETO`. Solo cambian identificadores de sección. Ningún valor de cálculo se movió. No hubo cambios en `calc/`, así que no re-ejecuté scripts.
+
+Observaciones no bloqueantes:
+1. `logs_etapa1/cambios_p2.md` cita líneas desactualizadas. Por ejemplo, M02:82 y M02:117 ya no contienen el cambio; el de M11 está en M02:86. Probablemente otros puntos insertaron líneas antes.
+2. Redundancias: M02:128 repite «fuera del alcance» dos veces; M06:46 hace lo mismo en el mismo párrafo.
+3. M06:140 dice «no cubre estas tablas», que resulta ambiguo.
+4. La deducción del divisor n−1 aparece tres veces en M04 (líneas 13, 34 y 292).
+
+No edité ningún libreto. Ignoré los cambios de los puntos 1 y 3.

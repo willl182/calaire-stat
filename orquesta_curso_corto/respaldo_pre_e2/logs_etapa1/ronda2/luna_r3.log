@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+He actualizado las referencias de rutas de F07 y las observaciones 5.1 y 5.7: instrucciones de ejecución, ubicación del HTML de M03, referencias a bibliografía y materiales del curso completo, el comentario `AX.4` y el inventario de scripts, ahora en 12.
+
+No pude completar la segunda y tercera referencias a `curso/logs/...` en M02: al cambiar el archivo en paralelo, los reemplazos puntuales restantes fallaron y todavía aparecen en el texto. Tampoco he creado `logs_etapa1/ronda2/cambios_r3.md`. Por tanto, la tarea queda incompleta; no he verificado las rutas de todos los PDF citados ni el estado final de los archivos editados por los otros agentes.

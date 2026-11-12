@@ -1,0 +1,13 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6.1-sol", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6.1-sol","query_source":"generate_session_title"}
+Informe escrito en `logs_etapa1/verif_sol_etapa1.md:1`, con veredicto y hallazgos `archivo:línea`.
+
+**Veredicto: CON OBSERVACIONES — no cerrar todavía la etapa 1.**
+
+- **Cobertura M2–M6 del PDF conservada**, incluido el puente de atípicos M02 → Grubbs/Dixon en M04.
+- **Sin pérdidas ni duplicaciones detectadas** en la integración final de las ediciones paralelas.
+- Persisten la referencia a **M1 en M03**, promesas implícitas de módulos excluidos, una tarea de regresión cuyo procedimiento quedó fuera del curso, MAD antes de definirse y problemas de unidades, bibliografía y rutas.
+- **12/12 scripts ejecutados correctamente con `-I`**, sin errores ni avisos en sus procesos. El plan anuncia 13, pero existen 12. Los cinco HTML regenerados coinciden byte a byte con los existentes.
+
+El informe distingue los pendientes de adaptación de las discrepancias heredadas. **No modifiqué libretos ni otros archivos existentes; solo añadí el informe.**

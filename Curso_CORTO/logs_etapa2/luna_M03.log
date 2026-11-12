@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé M03 para la etapa 2: agregué la agenda de Sesión 2 y la revisión de la tarea I de M02, retiré el nivel A y separé la práctica I en trabajo de clase y tarea, cada parte con su solución docente. Conservé los contenidos, citas y recursos B e I; los scripts mixtos mantienen solo cálculos B/I.
+
+**Verificación:** ambos scripts terminaron con código 0 usando el intérprete indicado. También probé la generación explícita del HTML, que produjo un archivo de 4245 bytes. Las cifras calculadas coinciden con las soluciones del libreto.
+
+El registro quedó en `logs_etapa2/cambios_M03.md`, con archivos retirados y estimaciones de narración: B, 3065 palabras (23,6 min); I, 2781 palabras (21,4 min), a 130 palabras/min.

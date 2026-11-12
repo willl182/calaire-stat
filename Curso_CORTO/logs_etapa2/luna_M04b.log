@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Actualicé únicamente `M04_libreto.md`, `calc/M04_ejemplos.py`, `calc/M04_practicas_luna.py` y creé `logs_etapa2/cambios_M04.md`. La agenda de 120 minutos y la revisión de la tarea de M03 están incluidas; la práctica I quedó dividida en trabajo en clase y tarea, ambas con solución docente. Retiré el contenido avanzado y solo los bloques de cálculo exclusivos de ese nivel.
+
+Verifiqué Dixon contra Otto: la tabla 2.10 da **0,59** para \(Q(0,99;n=8)\); el libreto identifica la variante de hueco superior/rango completo. Ejecuté los dos scripts con el Python solicitado: finalizaron con `comprobaciones_M04=OK` y `comprobaciones_practicas_M04=OK`. No había HTML M04 en `Curso_CORTO` que retirar; la fuente original quedó intacta.
+
+El conteo de narración, con el método documentado en el log, da **B: 1.961 palabras (15,1 min)** e **I: 2.116 (16,3 min)** a 130 palabras/min. La agenda conserva los 45 minutos de narración del plan; el conteo estimado sin pausas y transiciones queda por debajo de ese tiempo.

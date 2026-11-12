@@ -1,0 +1,15 @@
+21:35:56 r1 luna INICIO
+21:35:56 r3 luna INICIO
+21:35:56 r2 luna INICIO
+21:38:44 r1 luna FIN (exit 0) cambios: 9 ítems
+21:39:40 r1 haiku FIN (exit 0) veredicto: CON OBSERVACIONES
+21:40:37 r2 luna FIN (exit 0) cambios: 8 ítems
+21:41:41 r2 haiku FIN (exit 0) veredicto: CON OBSERVACIONES
+21:44:36 r3 luna FIN (exit 0) cambios:  ítems
+21:45:24 r3 haiku FIN (exit 0) veredicto: CON OBSERVACIONES
+21:45:24 sol INICIO
+21:49:50 DETENIDO por el usuario
+22:34:31 sol INICIO (reanudado)
+22:40:22 sol FIN (exit 0) veredicto: ETAPA 1 NO CERRADA
+22:55:37 sol r3 INICIO
+22:59:01 sol r3 FIN veredicto: ETAPA 1 NO CERRADA

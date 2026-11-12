@@ -1,0 +1,10 @@
+**Veredicto: CON OBSERVACIONES.** Informe escrito en `logs_etapa1/ronda2/verif_r2.md`. No edité ningún archivo del curso.
+
+- **Cambios de r2:** los siete están presentes y resueltos. Las cifras de los scripts modificados coinciden con lo declarado.
+- **Scripts:** `calc/M02_examples.py` y `calc/M06_practica_I_grafico.py` corren con rc=0 usando el Python de `Curso_COMPLETO` con `-I`. Lo ejecuté en una copia temporal para no sobrescribir los HTML. El HTML regenerado de M06 es idéntico al existente y lleva 94 nmol/mol. El valor 94 del nivel nominal también coincide con las filas 31–38 de `BD_DIAS` en el `.xlsm`.
+
+**Hallazgos:**
+1. **`M05_libreto.md:62`** (severidad media): la diapositiva de B3 sigue atribuyendo «6 días» al certificado bajo el rótulo «Descripción del certificado». Eso contradice la corrección de `:64` y `:72`, que dice que los seis días son un supuesto didáctico. Además escribe «8 lecturas por punto y día», mientras el texto dice «ocho repeticiones por punto».
+2. **`M02_libreto.md:96`** (observación): B6 sigue nombrando la MAD, aunque ahora la remite a I. No es prerrequisito, pero el cambio de r2 dice que la «introducción prematura» fue retirada.
+
+**Fuera de alcance de r2:** F01, F02, F05 y F07 no aparecen en `cambios_r2.md`, así que siguen abiertos. Si estaban asignados a r2, la ronda está incompleta.

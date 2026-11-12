@@ -1,0 +1,19 @@
+**Veredicto: CON OBSERVACIONES.** No hay incumplimientos de los criterios de etapa 2. El informe está en `logs_etapa2/verif_M06.md`. No edité ningún archivo del curso.
+
+Lo verificado:
+- **Nivel A:** retirado; no hay menciones residuales en el libreto ni en `calc/M06_*`.
+- **Agenda:** 10 + 59 + 25 + 10 + 15 + 1 = 120 min (`M06_libreto.md:3-13`).
+- **Prácticas:** la B está en clase; la I está partida en clase (`:183`) y tarea (`:202`), con soluciones (`:204-206`).
+- **Revisión de la tarea anterior:** presente (`:27-29`), coherente con la tarea M05-I.
+- **Tareas del módulo:** repetibilidad y precisión intermedia en B; R&R condensado en I6.
+- **Scripts:** los cuatro (`ejemplos`, `practicas_luna`, `RR_CALAIRE`, `practica_I_grafico`) corren con `-I` en una copia temporal y coinciden con el libreto. El HTML regenerado es idéntico al existente.
+- **Cobertura del PDF (M6):** cubierta. El PDF no está en el árbol, así que la comprobación se hizo contra `Curso_COMPLETO/temario_curso.md`.
+
+Hallazgos principales (detalle y líneas en el informe):
+1. **Tiempo de narración:** `M06_libreto.md:8` asigna 59 min. El conteo de `cambios_M06.md` da unos 44 min, y mi recuento aproximado da algo similar. Hay unos 15 min sin texto que los respalde.
+2. **Práctica B:** el encabezado (`:75`) no dice «en clase», a diferencia de la práctica I (`:183`).
+3. **Redacción:** «Por momentos» en `:204` debe ser «Por tanto».
+4. **Comentario erróneo:** `calc/M06_practicas_luna.py:21` dice «columna AL», pero el código lee F, L, R, X, AD, AJ.
+5. **Nomenclatura:** «### I6.» (`:211`) no sigue el formato «Escena I1–I5».
+
+Ninguno bloquea la etapa 2.

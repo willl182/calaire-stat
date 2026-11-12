@@ -1,0 +1,6 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+He actualizado las fichas de M02 y M03 y añadí al inicio de M02 el punto de partida mínimo sobre referencia, indicación, error con signo y ecuación del SRP. Dejé el registro de cambios en `logs_etapa1/cambios_p1.md`.
+
+No encontré referencias a M0/M1 en las filas de prerrequisitos de M04–M06. No ejecuté pruebas ni scripts: los cambios fueron editoriales.

@@ -1,0 +1,17 @@
+**Veredicto: CON OBSERVACIONES.** El informe está en `logs_etapa2/verif_M02.md`. No edité ningún archivo del curso.
+
+Un criterio no se cumple. `calc/M02_examples.py:89-106` conserva un bloque de nivel A (grupos con sesgos opuestos, valor influyente, tamaños desiguales) con etiquetas «A». El libreto y los HTML no tienen menciones residuales. Ese script no figura en `cambios_M02.md`, así que no se tocó en esta etapa. Corregido eso, M02 cumple lo pedido.
+
+Lo demás se cumple:
+- **Agenda:** Sesión 1 de 120 min (10 + 47 + 25 + 15 + 23), con la apertura de 10 min y sin revisión de tarea previa.
+- **Prácticas:** B en clase; I partida en clase (15 min) y terminada en tarea, con solución docente en ambas partes.
+- **Scripts:** `M02_examples.py` y `M02_practicas_luna.py` terminan con código 0 con `-I` en una copia temporal. Los HTML regenerados son idénticos a los del repositorio.
+- **Cifras:** todas las del libreto coinciden con la salida de los scripts (medias, varianzas, cuartiles, histogramas, MAD, recta de error y celdas día×nivel).
+- **Temas del PDF para M2:** resumen (B2–B3), gráficos (B2, B5, I1) y atípicos (B6, sin eliminación automática).
+
+Observaciones menores, también en el informe:
+1. El encabezado de la práctica B (`M02_libreto.md:126`) no dice «en clase, 25 min».
+2. Las líneas citadas en `cambios_M02.md` (`:171-184`, `:182-223`, `:1-41`) no corresponden al libreto actual; la práctica I está en `:188-204`.
+3. La narración estimada es de 33,9 min frente a los 47 min planificados; el libreto no dice dónde caen los 13 min restantes.
+
+Para pasar a APROBADO, falta retirar el bloque A de `calc/M02_examples.py` y volver a ejecutarlo con `-I`.

@@ -1,0 +1,8 @@
+**Veredicto: CON OBSERVACIONES.** El veredicto completo y los hallazgos están en `Curso_CORTO/logs_etapa1/verif_p1.md`.
+
+- **Cumple:** la ficha de M02 (`M02_libreto.md:8`) ya no cita M1. La escena «Punto de partida» (`M02_libreto.md:16–19`) define $x$, $y$, $e=y-x$ y $c=-\ln(T)/(\alpha L)$, con signos y fórmula iguales a los de la fuente. La ficha de M03 (`M03_libreto.md:8`) apunta a M02.
+- **Incumple:** `M03_libreto.md:18` sigue diciendo «el modelo de medición de M1». El log de cambios no lo menciona.
+- **Coherencia:** `M02_libreto.md:22` dice «ya damos por visto» lo que acaba de presentarse. M03:8 atribuye a M02 el «modelo de medición», pero M02 solo presenta las entradas del SRP. La fórmula de M02:18 no indica unidades (c en atm, conversión a nmol/mol).
+- **Otras partes:** M04, M05 y M06 son idénticos a la fuente. `calc/` no cambió en el punto 1, así que no ejecuté los scripts. La escena «B6» de M02 pertenece al punto 3 y no la evalué.
+
+Esta verificación no edita libretos. Solo escribí el archivo de veredicto.

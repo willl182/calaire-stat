@@ -1,0 +1,8 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Claude Code doesn't recognize the model "gpt-6-luna", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"gpt-6-luna","query_source":"generate_session_title"}
+Resueltos los cambios solicitados y registrados en `logs_etapa1/ronda2/cambios_r2.md`.
+
+La discrepancia de M06 se resolvió como **94 nmol/mol**: la hoja `BD_DIAS`, filas 31–38, contiene valores de indicación alrededor de 94. Corregí el rótulo del generador y regeneré el HTML.
+
+Ejecuté `calc/M02_examples.py` con el Python indicado y confirmó **0,178** de media firmada, **0,533** de media absoluta y **0,670 nmol/mol** de desviación estándar muestral para el punto +1,6. También ajusté la procedencia de los seis días en M05 para distinguir el supuesto didáctico de lo que declara la nota del certificado.

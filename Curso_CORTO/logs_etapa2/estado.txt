@@ -1,0 +1,23 @@
+23:13:28 M02 luna INICIO
+23:13:28 M03 luna INICIO
+23:13:28 M04 luna INICIO
+23:13:28 M06 luna INICIO
+23:13:28 M05 luna INICIO
+23:15:27 M02 luna FIN (exit 0) registro: sí
+23:17:05 M02 haiku FIN veredicto: CON OBSERVACIONES
+23:17:37 M06 luna FIN (exit 0) registro: sí
+23:18:17 M03 luna FIN (exit 0) registro: sí
+23:19:14 M06 haiku FIN veredicto: CON OBSERVACIONES
+23:20:01 M03 haiku FIN veredicto: CON OBSERVACIONES
+23:20:20 M05 luna FIN (exit 0) registro: sí
+23:22:42 M05 haiku FIN veredicto: CON OBSERVACIONES
+23:23:40 M04 luna FIN (exit 0) registro: sí
+23:24:55 M04 haiku FIN veredicto: RECHAZADO
+23:24:55 sol INICIO
+23:25:30 sol DETENIDO; M04 restaurado y relanzado
+23:25:43 M04 luna (2.º intento) INICIO
+23:44:19 M04 luna (2.º intento) FIN (exit 0) registro: sí
+23:47:24 M04 haiku (2.º intento) FIN veredicto: CON OBSERVACIONES
+23:47:24 sol INICIO
+23:52:18 sol FIN veredicto: ETAPA 2 NO CERRADA
+23:52:18 TODO TERMINADO
